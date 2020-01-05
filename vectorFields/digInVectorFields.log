@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2019.12.31)  3 JAN 2020 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.1.4)  4 JAN 2020 20:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1180,7 +1180,7 @@ corations.softclip.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-protractor.tex)
 \digitwidth=\dimen267
 )
-(/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.cfg
+(/home/milica/texmf/tex/ximeraLatex/ximera.cfg
 (/usr/share/texlive/texmf-dist/tex/generic/tex4ht/tex4ht.4ht
 version 2017-05-09-09:21
 --------------------------------------
@@ -1413,7 +1413,7 @@ version 2018-02-21-09:31
 (/usr/share/texlive/texmf-dist/tex/generic/tex4ht/html4-math.4ht
 version 2017-03-30-16:04
 ))
-(/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht
+(/home/milica/texmf/tex/ximeraLatex/ximera.4ht
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks60
@@ -1436,8 +1436,8 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
 
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:51: LaTeX Error: Env
-ironment html undefined in `ximera.cfg'.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:51: LaTeX Error: Environment html
+ undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1451,8 +1451,8 @@ If that doesn't work, type  X <return>  to quit.
 
 \c@identification=\count294
 
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:69: LaTeX Error: Env
-ironment xarmaBoost undefined in `ximera.cfg'.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:69: LaTeX Error: Environment xarm
+aBoost undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1464,8 +1464,8 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:71: LaTeX Error: Env
-ironment shuffle undefined in `ximera.cfg'.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:71: LaTeX Error: Environment shuf
+fle undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1478,8 +1478,8 @@ If that doesn't work, type  X <return>  to quit.
 
 \c@imagealt=\count295
 \c@choiceId=\count296
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:234: Illegal paramet
-er number in definition of \desmos.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:234: Illegal parameter number in 
+definition of \desmos.
 <to be read again> 
                    c
 l.234 ...not support embedded elements.</iframe>}}
@@ -1489,8 +1489,8 @@ Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:266: LaTeX Error: En
-vironment sagesilent undefined in `ximera.cfg'.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:266: LaTeX Error: Environment sag
+esilent undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1501,7 +1501,7 @@ l.266 \renewenvironment{sagesilent}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/milica/texmf/tex/lecturenotes/ximeralatex/ximera.4ht:272: Too many }'s.
+/home/milica/texmf/tex/ximeraLatex/ximera.4ht:272: Too many }'s.
 l.272 }
        
 You've closed more groups than you opened.
@@ -1860,4 +1860,158 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Fon
+LaTeX Font Info:    Try loading font information for U+esint on input line 21.
+
+(/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+l.41 --- TeX4ht warning --- File `"./digInVectorFields-figure0.xbb"' not found 
+---
+l.41 --- TeX4ht warning --- Cannot determine size of graphic in "./digInVectorF
+ields-figure0.xbb" (no BoundingBox) ---
+./digInVectorFields.tex:41: Undefined control sequence.
+\:Needs #1->File: \Gin 
+                       @base.svg
+l.41 \end{tikzpicture}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+l. 41 --- needs --- ./digInVectorFields-figure0.svg ---
+l.78 --- TeX4ht warning --- File `"./digInVectorFields-figure1.xbb"' not found 
+---
+l.78 --- TeX4ht warning --- Cannot determine size of graphic in "./digInVectorF
+ields-figure1.xbb" (no BoundingBox) ---
+./digInVectorFields.tex:78: Undefined control sequence.
+\:Needs #1->File: \Gin 
+                       @base.svg
+l.78     \end{tikzpicture}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+l. 78 --- needs --- ./digInVectorFields-figure1.svg ---
+l.121 --- TeX4ht warning --- File `"egField.xbb"' not found ---
+l.121 --- TeX4ht warning --- Cannot determine size of graphic in "egField.xbb" 
+(no BoundingBox) ---
+l. 121 --- needs --- egField.png ---
+l.194 --- TeX4ht warning --- File `"./digInVectorFields-figure3.xbb"' not found
+ ---
+l.194 --- TeX4ht warning --- Cannot determine size of graphic in "./digInVector
+Fields-figure3.xbb" (no BoundingBox) ---
+./digInVectorFields.tex:194: Undefined control sequence.
+\:Needs #1->File: \Gin 
+                       @base.svg
+l.194     \end{tikzpicture}
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+l. 194 --- needs --- ./digInVectorFields-figure3.svg ---
+[3]
+l.223 --- TeX4ht warning --- File `"constField.xbb"' not found ---
+l.223 --- TeX4ht warning --- Cannot determine size of graphic in "constField.xb
+b" (no BoundingBox) ---
+l. 223 --- needs --- constField.png ---
+l.266 --- TeX4ht warning --- File `"radField1.xbb"' not found ---
+l.266 --- TeX4ht warning --- Cannot determine size of graphic in "radField1.xbb
+" (no BoundingBox) ---
+l. 266 --- needs --- radField1.png ---
+l.276 --- TeX4ht warning --- File `"radField2.xbb"' not found ---
+l.276 --- TeX4ht warning --- Cannot determine size of graphic in "radField2.xbb
+" (no BoundingBox) ---
+l. 276 --- needs --- radField2.png ---
+l.284 --- TeX4ht warning --- File `"radField3.xbb"' not found ---
+l.284 --- TeX4ht warning --- Cannot determine size of graphic in "radField3.xbb
+" (no BoundingBox) ---
+l. 284 --- needs --- radField3.png ---
+[4]
+l.337 --- TeX4ht warning --- File `"rotField.xbb"' not found ---
+l.337 --- TeX4ht warning --- Cannot determine size of graphic in "rotField.xbb"
+ (no BoundingBox) ---
+l. 337 --- needs --- rotField.png ---
+l.348 --- TeX4ht warning --- File `"rotFieldNot.xbb"' not found ---
+l.348 --- TeX4ht warning --- Cannot determine size of graphic in "rotFieldNot.x
+bb" (no BoundingBox) ---
+l. 348 --- needs --- rotFieldNot.png ---
+l.362 --- TeX4ht warning --- File `"rotField3.xbb"' not found ---
+l.362 --- TeX4ht warning --- Cannot determine size of graphic in "rotField3.xbb
+" (no BoundingBox) ---
+l. 362 --- needs --- rotField3.png ---
+l.397 --- TeX4ht warning --- File `"surf1.xbb"' not found ---
+l.397 --- TeX4ht warning --- Cannot determine size of graphic in "surf1.xbb" (n
+o BoundingBox) ---
+l. 397 --- needs --- surf1.png ---
+l.401 --- TeX4ht warning --- File `"gradField1.xbb"' not found ---
+l.401 --- TeX4ht warning --- Cannot determine size of graphic in "gradField1.xb
+b" (no BoundingBox) ---
+l. 401 --- needs --- gradField1.png ---
+l.406 --- TeX4ht warning --- File `"gradSurf1.xbb"' not found ---
+l.406 --- TeX4ht warning --- Cannot determine size of graphic in "gradSurf1.xbb
+" (no BoundingBox) ---
+l. 406 --- needs --- gradSurf1.png ---
+[5]
+l.427 --- TeX4ht warning --- File `"surf2.xbb"' not found ---
+l.427 --- TeX4ht warning --- Cannot determine size of graphic in "surf2.xbb" (n
+o BoundingBox) ---
+l. 427 --- needs --- surf2.png ---
+l.435 --- TeX4ht warning --- File `"gradField2.xbb"' not found ---
+l.435 --- TeX4ht warning --- Cannot determine size of graphic in "gradField2.xb
+b" (no BoundingBox) ---
+l. 435 --- needs --- gradField2.png ---
+l.440 --- TeX4ht warning --- File `"gradSurf2.xbb"' not found ---
+l.440 --- TeX4ht warning --- Cannot determine size of graphic in "gradSurf2.xbb
+" (no BoundingBox) ---
+l. 440 --- needs --- gradSurf2.png ---
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 455.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 455.
+ [6]
+l.501 --- TeX4ht warning --- File `"./digInVectorFields-figure4.xbb"' not found
+ ---
+l.501 --- TeX4ht warning --- Cannot determine size of graphic in "./digInVector
+Fields-figure4.xbb" (no BoundingBox) ---
+./digInVectorFields.tex:501: Undefined control sequence.
+\:Needs #1->File: \Gin 
+                       @base.svg
+l.501   \end{tikzpicture}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+l. 501 --- needs --- ./digInVectorFields-figure4.svg ---
+[7] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
+ (./digInVectorFields.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 626.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 626.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 626.
+ ) 
+Here is how much of TeX's memory you used:
+ 43346 strings out of 492983
+ 979778 string characters out of 6134923
+ 1733261 words of memory out of 5000000
+ 45867 multiletter control sequences out of 15000+600000
+ 6388 words of font info for 29 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 69i,8n,98p,1230b,4510s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on digInVectorFields.dvi (9 pages, 193200 bytes).
