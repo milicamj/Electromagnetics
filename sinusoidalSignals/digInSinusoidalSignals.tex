@@ -11,26 +11,51 @@ Review of Sinusoidal Signals
 \end{abstract}  
 \maketitle
 
-
+\section{Sinusoidal signal parameters}
 
 Sinusoidal signals are important because in electrical engineering we use them to analyze and test circuit performance. All periodic signals can be represented with sinusoidal signals of different amplitudes and phases using the Fourier series. 
 
 A typical sinusoidal signal is shown in Figure \ref{sinusoid}. On the y-axis is the instantaneous value of the sinusoidal voltage and on the x-axis is time. Instantaneous values of voltage change from -1V to 1V with time. Sinusoidal signals can be characterized by the following parameters: peak amplitude, peak-to-peak, average, RMS, period, time-delay, and phase. Peak amplitude, peak-to-peak, average and RMS values, are read on the y-axis in Figure \ref{sinusoid}, whereas period, time delay and phase are read on the x-axis.
 
 \begin{figure}[htbp]
+\begin{center}
 \includegraphics[scale=0.4]{jpg/sinusoid.jpg}
 \caption{Vocabulary used in describing sinusoidal signals.}
 \label{sinusoid}
+\end{center}
 \end{figure} 
 
 
-\begin{enumerate}
-\item Peak amplitude is measured on the y-axis as the length from the average value of the signal (in this case zero) to the maximum value of the signal (in this case 1). For signal shown in Figure \ref{sinusoid}, peak  amplitude has a constant value of $V_p=1$. 
-\item The instantaneous value of the sinusoidal signal varies from -1 to 1V. The peak amplitude is a constant and it does not vary with time. 
-\item Peak-to-peak is measured from the minimum value of the function (in this case -1) to the maximum value of the function (in this case 1).  For signal shown in Figure \ref{sinusoid}, peak-to-peak voltage has a constant value of  $V_{pp}=2$.
-\item RMS or root-mean-square is defined as $v_{rms}=\frac{1}{T} \sqrt{\int_0^T v(t)^2 dt}$. For signal shown in Figure \ref{sinusoid}, and other sinusoidal signals of this form,  $v_{rms}=\frac{V_p}{\sqrt{2}}=\frac{1}{\sqrt{2}}=0.707$. Root mean square value is important because it represents the equivalent amount of DC power.  
-\item Average value $v_{ave1}=\frac{1}{T} \int_0^T v(t) dt$. For the signal shown in Figure \ref{sinusoid}, the average value is $V_{ave1}=0$ because the function has the same area under the function in the positive and negative cycle. 
-\item Sinusoidal signals can be represented as a function of time, Figure \ref{sin}, or a function of angle, Figure \ref{sinPh}. Take a few minutes to see how the graphs are the same and how are they different.
+\subsection{Parameters that are read on y-axis.}
+
+\begin{definition}
+Peak amplitude is measured on the y-axis as the length from the average value of the signal (in this case zero) to the maximum value of the signal (in this case 1). For signal shown in Figure \ref{sinusoid}, the peak  amplitude has a constant value of $V_p=1$. 
+\end{definition}
+
+
+\begin{definition}
+Instantaneous value of the sinusoidal signal varies from -1 to 1V, and depends on where on the x-axis are we observing the instantaneous value. 
+
+Compared to the instantaneous value, the peak amplitude is allways constant and it does not vary with time. 
+\end{definition}
+
+\begin{definition}
+Peak-to-peak is measured from the minimum value of the function (in this case -1) to the maximum value of the function (in this case 1).  For signal shown in Figure \ref{sinusoid}, peak-to-peak voltage has a constant value of  $V_{pp}=2$.
+\end{definition}
+
+\begin{definition}
+RMS or root-mean-square is defined as $v_{rms}=\frac{1}{T} \sqrt{\int_0^T v(t)^2 dt}$. For signal shown in Figure \ref{sinusoid}, and other sinusoidal signals of this form,  $v_{rms}=\frac{V_p}{\sqrt{2}}=\frac{1}{\sqrt{2}}=0.707$. Root mean square value is important because it represents the equivalent amount of DC power.
+\end{definition}
+
+
+\begin{definition}
+Average value $v_{ave1}=\frac{1}{T} \int_0^T v(t) dt$. For the signal shown in Figure \ref{sinusoid}, the average value is $V_{ave1}=0$ because the function has the same area under the function in the positive and negative cycle. 
+\end{definition}
+
+\subsection{Parameters that are read on x-axis.}
+
+\begin{definition}
+Sinusoidal signals can be represented as a function of time, Figure \ref{sin}, or a function of angle, Figure \ref{sinPh}. Take a few minutes to see how the graphs are the same and how are they different.
 
 
 
@@ -48,8 +73,11 @@ A typical sinusoidal signal is shown in Figure \ref{sinusoid}. On the y-axis is 
 \label{sinPh}
 \end{figure}
 
+\end{definition}
 
-\item Period is measured on the x-axis as the length of one full cycle of the sinusoidal signal. For signal shown in Figure \ref{sinusoid}, this value is $period=T$. In Figure \ref{sinF1F2}, sinusoidal signals of two different frequencies are given. 
+
+\begin{definition}
+Period is measured on the x-axis as the length of one full cycle of the sinusoidal signal. For signal shown in Figure \ref{sinusoid}, this value is $period=T$. In Figure \ref{sinF1F2}, sinusoidal signals of two different frequencies are given. 
 
 \begin{figure}[htbp]
 \includegraphics[scale=0.4]{jpg/cpef6.jpg}
@@ -57,12 +85,19 @@ A typical sinusoidal signal is shown in Figure \ref{sinusoid}. On the y-axis is 
 \label{sinF1F2}
 \end{figure}
 
+\end{definition}
 
 
-\item Time delay and phase represent the lag (or lead) of one function with respect to another. For example, in Figure \ref{sinusoid}, function $ \cos(\omega t - 90^o)$ is time-delayed for $\tau = \frac{T}{4}$ with respect to $\cos (\omega t)$. To find the time delay for a sinusoidal signal from its phase, we look at the way to represent the phase $90^o$ in terms of the product of frequency and time. Since in the sinusoidal signal expression $\cos (\omega t + \Theta)$  phase $\Theta$ is added to $\omega t$ term, the phase has the same units as $\omega t$, and can be represented as the product of $\omega \tau = \theta$, $\tau = \frac{\theta}{\omega}$, where $\tau$ represents the time delay.
+\begin{definition}
+Time delay and phase represent the lag (or lead) of one function with respect to another. For example, in Figure \ref{sinusoid}, function $ \cos(\omega t - 90^o)$ is time-delayed for $\tau = \frac{T}{4}$ with respect to $\cos (\omega t)$. To find the time delay for a sinusoidal signal from its phase, we look at the way to represent the phase $90^o$ in terms of the product of frequency and time. Since in the sinusoidal signal expression $\cos (\omega t + \Theta)$  phase $\Theta$ is added to $\omega t$ term, the phase has the same units as $\omega t$, and can be represented as the product of $\omega \tau = \theta$, $\tau = \frac{\theta}{\omega}$, where $\tau$ represents the time delay.
 
 
-\item Different phases of a sinusod are shown in Figures \ref{sinPlus45Ph}, \ref{sinMinus45Ph}. Can you tell which signal is leading and which one is lagging with respect to $\sin{\theta}$?
+\end{definition}
+
+
+
+\begin{definition}
+Different phases of a sinusod are shown in Figures \ref{sinPlus45Ph}, \ref{sinMinus45Ph}. Can you tell which signal is leading and which one is lagging with respect to $\sin{\theta}$?
 
 
 
@@ -79,13 +114,18 @@ A typical sinusoidal signal is shown in Figure \ref{sinusoid}. On the y-axis is 
 \label{sinMinus45Ph}
 \end{figure}
 
-\begin{enumerate}
-\item When the phase of a signal is positive as in Figure \ref{sinPlus45Ph} $ \sin (\omega t + 45^o)$, we say that the signal is leading with respect to the signal $ \sin (\omega t)$, because it is shifted to the left for $45^o$($pi/4$), or $\tau=+\frac{pi/4}{\omega} $. The leading function's peak occurs earlier in time, and therefore it is leading. The phase of the signal is $45^o$. 
+\end{definition}
 
 
 
 
+\begin{example}
+When the phase of a signal is positive as in Figure \ref{sinPlus45Ph} $ \sin (\omega t + 45^o)$, we say that the signal is leading with respect to the signal $ \sin (\omega t)$, because it is shifted to the left for $45^o$($pi/4$), or $\tau=+\frac{pi/4}{\omega} $. The leading function's peak occurs earlier in time, and therefore it is leading. The phase of the signal is $45^o$. 
 
+\end{example}
+
+
+\begin{example}
 \item When the phase of a signal is negative as in Figure \ref{sinMinus45Ph}, \ref{sinMinus45T},  $ \sin (\omega t - 45^o)$, we say that the signal is lagging with respect to the signal $ \sin (\omega t)$, because it is shifted to the right for $45^o$ ($pi/4$), or $\tau=-\frac{pi/4}{\omega} $. The lagging function's peak occurs later in time, and therefore it is lagging. The phase of the signal is $-45^o$.
 
 
@@ -97,8 +137,8 @@ A typical sinusoidal signal is shown in Figure \ref{sinusoid}. On the y-axis is 
 
 
 
-\end{enumerate}
-\end{enumerate}
+\end{example}
+
 
 
 
