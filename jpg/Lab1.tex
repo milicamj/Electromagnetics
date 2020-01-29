@@ -1,0 +1,291 @@
+\documentclass[]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ovo je za novi oblik footnote-a ( vidi Kopka93 strana 156 )
+
+% ovo je predefinisanje datuma za cirilicu ( vidi Kopka93 strana 175 )
+%
+% TIME OF DAY
+%
+\newcount\hh
+\newcount\mm
+\mm=\time
+\hh=\time
+\divide\hh by 60
+\divide\mm by 60
+\multiply\mm by 60
+\mm=-\mm
+\advance\mm by \time
+\def\hhmm{\number\hh:\ifnum\mm<10{}0\fi\number\mm}
+
+
+
+\setlength{\textwidth}{17.5cm}
+\setlength{\textheight}{22.5cm}
+\setlength{\hoffset}{-2.5cm}
+\setlength{\voffset}{-1.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ %Stavi ovo pre \begin{document}
+ %draft special command for postscript
+
+
+%\special{!userdict begin
+%/bop-hook{
+%gsave
+%150 360 translate         %  start position
+%45 rotate               %  orientation
+%/Times-Roman findfont   %  font
+%20 scalefont            %  scaling of font
+%setfont
+%0 0 moveto
+%0.7 setgray             % gray level ( 1 -> white ;  0 black )
+%(DRAFT Milica Markovic Summer 2004)                 % text you want to see
+%true charpath
+%show    % or: true charpath for hollow letters
+%true charpath
+%stroke grestore}def end}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input psfig.sty
+
+
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+%\rule[.5mm]{\textwidth}{.5mm}
+
+%\vspace*{0.5cm}
+
+
+\centerline{\Large{EEE161 Applied Electromagnetics Laboratory 1}}
+
+
+\vspace{0.3cm}
+
+\noindent
+\rule[.5mm]{\textwidth}{.5mm}
+
+\noindent
+\centerline{Instructor: Dr. Milica Markovi{\'c}} \\
+\centerline{Office: Riverside Hall 3028} \\
+\centerline{Email: milica@csus.edu} \\
+\centerline{Web:http://gaia.ecs.csus.edu/\~{}milica}\
+
+%\vspace*{0.2cm} 
+
+\noindent
+\rule[.5mm]{\textwidth}{.5mm}
+
+
+\vspace*{0.2cm}
+
+This laboratory exercise will introduce you to concepts in vectors and coordinate systems that will be used in electrostatics and magnetostatics. Read Chapter 3 from Ulaby book, Matlab help.
+
+\begin{description}
+
+\item{Introduction}
+
+\begin{enumerate}
+\item Find the Matlab program by going to Start, All Programs, Matlab
+\item When the Matlab window opens, to write your code,  go to File, Open, New. 
+\item Save the new file as yourname.m, or if you want another name:
+\begin{enumerate}
+\item Avoid all special characters. 
+\item Do not use space 
+\item Do not start the file name with a number.
+\item When you start writing your code, do not name any variables the same as the name of your file.
+\end{enumerate} 
+\item Start typing your code
+\end{enumerate}
+
+\item{\bf{Part 1}} 
+
+Write Matlab code to find the distance vector R between the sphere $q$ located at a point $P(x_c,y_c,z_c)$, as shown in Figure \ref{f1}.  Define the points $P$ and $P_e$ at the beginning of the code (pick two specific points, such as [1,2,3] and [4,5,6]), followed by the general expression for the distance vector between these two points. Use Matlab to plot these two points and the distance vector between them.  See hints below.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=hw1p1.ps,width=8cm} \\
+\end{center}
+\caption{Part 1}
+\label{f1}
+\end{figure}
+
+\begin{enumerate}
+\item In order to solve this problem, you first have to know how to define a vector in Matlab. A vector $\vec{a}=2 \vec{x} + 1 \vec{y} + 5 \vec{z}$ in Matlab is written as follows $a=[2,1,5]$.
+\item Magnitude of a vector is calculated as $ma=norm(a)$
+\item Unit vector in a direction of the vector $\vec{a}$ is written as $ua=\frac{a}{norm(a)}$
+\item Refer to the attachment to find addition, subtraction, multiplication and division of vectors in Matlab. Instead of my guide, you can also use Matlab help.
+ \item To plot the field use quiver function 
+\begin{verbatim}
+B=quiver(X,Y,U,V)
+\end{verbatim}
+This function will plot the vector defined by U and V at a point X and Y.
+\item To label the points $P_c$ and $P_e$, after quiver command use
+\begin{verbatim}
+annotation('ellipse',[x,y,a,b])
+\end{verbatim}
+Where $x$ and $y$ are the position of the point and $a$ and $b$ are the height and width of an ellipse.
+
+\end{enumerate}
+
+
+\item{\bf{Part 2}}
+
+Write a Matlab code to represent the vector found in the previous problem to cylindrical and spherical coordinate system. 
+
+
+\begin{enumerate}
+\item Use pol2cart (or similar) function in Matlab.
+\end{enumerate}
+
+
+
+
+\item{\bf{Part 3}}
+
+Use quiver function in Matlab to plot the fields given by the following equations:
+\begin{eqnarray}
+\vec{a} = x \vec{x} + y \vec{y} \\
+\vec{b} = x \vec{x} - y \vec{y} \\
+\vec{c}= 3 \vec{x} \\
+\vec{d} = x \vec{x} \\
+\vec{e} = r \vec{r} \\
+\vec{f} = r \vec{\phi} \\
+\vec{g} =\frac{1}{r} \vec{r}
+\end{eqnarray}
+
+\begin{enumerate}
+\item To solve this problem, first define points at which you plot the vector field. Generate a matrix of numbers for $x$ and $y$ variables using meshgrid. Mesgrid defines all $(x,y)$ points in the $x-y$ plane. For example to make all $(x,y)$ points for $x$ between -1 and 1 and for $y$ between -1 and 1 in steps of 0.5, you would write \begin{verbatim}  [X,Y] = meshgrid(-1:.5:1) \end{verbatim} When you write this line of code, type X in the Command Window. Explain what the numbers in this matrix are. Repeat for Y.
+\item To make a vector field $\vec{a}$ above, define what is the value of the vector field at all X,Y points:
+\begin{verbatim} 
+U=X; 
+V=Y;
+\end{verbatim}
+\item In one of the subsequent vector fields, an entire matrix of zeros, or threes is needed. To do this, use zeros function. Function zeros(5) will make a $5 \times 5$ matrix. Vectors U and V in quiver have to be the same size as matrices X and Y. To find the size of matrix X, write 
+\begin{verbatim} sz=size(X)\end{verbatim} To make a matrix made of all zeros, write \begin{verbatim} V=zeros(sz) \end{verbatim} To make a matrix of threes, write \begin{verbatim} V=zeros(sz)+3 \end{verbatim}
+
+
+\end{enumerate}
+
+\item{\bf{Part 4}}
+
+The electric field is a negative gradient of the electrostatic potential. If the function of potential is given   $V(R)=\frac{1}{R}$, find the electric field.  Write the Matlab code to plot the potential as a function of R, and then plot the field as a function of R. 
+
+\begin{enumerate}
+\item In order to solve this problem use the gradient function.
+\item To plot the potential and electric field, use quiver3D and Plot3D functions.  
+\end{enumerate}
+
+
+
+\item{\bf{Part 5}} 
+
+\begin{enumerate}
+\item Divergence of a magnetic field is equal to zero. Write a Matlab code to check if the vector fields given below could be magnetic fields.
+\item The source of the magnetic field is current. If magnetic field is known, curl of the magnetic field is equal to the current density at that point in space. Write Matlab code to check if the current exists at that point in space.   
+\end{enumerate}
+
+Two fields are given: 
+\begin{eqnarray}
+\vec{B}=y \vec{x}   \\
+\vec{B}= \rho \vec{\phi}
+\end{eqnarray}
+
+Write the Matlab code to find curl for both  fields. Comment on the value of the curl. Look at the field graphs in problem 3. Imagine inserting a paddle in the field at certain points. Will the paddle turn clockwise or counterclockwise? Compare the paddle rotation to the direction of the curl.
+
+
+\item{\bf{Conclusion}} 
+
+Solve {\bf all of the above examples by hand} and {\bf compare} the results with the ones you found during the lab. In addition, for each of the problems, write what you have learned. Do not write an essay, just in a few sentences write what you have done in each problem, and specifically what you have learned from the work done.
+
+
+\item{\bf{Due Date}} 
+
+Submit the printout of the lab work and the conclusion by NEXT FRIDAY. LAB IS DUE BY noon (stamped) next Friday in the main office. No late labs. Do not bring previous lab writeup for the next Lab session.
+
+\end{description}
+
+\end{document}
+\bye
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   
+
+
+
+                                       
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

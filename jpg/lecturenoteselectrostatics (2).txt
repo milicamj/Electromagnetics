@@ -1,0 +1,2329 @@
+\documentstyle[]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ovo je za novi oblik footnote-a ( vidi Kopka93 strana 156 )
+
+% ovo je predefinisanje datuma za cirilicu ( vidi Kopka93 strana 175 )
+%
+% TIME OF DAY
+%
+\newcount\hh
+\newcount\mm
+\mm=\time
+\hh=\time
+\divide\hh by 60
+\divide\mm by 60
+\multiply\mm by 60
+\mm=-\mm
+\advance\mm by \time
+\def\hhmm{\number\hh:\ifnum\mm<10{}0\fi\number\mm}
+
+
+
+\setlength{\textwidth}{17.5cm}
+\setlength{\textheight}{22.5cm}
+\setlength{\hoffset}{-2.5cm}
+\setlength{\voffset}{-1.5cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ %Stavi ovo pre \begin{document}
+ %draft special command for postscript
+
+
+\special{!userdict begin
+/bop-hook{
+gsave
+150 360 translate         %  start position
+45 rotate               %  orientation
+/Times-Roman findfont   %  font
+20 scalefont            %  scaling of font
+setfont
+0 0 moveto
+0.7 setgray             % gray level ( 1 -> white ;  0 black )
+(DRAFT Milica Markovic Fall 2006)                 % text you want to see
+true charpath
+%show    % or: true charpath for hollow letters
+%true charpath
+stroke grestore}def end}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\input psfig.sty
+
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+%\rule[.5mm]{\textwidth}{.5mm}
+
+%\vspace*{0.5cm}
+
+
+\title{EEE161 Transmission Lines and Waves}
+
+\maketitle
+
+\vspace{0.3cm}
+
+\noindent
+\rule[.5mm]{\textwidth}{.5mm}
+
+\noindent
+\centerline{Instructor: Dr. Milica Markovi{\'c}} \\
+\centerline{Office: Riverside Hall 3028} \\
+\centerline{Email: \verb!milica@csus.edu!} \\
+\centerline{Web: \verb!http://gaia.ecs.csus.edu/\~{}milica!}\\
+
+%\vspace*{0.2cm} 
+
+\noindent
+\rule[.5mm]{\textwidth}{.5mm}
+
+
+\vspace*{0.2cm}
+
+
+\abstract{The lecture notes are not a substitute to lecture attendance.}
+
+\section{Lecture 1 Vectors and Coordinate Systems}
+
+
+\subsection{Reading}
+Ulaby Chapter 3. 
+
+\subsection{Vectors and Scalars}
+Scalars are variables that are defined by only one number, their magnitude. Temperature in a semiconductor (or a room), voltage, impedance, work are scalar quantities. Scalars are defined only with magnitude if the quantity is a real number or magnitude and phase if it is a complex number. Scalars are variables that are defined by only one number, their magnitude, such as temperature T=$25^o$, voltage V=25/,V, $Z=R+j \omega L$ etc.
+
+Vectors have both magnitude and direction. For example NW wind of $10\frac{m}{h}$. Vector’s direction is described by  $\vec{NW}$ direction and wind strength is described by vector’s magnitude $10\frac{m}{h}$, see Figure \ref{wind}. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vector.ps,width=4cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+Vectors are variables that have magnitude and direction. For example NW wind of 25\,m/h, force of 1\,N in horizontal direction, etc. Some special vectors and properties of vectors are defined below.
+
+
+
+\begin{description}
+\item{Unit Vector} 
+
+Unit vector is a vector of magnitude equal to one, in a specified direction. To obtain a unit vector from vector $\vec{A}$, we divide the vector $\vec{A}$ with its magnitude $|A|$. In Figure 1, two unit vectors are shown. One is showing Nort (N), and the other North-West (NW) direction. 
+
+\begin{eqnarray}
+\vec{a}=\frac{\vec{A}}{|A|}
+\end{eqnarray}
+
+
+
+\item{Vector Addition}
+
+In Figure \ref{vectoradd}, vectors $\vec{A}$ and  $\vec{B}$ are added. The beginning of vector A is moved in parallel with itself to the end of vector B. The vector C starts at the beginning of vector B and ends and the end of vector A.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectoradd.ps,width=4cm} \\
+\end{center}
+\caption{Addition of vectors A and B.}
+\label{vectoradd}
+\end{figure}
+
+
+
+
+\item{Vector Subtraction}
+
+To subtract $\vec{A}$ and $\vec{B}$, first find $-\vec{B}$, then add $\vec{A}$ and $-\vec{B}$, as shown in Figure \ref{vectorsub}.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectorsubtr.ps,width=4cm} \\
+\end{center}
+\caption{Subtraction of vectors A and B.}
+\label{vectorsub}
+\end{figure}
+
+
+
+
+\item{Dot Product}
+
+Dot or Scalar product between vectors A and B is defined as $A \dot B = |\vec{A}| |\vec{B}| cos(\theta)$, where $\theta$ is the angle between $\vec{A}$ $\vec{B}$. The projection of $\vec{B}$ to $\vec{A}$ is $|\vec{B}| cos(\theta)$. This is important in case you want to find the projection of a $\vec{B}$ in a specified direction $\vec{x}$. The result of dot product is always a scalar.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectordotproduct.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+DOT PRODUCT EXAMPLE
+
+\item{Cross Product}
+
+Cross or vector product between  $\vec{A}$ and $\vec{B}$ is defined as $A x B = |\vec{A}| |\vec{B}| sin(\theta)$, where $\theta$ is the angle between $\vec{A}$ $\vec{B}$. The magnitude of the cross product is equal to the surface area of the parallelogram made by vectors A and B, and the direction of the cross product is perpendicular to both $\vec{A}$ and $\vec{B}$. The result of dot product is always a scalar.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectorcrossproduct.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+CROSS PRODUCT EXAMPLE 
+
+\end{description}
+
+\section{Coordinate Systems}
+
+\begin{description}
+\item{Cartesian Coordinate System}
+
+Cartesian or rectangular coordinate system is the one we are most familiar with. The variables in the rectangular coordinate system are $(x,y,z)$. An example of a position vector (a vector that originates in the coordinate center) in rectangular coordinate system is shown in Figure \ref{vectorinrec}. We see that $\vec{A}$ can be found if three unit vectors $\vec{x}$, $\vec{y}$ and $\vec{z}$ are added, with appropriate magnitudes. $\vec{A} = 2 \vec{x} +3 \vec{y}+ 3 \vec{z}  $. The magnitude of this vector is given as $|\vec{A} = \sqrt{2^2+3^2+3^2}$. 
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=coordinatesystemrectangular.ps,width=6cm} \\
+\end{center}
+\caption{Vector in a rectangular coordinate system.}
+\label{vectorirec}
+\end{figure}
+
+
+If the vector does not originate at the coordinate center, such is the case with $\vec{B}$ in Figure \ref{noc}, the vector is described by two vectors that designate the beginning and end of vector B, respectively vectors $\vec{R_0}$ and $\vec{R}$. In this case, the $\vec{B}$ is defined as a difference between the $\vec{R_0}$ and $\vec{R}$. $\vec{B}=\vec{R_0}-\vec{R}$. The magnitude of $\vec{B}$ is given as $|\vec{B} = \sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}$.
+
+From Figure \ref{reccs}, we see that the unit volume in rectangular coordinate system is a cube of volume $dx dy dz$. Differential surface areas are defined as $dx dy \vec{z}$, $dx dz \vec{y}$, $dy dz \vec{x}$. The unit length in Cartesian coordinates is given as $dx \vec{x} + dy \vec{y} + dz \vec{z}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=rectangularcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Unit volume in rectangular coordinate system.}
+\label{reccs}
+\end{figure}
+
+
+
+
+
+\item{Cylindrical Coordinate System}
+
+The variables in the cylindrical coordinate system shown in Figure \ref{cylsyst} are $(r,\phi,z)$. An example of a position vector in rectangular coordinate system is shown in Figure \ref{vectorincyl}. We see that $\vec{A}$ can be found if two unit vectors $\vec{r}$ and $\vec{z}$ are added, with appropriate magnitudes. Note that the position vector in cylindrical coordinate system is cylindrically symmetrical and implicitly defined through $\vec{r}$ dependence on $\phi$. In some cases, as we will see later, it is necessary to exactly specify where is vector r. It is useful to initially define the position vector in cylindrical coordinates, and then use cylindrical to Cartesian transformation. For example, vector. $\vec{A} = 2 \vec{x} +3 \vec{y}+ 3 \vec{z}  $. The magnitude of this vector is given as $|\vec{A} = \sqrt{2^2+3^2+3^2}$. 
+
+OVDE SLIKA KAO U CARTESIAN COORDINATE SYSTEM SAMO CYLINDRICAL, WITH POSITION VECTOR.
+
+
+
+Unit length in this coordinate system is given as $dr \vec{r} + r d\phi \vec{\phi} + dz \vec{z}$. Differential surface areas are given as $d\phi dz \vec{r}$, $dr dz \vec{\phi}$, $dr d\phi \vec{z}$. The unit volume is given as $r dr d\phi dz$.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=coordinatesystemcylindrical.ps,width=3cm} \\
+\end{center}
+\caption{Unit Volume in Cylindrical Coordinate System.}
+\label{cylsyst}
+\end{figure}
+
+
+
+
+\item{Spherical Coordinate System}
+
+
+
+
+
+The variables in the spherical coordinate system shown in Figure \ref{sphersyst} are $(r,\phi,\theta)$. An example of a position vector in rectangular coordinate system is shown in Figure \ref{vectorincyl}. We see that $\vec{C}$ depends on only one unit vector $\vec{R}$ with appropriate magnitude. Note that the position vector in spherical coordinate system is spherically symmetrical and implicitly defined through $\vec{R}$ dependence on $\phi$ and $\theta$. In some cases, as we will see later, it is necessary to exactly specify where is vector R in space. It is useful to initially define the position vector in spherical coordinates, and then use spherical to Cartesian transformation. If the vector is not a position vector, e.g. does not originate at the coordinate beginning, the vector can be represented as a difference between two position vectors.
+
+OVDE SLIKA KAO U CARTESIAN COORDINATE SYSTEM SAMO CYLINDRICAL, WITH POSITION VECTOR.
+
+
+
+
+Unit length in this coordinate system is given as $dR \vec{R} + R d\theta \vec{\phi} + R sin(\theta)d\phi \vec{\phi}$. Differential surface areas are given as $R^2 sin(\theta) d\theta d\phi dz \vec{R}$, $R sin(\theta)dR d\phi \vec{\theta}$, $R dR d\theta \vec{phi}$. The unit volume is given as $R^2 dR d\theta  d\phi$.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Unit Volume in Spherical Coordinate System.}
+\label{sphersyst}
+\end{figure}
+
+
+
+
+The summary of all vector relations is given in Ulaby book, Table 3-1.
+
+
+
+\end{description}
+
+\section{Field Visualization}
+There are several ways people use to visualize fields. Two most commonly used are shown in Figure \ref{visual} and are described below.
+\begin{enumerate}
+\item The simplest way is to represent each vector’s magnitude with appropriate vector length at each point, as shown in Figure \ref{visual}. This method is the simplest one, but creates graphs that are sometimes difficult to see, especially if there is a sudden, large change in the field.  This is the method we will use to visualize electrostatic and magnetostatic fields in Matlab.
+\item A more difficult way to plot the field yields graphs that are easier to understand and visualize, and are shown in the bottom part of Figure \ref{visual}. Here, the strength of the field in an area is proportional to the number of lines per unit area. Strong fields are visualized with many lines close to each other, whereas weak fields are visualized with fewer number of lines. 
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=fieldvisualization.ps,width=3cm} \\
+\end{center}
+\caption{Different ways to visualize vector field strength.}
+\label{visual}
+\end{figure}
+
+
+Plot the fields below using the first method of visualization mentioned above.
+\begin{enumerate}
+\item $\vec{E} = x \vec{x} $
+\item $\vec{E} = x \vec{y} $
+\item $\vec{E} = xyz \vec{x} $
+\item $\vec{E} = xzy \vec{y} $
+\item $\vec{E} = zxy \vec{z} $
+\item $\vec{E} = xy \vec{x} $
+\item $\vec{E} = xz \vec{x} $
+\item $\vec{E} = yz \vec{y} $
+\item $\vec{E} = xy \vec{y} $
+\item $\vec{E} = xy \vec{z} $
+\end{enumerate}
+
+
+
+\section{Gradient, Divergence and Curl}
+
+
+\subsection{Gradient}
+
+Gradient operates on a scalar function and the result of the gradient operation is a vector. Result of gradient operation on  a scalar function, therefore has a magnitude and direction. Direction of result points in the direction of the maximum increase of a scalar function defined in 3D. Magnitude of the result is equal to the maximum rate of change of a function. 
+Gradient is mathematically defined as
+
+\begin{eqnarray}
+\Delta T = \frac{\partial T}{\partial x} \vec{x} +\frac{\partial T}{\partial y} \vec{y} +\frac{\partial T}{\partial z} \vec{z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+
+For example, temperature in a slab of silicon is a function of three dimensions. If this temperature was a function of one dimension, then we could find the rate of change of the temperature at a point by finding the derivative at the point. Gradient is a kind of 3D derivative of a function and shows us the direction and magnitude of the  maximum rate of change of a 3D function. Note that the derivative (in 1-D) does not specify the maximum rate of change, just the rate of change at a point.  The rate of change of a 3D function in  a specified direction $l$ can be found by taking the dot product of the gradient and a unit vector in a specified direction. This quantity is appropriately called directional derivative.
+
+
+\begin{eqnarray}
+\frac{ dT}{dx} = \Delta T \dot \vec{l} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+
+\subsection{Divergence}
+
+Divergence operates on a vector function and the result of the divergence operation is a scalar. Result of divergence operation on  a vector function, therefore has only the magnitude. Divergence is really a flux of a vector through the closed surface. To understand flux better,  if we ficualize the field intensity as field line density per unit area, as shown in Figure \ref{flux} then we can simply “count” the number of field lines per unit area to find the magnitude  of flux. It matters which way the field lines go through the surface. If the  same number of lines go in and out of a closed surface, this means that there is no source or sink inside the closed surface, and the field is called divergenceless. If the net flux through a closed surface is positive (with respect to the normal on the surface oriented outwards), then there is a source of the field inside the closed surface. If the flux is negative, a sink is inside the closed surface.
+
+
+Divergence is mathematically defined as
+
+\begin{eqnarray}
+\Delta \dot \vec{A} = \frac{\partial \vec{A}}{\partial x}  +\frac{\partial \vec{A}}{\partial y} +\frac{\partial \vec{A}}{\partial z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=flux.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{flux}
+\end{figure}
+
+
+
+\subsection{Curl}
+
+
+
+
+Curl operates on a vector function and the result of the curl operation is a vector. Result of curl operation on  a vector function, therefore has a magnitude and direction. Curl describes the curling (rotation) of the field at a point. If the field is curling, then the direction of the curl will be perpendicular to the curling and the magnitude will describe the amount of rotation. Curl of a uniform field is zero and the field is called irrotational.
+
+
+Curl is mathematically defined as
+
+\begin{eqnarray}
+\Delta \vec{A} = \frac{\partial \vec{A}}{\partial x} \vec{x} +\frac{\partial \vec{A}}{\partial y} \vec{y} +\frac{\partial \vec{A}}{\partial z} \vec{z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+\subsection{Laplacian}
+
+A special name Laplacian is assigned to the divergence of gradient of a scalar quantity, mathematically
+
+
+\begin{eqnarray}
+\lambda^2 T = \frac{\partial^2 T}{\partial x^2}  +\frac{\partial^2 T}{\partial y^2} +\frac{\partial^2 T}{\partial z^2} \\ \nonumber
+\end{eqnarray}
+
+
+\section{Introduction to Electric Field}
+
+
+\begin{itemize}
+\item a bunch of positives (negatives) would repel away from each other.
+\item the opposite pieces would attract each other.
+\item the net result is a balance! Balance is formed by tight fine mixtures of positives and negatives.
+\item there is no attraction/repulsion between them
+\end{itemize}
+ 
+
+What we described is exactly electrical force. All matter is a mixture of positive protons and negative electrons in a perfect balance. What is the expression for the strength and direction of this force? Coulomb’s law.
+
+\begin{eqnarray}
+F^{\to}_e=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} R^{\to}_{12}
+\end{eqnarray}\label{Coulombslaw}
+
+In the above equation, $\epsilon_0$ is electrical permittivity, $q_1,q_2$ electrical charge and $r$ is the distance between charges.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=twostaticcharges.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+\subsection{How perfect is this balance?}
+
+{\bf EXAMPLE} 
+
+
+Let’s calculate the repulsive force if there was a little bit of unbalance. Say that each of these two tables had 100 extra electrons. Let’s try to calculate the repulsive force. 
+
+
+Electromagnetic force is one of four we know today. Let’s discover the other forces.
+
+
+\subsection{Why is it that the atomic nucleus stays together when it is made out of the same kind of matter?}
+
+
+We just elaborated that if two charges are of the same kind, the electrostatic force will push them away from each other. It seems that there needs to be another kind of force that keeps the nucleus together. This force is called the nuclear force. This is the strongest force, but acts at a short distance. For example if we have a lot of protons in the nucleus such as in radioactive elements the nucleus can split by just lightly tapping it. 
+
+The last force is a weak-interaction force that plays role in radioactive decay. 
+
+
+\subsection{Which four forces did we talk about today?}
+
+\begin{itemize}
+\item Nuclear Force
+\item Electromagnetic Force
+\item Weak-Interaction Force
+\item Gravitational Force.
+\end{itemize}
+
+\subsection{Coulomb’s Law}
+
+Let’s review the Coulomb’s Law that governs the behavior of electrostatic force.
+
+\begin{enumerate}
+\item Like charges repel
+\item Opposite charges attract
+\item The force acts along the line that joins the charges
+\item The strength of the force is given by the expression \ref{Coulombslaw}.
+\end{enumerate}
+
+
+
+
+
+\subsection{What’s the difference between the terms force and field?}
+
+Another bunch of questions could be:
+\begin{itemize}
+\item How do we now if we are in a gravitational field.
+\item What is the difference between the gravitational field and gravitational force?
+\item More specifically what is the meaning of the term “field” anyway?
+\end{itemize}
+
+Let’s try to answer some of these questions.
+
+\subsection{More about the gravitational force and field}
+
+How do we know that we are in the gravitational field and not in zero gravity field? No matter how hard we try to launch ourselves in the outer space by jumping, we still come back to mother earth. If we drop a pencil, where will it go? Why is that so? The gravitational force attracts the pencil (and us).  Another way to say that a gravitational force exists is to say that there is the field of force acting on an object. This is our first answer to the question:” What is that term {\bf field} anyway”. Let’s talk more about fields.
+
+We know that the gravitational force acts at distance. There is no giant muscle that attracts our pencil. Earth induces a gravitational field, it’s influence exists at every point in space around it. This phenomenon of direct action on a distance has given rise to the concept of “fields”.  
+
+Let’s see an example of gravitational force. 
+
+What is the source of the earth’s gravitational force? Earth (of course). It would be good if we can define a quantity to show what is the strength of this force at any point in space. 
+
+HERE GOES THE PICTURE OF EARTH AND MOON WITH FORCE ACTING ON THE MOON. 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=earth.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+We can define gravitational field at any point in space through the gravitational force: If an object with mass $m_m$ existed at the point $r$ away from earth, it would experience the force $F_g$, we can say that the gravitational field at that point is equal to
+
+\begin{eqnarray}
+\Psi = \frac{F_g}{m_m} \\
+\Psi = \gamma \frac{m_e}{r^2}
+\end{eqnarray} \label{gravitationalfield}
+
+
+We don’t need the moon in any particular spot to know what would be the gravitational field at that particular point. Note that the field does not depend on the moon’s mass! It depends only on the earth’s mass, gravitational constant and the distance to the point we want to find the field.
+
+HERE GOES THE PICTURE OF EARTH WITHOUTH THE MOON WITH FIELD ACTING ON THE SPOT WHERE THE MOON WOULD BE. 
+
+
+\section{Electrostatics}
+
+
+
+
+\subsection{More about the Electrical force and field}
+
+The same situation we have with the electrical force and field. The electric field  is defined as the force that a charge would experience divided by the charge.
+
+
+\begin{eqnarray}
+E = \frac{F_e}{q_2} \\
+E =  \frac{q_e}{4 \pi \epsilon_0 r^2}
+\end{eqnarray} \label{electricfield}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=unitchargefield.ps,width=3cm} \\
+\end{center}
+\caption{Electric field due to a unit charge q.}
+\label{wind}
+\end{figure}
+
+
+
+What is the source of the electrical force or field? Electric charge (of course). 
+
+\subsection{Properties of Electric Charge}
+
+\subsubsection{Electric charge cannot be created or destroyed.} If the total net charge of an object is $q$, and if that object has $n_e$ electrons and $n_p$ protons, then the total charge is $q=n_p e-n_e e$. 
+
+{\large EXAMPLE}
+
+An object has 3 protons and 2 electrons. Find what is the net charge of the object. Assume that the 2 protons and 2 electrons have recombined (became neutral). What is the net charge now?
+
+\subsubsection{What is the electric field if we have more than one charge?}
+
+The total electric field at a point in space from the two charges is equal to the sum of the electric fields from the individual charges at that point.
+
+{\large EXAMPLE} Two positive unit charges are fixed in air in Cartesian coordinate system at points A(0,-1) and B(0,1). Find the electric field at the points C(0,0) and D(1,1).
+
+\subsubsection{What if the charge is not in air?} 
+
+Let’s look at Coulomb’s law again. 
+
+
+\begin{eqnarray}
+F^{\to}_e=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} R^{\to}_{12}
+\end{eqnarray}\label{Coulombslaw2}
+Which quantity in this formula depends on the material? $\epsilon_0$. If the charge is within a dielectric material, then we need to account for that by changing this $\epsilon_0$ somehow. If we place the charge inside a dielectric material what do you think will happen with the atoms in the material? The atoms will get distorted and polarized. Such a polarized atom we call an electric dipole. The distortion process is called polarization. Because the material acts in such a way, the electric field around this point charge is different than if there was no material. In any dielectric medium, the electric field is defined as
+
+
+\begin{eqnarray}
+F^{\to}_e=\frac{q_1 q_2}{4 \pi \epsilon r^2} R^{\to}_{12} \\
+\epsilon = \epsilon_0 \epsilon_r
+\end{eqnarray}\label{Coulombslaw3}
+
+We added unitless quantity $\epsilon_r$, relative dielectric constant. $\epsilon_r$ values for different materials is shown in one of the tables in the book. Let’s see it’s values for different materials. $\epsilon_r$ varies from 1 (air), to 2.2 (Teflon) to 80 (water). 
+
+Electric field density is the quantity that we introduce here:
+
+\begin{eqnarray}
+D= \epsilon E
+\end{eqnarray}
+
+\subsection{Electric Field in Rectangular Coordinates}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=singlechargecartcoord.ps,width=3cm} \\
+\end{center}
+\caption{Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section of the loop.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+
+\subsection{Electric Field Distribution}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=chargedistribution.ps,width=3cm} \\
+\end{center}
+\caption{Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section of the loop.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+{\bf Line charge distribution}
+
+
+{\bf Surface charge distribution}
+
+
+DISK of charge
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=surfacedistributiondisk.ps,width=3cm} \\
+\end{center}
+\caption{Disk of charge can be regarded as an infinite number of concentric rings of charge.}
+\label{wind}
+\end{figure}
+
+Infinite plane
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=constantelectricfieldinfiniteplane.ps,width=3cm} \\
+\end{center}
+\caption{Electric field from two rings located on the infinite plane.}
+\label{wind}
+\end{figure}
+
+
+
+
+{\bf Volume charge distribution}
+
+
+
+
+
+{\large EXAMPLE} Line charge distribution Loop of wire
+
+{\large EXAMPLE} Surface charge distribution Disk
+
+{\large EXAMPLE} Volume charge distribution diode
+
+
+\subsection{Gauss’ Law}
+
+
+
+
+{\large EXAMPLE} Wire
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=gausslawwire.ps,width=3cm} \\
+\end{center}
+\caption{Application of Gauss’ Law to find Electric Field of wire.}
+\label{wind}
+\end{figure}
+
+
+
+
+{\large EXAMPLE} Infinite Plane
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=infiniteplaneofcharge.ps,width=3cm} \\
+\end{center}
+\caption{Infinite plane charged with positive surface charge density $\rho_S$.}
+\label{wind}
+\end{figure}
+
+
+
+
+{\large EXAMPLE} Two Infinite Planes
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=infiniteparallelplates.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+
+\section{Definition of Potential and Voltage}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=potential.ps,width=3cm} \\
+\end{center}
+\caption{Forces on a unit charge in an external field $\vec{E}$.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=workindependentofpath.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+{\large EXAMPLE} Potential due to unit charge
+
+
+
+
+
+\subsection{Capacitance}
+What is capacitance, how does it affect circuits.
+
+\subsection{Electric Field inside Metals}
+
+
+\subsection{Boundary Conditions}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=boundaryconditions.ps,width=3cm} \\
+\end{center}
+\caption{Boundary Conditions for Electric Field.}
+\label{wind}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=integrationpathtangfield.ps,width=3cm} \\
+\end{center}
+\caption{Integration path to find tangential fields at the boundary.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=metalsphereinefield.ps,width=3cm} \\
+\end{center}
+\caption{Metal sphere in an external electric field.}
+\label{wind}
+\end{figure}
+
+
+
+
+\subsection{Image Theory}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Static Magnetic Field}
+
+We talked about electric field so far. Let’s change a topic to the magnetic field.
+
+\subsection{What is the source of the magnetic field?}
+
+Magnet. This is the first source of the magnetic field that people have discovered in Greece long time ago. \footnote{to be exact …} Danish scientist Oersted discovered later that the current passing through wire will deflect a compass needle. Later French scientists Biot and Savart quantified this statement:
+
+\begin{eqnarray}
+B = \mu_0 \frac{I}{2 \pi r}
+\end{eqnarray}
+
+Where B is magnetic flux density, $\mu_0$ is magnetic permeability, I is the electric current, and r is the distance to the point where the magnetic field is measured.
+
+HERE PICTURE WITH A WIRE AND THE magnetic field.
+
+
+
+In a magnetic material instead of $\mu_0$ in the above formula we have $\mu=\mu_0 \mu_r$. $\mu_r$ is relative magnetic permeability.
+
+\subsection{Constitutive parameters of a material}
+
+We have introduced two constitutive parameters so far, electric permittivity $\epsilon$ and magnetic permeability $\mu$. The third parameter is conductivity $\sigma$. Conductivity is zero for perfect insulator and infinite for perfect conductor. 
+
+The speed of light in air is equal to 
+
+\begin{eqnarray}
+c=\frac{1}{\sqrt{\epsilon_0 \mu_0}}
+\end{eqnarray}  
+
+ 
+\subsection{Charged Particle in a Static Magnetic Field}
+
+
+
+\subsection{Force on a conductor carrying current}
+
+
+\subsection{Wire frame carrying current in a static magnetic field}
+
+
+\subsection{Biot-Savart’s Law}
+How to find the magnetic field due to a current distribution.
+
+
+
+
+
+\subsection{Ampere’s Law}
+
+
+\subsection{Inductance}
+Types, internal external.  Ways to find inductance through energy and directly. What is inductance, how does it affect circuits.
+
+{\large EXAMPLE} Two wire line
+{\large EXAMPLE} Coax
+{\large EXAMPLE} Internal inductance of wire, block etc.
+
+\subsection{Mutual Inductance}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=increaseinflux.ps,width=3cm} \\
+\end{center}
+\caption{Mutual Inductance: Increasing the magnetic field and therefore current in one wire due to another wire in vicinity. }
+\label{wind}
+\end{figure}
+
+
+\subsection{Inductance in circuit theory}
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=circuitwithinductor.ps,width=3cm} \\
+\end{center}
+\caption{Simple electronic circuit with an inductance and resistance.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+\section{Electromagnetics}
+
+
+Electromagnetics is usually studied by observing static electric fields, static magnetic fields and dynamic electromagnetic fields. Static electric fields are independent from static magnetic fields. In dynamic electromagnetic fields changing electric field induces changing electric field and so on. 
+
+
+
+\subsection{Induced EMF}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=inducedvoltage.ps,width=3cm} \\
+\end{center}
+\caption{Induced voltage due to a loop of wire with AC current. Voltage induced is due to inductance of the loop of wire.}
+\label{wind}
+\end{figure}
+
+
+
+\subsection{Motional EMF}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=motionalemf.ps,width=3cm} \\
+\end{center}
+\caption{Example of induced motional electromotive force.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+
+\section{Waves}
+\subsection{Waves}
+
+We have seen waves in oceans, rivers and ponds. If you throw a stone into a pond it will make ripples on the surface of the pond. We know that waves have velocity, they propagate from the center of the disturbance out. There are two types of waves, transient and continuous harmonic waves. We can also observe waves in 1-D (string attached on one end), 2-D ripples in a pond or 3-D. In 1-D the disturbance varies in one variable, etc. 
+
+SHOW 3-D WAVES FROM THE ULABY CD
+
+Let’s review sinusoidal signals first.
+
+\begin{eqnarray}
+y(t)= A cos(\omega t + \theta)
+\end{eqnarray}
+
+PLOT OF THE SINUSOIDAL WAVE VS TIME
+
+
+PLOT OF THE SINUSOIDAL WAVE VS SPACE
+
+
+We’ll talk in Lecture 3 about what is the difference and similarities between the two plots shown above
+
+
+
+
+{\it For additional reading see Ulaby and Feynman Lectures on Physics Vol. II 1-1. \footnote{May the force be with you.}}
+
+\newpage
+
+\section{Lecture 2 Review of basic concepts}
+
+
+\subsection{Reading}
+Ulaby Chapter 1, The beginning of the lecture is adapted from the book Feynmann lectures on Physics, Vol. II 1-1
+
+\subsection{Purpose of the lecture and the main point}
+
+Review of basic concepts.
+
+
+\subsection{What does it mean when we say a medium is lossy or lossless?}
+Lossless medium: Electromagnetic wave power is not turning into heat. Lossy medium: Electromagnetic wave is heating up the medium, therefore it’s power is decreasing as $e^-\alpha x$.
+
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+medium     & attenuation constant $\alpha$ [dBm/km]     \\  \hline       
+coax        & 60                                 \\ \hline
+ waveguide  & 2  \\ \hline          
+fiber-optic &  0.5  \\ \hline
+\end{tabular}
+\end{center}
+
+
+In guided wave systems such as transmission lines and waveguides the attenuation of power with distance follows approximately $e^{-2\alpha x}$. The power radiated by an antenna falls off as $1/r^{2}$.
+
+
+\subsection{Decibels?}
+
+What is a dB? dB is a ratio of two power or two voltages. For example if we want to say that the output power is twice the input power we say that the power gain is 3dB.
+
+\begin{eqnarray}
+G=10 log \frac{P_{out}}{P_{in}}
+\end{eqnarray}
+
+
+{\large{EXAMPLE}} Find the output power if the input power is 1W and the power gain is 6dB.
+
+
+\subsection{Review of complex numbers}
+
+\begin{enumerate}
+\item A complex number $z$ can be represented in Cartesian eqn.  or Polar eqn. \ref{polar} form. 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=complexnumberz.ps,width=3cm} \\
+\end{center}
+\caption{Complex number z in rectangular and polar coordinates.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+\begin{eqnarray}
+z= x + j y \label{chartesian} \\ \label{polar}
+z=|z| e^{j \Theta} 
+\end{eqnarray}
+
+
+$x$ is the real part, $y$ is the imaginary part, $|z|$ is the magnitude and $\Theta$ is the angle of the complex number. 
+
+\item Euler's Identity
+
+\begin{eqnarray}
+e^{j \Theta} = cos \Theta + j sin \Theta
+\end{eqnarray}
+
+
+\item Cartesian and polar form representation 
+
+\begin{eqnarray}
+|z|=\sqrt{x^2+y^2} \\
+\Theta = arctg \frac{y}{x}
+\end{eqnarray}
+
+
+\item Complex Conjugate
+
+\begin{eqnarray}
+z^* = (x+ j y)^* = x- j y = |z| e^{-j \Theta}
+\end{eqnarray}
+
+
+\item Complex number addition
+
+\begin{eqnarray}
+z_1=x_1 + j y_1 \\
+z_2=x_2 + j y_2 \\
+z_1+z_2 = x_1 + x_2 + j ( y_1 + y_2)
+\end{eqnarray}
+
+\item Multiplication
+
+\begin{eqnarray}
+z_1=x_1 + j y_1 \\
+z_2=x_2 + j y_2 \\ 
+z_1 z_2 = (x_1 x_2 – y_1 y_2) + j ( x_2 y_1 + x_1 y_2)
+\end{eqnarray}
+  
+Prove it!
+
+
+\item Division
+
+
+\begin{eqnarray}
+z_1=|z_1| e^{j \Theta_1} \\
+z_2=|z_2| e^{j \Theta_2} \\
+\frac{z_1}{ z_2} = \frac{|z_1|}{|z_2|} e^{j \Theta_1 -\Theta_2}
+\end{eqnarray}
+  
+
+What happens in Cartesian coordinates?
+
+
+\item Power and Square root
+
+
+\begin{eqnarray}
+z_1=|z_1| e^{j \Theta_1} \\
+z_1^n=|z_1|^n e^{j n \Theta} \\
+^n\sqrt{z_1}= ^n\sqrt{|z_1|} e^{j\frac{\Theta}{n}}
+\end{eqnarray}
+
+
+
+
+\item Some examples. Find the magnitude and phase of a complex number
+
+
+\begin{eqnarray}
+-1 \\
+j \\
+\sqrt{j}
+\end{eqnarray}
+
+\end{enumerate}
+
+\subsection{Phasors}
+
+Let's assume we don't know how to solve the circuit in the frequency
+domain. The next question is 
+how do we solve a circuit in the time domain?
+
+{\large Example}
+HERE PICTURE OF A SIMPLE RC CIRCUIT WITH A SINUSOIDAL SOURCE AND THE
+OUTPUT OVER THE CAPACITOR.
+
+the final equation is
+
+\begin{eqnarray}
+v_s(t) = R i + \frac{1}{C} \int i dt \label{td}
+\end{eqnarray} 
+
+
+Where
+\begin{eqnarray}
+v_s(t)= A cos (\omega t + \Theta ) \label{tdff}
+\end{eqnarray}
+
+We see that even for the simplest possible circuit we get a
+differential equation in the time domain.
+
+Use of phasors simplify the equations to solve a circuit
+significantly. Instead of differential equations we get a set of
+linear equations. 
+ 
+Let's look at the forcing function \ref{tdff} first. What is the
+important information here? Amplitude and phase. All currents and
+voltages in a circuit will have the same cos expression in them, but amplitude and
+phase information will change depending on the circuit topology. It would be good if we
+could loose this $cos (\omega t)$ from the picture and replace it with some
+function that is simpler to deal with.  Let's try and add a piece to
+this $cos$. 
+
+\begin{eqnarray}
+ A cos (\omega t + \Theta ) + j A sin (\omega t + \Theta)
+\end{eqnarray}
+
+It seems that we made the expression more complicated. However, if we
+remember Euler's identity, the expression becomes
+
+
+\begin{eqnarray}
+A e^{j(\omega t + \Theta)}=A e^(j\Theta) e^(j\omega t)
+\end{eqnarray}
+
+We see that now we have extracted the phase and amplitude information
+and separated it from the exponential expression. The piece that
+contains the amplitude and phase information we call phasor $V_S(j \omega)$.
+
+
+
+\begin{eqnarray}
+A e^(j\Theta) e^(j\omega t)=V_S(j \omega) e^(j\omega t)
+\end{eqnarray}
+
+
+Why is this expression better then the one with a cos? We'll let's
+express all time-dependent variables as well as derivatives and
+integrals in this fashion. 
+
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+$ i(t)$ & $I(j \omega)   e^{j\omega t}$    \\  \hline       
+$ v(t)$ & $V(j \omega)   e^{j\omega t}$ \\ \hline
+$ \frac{v(t)}{dt}$ & $j \omega V(j \omega)   e^{j\omega t}$ \\ \hline
+$ \int  i(t) dt$ & $\frac{I(j \omega)}{j \omega}   e^{j\omega t}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+We now replace the time-domain quantities in equation \ref{td} with
+these newly developed expressions.
+
+
+
+\begin{eqnarray}
+V_S(j \omega)  e^{j\omega t} = R I(j \omega)   e^{j\omega t} +
+\frac{I(j \omega)}{j \omega C}   e^{j\omega t}
+\end{eqnarray}
+
+A common term in the previous equation is $ e^{j\omega t}$. We can now
+write the equation as
+
+
+
+
+\begin{eqnarray}
+V_S(j \omega)   = R I(j \omega)    + \frac{I(j \omega )}{j \omega C} 
+\end{eqnarray}
+
+
+{\large Example} 
+Since this is a linear equation, we can easily solve it! 
+
+Once we solve it, how do we find the time-domain expression again?
+First we need to multiply the phasor with $ e^{j\omega t}$ then find
+the real part of the expression.
+
+
+\begin{eqnarray}
+ I(j \omega)  e^{j\omega t} \\
+i(t) = Re\{ I(j \omega)  e^{j\omega t} \}
+\end{eqnarray}
+
+{\bf How do we now solve a circuit using phasors? We
+replace all impedances with their phasor expressions, find the phasor
+expression for the current and then find the time-domain expression
+for the current. Using this techinique we can find only the
+steady-state expression for the current/voltage.}
+
+{\large Example} Find the voltage accross the resistor in the circuit
+below.
+
+HERE GOES A PICTURE OF THE CIRCUIT WITH AN INDUCTOR AND RESISTOR
+
+
+The phasor expression for impedance shows us what happens with certain
+impedances at different frequencies.
+
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+     &     \\  \hline       
+     &                                 \\ \hline
+     &  \\ \hline          
+     &    \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|} \hline
+cicruit element & impedance & low frequencies $f \to 0$& high frequencies $f \to \inf$   \\  \hline  
+ capacitor     & $\frac{1}{j \omega C}$    & $\infty$ & $0$    \\  \hline       
+ inductor & $j \omega L$              &    $0$   &       $\infty $             \\ \hline
+\end{tabular}
+\end{center}
+
+
+\section{Lecture  3  Introduction to Transmission Lines}
+
+
+
+\subsection{Reading}
+Ulaby Chapter 1, The beginning of the lecture is adapted from the book Feynmann lectures on Physics, Vol. II 1-1
+
+\subsection{Purpose of the lecture and the main point}
+
+Introduction to transmission lines
+
+
+\subsection{What is a transmission line?}
+
+Any wire, cable or line that guides energy from one point to another
+is a transmission line. Whenever you make a circuit on a breadboard,
+every wire you attach is  a transmission line. Wheather we see the propagation effects on a
+line depends on the line length. So, at lower frequencies we do not
+see that the signal (wave) actually propagates from one end of the wire to
+the other. 
+
+
+\subsection{What is wavelength?}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=waveontransline.ps,width=8cm} \\
+\end{center}
+\caption{Section of a coaxial cable.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+\subsection{Wave types}
+ Types of waves include acoustic waves,
+mecahnical pressure waves, electromagnetic (EM) waves. Here we will focus
+on EM waves and transmission lines for EM waves. 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=generaltransmissionlinecircuit.ps,width=3cm} \\
+\end{center}
+\caption{Electronic Circuit with an emphasis on cables that connect the generator and the load.}
+\label{wind}
+\end{figure}
+
+
+HERE GOES A PICTURE OF TRANSMISSION LINE WITH THE GENERATOR ON ONE END
+AND LOAD ON THE OTHER with AA sending end and BB receiving end and
+length l
+
+How much time it takes for this signal to go from AA end to BB end? 
+$t=\frac{l}{c}$, where $c=3 10^8$. If the signal at end AA is
+
+\begin{eqnarray}
+v_{AA^`}(t)=A cos(\omega t)
+\end{eqnarray}
+
+Then at the other end the signal is
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=v_{AA^`}(t-\frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega (t - \frac{l}{c}))  \\
+v_{BB^`}(t)=A cos(\omega t - \omega \frac{l}{c})) \\
+v_{BB^`}(t)=A cos(\omega t -  \frac{\omega }{c} l)) 
+\end{eqnarray}
+
+Since we know that $\omega = 2 \pi f$
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A cos(\omega t -  \frac{ 2 \pi f }{c} l)) 
+\end{eqnarray}
+
+The quantity $\frac{c}{f}$ is the wavelength $\lambda$
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A cos(\omega t -  \frac{ 2 \pi }{\lambda} l)) \label{tllength}
+\end{eqnarray}
+
+The quantity $ \frac{ 2 \pi }{\lambda} $ is the propagation constant $\beta$
+
+
+Finally the expression for the voltage at BB end is
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A cos(\omega t - \beta l) \\
+v_{BB^`}(t)==A cos(\omega t - \Psi)
+\end{eqnarray}
+
+We see that at BB the signal will experience a phase shift.
+
+We will derive this equation later again from the Telegrapher's
+equations \ref{telegrapher}. 
+
+Now let's see how the length of the line $l$ affects the voltage at the
+end BB or a wire. Look at Equation \ref{tllength}.
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A cos(\omega t - 2 \pi \frac{ l }{\lambda} )) \label{tllength}
+\end{eqnarray}
+
+
+
+\begin{enumerate}
+\item If $\frac{l}{\lambda} < 0.01$ The angle $2 \pi
+\frac{l}{\lambda}$ is of the order of 0.0314 rad or about 2$^0$. This
+phase is obviosly something that we don't have to worry about. When
+the length of the transmission line is muchn smaller than $\lambda$
+the wave propagation on the line can be ingnored.
+\item If  $\frac{l}{\lambda} > 0.01$, say  $\frac{l}{\lambda} =0.1$,
+then the phase is 20$^0$, which is a significant phase shift. In this
+case it may be necessary to account for reflected signals, power loss
+and dispersion on the transmissio line.
+\end{enumerate}
+
+Dispersion is an effect where different frequencies travel with
+different speeds on the transmission line.
+
+{\large Example}
+Find what is the length of the cable at which we need to take into account
+transmission line effects if the frequency of operation is 10\,GHz.
+
+
+
+
+
+\subsection{Types of transmission lines}
+
+Coax, two wire line, microstrip etc
+
+HERE PICTURES OF DIFFERENT LINES
+
+
+
+\subsection{Propagation modes on a transmission line}
+
+Coax, two wire line, microstrip etc can be approximated as TEM up to
+the 30-40\,GHz (unshielded), up to 140\,GHz shielded.
+
+
+
+
+\begin{enumerate}
+\item TEM E, M field is entirely transverse to the direction of
+propagation
+\item TE, TM E or M field is in the direction of propagation
+\end{enumerate}
+
+
+
+
+\subsection{Derivation of the wave equation on a transmission line}\label{telegrapher}
+
+In this section we will derive what is the expression for the signal
+along a wire as a function of space $z$. So far in curriculum we have
+only been talking about what is the expression for the signal as a
+function of time.
+
+We want to derive the equations for the case when the transmission
+line is longer then the fraction of a wavelength. To make sure that we
+don't encounter the transmission line effects to start with, we can
+look at the piece of a transmission line that is much smaller then
+the fraction of a wavelenth. In other words we chop the transmission
+line into small pieces to make sure there are no transmission line
+effects, as the pieces are shorter then the fraction of a wavelength. 
+
+Plan:
+
+\begin{itemize}
+\item Look at an infinitensimal length of a transmission line $\Delta z$.  
+
+\item Represent that piece with an equivalent circuit. 
+
+\item Write KCL, KVL for the piece in the time domain (we get
+differential equations)
+
+\item Apply phasors (equations become linear)
+
+\item Solve the linear system of equations to get the expression for
+the voltage and current on the transmission line as a function of $z$.
+
+\end{itemize}
+
+
+Let's follow the plan now.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=coaxtl.ps,width=3cm} \\
+\end{center}
+\caption{Section of a coaxial cable.}
+\label{wind}
+\end{figure}
+
+
+
+
+HERE PICTURE OF THE TRANSMISSION LINE CHOPPED INTO PIECES FIG1
+
+FIG 2 ONE PIECE OF A TRANSMISSION LINE EQUIVALENT CIRCUIT
+
+KVL
+\begin{eqnarray}
+-v(z,t) + R \Delta z  i(z,t) + L \Delta z \frac{\partial
+ i(z,t)}{\partial t} + v(z+ \Delta z,t) = 0 \nonumber
+\end{eqnarray}
+
+KCL
+
+\begin{eqnarray}
+i(z,t)=i(z+\Delta z)+ i_{CG}(z+\Delta z,t) \nonumber   \\
+i(z,t)=i(z+\Delta z)+ G \Delta z v(z+\Delta z,t)+C\Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \nonumber
+\end{eqnarray}
+
+
+Rearrange the KCL and KVL Equations \ref{te1kvl}, \ref{te1kc1} divide them with
+$\Delta z$ Equations \ref{te2kvl}, \ref{te1kc2}
+let $\Delta z \to 0$ and recognize the expression for the
+derivative Equations, \ref{te3kvl}, \ref{te1kc3}.
+
+KVL
+\begin{eqnarray}
+-( v(z+ \Delta z ,t)- v(z,t))=R \Delta z i(z,t)+L \Delta z
+ \frac{\partial i(z,t)}{\partial t} \label{te1kvl}  \\ 
+ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}=R i(z,t)+L 
+ \frac{\partial i(z,t)}{\partial t}  \label{te2kvl} \\
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L 
+ \frac{\partial i(z,t)}{\partial t} \label{te3kvl}
+\end{eqnarray}
+
+KCL
+
+\begin{eqnarray}
+-( i(z+ \Delta z ,t)- i(z,t))= G \Delta z v(z+\Delta z,t)+C\Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc1} \\
+-frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z}= G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc2} \\
+-\frac{i(z,t) }{\partial z}= G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc3}
+\end{eqnarray}
+
+
+
+We just derived Telegrapher's equations in time-domain:
+
+
+
+\begin{eqnarray}
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L 
+ \frac{\partial i(z,t)}{\partial t} \nonumber  \\ \nonumber
+-\frac{i(z,t) }{\partial z}= G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t} 
+\end{eqnarray}
+
+These are two differential equations with two unknowns. It is not
+impossible to solve them, however we would prefer to have linear differential
+equations. So what do we do now?
+
+Express time-domain variables as phasors!
+
+\begin{eqnarray}
+v(z,t)=Re\{ V(z) e^{j \omega t} \} \nonumber \\
+i(z,t)=Re\{ I(z) e^{j \omega t} \} \nonumber
+\end{eqnarray}
+
+And we get the Telegrapher's equations in phasor form
+
+
+\begin{eqnarray}
+-\frac{\partial V(z)}{\partial z} = (R+j\omega L) I(z) \label{te1}\\
+-\frac{\partial I(z)}{\partial z} = (G+j\omega C) V(z) \label{te2}
+\end{eqnarray}
+
+
+
+Two equations, two unknowns. To solve these equations, we first
+integrate both equations over z, 
+
+\begin{eqnarray}
+-\frac{\partial^2 V(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
+ I(z)}{\partial z}  \nonumber \\
+-\frac{\partial^2 I(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
+ V(z)}{\partial z} \nonumber
+\end{eqnarray}
+
+Now rearange the previous equations
+
+
+
+\begin{eqnarray}
+- \frac{1}{ (R+j\omega L)} \frac{\partial I(z)}{\partial z}= \frac{\partial^2
+  V(z)}{\partial z^2} \label{te5} \\
+-\frac{1}{ (G+j\omega C)} \frac{\partial V(z)}{\partial z}= \frac{\partial^2
+  I(z)}{\partial z^2} \label{te6}
+\end{eqnarray}
+
+ now substitute  Eq.\ref{te5} into  Eq.\ref{te1}
+and Eq.\ref{te6} into Eq.\ref{te2} and we get
+
+\begin{eqnarray}
+-\frac{\partial^2 V(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) V(z)
+-\nonumber \\ \nonumber
+-\frac{\partial^2 I(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L)
+-I(z) 
+\end{eqnarray}
+
+Or if we rearrange
+
+
+\begin{eqnarray}
+-\frac{\partial^2 V(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
+ V(z)=0  \label{we1} \\ 
+-\frac{\partial^2 I(z)}{\partial z^2}- (G+j\omega C)  (R+j\omega L)
+I(z)=0 \label{we2}
+\end{eqnarray}
+
+The above Eq.\ref{we1} and Eq.\ref{we2} are the equations of the
+current and voltage wave on a transmission line. $\gamma=(G+j\omega
+C)(R+j\omega L)$ is the complex propagation constant. This constant
+has a real and an imaginary part.
+
+\begin{eqnarray}
+\gamma= \alpha + j \beta \nonumber
+\end{eqnarray}
+
+where $\alpha$ is the attenuation constant and $\beta$ is the phase
+constant.
+
+\begin{eqnarray}
+\alpha=Re\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \} \nonumber \\ \nonumber
+\beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
+\end{eqnarray}
+
+What is the general solution of the differential equation of the type
+\ref{we1} or \ref{we2}?
+
+\begin{eqnarray}
+V(z)=V_0^+ e^{-\gamma z} + V_0^- e^{\gamma z} \nonumber \\ \nonumber
+I(z)=I_0^+ e^{-\gamma z} + I_0^- e^{\gamma z}
+\end{eqnarray}
+
+In this equation $V_0^+$ and $V_0^-$ are the {\bf
+phasors}\footnote{complex numbers having an amplitude and the phase} of forward and
+backward going voltage waves, and $I_0^+$ and $I_0^-$ are the phasors of forward and
+backward going current waves
+
+The time domain expression for the current and voltage on the
+transmission line we get 
+
+\begin{eqnarray}
+v(t)=Re\{ (V_0^+ e^{(-\alpha + j \beta) z} + V_0^- e^{(\alpha + j
+ \beta) z})e^{j \omega t} \} \nonumber \\ \nonumber
+v(t)=|V_0^+|e^{-\alpha z} cos(\omega t + \beta z + \angle V_0^+)+
+|V_0^-|e^{-\alpha z} cos(\omega t - \beta z + \angle V_0^-)
+\end{eqnarray}
+
+We'll look at the Matlab program the next class to see that if the signs of the $\omega t$ and
+$\beta z$ are the same the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are opposite, the
+wave moves in the $-z$ direction.
+
+\newpage
+
+\section{Lecture 4}
+
+Introduction to MATLAB
+
+\newpage
+
+\section{Lecture 5}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\subsection{Relating forward and backward current and voltage waves on
+the transmission line}
+
+
+\begin{eqnarray}
+V(z)=V_0^+ exp^{-\gamma z} + V_0^- exp^{\gamma z}\label{eq4} \\
+I(z)=I_0^+ exp^{-\gamma z} + I_0^- exp^{\gamma z}\label{eq5}
+\end{eqnarray}
+
+In this equation $V_0^+$ and $V_0^-$ are the phasors of forward and
+backward going voltage waves, and $I_0^+$ and $I_0^-$ are the phasors of forward and
+backward going current waves
+
+We will relate the phasors of forward and backward going voltage and
+current waves.
+
+When substitute the voltage wave equation into Telegrapher's  Eq.
+\ref{te1}. The equation is repeated here  Eq.\ref{te12}.
+
+
+
+
+\begin{eqnarray}
+-\frac{\partial V(z)}{\partial z} = (R+j\omega L) I(z) \label{te12} \\
+\gamma V_0^+ e^{-\gamma z} - \gamma V_0^- e^{\gamma z} = (R+ j \omega
+L) I(z) \label{eq1}
+\end{eqnarray}
+
+We now rearrange Eq.\ref{eq1}
+
+\begin{eqnarray}
+I(z)=\frac{\gamma}{R+j\omega L} ( V_0^+ exp^{-\gamma z} + V_0^-
+ exp^{\gamma z})  \nonumber  \\
+I(z)=\frac{\gamma V_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma V_0^-}{R+ j \omega L} e^{\gamma z} \label{eq3}
+\end{eqnarray}
+
+Now we compare Eq.\ref{eq3} with the Eq.\ref{eq5}.
+
+\begin{eqnarray}
+I_0^+=\frac{\gamma V_0^+}{R+ j \omega L} \nonumber  \\
+I_0^-= - \frac{\gamma V_0^-}{R+ j \omega L} \nonumber
+\end{eqnarray}
+
+We can define the characteristic impedance of a transmission line as
+the ratio of the voltage to current amplitude of the forward going
+wave.
+
+
+\begin{eqnarray}
+Z_0=\frac{V_0^+}{ I_0^+} \nonumber   \\ \nonumber
+Z_0=\frac{R+j\omega L}{\gamma} \nonumber   \\ \nonumber
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}}
+\end{eqnarray}
+
+
+\subsection{Lossless transmission line}
+
+
+In many practical applications $R\to 0$ \footnote{metal resistance is
+low}and $G \to 0$\footnote{dielectric conductance is low}. This is a
+lossless transmission line.
+
+In this case the transmission line parameters are
+\begin{itemize}
+\item Propagation constant
+
+
+\begin{eqnarray}
+\gamma =sqrt{(R+j\omega L)(G+ j\omega C)} \nonumber   \\ \nonumber
+\gamma= \sqrt{}j \omega L j \omega C \\ \nonumber
+\gamma = j \omega \sqrt{L C} = j \beta
+\end{eqnarray}
+
+\item Transmission line impedance 
+
+\begin{eqnarray}
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}} \nonumber  \\ \nonumber
+Z_0=\sqrt{\frac{j\omega L}{ j\omega C}} \\ \nonumber
+Z_0=\sqrt{\frac{L}{C}}
+\end{eqnarray}
+
+\item Wave velocity
+
+\begin{eqnarray}
+v=\frac{\omega}{\beta}  \nonumber \\ \nonumber
+v=\frac{\omega}{\omega \sqrt{LC}} \\ \nonumber
+v=\frac{1}{\sqrt{LC}}
+\end{eqnarray}
+
+
+\item Wavelength
+
+
+\begin{eqnarray}
+\lambda = \frac{2 \pi}{\beta}  \nonumber \\ \nonumber
+\lambda = \frac{2 \pi}{ \omega \sqrt{LC}} \\ \nonumber
+\lambda =\frac{2 \pi}{\sqrt{\epsilon_0 \mu_0 \epsilon_r} } \\ \nonumber
+\lambda = \frac{c}{f \sqrt{\epsilon_r}} \\ \nonumber
+\lambda = \frac{\lambda_0}{\sqrt{\epsilon_r}} \nonumber
+\end{eqnarray}
+\end{itemize}
+
+
+\subsection{Voltage Reflection Coefficient, Lossless Case}
+
+The equations for the voltage and current on the transmission line we
+derived so far are
+
+\begin{eqnarray}
+V(z)=V_0^+ e^{-j \beta z} +V_0^- e^{j \beta z} \label{vtl} \\ \label{ctl}
+I(z)=\frac{V_0^+}{Z_0} e^{- j \beta z} - \frac{V_0^-}{Z_0} e^{j \beta z}
+\end{eqnarray}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=trline.ps,width=3cm} \\
+\end{center}
+\caption{Transmission Line connects generator and the load.}
+\label{wind}
+\end{figure}
+
+
+
+
+
+At $z=0$ the impedance of the load has to be
+
+\begin{eqnarray}
+Z_L=\frac{V(0)}{I{0}} \nonumber 
+\end{eqnarray}
+
+Substitute the boundary condition in Eq.\ref{vtl}
+
+\begin{eqnarray}
+Z_L=Z_0 \frac{V_0^+ + V_0^-}{V_0^+ - V_0^-}
+\end{eqnarray}
+
+
+We can now solve the above equation for $V_0^-$
+
+\begin{eqnarray}
+\frac{Z_L}{Z_0} (V_0^+ - V_0^-) = V_0^+ + V_0^- \nonumber \\
+(\frac{Z_L}{Z_0}-1)V_0^+ =(\frac{Z_L}{Z_0}+1) V_0^- \nonumber \\
+\frac{V_0^-}{V_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 }
+\nonumber \\
+\frac{V_0^-}{V_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\end{eqnarray}
+
+The quantity $\frac{V_0^-}{V_0^+}$ is called voltage reflection
+coefficient $\Gamma$. It relates the reflected to incident voltage
+phasor. Voltage reflection coefficient isi n general a complex number,
+it has a magnitude and a phase.
+
+
+{\bf Examples}
+ \begin{enumerate}
+\item 100\,$\Omega$ transmission line is terminated in a series
+connection of a 50\,$\Omega$ resistor and 10\,pF capacitor. The frequency
+of operation is 100\,MHz. Find the voltage reflection coefficient.
+\item For purely reacive load $Z_L=j X_L$ find the reflection
+coefficient.
+\end{enumerate}
+
+The end of this lecture is spent in the lab making a Matlab program to
+make a movie of a wave moving left and right.
+
+\newpage
+\section{Lecture 6}
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+
+
+\subsection{Standing Waves}
+
+
+In the previous section we introduced the voltage reflection
+coefficient that relates the forward to reflected voltage phasor.
+
+
+\begin{eqnarray}
+\Gamma = \frac{V_0^-}{V_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\end{eqnarray}
+
+
+If we substitute this expression to Eq.\ref{vtl}\footnote{repeated
+here as \ref{vtl1}} we get for the voltage wave
+
+
+\begin{eqnarray}
+V(z) = V_0^+ e^{-j \beta z} +V_0^- e^{j \beta z} \label{vtl1}\\
+V(z) = V_0^+ e^{-j \beta z} + \Gamma  V_0^+ e^{j \beta z} \nonumber
+\\
+V(z)= V_0^+ (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{vtl01}
+\end{eqnarray}
+
+since $\Gamma = |\Gamma| e^{j \Theta_r}$ Eq.\ref{vtl01} becomes
+
+
+\begin{eqnarray}
+V(z)= V_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{vtl01}
+\end{eqnarray}
+
+
+
+and for the current wave
+
+
+
+\begin{eqnarray}
+I(z) = \frac{V_0^+}{Z_0} e^{-j \beta z} -  \frac{V_0^-}{Z_0} e^{j \beta z} \label{ctl1}\\
+I(z) =  \frac{V_0^+}{Z_0}  e^{-j \beta z} + \Gamma \frac{V_0^+}{Z_0}  e^{j \beta z} \nonumber
+\\
+I(z)=   \frac{V_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{ctl01}
+\end{eqnarray}
+
+The voltage and the current waveform on a transmission line are
+therefore given by Eqns.\ref{vtl01}, \ref{ctl01}. Now we have two
+equations and one unknown $V_0^+$! We will solve these two equations
+in Lecture 7. Now let's look at the physical meaning of these
+equations.
+
+
+In Eq.\ref{vtl01}, $\Gamma$ is the voltage reflection coefficient,
+$V_0^+$ is the phasor of the forward going wave, $z$ is the axis in
+the direction of wave propagation, $\beta$ is the phase
+constant\footnote{imaginary part of the complex propagation constant},
+$Z_0$ is the impedance of the transmission line\footnote{defined as
+the ratio of forward going voltage and current}. $V(z)$ is a complex
+number, phasor. We will find the magnitude and phase of the voltage on
+the transmission line.
+
+
+
+
+The magnitude of a complex number can be found as $|z|=\sqrt{z
+z^*}$\footnote{Prove this in Carthesian and Polar coordinate system}. 
+
+\begin{eqnarray}
+|V(z)|=\sqrt{V(z) V(z)^*} \nonumber  \\
+|V(z)|=\sqrt{   V_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+ \Theta_r}  )  
+   V_0^+ (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )} \nonumber
+\\
+|V(z)|= V_0^+ \sqrt{(e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+|\Theta_r}  )  
+  (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )}
+\nonumber \\
+|V(z)|= V_0^+ \sqrt{1+  |\Gamma|  e^{-(2j \beta z +
+|\Theta_r)}    + |\Gamma|  e^{j 2 \beta z + \Theta_r} +\Gamma^2     )}
+\nonumber \\
+|V(z)|= V_0^+ \sqrt{1+ |\Gamma|^2 + |\Gamma| ( e^{-(2j \beta z +
+ \Theta_r)}   +  e^{(j 2 \beta z + \Theta_r)}     )}
+ \nonumber \\
+|V(z)|= V_0^+  \sqrt{1+ |\Gamma|^2 + 2 |\Gamma| cos(2 \beta z +\Theta_r)} \label{sw1} 
+\end{eqnarray}
+
+The magnitude of the total voltage on the transmission line is given
+by Eq.\ref{sw1}. It seems like a complicated function.
+
+\begin{itemize}
+ \item Let's start 
+from a simple case when the voltage reflection coefficient on the
+tranmission line is $\Gamma=0$ and draw the magnitude of the total
+voltage.
+
+HERE PICTURE OF THE FLAT LINE
+
+\item Let's look at another case,  $\Gamma=0.5$ and $\Theta_r=0$. The
+equation  for the magnitude 
+
+\begin{eqnarray}
+|V(z)|=V_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{swc1}
+\end{eqnarray}
+
+PICTURE OF STANDING WAVE PATERN FOR THIS
+
+The function \ref{swc1} is at it's maximum 
+when $cos(2 \beta z)=1$ or $z=\frac{k}{2} \lambda$, and the function
+value is $V(z)=1.5V_0^+  $. It is at it's
+minimum when  $cos(2 \beta z)=-1$ or $z=\frac{2 k +1}{4} \lambda$
+and the function value is $V(z)=0.5 V_0^+$
+
+It is important to mention here that the function that we see looks
+like a cosine with an average value of $ V_0^+ $, but {\bf it is not}.
+The minimums of the function are sharper then the maximums, so when
+the reflection coefficient is at it's maximum of $\Gamma =1$ the
+function looks like this:
+
+PICTURE OF STANDING WAVE PATTERN WITH SHORT
+
+\item General Case. 
+
+In general the voltage maximums will occur when
+$cos(2 \beta z)=1$
+
+\begin{eqnarray}
+|V(z)_{max}|=V_0^+\sqrt{1+\|Gamma|^2+2 |\Gamma|} \nonumber  \\
+|V(z)_{max}| =V_0^+\sqrt{(1+\|Gamma|)^2}  \nonumber \\
+|V(z)_{max}| =V_0^+(1+|\Gamma|) 
+\end{eqnarray}
+
+
+
+In general the voltage minimums will occur when
+$cos(2 \beta z)=-1$,
+
+
+
+\begin{eqnarray}
+|V(z)_{min}|=V_0^+\sqrt{1+\|Gamma|^2-2 |\Gamma|} \nonumber  \\
+|V(z)_{min}| =V_0^+\sqrt{(1-\|Gamma|)^2}  \nonumber \\
+|V(z)_{min}| =V_0^+ (1-|\Gamma|) 
+\end{eqnarray}
+
+The ratio of voltage minimum on the line over the voltage maximum is
+called the Voltage Standing Wave Ratio (VSWR) or just Standing Wave
+Ratio (SWR).
+
+\begin{eqnarray}
+SWR=\frac{V(z)_{max}}{ V(z)_{min}} \nonumber \\
+SWR=\frac{1+|\Gamma|}{1-|\Gamma|}
+\end{eqnarray}
+
+The voltage maximum position on the line is where
+\begin{eqnarray}
+cos(2 \beta z)=1 \nonumber \\
+2 \beta z + \Theta_r = 2 n \pi \nonumber \\
+z =\frac{ 2 n \pi -\Theta_r }{ 2 \beta} \nonumber \\
+z=\frac{ 2 n \pi -\Theta_r }{ 4 \pi}
+\end{eqnarray}
+
+
+
+\end{itemize}
+
+\newpage
+
+
+
+\subsection{Smith Chart}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=smithchartreflection.ps,width=3cm} \\
+\end{center}
+\caption{All points on the circle have the constant magnitude of the reflection coefficient.}
+\label{wind}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=smithchartimaginary.ps,width=3cm} \\
+\end{center}
+\caption{All points on the circle have the constant imaginary part of the impedance.}
+\label{wind}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=smithchartreal.ps,width=3cm} \\
+\end{center}
+\caption{All points on the circle represent the constant real part of the impedance.}
+\label{wind}
+\end{figure}
+
+\subsection{Brief review of impedance and admittance}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=impedanceadmittance.ps,width=3cm} \\
+\end{center}
+\caption{It is easier to use admittance when the circuit elements are in parallel and impedance when the circuit elements are in series.}
+\label{wind}
+\end{figure}
+
+
+
+
+\subsection{Transmission Line Matching}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=impedancematching.ps,width=3cm} \\
+\end{center}
+\caption{The result of impedance matching.}
+\label{wind}
+\end{figure}
+
+
+
+
+\section{Lecture 7}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 8}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 9}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 10}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 11}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+
+\section{Lecture 12}
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 13}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 14}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+
+\section{Lecture 15}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 16}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+
+
+\section{Lecture 17}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 18}
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 19}
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 20}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 21}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+
+\section{Lecture 22}
+
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 23}
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 24}
+
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 25}
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+
+\section{Lecture 26}
+
+
+
+
+\subsection{Reading}
+
+
+\subsection{Purpose of the lecture and the main point}
+
+\section{Lecture 27}
+
+\section{Lecture 28}
+
+PREPARATION FOR THE FINAL EXAM
+
+
+\section{Lecture 29}
+
+PRESENTATION OF TERM PROJECTS
+
+
+\section{Lecture 30}
+
+PRESENTATION OF TERM PROJECTS
+
+
+
+
+
+\end{document}
+\bye
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   
+
+
+
+                                       
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
