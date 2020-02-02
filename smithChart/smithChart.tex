@@ -1,0 +1,148 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Smith Chart} 
+\author{Milica Markovic} 
+\outcome{Use Smith Chart effectively.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+
+
+Smith Chart is a very useful tool that is used to visualize impedances and reflection coefficients. Lumped element and transmission line impedance matching would be very difficult to understand if we couldn't use Smith Charts. Simulation software such as ADS and measurement equipment, such as Network Analyzers use Smith Chart to represent simulated or measured data.   Smith Chart at first looks like Black Magic, but it is a very simple and useful tool that will help you understand impedance/admittance transformations and transmission lines better. In essence, Smith Chart is a unit circle centered at the origin with a radius of 1. Smith Chart is used to graphically represent reflection coefficient. Real and 
+imaginary axis of reflection coefficient (Cartesian coordinates) are not shown on the actual Smith Chart, but the center of the Smith Chart is where the origin of the coordinate system would be. We usually represent the reflection coefficient in polar coordinates, with a
+magnitude and an angle. Magnitude is the distance between the point and the origin, and the angle is measured from the x-axis. 
+ An example location of several reflection coefficients is given in Figure \ref{scex}. If you don't see why are the points positioned as shown, review polar representation of complex numbers.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Smith_Chart_Reflection_Coefficient.jpg}
+\end{center}
+\caption{Examples of location of reflection coefficient on the Smith Chart.}
+\label{scex}
+\end{figure}
+
+
+In Figure \ref{scswr1}, \ref{scswr}  circle and line shown represent all points on the Smith Chart that have constant magnitude or angle of the reflection coefficient. At high frequencies it is difficult to measure impedances directly, as it is difficult to measure (or sometimes even define) voltage and current. 
+To measure impedances, engineers use Network Analyzer shown in Figure \ref{hp8510}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/smithchartreflection.jpg}
+\end{center}
+\caption{Points of constant magnitude of the reflection coefficient. $ | \Gamma | $=0.5, $ | \Gamma |$=1}
+\label{scswr1}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/smithchartangle.jpg}
+\end{center}
+\caption{Points of constant phase of the reflection coefficient. $ < \Gamma =45^\circ$, $  <  \Gamma = 120^\circ$}
+\label{scswr}
+\end{figure}
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/HP8510.jpg}
+\end{center}
+\caption{HP8510 Network Analyzer in Microwave Laboratory measures impedances up to 26.5GHz. This piece of equipment is on permanent loan curtesy of Defense Micro Electronic Activity (DMEA), Sacramento}
+\label{hp8510}
+\end{figure}
+
+
+Since reflection coefficient and  impedance are related through Equation \ref{eqnreflectioncoefficient}, we can find impedance that corresponds to the  reflection coefficient, Equation \ref{eqnimpedancerc}. In other words, every point on the Smith Chart represents one reflection coefficient $\Gamma$ and one impedance $Z_L$. 
+
+
+
+\begin{eqnarray}
+\Gamma = \frac{Z_L-Z_\circ}{Z_L+Z_\circ} \label{eqnreflectioncoefficient} \\ \nonumber \\
+z_L = \frac{Z_L}{Z_\circ} = \frac{ 1+ \Gamma}{1- \Gamma } \label{eqnimpedancerc}
+\end{eqnarray}
+
+Figures \ref{scresistance}- \ref{screactance}  shows circles on the Smith Chart that represent constant (normalized) reactances, and resistances. Figure \ref{scimpedance}, shows how to find  $z_L=1+j 1$. This impedance is at a point where the circle of constant resistance $r_L=1$ crosses the circle of constant reactance $x_L=1$.   Figure \ref{scgammafromZ} shows how to find the reflection coefficient if normalized load  impedance $z_L=1+j 1$ is given. Measure the distance bewteen the origin using the scale "Reflection Coefficient E or I"on the bottom of the Smith Chart to find the magnitude of the reflection coefficient. To find the angle of the reflection coefficient, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart, shown in green. The reflection coefficient is therefore $0.5 e^{j 62^o}$, which is close to the actual value   $0.5 e^{j 64^o}$. If you have done this using ruler and compass, and nicely sharpened pencil, you would get exactly the right answer. Try it out!
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{/../jpg/smithchartreal.jpg}
+\end{center}
+\caption{All points on the circle have the constant real part of the impedance (resistance). Normalized resistance circles.}
+\label{scresistance}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/smithchartimaginary.jpg}
+\end{center}
+\caption{All points on the circle have the constant imaginary part of the impedance (reactance). Normalized reactance circles.}
+\label{screactance}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/FindingImpedanceonSC.jpg}
+\end{center}
+\caption{Red circle that represents all points on Smith Chart with normalized resistance $r=1$ and blue circle that represents all points on Smith Chart with  normalized reactance $x=1$ cross at point where $Z_L=1+j 1$.}
+\label{scimpedance}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/FindingGammaFromImpedanceonSC.jpg}
+\end{center}
+\caption{To find the magnitude of the reflection coefficient from impedance $Z_L=1+j 1$, we measure the distance bewteen the origin using the scale "Reflection Coefficient E or I"on the bottom of the Smith Chart. To find the angle of the reflection coefficient, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart.}
+\label{scgammafromZ}
+\end{figure}
+
+\newpage
+
+\subsection*{Brief review of impedance and admittance}
+
+Impedance's real part is called resistance R, and imaginary part is called reactance X. Admittance's real part is called conductance, and imaginary part is called susceptance. It is easier to add impedances when elements are in series, and it is easier to add admittances when elements are in parallel, see Figure \ref{impadmtrans}, because we just add real and imaginary parts separately. This is the reason we have special Smith Chart shown in Figure \ref{scadmimp} that has both impedance and admittance circles on it.  This way, we can use Smith Chart to read off the values for equivalent impedance or admittance when we add impedances or admittances in parallel or series. This comes in handy for lumped-element impedance matching that we will talk about next.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Impedance_Admittance.jpg}
+\end{center}
+\caption{It is easier to use admittance when the circuit elements are in parallel and impedance when the circuit elements are in series.}
+\label{impadmtrans}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/SCadmimp.jpg}
+\end{center}
+\caption{On Smith Chart impedances are shown in red, and admittances in green.}
+\label{scadmimp}
+\end{figure}
+
+
+
+\end{document} 
