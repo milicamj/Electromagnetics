@@ -1,0 +1,53 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Impedance Matching} 
+\author{Milica Markovic} 
+\outcome{Design impedance matching circuits.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+\section{Power on a transmission line}
+
+
+\section{Example }
+
+\section{Why do we do impedance matching?}
+
+
+
+Impedance matching is a technique that ensures maximum power transfer between the generator $V_g$ and the load $Z_L$. The maximum power transfer is achieved when the input impedance looking into the circuit looking from he generator is a complex conjugate of the impedance of the load. In the case shown in Figure \ref{impmatchgen}, the impedance of the generator and the line is $Z_\circ$, so to perform maximum power transfer, the input impedance of the impedance matching circuit has to be equal to $Z_\circ$.
+We perform impedance matching to remove the reflected wave on the transmission line, and maximize the power delivery to the load. When there is only the forward wave on the line, the line is called "flat", because the magnitude of the forward wave is the same everywhere on the line (and equal to $V_\circ^+$).  When we insert the impedance matching circuit between the load $Z_L$ and the transmission line $Z_\circ$, the input impedance presented to the generator and the transmission line from the impedance matching circuit will be $Z_\circ$, and the impedance presented to the load impedance $Z_L$ will be $Z_L^*$. Our task is therefore to add capacitors and inductors to the load $Z_L$ to make the input impedance look like $Z_\circ$. We {\bf do not} want to use resistors in an impedance matching circuit because they will use some of the power that we need at $Z_L$.  If we represent $Z_L$ on the Smith Chart Best as a point, our task will be to take that point to the center of the Smith Chart, where the impedance is equal to $Z_\circ$. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/Impedancematching.jpg}
+\end{center}
+\caption{The result of impedance matching.}
+\label{impmatchgen}
+\end{figure}
+
+
+
+
+\section{Simple impedance matching case}
+
+\section{Design of mixed impedance matching circuits}
+
+\section{Design of transmission-line impedance matching circuits}
+
+
+\section{Design of lumped-element impedance matching circuits}
+
+
+\end{document} 
