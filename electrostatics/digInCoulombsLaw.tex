@@ -36,14 +36,14 @@ Electrostatic force acts between electric charges in the following way:
  
  \section{Coulomb's Law}
 
-What we described is exactly the electrostatic force. All matter is a mixture of positive protons and negative electrons in a perfect balance. Coulomb described the strenght and direction of the electrostatic force through his torsion-balance experiment in 1785. Figure \ref{twostaticch} shows a stationary charge $+q_1$, repels charge $q_2$ with a force $F_{2}$.
+What we described is exactly the electrostatic force. All matter is a mixture of positive protons and negative electrons in a perfect balance. Coulomb described the strenght and direction of the electrostatic force through his torsion-balance experiment in 1785.  We can represent this electrostatic force visually. Figure \ref{twostaticch} shows a stationary charge $+q_1$, repeling charge $+q_2$ with a force $F_{2}$. The figure shows the unit vector $\hat{r}_{21}$, and the distance vector $\vec{R}_{21}=r_{21} \hat{r}_{21}$, where $r_{21}=|\vec{R}_{21}|$ is the distance between the two point charges. The equation that describes the electrostatic (Coulomb) force $\vec{F}_2$ is given in Equation \ref{EqCoulombslaw}.
 
 
 \begin{eqnarray}
-\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_0 r_{21}^2} \hat{r_{21}}
-\end{eqnarray}\label{Coulombslaw}
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_0 r_{21}^2} \hat{r}_{21} \label{EqCoulombslaw}
+\end{eqnarray}
 
-In the above equation, $\epsilon_0$ is electrical permittivity, $r_{21}$ is the distance between charges, vector $\hat{r}_{21}$ is a unit vector oriented from charge 1 to charge 2. The unit vector is on the line that connects charges 1 and 2, and therefore the electrostatic force is also on the line that connects the two charges. Note that we need at least two charges to find the electrostatic force.
+In the above equation, $\epsilon_0=8.81\, 10^{-12}$\,F/m is electrical permittivity of air, $r_{21}$ is the distance between charges, vector $\hat{r}_{21}$ is a unit vector oriented from charge 1 to charge 2. The unit vector is on the line that connects charges 1 and 2, and therefore the electrostatic force is also on the line that connects the two charges. The force will either point in the direction of this unit vector if the force is repulsive (charges have the same sign), or in the opposite direction when the force is attractive (charges have the opposite sign). Note that we need at least two charges to find the electrostatic force.
 
 
 \begin{figure}[htbp]
@@ -55,66 +55,132 @@ In the above equation, $\epsilon_0$ is electrical permittivity, $r_{21}$ is the 
 \end{figure}
 
 
-\subsection{How perfect is this balance?}
 
-
-
-
-Calculate the repulsive force if there is a little bit of unbalance. Say that each of these two tables in the classroom had 100 extra electrons. Calculate the electrostatic force between the two tables. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Properties of Electric Charge}
-
-\subsubsection{Electric charge cannot be created or destroyed.} 
 
 If the total net charge of an object is $q$, and if that object has $n_e$ electrons and $n_p$ protons, then the total charge is $q=n_p e-n_e e$. 
 
-%{\large EXAMPLE}
 
-%An object has 3 protons and 2 electrons. Find what is the net charge of %the object. Assume that the 2 protons and 2 electrons have recombined %(became neutral). What is the net charge now?
 
-\subsubsection{What is the electric force if we have more than two charges?}
+\begin{example} 
+Two positive unit charges $q_1=1$\,nC and $q_2=1$\,nC are fixed in air in Cartesian coordinate system at points $A(x_1,y_1,z_1)$ and $B(x_2,y_2,z_2)$, see Figure \ref{FigTwoCharges}. Find the electric force that charge at point A exerts on charge at point B, and the force that charge at point B exerts on charge at point A. How would your answer change if one charge becomes negative? 
 
-The total electric field at a point in space from the two charges is equal to the sum of the electric fields from the individual charges at that point.
 
-%{\large EXAMPLE} Two positive unit charges are fixed in air in Cartesian %coordinate system at points A(0,-1) and B(0,1). Find the electric field %at the points C(0,0) and D(1,1).
 
-\subsubsection{What if the charge is not in air?} 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/twochargecartcoordFORCE.jpg}
+\end{center}
+\caption{Electric Field due to a unit charge in Rectangular coordinate system.}
+\label{FigTwoCharges}
+\end{figure}
 
-Let's look at Coulombs law again. 
+\begin{explanation}
+
+The electrostatic force $F_2$ on charge $q_2$ is given by 
+
+
 
 
 \begin{eqnarray}
-\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} \hat{R_{12}}
-\end{eqnarray}\label{Coulombslaw2}
-Which quantity in this formula depends on the material? $\epsilon_0$. If the charge is within a dielectric material, then we need to account for that by changing this $\epsilon_0$ somehow. If we place the charge inside a dielectric material what do you think will happen with the atoms in the material? The atoms will get distorted and polarized. Such a polarized atom we call an electric dipole. The distortion process is called polarization. Because the material acts in such a way, the electric field around this point charge is different than if there was no material. In any dielectric medium, the electric field is defined as
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_0 r_{21}^2} \hat{r}_{21}
+\end{eqnarray}
+
+ To find the force, we have to calculate
+
+\begin{enumerate} 
+\item The magnitude of the force $|\vec{F_2}|=\frac{q_1 q_2}{4 \pi \epsilon_0 r_{21}^2}$. To find the magnitude, we need to find the distance between the two charges $r_{21}$. To find the distance, we need to find the distance vector $\vec{R}_{21}$. 
+\item To find the unit vector, we need to find the distance vector first. $\hat{r}_{21}=\frac{\vec{R}_{21}}{r_{21}}$.
+\end{enumerate}
+
+Distance vector is a special type of vector that starts at one point in the coordinate system and ends at another point. To find the distance vector $\vec{R}_{21}$, we first have to know the position of charge $q_1$, where the distance vector starts, and the position of charge $q_2$ where the distance vector ends. In this problem, the position of two charges is given by two points in the coordinate system A and B.  
+
+The next step is finding the position vector $r_1$ of point A and the position vector $r_2$ of point B. Position vectors are special vectors that start in the coordinate system origin, and point to various points in the coordinate system. Charge $q_1$ is at point $A(x_1,y_1,z_1)$, therefore the position vector $\vec{r_1}$ of this point is  shown in Equation \ref{Eqposvec1}.
 
 
 \begin{eqnarray}
-\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon r^2} \hat{R_{12}} \\
+\vec{r_1}=x_1 \vec{x} + y_1 \vec{y} +z_1 \vec{z} \label{Eqposvec1}
+\end{eqnarray}
+
+The position vector of charge $q_2$ is 
+
+\begin{eqnarray}
+\vec{r_2}=x_2\vec{x} + y_2 \vec{y} +z_2 \vec{z}
+\end{eqnarray}
+
+The two vectors mark the beginning and the end of the distance vector $\vec{R}_{21}$  between charges $q_1$ and $q_2$. The vector  $\vec{R}_{21}$ is the sum of vectors $-\vec{r_1}$ and $\vec{r_2}$. 
+
+
+
+\begin{eqnarray}
+\vec{R}_{21}=\vec{r_2} + (-\vec{r_1})
+\end{eqnarray}
+
+When we substitute position vectors $r_1$ and $r_2$:
+
+\begin{eqnarray}
+\vec{R}_{21}= (x_2 - x_1) \vec{x} +(y_2 - y_1) \vec{y} +(z_2 - z_1) \vec{z}
+\end{eqnarray}
+
+Magnitude of vector $\vec{R}_{21}$ is
+
+
+\begin{eqnarray}
+|\vec{R}_{21}|= \sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +(z_2 - z_1)^2}
+\end{eqnarray}
+
+Unit vector in the direction of vector $\vec{R}_{21}$ is:
+
+
+\begin{eqnarray}
+\hat{r}_{21}= \frac{\vec{R}_{21}}{|\vec{R}_{21}|} \\
+\hat{r}_{21}=\frac{\vec{R}_{21}}{\sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +(z_2 - z_1)^2}}
+\end{eqnarray}
+
+Substituting expressions for $\hat{r}_{21}$, and $|\vec{R}_{21}|$ in equation for the electrostatic force 
+
+\begin{eqnarray}
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a}
+\end{eqnarray}
+
+ 
+
+ 
+We get
+
+
+\begin{eqnarray}
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +(z_2 - z_1)^2}
+}^3} \vec{R}_{21} \label{eqonecharge}
+\end{eqnarray}
+
+
+
+
+
+
+
+\end{explanation}
+
+
+\end{example}
+
+
+
+
+\subsubsection{What if the charge is embedded in an insulator (aka dielectric)?} 
+
+If the charge is within a dielectric material, then we need to account for that by changing this $\epsilon_0$ somehow. If we place the charge inside a dielectric material what do you think will happen with the atoms in the material? The atoms will get distorted and polarized. Such a polarized atom we call an electric dipole. The distortion process is called polarization. Because the material acts in such a way, the electric field around this point charge is different than if there was no material. To compensate for this new polarization, we multiply the dielectric permittivity of free space $\epsilon_0$ with a unitless quantity $\epsilon_r$.  $\epsilon_r$ is called a relative dielectric constant. $\epsilon_r$ values for different materials can be Googled. Some examples of dielectric constants are $\epsilon_r$: air $\epsilon_r$=1,  teflon $\epsilon_r$=2.2, glass $\epsilon_r$=4.4, Silicon $\epsilon_r$= 11, GaAs $\epsilon_r$=12, distilled water $\epsilon_r$= 80. The electrostatic force is now shown in Equation \ref{EqCoulombslaw3}. Sometimes, the product of $\epsilon_0 \epsilon_r$ is compactly written as $\epsilon$.
+
+\begin{eqnarray}
+\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon_0 \epsilon_r r^2} \hat{R_{12}} \label{EqCoulombslaw3} \\
 \epsilon = \epsilon_0 \epsilon_r
-\end{eqnarray}\label{Coulombslaw3}
-
-We added unitless quantity $\epsilon_r$, relative dielectric constant. $\epsilon_r$ values for different materials can be Googled. Some examples of dielectric constants are $\epsilon_r$: air $\epsilon_r$=1,  teflon $\epsilon_r$=2.2, glass $\epsilon_r$=4.4, Silicon $\epsilon_r$= 11, GaAs $\epsilon_r$=12, distilled water $\epsilon_r$= 80. 
+\end{eqnarray}
 
 
 
 \subsection{Principle of Superposition}
 
-If we have two charges, the total field due to both charges is equal to the vector sum of the fields due to individual charges, see Figure \ref{superposition}.  The field at
+If we have four charges, the total force from to three charges to one charge is equal to the vector sum of the forces due to individual charges, see Figure \ref{superpositionforce}.  The field at
 
 
 
@@ -129,114 +195,28 @@ If we have two charges, the total field due to both charges is equal to the vect
 The fields or charges $q_1$ and $q_2$ are:
 
 \begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
-\vec{E_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
+\vec{F_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
+\vec{F_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
 \end{eqnarray}
 
 Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and $r_b$. The total field due to both charges is
 
 
 \begin{eqnarray}
-\vec{E}=\vec{E_1} + \vec{E_2} 
+\vec{F}=\vec{F_1} + \vec{F_2} 
 \end{eqnarray}
 
 
 
 
-
-
-\subsection{Electric Force in Rectangular Coordinates}
-
-
-In general equation for the electric force is given as
-
-
+If charge $q_3$, is at a point $C(x_3,y_3,z_3)$ as shown in Figure \ref{threecharges} the force on charge $q_2$  becomes
 
 \begin{eqnarray}
-\vec{F}=\frac{q_1 q_2}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{genfield}
+\vec{F}= \frac{q_1 q_2}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +  (z_2 - z_1)^2}^3}} \vec{R}_{21} + \\ \nonumber
+ \frac{q_2 q_3}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_3)^2 +(y_2 - y_3)^2 +(z_2 - z_3)^2}
+}^3} \vec{R}_{23} 
 \end{eqnarray}
 
-The electric field at a point $P(x,y,z)$ due to a charge $q_1$ positioned at a point $P_{q_1}(x_1, y_1, z_1 )$  in the rectangular coordinate system is shown in Figure \ref{singlecharge}. The position vector of the point $P_{q_1}$  is 
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/singlechargecartcoord.jpg}
-\end{center}
-\caption{Electric Field due to a unit charge in Rectangular coordinate system.}
-\label{singlecharge}
-\end{figure}
-
-
-
-
-
-\begin{eqnarray}
-\vec{r_1}=x_1 \vec{x} + y_1 \vec{y} +z_1 \vec{z}
-\end{eqnarray}
-
-The position vector of point $P$ is equal to
-
-\begin{eqnarray}
-\vec{r_p}=x\vec{x} + y \vec{y} +z \vec{z}
-\end{eqnarray}
-
-The two vectors mark the beginning and the end of the distance vector $\vec{r_a}$  between points $P_{q_1}$ and $P$. The vector  $\vec{r_a}$ is the sum of vectors $-\vec{r_p}$ and $\vec{r_1}$
-
-
-
-\begin{eqnarray}
-\vec{r_a}=\vec{r_p} + (-\vec{r_1})
-\end{eqnarray}
-
-When we substitute position vectors $r_1$ and $r_p$:
-
-\begin{eqnarray}
-\vec{r_a}= (x - x_1) \vec{x} +(y - y_1) \vec{y} +(z - z_1) \vec{z}
-\end{eqnarray}
-
-Vector $\vec{r_a}$ has the magnitude of:
-
-
-\begin{eqnarray}
-|\vec{r_a}|= \sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-\end{eqnarray}
-
-Unit vector in the direction of vector $\vec{r_a}$ is:
-
-
-\begin{eqnarray}
-\hat{r_a}= \frac{\vec{r_a}}{|\vec{r_a}|} \\
-\hat{r_a}=\frac{\vec{r_a}}{\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}}
-\end{eqnarray}
-
-
-
-\begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a}
-\end{eqnarray}
-
-Where $r_a$ is the distance between the charge $q_1$ and the point $P$. Substituting expressions for $\hat{r_a}$, and $|\vec{r_a}|$ in equation \ref{genfield} we get
-
- 
-
-
-
-\begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-}^3} \vec{r_a} \label{eqonecharge}
-\end{eqnarray}
-
-Substituting 
-
-
-For two charges, as shown in Figure \ref{twocharges} equation \ref{eqonecharge} becomes
-
-\begin{eqnarray}
-\vec{E}= \frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-}^3} \vec{r_a} + \frac{q_2}{4 \pi \epsilon_{0} {\sqrt{(x - x_2)^2 +(y - y_2)^2 +(z - z_2)^2}
-}^3} \vec{r_b} 
-\end{eqnarray}
 
 
 \begin{figure}[htbp]
@@ -246,10 +226,4 @@ For two charges, as shown in Figure \ref{twocharges} equation \ref{eqonecharge} 
 \caption{Electric field due to two charges in  Rectangular coordinate system.}
 \label{singlecharge}
 \end{figure}
-
-
-
-
-
-
 \end{document}
