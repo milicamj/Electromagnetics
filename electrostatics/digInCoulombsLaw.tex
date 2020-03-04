@@ -176,7 +176,7 @@ We get
 
 
 
-\subsubsection{What if the charge is in an insulator (aka dielectric) other than air?} 
+\section{What if the charge is in an insulator (aka dielectric) other than air?} 
 
 If the charge is within a dielectric material, then we need to account for that by changing this $\epsilon_0$ somehow. If we place the charge inside a dielectric material, what do you think will happen with the atoms in the material? The atoms will get distorted and polarized. Such a polarized atom we call an electric dipole. The distortion process is called polarization. Because the material polarizes, the electric field around this point charge is different than if there was no material. To compensate for this new polarization, we multiply the dielectric permittivity of free space $\epsilon_0$ with a unitless quantity of $\epsilon_r$.  $\epsilon_r$ is called a relative dielectric constant. $\epsilon_r$ values for different materials can found on the internet. Some examples of dielectric constants are $\epsilon_r$: air $\epsilon_r$=1,  Teflon $\epsilon_r$=2.2, glass $\epsilon_r$=4.4, Silicon $\epsilon_r$= 11, GaAs $\epsilon_r$=12, distilled water $\epsilon_r$= 80.  Equation \ref{EqCoulombslaw3} is the definition of the electrostatic force between two charges. Sometimes, the product of $\epsilon_0 \epsilon_r$ is written as $\epsilon$.
 
@@ -187,9 +187,11 @@ If the charge is within a dielectric material, then we need to account for that 
 
 
 
-\subsection{Principle of Superposition}
+\section{Principle of Superposition}
 
-If we have four charges, the total force from three charges to one charge is equal to the vector sum of the forces due to individual charges, see Figure \ref{superpositionforce}.  The field at
+Principle of superposition states that in linear systems we can calculate individually contributions of forces from different charges, then add them all up to get the total force on a charge.
+
+If we have fhree, or more charges, the total force from two charges to one charge is equal to the vector sum of the forces due to individual charges, see Figure \ref{UnitCh}. 
 
 
 
@@ -201,11 +203,11 @@ If we have four charges, the total force from three charges to one charge is equ
 \label{UnitCh}
 \end{figure}
 
-The fields or charges $q_1$ and $q_2$ are:
+The force on the yellow charge below from charges $q_1$ and $q_2$ are:
 
 \begin{eqnarray}
-\vec{F_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
-\vec{F_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
+\vec{F_1}=\frac{q_1 q_y}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
+\vec{F_2}=\frac{q_2 q_y}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
 \end{eqnarray}
 
 Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and $r_b$. The total field due to both charges is
@@ -218,25 +220,35 @@ Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and
 
 
 
-If charge $q_3$, is at a point $C(x_3,y_3,z_3)$ as shown in Figure \ref{threecharges} the force on charge $q_2$  becomes
+\begin{example}
+
+Calculate the total force on a positive charge $q_2$ at a point $(x_2,y_2,z_2)$ due to two other postive charges $q_1$ at a point $(x_1,y_1,z_1)$ and charge $q_3$ at a point $(x_3,y_3,z_3)$
+
+
+\begin{explanation}
+
+
+
+Figure \ref{threecharges} shows the charges, distance vectors, position vectors and forces on charge $q_2$. The total force is equal to the sum of two individual forces from charges $q_1$ and $q_2$.
 
 \begin{eqnarray}
-\vec{F}= \frac{q_1 q_2}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +  (z_2 - z_1)^2}^3}} \vec{R}_{21} + \\ \nonumber
+\vec{F}= \frac{q_1 q_2}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_1)^2 +(y_2 - y_1)^2 +  (z_2 - z_1)^2}^3}} \vec{r}_{21} + \\ \nonumber
  \frac{q_2 q_3}{4 \pi \epsilon_{0} {\sqrt{(x_2 - x_3)^2 +(y_2 - y_3)^2 +(z_2 - z_3)^2}
-}^3} \vec{R}_{23} 
+}^3} \vec{r}_{23} 
 \end{eqnarray}
 
-
+Where $\vec{r}_{21}$ ist the distance vector from charge $q_1$ to $q_2$ and , $\vec{r}_{23}$ is the distance vector from charge $q_3$ to $q_2$.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/twochargescartcoordFORCE.jpg}
 \end{center}
 \caption{Electric field due to two charges in  Rectangular coordinate system.}
-\label{singlecharge}
+\label{threecharges}
 \end{figure}
 
-
+\end{explanation}
+\end{example}
 
 \begin{problem}
 
@@ -252,7 +264,7 @@ Three positive charges, each $q=100\mu C$ are placed at A(0,0), B(8,0) and C(4,4
   Four negative charges Q are distributed at (-1,0), (1,0), (0,1) and (0, -1). If we place the fifth charge Q at the origin (0,0), what will be the total force on this charge regardless of it's polarity?  
   \begin{multipleChoice}  
     \choice[correct]{$0$}  
-    \choice{"Not enough information"}  
+    \choice{Not enough information}  
     \choice{$\frac{4 Q^2}{4 \pi \epsilon_0}$}  
     \choice{$\frac{-4 Q^2}{4 \pi \epsilon_0}$}  
   \end{multipleChoice}  
