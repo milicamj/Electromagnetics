@@ -16,477 +16,60 @@
 \maketitle    
 
 
-\section{Introduction to Electric Field}
-
-
-\begin{itemize}
-\item a bunch of positives (negatives) would repel away from each other.
-\item the opposite pieces would attract each other.
-\item the net result is a balance! Balance is formed by tight fine mixtures of positives and negatives.
-\item there is no attraction/repulsion between them
-\end{itemize}
- 
-
-What we described is exactly electrical force. All matter is a mixture of positive protons and negative electrons in a perfect balance. What is the expression for the strength and direction of this force? Coulombs law.
-
-\begin{eqnarray}
-\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} \hat{R_{12}}
-\end{eqnarray}\label{Coulombslaw}
-
-In the above equation, $\epsilon_0$ is electrical permittivity, $q_1,q_2$ electrical charge and $r$ is the distance between charges.
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/Two_Static_Charges.jpg}
-\end{center}
-\caption{Vector representation of Coulomb's force between two static charges.}
-\label{twostaticch}
-\end{figure}
-
-
-\subsection{How perfect is this balance?}
-
-{\bf EXAMPLE} 
-
-
-Lets calculate the repulsive force if there was a little bit of unbalance. Say that each of these two tables had 100 extra electrons. Lets try to calculate the repulsive force. 
-
-
-Electromagnetic force is one of four we know today. Lets discover the other forces.
-
-
-\subsection{Why is it that the atomic nucleus stays together when it is made out of the same kind of matter?}
-
-
-We just elaborated that if two charges are of the same kind, the electrostatic force will push them away from each other. It seems that there needs to be another kind of force that keeps the nucleus together. This force is called the nuclear force. This is the strongest force, but acts at a short distance. For example if we have a lot of protons in the nucleus such as in radioactive elements the nucleus can split by just lightly tapping it. 
-
-The last force is a weak-interaction force that plays role in radioactive decay. 
-
-
-\subsection{Which four forces did we talk about today?}
-
-\begin{itemize}
-\item Nuclear Force
-\item Electromagnetic Force
-\item Weak-Interaction Force
-\item Gravitational Force.
-\end{itemize}
-
-\subsection{Coulomb's Law}
-
-Lets review the Coulomb's Law that governs the behavior of electrostatic force.
-
-\begin{enumerate}
-\item Like charges repel
-\item Opposite charges attract
-\item The force acts along the line that joins the charges
-\item The strength of the force is given by the expression \ref{Coulombslaw}.
-\end{enumerate}
 
 
 
+\begin{dialogue}
+\item[Petar] Potential? Another concept?
+\item[Sasha] This one better be good.
+\item[Petar] Look, it says here it is even simpler than Electric field because it is not a vector.
+\item[Sasha] I'm all ears.
+\end{dialogue}
 
 
-\subsection{Whats the difference between the terms force and field?}
+\section{Electrostatic Potential Energy}
 
-Another bunch of questions could be:
-\begin{itemize}
-\item How do we now if we are in a gravitational field.
-\item What is the difference between the gravitational field and gravitational force?
-\item More specifically what is the meaning of the term field anyway?
-\end{itemize}
 
-Lets try to answer some of these questions.
+When charges are pushed around in electric field, the energy is not lost. Electrical forces are conservative. 
 
-\subsection{More about the gravitational force and field}
 
-How do we know that we are in the gravitational field and not in zero gravity field? No matter how hard we try to launch ourselves in the outer space by jumping, we still come back to mother earth. If we drop a pencil, where will it go? Why is that so? The gravitational force attracts the pencil (and us).  Another way to say that a gravitational force exists is to say that there is the field of force acting on an object. This is our first answer to the question: What is that term {\bf field} anyways. Let's talk more about fields.
+How much energy do we have to bring into system to bring two far-away positive charges at a distance r?
 
-We know that the gravitational force acts at distance. There is no giant muscle that attracts our pencil. Earth induces a gravitational field, it's influence exists at every point in space around it. This phenomenon of direct action on a distance has given rise to the concept of fields.  
-
-Lets see an example of gravitational force. 
-
-What is the source of the earth's gravitational force? Earth (of course). It would be good if we can define a quantity to show what is the strength of this force at any point in space. 
+To answer that question, we can look at the Figure \ref{Potential1}. To bring the first charge to a certain position in space would require no work, since there are no other charged particles around, no electric field and therefore no force.  To bring the second charge at a distance r from the first charge, we need to overcome the repulsive force between the charges. How much work does this take? 
+The work that we need to do to bring charges togehter is equal to the work that the first charge has to do to repel the second charge. The only difference is that we have to move the charges closer together, from infinity to some distance r, and the repulsive force does the work (pushes the charge $q_2$ away) from the distance r to infinity.
 
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/earth.jpg}
+\includegraphics[scale=0.5]{../jpg/Two_Static_Charges_Potential.jpg}
 \end{center}
-\caption{Gravitational force.}
-\label{wind}
+\caption{Moving the charge $q_2$ with force $\vec{F}_{us}$ against the electrostatic force $\vec{F}_e$ due to charge $q_1$ to find the electrostatic potential energy} \label{Potential1}
 \end{figure}
 
 
-
-
-
-
-We can define gravitational field at any point in space through the gravitational force: If an object with mass $m_m$ existed at the point $r$ away from earth, it would experience the force $F_g$, we can say that the gravitational field at that point is equal to
-
 \begin{eqnarray}
-\Psi = \frac{\vec{F_g}}{m_m} \\
-\Psi = \gamma \frac{m_e}{r^2} \hat{r}
-\end{eqnarray} \label{gravitationalfield}
-
-
-We dont need the moon in any particular spot to know what would be the gravitational field at that particular point. Note that the field does not depend on the moons mass! It depends only on the earths mass, gravitational constant and the distance to the point we want to find the field.
-
-
-
-\section{Electrostatics}
-
-
-
-
-\subsection{More about the Electrical force and field}
-
-The same situation we have with the electrical force and field. The electric field  is defined as the force that a charge would experience divided by the charge.
-
-
-\begin{eqnarray}
-\vec{E} = \frac{\vec{F_e}}{q_2} \\
-\vec{E} =  \frac{q_e}{4 \pi \epsilon_0 r^2} \hat{r}
-\end{eqnarray} \label{electricfield}
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/unitchargefield.jpg}
-\end{center}
-\caption{Electric field due to a unit charge q.}
-\label{UnitCh}
-\end{figure}
-
-
-
-
-
-What is the source of the electrical force or field? Electric charge (of course). 
-
-\subsection{Properties of Electric Charge}
-
-\subsubsection{Electric charge cannot be created or destroyed.} 
-
-If the total net charge of an object is $q$, and if that object has $n_e$ electrons and $n_p$ protons, then the total charge is $q=n_p e-n_e e$. 
-
-%{\large EXAMPLE}
-
-%An object has 3 protons and 2 electrons. Find what is the net charge of %the object. Assume that the 2 protons and 2 electrons have recombined %(became neutral). What is the net charge now?
-
-\subsubsection{What is the electric field if we have more than one charge?}
-
-The total electric field at a point in space from the two charges is equal to the sum of the electric fields from the individual charges at that point.
-
-%{\large EXAMPLE} Two positive unit charges are fixed in air in Cartesian %coordinate system at points A(0,-1) and B(0,1). Find the electric field %at the points C(0,0) and D(1,1).
-
-\subsubsection{What if the charge is not in air?} 
-
-Lets look at Coulombs law again. 
-
-
-\begin{eqnarray}
-\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} \hat{R_{12}}
-\end{eqnarray}\label{Coulombslaw2}
-Which quantity in this formula depends on the material? $\epsilon_0$. If the charge is within a dielectric material, then we need to account for that by changing this $\epsilon_0$ somehow. If we place the charge inside a dielectric material what do you think will happen with the atoms in the material? The atoms will get distorted and polarized. Such a polarized atom we call an electric dipole. The distortion process is called polarization. Because the material acts in such a way, the electric field around this point charge is different than if there was no material. In any dielectric medium, the electric field is defined as
-
-
-\begin{eqnarray}
-\vec{F_e}=\frac{q_1 q_2}{4 \pi \epsilon r^2} \hat{R_{12}} \\
-\epsilon = \epsilon_0 \epsilon_r
-\end{eqnarray}\label{Coulombslaw3}
-
-We added unitless quantity $\epsilon_r$, relative dielectric constant. $\epsilon_r$ values for different materials is shown in one of the tables in the book. Lets see its values for different materials. $\epsilon_r$ varies from 1 (air), to 2.2 (Teflon) to 80 (water). 
-
-Electric field density is the quantity that we introduce here:
-
-\begin{eqnarray}
-\vec{D}= \epsilon \vec{E}
+W_{us}=W{e} \\
+W_{us}= \int_{\infty}^{r} \vec{F}_{us} \cdot \vec{dr} \\
+W_{e}=  \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr} 
 \end{eqnarray}
 
-
-\subsection{Principle of Superposition}
-
-If we have two charges, the total field due to both charges is equal to the vector sum of the fields due to individual charges, see Figure \ref{superposition}.  The field at
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/superposition.jpg}
-\end{center}
-\caption{Electric Field due to two charges.}
-\label{UnitCh}
-\end{figure}
-
-The fields or charges $q_1$ and $q_2$ are:
+We know that the electric force $\vec{F}_e$, so we can calculate the total work necessary to bring the two charges at distance r.
 
 \begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
-\vec{E_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
+W_{us}= \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr} \\
+W_{us}= \int_{r}^{\infty} \frac{q_1 q_2}{4 \pi \epsilon_o r^2} \vec{r} \vec{dr}
 \end{eqnarray}
 
-Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and $r_b$. The total field due to both charges is
-
+Since the charge is moved in the  direction of the force, we can drop vectors, and calculate the work we have to do.
 
 \begin{eqnarray}
-\vec{E}=\vec{E_1} + \vec{E_2} 
+W_{us}= \frac{q_1 q_2}{4 \pi \epsilon_o} \int_{r}^{\infty} \frac{dr}{r^2} \\
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o} (-\frac{1}{r}\Big|_{r}^{\infty})
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o r} \label{WorkPoinCharge}
 \end{eqnarray}
 
-
-
-
-
-
-\subsection{Electric Field in Rectangular Coordinates}
-
-
-In general equation for the electric field is given as
-
-
-
-\begin{eqnarray}
-\vec{E}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{genfield}
-\end{eqnarray}
-
-The electric field at a point $P(x,y,z)$ due to a charge $q_1$ positioned at a point $P_{q_1}(x_1, y_1, z_1 )$  in the rectangular coordinate system is shown in Figure \ref{singlecharge}. The position vector of the point $P_{q_1}$  is 
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/singlechargecartcoord.jpg}
-\end{center}
-\caption{Electric Field due to a unit charge in Rectangular coordinate system.}
-\label{singlecharge}
-\end{figure}
-
-
-
-
-
-\begin{eqnarray}
-\vec{r_1}=x_1 \vec{x} + y_1 \vec{y} +z_1 \vec{z}
-\end{eqnarray}
-
-The position vector of point $P$ is equal to
-
-\begin{eqnarray}
-\vec{r_p}=x\vec{x} + y \vec{y} +z \vec{z}
-\end{eqnarray}
-
-The two vectors mark the beginning and the end of the distance vector $\vec{r_a}$  between points $P_{q_1}$ and $P$. The vector  $\vec{r_a}$ is the sum of vectors $-\vec{r_p}$ and $\vec{r_1}$
-
-
-
-\begin{eqnarray}
-\vec{r_a}=\vec{r_p} + (-\vec{r_1})
-\end{eqnarray}
-
-When we substitute position vectors $r_1$ and $r_p$:
-
-\begin{eqnarray}
-\vec{r_a}= (x - x_1) \vec{x} +(y - y_1) \vec{y} +(z - z_1) \vec{z}
-\end{eqnarray}
-
-Vector $\vec{r_a}$ has the magnitude of:
-
-
-\begin{eqnarray}
-|\vec{r_a}|= \sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-\end{eqnarray}
-
-Unit vector in the direction of vector $\vec{r_a}$ is:
-
-
-\begin{eqnarray}
-\hat{r_a}= \frac{\vec{r_a}}{|\vec{r_a}|} \\
-\hat{r_a}=\frac{\vec{r_a}}{\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}}
-\end{eqnarray}
-
-
-
-\begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a}
-\end{eqnarray}
-
-Where $r_a$ is the distance between the charge $q_1$ and the point $P$. Substituting expressions for $\hat{r_a}$, and $|\vec{r_a}|$ in equation \ref{genfield} we get
-
- 
-
-
-
-\begin{eqnarray}
-\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-}^3} \vec{r_a} \label{eqonecharge}
-\end{eqnarray}
-
-Substituting 
-
-
-For two charges, as shown in Figure \ref{twocharges} equation \ref{eqonecharge} becomes
-
-\begin{eqnarray}
-\vec{E}= \frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
-}^3} \vec{r_a} + \frac{q_2}{4 \pi \epsilon_{0} {\sqrt{(x - x_2)^2 +(y - y_2)^2 +(z - z_2)^2}
-}^3} \vec{r_b} 
-\end{eqnarray}
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/twochargescartcoord.jpg}
-\end{center}
-\caption{Electric field due to two charges in  Rectangular coordinate system.}
-\label{singlecharge}
-\end{figure}
-
-
-
-
-
-
-
-
-
-\subsection{Electric Field Distributions}
-
-{\bf Example of Line Charge Distribution}
-
-Find the field at the z-axis of a loop of charge. Charge is uniformly distributed along the loop with line charge density of $\rho_l$.
-
-
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/chargedistribution.jpg}
-\end{center}
-\caption{Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section of the loop.}
-\label{linecharge}
-\end{figure}
-
-
-
-
-
-
-
-
-{\bf Line charge distribution}
-
-
-{\bf Surface charge distribution}
-
-
-DISK of charge
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/surfacedistributiondisk.jpg}
-\end{center}
-\caption{Disk of charge can be regarded as an infinite number of concentric rings of charge.}
-\label{diskcharge}
-\end{figure}
-
-
-
-Infinite plane
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/constantelectricfieldinfiniteplane.jpg}
-\end{center}
-\caption{Electric field from two rings located on the infinite plane.}
-\label{diskcharge}
-\end{figure}
-
-
-
-
-
-{\bf Volume charge distribution}
-
-
-
-
-
-{\large EXAMPLE} Line charge distribution Loop of wire
-
-{\large EXAMPLE} Surface charge distribution Disk
-
-{\large EXAMPLE} Volume charge distribution diode
-
-
-\subsection{Gauss Law}
-
-
-
-
-{\large EXAMPLE} Wire
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/gausslawwire.jpg}
-\end{center}
-\caption{Application of Gauss's Law to find Electric Field of wire.}
-\label{GausLine}
-\end{figure}
-
-
-
-
-
-{\large EXAMPLE} Infinite Plane
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/infiniteplaneofcharge.jpg}
-\end{center}
-\caption{Infinite plane charged with positive surface charge density $\rho_S$.}
-\label{GausPlane}
-\end{figure}
-
-
-
-
-{\large EXAMPLE} Two Infinite Planes
-
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/infiniteparallelplates.jpg}
-\end{center}
-\caption{Two infinite planes charged with positive surface charge density $\rho_S$ and $-\rho_S.$}
-\label{Gaus2Plane}
-\end{figure}
-
-
-
-
-
-\section{Definition of Potential and Voltage}
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/potential.jpg}
-\end{center}
-\caption{Potential}
-\label{Potential}
-\end{figure}
-
+This work is the same no matter what path we take to move charge $q_2$ from infinity to a distance r from charge $q_1$, see Figure \ref{PotentialWork}
 
 
 
@@ -495,10 +78,29 @@ Infinite plane
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/workindependentofpath.jpg}
-\end{center}
-\caption{Potential is not dependent on the specific path.}
-\label{PotentialWork}
+\end{center} 
+\caption{Potential is not dependent on the specific path.}\label{PotentialWork}
 \end{figure}
+
+
+\section{Definition of Potential and Voltage}
+
+
+The work needed to move the two charges closer together depends on both charges $q_1$ and $q2$, just like the electrostatic force depends on both charges. It would be easier to define another variable that will separate the cause, charge $q_1$, and the effect, the work that we have to do to move charge $q_2$. This variable is Electric Potential. Electric potential is defined as the work we need to do to move the charge divided by the amount of charge $q_2$.
+
+\begin{eqnarray}
+V=\frac{W_{us}}{q_2} \\
+V=\frac{q_1}{4 \pi \epsilon_o r} \label{Potential2}
+\end{eqnarray}
+
+Observe that in Equation \ref{Potential2} the potential is a function of the "source" charge $q_1$. We again separated the source and the effect, but this time of the potential energy. The source is a charge $q_1$ that produces potential V. If we now want to see what is the potential energy or work that we need to do to move another charge, we don't have to know which charge produced it, we only need to know the potential in an area, from which we can find the potential energy change of charge $q_2$. 
+
+We can find a potential energy and potential of any number of charges using the above expression and the priciple of superposition. 
+
+
+
+
+
 
 
 
@@ -511,38 +113,8 @@ Infinite plane
 
 
 
-
-
-\subsection{Capacitance}
-What is capacitance, how does it affect circuits.
-
 \subsection{Electric Field inside Metals}
 
-
-\subsection{Boundary Conditions}
-
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/boundaryconditions.jpg}
-\end{center}
-\caption{Boundary Conditions for Electric Field.}
-\label{BoundaryCondition}
-\end{figure}
-
-
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/integrationpathtangfield.jpg}
-\end{center}
-\caption{Integration}
-\label{BoundaryCondition}
-\end{figure}
 
 
 
@@ -556,13 +128,6 @@ What is capacitance, how does it affect circuits.
 \end{figure}
 
 
-
-
-
-
-
-
-\subsection{Image Theory}
 
 
 
