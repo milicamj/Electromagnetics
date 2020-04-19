@@ -1,0 +1,275 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Capacitance} 
+\author{Milica Markovic} 
+\outcome{Capacitance.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+\section{What is Capacitance?}
+Capacitance is a constant that relates the amount of charge on a conductor with a potential difference between conductors. Whenever we have two conductors at different potentials, separated by an insulator (dielectric), there will be electric field between them, and we can define the ability for those two conductors to store charge. This is called a capacitance.
+
+\begin{equation}
+C=\frac{Q}{V}
+\end{equation}
+
+From Gauss's law, we found that the electric field is proportional to the charge enclosed $Q \sim E$. The capacitance therefore represents the strenght of the electric field around a conductor for a fixed voltage between the conductors. If we for example have two sets of conductors, for the same voltage between them the electric field will be stronger around the conductor set with higher capacitance, and this conductor set will have higher ability to store charge. It will store more charge for the same voltage difference than the other conductor set.
+
+Capacitance relates the current with the change in voltage. The current is defined as the change of charge in time  $i=\frac{dq}{dt}$. Since charge is from the above equation equal to the product of capacitance and voltage, Q=CV, then the current is proportional to the change in voltage. If the voltage changes twice as fast, the current doubles. The voltage V is the potential  difference between the positive and negative plate of the capacitor. 
+
+\begin{equation}
+i=C \frac{dv}{dt}
+\end{equation}
+
+
+\section{Computing Capacitance}
+
+Capacitance can be computed:
+
+\begin{enumerate}
+\item from its definition $C=\frac{Q}{V}$. You can first apply Gauss's law to find the electric field, then find the potential difference between the conductors. The potential difference depends on charge, and so, the charges will cancel.
+\item from the expression for the electrostatic energy $W_e=\frac{1}{2} \int_V  \epsilon_o \epsilon_r E^2 \, \,dV$. First apply Gauss's law to find the electric field E, square it, and integrate throughout the volume enclosed by the two conductors. 
+\end{enumerate}
+
+
+\section{Capacitors}
+
+Capacitors are components that provide capacitance in electronic circuits. They are used in filters, PCB power-distribution networks, matching circuits, delay lines etc. Typical capacitors are shown in Figure \ref{fig:capacitors}. Earth is a conductor, so any conductor either on it's own or in pair with another conductor can be modeled as a capacitor. For a single conductor, for example a metallic conductor in air, the other "conductor" is earth, or another nearby metallic object. Transmission lines have two conductors, a "signal" and "ground" conductor, so they have capacitance per unit lenght, and we can model them with a distributed capacitors. In this section, using Maxwell's equations, we will derive equations for capacitance for typical capacitors and transmission lines.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{../jpg/capacitors.jpg}
+\end{center}
+\caption{\href{https://en.wikipedia.org/wiki/Capacitor}{Various commercially available capacitors.}}
+\label{fig:capacitors}
+\end{figure}
+
+
+\section{Analysis of a Parallel-Plate Capacitor with a homogeneous dielectric}
+
+
+A parallel plate capacitor consists of two conductive plates, as shown in Figure \ref{fig:ParallePlateCapacitorPlain}. The surface area of the plates is S and the charge on each plate is Q. The plates are separated by a distance d ($d<<S$). Homogeneous dielectric with dielectric constant of $\epsilon_r$ fills the space between electrodes.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{../jpg/ppw.jpg}
+\end{center}
+\caption{Two infinite planes charged with positive surface charge density $\rho_S$ and $-\rho_S.$}
+\label{fig:ParallePlateCapacitorPlain}
+\end{figure}
+
+The electric field in an actual parallel-plate capacitor is shown in Figure 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{../jpg/Fringing_Fields_For_Finite_Capacitor.jpg}
+\end{center}
+\caption{Fringing fields in a parallel-plate capacitor. The bottom plate is positively charged, and the top plate is negatively charged.}
+\label{fig:FiringinFields}
+\end{figure}
+
+The condition that d<<S allows us to ignore fringing fields at the edge of the capacitor, and to assume that the field is equal to the field of two infinite parallel plates of charge. This means that the field is constant in between the plates, oriented from positive to negative plate and zero outside of the plates, as shown in Figure \ref{fig:ParallePlateCapacitorCircuit}.  
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{../jpg/Parallel_Plate_Capacitor.jpg}
+\end{center}
+\caption{Two infinite planes charged with positive surface charge density $\rho_S$ and $-\rho_S.$}
+\label{fig:ParallePlateCapacitorCircuit}
+\end{figure}
+
+
+To find the electric field inside the capacitor, we apply Gauss's law to a cylinder whose bottom half is in the dielectric, with the bottom base at the point where we want to find the field, and the top half is in the air above one of the charged plates as shown in Figure \ref{fig:ParallePlateCapacitorGauss}. We see that the flux through the capacitor exists only through the bottom base. The flux through the top base is zero because the field outside the capacitor is zero, and the flux through the side of the cylinder is zero because the electric field does not not go through that surface (in other words the angle between the field and the normal to the surface is $90^o$, and therefore the dot product is zero.) Mathematically, we start from the Gauss's law, assuming that the dielectric permeability is $\epsilon=\epsilon_o \epsilon_r$, where $\epsilon_r$ is the dielectric constant of the material between capacitor's plates.
+
+\begin{equation}
+\oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}
+\end{equation}
+ 
+We split the cylindrical surface S into two base surfaces and a side surface.
+ 
+\begin{equation}
+\oint_S \vec{E} \cdot \vec{dS} = \int_{S1}  \vec{E} \cdot \vec{dS} +\int_{S2}  \vec{E} \cdot \vec{dS}+\int_{S3}  \vec{E} \cdot \vec{dS} 
+\end{equation}
+
+
+
+The dot product between the electric field and the normal to the cylindrical top (S3) surface is zero, because electric field is zero outside of the capacitor. The dot product is zero on the side surface because there is no flux through it, the normal to the surface and the electric field are perpendicular $\vec{E} \cdot \vec{dS}= E \,dS  \cos(\angle(\vec{E},\vec{dS}))= E \,dS  \cos(\angle(90^o)) =0$. The flux through the bottom surface (S1) is just the product of the magnitudes of E and dS $\vec{E} \cdot \vec{dS}= E \,dS  \cos(\angle(\vec{E},\vec{dS}))= E \,dS  \cos(\angle(0^o)) =E dS$, because the normal to the surface and the electric field are in the same direction. We can now take the electric field outside of the integral,   and the integral around the closed surface then becomes
+ 
+ 
+
+\begin{equation}
+E \int_{S1} dS  = \frac{Q_{inS}}{\epsilon}
+\end{equation}
+
+ The integral of surface S1  is just the surface area of the bottom surface.
+ 
+\begin{eqnarray}
+E \, S = \frac{Q_{inS}}{\epsilon} \\
+ E=\frac{Q_{inS}}{ \epsilon S}
+\end{eqnarray}
+
+In the above equation, the ration $\frac{Q_{inS}}{S}$ is just the surface charge density $\sigma$. The final electric field expression for the infinite sheet of charge should include the unit vector of the direction of the field. We will assume that the z-axis is in the up direction from the bottom to the top plate. The field is then
+
+\begin{eqnarray}
+ \vec{E}  = \frac{\sigma}{ \epsilon } (-\vec{z})
+\end{eqnarray}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{../jpg/Parallel_Plate_Capacitor2.jpg}
+\end{center}
+\caption{Two infinite planes charged with positive surface charge density $\rho_S$ and $-\rho_S.$}
+\label{fig:ParallePlateCapacitorGauss}
+\end{figure}
+
+
+Now that we found the electric field of the paralle plate capacitor, we need to find the potential difference between the two plates, from positive to negative plate. The positive plate in this case is the top plate, so we integrate from d to 0. The potential is defined as 
+
+\begin{equation}
+V_{ab}= \int_d^0 \vec{E} \cdot \vec{dl}
+\end{equation}
+
+
+We will find the potential from the bottom plate at z=0 to the top plate at z=d. In the equation above $\vec{dl}$ will always
+
+\begin{eqnarray}
+V_{ab}= \int_d^0   \frac{\sigma}{ \epsilon } (\text{-} \vec{z}) \cdot dz \vec{z} \\
+V_{ab}= \text{-} \frac{\sigma}{ \epsilon } \int_d^0     \, dz \\
+V_{ab}=\frac{\sigma}{ \epsilon } d
+\end{eqnarray}
+
+This potential should be positive, because we integrated from the higher to the lower potential. The potential at a lower plate is lower than the potential at the higher plate. If you make a mistake and get a negative potential, it just means you should have started from the positive plate and integrated to the negative plate to get the positive potential difference. However, the $V_{ba}=-V{ab}$, so we can just take the magnitude of the negative potential difference. {\it If the potential difference is a $\log x$ function, make sure that the $x>1$}. The total charge on one plate is $Q=\sigma S$, where S is the area of the plates. The capacitance is then
+
+
+\begin{eqnarray}
+C=\frac{Q}{V} \\
+C=\frac{\sigma S}{\frac{\sigma }{ \epsilon } d } \\
+C=\epsilon  \frac{S}{d}
+\end{eqnarray}
+
+
+
+\section{Coaxial-Cable Capacitance}
+
+Coaxial cable consists of a solid  inner conductor and a conductive outer shell, Figure \ref{fig:coaxialCapacitorGaussInside}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/coaxialCable.jpg}
+\end{center}
+\caption{\href{https://en.wikipedia.org/wiki/Coaxial_cable}{A coaxial cable. A - insulator, B - outer conductor, C - dielectric, D - inner conductor. Click to see the Wikipedia page on coaxial cables. } }
+\label{fig:coax}
+\end{figure}
+
+
+If we apply Gauss's law to a cylinder outside of the outer conductor, as shown in Figure \ref{fig:coaxialCapacitorGaussOutside}, we see that the field is zero, because the total charge enclosed is zero. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/coax2.jpg}
+\end{center}
+\caption{A coaxial cable, with inner conductor charged with positive scharge $Q$ and outer conductor charged with $-Q.$}
+\label{fig:coaxialCapacitorGaussOutside}
+\end{figure}
+
+
+ To find the capacitance we need to find the electric field between the inner and outer conductor of a coax. We apply Gauss's law to the green closed cylindrical surface shown in  Figure \ref{fig:coaxialCapacitorGaussInside}. Following the steps in the section on finding the field around the infinite line of charge, we find the field inside the capacitor.
+ 
+ \begin{eqnarray}
+ E \, S = \frac{Q_{inS}}{\epsilon} \\
+ E=\frac{Q_{inS}}{2 \pi h \epsilon r }
+ \end{eqnarray}
+ 
+ To find the potential, we integrate from the inner to the outer conductor.
+ 
+ 
+ \begin{eqnarray}
+ V=\int_a^b \vec{E} \cdot \vec{dr} \\
+ V = \int_a^b \frac{Q_{inS}}{2 \pi h \epsilon r } \hat{r} \, \,dr \hat{r} \\
+ V=\frac{Q_{inS}}{2 \pi h \epsilon  } \log{\frac{b}{a}}
+ \end{eqnarray}
+ 
+ The capacitance is then
+ 
+ \begin{eqnarray}
+ C=\frac{Q}{V} \\
+ C=\frac{Q}{\frac{Q_{inS} \log{\frac{b}{a}}}{2 \pi h \epsilon  }}\\
+ C=\frac{2 \pi h \epsilon} {\log{\frac{b}{a}}} \\
+ C'=\frac{C}{h} \\
+ C'=\frac{2 \pi  \epsilon} {\log{\frac{b}{a}}}
+ \end{eqnarray}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/coax1.jpg}
+\end{center}
+\caption{A coaxial cable, with inner conductor charged with positive scharge $Q$ and outer conductor charged with $-Q.$}
+\label{fig:coaxialCapacitorGaussInside}
+\end{figure}
+
+Use the calculator below to find the capacitance of RG6 Coaxial Cable, made by Mouser, part number 40001. See \href{https://www.tme.eu/Document/151b7fc68e82e16d70ee1f3bf3c18100/M_004-005-006-007_RG-coaxial_cables.pdf}{data sheet here.} Assume PE dielectric constant is 2.25. Compare with the value in the data sheet.
+
+\geogebra{whkrg2pu}{800}{600}
+
+\section{Spherical Capacitance}
+
+Our earth is a giant spherical capacitor, with ground as one electrode and the ionosphere as another.  Spherical capacitor in Figure \ref{fig:sphericalCapacitor} consists of two concentric shells with radii a and b. The thickness of the outer shell is c-b.  The inner shell is charged with charge Q and outer shell charged with charge -Q. If we apply Gauss's Law to a sphere larger than c, we see that the total charge enclosed is zero, and the field must be zero as well. Between the plates, the field is oriented radially from the positive to the negative charge. Application of Gauss's law to a sphere of a radius r between radii a and b leads to the following equation
+
+\begin{eqnarray}
+E\,S = \frac{Q}{\epsilon}
+\end{eqnarray}
+
+The surface area of the sphere is $4 \pi r^2$.
+
+
+\begin{eqnarray}
+E 4 \pi r^2 = \frac{Q}{\epsilon} \\
+\vec{E}=\frac{Q}{4 \pi \epsilon r^2} \hat{r}
+\end{eqnarray}
+
+The potential difference between the inner and outer shell is
+
+
+\begin{eqnarray}
+V=\int_a^b  \vec{E} \cdot  \hat{dr} \\
+V=\int_a^b \frac{Q}{4 \pi \epsilon r^2} \hat{r} \,\, dr \hat{r} \\
+V=-\frac{Q}{4 \pi \epsilon} \frac{1}{r}|_a^b \\
+V=\frac{Q}{4 \pi \epsilon} \frac{b-a}{ab}
+\end{eqnarray}
+
+The capacitance is then
+
+
+\begin{eqnarray}
+C=\frac{Q}{V} \\
+C=4 \pi \epsilon \frac{ab}{b-a}
+\end{eqnarray}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/sphereandcylcc.jpg}
+\end{center}
+\caption{A spherical capacitor, with inner conductor charged with positive scharge $Q$ and outer conductor charged with $-Q.$}
+\label{fig:sphericalCapacitor}
+\end{figure}
+
+
+\end{document} 
