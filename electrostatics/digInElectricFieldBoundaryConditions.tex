@@ -6,7 +6,7 @@
 
 
  
-\title{Electrostatics Boundary Conditions} 
+\title{Electrostatic Boundary Conditions} 
 \author{Milica Markovic} 
 \outcome{Boundary Conditions.}
 \begin{document}  
@@ -16,29 +16,96 @@
 \maketitle    
 
 
+\section{Boundary conditions at a dielectric-dielectric boundary}
 
 
 
+In many electrical structures more than one dielectric is used, so that the electric field exists in different dielectrics. In such cases we are interested in how will the electric field change from one dielectric to the other. Figure \ref{fig:BoundaryCondition} shows the boundary between the two dielectrics with permittivities $\epsilon_1$ and $\epsilon_2$, and the electric fields $E_1$ in material 1 and $E_2$ in material 2. At the boundary between two materials we may have surface charge density $\rho_s$.
+
+At the boundary between any two  dielectrics the tangential components of the electric field $E_{1t}, \, E_{2t}$ are continuous and the normal components $E_{1n}, \, E_{2n}$ are discontinuous and equal to the surface charge density.  
+
+
+\begin{eqnarray}
+E_{1t}=E_{2t} \\
+\epsilon_1 E_{1n}-\epsilon_2 E_{2n}=\rho_s 
+\end{eqnarray} 
+
+If the free surface charge density at the boundary is zero, then the normal components of the electric field at the boundary are
+
+
+\begin{eqnarray}
+E_{1t}=E_{2t} \\
+\epsilon_1 E_{1n}=\epsilon_2 E_{2n}
+\end{eqnarray} 
+
+
+We can also write electric flux density vectors at the boundary. Since     
+ $D_1=\epsilon_1 \,E_1$ and   $D_{2}=\epsilon_2 \,E_{2}$, the above equations can be re-written as
+
+
+\begin{eqnarray}
+\epsilon_2 D_{1t}=\epsilon_1 D_{2t}  \\
+D_{1n}=D_{2n}
+\end{eqnarray} 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/boundaryconditions.jpg}
+\includegraphics[scale=0.4]{../jpg/boundaryconditions.jpg}
 \end{center}
 \caption{Boundary Conditions for Electric Field.}
-\label{BoundaryCondition}
+\label{fig:BoundaryCondition}
 \end{figure}
 
 
+%\begin{figure}[htbp]
+%\centering
+%\begin{tabular}{cc}
+
+%    % Requires \usepackage{graphicx}
+
+%   \includegraphics[width=60mm]{../jpg/boundaryconditions.jpg} &
+
+%    \includegraphics[width=60mm]{../jpg/boundaryconditions.jpg}\\
+
+%    \includegraphics[width=60mm]{../jpg/boundaryconditions.jpg}&
+
+%    \includegraphics[width=60mm]{../jpg/boundaryconditions.jpg}
+
+%  \end{tabular}
+%\end{figure}
 
 
+\begin{problem}
+ The four equations below show the tangential and normal electric field at the boundary of two dielectrics. Dielectric 1 is a Teflon with relative dielectric constant of 2.2, and the dielectric 2 is Silicon with relative dielectric constant of 11.2. Which equation represents a possible  electric field? 
+ 
+ 
+   \begin{prompt}
+   \begin{multipleChoice}
+     \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $E_{1n}=  E_{2n}$}
+     \choice[correct]{$E_{1t}=E_{2t}$ and $2.2 \,E_{1n}= 11.2 \,E_{2n}$ }
+     \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $ E_{1n}= E_{2n}$}
+     \choice{$E_{1t}=E_{2t}$ and $11.2 \, E_{1n}= 2.2 \, E_{2n}$}
+   \end{multipleChoice}
+   \end{prompt}
+   \end{problem}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/integrationpathtangfield.jpg}
-\end{center}
-\caption{Integration}
-\label{BoundaryCondition}
-\end{figure}
+
+\section{Boundary conditions at a conductor-dielectric boundary}
+
+The electric field inside perfect conductors $\sigma \rightarrow \infty$ is zero. Ohm's law states that 
+
+\begin{equation}
+E=\frac{J}{\sigma}
+\end{equation}
+
+
+When $\sigma \rightarrow \infty$, from the above equation, we see that the electric field is zero. This means that at the boundary of the dielectric and metal, the tangental field in the dielectric must be zero as well, and the only field at the boundary of a metal is the normal electric field $D_n$, and it is equal to the induced charge at the surface of the conductor.
+
+\begin{equation}
+D_n = \rho_s
+\end{equation}
+
+Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the metallic sphere. 
 
 
 
@@ -48,8 +115,72 @@
 \includegraphics[scale=0.5]{../jpg/metalsphereinefield.jpg}
 \end{center}
 \caption{Metallic sphere in an external electric field.}
-\label{BoundaryConditionMetal}
+\label{fig:BoundaryConditionMetal}
 \end{figure}
+
+
+\section{Proof of boundary conditions}
+
+We will now use Maxwell's equations to derive the electrostatic boundary conditions. 
+
+First, we will use Gauss's law to find the normal component of the fields at the boundary between two dielectrics, as shown in Figure \ref{fig:BoundaryConditionNormal}. As we can see from the Figure, the flux of the electric field exists through both bases and the side of the cylinder. We can find the components of the fields in both dielectrics, one parallel to the boundary x and one perpendicular to the boundary, in the direction of y.
+
+\begin{eqnarray}
+\vec{E_1}= \vec{E_{1x}}+\vec{E_{1y}}= E_{1x} \vec{x}+E_{1y} \vec{y} \\
+\vec{E_2}= \vec{E_{2x}}+\vec{E_{2y}}= E_{2x} \vec{x}+E_{2y} \vec{y}
+\end{eqnarray}
+
+
+The tangential components of the fields produce flux through the sides, and normal components produce flux through the bases.  Since we are interested at what happens at the boundary, we will let the height of the cylinder be infinitesimaly small $h \rightarrow 0$. Because the height of the cylinder is zero, and therefore the surface area is zero, the flux through the side surface S3 is zero. The flux thorugh the top and bottom surfaces will only exist due to the normal components of the field.
+
+\begin{eqnarray}
+\oint_S \vec{D} \cdot \vec{dS} = Q_{inS} \\
+\int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS}+\int_{S3} \vec{D} \cdot \vec{dS}  =  Q_{inS} \\
+\int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS} +0 = Q_{inS} \\
+\int_{S1} (\epsilon_1 E_{1n}\vec{y}+\epsilon_1 E_{1t}\vec{x}) \cdot dS\vec{y}  +(\epsilon_2 E_{2n}\vec{y}+\epsilon_2 E_{2t}\vec{x}) \cdot dS\vec{y} = Q_{inS}\\
+-\epsilon_{1} E_{1n} S + \epsilon_2 E_{2n} S = Q_{inS}  \\
+\epsilon_2 E_{2n} -\epsilon_{1} E_{1n}= \frac{Q_{inS}}{S} 
+\end{eqnarray}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/BoundaryConditionsNormal.jpg}
+\end{center}
+\caption{Derivation of equation for normal components of electric field on the boundary of two dielectrics.}
+\label{fig:BoundaryConditionNormal}
+\end{figure}
+
+
+The tangential components of the field can be obtained from the equation for the Faraday's law for static fields, as shown in Figure \ref{fig:BoundaryConditionTangential}. We choose a rectangular conture as shown in the figure with lenght l and width w. Since, again we are interested at the boundary, we will let the width of the contour go to zero. The integral along the w-pieces will then be zero. The integral along the l-pieces of contour will depend on the orientation of contour, and we will pick a counter-clockwise path. Because of the counterclockwise path, the x-component of the $E_1$ field will be negative, and we have that the x-components of the fields in two dielectrics have to be the same.
+
+\begin{eqnarray}
+\oint_C \vec{E} \cdot \vec{dl}=0 \\
+\int_{l1} (E_{1x} \vec{x}+E_{1y} \vec{y}) \cdot dy \vec{y} +\int_{l2} (E_{2x} \vec{x}+E_{2y} \vec{y}) \cdot dy \vec{y} =0 \\
+-E_{1x} l + E_{2x} = 0 \\
+E_{1x} l = E_{2x}
+\end{eqnarray}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/BoundaryConditionsTang.jpg}
+\end{center}
+\caption{Derivation of equation for tangential components of electric field on the boundary of two dielectrics.}
+\label{fig:BoundaryConditionTangential}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 
 
