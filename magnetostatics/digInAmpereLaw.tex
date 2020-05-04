@@ -18,65 +18,80 @@
 
 \section{Static Magnetic Field}
 
-Sources of static magnetic fields are DC currents.
+Source of static magnetic fields are DC currents and magnets. The direction of the magnetic field from a DC current is determined through right-hand rule. The direction of the magnetic field from the magnet is outward oriented from the north pole and inward into the south pole.
 
-\subsection{What is the source of the magnetic field?}
+It is interesting to see that the magnetic field from a loop of current looks very much like a magnetic field of a magnet placed in the center of the loop, perpendicularly to it. 
 
-Magnet. This is the first source of the magnetic field that people have discovered in Greece long time ago. \footnote{to be exact } Danish scientist Oersted discovered later that the current passing through wire will deflect a compass needle. Later French scientists Biot and Savart quantified this statement:
-
-\begin{eqnarray}
-B = \mu_0 \frac{I}{2 \pi r}
-\end{eqnarray}
-
-Where B is magnetic flux density, $\mu_0$ is magnetic permeability, I is the electric current, and r is the distance to the point where the magnetic field is measured.
-
-HERE PICTURE WITH A WIRE AND THE magnetic field.
-
-
-
+Geographical earth's south pole is earth's magnetic north pole.
 
 
 \subsection{Ampere's Law}
 
 
-\subsection{Inductance}
-Types, internal external.  Ways to find inductance through energy and directly. What is inductance, how does it affect circuits.
+Ampere's law for static magnetic fields states that the integral of the magnetic field around closed contour is equal to the current enclosed by the contour.
 
-{\large EXAMPLE} Two wire line
-{\large EXAMPLE} Coax
-{\large EXAMPLE} Internal inductance of wire, block etc.
+\begin{equation}
+\oint_c \vec{H} \cdot \vec{dl} = I
+\end{equation}
 
-\subsection{Mutual Inductance}
+
+If the contour encloses only part of the current, whose current density is J, then
+
+
+\begin{equation}
+\oint_c \vec{H} \cdot \vec{dl} = \int_S \vec{J} \cdot \vec{dS}
+\end{equation}
+
+
+The vector $\vec{dS}$ is the surface area enclosed by the contour. The vector of the surface area is determined from the direction of the contour with the right-hand rule. If we orieng our fingers in the direction of the contour, the thumb will point in the direction of surface vector.
+
+
+
+
+
+
+
+\begin{example}
+\subsection{Magnetic field of an infinite wire with circular cross section}
+
+
+
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/increaseinflux.jpg}
+\includegraphics[scale=0.5]{../jpg/Ampere's_Law1.jpg}
 \end{center}
-\caption{Mutual Inductance: Increasing the magnetic field and therefore current in one wire due to another wire in vicinity. }
+\caption{Application of Ampere's law outside an infinite straight conductor}
 \label{MutualInduc}
 \end{figure}
 
 
 
-\subsection{Inductance in circuit theory}
-
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/CircuitwithInductor.jpg}
+\includegraphics[scale=0.5]{../jpg/Ampere's_Law2.jpg}
 \end{center}
-\caption{Simple electronic circuit with an inductance and resistance. }
+\caption{Application of Ampere's law inside an infinite straight conductor}
 \label{MutualInduc}
 \end{figure}
 
 
 
 
+\end{example}
+
+\begin{example}
+\subsection{Magnetic field of a solenoid}
+
+\end{example}
 
 
+\begin{example}
+\subsection{Magnetic field of a torroid}
 
-
+\end{example}
 
 
 \end{document} 
