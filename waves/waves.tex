@@ -6,7 +6,7 @@
 
 
  
-\title{Waves on Transmission LInes} 
+\title{Waves on Transmission Lines} 
 \author{Milica Markovic} 
 \outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
 \begin{document}  
@@ -352,20 +352,19 @@ We just derived Telegrapher's equations in time-domain:
 
 Telegrapher's equations are two differential equations with two unknowns, $i(z, t)$, $v(z, t)$. It is not
 impossible to solve them, however we would prefer to have linear 
-equations. So what do we do now?
-Express time-domain variables as phasors!
+equations. We then express time-domain variables as phasors.
 
 \begin{eqnarray}
-v(z,t)=Re\{ V(z) e^{j \omega t} \} \nonumber \\
-i(z,t)=Re\{ I(z) e^{j \omega t} \} \nonumber
+v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
+i(z,t)=Re\{ \tilde{I}(z) e^{j \omega t} \} \nonumber
 \end{eqnarray}
 
-And we get the Telegrapher's equations in phasor form
+Where $\tilde{V}(z),\tilde{I}(z) $ are the voltage and current anywhere on the line, and depend on the position on the line $z$. And we get the Telegrapher's equations in phasor form
 
 
 \begin{eqnarray}
--\frac{\partial V(z)}{\partial z} = (R+j\omega L) I(z) \label{te11}\\
--\frac{\partial I(z)}{\partial z} = (G+j\omega C) V(z) \label{te121}
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) \tilde{I}(z) \label{te11}\\
+-\frac{\partial \tilde{I}(z)}{\partial z} = (G+j\omega C) \tilde{V}(z) \label{te121}
 \end{eqnarray}
 
 
@@ -374,10 +373,10 @@ Two equations, two unknowns. To solve these equations, we first
 take a derivative of  both equations with respect to  z. 
 
 \begin{eqnarray}
--\frac{\partial^2 V(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
- I(z)}{\partial z}  \label{teleg3} \\
--\frac{\partial^2 I(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
- V(z)}{\partial z} \label{teleg4}
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
+ \tilde{I}(z)}{\partial z}  \label{teleg3} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
+ \tilde{V}(z)}{\partial z} \label{teleg4}
 \end{eqnarray}
 
 Rearange the previous equations:
@@ -385,27 +384,27 @@ Rearange the previous equations:
 
 
 \begin{eqnarray}
-- \frac{1}{ (R+j\omega L)} \frac{\partial I(z)}{\partial z}= \frac{\partial^2
-  V(z)}{\partial z^2} \label{te51} \\
--\frac{1}{ (G+j\omega C)} \frac{\partial V(z)}{\partial z}= \frac{\partial^2
-  I(z)}{\partial z^2} \label{te61}
+- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= \frac{\partial^2
+  \tilde{V}(z)}{\partial z^2} \label{te51} \\
+-\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= \frac{\partial^2
+  \tilde{I}(z)}{\partial z^2} \label{te61}
 \end{eqnarray}
 
 Substitute  Eq.\ref{te51} into  Eq.\ref{te121}
 and Eq.\ref{te61} into Eq.\ref{te11} and we get
 
 \begin{eqnarray}
--\frac{\partial^2 V(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) V(z) \label{teleg1} \\
--\frac{\partial^2 I(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
-I(z) 
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
+\tilde{I}(z) 
 \end{eqnarray}
 
 Or if we rearrange
 
 
 \begin{eqnarray}
-\frac{\partial^2 V(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
- V(z)=0  \label{we11} \\ 
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
+ \tilde{V}(z)=0  \label{we11} \\ 
 \frac{\partial^2 I(z)}{\partial z^2}- (G+j\omega C)  (R+j\omega L)
 I(z)=0 \label{we21}
 \end{eqnarray}
@@ -427,26 +426,26 @@ constant.
 \beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
 \end{eqnarray}
 
-The general solution of the differential equation of the type
-\ref{we11} or \ref{we21}? From differential equation class, we know that the solution to this kind of equation is:
+The general solution of the second order differential equations with constant coefficients
+Equations \ref{we11} - \ref{we21}   is:
 
 \begin{eqnarray}
-V(z)=V_0^+ e^{-\gamma z} + V_0^- e^{\gamma z} \nonumber \\ \nonumber
-I(z)=I_0^+ e^{-\gamma z} + I_0^- e^{\gamma z}
+\tilde{\tilde{V}(z)}=\tilde{V_0}^+ e^{-\gamma z} + \tilde{V_0}^- e^{\gamma z} \nonumber \\ \nonumber
+\tilde{I(z)}=\tilde{I_0}^+ e^{-\gamma z} + \tilde{I_0}^- e^{\gamma z}
 \end{eqnarray}
 
-In this equation $V_0^+$ and $V_0^-$ are the {\bf
+In this equation $\tilde{V_0}^+$ and $\tilde{V_0}^-$ are the {\bf
 phasors} of forward and
-reflected voltage waves, and $I_0^+$ and $I_0^-$ are the phasors of forward and
-reflected  current wave.
+reflected voltage waves at the load (where z=0), and $\tilde{I_0}^+$ and $\tilde{I_0}^-$ are the phasors of forward and
+reflected  current wave at the load (where z=0).These voltages and currents are also phasors and have a constant magnitude and phase in a specific circuit, for example $\tilde{V_0}^+=|\tilde{V_0}^+| e^\Phi=4e^{25^0}$, and $\tilde{I_0}^+=|\tilde{I_0}^+| e^\Phi=5e^{-40^0}$.
 The time domain expression for the current and voltage on the
 transmission line we can get by multiplying the phasor of the voltage and current with $e^{j \omega t}$ and taking the real part of it.
 
 \begin{eqnarray}
-v(t)=Re\{ (V_0^+  e^{(-\alpha - j \beta) z} + V_0^- e^{(\alpha + j
+v(t)=Re\{ (\tilde{V}_0^+  e^{(-\alpha - j \beta) z} + \tilde{V}_0^- e^{(\alpha + j
  \beta) z})e^{j \omega t} \}  \nonumber \\ 
-v(t)=|V_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle V_0^+)+
-|V_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle V_0^-) \label{tdeq}
+v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+)+
+|\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
 \end{eqnarray}
 
 We'll look at the Matlab program the next class to see that if the signs of the $\omega t$ and
@@ -464,8 +463,8 @@ direction. If the signs of $\omega t$ and $\beta z$ are opposite, as in Equation
 wave moves in the $-z$ direction. In order to see this, we will visualize Equations \ref{fwd1} and \ref{bck1} using Matlab code below.
 
 \begin{eqnarray}
-v_f(t)=|V_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle V_0^+) \label{fwd1} \\
-v_r(t)= |V_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle V_0^-) \label{bck1}
+v_f(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+) \label{fwd1} \\
+v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{bck1}
 \end{eqnarray}
 
 
@@ -517,15 +516,15 @@ Using matlab code above, repeat the visualization of signals  in the previous se
 the transmission line}
 
 
-In equations \ref{eq4}-\ref{eq5} $V_0^+$ and $V_0^-$ are the phasors of forward and
-reflected going voltage waves, and $I_0^+$ and $I_0^-$ are the phasors of forward and
+In equations \ref{eq4}-\ref{eq5} $\tilde{V}_0^+$ and $\tilde{V}_0^-$ are the phasors of forward and
+reflected going voltage waves, and $\tilde{I}_0^+$ and $\tilde{I}_0^-$ are the phasors of forward and
 reflected  current waves. In this section, we will see how the phasors of forward and reflected voltage and
 current waves are related to transmission line impedance.
 
 
 \begin{eqnarray}
-V(z)=V_0^+ e^{-\gamma z} + V_0^- e^{\gamma z}\label{eq4} \\
-I(z)=I_0^+ e^{-\gamma z} + I_0^- e^{\gamma z}\label{eq5}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq4} \\
+I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq5}
 \end{eqnarray}
 
 
@@ -538,24 +537,24 @@ When substitute the voltage wave equation into Telegrapher's  Equations
 
 
 \begin{eqnarray}
--\frac{\partial V(z)}{\partial z} = (R+j\omega L) I(z) \label{te12new} \\
-\gamma V_0^+ e^{-\gamma z} - \gamma V_0^- e^{\gamma z} = (R+ j \omega
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) I(z) \label{te12new} \\
+\gamma \tilde{V}_0^+ e^{-\gamma z} - \gamma \tilde{V}_0^- e^{\gamma z} = (R+ j \omega
 L) I(z) \label{te12new1}
 \end{eqnarray}
 
 We now rearrange Eq.\ref{te12new1}
 
 \begin{eqnarray}
-I(z)=\frac{\gamma}{R+j\omega L} ( V_0^+ exp^{-\gamma z} + V_0^-
+I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ exp^{-\gamma z} + \tilde{V}_0^-
  exp^{\gamma z})  \nonumber  \\
-I(z)=\frac{\gamma V_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma V_0^-}{R+ j \omega L} e^{\gamma z} \label{eq3}
+I(z)=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} e^{\gamma z} \label{eq3}
 \end{eqnarray}
 
 Now we compare Eq.\ref{eq3} with the Eq.\ref{eq5}. In order for two transcendental equations to be equal, the coefficients next to exponential terms have to be the same.
 
 \begin{eqnarray}
-I_0^+=\frac{\gamma V_0^+}{R+ j \omega L} \nonumber  \\
-I_0^-= - \frac{\gamma V_0^-}{R+ j \omega L} \nonumber
+\tilde{I}_0^+=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} \nonumber  \\
+\tilde{I}_0^-= - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} \nonumber
 \end{eqnarray}
 
 We can define the characteristic impedance of a transmission line as
@@ -564,7 +563,7 @@ wave.
 
 
 \begin{eqnarray}
-Z_0=\frac{V_0^+}{ I_0^+} \nonumber   \\ \nonumber
+Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+} \nonumber   \\ \nonumber
 Z_0=\frac{R+j\omega L}{\gamma} \nonumber   \\ \nonumber
 Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}}
 \end{eqnarray}
@@ -645,10 +644,6 @@ In guided wave systems such as transmission lines and waveguides the attenuation
 
 
 
-
-
-
-
 In some practical applications, losses are small, but not negligible.  $R<< \omega L$ \footnote{metal resistance is
 lower than the inductive impedance}and $G <<  \omega C$\footnote{dielectric conductance is lower than the capacitive impedance}. 
 
@@ -715,8 +710,8 @@ The equations for the voltage and current on the transmission line we
 derived so far are
 
 \begin{eqnarray}
-V(z)=V_0^+ e^{-j \beta z} +V_0^- e^{j \beta z} \label{vtl} \\ \label{ctl}
-I(z)=\frac{V_0^+}{Z_0} e^{- j \beta z} - \frac{V_0^-}{Z_0} e^{j \beta z}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl} \\ \label{ctl}
+I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z}
 \end{eqnarray}
 
 
@@ -743,21 +738,21 @@ Z_L=\frac{V(0)}{I{0}} \nonumber
 Substitute the boundary condition in Eq.\ref{vtl}
 
 \begin{eqnarray}
-Z_L=Z_0 \frac{V_0^+ + V_0^-}{V_0^+ - V_0^-}
+Z_L=Z_0 \frac{\tilde{V}_0^+ + \tilde{V}_0^-}{\tilde{V}_0^+ - \tilde{V}_0^-}
 \end{eqnarray}
 
 
-We can now solve the above equation for $V_0^-$
+We can now solve the above equation for $\tilde{V}_0^-$
 
 \begin{eqnarray}
-\frac{Z_L}{Z_0} (V_0^+ - V_0^-) = V_0^+ + V_0^- \nonumber \\
-(\frac{Z_L}{Z_0}-1)V_0^+ =(\frac{Z_L}{Z_0}+1) V_0^- \nonumber \\
-\frac{V_0^-}{V_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 }
+\frac{Z_L}{Z_0} (\tilde{V}_0^+ - \tilde{V}_0^-) = \tilde{V}_0^+ + \tilde{V}_0^- \nonumber \\
+(\frac{Z_L}{Z_0}-1)\tilde{V}_0^+ =(\frac{Z_L}{Z_0}+1) \tilde{V}_0^- \nonumber \\
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 }
 \nonumber \\
-\frac{V_0^-}{V_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
 \end{eqnarray}
 
-The quantity $\frac{V_0^-}{V_0^+}$ is called voltage reflection
+The quantity $\frac{\tilde{V}_0^-}{\tilde{V}_0^+}$ is called voltage reflection
 coefficient $\Gamma$. It relates the reflected to incident voltage
 phasor. Voltage reflection coefficient is in general a complex number,
 it has a magnitude and a phase.
@@ -787,25 +782,24 @@ coefficient that relates the forward to reflected voltage phasor.
 
 
 \begin{eqnarray}
-\Gamma = \frac{V_0^-}{V_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0} \label{reflcoe}
+\Gamma = \frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0} \label{reflcoe}
 \end{eqnarray}
 
 
 If we substitute Equation \ref{reflcoe} to Eq.\ref{vtl11} we get for the voltage wave
 
-
 \begin{eqnarray}
-V(z) = V_0^+ e^{-j \beta z} +V_0^- e^{j \beta z} \label{vtl11}\\
-V(z) = V_0^+ e^{-j \beta z} + \Gamma  V_0^+ e^{j \beta z} \nonumber
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl11}\\
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} + \Gamma  \tilde{V}_0^+ e^{j \beta z} \nonumber
 \\
-V(z)= V_0^+ (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{vtl01}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{vtl01}
 \end{eqnarray}
 
 since $\Gamma = |\Gamma| e^{j \Theta_r}$ Eq.\ref{vtl01} becomes
 
 
 \begin{eqnarray}
-V(z)= V_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{vtl011}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{vtl011}
 \end{eqnarray}
 
 
@@ -815,25 +809,25 @@ and for the current wave
 
 
 \begin{eqnarray}
-I(z) = \frac{V_0^+}{Z_0} e^{-j \beta z} -  \frac{V_0^-}{Z_0} e^{j \beta z} \label{ctl1}\\
-I(z) =  \frac{V_0^+}{Z_0}  e^{-j \beta z} + \Gamma \frac{V_0^+}{Z_0}  e^{j \beta z} \nonumber
+I(z) = \frac{\tilde{V}_0^+}{Z_0} e^{-j \beta z} -  \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z} \label{ctl1}\\
+I(z) =  \frac{\tilde{V}_0^+}{Z_0}  e^{-j \beta z} + \Gamma \frac{\tilde{V}_0^+}{Z_0}  e^{j \beta z} \nonumber
 \\
-I(z)=   \frac{V_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{ctl01}
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{ctl01}
 \end{eqnarray}
 
 The voltage and the current waveform on a transmission line are
 therefore given by Eqns.\ref{vtl01}, \ref{ctl01}. Now we have two
-equations and one unknown $V_0^+$! We will solve these two equations
+equations and one unknown $\tilde{V}_0^+$! We will solve these two equations
 in Lecture 7. Now let's look at the physical meaning of these
 equations.
 
 
 In Eq.\ref{vtl01}, $\Gamma$ is the voltage reflection coefficient,
-$V_0^+$ is the phasor of the forward going wave, $z$ is the axis in
+$\tilde{V}_0^+$ is the phasor of the forward going wave, $z$ is the axis in
 the direction of wave propagation, $\beta$ is the phase
 constant\footnote{imaginary part of the complex propagation constant},
 $Z_0$ is the impedance of the transmission line\footnote{defined as
-the ratio of forward going voltage and current}. $V(z)$ is a complex
+the ratio of forward going voltage and current}. $\tilde{V}(z)$ is a complex
 number, phasor. We will find the magnitude and phase of the voltage on
 the transmission line.
 
@@ -844,22 +838,22 @@ The magnitude of a complex number can be found as $|z|=\sqrt{z
 z^*}$.
 
 \begin{eqnarray}
-|V(z)|=\sqrt{V(z) V(z)^*} \nonumber  \\
-|V(z)|=\sqrt{   V_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+|\tilde{V}(z)|=\sqrt{\tilde{V}(z) \tilde{V}(z)^*} \nonumber  \\
+|\tilde{V}(z)|=\sqrt{   \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z +
  \Theta_r}  )  
-   V_0^+ (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )} \nonumber
+   \tilde{V}_0^+ (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )} \nonumber
 \\
-|V(z)|= V_0^+ \sqrt{(e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{(e^{-j \beta z} - |\Gamma|  e^{j \beta z +
 |\Theta_r}  )  
   (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )}
 \nonumber \\
-|V(z)|= V_0^+ \sqrt{1+  |\Gamma|  e^{-(2j \beta z +
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+  |\Gamma|  e^{-(2j \beta z +
 |\Theta_r)}    + |\Gamma|  e^{j 2 \beta z + \Theta_r} +|\Gamma|^2     )}
 \nonumber \\
-|V(z)|= V_0^+ \sqrt{1+ |\Gamma|^2 + |\Gamma| ( e^{-(2j \beta z +
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+ |\Gamma|^2 + |\Gamma| ( e^{-(2j \beta z +
  \Theta_r)}   +  e^{(j 2 \beta z + \Theta_r)}     )}
  \nonumber \\
-|V(z)|= V_0^+  \sqrt{1+ |\Gamma|^2 + 2 |\Gamma| \cos(2 \beta z +\Theta_r)} \label{sw1} 
+|\tilde{V}(z)|= \tilde{V}_0^+  \sqrt{1+ |\Gamma|^2 + 2 |\Gamma| \cos(2 \beta z +\Theta_r)} \label{sw1} 
 \end{eqnarray}
 
 The magnitude of the total voltage on the transmission line is given
@@ -891,7 +885,7 @@ is called flat.
 \item Let's look at another case,  $\Gamma=0.5$ and $\Theta_r=0$. Equation \ref{swc1}  represents the magnitude of the voltage on the transmission line, and Figure \ref{reflcoeffvid} shows in green how this function looks on a transmission line. This case is shown in Figure \ref{reflcoeffvid}. 
 
 \begin{eqnarray}
-|V(z)|=V_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{swc1}
+|\tilde{V}(z)|=\tilde{V}_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{swc1}
 \end{eqnarray}
 
 \begin{figure}[htbp]
@@ -907,12 +901,12 @@ is called flat.
 
 The function \ref{swc1} is at it's maximum 
 when $cos(2 \beta z)=1$ or $z=\frac{k}{2} \lambda$, and the function
-value is $V(z)=1.5V_0^+  $. It is at it's
+value is $\tilde{V}(z)=1.5\tilde{V}_0^+  $. It is at it's
 minimum when  $cos(2 \beta z)=-1$ or $z=\frac{2 k +1}{4} \lambda$
-and the function value is $V(z)=0.5 V_0^+$
+and the function value is $\tilde{V}(z)=0.5 \tilde{V}_0^+$
 
 It is important to mention here that the function that we see looks
-like a cosine with an average value of $ V_0^+ $, but {\bf it is not}.
+like a cosine with an average value of $ \tilde{V}_0^+ $, but {\bf it is not}.
 The minimums of the function are sharper then the maximums, so when
 the reflection coefficient is at it's maximum of $\Gamma =1$ the
 function looks like this:
@@ -935,9 +929,9 @@ In general the voltage maximums will occur when
 $cos(2 \beta z)=1$
 
 \begin{eqnarray}
-|V(z)_{max}|=V_0^+\sqrt{1+|\Gamma|^2+2 |\Gamma|} \nonumber  \\
-|V(z)_{max}| =V_0^+\sqrt{(1+|\Gamma|)^2}  \nonumber \\
-|V(z)_{max}| =V_0^+(1+|\Gamma|) 
+|\tilde{V}(z)_{max}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2+2 |\Gamma|} \nonumber  \\
+|\tilde{V}(z)_{max}| =\tilde{V}_0^+\sqrt{(1+|\Gamma|)^2}  \nonumber \\
+|\tilde{V}(z)_{max}| =\tilde{V}_0^+(1+|\Gamma|) 
 \end{eqnarray}
 
 
@@ -948,9 +942,9 @@ $cos(2 \beta z)=-1$,
 
 
 \begin{eqnarray}
-|V(z)_{min}|=V_0^+\sqrt{1+|\Gamma|^2-2 |\Gamma|} \nonumber  \\
-|V(z)_{min}| =V_0^+\sqrt{(1-|\Gamma|)^2}  \nonumber \\
-|V(z)_{min}| =V_0^+ (1-|\Gamma|) 
+|\tilde{V}(z)_{min}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2-2 |\Gamma|} \nonumber  \\
+|\tilde{V}(z)_{min}| =\tilde{V}_0^+\sqrt{(1-|\Gamma|)^2}  \nonumber \\
+|\tilde{V}(z)_{min}| =\tilde{V}_0^+ (1-|\Gamma|) 
 \end{eqnarray}
 
 The ratio of voltage minimum on the line over the voltage maximum is
@@ -958,7 +952,7 @@ called the Voltage Standing Wave Ratio (VSWR) or just Standing Wave
 Ratio (SWR).
 
 \begin{eqnarray}
-SWR=\frac{V(z)_{max}}{ V(z)_{min}} \nonumber \\
+SWR=\frac{\tilde{V}(z)_{max}}{ \tilde{V}(z)_{min}} \nonumber \\
 SWR=\frac{1+|\Gamma|}{1-|\Gamma|}
 \end{eqnarray}
 
