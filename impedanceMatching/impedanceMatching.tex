@@ -102,8 +102,8 @@ Power on a transmission line can be found similarly to the derivation in the pre
 
 
 \begin{eqnarray}
-\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq4} \\
-I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq5}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq4a} \\
+I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq5a}
 \end{eqnarray}
 
 Where $\tilde{V}^+(z)=\tilde{V}_0^+ e^{-\gamma z} $ is the phasor of forward voltage anywhere on the line, and $\tilde{V}^-(z)=\tilde{V}_0^- e^{\gamma z}$ is the phasor of reflected voltage anywhere on the line. $\tilde{V}_0^+$ is the phasor of forward voltage at the load, where z=0, and  $\tilde{V}_0^-$ is the phasor of reflected voltage at the load, where z=0.  The currents are similarly named. If the line is lossless, then the attenuation coefficient $\alpha=0$ and $\gamma= \alpha + j \beta = j \beta$, so the equations become
@@ -118,8 +118,8 @@ I(z)=\tilde{I}_0^+ e^{-j\beta z} + \tilde{I}_0^- e^{j\beta z}\label{eq5}
 If we define a phasor of reflection coefficient at the load as $\Gamma =\frac{\tilde{V}^-_0(z)}{\tilde{V}^+_0(z)}$, and define the transmission-line impedance as $Z_0=\frac{\tilde{V}_0^+}{\tilde{I}_0^+}=-\frac{\tilde{V}_0^-}{\tilde{I}_0^-}$ then the equations become
 
 \begin{eqnarray}
-\tilde{V}(z)=\tilde{V}_0^+ e^{-j\beta z} + \Gamma \tilde{V}_0^+ e^{j\beta z}\label{eq4} \\
-I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{-j\beta z} - \Gamma \frac{\tilde{V}_0^+}{Z_0} e^{j\beta z}\label{eq5}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j\beta z} + \Gamma \tilde{V}_0^+ e^{j\beta z}\label{eq4b} \\
+I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{-j\beta z} - \Gamma \frac{\tilde{V}_0^+}{Z_0} e^{j\beta z}\label{eq5b}
 \end{eqnarray}
 
 By multiplying phasors above we get the phasor of the average real incident (forward) $P_i$ and reflected power $P_r$ anywhere on the line
@@ -187,7 +187,7 @@ To ensure that there is no reflected voltage from the generator, the generator's
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.7]{../jpg/Impedancematching.jpg}
+\includegraphics[scale=0.4]{../jpg/Impedancematching.jpg}
 \end{center}
 \caption{The result of impedance matching.}
 \label{eq:impmatchgen1}
@@ -233,7 +233,7 @@ This impedance is shown in Figure \ref{fig:PointSC}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.7]{../jpg/Match1.jpg}
+\includegraphics[scale=0.4]{../jpg/Match1.jpg}
 \end{center}
 \caption{Load impedance $Z_L=0.5+j1$ on Smith Chart.}
 \label{fig:PointSC}
@@ -245,7 +245,7 @@ To find the length of the line, we identify the position of the load impedance $
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.7]{../jpg/Match2.jpg}
+\includegraphics[scale=0.4]{../jpg/Match2.jpg}
 \end{center}
 \caption{SWR circle for impedance $Z_L=0.5+j1$.  }
 \label{fig:SWRfor25Ohm}
@@ -257,7 +257,7 @@ The final step is to add a susceptance that will remove the imaginary part of th
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.7]{../jpg/MatchMixed1.jpg}
+\includegraphics[scale=0.4]{../jpg/MatchMixed1.jpg}
 \end{center}
 \caption{The result of impedance matching.}
 \label{impmatchgen}
@@ -269,9 +269,9 @@ Graphically, there are several different mixed or tranmission-line impedance mat
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/MixedVariety-01.jpg}
+\includegraphics[scale=0.4]{../jpg/MixedVariety-01.jpg}
 \end{center}
-\caption{The result of impedance matching.}
+\caption{A variety of possible impedance matching circuits for impedance $Z_L=25+j50 \Omega$.}
 \label{fig:MixedVariety}
 \end{figure}
 
@@ -335,7 +335,7 @@ The first few steps in the fully transmission-line matching circuit are the same
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/Match1.jpg}
+\includegraphics[scale=0.4]{../jpg/Match1.jpg}
 \end{center}
 \caption{Position of normalized impedance $Z_L=0.5+j1$ on Smith Chart.}
 \label{fig:NormImponSC}
@@ -346,7 +346,7 @@ A section of transmission line has to be added to impedance $Z_L=0.5+j1$ to tran
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/Match2.jpg}
+\includegraphics[scale=0.4]{../jpg/Match2.jpg}
 \end{center}
 \caption{The result of impedance matching.}
 \label{fig:AddingSectionOfLine}
@@ -363,7 +363,7 @@ To find the stub that will have the same input admittance as an inductor $Y_{add
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/MatchTL.jpg}
+\includegraphics[scale=0.4]{../jpg/MatchTL.jpg}
 \end{center}
 \caption{Transmission-line impedance matching circuit.}
 \label{fig:TransLineImpM}
@@ -407,7 +407,7 @@ When we add $4.1$pF capacitor in parallel with the load $\bar{Z}_L=0.5+j1$, the 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.6]{../jpg/LumpedMatch3-01.jpg}
+\includegraphics[scale=0.4]{../jpg/LumpedMatch3-01.jpg}
 \end{center}
 \caption{Finalized lumped-element impedance-matching circuit.}
 \label{fig:LumpedImpM3}
