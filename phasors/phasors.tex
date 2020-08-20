@@ -31,7 +31,7 @@ You may be wondering why would this specific equation be used. This is the case 
 
 \begin{example}
 
-We will see how is the phasor transformation applied to an RC circuit shown in Figure \ref{RCcirc}.  To solve this circuit in the time domain we apply Kirchoff's voltage law as shown in Equation \ref{eq-1} -\ref{eq0}.
+We will see how the phasor transformation is applied to an RC circuit shown in Figure 2\ref{RCcirc}.  To solve this circuit in the time domain we apply Kirchoff's voltage law as shown in Equation \ref{eq-1} -\ref{eq0}.
 
 
 The circuit in Figure \ref{RCcirc} is a simple RC circuit. KVL equation in the time domain is given in Equation \ref{eq-1}.
@@ -44,10 +44,10 @@ v_s(t) = R i + \frac{1}{C} \int i(t) dt \label{eq0}
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.3]{../jpg/RCnew.jpg}
+\includegraphics[scale=0.5]{../jpg/RCcircuitPhasorSup.jpg}
 %\strut\psfig{figure=complexnumberz.ps,width=3cm} \\
 \end{center}
-\caption{Complex number z in rectangular and polar coordinates.}
+\caption{Using superposition to find phasors of voltages and currents in an RC circuit.}
 \label{RCcirc}
 \end{figure}
 
@@ -65,7 +65,9 @@ significantly. Differential equations become a set of
 linear equations.  Phasor is another name for a complex number  in polar coordinate system. 
 
 In order to use phasors, the circuit has to be linear. Circuits that have  only capacitors, inductors and resistors are 
-linear circuits.  In  a  linear circuit, all currents and voltages are  at the frequency of the generator. That means that we don't have to keep track  of the frequency of voltages and currents when we are solving the circuit. We know the frequency once we know the frequency of the generator. The quantities that will differ for different currents and voltages  is the amplitude and phase of the signal. Phasors allow us to drop the information about the frequency of the signal, and only  keep track of the magnitude and phase of the signal.
+linear circuits.  In  a  linear circuit, all currents and voltages are  at the frequency of the generator. That means that we don't have to keep track  of the frequency of voltages and currents when we are solving the circuit. We know the frequency of all currents and voltages once we know the frequency of the generator. The quantities that will differ for different currents and voltages are the amplitudes and phases. Phasors allow us to drop the information about the frequency of the signal, and only  keep track of the magnitude and phase of the signal.
+
+
  In order to remove $cos (\omega t)$  term from the equations 
 we have to use complex numbers.  To write $cos (\omega t)$ \footnote{It is customary to use  $\cos( \omega t)$ for our time-domain signal. If signals in a circuit are given in terms of $\sin (\omega t)$, the sin function has to be converted to a cosine. To do that, subtract $90^o$ from the phase of the sinusoid, because $\sin( \omega t) = \cos(\omega t - 90^o)$}  in a concise form  as a complex number, we add to the forcing function  a sinusoidal imaginary term.
 
