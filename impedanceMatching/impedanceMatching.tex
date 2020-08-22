@@ -206,18 +206,12 @@ To make this impedance look like a $50 \Omega$ impedance, we have to add an elem
 
 To look at this solution on the Smith Chart, we first normalize the impedance of the load $\bar{Z}_L=\frac{Z_L}{Z_0}=1+j1.6$, and then place it on the Smith Chart as shown in Figure \ref{fig:SimpleMatch} as a red dot. To get to the center of the Smitch Chart, we use only the resistance/conductance circles, because we know that on these circles only the reactance/susceptance of the impedance changes and we don't want to add resistors to change the real part of the impedance. We see that the circle we have to use is the $Z=1$ circle, because the load impedance  is on it.  To get to the center of the chart, where $Z=1$. To find the reactance we need to add, we subtract  the matched impedance Z and the load impedance $Z_{add}=Z- Z_L=-j1.6$. Another way to see that this is a capacitor is to notice that by adding this element, we are moving from the inductive (upper half) to capacitive part (lower part) of the Smith chart. 
 
-\begin{image}
-\includegraphics{../jpg/test.jpg}
-%\caption{The result of impedance matching.}
-\label{fig:SimpleMatch1}
-\end{image}
-
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.4]{../jpg/test.jpg}
 \end{center}
-\caption{The result of impedance matching.}
+\caption{Impedance matching circuit for impedance $Z_L=R_L+j \omega L =50+j80 \Omega$ .}
 \label{fig:SimpleMatch}
 \end{figure}
 
@@ -242,7 +236,7 @@ This impedance is shown in Figure \ref{fig:PointSC}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/Match1.jpg}
+\includegraphics[scale=1]{../jpg/MixedMatch2-01.jpg}
 \end{center}
 \caption{Load impedance $Z_L=0.5+j1$ on Smith Chart.}
 \label{fig:PointSC}
@@ -254,7 +248,7 @@ To find the length of the line, we identify the position of the load impedance $
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/Match2.jpg}
+\includegraphics[scale=1]{../jpg/MixedMatch4-01.jpg}
 \end{center}
 \caption{SWR circle for impedance $Z_L=0.5+j1$.  }
 \label{fig:SWRfor25Ohm}
@@ -266,7 +260,7 @@ The final step is to add a susceptance that will remove the imaginary part of th
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/MatchMixed1.jpg}
+\includegraphics[scale=1]{../jpg/MixedMatch5-01.jpg}
 \end{center}
 \caption{The result of impedance matching.}
 \label{impmatchgen}
@@ -278,7 +272,7 @@ Graphically, there are several different mixed or tranmission-line impedance mat
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/MixedVariety-01.jpg}
+\includegraphics[scale=1]{../jpg/MixedVariety-01-01.jpg}
 \end{center}
 \caption{A variety of possible impedance matching circuits for impedance $Z_L=25+j50 \Omega$.}
 \label{fig:MixedVariety}
@@ -300,11 +294,11 @@ To make fully transmission line impedance matching circuits, we can replace capa
 
 Input impedance of shorted or open transmission lines  can be made purely inductive or capacive, as shown in Figures \ref{fig:OpenStubLambdaOver8}-\ref{fig:ShortedStubLambdaOver8}. SWR circle of an open or shorted stub is the outer perimeter of the Smith Chart. The length of the transmission line will determine the input impedance of the stub. The input impedance is always purely reactive. 
 
-For example, in Figure \ref{fig:OpenStubLambdaOver8}, the length of the line is  $\frac{\lambda}{8}$. The ``load" connected to the output of this line is an open circuit $Z_L=\infty$. On the Smith Chart we start from the load impedance, and add a $0.125 \lambda$ line, following the WTG scale. The input impedance is purely capacitive $Z_{in}=-j$. 
+For example, in Figure \ref{fig:OpenStubLambdaOver8}, the length of the line is  $\frac{\lambda}{8}$. The ``load" connected to the output of this line is an open circuit $Z_L=\infty$. On the Smith Chart we start from the load impedance, and add a $0.125 \lambda$ line, following the WTG scale. The input  impedance is purely capacitive $Z_{in}=-j$. 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/openstub-01.jpg}
+\includegraphics[scale=1]{../jpg/openstub-01.jpg}
 \end{center}
 \caption{Input impedance $Z_{in}=-j$ of a $\frac{\lambda}{8}$ open transmission line.}
 \label{fig:OpenStubLambdaOver8}
@@ -318,7 +312,7 @@ Another example is shown in Figure \ref{fig:OpenStub3LambdaOver8}, where the len
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/openstub2-01.jpg}
+\includegraphics[scale=1]{../jpg/openstub2-01.jpg}
 \end{center}
 \caption{Input impedance $Z_{in}=j$  of a $\frac{3 \lambda}{8}$ open transmission line.}
 \label{fig:OpenStub3LambdaOver8}
@@ -331,7 +325,7 @@ The last example is shown in Figure \ref{fig:ShortedStubLambdaOver8}, where the 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/shortedstub-01.jpg}
+\includegraphics[scale=1]{../jpg/shortedstub-01.jpg}
 \end{center}
 \caption{Input impedance $Z_{in}=j$ of a $\frac{\lambda}{8}$ shorted transmission line.}
 \label{fig:ShortedStubLambdaOver8}
@@ -344,7 +338,7 @@ The first few steps in the fully transmission-line matching circuit are the same
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/Match1.jpg}
+\includegraphics[scale=1]{../jpg/MixedMatch2-01.jpg}
 \end{center}
 \caption{Position of normalized impedance $Z_L=0.5+j1$ on Smith Chart.}
 \label{fig:NormImponSC}
@@ -355,7 +349,7 @@ A section of transmission line has to be added to impedance $Z_L=0.5+j1$ to tran
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/Match2.jpg}
+\includegraphics[scale=1]{../jpg/MatchTL-01.jpg}
 \end{center}
 \caption{The result of impedance matching.}
 \label{fig:AddingSectionOfLine}
@@ -372,7 +366,7 @@ To find the stub that will have the same input admittance as an inductor $Y_{add
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/MatchTL.jpg}
+\includegraphics[scale=1]{../jpg/MatchTL-01.jpg}
 \end{center}
 \caption{Transmission-line impedance matching circuit.}
 \label{fig:TransLineImpM}
@@ -389,7 +383,7 @@ Graphically, there are several different lumped-element impedance matching circu
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/LumpedVariety-01.jpg}
+\includegraphics[scale=1]{../jpg/LumpedVariety-01.jpg}
 \end{center}
 \caption{A variety of lumped-element impedance matching circuits for impedance $Z_L=25+j50 \Omega$.}
 \label{fig:LumpedVariety}
@@ -403,7 +397,7 @@ We again start from the load impedance  $Z_L=25+j 100 \Omega$, and we normalize 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/LumpedMatch1.jpg}
+\includegraphics[scale=1]{../jpg/LumpedMatch2-01.jpg}
 \end{center}
 \caption{Adding an element in parallel to load impedance to get the equivalent real part of the impedance equal to one.}
 \label{fig:LumpedImpM1}
@@ -416,7 +410,7 @@ When we add $4.1$pF capacitor in parallel with the load $\bar{Z}_L=0.5+j1$, the 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.4]{../jpg/LumpedMatch3-01.jpg}
+\includegraphics[scale=1]{../jpg/LumpedMatch3-01.jpg}
 \end{center}
 \caption{Finalized lumped-element impedance-matching circuit.}
 \label{fig:LumpedImpM3}
