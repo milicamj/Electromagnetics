@@ -1,0 +1,133 @@
+\documentclass{ximera}  
+
+\input{../preamble.tex}
+
+\title{Engineering Design}  
+\author{Milica Markovic}
+\outcome{Derive equation of a wave on a transmission line by considering finite propagation speed of electric signals.Determine whether the transmission-line theory should be used based on line length and signal frequency.}
+\begin{document}  
+\begin{abstract}  
+Application of sinusoidal signals to engineering design.
+\end{abstract}  
+\maketitle
+
+When do we have to use transmission-line theory? The answer to this question depends on the time-delay (or phase shift) that the line introduces. If the phase shift is very small, for example $\approx 2^0$, between the signal at the generator and the load, we don't have to use the transmission line theory, but if the signals phases are much higher than  $\approx 2^0$ then we do have to use it.
+
+We will now derive expression for the phase shift on a transmission line between the generator and the load.
+
+If we have a sinusoidal generator at the beginning of the transmission line what would the signal look like when it arrives at the load?
+
+The signal at the generator is 
+
+\begin{eqnarray}
+v_{AA^`}(t)=A cos(\omega t)
+\end{eqnarray}
+
+At the other end the transmission line the signal is delayed
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=v_{AA^`}(t-T) \\
+v_{BB^`}(t)=v_{AA^`}(t-\frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega (t - \frac{l}{c}))  \\
+v_{BB^`}(t)=A cos(\omega t - \omega \frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega t -  \frac{\omega }{c} l) 
+\end{eqnarray}
+
+Since we know that angular frequency is  $\omega = 2 \pi f$
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A cos(\omega t -  \frac{ 2 \pi f }{c} l)
+\end{eqnarray}
+
+The quantity $\frac{c}{f}$ is called the wavelength $\lambda$, and it represents the distance between two maximums of a signal on a transmission line. It is a period of the signal on a transmission line over distance, and the units are meters. It is analogous to the signal period $T=\frac{2 \pi}{omega}$, but $\lambda$ is a period over distance, not time.
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A \, cos(\omega t -  \frac{ 2 \pi }{\lambda} l) \label{tllength1}
+\end{eqnarray}
+
+The quantity $ \frac{ 2 \pi }{\lambda} $ is called the propagation constant $\beta$, and it is analogous to the angular frequency $\omega$ of a signal, but it represents how fast  the signal is changing over distance and not time.
+
+
+Finally the expression for the voltage at BB end is
+
+
+\begin{eqnarray}
+v_{BB^`}(t)=A \, cos(\omega t - \beta l) \\
+v_{BB^`}(t)=A \, cos(\omega t - \Psi)
+\end{eqnarray}
+
+We see that at BB' the signal will experience a phase shift.
+We will later show that the solution of the wave equation is the equation above. We will derive wave equation   from the Telegrapher's
+equations.
+
+Now let's see how the length of the line $l$ affects the voltage at the
+end BB'. Look at Equation \ref{tllength1}.
+The signal will experience a phase shift of $2\pi \frac{l}{\lambda}$. If this phase shift is small, there will not be much difference between
+the phase of the signal at the generator and at the load. This means that we don't have to use transmission line theory to account for the effects of the line.
+If the phase shift is significant, then we do have to use the transmission line theory. Let's look at some numbers in the  following example.
+
+\begin{enumerate}
+\item If $\frac{l}{\lambda} < 0.01$ then the angle $2 \pi
+\frac{l}{\lambda}$ is of the order of 0.0314 rad or about 2$^0$. In this case, the
+phase is obviosly something that we don't have to worry about. When
+the length of the transmission line is much smaller than $\lambda$, $l<<\frac{\lambda}{100}$
+the wave propagation on the line can be ingnored.
+\item If  $\frac{l}{\lambda} > 0.01$, say  $\frac{l}{\lambda} =0.1$,
+then the phase is 20$^0$, which is a significant phase shift. In this
+case it may be necessary to account fro transmission line effects.
+\end{enumerate}
+
+
+\begin{question}  
+Do we have to use transmission-line theory if the length of the line is 5000km, and the frequency of the signal is 60Hz? 
+\begin{multipleChoice}  
+\choice[correct]{Yes}  
+\choice{No}    
+\end{multipleChoice}  
+\end{question} 
+
+
+
+\begin{question}  
+Do we have to use transmission-line theory if the length of the line is 2\,cm, and the frequency of the signal is 10\,GHz? 
+\begin{multipleChoice}  
+\choice[correct]{Yes}  
+\choice{No}    
+\end{multipleChoice}  
+\end{question} 
+
+
+
+
+\end{document}
+
+
+
+                                                                   
+
+
+
+                                       
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

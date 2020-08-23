@@ -1,0 +1,104 @@
+\documentclass{ximera}  
+
+\input{../preamble.tex}
+
+\title{Signal Delay on Transmission Lines}  
+\author{Milica Markovic}
+\outcome{Explain how is a  signal different at the beginning and end of a transmission line.}
+\begin{document}  
+\begin{abstract}  
+Review of Sinusoidal Signals
+\end{abstract}  
+\maketitle
+
+
+
+
+Lagging and leading is often used in circuits to describe signals.
+
+Let's look at a circuit in Figure \ref{elcric} where the generator and the load are connected with a cable, just as in your circuits lab. The cable is overemphasised in this figure, compared to figures in your circuits lab, where the cable is usually ignored. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{jpg/generaltransmissionlinecircuit1.jpg}
+%\strut\psfig{figure=generaltransmissionlinecircuit.ps,width=3cm} \\
+\end{center}
+\caption{Electronic Circuit with an emphasis on cables that connect the generator and the load.}
+\label{elcric}
+\end{figure}
+
+Let's assume that the switch closes, and the generator produces a step function at time t=0, as shown in Figure  \ref{timedelaysig}. Because the electrical signals propagate with the speed of light, the signal needs T sec to appear at the load, after the switch closes. Figure \ref{delayedsig} shows the step signal as it traveles on the transmission line at different times t=0, t=T/4, t=T/2 and t=T.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{jpg/timedelayedsignal.jpg}  
+%\strut\psfig{figure=generaltransmissionlinecircuit.ps,width=3cm}
+\end{center}
+\caption{Voltage as a function of time at the generator side (top) and the load side (bottom) of a transmission line, if the switch closes at t=0 the voltage arrives at t=l/c=T at the load. These graphs can be obtained by observing the voltage on an oscilloscope at the load and at the generator side.}
+\label{timedelaysig} 
+ \end{figure}
+
+
+
+
+
+ How much time T does it take for this signal to go from AA' end to BB' end? 
+Since electromagnetic waves propagate with the constant speed, the speed of light, the time that  the signal needs to go from the generator to  the load  depends  on the length of the transmission line. If the transmission line is $l$, then the delay between the generator and the load will be  $T=\frac{l}{c}$, where $c=3\times 10^8$. If the signal at the generator AA' is $v_g(t)=$v(t), then the signal at the load end is $v_l(t)=$v(t-T). 
+
+
+Figure \ref{delayedsig} shows the signal on the transmission line at different times. Note that the horizontal axis shows distance, not time. Each graph shows a snapshot of the signal on the transmission line at different times. The top figure shows the moment when we turn the switch on, at t=0, and the signal shows up at the beginning of the transmission line, at the generator's end. A little later, at t=1=T/4,the front of the signal travelled a little farther along the line. At t=2=T/2, the signal traveled even further on the line. The bottom figure shows the signal that arrived at the load at some time t=4=T. Note that the load will not see the signal until t=4=T. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{jpg/timedelayedsignaltl.jpg}
+%\strut\psfig{figure=generaltransmissionlinecircuit.ps,width=3cm} \\
+\end{center}
+\caption{Voltage along the transmission line in Figure \ref{elcric}, for four different time intervals t=0, switch closes, t=T/4, t=T/2 and t=T. It is assumed that the length of the transmission line is equal to l=T/c.Note that the horizontal axis is the distance z from the generator to the cable, not time. }
+\label{delayedsig}
+\end{figure}
+
+How much time will the signal need to arrive at the load? We know that the speed of light is $c=3\,10^8$m/s. Since this is a constant speed, the time is $t=\frac{l}{c}$, where l is the length of the transmission line.
+
+\begin{question}  
+How much time-delay will a l=1000km transmission line produce?  
+\begin{multipleChoice}  
+\choice{3.33 ns}  
+\choice{3.33 $\mu$s}  
+\choice[correct]{3.33 ms }  
+\end{multipleChoice}  
+\end{question} 
+
+\end{document}
+
+
+
+                                                                   
+
+
+
+                                       
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
