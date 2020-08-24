@@ -1,0 +1,105 @@
+\documentclass{ximera}  
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Operations with Complex Numbers} 
+\author{Milica Markovic} 
+\outcome{Describe which coordinate system to use when adding/subtracting and which one when multiplying/dividing two complex numbers. Apply complex numbers to solve for impedance of a circuit element if phasor of current through and voltage on it are known. Apply complex numbers to solve for voltage on a circuit element if phasor of current and impedance are known. Apply complex conjugate operation to a complex number in rectangular and polar coordinates. Derive magnitude of a complex number from a complex number and complex conjugate of the same number.}
+\begin{document}  
+\begin{abstract}  
+The purpose of this section is to review arithmetic operations with complex numbers. Complex numbers are used to describe circuits. When we are solving circuits to find voltages, currents, and power we often encounter addition, subtraction, multiplication, division and complex conjugate of complex numbers.  
+\end{abstract}  
+\maketitle    
+  
+  
+
+\section{Complex Conjugate}
+
+ Complex Conjugate is often seen when finding the conditions for maximum power transfer.
+
+\begin{eqnarray}
+z^* = (x+ j y)^* = x- j y = |z| e^{-j \Theta}
+\end{eqnarray}
+
+
+\section{Addition}
+
+
+
+ Complex number addition and subtraction is often seen went to complex impedances are placed in series and the equivalent  complex impedance has to be found. the easiest way to add two complex numbers is to find Cartesian representation of both and then add the real parts separately and the imaginary part separately.
+
+\begin{eqnarray}
+z_1=x_1 + j y_1 \nonumber \\
+z_2=x_2 + j y_2 \nonumber \\
+z_1+z_2 = x_1 + x_2 + j ( y_1 + y_2)
+\end{eqnarray}
+
+
+You can visually explore addition of two complex numbers with the app below.
+\begin{center}  
+\geogebra{yfvhfb8a}{800}{600}  
+\end{center} 
+
+
+
+\begin{question}
+Two impedances are given $Z_1=50+j200 \Omega$ and  $Z_2=50-j200 \Omega$. If the two impedances are in series, what is the total impedance?
+  
+$Z_1+Z_2 = \answer{100}$  
+\end{question} 
+
+\section{Subtraction}
+
+
+\begin{eqnarray}
+z_1=x_1 + j y_1 \nonumber \\
+z_2=x_2 + j y_2 \nonumber \\
+z_1-z_2 = x_1 - x_2 + j ( y_1 - y_2)
+\end{eqnarray} 
+
+
+You can visually explore subtraction of two complex numbers with the app below.
+ \begin{center}  
+\geogebra{ujsv2qkq}{800}{600}  
+\end{center} 
+
+\section{Multiplication and Division}
+
+Multiplication and Division are often seen the in calculation of the transfer function of a circuit. Two complex numbers can be mulitiplied or divided in either Cartesian or Polar forms. However, the easiest way to divide or multiply two complex numbers is to find the polar representation of both and then divide or multiply the amplitudes  and subtract or add the phases, as shown in equations below.
+
+
+
+\begin{eqnarray}
+z_1=|z_1| e^{j \Theta_1} \nonumber \\ 
+z_2=|z_2| e^{j \Theta_2} \nonumber \\
+\frac{z_1}{ z_2} = \frac{|z_1|}{|z_2|} e^{j \Theta_1 -\Theta_2}
+\end{eqnarray}
+  
+
+\begin{eqnarray}
+z_1=|z_1| e^{j \Theta_1} \nonumber \\
+z_2=|z_2| e^{j \Theta_2} \nonumber \\
+z_1 z_2 = |z_1|}{|z_2| e^{j \Theta_1 +\Theta_2}
+\end{eqnarray}
+
+
+
+You can visually explore multiplication of two complex numbers with the app below.
+
+    
+   
+ \begin{center}  
+\geogebra{h34xreac}{800}{600}  
+\end{center} 
+    
+    
+\begin{question}
+Three complex numbers are given $Z_1=100+j50$, $Z_2=3*e^{j40^0}$ and  $Z_3=20+j100$. Calculate $\frac{Z_1 Z_2}{Z_2+Z_3}$. Present your answer as a complex number in Cartesian coordinates with two decimal places. For example $0.11+j0.2$ :
+  
+$\frac{Z_1 Z_2}{Z_2+Z_3} = \answer{0.36+j3.16}$  
+\end{question} 
+
+\end{document} 
