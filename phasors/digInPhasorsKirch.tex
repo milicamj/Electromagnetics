@@ -43,8 +43,8 @@ The generator we originally had in the circuit is now just the real part of the 
 
 
 \begin{eqnarray}
-v_s(t)=  V \cos (\omega t + \Theta_V)=\Re\{ A cos (\omega t + \Theta ) + j A sin (\omega t + \Theta)\}= \nonumber \\ 
-= \Re\{A e^{j(\omega t + \Theta)}\}=\Re\{A e^{j \Theta} e^{j \omega t}\} \label{eq2}
+v_s(t)=  V \cos (\omega t + \Theta_V)=\Re\{ V cos (\omega t + \Theta ) + j V sin (\omega t + \Theta)\}= \nonumber \\ 
+= \Re\{V e^{j(\omega t + \Theta)}\}=\Re\{V e^{j \Theta} e^{j \omega t}\} \label{eq2}
 \end{eqnarray}
 We can now use the analysis from the previous section to  replace the time-domain quantities in equation \ref{eq0} with
 these newly developed expressions.
@@ -53,7 +53,7 @@ these newly developed expressions.
 
 \begin{eqnarray}
 v_s(t)=v_R(t) + v_C(t)  \\
-Re\{A e^{j \Theta} e^{j \omega t}\}=    \Re\{R \times I e^{j \Theta_I} e^{j \omega t}\}   +  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
+Re\{V_s e^{j \Theta_V} e^{j \omega t}\}=    \Re\{R \times I e^{j \Theta_I} e^{j \omega t}\}   +  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
 \end{eqnarray}
 
 A common term in the previous equation is $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expresion for the phasor of voltage and current to get the time domain expression. We can now
@@ -63,8 +63,8 @@ write the equation as
 
 
 \begin{eqnarray}
- V_S  e^{j \Theta_{V_S}}  =R \times I e^{j \Theta_I}  +    \frac{1}{j \omega C}  I e^{j \Theta_I}  \\
-V_S(j \omega)   = R I(j \omega)    + \frac{I(j \omega )}{j \omega C} 
+ V_s  e^{j \Theta_{V}}  =R \, I e^{j \Theta_I}  +    \frac{1}{j \omega C}  I e^{j \Theta_I}  \\
+\tilde{V}_s  = R \tilde{I}    + \frac{\tilde{I}}{j \omega C} 
 \end{eqnarray}
 
 
@@ -73,51 +73,57 @@ Since this is a linear equation, we can easily solve it:
 
 
 \begin{eqnarray}
-I (j \omega) = \frac{V_S(j \omega)}{ R    + \frac{1}{j \omega C} } \label{pheq}
+\tilde{I}  = \frac{\tilde{V}_s}{ R    + \frac{1}{j \omega C} } \label{pheq}
 \end{eqnarray} 
 
 
 
-Let's say that the values  are given for R, C,  $\omega$  and $V_S$ such that the phasor of the current is  $I=3 e^{j 45^o}$. To obtain the signal in the time domain,  we   multiply the phasor $I$ with the $ e^{j\omega t}$ term, and  then we find
-the real part of the expression to obtain its current in the time domain, as shown in Figure \ref{phtotd}
+
+\section{Converting the phasor back to the time domain}
+
+
+In general, if the phasor is given as $\tilde{V}=|V| e^{j \Theta_V}$, to find the time-domain signal, we first multiply the phasor with $e^{j \omega t}$ term, and then take the real part of it. 
+
+\begin{eqnarray}
+v(t)=\Re \{ \tilde{V} e^{j \omega t} \} \\
+v(t)=\Re\{|\tilde{V}| e^{j(\omega t + \Theta_V)}\} \\
+v(t)=\Re\{ |\tilde{V}| cos (\omega t + \Theta_V ) + j  |\tilde{V}|  sin (\omega t + \Theta_V)\} \\
+v(t) = V cos (\omega t + \Theta_V )
+\end{eqnarray}
+
+
+\begin{example}
+Phasor of a current is  given as $I=3 e^{j 45^o}$. Obtain the signal in the time domain.
+
+
+\begin{explanation}
+  To obtain the time-domain signal from the phasor:
+\begin{enumerate}
+\item multiply the phasor $\tilde{I}$ with the $ e^{j\omega t}$ term, 
+\item use Euler's formula 
+\item take the real part of the expression.
+\end{enumerate}  
+   
 
 
 \begin{eqnarray}
-i(t) = \Re\{ 3 e^{j 45^o}  e^{j\omega t} \} =  Re\{3 e^{j \omega t + 45^o}  \} = \nonumber \\ = \Re \{ 3 \cos (\omega t + 45^o ) + j 3 \sin (\omega t + 45^o \} = 3  \cos (\omega t + 45^o ) \label{phtotd}
-\end{eqnarray}
-
-In case we have an inductor in the circuit, the voltage on an inductor can be derived as shown in Figure \ref{eq77}. 
-
-
-\begin{eqnarray}
-v_L(t) = L \frac{\partial{ i(t)}}{\partial t}  =L  \frac{ Re\{    I e^{j \Theta_I} e^{j \omega t}\}}{\partial t}  dt  = \Re\{  LI e^{j \Theta_I} \frac{ \partial e^{j \omega t}}{\partial t} \} =  \nonumber \\ = \Re\{  LI e^{j  \Theta_I}  j  \omega e^{j \omega t} \} =  \Re \{  j  \omega       LI e^{j  \Theta_I}    e^{j \omega t}   \}      \label{eq77} 
+i(t) = \Re\{ 3 e^{ j 45^o}  e^{j\omega t} \} =  Re\{3  e^{j \omega t + 45^o}  \} = \nonumber \\ = \Re \{ 3 \cos (\omega t + 45^o ) + j 3 \sin (\omega t + 45^o \} = 3  \cos (\omega t + 45^o ) \label{phtotd}
 \end{eqnarray}
 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.3]{../jpg/RLnew.jpg}
-%\strut\psfig{figure=complexnumberz.ps,width=3cm} \\
-\end{center}
-\caption{Complex number z in rectangular and polar coordinates.}
-\label{RLcirc}
-\end{figure}
+\end{explanation}
 
 
+\end{example}
 
 
-
-
-
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|c|c|} \hline
-cicruit element & impedance & low frequencies $f \to 0$& high frequencies $f \to \inf$   \\  \hline  
- capacitor     & $\frac{1}{j \omega C}$    & $\infty$ & $0$    \\  \hline       
- inductor & $j \omega L$              &    $0$   &       $\infty $             \\ \hline
-\end{tabular}
-\caption{Impedance of the capacitor and inductors and their equivalent impedances at high and low frequencies.}
-\end{table}
-
+\begin{question}
+The phasor for the  voltageis given as $\tilde{V}= 5 e^{ j \beta} $. Find the expression for the phasor in the time domain.
+\begin{multipleChoice}  
+\choice{$v(t) = 5 \cos \beta t $}  
+\choice[correct]{$v(t) = 5 \cos (\omega t+ \beta)$}  
+\choice{$v(t) = 5 \sin \beta t$}  
+\end{multipleChoice} 
+\end{question}
 
 \end{document} 

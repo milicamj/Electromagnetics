@@ -20,10 +20,12 @@ Phasors are essential tool in circuit analysis.
 
  Step-by-step instructions on how to solve circuits using phasors is given as follows:
 \begin{enumerate}
-\item Adopt cosine reference for generator voltage or current. 
+\item adopt cosine reference for generator voltage or current. 
 \item replace all impedances with their phasor expressions,
 \item write KVL and KCL, or use other Network Analysis techniques.
 \item find the phasor expression for the required current or voltage. 
+\item calculate phasors 
+\item sketch the phasor diagram
 \item multiply the phasor with $e^{j \omega t}$  
 \item find the real part of the above expression to get the current in the time domain.
 \end{enumerate}
@@ -34,30 +36,79 @@ It is customary in Electrical Engineering to use  $\cos( \omega t)$ for our time
 \begin{example}
 Using Vectors to Represent Phasors in an example
 
+A series RC circuit shown in Figure \ref{RCcircADS}. The circuit is driven with a frequency of 1\,GHz $v_s(t)=  \cos \omega t$, and R=1k$\Omega $, C= ${\frac{1}{2\pi }10}^{-12}$F. 
+ 
 
- Calculate on paper the magnitude  and phase of the current and voltages in a series RC circuit shown in Figure \ref{f112} (a) if the circuit is driven with a frequency of 1\,GHz (phase is zero) and R=1k$\Omega $, C= ${\frac{1}{2\pi }10}^{-12}$F. 
- 
- 
- Answer the following questions:
 
 \begin{enumerate}
-\item  What are the magnitude, phase and time delay of the source voltage?
+\item  Identify magnitude, phase, and time-delay  of the source voltage.
 
-\item  What are the magnitude, phase and time delay of the voltage across the resistor?
+\item  Calculate magnitude, phase and time-delay of the voltage across the resistor.
 
-\item  What are the magnitude, phase and time delay of the voltage across the capacitor?
+\item  Calculate magnitude, phase and time-delay of the voltage across the capacitor.
 
 \item  The simulated voltage magnitude across the resistor is about 0.5V and the simulated voltage across the capacitor is about 0.85V.  If we use KVL $ 0.85V+0.5V \neq 1V$. Why? Look at Figure \ref{f112} to help you with answer this question.
 
+\item Sketch the phasor diagram of voltages in the circuit. 
+
 \end{enumerate}
+
 \begin{explanation} 
+The magnitude of the voltage source is 1, the phase and time-delays are zero. To find the voltages and currents in the circuit we will follow the process outlined above.
+
+Solving for voltages and currents in the circuit.
+ \begin{enumerate}
+\item The generator is already given in terms of cosine function. The phasor of this voltage is $\tilde{V}_s= 1$ 
+\item replace all impedances with their phasor expressions. R is not changed, and impedance of a capacitor is $Z_c=\frac{1}{j \omega C}$.
+\item  Use Kirchoff's Voltage law 
+
+\begin{eqnarray}
+\tilde{V}_s  = R \tilde{I}    + \frac{\tilde{I}}{j \omega C}  
+\end{eqnarray}
+
+\item find the phasor expression for the required current or voltage. 
+
+\begin{eqnarray}
+\tilde{I}  = \frac{\tilde{V}_s}{ R    + \frac{1}{j \omega C} } \\
+\tilde{V}_R = R \tilde{I} = R \frac{\tilde{V}_s}{ R    + \frac{1}{j \omega C} }  \\
+\tilde{V}_C = Z_c \tilde{I} =  \frac{1}{ j \omega C} \frac{\tilde{V}_s}{ R    + \frac{1}{j \omega C} }  
+\end{eqnarray}
+
+\item calculate the currents and voltages from the above expressions
+
+\begin{eqnarray}
+\tilde{I}  = 0.54 e^{j 58^o} \unit{mA} \\
+\tilde{V_R} = 0.54  e^{j 58^o} \unit{V}\\
+\tilde{V_C} =   0.85 e^{-j 32^o}  \unit{V}
+\end{eqnarray}
+
+\item When you calculate the magnitudes and phases of the voltages in the RC circuit, draw three complex numbers, to represent magnitude and phases of all three vectors, as in Figure \ref{PP}. The three points denote the three position vectors as shown in Figure \ref{f112}. Vector addition must be used to add the voltages on the resistor and capacitor to obtain the voltage of the generator. The  magnitudes of voltages do not add simply as real numbers, because the voltages have different phases Complex numbers magnitudes can be added only if their phases are the same, in other words if the phasors point in the same direction, as is the case for purely resistive circuits. However, in any circuits, if we use vector addition (or complex number addition) we will get that the vectors of voltages add up to the source voltage.
+\item multiply the phasor with $e^{j \omega t}$  
+
+\begin{eqnarray}
+0.54 e^{j 58^o} e^{j \omega t} = 0.54 e^{j(\omega t + 58^o)}\\
+0.54  e^{j 58^o} e^{j \omega t} =0.54  e^{j( \omega t + 58^o)}\\
+ 0.85 e^{-j 32^o}e^{j \omega t} =0.85 e^{j(\omega t - 32^o)}
+\end{eqnarray}
+\item find the real part of the above expression to get the current in the time domain. Time domain signals are shown in Figure \ref{SSangle}.
+
+\begin{eqnarray}
+i(t)= \Re \{  0.54 e^{j(\omega t + 58^o)}  \} =0.54 \cos(\omega t + 58^o)  \unit{mA}  \\
+v_R(t)= \Re \{ 0.54  e^{j( \omega t + 58^o)} \} = 0.54 \cos(\omega t + 58^o) \unit{V}   \\ 
+v_C(t) =\Re \{ 0.85 e^{j(\omega t - 32^o)}    \} = 0.85 \cos(\omega t - 32^o) \unit{V}
+\end{eqnarray}
+\end{enumerate}
+ 
+ To find time-delay for each signal, we will use the equation $T=\frac{\Theta}{2 \pi f}$.  Since angles above are in degrees, we need to convert degrees to radians. $\frac{\Theta_{deg}*2 \pi /360}{2 \pi f}=\frac{ \Theta_{deg}}{360 f}  $. Time-delays are as follows:
+ 
+ \begin{eqnarray}
+ \tau_i= 160 \unit{ns} \\
+ \tau_Vr= 160 \unit{ns} \\
+ \tau_Vc=- 88 \unit{ns}  
+ \end{eqnarray}
  
  
-  When you calculate the magnitudes and phases of the voltages in the RC circuit, draw three points, to represent magnitude and phases of all three vectors, as in Figure \ref{PP}. The three points denote the three position vectors as shown in Figure \ref{f112}. Vector addition must be used to add the voltages on the resistor and capacitor to obtain the voltage of the generator. 
-
-
-
-
+ 
 
 
 \begin{figure}[htbp]
@@ -92,28 +143,32 @@ Using Vectors to Represent Phasors in an example
 \begin{center}
 \includegraphics[scale=0.2]{../jpg/RCvoltPolarPlotVectors.jpg}
 \end{center}
-\caption{\label{f112} Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V.}
+\caption{\label{f112} Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V with vector addition.}
 \end{figure}
 
 
 
 
 
-%\begin{figure}[htbp]
-%\vspace*{-0.5cm}
-%\begin{center}
-%\includegraphics[scale=0.7]{../jpg/addingvectors.jpg}
-%\end{center}
-%\caption{\label{f113} Skeching phasors using vector magnitudes on paper.}
-%\end{figure}
 \end{explanation}
 
 
 
 \end{example}
 
+\newpage
 
 
+\begin{example}
+Observe the vector phasor diagram for an RC and an RL circuit below. How are the diagrams the same and how are they different if you change the parameter values of the circuit?
+\subsection{Series RC Circuit}
+\begin{center}  
+\geogebra{h4bxa4rk}{900}{600}  
+\end{center} 
 
-
+\subsection{Series RL Circuit}
+\begin{center}  
+\geogebra{xuq8wchs}{900}{600}  
+\end{center}
+\end{example}
 \end{document} 
