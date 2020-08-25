@@ -1,0 +1,250 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Kirchoff's Laws} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to Kirchoff's Laws.}
+\begin{document}  
+\begin{abstract}  
+Phasors are essential tool in circuit analysis.
+\end{abstract}  
+\maketitle    
+
+
+
+We will see how the phasor transformation is applied to an RC circuit shown in Figure 2\ref{RCcirc}.  To solve this circuit in the time domain we apply Kirchoff's voltage law as shown in Equation \ref{eq-1} -\ref{eq0}.
+
+
+The circuit in Figure \ref{RCcirc} is a simple RC circuit. KVL equation in the time domain is given in Equation \ref{eq-1}.
+
+\begin{eqnarray}
+        v_s(t)=v_R(t)+v_C(t)                \label{eq-1}  \\
+v_s(t) = R i + \frac{1}{C} \int i(t) dt \label{eq0}
+\end{eqnarray} 
+
+
+As we discussed in the previous section, we will be using principle of superposition, and add another generator to the circuit, as shown in Figure \ref{RCcirc}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/RCcircuitPhasorSup.jpg}
+%\strut\psfig{figure=complexnumberz.ps,width=3cm} \\
+\end{center}
+\caption{Using superposition to find phasors of voltages and currents in an RC circuit.}
+\label{RCcirc}
+\end{figure}
+
+The generator we originally had in the circuit is now just the real part of the phasor expresion shown in Equation \ref{eq2}.
+
+
+\begin{eqnarray}
+v_s(t)=  V \cos (\omega t + \Theta_V)=\Re\{ A cos (\omega t + \Theta ) + j A sin (\omega t + \Theta)\}= \nonumber \\ 
+= \Re\{A e^{j(\omega t + \Theta)}\}=\Re\{A e^{j \Theta} e^{j \omega t}\} \label{eq2}
+\end{eqnarray}
+We can now use the analysis from the previous section to  replace the time-domain quantities in equation \ref{eq0} with
+these newly developed expressions.
+
+
+
+\begin{eqnarray}
+v_s(t)=v_R(t) + v_C(t)  \\
+Re\{A e^{j \Theta} e^{j \omega t}\}=    \Re\{R \times I e^{j \Theta_I} e^{j \omega t}\}   +  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
+\end{eqnarray}
+
+A common term in the previous equation is $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expresion for the phasor of voltage and current to get the time domain expression. We can now
+write the equation as
+
+
+
+
+\begin{eqnarray}
+ V_S  e^{j \Theta_{V_S}}  =R \times I e^{j \Theta_I}  +    \frac{1}{j \omega C}  I e^{j \Theta_I}  \\
+V_S(j \omega)   = R I(j \omega)    + \frac{I(j \omega )}{j \omega C} 
+\end{eqnarray}
+
+
+
+Since this is a linear equation, we can easily solve it:
+
+
+\begin{eqnarray}
+I (j \omega) = \frac{V_S(j \omega)}{ R    + \frac{1}{j \omega C} } \label{pheq}
+\end{eqnarray} 
+
+
+
+Let's say that the values  are given for R, C,  $\omega$  and $V_S$ such that the phasor of the current is  $I=3 e^{j 45^o}$. To obtain the signal in the time domain,  we   multiply the phasor $I$ with the $ e^{j\omega t}$ term, and  then we find
+the real part of the expression to obtain its current in the time domain, as shown in Figure \ref{phtotd}
+
+
+\begin{eqnarray}
+i(t) = \Re\{ 3 e^{j 45^o}  e^{j\omega t} \} =  Re\{3 e^{j \omega t + 45^o}  \} = \nonumber \\ = \Re \{ 3 \cos (\omega t + 45^o ) + j 3 \sin (\omega t + 45^o \} = 3  \cos (\omega t + 45^o ) \label{phtotd}
+\end{eqnarray}
+
+In case we have an inductor in the circuit, the voltage on an inductor can be derived as shown in Figure \ref{eq77}. 
+
+
+\begin{eqnarray}
+v_L(t) = L \frac{\partial{ i(t)}}{\partial t}  =L  \frac{ Re\{    I e^{j \Theta_I} e^{j \omega t}\}}{\partial t}  dt  = \Re\{  LI e^{j \Theta_I} \frac{ \partial e^{j \omega t}}{\partial t} \} =  \nonumber \\ = \Re\{  LI e^{j  \Theta_I}  j  \omega e^{j \omega t} \} =  \Re \{  j  \omega       LI e^{j  \Theta_I}    e^{j \omega t}   \}      \label{eq77} 
+\end{eqnarray}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/RLnew.jpg}
+%\strut\psfig{figure=complexnumberz.ps,width=3cm} \\
+\end{center}
+\caption{Complex number z in rectangular and polar coordinates.}
+\label{RLcirc}
+\end{figure}
+
+
+
+ Step-by-step instructions on how to solve circuits using phasors is given as follows:
+\begin{enumerate}
+\item Adopt cosine reference for generator voltage or current. 
+\item replace all impedances with their phasor expressions,
+\item write KVL and KCL, or use other Network Analysis techniques.
+\item find the phasor expression for the required current or voltage. 
+\item multiply the phasor with $e^{j \omega t}$  
+\item find the real part of the above expression to get the current in the time domain.
+\end{enumerate}
+
+
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+cicruit element & impedance & low frequencies $f \to 0$& high frequencies $f \to \inf$   \\  \hline  
+ capacitor     & $\frac{1}{j \omega C}$    & $\infty$ & $0$    \\  \hline       
+ inductor & $j \omega L$              &    $0$   &       $\infty $             \\ \hline
+\end{tabular}
+\caption{Impedance of the capacitor and inductors and their equivalent impedances at high and low frequencies.}
+\end{table}
+
+
+
+\begin{example}
+Using Vectors to Represent Phasors in an example
+
+
+ Calculate on paper the magnitude  and phase of the current and voltages in a series RC circuit shown in Figure \ref{f112} (a) if the circuit is driven with a frequency of 1\,GHz (phase is zero) and R=1k$\Omega $, C= ${\frac{1}{2\pi }10}^{-12}$F. 
+ 
+ 
+ Answer the following questions:
+
+\begin{enumerate}
+\item  What are the magnitude, phase and time delay of the source voltage?
+
+\item  What are the magnitude, phase and time delay of the voltage across the resistor?
+
+\item  What are the magnitude, phase and time delay of the voltage across the capacitor?
+
+\item  The simulated voltage magnitude across the resistor is about 0.5V and the simulated voltage across the capacitor is about 0.85V.  If we use KVL $ 0.85V+0.5V \neq 1V$. Why? Look at Figure \ref{f112} to help you with answer this question.
+
+\end{enumerate}
+\begin{explanation} 
+ 
+ 
+  When you calculate the magnitudes and phases of the voltages in the RC circuit, draw three points, to represent magnitude and phases of all three vectors, as in Figure \ref{PP}. The three points denote the three position vectors as shown in Figure \ref{f112}. Vector addition must be used to add the voltages on the resistor and capacitor to obtain the voltage of the generator. 
+
+
+
+
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCcircADS.jpg}
+\end{center}
+\caption{\label{RCcircADS} RC circuit in ADS.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/voltagesinRCcircRadADS}
+\end{center}
+\caption{\label{SSangle} Sinusoidal signal as a function of angle $\omega t$}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCvoltPolarPlotADS.jpg}
+\end{center}
+\caption{\label{PP} Points represent polar plot of complex voltages in RC circuit.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCvoltPolarPlotVectors.jpg}
+\end{center}
+\caption{\label{f112} Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V.}
+\end{figure}
+
+
+
+
+
+%\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+%\begin{center}
+%\includegraphics[scale=0.7]{../jpg/addingvectors.jpg}
+%\end{center}
+%\caption{\label{f113} Skeching phasors using vector magnitudes on paper.}
+%\end{figure}
+\end{explanation}
+
+
+
+\end{example}
+
+
+
+
+
+%This activity is about creative work.  
+%\begin{exercise}  
+%  Choose the best place to work on mathematics.  
+%  \begin{multipleChoice}  
+%    \choice{At the library}  
+%    \choice[correct]{At the caffe}  
+%    \choice{In your office}  
+%  \end{multipleChoice}  
+%\end{exercise}  
+
+
+
+\begin{sageCell}
+var('s t')
+x(t) = 3*cos(t)
+y(t) = 3*sin(t)
+c(t) = (x(t),y(t))
+circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+circle
+\end{sageCell}
+
+\begin{sageOutput}
+var('s t')
+x(t) = 3*cos(t)
+y(t) = 3*sin(t)
+c(t) = (x(t),y(t))
+circle=parametric_plot(c(t),(t,0,2*pi),color="black")
+circle
+\end{sageOutput}
+
+\end{document} 

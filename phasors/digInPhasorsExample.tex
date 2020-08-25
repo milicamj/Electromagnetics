@@ -1,0 +1,106 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Example of circuit analysis with phasors} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+Phasors are essential tool in circuit analysis.
+\end{abstract}  
+\maketitle    
+
+
+It is customary in Electrical Engineering to use  $\cos( \omega t)$ for our time-domain signal, and we call these phasors "cosine reference phasors".  If the generator in a circuit is given in terms of $\sin (\omega t)$, the sin function has to be converted to a cosine. To do that, subtract $90^o$ from the phase of the sinusoid, because $\sin( \omega t) = \cos(\omega t - 90^o)$.
+
+\begin{example}
+Using Vectors to Represent Phasors in an example
+
+
+ Calculate on paper the magnitude  and phase of the current and voltages in a series RC circuit shown in Figure \ref{f112} (a) if the circuit is driven with a frequency of 1\,GHz (phase is zero) and R=1k$\Omega $, C= ${\frac{1}{2\pi }10}^{-12}$F. 
+ 
+ 
+ Answer the following questions:
+
+\begin{enumerate}
+\item  What are the magnitude, phase and time delay of the source voltage?
+
+\item  What are the magnitude, phase and time delay of the voltage across the resistor?
+
+\item  What are the magnitude, phase and time delay of the voltage across the capacitor?
+
+\item  The simulated voltage magnitude across the resistor is about 0.5V and the simulated voltage across the capacitor is about 0.85V.  If we use KVL $ 0.85V+0.5V \neq 1V$. Why? Look at Figure \ref{f112} to help you with answer this question.
+
+\end{enumerate}
+\begin{explanation} 
+ 
+ 
+  When you calculate the magnitudes and phases of the voltages in the RC circuit, draw three points, to represent magnitude and phases of all three vectors, as in Figure \ref{PP}. The three points denote the three position vectors as shown in Figure \ref{f112}. Vector addition must be used to add the voltages on the resistor and capacitor to obtain the voltage of the generator. 
+
+
+
+
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCcircADS.jpg}
+\end{center}
+\caption{\label{RCcircADS} RC circuit in ADS.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/voltagesinRCcircRadADS}
+\end{center}
+\caption{\label{SSangle} Sinusoidal signal as a function of angle $\omega t$}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCvoltPolarPlotADS.jpg}
+\end{center}
+\caption{\label{PP} Points represent polar plot of complex voltages in RC circuit.}
+\end{figure}
+
+
+\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/RCvoltPolarPlotVectors.jpg}
+\end{center}
+\caption{\label{f112} Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V.}
+\end{figure}
+
+
+
+
+
+%\begin{figure}[htbp]
+%\vspace*{-0.5cm}
+%\begin{center}
+%\includegraphics[scale=0.7]{../jpg/addingvectors.jpg}
+%\end{center}
+%\caption{\label{f113} Skeching phasors using vector magnitudes on paper.}
+%\end{figure}
+\end{explanation}
+
+
+
+\end{example}
+
+
+
+
+
+\end{document} 

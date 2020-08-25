@@ -1,0 +1,255 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Review of Phasors} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+Phasors are essential tool in circuit analysis, used in many applications. Phasors are a special case of superposition, that simplifies circuit analysis. 
+\end{abstract}  
+\maketitle    
+
+
+\begin{definition}
+Phasor transformation is defined as follows:
+
+\begin{eqnarray}
+v(t)=\Re\{|V|e^{j\theta_v} e^{j \omega t}\}
+\end{eqnarray}
+
+where $|\widetilde{V}|e^{j\theta_v}$ is the phasor of voltage $v(t)$. Phasor is a complex number in polar coordinate system and it is usually denoted with a capital letter with a tilde above it $\widetilde{V} = |\widetilde{V}|e^{j\theta_v}$. $ |\widetilde{V}|$ is the magnitude and $\theta_v$ is the phase of the complex number. Symbol $\Re$ represents the real part of the expression in the curly brackets. 
+
+\end{definition}
+
+
+
+In order to use phasors, the circuit has to be linear. Circuits that have  only capacitors, inductors and resistors are 
+linear circuits.  In  a  linear circuit, all currents and voltages are  at the frequency of the generator. That means that we don't have to keep track  of the frequency of voltages and currents when we are solving the circuit. We know the frequency of all currents and voltages once we know the frequency of the generator. The quantities that will differ for different currents and voltages are the amplitudes and phases. Phasors allow us to drop the information about the frequency of the signal, and only  keep track of the magnitude and phase of the signal. So $cos (\omega t)$ is an important part of the generator performance, however, it is not critical to carry out the steps in circuit analysis.
+
+
+ In order to remove $cos (\omega t)$  term from the generator, and other circuit analysis equations,
+we have to use complex numbers.  To write the cosine  function  in a concise form  as a complex number, we add  a sinusoidal imaginary term.
+
+\begin{eqnarray}
+ V \cos (\omega t + \Theta ) + j V sin (\omega t + \Theta) 
+\end{eqnarray}
+
+To simplify math, we have added another generator to our circuit $j A sin (\omega t + \Theta)$, and all currents and voltages in the circuit will be a response to both cosine and sine generator. At the end of the analysis,  we have to make sure when we are done with our calculations with complex numbers, that we only take the real part of the final expression. Using
+ Euler's identity, the expression becomes
+
+
+\begin{eqnarray}
+v_s(t)=  V \cos (\omega t + \Theta_V)=\Re\{ V cos (\omega t + \Theta ) + j V sin (\omega t + \Theta)\}= \nonumber \\ 
+= \Re\{V e^{j(\omega t + \Theta)}\}=\Re\{V e^{j \Theta} e^{j \omega t}\} \label{eq2}
+\end{eqnarray}
+
+In Equation \ref{eq2}  we  extracted the phase and amplitude information
+and separated it from the frequency. The amplitude and phase information is called phasor $V_S (j \omega)=A e^{j \Theta}$. 
+ 
+\begin{eqnarray}
+v(t)= \Re\{ V cos (\omega t + \Theta_V ) + j V \sin (\omega t + \Theta_V)\}= \nonumber \\ =\Re\{V e^{j(\omega t + \Theta_V)}\}=\Re\{V e^{j \Theta_V} e^{j \omega t}\} \label{eq41}
+\end{eqnarray}
+
+If we look at the first and last expression in Equation \ref{eq41} we see that the time domain signal is  the real part of the product of phasor and  the $e^{j \omega t}$ term. 
+
+\begin{eqnarray}
+v(t)=\Re\{V e^{j \Theta_V} e^{j \omega t}\} \label{eq41a} 
+\end{eqnarray}
+
+
+
+You still may be wondering why would this specific equation be used. This is really an applied principle of superposition. You have used superposition to find voltages and currents of two sources. In this case, we are adding another imaginary source to simplify the math, and when we calculate our currents and voltages, we only take the current and voltage from the real part of the source, the cosine function.
+
+We add an addition voltage source to our circuit, denote it as imaginary by multiplying it with $j=\sqrt{-1}$, so that we are able to use the Eurler's formula to write a sinusoidal signals in terms of complex exponentials. When we use complex exponentials, the time-domain differential equations transform to simple algebraic equations. Principle of superpositions tells us that the response of the circuit to the real part of the generator will be real, and the response of the imaginary part of the generator will be imaginary. Since we added additional source that wasn't there previously, we now need to take the response only from the real generator.
+
+
+In this section wee will see how the phasor transformation is applied to various circuit components. In the next section we will see why can we drop the exponential $e^{j\omega t}$ when analyzing circuits.
+
+
+\section{Phasor Transformation of Voltage}
+
+
+Sinusoidal voltage sources, or any other sinusoidal voltages are described as shown in Equation \ref{eq:voltSource}.
+\begin{eqnarray}
+v(t)= V cos (\omega t + \Theta_{V} ) \label{eq:voltSource}
+\end{eqnarray}
+
+To convert the voltage source to a phasor, we add the imaginary sinusoidal voltage with the same amplitude and phase, and write $\Re\{\}$ to select  only the real part of this expression.
+
+
+\begin{eqnarray}
+v(t)= \Re \{V \cos (\omega t + \Theta_{V} )+ j \sin (\omega t + \Theta_{V} ) \} \label{eq:voltSourcePhasor}
+\end{eqnarray}
+
+Using Euler's formula, we can then re-write the Equation \ref{eq:voltSourcePhasor} for voltage in time domain as:
+
+
+\begin{eqnarray}
+v(t)=\Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}\label{eq:VoltageDef}
+\end{eqnarray}
+
+The phasor of the voltage source is therefore
+
+\begin{eqnarray}
+\tilde{V}=|V|e^{j\theta_{V}} 
+\end{eqnarray}
+
+
+
+\section{Phasor Transformation of  Current}
+
+Current source in the time domain 
+\begin{eqnarray}
+i(t)= I cos (\omega t + \Theta_{I} ) 
+\end{eqnarray}
+
+
+Using similar consideration as in the section above, we can write the equation for current in the time domain as: 
+
+
+\begin{eqnarray}
+i(t)=\Re\{|I|e^{j\theta_{I}} e^{j \omega t}\}\label{eq:PhCurrentDef} 
+\end{eqnarray}
+
+The phasor of the current is therefore
+\begin{equation}
+\tilde{I}=|I|e^{j\theta_{I}}
+\end{equation}
+
+
+
+\section{Ohm's Law for Resistor}
+
+For a  resistor with resistance $R$, the relationship that describes voltage $v(t)$ on the resistor and  current $i(t)$ through the resistor in the time domain is
+
+\begin{equation}
+v(t)=R \, i(t)
+\end{equation}
+
+We can substitue the definition of phasors for voltage (Equation\ref{eq:VoltageDef}) and current (Equation \ref{eq:PhCurrentDef})  above to get
+
+\begin{equation}
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}   = R \, \Re\{|I|e^{j\theta_{I}} e^{j \omega t}\}
+\end{equation}
+
+Since resistance R is a real number, we can place it inside the real part of the expression on the right
+
+\begin{equation}
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}   =   \Re\{ R |I|e^{j\theta_{I}} e^{j \omega t}\}
+\end{equation}
+
+Now, on both the right and left side of the equation we have the $\Re\{\}$, and if we want to be precise, we would have to keep this notation througout our calculations, however it is easier to drop the $\Re\{\}$, and just remember that in the end, we have to only take the real part of the resulting voltage. In addition both left and right side of the equation have the term $e^{j \omega t}$. We can cancel this term now, but again, when we are done with the calculations, before we take the real part of the voltage we have to multiply it with $e^{j \omega t}$, to get the correct voltage in the time domain.
+
+The final equation for current and voltage in phasor domain is
+
+\begin{eqnarray}
+|V|e^{j\theta_{V}}    =  R |I|e^{j\theta_{I}}  \\
+\tilde{V} = R \tilde{I}
+\end{eqnarray}
+
+
+
+
+\section{Ohm's Law for Capacitor}
+
+ 
+
+For a  capacitor with capacitance $C$, the relationship that describes voltage $v(t)$ on the capacitor and  current $i(t)$ through the capacitor in the time domain is
+
+
+
+\begin{eqnarray}
+v_s(t) =  \frac{1}{C} \int i(t) dt \label{eq:capTD}
+\end{eqnarray} 
+
+
+In order to solve this circuit in the time-domain we have to  solve this integral.
+Use of phasors simplify the equations
+significantly. Differential or integral equations become a set of
+linear equations. We can subsitute the definition of phasors for voltage and current.
+
+
+
+
+\begin{eqnarray}
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\} =  \frac{1}{C} \int \Re\{I e^{j \Theta_I} e^{j \omega t}\}  dt \label{eq:CapCurrent}
+\end{eqnarray} 
+
+
+The voltage on the capacitor is a bit more complicated. What is the integral of $i(t)$? We will look only at the right side of the Equation\ref{eq:CapCurrent}. If we take all constants and integral inside the $\Re$,  and   take  time-independent quantities in front of the integral, we get
+
+
+
+
+\begin{eqnarray}
+ \frac{1}{C} \int i(t) dt  =  \Re\{   \frac{1}{C} \int I e^{j \Theta_I} e^{j \omega t}\}  dt  = \Re\{   \frac{1}{C}  I e^{j \Theta_I} \int e^{j \omega t}dt \}    \\
+ \Re\{   \frac{1}{C}  I e^{j \Theta_I} \frac{1}{j \omega} e^{j \omega t}  \}   = \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}  
+\end{eqnarray} 
+
+
+
+We can now look at both sides of the equation: 
+
+
+\begin{eqnarray}
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\} =  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}  \label{eq:CapCurrent1}
+\end{eqnarray} 
+
+
+Asin the case of resistors, we drop  the common term in the previous equation $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expresion for the phasor of voltage and current to get the time domain expression. We can now
+write the equation as
+
+
+
+
+\begin{eqnarray}
+ V  e^{j \Theta_{V}}  =   \frac{1}{j \omega C}  I e^{j \Theta_I}  \\
+ \tilde{V}  =  \frac{1}{j \omega C}  \tilde{I}
+\end{eqnarray}
+
+We now define expression $Z=\frac{1}{j \omega C} $ as the impedance of the capacitor. $X_C=\frac{1}{ \omega C}$ is called the reactance of the capacitor.
+
+
+\section{Ohm's Law for Inductor}
+
+
+In case we have an inductor in the circuit, the voltage on an inductor can be derived as shown in Equation \ref{eq77}. 
+
+
+
+\begin{eqnarray}
+v_L(t) = L \frac{\partial{ i(t)}}{\partial t}  =L  \frac{ Re\{    I e^{j \Theta_I} e^{j \omega t}\}}{\partial t}  dt  = \Re\{  LI e^{j \Theta_I} \frac{ \partial e^{j \omega t}}{\partial t} \} =  \nonumber \\ = \Re\{  LI e^{j  \Theta_I}  j  \omega e^{j \omega t} \} =  \Re \{  j  \omega       LI e^{j  \Theta_I}    e^{j \omega t}   \}      \label{eq77} 
+\end{eqnarray}
+
+The voltage on the inductor in phasor domain is then
+
+\begin{equation}
+\tilde{V}=j \omega L \tilde{I}
+\end{equation}
+
+Where $Z= j \omega L  $ is the impedance of inductor, and $X_c= \omega L $ is reactance of inductor.
+
+\section{Analysis of inductor and capactor impedance}
+
+The following table analyzes impedance of a capacitor and inductor as a function of frequency. We see that a capacitor acts as an open circuit at low frequencies, and short circuit at high frequencies. An inductor acts as a short circuit at low frequencies and open circuit at high frequencies. This is easily seen by replacing the angular frequency with very small or large numbers. The application of 
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+cicruit element & impedance & low frequencies $f \to 0$& high frequencies $f \to \inf$   \\  \hline  
+ capacitor     & $\frac{1}{j \omega C}$    & $\infty$ & $0$    \\  \hline       
+ inductor & $j \omega L$              &    $0$   &       $\infty $             \\ \hline
+\end{tabular}
+\caption{Impedance of the capacitor and inductors and their equivalent impedances at high and low frequencies.}
+\end{table}
+
+
+
+
+\end{document} 
