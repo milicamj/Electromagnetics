@@ -1,0 +1,146 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Propagation constant and loss} 
+\author{Milica Markovic} 
+\outcome{Describe propagation constant. Describe current and voltage on a lossless transmission line.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+\section{Lossless transmission line}
+
+
+In many practical applications, conductor loss is low $R\to 0$, and dielectric leakage is low $G \to 0$. These two conditions describe a
+lossless transmission line.
+
+In this case, the transmission line parameters are
+\begin{itemize}
+\item Propagation constant
+
+
+\begin{eqnarray}
+\gamma =\sqrt{(R+j\omega L)(G+ j\omega C)} \nonumber   \\ \nonumber
+\gamma= \sqrt{j \omega L j \omega C} \\ \nonumber
+\gamma = j \omega \sqrt{L C} = j \beta
+\end{eqnarray}
+
+\item Transmission line impedance will be defined in the next section, but it is also here for completeness.
+
+\begin{eqnarray}
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}} \nonumber  \\ \nonumber
+Z_0=\sqrt{\frac{j\omega L}{ j\omega C}} \\ \nonumber
+Z_0=\sqrt{\frac{L}{C}}
+\end{eqnarray}
+
+\item Wave velocity
+
+\begin{eqnarray}
+v=\frac{\omega}{\beta}  \nonumber \\ \nonumber
+v=\frac{\omega}{\omega \sqrt{LC}} \\ \nonumber
+v=\frac{1}{\sqrt{LC}}
+\end{eqnarray}
+
+
+\item Wavelength
+
+
+\begin{eqnarray}
+\lambda = \frac{2 \pi}{\beta}  \nonumber \\ \nonumber
+\lambda = \frac{2 \pi}{ \omega \sqrt{LC}} \\ \nonumber
+\lambda =\frac{2 \pi}{\sqrt{\epsilon_0 \mu_0 \epsilon_r} } \\ \nonumber
+\lambda = \frac{c}{f \sqrt{\epsilon_r}} \\ \nonumber
+\lambda = \frac{\lambda_0}{\sqrt{\epsilon_r}} \nonumber
+\end{eqnarray}
+\end{itemize}
+
+
+
+
+\section{Voltage and current on lossless transmission line}
+
+On a lossless transmission line, where $\gamma= j\beta$ current and voltage simplify to 
+
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} + \tilde{V}_0^- e^{j \beta z} \nonumber \\ \nonumber
+\tilde{I}(z)=\tilde{I}_0^+ e^{- j \beta z} + \tilde{I}_0^- e^{j \beta z}
+\end{eqnarray}
+
+
+\section{What does it mean when we say a medium is lossy or lossless?}
+In a lossless medium, electromagnetic wave power is not turning into heat; there is no amplitude loss. An electromagnetic wave is heating a lossy material; therefore, the wave's amplitude is decreasing as $e^{-\alpha x}$.
+
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+medium     & attenuation constant $\alpha$ [dB/km]     \\  \hline       
+coax        & 60                                 \\ \hline
+ waveguide  & 2  \\ \hline          
+fiber-optic &  0.5  \\ \hline
+\end{tabular}
+\end{center}
+
+
+In guided wave systems such as transmission lines and waveguides, the attenuation of power with distance follows approximately $e^{-2\alpha x}$. The power radiated by an antenna falls off as $1/r^{2}$. As the distance between the source and load increases, there is a specific distance at which the cable transmission is lossier than antenna transmission.
+
+\section{Low-Loss Transmission Line}
+
+This section is optional.
+
+
+In some practical applications, losses are small, but not negligible.  $R<< \omega L$ \footnote{metal resistance is
+lower than the inductive impedance}and $G <<  \omega C$\footnote{dielectric conductance is lower than the capacitive impedance}. 
+
+In this case, the transmission line parameters are
+\begin{itemize}
+\item Propagation constant
+
+We can re-write the propagation constant as shown below. 
+In somel applications,  losses are small, but not negligible.  $R<< \omega L$ and $G <<  \omega C$, then
+in Equation \ref{lossytl2}, $ RG<< \omega^2 LC$.
+
+\begin{eqnarray}
+\gamma =\sqrt{(R+j\omega L)(G+ j\omega C)}   \\ 
+\gamma= j\omega \sqrt{ L\, C}\sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)-\frac{R G}{\omega^2  L  C}} \label{lossytl2} \\ 
+\gamma\approx j\omega \sqrt{ L\, C}\sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)}\label{lowtleq1}
+\end{eqnarray}
+
+Taylor's series for function $\sqrt{1+x}= \sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)}$ in Equation \ref{lowtleq1} is shown in Equations \ref{taylorser1}-\ref{taylorser2}.
+
+\begin{eqnarray}
+\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}-...  \,for\, |x|<1 \label{taylorser1} \\
+\gamma \approx  j\omega \sqrt{ L\, C} \sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)}= j\omega \sqrt{ L\, C}\left(1-\frac{j}{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)\right) \label{taylorser2}
+\end{eqnarray}
+
+
+The real and imaginary part of the propagation constant  $\gamma$ are:
+
+\begin{eqnarray}
+\alpha=  \frac{   \omega \sqrt{ L\, C}  }{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)  \\
+\beta=     \omega \sqrt{ L\, C}
+\end{eqnarray}
+
+
+We see that the phase constant $\beta$ is the same as in the lossless case, and the attenuation constant $\alpha$ is frequency independent. All frequencies of a modulated signal are attenuated the same amount, and there is no dispersion on the line. When the phase constant is a linear function of frequency, $\beta=const \, \omega$, then the phase velocity is a constant $v_p=\frac{\omega}{\beta}=\frac{1}{const}$, and the group velocity is also a constant, and equal to the phase velocity. In this case, all frequencies of the modulated signal propagate at the same speed, and there is no distortion of the signal. 
+
+
+\end{itemize}
+
+
+
+
+
+\end{document} 

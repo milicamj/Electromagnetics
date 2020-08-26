@@ -1,0 +1,112 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Example Transmission Line Problem} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+\begin{example}
+
+A transmitter operated at 20MHz, Vg=100V with $Z_g=50 \Omega$ internal impedance is connected to an antenna load through l=6.33m of the line. The line is a lossless $Z_0=50 \Omega$, $\beta=0.595rad/m$. The antenna impedance at 20MHz measures $Z_L=36+j20 \Omega$. Set the beginning of the z-axis at the load, as shown in Figure \ref{fig:TRLine}.
+\begin{enumerate}
+\item What is the electrical length of the line? 
+\item What is the input impedance of the line $Z_{in}$?
+\item What is the forward going voltage at the load $\tilde{V}_0^+$?
+\item Find the expression for forward voltage anywhere on the line.
+\item Find the expression for reflected voltage anywhere on the line.
+\item Find the total voltage anywhere on the line.
+\item Find the expression for forward current anywhere on the line.
+\item Find the expression for reflected current anywhere on the line.
+\item Find the total current anywhere on the line.
+\item If now instead of the antenna we add load impedance $Z_l=50 \Omega$ to this 50 Ohm line, how will that change the equations above?
+\end{enumerate}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/trline.jpg}
+%\strut\psfig{figure=trline.ps,width=3cm} \\
+\end{center}
+\caption{Transmission Line connects generator and the load.}
+\label{fig:TRLine}
+\end{figure}
+
+
+\begin{explanation}
+
+The equations for the voltage and current anywhere (any z) on a transmission line  are
+
+
+\begin{eqnarray}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{eq:vtlfin} \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{eq:itlfin}
+\end{eqnarray}
+
+We are given phase constant $\beta$, and we have to find the other unknowns : phasor of voltage at the load $\tilde{V}_0^+$, and the reflection coefficient $\Gamma$.    
+
+Since we know the load impedance $Z_L$, and the transmission-line impedance $Z_0$, we can find the reflection coefficient $\Gamma$ using Equation \ref{eq:reflcoe1}.
+
+\begin{eqnarray}
+\Gamma =  \frac{Z_L -Z_0}{Z_L +Z_0}=0.279 \, e^{j112^o}=0.279 \, e^{j1.95 \unit{rad}} \label{eq:reflcoe1}
+\end{eqnarray}
+
+To find input impedance of the line, we use the equation 
+
+
+\begin{eqnarray}
+Z_{in}= Z_0 \frac{Z_L+ j Z_0 \tan \beta l}{Z_0+ j Z_L \tan \beta l} = 70.8+ j 27.1 \Omega
+\end{eqnarray}
+
+We can use one of the following two equations to find the forward going voltage at the load:
+
+\begin{eqnarray}
+\tilde{V}_0^+= \frac{\tilde{V}_g Z_{in}}{Z_g + Z_{in}} \frac{1}{e^{j \beta l} + \Gamma e^{-j \beta l}} \\
+\tilde{V}_0^+=V_g e^{-j \beta l} \frac{Z_0}{Z_0 (1+\Gamma{g}) +Z_g (1-\Gamma_{g})}
+\end{eqnarray}
+
+Because the generator's impedance is equal to the transmission line impedance, we will use the second equation. When $Z_g=Z_0$ we see that the denominator simplifies into $Z_0 (1+\Gamma{g}) +Z_g (1-\Gamma_{g}) = Z_0 (1+\Gamma{g}+1-1+\Gamma{g})$ and we can further simplify the fraction to get the final value of $\tilde{V}_0^+=\frac{V_g}{2} e^{-j \beta l}$. Since $\beta l = \frac{2 \pi}{\lambda} \, 0.6 \lambda$, the forward going voltage at the load is $\tilde{V}_0^+=50 \, e^{-j1.2 \pi} = 50 \, e^{-j3.768} =50 \, e^{-j216^o} $.
+
+
+
+The equations of the voltage and current anywhere on the line are therefore
+
+\begin{eqnarray}
+\tilde{V}(z)= 50  e^{-j3.768} (e^{-j 0.595 z} - 0.279  e^{j 0.595 z + 1.95}  ) \\
+I(z)=   e^{-j3.768}   (e^{-j 0.595 z} - 0.279  e^{j 0.595 z+ 1.95}  ) 
+\end{eqnarray}
+
+If we replace the antenna with another load of impedance $50\Omega$, the reflection coefficient from the load will now be zero, and the reflected voltages will dissapear, so the voltage and current will be 
+
+
+\begin{eqnarray}
+\tilde{V}(z)= \tilde{V}_0^+ e^{-j \beta z}   \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  e^{-j \beta z} 
+\end{eqnarray}
+
+
+\end{explanation}
+
+
+
+
+\end{example}
+
+
+
+
+
+
+\end{document} 

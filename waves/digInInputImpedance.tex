@@ -1,0 +1,108 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Input impedance of a transmission line} 
+\author{Milica Markovic} 
+\outcome{}
+
+
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/trline.jpg}
+%\strut\psfig{figure=trline.ps,width=3cm} \\
+\end{center}
+\caption{Transmission Line connects generator and the load.}
+\label{fig:TRLine}
+\end{figure}
+
+
+The equations for the voltage and current anywhere (any z) on a transmission line  are
+
+
+\begin{eqnarray}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{j \beta z} + \Gamma_L  e^{-j \beta z }  ) \label{eq:vtlfin} \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta z} - \Gamma  e^{-j \beta z}  ) \label{eq:itlfin}
+\end{eqnarray}
+
+
+The voltage and current equations at the load $z=-l$ are:
+
+\begin{eqnarray}
+\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l }  )  \\
+I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma  e^{-j \beta l}  ) 
+\end{eqnarray}
+
+
+\section{Input impedance as a function of reflection coefficient}
+
+The input impedance is defined as $Z_{in}=\frac{V_{in}}{I_{in}}$. Since the line length is $l$, the input impedance is
+
+
+
+
+
+\begin{eqnarray}
+Z_{in}=\frac{\tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{\frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )}
+\end{eqnarray}
+
+If we cancel common terms, we get
+
+\begin{eqnarray}
+Z_{in}=Z_0 \frac{(e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )} \label{eq:theSecondway}
+\end{eqnarray}
+
+Now we can take $e^{-j \beta z}$ in front of parenthesis from both numerator and denominator, and then cancel it.
+
+
+\begin{eqnarray}
+Z_{in}=Z_0 \frac{1 + \Gamma_L  e^{ 2j \beta z }  }{  1 - \Gamma_L  e^{2j \beta z}  }
+\end{eqnarray}
+
+We have previously defined the reflection coefficient at the input of the transmission line as $\Gamma_in=\Gamma_L  e^{ 2j \beta z }$. The final equation for the input impedance is therefore
+
+
+
+
+\begin{eqnarray}
+Z_{in}=Z_0 \frac{1 + \Gamma_{in}  }{  1 - \Gamma_{in}  }
+\end{eqnarray}
+
+\subsection{Input impedance as a function of load impedance}
+
+If we now look back at the Equation \ref{eq:theSecondway}, here we can also  use Euler's formula, and the equation for the reflection coefficient at the load $\Gamma_L = \frac{Z_L-Z_0}{Z_L+Z_0}$ we find the input impedance of the line as shown below.
+
+
+\begin{eqnarray}
+Z_{in}= Z_0 \frac{Z_L+ j Z_0 \tan \beta l}{Z_0+ j Z_L \tan \beta l} 
+\end{eqnarray}
+
+This equation will be soon become obsolete when we learn how to use Smith Chart.
+
+\begin{example}
+
+Find the input impedance if the load impedance is $Z_L=0 \Omega$, and the electrical length of the line is $\beta l = 90^0$.
+
+\begin{explanation}
+Since the load impedance is a short circuit, and the angle is $90^0$ the equation simplifies to $Z_{in}=  j Z_0 \tan \beta l = \infty$.
+\end{explanation}
+
+\end{example}
+
+
+
+
+
+
+\end{document} 

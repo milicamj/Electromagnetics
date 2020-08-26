@@ -1,0 +1,108 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Transmission Line Impedance} 
+\author{Milica Markovic} 
+\outcome{}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+
+This section will relate the phasors of voltage and
+current waves through the transmission-line impedance.
+
+
+
+
+
+In equations \ref{eq:TLVolt}-\ref{eq:TLCurr} $\tilde{V}_0^+ e^{-\gamma z}$ and $\tilde{V}_0^- e^{\gamma z}$ are the phasors of forward and
+reflected going voltage waves anywhere on the transmission line (for any $z$). $\tilde{I}_0^+ e^{-\gamma z}$ and $\tilde{I}_0^- e^{\gamma z}$ are the phasors of forward and
+reflected current waves anywhere on the transmission line. 
+
+
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq:TLVolt} \\
+I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq:TLCurr}
+\end{eqnarray}
+
+
+
+
+To find the transmission-line impedance, we first substitute the voltage wave equation \ref{eq:TLVolt} into Telegrapher's  Equation 
+ Eq.\ref{eq:te12new}  to obtain Equation \ref{eq:te12new1}.
+
+
+
+
+\begin{eqnarray}
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) I(z) \label{eq:te12new} \\
+\gamma \tilde{V}_0^+ e^{-\gamma z} - \gamma \tilde{V}_0^- e^{\gamma z} = (R+ j \omega
+L) I(z) \label{eq:te12new1}
+\end{eqnarray}
+
+We now rearrange Equation \ref{eq:te12new1} to find the current I(z) and multiply through to get Equation \ref{eq:TLImpedanceTE}.
+
+\begin{eqnarray}
+I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^-
+ e^{\gamma z})  \nonumber  \\
+I(z)=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} e^{\gamma z} \label{eq:TLImpedanceTE}
+\end{eqnarray}
+
+We can now compare Equation \ref{eq:TLCurr} for current, a solution of the wave equation,  with the Eq.\ref{eq:TLImpedanceTE}. Since both equations represent current, and for two transcendental equations to be equal, the coefficients next to exponential terms have to be the same. When we equate the coefficients, we get the equations below.
+
+\begin{eqnarray}
+\tilde{I}_0^+=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} \label{eq:i+v+}  \\
+\tilde{I}_0^-= - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} \label{eq:i-v-}
+\end{eqnarray}
+
+
+\begin{definition}
+We define the characteristic impedance of a transmission line  as
+the ratio of the voltage to the current amplitude of the forward
+wave as shown in Equation \ref{eq:i+v+}, or the ratio of the voltage to the current amplitude of the reflected 
+wave as shown in Equation \ref{eq:i-v-}.
+
+\begin{eqnarray}
+Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+}=\frac{R+j\omega L}{\gamma} \label{eq:TLimp1}\\
+Z_0=-\frac{\tilde{V}_0^-}{ \tilde{I}_0^-}=\frac{R+j\omega L}{\gamma}  \label{eq:TLimp2}
+\end{eqnarray}
+
+
+\end{definition}
+We can further simplify Equations \ref{eq:TLimp1}-\ref{eq:TLimp2} to obtain the final Equation \ref{eq:tlfinal} for the transmission line impedance. This equation is valid for both lossy and lossless transmission lines.
+
+\begin{eqnarray}
+Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+} \nonumber   \\ \nonumber
+Z_0=\frac{R+j\omega L}{\gamma} \nonumber   \\ \nonumber
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}} \label{eq:tlfinal}
+\end{eqnarray}
+
+For lossless transmission line, where $R \rightarrow 0$ and  $G \rightarrow 0$, the equation simplifies to 
+
+\begin{eqnarray}
+Z_0=\sqrt{\frac{L}{C}} 
+\end{eqnarray}
+
+\section{Equations for voltage and current on a transmission-line}
+
+Using the definition of transmission-line impedance $Z_0$, we can now simplify the Equations \ref{eq:TLVolt}-\ref{eq:TLCurr} for voltage and current on the transmission line, by replacing the currents $\tilde{I}_0^+=Z_0/\tilde{V}_0^+ $, and $\tilde{I}_0^- = -Z_0/\tilde{V}_0^-$.
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{eq:TLIvtl} \\ 
+I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z}\label{eq:TLIctl}
+\end{eqnarray}
+ 
+
+
+\end{document} 

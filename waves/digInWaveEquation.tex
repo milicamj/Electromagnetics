@@ -1,0 +1,262 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Waves on Transmission Lines} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+\section{ Wave equation on a transmission line}\label{telegrapher}
+
+In this section, we will derive the expression for voltage and current
+along a transmission line. This expression will have two variables, time $t$, and space $z$. 
+So far, we have only seen voltages and currents as a function of time, because all circuit elements seen so far are lumped elements. In distributed systems,
+we want to derive the equations for voltage and current for the case when the transmission
+line is longer than the fraction of a wavelength.  To make sure that we
+do not encounter any transmission line effects to start with, we can
+look at the piece of a transmission line that is much smaller than
+the fraction of a wavelength. In other words, we cut the transmission
+line into small pieces to make sure there are no transmission line
+effects, as the pieces are shorter than the fraction of a wavelength. We then represent each piece with
+an equivalent circuit, as shown in Figure \ref{lineeqc} (a). 
+To derive expressions for current and voltage on the transmission line, we will use the following five-step plan
+
+\begin{enumerate}
+\item Look at an infinitesimal length of a transmission line $\Delta z$.  
+
+\item Represent that piece with an equivalent circuit. 
+
+\item Write KCL, KVL for the piece in the time domain (we get
+differential equations)
+
+\item Apply phasors (equations become linear)
+
+\item Solve the linear system of equations to get the expression for
+the voltage and current on the transmission line as a function of $z$.
+
+\end{enumerate}
+
+
+Look at a small piece of a transmission line and represented it with an equivalent circuit. What is
+modeled by the circuit elements?
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Coaxtl.jpg}
+\caption{Coaxial cable is cut in short pieces.}
+\label{lineeqcPieces}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Equivalent_Circuit_of_Transmission_Line.jpg}
+\caption{Equivalent circuit of a section of transmission line.}
+\label{lineeqcOnePiece}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.4]{../jpg/tlmadeupofcircuits.jpg}
+\end{center}
+\caption{Equivalent circuit of transmission line.}
+\label{lineeqc}
+\end{figure}
+
+
+
+Write  KVL and KCL equations for the circuit above.
+
+KVL
+\begin{eqnarray}
+-v(z,t) + R \, \Delta z \, i(z,t) + L \,\Delta z \,\frac{\partial
+ i(z,t)}{\partial t} + v(z+ \Delta z,t) = 0 \nonumber
+\end{eqnarray}
+
+KCL
+
+\begin{eqnarray}
+i(z,t)=i(z+\Delta z)+ i_{CG}(z+\Delta z,t) \nonumber   \\
+i(z,t)=i(z+\Delta z)+ G \, \Delta z\, v(z+\Delta z,t)+C\, \Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \nonumber
+\end{eqnarray}
+
+
+Rearrange the KCL and KVL Equations \ref{te1kvl1}, \ref{te1kc11} and divide them with
+$\Delta z$.  Equations \ref{te2kvl1}, \ref{te1kc21}.
+let $\Delta z \to 0$ and recognize the definition of the
+derivative Equations, \ref{te2kvl111}, \ref{te1kc211}.
+
+KVL
+\begin{eqnarray}
+-( v(z+ \Delta z ,t)- v(z,t))=R \, \Delta z  \, i(z,t)+L  \,  \Delta z
+ \frac{\partial i(z,t)}{\partial t} \label{te1kvl1}  \\ 
+ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}=R  \, i(z,t)+L  \, 
+ \frac{\partial i(z,t)}{\partial t}  \label{te2kvl1} \\
+\lim_{\Delta z \to 0} \{ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}\}=  \lim_{\Delta z \to 0} \{   R  \,  i(z,t)+L  \, 
+ \frac{\partial i(z,t)}{\partial t} \} \label{te2kvl111} \\
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L 
+ \frac{\partial i(z,t)}{\partial t} \label{te3kvl1}
+\end{eqnarray}
+
+KCL
+
+\begin{eqnarray}
+-( i(z+ \Delta z ,t)- i(z,t))= G  \, \Delta z  \, v(z+\Delta z,t)+ C \, \Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc11} \\
+-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z}= G  \, v(z+\Delta z,t)+C \, 
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc21} \\
+\lim_{\Delta z \to 0} \{-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z} \}= \lim_{\Delta z \to 0} \{ G  \, v(z+\Delta z,t)+C \, 
+\frac{\partial v(z+\Delta z,t)}{\partial t} \} \label{te1kc211} \\
+-\frac{i(z,t) }{\partial z}= G  \, v(z+\Delta z,t)+C \, 
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc31}
+\end{eqnarray}
+
+
+
+We just derived Telegrapher's equations in time-domain:
+
+
+
+\begin{eqnarray}
+-\frac{v(z,t) }{\partial z}=R  \, i(z,t)+L  \, 
+ \frac{\partial i(z,t)}{\partial t} \nonumber  \\ \nonumber
+-\frac{i(z,t) }{\partial z}= G \,  v(z+\Delta z,t)+C \, 
+\frac{\partial v(z+\Delta z,t)}{\partial t} 
+\end{eqnarray}
+
+
+Telegrapher's equations are two differential equations with two unknowns, $i(z, t)$, $v(z, t)$. It is not
+impossible to solve them; however, we would prefer to have linear algebraic equations. We then express time-domain variables as phasors.
+
+\begin{eqnarray}
+v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
+i(z,t)=Re\{ \tilde{I}(z) e^{j \omega t} \} \nonumber
+\end{eqnarray}
+
+ $\tilde{V}(z),\tilde{I}(z) $ are the voltage, and current anywhere on the line, and they depend on the position on the line $z$. The Telegrapher's equations in phasor form are
+
+
+\begin{eqnarray}
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) \tilde{I}(z) \label{te11}\\
+-\frac{\partial \tilde{I}(z)}{\partial z} = (G+j\omega C) \tilde{V}(z) \label{te121}
+\end{eqnarray}
+
+
+
+Two equations, two unknowns. To solve these equations, we first
+take a derivative of both equations with respect to z. 
+
+\begin{eqnarray}
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
+ \tilde{I}(z)}{\partial z}  \label{teleg3} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
+ \tilde{V}(z)}{\partial z} \label{teleg4}
+\end{eqnarray}
+
+Rearange the previous equations:
+
+
+
+\begin{eqnarray}
+- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= \frac{\partial^2
+  \tilde{V}(z)}{\partial z^2} \label{te51} \\
+-\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= \frac{\partial^2
+  \tilde{I}(z)}{\partial z^2} \label{te61}
+\end{eqnarray}
+
+Substitute  Eq.\ref{te51} into  Eq.\ref{te121}
+and Eq.\ref{te61} into Eq.\ref{te11} and we get
+
+\begin{eqnarray}
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
+\tilde{I}(z) 
+\end{eqnarray}
+
+Or if we rearrange
+
+
+\begin{eqnarray}
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
+ \tilde{V}(z)=0  \label{we11} \\ 
+\frac{\partial^2 I(z)}{\partial z^2}- (G+j\omega C)  (R+j\omega L)
+I(z)=0 \label{we21}
+\end{eqnarray}
+
+The above Eq.\ref{we11} and Eq.\ref{we21} are called the wave equation, and they represent
+current and voltage wave on a transmission line. $\gamma=(G+j\omega
+C)(R+j\omega L)$ is the complex propagation constant. This constant
+has a real and an imaginary part.
+
+\begin{eqnarray}
+\gamma= \alpha + j \beta \nonumber
+\end{eqnarray}
+
+where $\alpha$ is the attenuation constant and $\beta$ is the phase
+constant.
+
+\begin{eqnarray}
+\alpha=Re\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \} \nonumber \\ \nonumber
+\beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
+\end{eqnarray}
+
+The general solution of the second order differential equations with constant coefficients
+Equations \ref{we11} - \ref{we21}   is:
+
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z} \nonumber \\ \nonumber
+\tilde{I}(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}
+\end{eqnarray}
+
+In this equation $\tilde{V_0}^+$ and $\tilde{V_0}^-$ are the {\bf
+phasors} of forward and
+reflected voltage waves at the load (where z=0), and $\tilde{I_0}^+$ and $\tilde{I_0}^-$ are the phasors of forward and
+reflected current wave at the load (where z=0).These voltages and currents are also phasors and have a constant magnitude and phase in a specific circuit, for example $\tilde{V_0}^+=|\tilde{V_0}^+| e^\Phi=4e^{25^0}$, and $\tilde{I_0}^+=|\tilde{I_0}^+| e^\Phi=5e^{-40^0}$.
+We can get the time-domain expression for the current and voltage on the
+transmission line by multiplying the phasor of the voltage and current with $e^{j \omega t}$ and taking the real part of it.
+
+\begin{eqnarray}
+v(t)=Re\{ (\tilde{V}_0^+  e^{(-\alpha - j \beta) z} + \tilde{V}_0^- e^{(\alpha + j
+ \beta) z})e^{j \omega t} \}  \nonumber \\ 
+v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+)+
+|\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
+\end{eqnarray}
+
+We will look at the Matlab program in class to see that if the signs of the $\omega t$ and
+$\beta z$ are the same the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are opposite, the
+wave moves in the $-z$ direction.
+
+In the next several sections, we will look at how to find the constants $\beta$, $\tilde{V}_0^+  $, $ \tilde{V}_0^-$, $\tilde{I}_0^+ $, $\tilde{I}_0^-$. In order to find the constants, we will introduce the concepts of transmission line impedance $Z_0$, reflection coefficient $\Gamma(z)$, input impedance $Z_{in}$. 
+
+
+\section{Transmission-line parameters R, G, C, and L}
+
+To find the propagation constant, we need to know how to find the transmission-line parameters R, G, C, and L. Equations for R, G, C, and L for a coaxial cable are given in the table below. 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|} \hline
+Transmission-line    & R  & G & C &L     \\  \hline       
+Coaxial Cable       & $\frac{R_{sd}}{2 \pi} \left(\frac{1}{a} +  \frac{1}{b} \right)$   & $\frac{2 \pi \sigma}{\ln b/a}$ &$\frac{2 \pi \epsilon}{\ln b/a}$& $\frac{\mu}{2 \pi } \ln b/a$                             \\ \hline    
+\end{tabular}
+\end{center}
+
+Where $R_{sd} = \sqrt{\pi f \mu_m/\sigma_m}$ is the resistance associated with skin-depth. $f$ is the frequency of the signal, $\mu_m$ is the magentic permeability of conductors, $\sigma_c$ is the conductivity of conductors.
+
+\end{document} 

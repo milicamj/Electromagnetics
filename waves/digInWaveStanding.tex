@@ -1,0 +1,248 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Waves on Transmission Lines} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+\section{Standing Waves}
+
+
+In the previous section we introduced the voltage reflection
+coefficient that relates the forward to reflected voltage phasor.
+
+
+\begin{eqnarray}
+\Gamma = \frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0} \label{reflcoe}
+\end{eqnarray}
+
+
+If we substitute Equation \ref{reflcoe} to Eq.\ref{vtl11} we get for the voltage wave
+
+\begin{eqnarray}
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl11}\\
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} + \Gamma  \tilde{V}_0^+ e^{j \beta z} \nonumber
+\\
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{vtl01}
+\end{eqnarray}
+
+since $\Gamma = |\Gamma| e^{j \Theta_r}$ Eq.\ref{vtl01} becomes
+
+
+\begin{eqnarray}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{vtl011}
+\end{eqnarray}
+
+
+
+and for the current wave
+
+
+
+\begin{eqnarray}
+I(z) = \frac{\tilde{V}_0^+}{Z_0} e^{-j \beta z} -  \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z} \label{ctl1}\\
+I(z) =  \frac{\tilde{V}_0^+}{Z_0}  e^{-j \beta z} + \Gamma \frac{\tilde{V}_0^+}{Z_0}  e^{j \beta z} \nonumber
+\\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{ctl01}
+\end{eqnarray}
+
+The voltage and the current waveform on a transmission line are
+therefore given by Eqns.\ref{vtl01}, \ref{ctl01}. Now we have two
+equations and one unknown $\tilde{V}_0^+$! We will solve these two equations
+in Lecture 7. Now let's look at the physical meaning of these
+equations.
+
+
+In Eq.\ref{vtl01}, $\Gamma$ is the voltage reflection coefficient,
+$\tilde{V}_0^+$ is the phasor of the forward going wave, $z$ is the axis in
+the direction of wave propagation, $\beta$ is the phase
+constant\footnote{imaginary part of the complex propagation constant},
+$Z_0$ is the impedance of the transmission line\footnote{defined as
+the ratio of forward going voltage and current}. $\tilde{V}(z)$ is a complex
+number, phasor. We will find the magnitude and phase of the voltage on
+the transmission line.
+
+
+
+
+The magnitude of a complex number can be found as $|z|=\sqrt{z
+z^*}$.
+
+\begin{eqnarray}
+|\tilde{V}(z)|=\sqrt{\tilde{V}(z) \tilde{V}(z)^*} \nonumber  \\
+|\tilde{V}(z)|=\sqrt{   \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+ \Theta_r}  )  
+   \tilde{V}_0^+ (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )} \nonumber
+\\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{(e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+|\Theta_r}  )  
+  (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+  |\Gamma|  e^{-(2j \beta z +
+|\Theta_r)}    + |\Gamma|  e^{j 2 \beta z + \Theta_r} +|\Gamma|^2     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+ |\Gamma|^2 + |\Gamma| ( e^{-(2j \beta z +
+ \Theta_r)}   +  e^{(j 2 \beta z + \Theta_r)}     )}
+ \nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+  \sqrt{1+ |\Gamma|^2 + 2 |\Gamma| \cos(2 \beta z +\Theta_r)} \label{sw1} 
+\end{eqnarray}
+
+The magnitude of the total voltage on the transmission line is given
+by Eq.\ref{sw1}. It seems like a complicated function.
+
+\begin{itemize}
+ \item Let's start 
+from a simple case when the voltage reflection coefficient on the
+tranmission line is $\Gamma=0$ and draw the magnitude of the total
+voltage. The magnitude is the green line in Figure \ref{flatline}. To see the movie
+of this transmission line go to the class web page under Instructional Videos. Forward voltage is shown in red, reflected voltage in pink,
+and the magnitude of the voltage is  green. Magnitude of the voltage is constant everywhere on the transmission line, and so the line
+is called flat.
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/flatline.jpg}
+%\strut\psfig{figure=smithchartreflection.ps,width=3cm} \\
+\end{center}
+\caption{Flat line.}
+\label{flatline}
+\end{figure}
+
+
+
+\item Let's look at another case,  $\Gamma=0.5$ and $\Theta_r=0$. Equation \ref{swc1}  represents the magnitude of the voltage on the transmission line, and Figure \ref{reflcoeffvid} shows in green how this function looks on a transmission line. This case is shown in Figure \ref{reflcoeffvid}. 
+
+\begin{eqnarray}
+|\tilde{V}(z)|=\tilde{V}_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{swc1}
+\end{eqnarray}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{specialcase.jpg}
+%\strut\psfig{figure=smithchartreflection.ps,width=3cm} \\
+\end{center}
+\caption{Voltage on a transmission line with reflection coefficient magnitude 0.5, and zero phase.}
+\label{reflcoeffvid}
+\end{figure}
+
+
+
+The function \ref{swc1} is at it's maximum 
+when $cos(2 \beta z)=1$ or $z=\frac{k}{2} \lambda$, and the function
+value is $\tilde{V}(z)=1.5\tilde{V}_0^+  $. It is at it's
+minimum when  $cos(2 \beta z)=-1$ or $z=\frac{2 k +1}{4} \lambda$
+and the function value is $\tilde{V}(z)=0.5 \tilde{V}_0^+$
+
+It is important to mention here that the function that we see looks
+like a cosine with an average value of $ \tilde{V}_0^+ $, but {\bf it is not}.
+The minimums of the function are sharper then the maximums, so when
+the reflection coefficient is at it's maximum of $\Gamma =1$ the
+function looks like this:
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/shortedline.jpg}
+%\strut\psfig{figure=smithchartreflection.ps,width=3cm} \\
+\end{center}
+\caption{Shorted Transmission Line.}
+\label{wind}
+\end{figure}
+
+
+
+\item General Case. 
+
+In general the voltage maximums will occur when
+$cos(2 \beta z)=1$
+
+\begin{eqnarray}
+|\tilde{V}(z)_{max}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2+2 |\Gamma|} \nonumber  \\
+|\tilde{V}(z)_{max}| =\tilde{V}_0^+\sqrt{(1+|\Gamma|)^2}  \nonumber \\
+|\tilde{V}(z)_{max}| =\tilde{V}_0^+(1+|\Gamma|) 
+\end{eqnarray}
+
+
+
+In general the voltage minimums will occur when
+$cos(2 \beta z)=-1$,
+
+
+
+\begin{eqnarray}
+|\tilde{V}(z)_{min}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2-2 |\Gamma|} \nonumber  \\
+|\tilde{V}(z)_{min}| =\tilde{V}_0^+\sqrt{(1-|\Gamma|)^2}  \nonumber \\
+|\tilde{V}(z)_{min}| =\tilde{V}_0^+ (1-|\Gamma|) 
+\end{eqnarray}
+
+The ratio of voltage minimum on the line over the voltage maximum is
+called the Voltage Standing Wave Ratio (VSWR) or just Standing Wave
+Ratio (SWR).
+
+\begin{eqnarray}
+SWR=\frac{\tilde{V}(z)_{max}}{ \tilde{V}(z)_{min}} \nonumber \\
+SWR=\frac{1+|\Gamma|}{1-|\Gamma|}
+\end{eqnarray}
+
+The voltage maximum position on the line is where
+\begin{eqnarray}
+cos(2 \beta z)=1 \nonumber \\
+2 \beta z + \Theta_r = 2 n \pi \nonumber \\
+z =\frac{ 2 n \pi -\Theta_r }{ 2 \beta} \nonumber \\
+z=\frac{ 2 n \pi -\Theta_r }{ 4 \pi}
+\end{eqnarray}
+
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

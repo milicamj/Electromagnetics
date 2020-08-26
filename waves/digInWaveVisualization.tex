@@ -1,0 +1,83 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Visualization of lossless waves on transmission lines} 
+\author{Milica Markovic} 
+\outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+\begin{example}
+
+We will show next that if  the signs of the $\omega t$ and
+$\beta z$ are the same, as in Equation \ref{bck1}, the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are opposite, as in Equation \ref{fwd1}, the
+wave moves in the $-z$ direction. In order to see this, we will visualize Equations \ref{fwd1} and \ref{bck1} using Matlab code below.
+
+\begin{eqnarray}
+v_f(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+) \label{fwd1} \\
+v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{bck1}
+\end{eqnarray}
+
+
+Figure \ref{fwrdref}  shows forward and reflected waves on a transmission line. On x-axis is the spatial coordinate $z$ from the generator to the load, where the transmission line is connected,  and on y-axis is   the magnitude of the voltage on the line.   The red line on both graphs is the voltage signal at a time  .1 ns. We would obtain  Figure \ref{fwrdref} if we had a camera that can take picture of voltages, and we took the first picture at $t_1=$ .1 ns on the entire transmission line.  The blue dotted line on both graphs is the same signal .1 ns later,  at time $t_2=$.2  ns.  We see that the signal has moved to the right in the time of 1 ns, or from the generator to the load.  On the bottom graph we see that at a time .1 ns, the red line represents the  reflected signal.  Dashed blue line shows the signal  at a time .2 ns. We see  that  the signal has moved to the left, or  from the load to the generator. 
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/frwrdwave_01.jpg}
+\caption{\label{fwrdref} Forward (top) and reflected (bottom) waves on a transmission line.}
+\end{center}
+\end{figure}
+
+
+\begin{verbatim}
+clear all
+clc
+f = 10^9;
+w = 2*pi*f
+c=3*10^8;
+beta=2*pi*f/c;
+lambda=c/f;
+t1=0.1*10^(-9)
+t2=0.2*10^(-9)
+x=0:lambda/20:2*lambda;
+
+y1=sin(w*t1 - beta.*x);
+y2=sin(w*t2 - beta.*x);
+y3=sin(w*t1 + beta.*x);
+y4=sin(w*t2 + beta.*x);
+
+subplot (2,1,1),
+
+    plot(x,y1,'r'),...
+            hold on
+    plot(x,y2,'--b'),...
+    hold off
+subplot (2,1,2),
+
+    plot(x,y3,'r')
+        hold on
+    plot(x,y4,'--b')
+    hold off
+\end{verbatim}
+
+Using matlab code above, repeat the visualization of signals  in the previous section for a lossy transmission line. Assume that $\alpha=0.1$\,Np, and all other variables are the same as in the previous section. How do the voltages compare in the lossy and lossless cases?
+
+\end{example}
+
+
+
+
+
+\end{document} 
