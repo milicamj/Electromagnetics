@@ -9,12 +9,12 @@
 \outcome{Sketch a complex number in rectangular and polar coordinates, and label magnitude, phase, real and imaginary parts. Derive the magnitude and phase from the real and imaginary parts of a complex number. Derive the real and imaginary parts of a complex number from the magnitude and phase.}
 \begin{document}  
 \begin{abstract}  
-The purpose of this section is to introduce two different ways we represent complex nubers: Cartesian coordinates, and Polar coordinates. We often use complex numbers in Cartesian coordinates when we discuss impedances, or admittances. We often use complex numbers in polar coordinates to discuss magnitude and phase of voltages, currents, transfer functions, and Bode Plots. Sinusoidal signals are also represented with complex numbers with phasors. It is critically important that we understand this chapter.
+This section aims to introduce two different ways we represent complex numbers: Cartesian coordinates, and Polar coordinates. We often use complex numbers in Cartesian coordinates when we discuss impedance or admittance. We often use complex numbers in polar coordinates to discuss magnitude and phase of voltages, currents, transfer functions, and Bode Plots. We can also represent sinusoidal signals with complex numbers with phasors. It is critically important that we understand this chapter.
 \end{abstract}  
 \maketitle    
   
 \begin{definition}
- A complex number  $z$ can be represented in Cartesian coordinate system as shown in Equation \ref{cartesian}, and  Polar coordinate system as shown in Equation \ref{polar}.
+ A complex number  $z$ can be represented in the Cartesian coordinate system, as shown in Equation \ref{cartesian}, and  Polar coordinate system, as shown in Equation \ref{polar}.
 
 
 
@@ -28,11 +28,11 @@ z=|z| e^{j \Theta} \label{polar}
 
 In Equation \ref{cartesian}, a complex number z is represented in rectangular coordinate system, where $x$ is the real part, $y$ is the imaginary part, and $j=\sqrt{-1}$. 
 
-In Equation \ref{polar}, a complex number z is represented in polar coordinate system, where  $|z|$ is the magnitude and $\Theta$ is the angle (aka phase) of the complex number.
+In Equation \ref{polar}, we see a complex number z  in the polar coordinate system, where  $|z|$ is the magnitude, and $\Theta$ is the angle (aka phase) of the complex number.
 
-Geometric interpretation of these two equations is given in Figure \ref{cartpol}. The magnitude is the length of the hypothenuse of the triangle shown, and the angle is the angle that the hypothenuse makes with x-axis. 
+The geometric interpretation of these two equations is shown in Figure \ref{cartpol}. The magnitude is the length of the triangle's hypothenuse, and the angle is the angle that the hypothenuse makes with the x-axis. 
 
- As you can see in Figure \ref{cartpol}, we can also represent a complex number with a "position vector". Position vectors are vectors that start at the center of the coordinate system and end at any point in the coordiate system. This is a graphical representation of a phasor. We see that phasor is a vector that represents a complex number in polar coordinate system. 
+ In Figure \ref{cartpol}, we  represent a complex number with a "position vector." Position vectors are vectors that start at the center of the coordinate system and end at any point in the coordinate system. We see that phasor is a vector that represents a complex number in a polar coordinate system. 
 
 
 
@@ -48,11 +48,11 @@ Geometric interpretation of these two equations is given in Figure \ref{cartpol}
 
 
 
-You may be wondering why are we representing the phase of a complex number in polar coordinate system as  $e^{j \Theta}$, because in the circuits class you used $\angle \theta$. Great question. That brings us to Eurler's formula that we will discuss in the section Euler's Formula.
+You may be wondering why we represent the phase of a complex number in the polar coordinate system as  $e^{j \Theta}$ because in the circuits class, you used $ \angle \theta $. Great question. That brings us to Euler's formula that we will discuss in section Euler's Formula.
 
 \section{Conversion between Cartesian and Polar coordinate systems}
   
-  To find magnitude and angle when you know real and imaginary part of a complex number, use the Pythagorean Theorem to find the magnitude of the complex number as in Equation \ref{eq:polar_mag}, and use the definition of tangent to find the angle as in Equation \ref{eq:polar_angle}.
+  To find magnitude and angle when we know real and imaginary parts of a complex number, we use the Pythagorean Theorem to find the magnitude of the complex number as in Equation \ref{eq:polar_mag}, and use the definition of the tangent to find the angle as in Equation \ref{eq:polar_angle}.
 
 \begin{eqnarray}
 |z|=\sqrt{x^2+y^2} \label{eq:polar_mag}\\
@@ -60,7 +60,7 @@ You may be wondering why are we representing the phase of a complex number in po
 \end{eqnarray}
  
  
- To find the real and imaginary part of a complex number when you know magnitude and phase, use trigonometry. To find the real part of the complex number as in Equation \ref{eq:cart_real} use the definition of cos, and to find the imaginary part of the complex number use sin, as in Equation \ref{eq:cart_imag}.
+ To find the real and imaginary part of a complex number when we know magnitude and phase, we use trigonometry. To find the real part of the complex number as in Equation \ref{eq:cart_real}, use the definition of cosine and sine to find the imaginary part of the complex number as in Equation \ref{eq:cart_imag}.
 
 
 \begin{eqnarray}
@@ -80,7 +80,7 @@ Explore the conversion of complex numbers between cartesian and polar coordinate
 
 
 \begin{example}
-Find the magnitude and phase of a complex numbers $z_1=j$ and $z_2=1$.
+Find the magnitude and phase of complex numbers $z_1=j$ and $z_2=1$.
 
 
 \begin{explanation}
@@ -126,7 +126,7 @@ Complex number $z_1=j$ is on the y-axis where y=1. By inspection, the magnitude
 \end{image}
   
 
-Complex plane is sketched below.
+The complex plane is sketched below.
 Complex number $z_1=1$ is on the x-axis where x=1. By inspection, the magnitude 
      of $z_1$ is $|z|=1$, and the angle is $\theta=0^o$.
 

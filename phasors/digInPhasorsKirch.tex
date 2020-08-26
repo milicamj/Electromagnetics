@@ -17,10 +17,10 @@ Phasors are essential tool in circuit analysis.
 
 
 
-We will see how the phasor transformation is applied to an RC circuit shown in Figure 2\ref{RCcirc}.  To solve this circuit in the time domain we apply Kirchoff's voltage law as shown in Equation \ref{eq-1} -\ref{eq0}.
+In this section, we apply the phasor transformation to an RC circuit shown in Figure 2\ref{RCcirc}.  To solve this circuit in the time domain, we apply Kirchoff's voltage law, as shown in Equation \ref{eq-1} -\ref{eq0}.
 
 
-The circuit in Figure \ref{RCcirc} is a simple RC circuit. KVL equation in the time domain is given in Equation \ref{eq-1}.
+The circuit in Figure \ref{RCcirc} is a simple RC circuit.  Equation \ref{eq-1} shows the KVL the time domain.
 
 \begin{eqnarray}
         v_s(t)=v_R(t)+v_C(t)                \label{eq-1}  \\
@@ -28,7 +28,7 @@ v_s(t) = R i + \frac{1}{C} \int i(t) dt \label{eq0}
 \end{eqnarray} 
 
 
-As we discussed in the previous section, we will be using principle of superposition, and add another generator to the circuit, as shown in Figure \ref{RCcirc}.
+As we discussed in the previous section, we will be using the principle of superposition, and add another generator to the circuit, as shown in Figure \ref{RCcirc}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -39,7 +39,7 @@ As we discussed in the previous section, we will be using principle of superposi
 \label{RCcirc}
 \end{figure}
 
-The generator we originally had in the circuit is now just the real part of the phasor expresion shown in Equation \ref{eq2}.
+The generator we originally had in the circuit is now just the real part of the phasor expression shown in Equation \ref{eq2}.
 
 
 \begin{eqnarray}
@@ -56,7 +56,7 @@ v_s(t)=v_R(t) + v_C(t)  \\
 Re\{V_s e^{j \Theta_V} e^{j \omega t}\}=    \Re\{R \times I e^{j \Theta_I} e^{j \omega t}\}   +  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
 \end{eqnarray}
 
-A common term in the previous equation is $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expresion for the phasor of voltage and current to get the time domain expression. We can now
+A common term in the previous equation is $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expression for the voltage and current phasors to get the time domain expression. We can now
 write the equation as
 
 
@@ -82,7 +82,7 @@ Since this is a linear equation, we can easily solve it:
 \section{Converting the phasor back to the time domain}
 
 
-In general, if the phasor is given as $\tilde{V}=|V| e^{j \Theta_V}$, to find the time-domain signal, we first multiply the phasor with $e^{j \omega t}$ term, and then take the real part of it. 
+In general, if the phasor is  $\tilde{V}=|V| e^{j \Theta_V}$, to find the time-domain signal, we first multiply the phasor with $e^{j \omega t}$ term, and then take the real part of it. 
 
 \begin{eqnarray}
 v(t)=\Re \{ \tilde{V} e^{j \omega t} \} \\
@@ -93,7 +93,7 @@ v(t) = V cos (\omega t + \Theta_V )
 
 
 \begin{example}
-Phasor of a current is  given as $I=3 e^{j 45^o}$. Obtain the signal in the time domain.
+The phasor of current is  $I=3 e^{j 45^o}$. Obtain the signal in the time domain.
 
 
 \begin{explanation}
