@@ -35,9 +35,9 @@ v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_
 |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
 \end{eqnarray}
 
-We will look at the Matlab program in class to see that if the signs of the $\omega t$ and
-$\beta z$ are the same the wave moves in the forward $+z$
-direction. If the signs of $\omega t$ and $\beta z$ are opposite, the
+If the signs of the $\omega t$ and
+$\beta z$ terms are oposite the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are the same, the
 wave moves in the $-z$ direction.
 
 In the next several sections, we will look at how to find the constants $\beta$, $\tilde{V}_0^+  $, $ \tilde{V}_0^-$, $\tilde{I}_0^+ $, $\tilde{I}_0^-$. In order to find the constants, we will introduce the concepts of transmission line impedance $Z_0$, reflection coefficient $\Gamma(z)$, input impedance $Z_{in}$. 
@@ -45,23 +45,23 @@ In the next several sections, we will look at how to find the constants $\beta$,
 \begin{example}
 
 We will show next that if  the signs of the $\omega t$ and
-$\beta z$ are the same, as in Equation \ref{bck1}, the wave moves in the forward $+z$
-direction. If the signs of $\omega t$ and $\beta z$ are opposite, as in Equation \ref{fwd1}, the
-wave moves in the $-z$ direction. In order to see this, we will visualize Equations \ref{fwd1} and \ref{bck1} using Matlab code below.
+$\beta z$ have the opposite sign, as in Equation \ref{eq:WVfwd1}, the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are the same, as in Equation \ref{eq:WVbck1}, the
+wave moves in the $-z$ direction. In order to see this, we will visualize Equations \ref{eq:WVfwd1} and \ref{eq:WVbck1} using Matlab code below.
 
 \begin{eqnarray}
-v_f(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+) \label{fwd1} \\
-v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{bck1}
+v_f(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+) \label{eq:WVfwd1} \\
+v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{eq:WVbck1}
 \end{eqnarray}
+\begin{explanation}
 
-
-Figure \ref{fwrdref}  shows forward and reflected waves on a transmission line.  $z$ represents the length of the line,  and on the y-axis is the magnitude of the voltage.   The red line on both graphs is the voltage signal at a time  .1 ns. We would obtain  Figure \ref{fwrdref} if we had a camera that can take a picture of the voltage, and we took the first picture at $t_1=$ .1 ns on the entire transmission line.  The blue dotted line on both graphs is the same signal .1 ns later,  at time $t_2=$.2  ns.  We see that the signal has moved to the right in  1 ns,  from the generator to the load.  On the bottom graph, we see that at a time .1 ns, the red line represents the reflected signal.  The dashed blue line shows the signal at a time .2 ns. We see that the signal has moved to the left, from the load to the generator. 
+Figure \ref{fig:WVfwrdref}  shows forward and reflected waves on a transmission line.  $z$ represents the length of the line,  and on the y-axis is the magnitude of the voltage.   The red line on both graphs is the voltage signal at a time  .1 ns. We would obtain  Figure \ref{fig:WVfwrdref} if we had a camera that can take a picture of the voltage, and we took the first picture at $t_1=$ .1 ns on the entire transmission line.  The blue dotted line on both graphs is the same signal .1 ns later,  at time $t_2=$.2  ns.  We see that the signal has moved to the right in  1 ns,  from the generator to the load.  On the bottom graph, we see that at a time .1 ns, the red line represents the reflected signal.  The dashed blue line shows the signal at a time .2 ns. We see that the signal has moved to the left, from the load to the generator. 
 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/frwrdwave_01.jpg}
-\caption{\label{fwrdref} Forward (top) and reflected (bottom) waves on a transmission line.}
+\caption{\label{fig:WVfwrdref} Forward (top) and reflected (bottom) waves on a transmission line.}
 \end{center}
 \end{figure}
 
@@ -98,11 +98,25 @@ subplot (2,1,2),
 \end{verbatim}
 
 Using Matlab code above, repeat the visualization of signals in the previous section for a lossy transmission line. Assume that $\alpha=0.1$\,Np, and all other variables are the same as in the previous section. How do the voltages compare in the lossy and lossless cases?
-
+\end{explanation}
 \end{example}
 
 
 
+\begin{question}
+In the following simulation, we have three waves as a function of distance z. One is fixed $\cos (\beta z +0^0)$ with a constant phase of $0^0$, and for the other two signals the phase can be changed manually by changing the slider t that represents time. In the simulation, $\beta=1$ and $\omega=1$. This simulation is realistic only if time moves forward from 0 to 5.  Observe how phase change $\omega t$ as the time increases from 0 to 5, then answer the question below. 
+
+\begin{center}  
+\geogebra{x5q7p7jx}{800}{600}  
+\end{center} 
+The sign in front of $ \beta z $ and $\omega t$ is opposite for the forward going wave.
+\begin{multipleChoice}  
+\choice[correct]{True}  
+\choice{False}   
+\end{multipleChoice}  
+
+
+\end{question}
 
 
 \end{document} 
