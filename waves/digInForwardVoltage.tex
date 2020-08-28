@@ -17,6 +17,9 @@
 
 
 
+Again, we will look at a transmission line circuit in Figure \ref{fig:FVTRLine} to find the input impedance on a transmission line.
+
+
 
 
 
@@ -26,25 +29,62 @@
 %\strut\psfig{figure=trline.ps,width=3cm} \\
 \end{center}
 \caption{Transmission Line connects generator and the load.}
-\label{fig:TRLine}
+\label{fig:FVTRLine}
 \end{figure}
 
 
-\begin{explanation}
+
+
 
 The equations for the voltage and current anywhere (any z) on a transmission line  are
 
 
 \begin{eqnarray}
-\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma_L  e^{j \beta z }  ) \label{eq:vtlfin} \\
-I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:itlfin}
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma_L  e^{j \beta z }  ) \label{eq:FVvtlfin} \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:FVitlfin}
 \end{eqnarray}
+
+
+Using the equations from the previous section, we can replace the transmission line with its input impedance, Figure \ref{fig:FVTRLineEqCirc}.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/trlineEqCirc.jpg}
+%\strut\psfig{figure=trline.ps,width=3cm} \\
+\end{center}
+\caption{Transmission Line connects generator and the load.}
+\label{fig:FVTRLineEqCirc}
+\end{figure}
+
+
 
 \section{Forward voltage phasor as a function of load impedance}
 
 
+From Figure \ref{fig:FVTRLineEqCirc}, we can find the input voltage on a transmission line using the voltage divider.
+
+\begin{equation}
+\tilde{V}_{in}= \frac{Z_{in}}{Z_{in}+Z_g} \tilde{V}_g
+\end{equation} 
+
+Using Equation \ref{eq:FVitlfin}, we can also find the input voltage.
+The input voltage equation at the generator $z=-l$ is:
+
 \begin{eqnarray}
-\tilde{V}_0^+= \frac{\tilde{V}_g Z_{in}}{Z_g + Z_{in}} \frac{1}{e^{j \beta l} + \Gamma e^{-j \beta l}} \\
+\tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } )
+\end{eqnarray}
+
+Since these two equations represent the same input voltage we can make them equal.
+\begin{equation}
+\tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l }) = \frac{Z_{in}}{Z_{in}+Z_g} \tilde{V}_g
+\end{equation}
+
+Rearranging the equation, we find $\tilde{V}_0^+$.
+
+\begin{eqnarray}
+\tilde{V}_0^+= \frac{\tilde{V}_g Z_{in}}{Z_g + Z_{in}} \frac{1}{e^{j \beta l} + \Gamma_L e^{-j \beta l}} \\
 \end{eqnarray}
 
 
@@ -53,9 +93,60 @@ I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) 
 \section{Forward voltage phasor as a function of input reflection coefficient}
 
 
+There is another way to find the input impedance as a function of the input reflection coefficient.
+
+
+We write KVL for the circuit in Figure \ref{fig:FVTRLineEqCirc}.
+
 \begin{equation}
-\tilde{V}_0^+=V_g e^{-j \beta l} \frac{Z_0}{Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in})}
+\tilde{V}_g=Z_g \tilde{I}_{in} + \tilde{V}_{in} \label{eq:FVKVL}
 \end{equation}
+
+
+Using Equations \ref{eq:FVitlfin}-\ref{eq:FVitlfin}, we can also find the input voltage and current.
+Input voltage and current equation at the generator $z=-l$ are:
+
+
+\begin{eqnarray}
+\tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } ) \\
+\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma  e^{-j \beta l}  ) 
+\end{eqnarray}
+
+
+Substituting these two equations in Equation \ref{eq:FVKVL} we get
+
+
+\begin{equation}
+\tilde{V}_g=Z_g \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma_L  e^{-j \beta l}  ) + \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } ) 
+\end{equation}
+
+
+We can re-write this equation as follows.
+
+
+
+\begin{equation}
+\tilde{V}_g=Z_g e^{j \beta l} \frac{\tilde{V}_0^+}{Z_0}  (1 - \Gamma_L  e^{-2j \beta l}  ) + \tilde{V}_0^+ e^{j \beta l} (1 + \Gamma_L  e^{-2j \beta l } ) 
+\end{equation}
+
+Using that 
+ $\Gamma_{in} = \Gamma_L e^{-2 j \beta l} $ is the input reflection coefficient, and multiplying through with $Z_0$.
+
+
+\begin{equation}
+\tilde{V}_g Z_0=Z_g e^{j \beta l} \frac{\tilde{V}_0^+}{1}  (1 - \Gamma_{in} ) + \tilde{V}_0^+ Z_0 e^{j \beta l} (1 + \Gamma_{in}) 
+\end{equation}
+
+
+Rearranging the equation, we get $\tilde{V}_0^+$
+
+\begin{equation}
+\tilde{V}_0^+=\tilde{V}_g e^{-j \beta l} \frac{Z_0}{Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in})}
+\end{equation}
+
+ $\Gamma_{in} = \Gamma_L e^{-2 j \beta l} $ is the input reflection coefficient.
+
+
 
 \section{Special case - forward voltage when the generator and transmission-line impedance are equal}
 
@@ -63,9 +154,6 @@ Because the generator's impedance is equal to the transmission line impedance, w
 
 
 
-
-
-\end{explanation}
 
 
 

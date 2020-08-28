@@ -17,7 +17,7 @@
 
 
 
-In this section we will derive the equation for reflection coefficient. Reflection coefficent relates the forward going voltage with relfected voltage.
+In this section, we will derive the equation for the reflection coefficient. The reflection coefficient relates the forward-going voltage with reflected voltage.
 
 \section{Reflection coefficient at the load}
 
@@ -42,7 +42,7 @@ I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j 
 
 
 
-We setup the z-axis in such a way, that the $z=0$ is at the load, and the generator is at $z=-l$. At $z=0$ the load impedance is connected.The definition of  impedance  is $Z=V/I$, therefore at the z=0 end of the transmission line, the voltage and current on the transmissio line at that point have to obey boundary condition that the load impedance imposes.
+We set up the z-axis so that the $z=0$ is at the load, and the generator is at $z=-l$. At $z=0$, the load impedance is connected. The definition of impedance is $Z=V/I$, therefore at the z=0 end of the transmission line, the voltage and current on the transmission line at that point have to obey boundary condition that the load impedance imposes.
 
 \begin{eqnarray}
 Z_L=\frac{V(0)}{I(0)} \nonumber 
@@ -55,7 +55,7 @@ Substituting z=0, the boundary condition, in Equations \ref{eq:RCvtl}-\ref{eq:RC
 I(0)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta 0} - \frac{\tilde{V}_0^-}{Z_0} e^{ j \beta 0} =\frac{\tilde{V}_0^+}{Z_0} - \frac{\tilde{V}_0^-}{Z_0}\label{eq:RCctl1}
 \end{eqnarray}
 
-Dividing the two above equations, we get the impedance at the load
+Dividing the two above equations, we get the impedance at the load.
 
 
 \begin{eqnarray}
@@ -77,7 +77,7 @@ We can now solve the above equation for $\tilde{V}_0^-$
 \begin{definition}
 $\Gamma_L=\frac{\tilde{V}_0^-}{\tilde{V}_0^+}= \frac{Z_L -Z_0}{Z_L +Z_0}$ is the voltage reflection
 coefficient at the load. $\Gamma_L$ relates the reflected and incident voltage
-phasor, and also the load $Z_L$ and transmission line impedance $Z_0$. The voltage reflection coefficient at the load is, in general, a complex number,
+phasor and the load $Z_L$ and transmission line impedance $Z_0$. The voltage reflection coefficient at the load is, in general, a complex number,
 it has a magnitude and a phase $\Gamma_L=|\Gamma_L| e^{j \angle \Gamma_L}$.
 
 \end{definition}
@@ -89,7 +89,7 @@ it has a magnitude and a phase $\Gamma_L=|\Gamma_L| e^{j \angle \Gamma_L}$.
 \item 100\,$\Omega$ transmission line is terminated in a series
 connection of a 50\,$\Omega$ resistor and 10\,pF capacitor. The frequency
 of operation is 100\,MHz. Find the voltage reflection coefficient.
-\item For purely reactive load $Z_L=j 50_L$ find the reflection
+\item For purely reactive load $Z_L=j 50 \Omega$, find the reflection
 coefficient.
 \end{enumerate}
 
@@ -102,7 +102,7 @@ Now that we related forward and reflected voltage on a transmission line with th
 I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{eq:itlfin}
 \end{eqnarray}
 
-We see that if we know the length of the line, line type, the load impedance, and the transmission line impedance, we can calculate all variables above, except for  $\tilde{V}_0^+ $. In the following chapters we will derive the equation for the forward going voltage at the load, but first we will look at little more at the various reflection coefficients on a transmission line. 
+We see that if we know the length of the line, line type, the load impedance, and the transmission line impedance, we can calculate all variables above, except for  $\tilde{V}_0^+ $. In the following chapters, we will derive the equation for the forward going voltage at the load, but first, we will look at little more at the various reflection coefficients on a transmission line. 
 
 \section{Reflection coefficient anywhere on the line}
 
@@ -113,7 +113,7 @@ Equations \ref{eq:RCvtl}-\ref{eq:RCctl}  can be concisely written as
 \tilde{I}(z) =\tilde{I}(z)^+ + \tilde{I}(z)^- 
 \end{eqnarray}
 
-where $\tilde{V}(z)^+$ is the forward voltage anywhere on the line, $\tilde{V}(z)^-$ is reflected voltage anywhere on the line, $\tilde{I}(z)^+$ is the forward current anywhere on the line, and  $\tilde{I}(z)^-$ is the reflected current anywhere on the line.
+Where $\tilde{V}(z)^+$ is the forward voltage anywhere on the line, $\tilde{V}(z)^-$ is reflected voltage anywhere on the line, $\tilde{I}(z)^+$ is the forward current anywhere on the line, and  $\tilde{I}(z)^-$ is the reflected current anywhere on the line.
 
 We can then define a reflection coefficient anywhere on the line as
 
@@ -127,7 +127,7 @@ Since we already defined $\Gamma_L=\frac{\tilde{V}_0^-}{\tilde{V}_0^+}$ as the r
 \Gamma(z)=\Gamma_L e^{2j \beta z}
 \end{equation}
 
-It is important to remember, that we defined points between the generator and the load as the negative z-axis. If the line legth is for example l\,m long, the generator is then at z=-l\,m, and the load at z=0. If we are looking at the reflection coefficient at some distance $l/2$\,m away from the load, between the generator and the load, at $z=-l/2$\,m, the equation for the reflection coefficient will be
+It is important to remember that we defined points between the generator and the load as the negative z-axis. If the line length is, for example, l\,m long, the generator is then at z=-l\,m, and the load at z=0. To find the reflection coefficient at some distance $l/2$\,m away from the load,  at $z=-l/2$\,m, the equation for the reflection coefficient will be
 
 
 \begin{equation}
