@@ -6,7 +6,7 @@
 
 
  
-\title{Visualization of lossless waves on transmission lines} 
+\title{Visualization of waves on lossless  transmission lines} 
 \author{Milica Markovic} 
 \outcome{Apply phasor transformation to a time-domain equation to obtain frequency-domain equation.}
 \begin{document}  
@@ -16,6 +16,31 @@
 \maketitle    
 
 
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z} \nonumber \\ \nonumber
+\tilde{I}(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}
+\end{eqnarray}
+
+In this equation $\tilde{V}(z)$ is the total voltage anywhere on the line (at any point z), $\tilde{I}(z)$ is the total current anywhere on the line (at any point z), $\tilde{V_0}^+$ and $\tilde{V_0}^-$ are the {\bf
+phasors} of forward and
+reflected voltage waves at the load (where z=0), and $\tilde{I_0}^+$ and $\tilde{I_0}^-$ are the phasors of forward and
+reflected current wave at the load (where z=0).These voltages and currents are also phasors and have a constant magnitude and phase in a specific circuit, for example $\tilde{V_0}^+=|\tilde{V_0}^+| e^\Phi=4e^{25^0}$, and $\tilde{I_0}^+=|\tilde{I_0}^+| e^\Phi=5e^{-40^0}$.
+We can get the time-domain expression for the current and voltage on the
+transmission line by multiplying the phasor of the voltage and current with $e^{j \omega t}$ and taking the real part of it.
+
+\begin{eqnarray}
+v(t)=Re\{ (\tilde{V}_0^+  e^{(-\alpha - j \beta) z} + \tilde{V}_0^- e^{(\alpha + j
+ \beta) z})e^{j \omega t} \}  \nonumber \\ 
+v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+)+
+|\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
+\end{eqnarray}
+
+We will look at the Matlab program in class to see that if the signs of the $\omega t$ and
+$\beta z$ are the same the wave moves in the forward $+z$
+direction. If the signs of $\omega t$ and $\beta z$ are opposite, the
+wave moves in the $-z$ direction.
+
+In the next several sections, we will look at how to find the constants $\beta$, $\tilde{V}_0^+  $, $ \tilde{V}_0^-$, $\tilde{I}_0^+ $, $\tilde{I}_0^-$. In order to find the constants, we will introduce the concepts of transmission line impedance $Z_0$, reflection coefficient $\Gamma(z)$, input impedance $Z_{in}$. 
 
 \begin{example}
 
@@ -30,7 +55,7 @@ v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0
 \end{eqnarray}
 
 
-Figure \ref{fwrdref}  shows forward and reflected waves on a transmission line. On x-axis is the spatial coordinate $z$ from the generator to the load, where the transmission line is connected,  and on y-axis is   the magnitude of the voltage on the line.   The red line on both graphs is the voltage signal at a time  .1 ns. We would obtain  Figure \ref{fwrdref} if we had a camera that can take picture of voltages, and we took the first picture at $t_1=$ .1 ns on the entire transmission line.  The blue dotted line on both graphs is the same signal .1 ns later,  at time $t_2=$.2  ns.  We see that the signal has moved to the right in the time of 1 ns, or from the generator to the load.  On the bottom graph we see that at a time .1 ns, the red line represents the  reflected signal.  Dashed blue line shows the signal  at a time .2 ns. We see  that  the signal has moved to the left, or  from the load to the generator. 
+Figure \ref{fwrdref}  shows forward and reflected waves on a transmission line.  $z$ represents the length of the line,  and on the y-axis is the magnitude of the voltage.   The red line on both graphs is the voltage signal at a time  .1 ns. We would obtain  Figure \ref{fwrdref} if we had a camera that can take a picture of the voltage, and we took the first picture at $t_1=$ .1 ns on the entire transmission line.  The blue dotted line on both graphs is the same signal .1 ns later,  at time $t_2=$.2  ns.  We see that the signal has moved to the right in  1 ns,  from the generator to the load.  On the bottom graph, we see that at a time .1 ns, the red line represents the reflected signal.  The dashed blue line shows the signal at a time .2 ns. We see that the signal has moved to the left, from the load to the generator. 
 
 
 \begin{figure}[ht!]
@@ -72,7 +97,7 @@ subplot (2,1,2),
     hold off
 \end{verbatim}
 
-Using matlab code above, repeat the visualization of signals  in the previous section for a lossy transmission line. Assume that $\alpha=0.1$\,Np, and all other variables are the same as in the previous section. How do the voltages compare in the lossy and lossless cases?
+Using Matlab code above, repeat the visualization of signals in the previous section for a lossy transmission line. Assume that $\alpha=0.1$\,Np, and all other variables are the same as in the previous section. How do the voltages compare in the lossy and lossless cases?
 
 \end{example}
 

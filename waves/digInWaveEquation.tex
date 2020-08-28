@@ -199,8 +199,9 @@ Or if we rearrange
 I(z)=0 \label{we21}
 \end{eqnarray}
 
-The above Eq.\ref{we11} and Eq.\ref{we21} are called the wave equation, and they represent
-current and voltage wave on a transmission line. $\gamma=(G+j\omega
+The above Equations \ref{we11}-\ref{we21} are called wave equations, and they represent
+current and voltage wave on a transmission line. 
+ $\gamma=(G+j\omega
 C)(R+j\omega L)$ is the complex propagation constant. This constant
 has a real and an imaginary part.
 
@@ -216,39 +217,35 @@ constant.
 \beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
 \end{eqnarray}
 
+We can now write wave equations as:
+
+
+\begin{eqnarray}
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -\gamma
+ \tilde{V}(z)=0  \label{eq:TLwe11} \\ 
+\frac{\partial^2 I(z)}{\partial z^2}- \gamma
+I(z)=0 \label{eq:TLwe21}
+\end{eqnarray}
+
+
 The general solution of the second order differential equations with constant coefficients
-Equations \ref{we11} - \ref{we21}   is:
+Equations \ref{eq:TLwe11} - \ref{eq:TLwe21}   is:
 
 \begin{eqnarray}
 \tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z} \nonumber \\ \nonumber
 \tilde{I}(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}
 \end{eqnarray}
 
-In this equation $\tilde{V}(z)$ is the total voltage anywhere on the line (at any point z), $\tilde{I}(z)$ is the total current anywhere on the line (at any point z), $\tilde{V_0}^+$ and $\tilde{V_0}^-$ are the {\bf
-phasors} of forward and
-reflected voltage waves at the load (where z=0), and $\tilde{I_0}^+$ and $\tilde{I_0}^-$ are the phasors of forward and
-reflected current wave at the load (where z=0).These voltages and currents are also phasors and have a constant magnitude and phase in a specific circuit, for example $\tilde{V_0}^+=|\tilde{V_0}^+| e^\Phi=4e^{25^0}$, and $\tilde{I_0}^+=|\tilde{I_0}^+| e^\Phi=5e^{-40^0}$.
-We can get the time-domain expression for the current and voltage on the
-transmission line by multiplying the phasor of the voltage and current with $e^{j \omega t}$ and taking the real part of it.
+Where $\tilde{V}(z)^+=\tilde{V}_0^+ e^{-\gamma z}$ represents the forward-going voltage wave, $\tilde{V}(z)^-=\tilde{V}_0^- e^{\gamma z}$ represents the reflected voltage wave, $\tilde{I}(z)^+=\tilde{I}_0^+ e^{-\gamma z}$ represents the forward going current wave, and $\tilde{I}(z)^-=\tilde{I}_0^- e^{\gamma z}$ represents the reflected current wave. We will see later that $\tilde{V}_0^+$ is the forward-going voltage wave at the load, $\tilde{V}_0^-$ 
+is the reflected voltage wave at the load, $\tilde{I}_0^+$ is the forward going current at the load, and $\tilde{I}_0^-$ reflected current at the load.
 
-\begin{eqnarray}
-v(t)=Re\{ (\tilde{V}_0^+  e^{(-\alpha - j \beta) z} + \tilde{V}_0^- e^{(\alpha + j
- \beta) z})e^{j \omega t} \}  \nonumber \\ 
-v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+)+
-|\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
-\end{eqnarray}
-
-We will look at the Matlab program in class to see that if the signs of the $\omega t$ and
-$\beta z$ are the same the wave moves in the forward $+z$
-direction. If the signs of $\omega t$ and $\beta z$ are opposite, the
-wave moves in the $-z$ direction.
 
 In the next several sections, we will look at how to find the constants $\beta$, $\tilde{V}_0^+  $, $ \tilde{V}_0^-$, $\tilde{I}_0^+ $, $\tilde{I}_0^-$. In order to find the constants, we will introduce the concepts of transmission line impedance $Z_0$, reflection coefficient $\Gamma(z)$, input impedance $Z_{in}$. 
 
 
 \section{Transmission-line parameters R, G, C, and L}
 
-To find the propagation constant, we need to know how to find the transmission-line parameters R, G, C, and L. Equations for R, G, C, and L for a coaxial cable are given in the table below. 
+To find the complex propagation constant $\gamma$, we need the transmission-line parameters R, G, C, and L. Equations for R, G, C, and L for a coaxial cable are given in the table below. 
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|} \hline
