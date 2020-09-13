@@ -1,0 +1,161 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Transmission line impedance and reflection coefficient} 
+\author{Milica Markovic} 
+\outcome{Derive and calculate the transmission line impedance and reflection coefficient. Relate reflection coefficient to impedance.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+
+
+
+
+
+
+\section{Relating forward and backward current and voltage waves on
+the transmission line}
+
+
+In equations \ref{eq4}-\ref{eq5} $\tilde{V}_0^+$ and $\tilde{V}_0^-$ are the phasors of forward and
+reflected going voltage waves, and $\tilde{I}_0^+$ and $\tilde{I}_0^-$ are the phasors of forward and
+reflected current waves. This section will relate the phasors of voltage and
+current waves with transmission-line impedance.
+
+
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq4} \\
+I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq5}
+\end{eqnarray}
+
+
+
+
+When substitute the voltage wave equation into Telegrapher's  Equations
+\ref{te11}. The equation is repeated here  Eq.\ref{te12new}-\ref{te12new1}.
+
+
+
+
+\begin{eqnarray}
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) I(z) \label{te12new} \\
+\gamma \tilde{V}_0^+ e^{-\gamma z} - \gamma \tilde{V}_0^- e^{\gamma z} = (R+ j \omega
+L) I(z) \label{te12new1}
+\end{eqnarray}
+
+We now rearrange Eq.\ref{te12new1}
+
+\begin{eqnarray}
+I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^-
+ e^{\gamma z})  \nonumber  \\
+I(z)=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} e^{\gamma z} \label{eq3}
+\end{eqnarray}
+
+Now we compare Eq.\ref{eq3} with the Eq.\ref{eq5}. For two transcendental equations to be equal, the coefficients next to exponential terms have to be the same.
+
+\begin{eqnarray}
+\tilde{I}_0^+=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} \nonumber  \\
+\tilde{I}_0^-= - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} \nonumber
+\end{eqnarray}
+
+We can define the characteristic impedance of a transmission line as
+the ratio of the voltage to the current amplitude of the forward-going
+wave.
+
+
+\begin{eqnarray}
+Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+} \nonumber   \\ \nonumber
+Z_0=\frac{R+j\omega L}{\gamma} \nonumber   \\ \nonumber
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}}
+\end{eqnarray}
+
+
+
+
+
+
+\section{Voltage Reflection Coefficient, Lossless Case}
+
+The equations for the voltage and current on the transmission line we
+derived so far are
+
+\begin{eqnarray}
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl} \\ \label{ctl}
+I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z}
+\end{eqnarray}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/trline.jpg}
+%\strut\psfig{figure=trline.ps,width=3cm} \\
+\end{center}
+\caption{Transmission Line connects generator and the load.}
+\label{wind1}
+\end{figure}
+
+
+
+
+
+At $z=0$ the impedance of the load has to be
+
+\begin{eqnarray}
+Z_L=\frac{V(0)}{I(0)} \nonumber 
+\end{eqnarray}
+
+Substitute the boundary condition in Eq.\ref{vtl}
+
+\begin{eqnarray}
+Z_L=Z_0 \frac{\tilde{V}_0^+ + \tilde{V}_0^-}{\tilde{V}_0^+ - \tilde{V}_0^-}
+\end{eqnarray}
+
+
+We can now solve the above equation for $\tilde{V}_0^-$
+
+\begin{eqnarray}
+\frac{Z_L}{Z_0} (\tilde{V}_0^+ - \tilde{V}_0^-) = \tilde{V}_0^+ + \tilde{V}_0^- \nonumber \\
+(\frac{Z_L}{Z_0}-1)\tilde{V}_0^+ =(\frac{Z_L}{Z_0}+1) \tilde{V}_0^- \nonumber \\
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 } = \frac{z_L-1}{z_L+1}
+\nonumber \\
+\Gamma=\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\end{eqnarray}
+
+The quantity $\frac{\tilde{V}_0^-}{\tilde{V}_0^+}$ is called voltage reflection
+coefficient $\Gamma$. $\Gamma$ relates the reflected and incident voltage
+phasor. The voltage reflection coefficient is, in general, a complex number,
+it has a magnitude and a phase.
+
+ Lowercase $z_L$ is called the 
+"normalized load impedance". It is the actual impedance divided by the transmission line impedance $z_L=\frac{Z_L}{Z_0}$. For example, if the load impedance is $Z_L=100 \Omega$, and the transmission-line impedance is $Z)=50 \Omega$, then the normalized impedance is $z_L=\frac{100 \Omega}{50 \Omega}=2$. Normalized impedance is a unitless quantity.
+
+
+
+\subsubsection{Example}
+
+
+ \begin{enumerate}
+\item 100\,$\Omega$ transmission line is terminated in a series
+connection of a 50\,$\Omega$ resistor and 10\,pF capacitor. The frequency
+of operation is 100\,MHz. Find the voltage reflection coefficient.
+\item For purely reactive load $Z_L=j X_L$ find the reflection
+coefficient.
+\end{enumerate}
+
+
+
+
+\end{document} 

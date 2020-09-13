@@ -8,7 +8,7 @@
  
 \title{Reflection Coefficient} 
 \author{Milica Markovic} 
-\outcome{}
+\outcome{Derive and calculate the transmission line impedance and reflection coefficient. Relate reflection coefficient to impedance.}
 \begin{document}  
 \begin{abstract}  
 
@@ -68,10 +68,15 @@ We can now solve the above equation for $\tilde{V}_0^-$
 \begin{eqnarray}
 \frac{Z_L}{Z_0} (\tilde{V}_0^+ - \tilde{V}_0^-) = \tilde{V}_0^+ + \tilde{V}_0^- \nonumber \\
 (\frac{Z_L}{Z_0}-1)\tilde{V}_0^+ =(\frac{Z_L}{Z_0}+1) \tilde{V}_0^- \nonumber \\
-\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 }
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 } = \frac{z_L-1}{z_L+1}
 \nonumber \\
-\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\Gamma_L=\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
 \end{eqnarray}
+
+
+ Lowercase $z_L$ is called the 
+"normalized load impedance". It is the actual impedance divided by the transmission line impedance $z_L=\frac{Z_L}{Z_0}$. For example, if the load impedance is $Z_L=100 \Omega$, and the transmission-line impedance is $Z)=50 \Omega$, then the normalized impedance is $z_L=\frac{100 \Omega}{50 \Omega}=2$. Normalized impedance is a unitless quantity.
+
 
 
 \begin{definition}
