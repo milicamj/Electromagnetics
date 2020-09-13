@@ -1,0 +1,83 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Impedance and Admittance on Smith Chart} 
+\author{Milica Markovic} 
+\outcome{Use Smith Chart effectively.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+\section{Brief review of impedance and admittance}
+
+Impedance's $Z =R+jX$real part is called resistance $R$, and the imaginary part is called reactance $X$.It is easier to add impedances when elements are in series.  When elements are in series, see Figure \ref{fig:SCDerimpadmtrans} to find the total impedance, it is easier to add the two impedances because we add resistances and reactances separately. 
+
+ Admittance's $Y=G+jB$ real part is called conductance G, and the imaginary part is called susceptance B. It is easier to add admittances when elements are in parallel, see Figure \ref{fig:SCDerimpadmtrans} because we add conductances and susceptances separately.  
+ 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Impedance_Admittance.jpg}
+\end{center}
+\caption{It is easier to use admittance when the circuit elements are in parallel and impedance when the circuit elements are in series.}
+\label{fig:SCDerimpadmtrans}
+\end{figure}
+
+
+ Smith Chart in Figure \ref{fig:SCDerscadmimp} has both impedance and admittance circles on it.  This way, we can use Smith Chart to read off the values for equivalent impedance or admittance when we add impedances or admittances in parallel or series, which is useful in impedance matching that we will talk about in the next chapter. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/SCadmimp.jpg}
+\end{center}
+\caption{On Smith Chart impedances are shown in red, and admittances in green.}
+\label{fig:SCDerscadmimp}
+\end{figure}
+
+
+\section{Impedance on the Smith Chart} 
+
+Figure \ref{fig:SCDerscimpedance}, shows how to find the location of normalized impedance  $z_L=1+j 1$ on the Smith Chart.  $z_L=1+j 1$ is at a point where the circle of constant resistance $r_L=1$ crosses the circle of constant reactance $x_L=1$.   Figure \ref{fig:SCDerscgammafromZ} shows how to find the reflection coefficient if normalized load impedance $z_L=1+j 1$ is given. Measure the distance between the origin and the point using the scale "Reflection Coefficient E or I" on the Smith Chart's bottom to find the reflection coefficient's magnitude. To find the reflection coefficient's angle, we read the scale "Angle of Reflection Coefficient" on the Smith Chart's perimeter, shown in green. The reflection coefficient is therefore $0.5 e^{j 62^o}$, which is close to the actual value   $0.5 e^{j 64^o}$. If we use a ruler and compass, and a nicely sharpened pencil, we will get exactly the right answer. Try it out!
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/FindingImpedanceonSC.jpg}
+\end{center}
+\caption{Red circle that represents all points on Smith Chart with normalized resistance $r=1$ and blue circle that represents all points on Smith Chart with  normalized reactance $x=1$ cross at point where $Z_L=1+j 1$.}
+\label{fig:SCDerscimpedance}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/FindingGammaFromImpedanceonSC.jpg}
+\end{center}
+\caption{To find the magnitude of the reflection coefficient from impedance $Z_L=1+j 1$, we measure the distance between the origin and the point using the scale "Reflection Coefficient E or I" on the bottom of the Smith Chart. To find the angle of the reflection coefficient, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart.}
+\label{fig:SCDerscgammafromZ}
+\end{figure}
+
+\section{Converting Reflection Coefficient to Impedance and Admittance}
+
+\begin{example}
+
+Look at an empty Smith Chart of your choice that has both impedance and admittance coordinates. Pick a point on the Smith Chart, and first estimate the reflection coefficient, then read it from the Smith Chart. Then read the impedance and admittance. 
+Use the app below to check your work.
+
+\begin{center}  
+\geogebra{aswbwwx3}{800}{600}  
+\end{center} 
+\end{example}
+
+
+\end{document} 

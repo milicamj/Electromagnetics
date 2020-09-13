@@ -1,0 +1,92 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Smith Chart} 
+\author{Milica Markovic} 
+\outcome{Use Smith Chart effectively.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+
+
+Smith Chart is a handy tool that we use to visualize impedances and reflection coefficients. Lumped element and transmission line impedance matching would be challenging to understand without Smith Charts. Simulation software such as ADS and measurement equipment, such as Network Analyzers, use Smith Chart to represent simulated or measured data.   Smith Chart at first looks like Black Magic, but it is a straightforward and useful tool that will help us understand impedance/admittance transformations and transmission lines better. 
+
+\begin{definition}
+Smith Chart is a polar plot of the reflection coefficient.
+\end{definition}
+
+In essence, Smith Chart is a unit circle centered at the origin with a radius of 1. Smith Chart is used to represent the reflection coefficient graphically in polar coordinates. The real and imaginary axis of reflection coefficient (the Cartesian coordinates) are not shown on the actual Smith Chart. However, the center of the Smith Chart is where the origin of the coordinate system would be. We usually represent the reflection coefficient in polar coordinates, with a
+magnitude and an angle. Magnitude is the distance between the point and the origin, and the angle is measured from the x-axis. 
+ An example location of several reflection coefficients is given in Figure \ref{scex}. If you do not see why the points are positioned as shown, review the polar representation of complex numbers.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/Smith_Chart_Reflection_Coefficient.jpg}
+\end{center}
+\caption{Examples of location of reflection coefficient on the Smith Chart.}
+\label{scex}
+\end{figure}
+
+
+Figure \ref{scswr1}, \ref{scswr}  circle, and line represent all points on the Smith Chart that have constant magnitude or angle of the reflection coefficient. It is challenging to measure impedances directly at high frequencies, as it is difficult to measure (or sometimes even define) voltage and current. 
+To measure impedances, engineers use Network Analyzer shown in Figure \ref{hp8510}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/smithchartreflection.jpg}
+\end{center}
+\caption{Points of constant magnitude of the reflection coefficient. $ | \Gamma | $=0.5, $ | \Gamma |$=1}
+\label{scswr1}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/smithchartangle.jpg}
+\end{center}
+\caption{Points of constant phase of the reflection coefficient. $ < \Gamma =45^\circ$, $  <  \Gamma = 120^\circ$}
+\label{scswr}
+\end{figure}
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.2]{../jpg/HP8510.jpg}
+\end{center}
+\caption{HP8510 Network Analyzer in Microwave Laboratory measures impedances up to 26.5GHz. This piece of equipment is on permanent loan curtesy of Defense Micro Electronic Activity (DMEA), Sacramento}
+\label{hp8510}
+\end{figure}
+
+\begin{example}
+We can estimate what the reflection coefficient is by looking at the position of a point on the Smith Chart. We know that the radius of the circle is 1. So, if the point is half-way between the center and the perimeter, we know the magnitude of the reflection coefficient is 0.5. We can also estimate the angle of the reflection coefficient. For example, if the magnitude is in the first quadrant, we know that the angle is between $0^0$ and $90^0$. If the point is on the positive y-axis, we know that the angle is equal to $90^0$. Observe the simulation below, and see if you can estimate the magnitude and anlge of reflection coefficient by looking at the position of a point. 
+
+The simulation below shows only positive angles. In practice, if the point is below the x-axis, we use negative angles to describe the angle of the reflection coefficient. For example, if the point is at the negative y-axis, we would say that the angle of the reflection coefficient is  $-90^0$.
+
+ 
+\begin{center}  
+\geogebra{u9ehhbaj}{800}{600}  
+\end{center} 
+
+\end{example}
+
+
+\end{document} 

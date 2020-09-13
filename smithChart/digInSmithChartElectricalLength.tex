@@ -1,0 +1,59 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Electrical Length} 
+\author{Milica Markovic} 
+\outcome{}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+
+
+\section{Electrical Length of the line in meters}
+
+We can express the physical lenght of the line in meters. However in high-frequency electronics (microwave engineering) we usually convert this length to the fraction of a wavelength of a signal that is travelling on the line. 
+
+
+\begin{eqnarray}
+ L=N \lambda
+\end{eqnarray}
+ 
+
+Typically, but not always, $N$ is a fraction, for example,  $N=\frac{1}{2}=0.5$, $N=\frac{1}{4}=0.25$ or $N=\frac{1}{8}=0.125$; although it can be any  The lenght of the line is then written as
+
+
+\begin{eqnarray}
+ L=\frac{\lambda}{2}  \\
+ L=\frac{\lambda}{4}  \\
+  L=\frac{\lambda}{8}  
+\end{eqnarray}
+ 
+
+
+If physical lenght of the line is $L=\frac{\lambda}{4}$, we say: “This line is quarter-wavelength long at 1GHz”, meaning one quarter of the wavelength fits on the line. We could also say that the line is 7.5cm long, as wavelength is $\lambda=30 \unit{cm}$ at $1$GHz.
+
+
+When we say quarter-wavelength long, we refer to line’s physical length. To make things a little more confusing,
+
+\section{Electrical length of the line in degrees}
+
+Phase shift between input and output signal on a transmission line is  
+$\Theta=\beta*L$.
+$beta$ is called the phase constant. It represents the spatial frequency of signal.
+$\Theta=\beta*L$ is the phase in degrees or radians (related is time delay in seconds).
+$\Theta$  can be, for example $\Theta = 45^0$, $\Theta = 90^0$, $\Theta = 180^0$. $\Theta$ is a function of frequency, because $\beta$ is a function of frequency.
+ If $\Theta = 90^0$ we say: “The line is 90 degrees long at 1GHz”, meaning the output signal at 1GHz will be shifted for $90^0$ with respect to the input signal. 
+When we say $90^0$ we refer to line’s electrical length
+
+
+\end{document} 
