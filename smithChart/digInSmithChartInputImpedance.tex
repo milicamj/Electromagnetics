@@ -6,7 +6,7 @@
 
 
  
-\title{Smith Chart} 
+\title{Input Impedance on Smith Chart} 
 \author{Milica Markovic} 
 \outcome{Use Smith Chart effectively.}
 \begin{document}  
@@ -20,16 +20,118 @@
 
 
 
+\section{Calculation of the input reflection coefficient and impedance related to Smith Chart}
+
+
+If the load reflection coefficient is $\Gamma_L=|\Gamma_L| e^{j \Theta_{L}}$, 
+the input reflection coefficient $\Gamma_{in}$ is: 
+
+\begin{eqnarray}
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j \Theta_{L}} e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) } 
+\end{eqnarray}
+
+\subsection{Magnitude of the input reflection coefficient}
+We see that the input reflection coefficient and load reflection coefficient have the same magnitude. All points on the Smith Chart that have the same magnitude of the reflection coefficient are on a circle that is centered at the center of the Smith Chart, with radius determined by the position of the load impedance or input impedance. This circle is called SWR circle. The input impedance and load impedance are on the same SWR circle. If we know the load impedance, then we know that the input impedance will be on the same SWR circle.
+
+For example, if the load impedance is $Z_L=100\Omega$, the transmission-line impedance is $Z_0=50\Omega$, the magnitude of the reflection coefficient is 0.33. Both the input reflection coefficient and the load reflection coefficent magnitudes will be the same, 0.33, however their phases will be different depending on the length of the line.
+
+\subsection{Phase of the input reflection coefficient}
+The input reflection coefficient angle will be decreased by twice the electrical length of the line $\Theta_{L} -2 \beta l$. On Smith Chart, decreasing the phase of the reflection coefficient means going clockwise on the SWR circle. For example, if the load impedance is $Z_L=100\Omega$, the transmission-line impedance is $Z_0=50\Omega$, and the length of the line is $\frac{\lambda}{4}$, or $\Theta=\beta l= 90^0$, the angle between the load impedance and the transmission-line impedance will be $2 \beta l = 180^0$. We will find the input reflection coefficient $180^0$ away from the load impedance on the Smith Chart.
+
+ 
+\section{Reading input reflection coefficient on the Smith Chart}
+
+
+We don't have to do calculations every time we want to find the input impedance or input reflection coefficient on the Smith Chart. Identify the scale "WAVELENGTHS TOWARD GENERATOR" on the outer perimeter of Smith Chart in Figure \ref{fig:SCImpRefCoeff}.  This scale is labeled in terms of the transmission-line length in wavelengths (not electrical degrees). We see that $180^0$ on the chart coresponds to $\lambda/4=0.25\lambda$, which is $2 \beta l$ electrical degrees. If the Smitch Chart shown in Figure \ref{fig:SCImpRefCoeff} was a mechanical scale that can move around the Smith Chart, we would move the 0 to the position of our load, and then read the input reflection coefficient from the known length of the line. Since we can't move the 0 position on the line,  
+
+To find the input impedance, we will start from the load impedance, and read the reference position for the load $ref=0.135\lambda$, as shown in Figure \ref{fig:SCImpRefCoeff}. Then, we add the line length $l=0.145\lambda$ to the load impedance to find the  phase of the input reflection coefficient. The point where this dashed line crosses the SWR circle is the position of the input reflection coefficient. Note that we must decrease the phase, and go in the clockwise direction.
+
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.3]{../jpg/SCadmimp.jpg}
+\includegraphics[scale=0.8]{../jpg/InputImpedance2-01.jpg}
 \end{center}
-\caption{On Smith Chart impedances are shown in red, and admittances in green.}
-\label{scadmimp}
+\caption{Finding input reflection coefficient from load reflection coefficient.}
+\label{fig:SCImpRefCoeff}
 \end{figure}
 
+\newpage
+\section{Finding load reflection coefficient if input reflection coefficient is known}
+
+If input reflection coefficient is given, then to find the load reflection coefficient, we can re-write the previous equations as
+
+
+\begin{eqnarray}
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{L} = \Gamma_{in}  e^{j2 \beta l} \\
+\Gamma_{L} = |\Gamma_{in}| e^{j(\Theta_{in} +2 \beta l) } 
+\end{eqnarray}
+
+The above equation shows that when we are looking for load reflection coefficient, we have to add $2 \beta l$ phase to the input reflection coefficient. We therefore have to go in clockwise direction on the Smith Chart. Identify the WAVELENGTHS TOWARD THE LOAD scale on the Smith Chart, and 
+verify that the arrow points in the couter-clockwise direction. 
+
+
+\section{Examples}
+
+\begin{example}
+
+
+The line is  terminated with impedance of $Z_L= 100-j50 \Omega$. Transmission line impedance is $Z_0=50 \Omega$, and line length is $l=\lambda/4$ at 1\,GHz. Calculate the impedance at the input of a transmission line,and  the
+reflection coefficient at the input of a transmission line.
+Then, repeat this exercise using Smith Chart.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{../jpg/trline.jpg}
+\end{center}
+\caption{Finding input reflection coefficient from load reflection coefficient.}
+\label{fig:SCImpRefExample1SchDia}
+\end{figure}
+
+\begin{explanation}
+
+The input reflection coefficient $\Gamma_{in}$ is 
+
+\begin{eqnarray}
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j \Theta_{L}} e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) } 
+\end{eqnarray}
+
+The load reflection coefficient  is  $\Gamma_{L}=\frac{Z_L-Z_0}{Z_L+Z_0} =0.45 e^{-j 26^0 }$. 
+
+Electrical length of the line is $\beta l =90^0$. 
+
+The input reflection coefficient is $\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) } =0.45 e^{j(-26^0 -180^0 }=0.45 e^{-j206^0} $.
+
+Normalized input impedance is 
+
+\begin{equation}
+z_{in}=\frac{1+\Gamma_{in}}{1-\Gamma_{in}} = 0.4+ j 0.2
+\end{equation}
+
+The input impedance is $Z_L=50 \, (0.4 + j 0.2)= (20 + j 10) \, \Omega$
+
+
+To find the input reflection coefficient and impedance on the Smith Chart, we first normalize given load impedance 
+$Z_L=2-j$,  find its position on the Smith Chart, and draw the SWR circle. We know that the input reflection coefficient will be on this circle, because the magnitude of the input reflection coefficient and the load reflection coefficient have to be the same.
+
+The reference position of the load on the WAVELENGTHS TOWARD GENERATOR scale is $0.285 \lambda$. Next, we add the length of the line to the reference position $0.285 \lambda + 0.25 \lambda = 0.535 \lambda$. If we look at the scale, we see that it resets at $0.5 \lambda$. To find $0.535 \lambda$, we have to continue in the direction of the arrow for another $0.035 \lambda$. We now found the phase of the input reflection coefficient. To find the position of input reflection coefficient, we find where the line that starts at the center of the Smith Chart and ends on the $0.035 \lambda$ crosses the SWR circle. Figure \ref{fig:SCImpRefExample1} shows these steps graphically.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{../jpg/InputImpedanceEx1-01.jpg}
+\end{center}
+\caption{Example finding input impedance.}
+\label{fig:SCImpRefExample1}
+\end{figure}
+
+\end{explanation}
+\end{example}
 
 
 \end{document} 

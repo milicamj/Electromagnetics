@@ -43,7 +43,7 @@ Typically, but not always, $N$ is a fraction, for example,  $N=\frac{1}{2}=0.5$,
 If physical lenght of the line is $L=\frac{\lambda}{4}$, we say: “This line is quarter-wavelength long at 1GHz”, meaning one quarter of the wavelength fits on the line. We could also say that the line is 7.5cm long, as wavelength is $\lambda=30 \unit{cm}$ at $1$GHz.
 
 
-When we say quarter-wavelength long, we refer to line’s physical length. To make things a little more confusing,
+When we say quarter-wavelength long, we refer to line’s physical length at a specific frequency. 
 
 \section{Electrical length of the line in degrees}
 
@@ -53,7 +53,45 @@ $beta$ is called the phase constant. It represents the spatial frequency of sign
 $\Theta=\beta*L$ is the phase in degrees or radians (related is time delay in seconds).
 $\Theta$  can be, for example $\Theta = 45^0$, $\Theta = 90^0$, $\Theta = 180^0$. $\Theta$ is a function of frequency, because $\beta$ is a function of frequency.
  If $\Theta = 90^0$ we say: “The line is 90 degrees long at 1GHz”, meaning the output signal at 1GHz will be shifted for $90^0$ with respect to the input signal. 
-When we say $90^0$ we refer to line’s electrical length
+When we say $90^0$ we refer to line’s electrical length, that represents the number of degrees that the line introduces between the input and the output signal.
+
+
+\begin{example}
+What is electrical length of a 30\,cm line in terms of fraction of wavelength at 1\,GHz? What is the electrical length of the line at 1GHz?
+\begin{explanation}
+Wavelenght at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is also 30\,cm long, the length of the line in terms of wavelenth is $l=\lambda$.
+
+The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \lambda= 2 \pi = 360^0$.
+
+\end{explanation}
+
+\end{example}
+
+
+\begin{example}
+What is electrical length of a 15\,cm line in terms of fraction of wavelength at 1\,GHz? What is the electrical length of the line at 1GHz?
+\begin{explanation}
+Wavelenght at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 15\,cm long, the length of the line in terms of wavelenth is $l=\frac{\lambda}{2}$.
+
+The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \frac{\lambda}{2} =  \pi = 180^0$.
+
+
+\end{explanation}
+
+\end{example}
+
+
+\begin{example}
+What is electrical length of a 7.5\,cm line in terms of fraction of wavelength at 1\,GHz? What is the electrical length of the line at 1GHz?
+\begin{explanation}
+Wavelenght at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 7.5\,cm long, the length of the line in terms of wavelenth is $l=\frac{\lambda}{4}$.
+
+The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \frac{\lambda}{4} =  \pi/2 = 90^0$.
+
+
+\end{explanation}
+
+\end{example}
 
 
 \end{document} 
