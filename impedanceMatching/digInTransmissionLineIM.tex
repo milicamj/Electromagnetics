@@ -1,0 +1,111 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Transmission-line impedance matching} 
+\author{Milica Markovic} 
+\outcome{Design impedance matching circuits.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+\section{Design of a transmission-line impedance matching circuits}
+
+Transmission-line impedance matching circuits are used at higher frequencies where the lumped elements become very small, and impractical to use. 
+
+To design fully transmission-line matching circuits, we have to first learn how to replace the lumped element in the matching circuit from the last step in the previous section with a transmission line. 
+
+
+\subsection{Replacing lumped-elements with equivalent transmission-line stubs}
+
+To make fully transmission line impedance matching circuits, we can replace capacitors and inductors  with ``stubs", which are shorted or open transmission lines. 
+
+Input impedance of shorted or open transmission lines  can be made purely inductive or capacive, as shown in Figures \ref{fig:OpenStubLambdaOver8}-\ref{fig:ShortedStubLambdaOver8}. SWR circle of an open or shorted stub is the outer perimeter of the Smith Chart. The length of the transmission line will determine the input impedance of the stub. The input impedance is always purely reactive. 
+
+For example, in Figure \ref{fig:OpenStubLambdaOver8}, the length of the line is  $\frac{\lambda}{8}$. The ``load" connected to the output of this line is an open circuit $Z_L=\infty$. On the Smith Chart we start from the load impedance, and add a $0.125 \lambda$ line, following the WTG scale. The input  impedance is purely capacitive $Z_{in}=-j$. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/openstub-01.jpg}
+\end{center}
+\caption{Input impedance $Z_{in}=-j$ of a $\frac{\lambda}{8}$ open transmission line.}
+\label{fig:OpenStubLambdaOver8}
+\end{figure}
+
+The input impedance  is equal to a capacitor's impedance $Z_{in}=-j$ at a single frequency, where the electrical length of the line is $0.125 \lambda$. At other frequencies, the electrical length of the line is different, and therefore the input impedance is lower or higher than $Z_{in}=-j$.
+
+
+
+Another example is shown in Figure \ref{fig:OpenStub3LambdaOver8}, where the length of the line is  $\frac{3 \lambda}{8}$. The load connected to this line is again an open circuit $Z_L=\infty$. On the Smith Chart we start from the load impedance, and add a $0.375 \lambda$ line, following the WTG scale. The input impedance is purely inductive $Z_{in}=j$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/openstub2-01.jpg}
+\end{center}
+\caption{Input impedance $Z_{in}=j$  of a $\frac{3 \lambda}{8}$ open transmission line.}
+\label{fig:OpenStub3LambdaOver8}
+\end{figure}
+
+
+The last example is shown in Figure \ref{fig:ShortedStubLambdaOver8}, where the length of the line is  $\frac{3 \lambda}{8}$. The load connected to this line is now a short circuit $Z_L=0 \Omega$. On the Smith Chart we start from the load impedance, and add a $0.375 \lambda$ line, following the WTG scale. The input impedance is purely inductive $Z_{in}=j$.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/shortedstub-01.jpg}
+\end{center}
+\caption{Input impedance $Z_{in}=j$ of a $\frac{\lambda}{8}$ shorted transmission line.}
+\label{fig:ShortedStubLambdaOver8}
+\end{figure}
+\newpage
+
+\subsection{Fully transmission-line matching circuits.}
+
+The first few steps in the fully transmission-line matching circuit are the same as in the mixed-impedance matching. We find the point on the Smitch Chart that represents the normalized impedance of the load $Z_L=0.5+j1$, as in Figure \ref{fig:NormImponSC}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/MixedMatch2-01.jpg}
+\end{center}
+\caption{Position of normalized impedance $Z_L=0.5+j1$ on Smith Chart.}
+\label{fig:NormImponSC}
+\end{figure}
+
+A section of transmission line has to be added to impedance $Z_L=0.5+j1$ to transform the load impedance to input admittance $Y_{in}=1+1.6$, as shown in Figure \ref{fig:AddingSectionOfLine}. The length of the line is calculated by reading the position of the load impedance and input impedance on the WTG circle. Load impedance is at $0.135 \lambda$, and the input impedance is at $0.425 \lambda$. The difference between these two positions gives us the length of the line $0.29 \lambda$. In electrical degrees, this length is approximately $105^0$. The input admittance to the line is now $Y_L=1+1.6$. 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/MatchTL-01.jpg}
+\end{center}
+\caption{The result of impedance matching.}
+\label{fig:AddingSectionOfLine}
+\end{figure}
+
+The last step is to determine the shunt reactance that will remove the reactive part of the admittance $Y_L=1+1.6$, and make the total input impedance and admittance $Z_M=Y_M=1$. By inspection, we have to add $Y_{add}=-j1.6$. A lumped element in parallel (because we are adding two admittances), as in the previous mixed-matching problem, is an inductor (because admittance of an inductor is negative)  $Y_{add}=\frac{1}{j \omega L}=-j1.6$. However, we want to make a fully transmission line impedance matching circuit. Therefore, we have to replace the inductor with an equivalent transmission line, a stub. 
+
+We can pick whether the stub is open or shorted. Usually, we want to pick the shortest possible stub, because the smaller the stub, the smaller the circuit will be. In some other cases, it is easier to leave the transmission line open, because making a short circuit requires drilling the PC Board and making a via-hole to connect the line to the ground. In this case, we picked an open stub to replace the lumped element, as shown in Figure \ref{fig:TransLineImpM}.
+
+To find the stub that will have the same input admittance as an inductor $Y_{add}=-j1.6$, we first identify the position of admittance $-j1.6$ on the Smith Chart. This is the input impedance of the stub. We picked an open circuit for the load of the stub. To find the lenght of the stub, we start on the position of WTG scale from the load $Z_L=\infty$, WTG=$0.25 \lambda$, going in the WTG direction, we pass the short circuit position WTG=$0$, and then another WTG=$0.09 \lambda$ to reach the input admittance of $-j1.6$. The lenght of the stub is $0.25 \lambda+0.09 \lambda=0.34 \lambda$. In electrical degrees, this length is $\Theta=\beta l =2 \pi 0.34 \approx 123^0$.
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/MatchTL-01.jpg}
+\end{center}
+\caption{Transmission-line impedance matching circuit.}
+\label{fig:TransLineImpM}
+\end{figure}
+
+\end{document} 

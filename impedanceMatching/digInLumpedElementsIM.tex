@@ -1,0 +1,60 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Lumped element impedance matching} 
+\author{Milica Markovic} 
+\outcome{Design impedance matching circuits.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+In lumped-element impedance matching, we use only capacitors and inductors. Fully lumped-impedance matching circuits are used at lower frequencies, where transmission lines are too long to be practical for matching. Note that when we are matching the load with lumped elements, there are no SWR circles on the Smith Chart, because we are not using transmission lines.
+
+Graphically, there are several different lumped-element impedance matching circuits that we can make for a specific impedance. For example,for impedance $Z_L=25+j50 \Omega$, there are four different 2-element circuits that we can make, as shown in Figure \ref{fig:LumpedVariety}. In the next paragraph we will use the orange path on the Smith Chart, with intermediate impedance $Z_2$.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/LumpedVariety-01.jpg}
+\end{center}
+\caption{A variety of lumped-element impedance matching circuits for impedance $Z_L=25+j50 \Omega$.}
+\label{fig:LumpedVariety}
+\end{figure}
+
+
+
+We again start from the load impedance  $Z_L=25+j 100 \Omega$, and we normalize it to the $50 \Omega$ to get $\bar{Z}_L=0.5+j1$. The equivalent admittance of this impedance is $\bar{Y}_L=0.4-j0.8$. We identify the position of this impedance on the Smith Chart. Figure \ref{fig:LumpedImpM1} shows the green admittance line we follow to impedance $\bar{Z}_1=1-j1.2$. The equivalent admittance of this impedance is   $\bar{Y}_1=0.4+j0.5$. The green admittance line shows that we have to add $\bar{Y}_{add}=+j1.3$ to the load admittance $\bar{Y}_L=0.4-j0.8$ to get the total admittance of $\bar{Y}_1=0.4+j0.5$. $\bar{Y}_L+\bar{Y}_{add}=\bar{Y}_1$. Since we are adding two admittances, the elements have to be in parallel. Because the added admittance is positive, the added element is a capacitor, as shown in Figure \ref{fig:LumpedImpM1}. To find the capacitance of the capacitance we need to add in parallel, we first have to re-normalize the additional admittance $\bar{Y}_{add}$ by multiplying it with the $0.02$Si. The admittance of a capacitor is $j \omega C$ has to be equal to this added admittance. $2 \pi f C = 1.3* 0.02$. From this equation we find that the capacitance is $C \approx 4.1$pF. 
+ 
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/LumpedMatch2-01.jpg}
+\end{center}
+\caption{Adding an element in parallel to load impedance to get the equivalent real part of the impedance equal to one.}
+\label{fig:LumpedImpM1}
+\end{figure}
+
+
+When we add $4.1$pF capacitor in parallel with the load $\bar{Z}_L=0.5+j1$, the total impedance of the two elements in parallel is $\bar{Z}_1=1-j1.2$.The real part of this impedance is already $50\Omega$. The final step is to remove the reactive part of the impedance by adding an additional impedance of $\bar{Z}_{add}=j1.2$, as shown in Figure \ref{fig:LumpedImpM3}. The total impedance is then $\bar{Z}_M=\bar{Z}_1+\bar{Z}_{add}=1$. Since we are adding two impedances, the elements must be in series. Because the added impedance is positive, it must be an inductor. To find the inductance of the inductor, $\bar{Z}_{add} 50=\omega L$. From this equation we get that the inductance is $L \approx 9.86 $nH.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/LumpedMatch3-01.jpg}
+\end{center}
+\caption{Finalized lumped-element impedance-matching circuit.}
+\label{fig:LumpedImpM3}
+\end{figure}
+
+\end{document} 
