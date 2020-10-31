@@ -8,7 +8,7 @@
  
 \title{Impedance and Admittance on Smith Chart} 
 \author{Milica Markovic} 
-\outcome{Use Smith Chart effectively.}
+\outcome{Read normalized impedance and reflection coefficient on the Smith Chart given a random point on the Smith Chart. Given impedance, find the normalized position of the impedance on the Smith Chart. Describe the reason for introducing admittance. Write the impedance and admittance of an inductor and capacitor. Explain why is the susceptance of an inductor negative and reactance is positive. Explain why is the admittance Smith Chart rotated 180 degrees. Distinguish between load impedance and normalized load impedance. Describe impedances on the Smith Chart as normalized impedances.Given impedance, read admittance on combo Y/Z chart. Given a random point on Y/Z chart, find admittance, impedance and the reflection coefficient.}
 \begin{document}  
 \begin{abstract}  
 
@@ -20,30 +20,30 @@
 
 \section{Brief review of impedance and admittance}
 
-Impedance's $Z =R+jX$real part is called resistance $R$, and the imaginary part is called reactance $X$.It is easier to add impedances when elements are in series.  When elements are in series, see Figure \ref{fig:SCDerimpadmtrans} to find the total impedance, it is easier to add the two impedances because we add resistances and reactances separately. 
+Impedance's $Z =R+jX$real part is called resistance $R$, and the imaginary part is called reactance $X$. It is easier to add impedances when elements are in series; see Figure \ref{fig:SCDerimpadmtrans}. To find the total impedance, we add resistances and reactances separately. 
 
- Admittance's $Y=G+jB$ real part is called conductance G, and the imaginary part is called susceptance B. It is easier to add admittances when elements are in parallel, see Figure \ref{fig:SCDerimpadmtrans} because we add conductances and susceptances separately.  
+ The real part of an admittance $Y=G+jB$  is called conductance G, and the imaginary part is called susceptance B. It is easier to add admittances when elements are in parallel; see Figure \ref{fig:SCDerimpadmtrans}. When adding two admittances, we add conductances and susceptances separately.  
  
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.3]{../jpg/Impedance_Admittance.jpg}
+\includegraphics[scale=0.25]{../jpg/Impedance_Admittance.jpg}
 \end{center}
 \caption{It is easier to use admittance when the circuit elements are in parallel and impedance when the circuit elements are in series.}
 \label{fig:SCDerimpadmtrans}
 \end{figure}
 
 
- Smith Chart in Figure \ref{fig:SCDerscadmimp} has both impedance and admittance circles on it.  This way, we can use Smith Chart to read off the values for equivalent impedance or admittance when we add impedances or admittances in parallel or series, which is useful in impedance matching that we will talk about in the next chapter. 
-
+ Smith Chart in Figure \ref{fig:SCDerscadmimp} has impedance  circles, and impedance coordinates on it.  We can use this Smith Chart to read off the values for the impedance, and reflection coefficient. In the next section, we will learn to use impedance/admittance (Z/Y) Smith Chart, where both impedance and admittance circles are shown. We will use the Z/Y Smith Chart when we add impedances or admittances in parallel or series, which is useful in impedance matching that we will talk about in the next chapter. 
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.3]{../jpg/SCadmimp.jpg}
+\includegraphics[scale=0.1]{../jpg/SmithChartImped-01.jpg}
 \end{center}
 \caption{On Smith Chart impedances are shown in red, and admittances in green.}
 \label{fig:SCDerscadmimp}
 \end{figure}
+
 
 
 \section{Impedance on the Smith Chart} 
@@ -63,15 +63,104 @@ Figure \ref{fig:SCDerscimpedance}, shows how to find the location of normalized 
 \begin{center}
 \includegraphics[scale=0.3]{../jpg/FindingGammaFromImpedanceonSC.jpg}
 \end{center}
-\caption{To find the magnitude of the reflection coefficient from impedance $Z_L=1+j 1$, we measure the distance between the origin and the point using the scale "Reflection Coefficient E or I" on the bottom of the Smith Chart. To find the angle of the reflection coefficient, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart.}
+\caption{To find the magnitude of the reflection coefficient from impedance $Z_L=1+j 1$, we measure the distance between the origin and the point using the scale "Reflection Coefficient E or I" on the bottom of the Smith Chart. To find the reflection coefficient's angle, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart.}
 \label{fig:SCDerscgammafromZ}
 \end{figure}
+
+
+\newpage
+
+\section{Admittance on the impedance Smith Chart} 
+
+The reflection coefficient can be found from impedance or admittance. To find the reflection coefficient from impedance, we use the formula that we previously derived, where $Z_L$ is the load impedance, and $z_L=\frac{Z_L}{Z_0}$ is the normalized load impedance.
+
+\begin{eqnarray}
+\Gamma_L=\frac{z_L-1}{z_L+1} \label{eq:GammaImp} 
+\end{eqnarray}
+
+
+Admittance is defined as $Y_L=\frac{1}{Z_L}$, and the transmission-line admittance is defined as $Y_0=\frac{1}{Z_0}$. If we now replace the impedances in the equation above with admittances, we get
+
+
+\begin{eqnarray}
+\Gamma_L = \frac{\frac{1}{Y_L}-\frac{1}{Y_0}}{\frac{1}{Y_L}+\frac{1}{Y_0}} \\
+\Gamma_L = \frac{Y_0-Y_L}{Y_0+Y_L} \\
+\Gamma_L = -  \frac{Y_L-Y_0}{Y_L+Y_0} \\
+\Gamma_L = -  \frac{y_L-1}{y_L+1} \\
+\Gamma_L = -\Gamma_Y \label{eq:GammaAdm}
+\end{eqnarray}
+
+
+Where $Y_L$ is the load admittance and $y_L=\frac{Y_L}{Y_0} $, is the normalized load admittance. Note that the Smith Chart shown in Figure \ref{fig:SCDerscimpedance} shows circles for the impedance of the load. Therefore, the true reflection coefficient of the load is at the position of the load. We have defined $\Gamma_Y $ above to see the position of admittance on the impedance Smith Chart. 
+
+
+ From the above Equation \ref{eq:GammaAdm}, we can see that the reflection coefficient for the admittance (and the admittance) on the impedance Smith chart has the same magnitude as the load reflection coefficient. The $\Gamma_Y$ is on the same SWR circle as the $\Gamma_L$, but it is $180^0$ shifted with respect to the load reflection coefficient. $180^0$ phase shift in reflection coefficient with the same magnitude can be found in two ways:
+ 
+\begin{enumerate}
+\item  by rotating the reflection coefficient $\Gamma_L$ for $180^0$ on the SWR circle to read the admittance of the load. Effectively, this means that you can draw a line through the load impedance and the center of the Smith Chart, and find the position of this line that crosses the SWR circle, $180^0$ away. This method's disadvantage is that the point representing admittance changes place on the Smith Chart, depending on whether we are reading admittance or impedance. This method is used in some books, see, for example, Ulaby, Applied Electromagnetics.
+
+\item Another way to read the admittances on the Smith chart is to use combination of impedance/admittance (Z/I) chart, Figure \ref{fig:SCDerscadmimp1}. To make the Z/Y chart, we rotate the impedance Smith Chart for $180^0$ to get the admittance point at the same position as the impedance point. Then, the impedance, admittance, and reflection coefficient are all at the same point, but we have to read the two scales, the impedance and admittance scale. The disadvantage of this method is that the Z/Y Smith Chart has more circles to read. However, this method is conceptually more straightforward, as the point on the Smith Chart does not change position, depending on whether we are reading admittance or impedance. The point is fixed, and we just read the different circles. We will use this method in our class. The example below discusses this method further.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.3]{../jpg/SCadmimp.jpg}
+\end{center}
+\caption{On Z/Y Smith Chart impedances are shown in red, and admittances in green.}
+\label{fig:SCDerscadmimp1}
+\end{figure}
+
+\end{enumerate} 
+ 
+
+
+
+
+\begin{example}
+The normalized impedance of the load is given $z_L=1+j1$. First, find the admittance of this impedance using your calculator. Then use two Smith Charts. On one, find the impedance position, and on the other, find the position of the admittance. Then rotate the admittance chart for $180^0$ so that both points overlap. Observe the impedance and admittance circles on this combo Z/Y chart, and compare them to the Z/Y chart.
+
+\begin{solution}
+The normalized admittance to impedance  $z_L=1+j1$ is $y_L=0.5-j0.5$.
+
+\end{solution}
+
+The impedance $z_L=1+j1$ is shown on the Smith Chart in Figure \ref{fig:SC1-imp}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.1]{../jpg/Zchart-01-01.jpg}
+\end{center}
+\caption{Impedance $z_L=1+j1$ on Smith Chart} \label{fig:SC1-imp}
+\end{figure}
+
+The admittance $y_L=0.5-j0.5$ is shown on Smith Chart in Figure \ref{fig:SC1-adm}. If we now use this Smith Chart and rotate it for $180^0$ (upside down), and place it over the chart above, we will see that the impedance and admittance point are in the same position on the Smith Chart. We call this Smith Chart a z/y Smith Chart. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.1]{../jpg/Ychart-01.jpg}
+\end{center}
+\caption{Admittance $y_L=0.5-j0.5$ on Smith Chart} \label{fig:SC1-adm}
+\end{figure}
+
+
+Both impedance  $z_L=1+j1$ and admittance $y_L=0.5-j0.5$ are at the same position on the z/y Smith Chart in Figure \ref{fig:SC1-both}. We see two sets of circles on this chart, the red ones represent impedance circles, and the green ones represent admittance circles. To read the impedance of the point shown on the Smith Chart, we read the impedance circle scale, and to read the admittance, we read the admittance circle scales.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/Zchart-01a-01.jpg}
+\end{center}
+\caption{Both impedance  $z_L=1+j1$ and admittance $y_L=0.5-j0.5$ are at the same position on the z/y Smith Chart} \label{fig:SC1-both}
+\end{figure}
+
+\end{example}
+
 
 \section{Converting Reflection Coefficient to Impedance and Admittance}
 
 \begin{example}
 
-Look at an empty Smith Chart of your choice that has both impedance and admittance coordinates. Pick a point on the Smith Chart, and first estimate the reflection coefficient, then read it from the Smith Chart. Then read the impedance and admittance. 
+Look at a Z/Y Smith Chart of your choice. Z/Y chart has both impedance and admittance circles. Pick a point on the Smith Chart, first estimate the reflection coefficient, and then read it from the Smith Chart. Then read the impedance and admittance. 
 Use the app below to check your work.
 
 \begin{center}  
@@ -81,3 +170,4 @@ Use the app below to check your work.
 
 
 \end{document} 
+

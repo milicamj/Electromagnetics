@@ -8,20 +8,23 @@
  
 \title{Simple impedance matching case} 
 \author{Milica Markovic} 
-\outcome{Design impedance matching circuits.}
+\outcome{Design a simple impedance matching network for any load impedance and discuss pros and cons of various designs.}
 \begin{document}  
 \begin{abstract}  
 
 \end{abstract}  
 \maketitle    
 
+
+\section{Simple impedance matching case}
+
 The simplest impedance matching case is when the real part of the load impedance is already equal to the transmission line impedance. 
 
 Let's say that the load impedance is $Z_L=R_L+j \omega L =50+j80 \Omega$ and needs to be matched to a $Z_0=50\Omega$ line. This impedance represents a resistor of $50\Omega$ connected in series with a $80 \Omega$-reactance inductor. The reactance of $80 \Omega$ is an inductor of inductance $12.73$nH at 1GHz.  
 
-To make this impedance look like a $50 \Omega$ impedance, we have to add an element   with $Z_{add}=-j80 \Omega $ impedance, so that $Z_L+Z_{add}=50 \Omega$. Since this impedance is negative, we know that we have to add a capacitor. Because we are adding two impedances, we know that they must be in series. 
+To make this impedance look like a $50 \Omega$ impedance, we have to add an element   with $Z_{add}=-j80 \Omega $ impedance, so that $Z_L+Z_{add}=50 \Omega$. Since $Z_{add}$ impedance is negative, we know that we have to add a capacitor. Because we are adding two impedances, we know that they must be in series. 
 
-To look at this solution on the Smith Chart, we first normalize the impedance of the load $\bar{Z}_L=\frac{Z_L}{Z_0}=1+j1.6$, and then place it on the Smith Chart as shown in Figure \ref{fig:SimpleMatch} as a red dot. To get to the center of the Smitch Chart, we use only the resistance/conductance circles, because we know that on these circles only the reactance/susceptance of the impedance changes and we don't want to add resistors to change the real part of the impedance. We see that the circle we have to use is the $Z=1$ circle, because the load impedance  is on it.  To get to the center of the chart, where $Z=1$. To find the reactance we need to add, we subtract  the matched impedance Z and the load impedance $Z_{add}=Z- Z_L=-j1.6$. Another way to see that this is a capacitor is to notice that by adding this element, we are moving from the inductive (upper half) to capacitive part (lower part) of the Smith chart. 
+To look at this solution on the Smith Chart, we first normalize the impedance of the load $\bar{Z}_L=\frac{Z_L}{Z_0}=1+j1.6$, and then place it on the Smith Chart as shown in Figure \ref{fig:SimpleMatch} as a red dot. To get to the center of the Smitch Chart, we use only the resistance/conductance circles. On these circles, centered on x-axis, only the reactance/susceptance of the impedance changes, and we don't change the resistance.  We only add capacitors or inductors in matching circuits, and so we keep constant the real part of the impedance or admittance. We see that the circle we have to use is the $Z=1$ circle, where the real part of the load impedance is constant.  To get to the center of the chart, where $Z=1$, we find the reactance  to add to the load impedance. To make the final, matched impedance equal to one, we have to add impedance $Z_{add}=-j1.6$. Since this impedance is negative, it's a capacitor. Another way to see that this is a capacitor is to notice that by adding this element, we are moving from the inductive (upper half) to capacitive part (lower part) of the Smith chart. 
 
 
 \begin{figure}[htbp]
@@ -34,7 +37,8 @@ To look at this solution on the Smith Chart, we first normalize the impedance of
 
 
 
-Finally, we have to find the capacitance of a $Z_{add}=-j1.6 50 \Omega$. The added impedance is multiplied by $50 \Omega$ to re-normalize the impedance. The impedance of any capacitor is $Z=\frac{1}{j \omega C}=-j \frac{1}{\omega C}$. To find the capacitance of this capacitor we set $-j \frac{1}{\omega C}=-j1.6 50$. From this equation, and keeping in mind that $\omega = 2 \pi f$, we calculate that the capacitance is $C \approx 2$pF.
+Finally, we have to find the capacitance of a $Z_{add}=-j1.6$.  The added impedance is first multiplied by $50 \Omega$ to re-normalize the impedance. The impedance of any capacitor is $Z=\frac{1}{j \omega C}=-j \frac{1}{\omega C}$. To find the capacitance of this capacitor we set $-j \frac{1}{\omega C}=-j1.6 \times 50$. From this equation, and keeping in mind that $\omega = 2 \pi f$, we calculate that the capacitance is $C \approx 2$pF.
+
 
 
 \end{document} 

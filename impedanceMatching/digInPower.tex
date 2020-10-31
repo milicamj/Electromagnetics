@@ -8,7 +8,7 @@
  
 \title{Power} 
 \author{Milica Markovic} 
-\outcome{Design impedance matching circuits.}
+\outcome{Explain the complex power and its parts. Calculate real average power delivered from the generator.}
 \begin{document}  
 \begin{abstract}  
 
@@ -36,22 +36,28 @@ i(t)=\Re\{\tilde{I} e^{j \omega t}\}
 The real part of a complex number can also be found as $\Re\{z\}=\frac{1}{2}(z +z^*)$, so the above two equations can be re-written as
 
 \begin{eqnarray}
-v(t)=\frac{1}{2} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) \label{phasorV}\\
-i(t)=\frac{1}{2} ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) \label{phasorI}\\
+v(t)=\frac{1}{2} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) \label{eq:phasorV}\\
+i(t)=\frac{1}{2} ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) \label{eq:phasorI} 
 \end{eqnarray}
 
-The power is defined as a product of voltage in current.
+Power is defined as a product of voltage and current.
 
 \begin{equation}
-p(t) = v(t) i(t)
+p(t) = v(t) i(t) \label{eq:power}
 \end{equation}
 
-If we replace voltage and current in the time domain with Eq \ref{phasorV} and \ref{phasorI} we get
+If we replace voltage and current in Equation \ref{eq:power} in the time domain with Equations \ref{eq:phasorV} and \ref{eq:phasorI} we get
 
 
 
 \begin{eqnarray}
-p(t) =\frac{1}{4} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) \\
+p(t) =\frac{1}{4} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) 
+\end{eqnarray}
+
+Multiplying the terms above, and rearanging, we get:
+
+
+\begin{eqnarray}
 p(t)=\frac{1}{4} (\tilde{V}\tilde{I}^*+ (\tilde{V}\tilde{I}^*)^*+ \tilde{V}\tilde{I}^* e^{2j \omega t}+ (\tilde{V}\tilde{I}^* e^{2j \omega t})^*)
 \end{eqnarray}
 
@@ -69,7 +75,7 @@ p(t)=\frac{1}{2} \Re\{ |V| |I| e^{j(\theta_v-\theta_i)} \}+ \frac{1}{2} \Re\{|V|
 \end{eqnarray}
 
 
-p(t) above is instantaneous power, $S=\tilde{V}\tilde{I}^*=|V| |I| e^{j(\theta_v-\theta_i)}$ is complex power. Complex power has real and reactive parts S=P+jQ. The first part of the equation represents the average real power P delivered to the load $P=\frac{1}{2}\Re\{\tilde{V}\tilde{I}^*\}$, and the second part represents the fluxtuating power. We are usually interested in the average real power P delivered to the load.
+p(t) above is instantaneous power, $S=\tilde{V}\tilde{I}^*=|V| |I| e^{j(\theta_v-\theta_i)}$ is complex power. Complex power has real and reactive parts S=P+jQ. The first part of the equation represents the average real power P delivered to the load $P=\frac{1}{2}\Re\{\tilde{V}\tilde{I}^*\}$, and the second part represents the fluctuating power. We are usually interested in the average real power P delivered to the load.
 
 To find the real power delivered to the load, one would take the real part of the complex power. If we know that the impedance of the load is $Z=R+jX$, the voltage is $ \tilde{V} = Z \tilde{I}$ and we remember that $\tilde{I} \tilde{I}^* = |I|^2$ then the real power is
 
@@ -92,7 +98,24 @@ A transmitter operated at 20MHz, Vg=100V with $50 \Omega$ internal impedance is 
 \item What is the time-average power absorbed by $Z_L$. $P_{L}=\frac{1}{2} R_L |I_{L}|^2$
 \item If now we match load impedance $Z_l$ to 50 Ohm line, what is the input impedance of the line, and how much average power is delivered to the line and load?
 \end{enumerate}
+\begin{solution}
+\begin{description}
+\item[a] Electrical length of the line is $0.6 \lambda$.
+\item[b]  The input impedance on the line is $Z_{in}=70.8+j27.1 \Omega$.
+The load reflection coefficient is $\Gamma_L=0.27 e^{j112^0}$. The 
+input reflection coefficient is $\Gamma_{in}= 0.27 e^{-j320} = 0.27 e^{j40^0}$.
+The input current is $I_{in}=0.813 e^{-j12.6^0}$. 
+The input power is 23.4W.
+\item[c] The current at the load is $I_L=1.14 e^{-j223^0}$. The average power at the load is 23.4W (the same as at the input). This is because we are assuming a lossless line, so all power delivered to the line will be delivered to the load.
+\item[d] When the load impedance is $50 \Omega$, the average input power is 25W. When the load is matched to the line and generator, we have the maximum power available from the generator delivered to the load.
+\end{description}
+
+
+ 
+\end{solution}
+
 
 \end{example}
 
 \end{document} 
+
