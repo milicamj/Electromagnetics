@@ -20,9 +20,9 @@
 
 
 
-In many electrical structures more than one dielectric is used, so that the electric field exists in different dielectrics. In such cases we are interested in how will the electric field change from one dielectric to the other. Figure \ref{fig:BoundaryCondition} shows the boundary between the two dielectrics with permittivities $\epsilon_1$ and $\epsilon_2$, and the electric fields $E_1$ in material 1 and $E_2$ in material 2. At the boundary between two materials we may have surface charge density $\rho_s$.
+In many electrical structures, more than one dielectric is used so that the electric field exists in different dielectrics. In such cases, we are interested in how will the electric field change from one dielectric to the other. Figure \ref{fig:BoundaryCondition} shows the boundary between the two dielectrics with permittivities $\epsilon_1$ and $\epsilon_2$, and the electric fields $E_1$ in material 1 and $E_2$ in material 2. At the boundary between two materials, we may have surface charge density $\rho_s$.
 
-At the boundary between any two  dielectrics the tangential components of the electric field $E_{1t}, \, E_{2t}$ are continuous and the normal components $E_{1n}, \, E_{2n}$ are discontinuous and equal to the surface charge density.  
+At the boundary between any two dielectrics, the tangential components of the electric field $E_{1t}, \, E_{2t}$ are continuous, and the normal components $E_{1n}, \, E_{2n}$ are discontinuous and equal to the surface charge density.  
 
 
 \begin{eqnarray}
@@ -75,20 +75,16 @@ D_{1n}=D_{2n}
 %\end{figure}
 
 
-\begin{problem}
- The four equations below show the tangential and normal electric field at the boundary of two dielectrics. Dielectric 1 is a Teflon with relative dielectric constant of 2.2, and the dielectric 2 is Silicon with relative dielectric constant of 11.2. Which equation represents a possible  electric field? 
- 
- 
-   \begin{prompt}
+   \begin{question}
+ The four equations below show the tangential and normal electric field at the boundary of two dielectrics. Dielectric 1 is a Teflon with a relative dielectric constant of 2.2, and dielectric 2 is Silicon with a relative dielectric constant of 11.2. Which equation represents a possible electric field? 
    \begin{multipleChoice}
      \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $E_{1n}=  E_{2n}$}
      \choice[correct]{$E_{1t}=E_{2t}$ and $2.2 \,E_{1n}= 11.2 \,E_{2n}$ }
      \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $ E_{1n}= E_{2n}$}
      \choice{$E_{1t}=E_{2t}$ and $11.2 \, E_{1n}= 2.2 \, E_{2n}$}
    \end{multipleChoice}
-   \end{prompt}
-   \end{problem}
-
+   \end{question}
+   
 
 \section{Boundary conditions at a conductor-dielectric boundary}
 
@@ -99,7 +95,7 @@ E=\frac{J}{\sigma}
 \end{equation}
 
 
-When $\sigma \rightarrow \infty$, from the above equation, we see that the electric field is zero. This means that at the boundary of the dielectric and metal, the tangental field in the dielectric must be zero as well, and the only field at the boundary of a metal is the normal electric field $D_n$, and it is equal to the induced charge at the surface of the conductor.
+When $\sigma \rightarrow \infty$, from the above equation, we see that the electric field is zero. This means that at the boundary of the dielectric and metal, the tangential field in the dielectric must be zero as well, and the only field at the boundary of a metal is the normal electric field $D_n$, and it is equal to the induced charge at the surface of the conductor.
 
 \begin{equation}
 D_n = \rho_s
@@ -123,7 +119,7 @@ Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the m
 
 We will now use Maxwell's equations to derive the electrostatic boundary conditions. 
 
-First, we will use Gauss's law to find the normal component of the fields at the boundary between two dielectrics, as shown in Figure \ref{fig:BoundaryConditionNormal}. As we can see from the Figure, the flux of the electric field exists through both bases and the side of the cylinder. We can find the components of the fields in both dielectrics, one parallel to the boundary x and one perpendicular to the boundary, in the direction of y.
+First, we will use Gauss's law to find the normal component of the fields at the boundary between two dielectrics, as shown in Figure \ref{fig:BoundaryConditionNormal}. As we can see from the figure, the flux of the electric field exists through both bases and the side of the cylinder. We can find the components of the fields in both dielectrics, one parallel to the boundary x and one perpendicular to the boundary, in the direction of y.
 
 \begin{eqnarray}
 \vec{E_1}= \vec{E_{1x}}+\vec{E_{1y}}= E_{1x} \vec{x}+E_{1y} \vec{y} \\
@@ -131,7 +127,7 @@ First, we will use Gauss's law to find the normal component of the fields at the
 \end{eqnarray}
 
 
-The tangential components of the fields produce flux through the sides, and normal components produce flux through the bases.  Since we are interested at what happens at the boundary, we will let the height of the cylinder be infinitesimaly small $h \rightarrow 0$. Because the height of the cylinder is zero, and therefore the surface area is zero, the flux through the side surface S3 is zero. The flux thorugh the top and bottom surfaces will only exist due to the normal components of the field.
+The tangential components of the fields produce flux through the sides, and normal components produce flux through the bases.  Since we are interested in what happens at the boundary, we will let the height of the cylinder be infinitesimally small $h \rightarrow 0$. Because the height of the cylinder is zero, and therefore the surface area is zero, the flux through the side surface S3 is zero. The flux through the top and bottom surfaces will only exist due to the normal components of the field.
 
 \begin{eqnarray}
 \oint_S \vec{D} \cdot \vec{dS} = Q_{inS} \\
@@ -154,7 +150,7 @@ The tangential components of the fields produce flux through the sides, and norm
 \end{figure}
 
 
-The tangential components of the field can be obtained from the equation for the Faraday's law for static fields, as shown in Figure \ref{fig:BoundaryConditionTangential}. We choose a rectangular conture as shown in the figure with lenght l and width w. Since, again we are interested at the boundary, we will let the width of the contour go to zero. The integral along the w-pieces will then be zero. The integral along the l-pieces of contour will depend on the orientation of contour, and we will pick a counter-clockwise path. Because of the counterclockwise path, the x-component of the $E_1$ field will be negative, and we have that the x-components of the fields in two dielectrics have to be the same.
+The tangential components of the field can be obtained from the equation for Faraday's law for static fields, as shown in Figure \ref{fig:BoundaryConditionTangential}. We choose a rectangular contour, as shown in the figure with length l and width w. Since again we are interested in the boundary, we will let the width of the contour go to zero. The integral along the w-pieces will then be zero. The integral along the l-pieces of contour will depend on the orientation of contour, and we will pick a counter-clockwise path. Because of the counter-clockwise path, the x-component of the $E_1$ field will be negative, and we have that the x-components of the fields in two dielectrics have to be the same.
 
 \begin{eqnarray}
 \oint_C \vec{E} \cdot \vec{dl}=0 \\
@@ -191,3 +187,4 @@ E_{1x}  = E_{2x}
 
 
 \end{document} 
+

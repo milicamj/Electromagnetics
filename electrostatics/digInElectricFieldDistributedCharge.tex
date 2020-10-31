@@ -8,7 +8,9 @@
  
 \title{Electrostatic fields from distributed charges} 
 \author{Milica Markovic} 
-\outcome{Distributed charges.}
+\outcome{Students will be able to derive equations for electrostatic
+fields from a variety of charge distribution. Students will use MATLAB to
+visualize fields.}
 \begin{document}  
 \begin{abstract}  
 
@@ -18,11 +20,14 @@
 
 \section{Electric Field due to a Charge Distribution}
 
+
+This is an optional section.
+
 \subsection{Derive Analytical Solution for the Electric field Due to a Loop of Charge }
 
 
 
-We will first find the electric field due to a loop of charge.The loop of charge is charged with the line charge density $\rho_l$ and is in X-Y plane, as shown in Figure \ref{fig:loopSinglePt}.  To solve this problem, we first  divide the loop into small pieces. The small (blue) arc obtained in this way can be considered a point charge. The electric field due to a point charge is shown in Figure \ref{fig:loopSinglePt}(the blue arrow).  The position of the point charge is defined by a position vector $\vec{r_2}$. The position of point P is defined with the position vector  $\vec{r_1}$. The vector  $\vec{dE}$ is defined in  Equation  \ref{genfieldloop}.
+We will first find the electric field due to a loop of charge. The loop of charge is charged with the line charge density $\rho_l$ and is in the X-Y plane, as shown in Figure \ref{fig:loopSinglePt}.  To solve this problem, we first divide the loop into small pieces. The small (blue) arc obtained in this way can be considered a point charge. The electric field due to a point charge is shown in Figure \ref{fig:loopSinglePt}(the blue arrow).  The position of the point charge is defined by a position vector $\vec{r_2}$. The position of point P is defined with the position vector  $\vec{r_1}$. The vector  $\vec{dE}$ is defined in  Equation  \ref{genfieldloop}.
 
 
 \begin{eqnarray}
@@ -30,7 +35,7 @@ We will first find the electric field due to a loop of charge.The loop of charge
 \end{eqnarray}
 
 
-The total electric field at a point P is then equal to the sum of all the fields due to the point charges as shown in Figure \ref{fig:loopAllPts}. The equation for the total field is given in Equation \ref{eqtotfieldring}. 
+The total electric field at a point P is then equal to the sum of all the fields due to the point charges, as shown in Figure \ref{fig:loopAllPts}. The equation for the total field is given in Equation \ref{eqtotfieldring}. 
 
 \begin{eqnarray}
 \vec{E}=\int\limits_{all \,\, point \,\, charges} \vec{dE} \label{eqtotfieldring}
@@ -64,7 +69,7 @@ The total electric field at a point P is then equal to the sum of all the fields
 \end{figure}
 
 The problem now  is to represent all the variables in the Equation \ref{genfieldloop}  ( $dQ$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given charge distribution.
-The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{fig:loopAllPts}, $dl$ is an arc length in the direction of theta, $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$ and the vector $\vec{r_1}$  is the position vector of the point be  of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its  vector is shown in Equation \ref{eq1loop}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
+The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{fig:loopAllPts}, $dl$ is an arc length in the direction of theta, $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point be of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loop}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
 
 
 
@@ -125,7 +130,7 @@ Components of the electric field are given in Equations \ref{totalfieldloop1}-\r
 \vec{dE_z}= \frac{\rho_l \, a \, d\theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta})^2 +(y - a \,sin{\theta})^2 +z ^2}  }^3}   z \vec{a_z} \label{totalfieldloop3}
 \end{eqnarray}
 
-Each component of the field can be  integrated separately, as shown in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}.
+Each component of the field can be integrated separately, as shown in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}.
 
 
 
@@ -135,12 +140,12 @@ Each component of the field can be  integrated separately, as shown in Equations
 \vec{E_z}=  \int_0^{2\pi}\frac{\rho_l \, a \,  z   d\theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta})^2 +(y - a \,sin{\theta})^2 +z ^2}  }^3}  \vec{a_z} \label{totalfieldloop6}
 \end{eqnarray}
 
-The integrals in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}  can be integrated analytically  in some special cases only. In general this is in an elliptical integral, and cannot be solved analytically. However this integral can be sold numerically.
+The integrals in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}  can be integrated analytically in some special cases only. In general, this is in an elliptical integral and cannot be solved analytically. However, this integral can be sold numerically.
 
 
 \subsection{Derive Numerical solution to the Electric Field due to a Loop of Charge}
 
-The integrals in equations \ref{totalfieldloop4}-\ref{totalfieldloop6} can be represented as infinite summs using  simple numerical integration as shown in Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
+The integrals in equations \ref{totalfieldloop4}-\ref{totalfieldloop6} can be represented as infinite sums using  simple numerical integration as shown in Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
 
 
 
@@ -151,12 +156,12 @@ The integrals in equations \ref{totalfieldloop4}-\ref{totalfieldloop6} can be re
 \vec{E_z}=  \sum_{i=0}^{n}\frac{\rho_l \, a \,  z   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}  \vec{a_z} \label{totalfieldloop6n}
 \end{eqnarray}
 
-$\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to trapezoidal rule can be improved by using more advanced numerical integration techniques.
+$\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to the trapezoidal rule can be improved by using more advanced numerical integration techniques.
 
 \subsection{Matlab Code to Find the Electric Field due to a Loop of Charge }
  
 
-Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n} can be implemented in Matlab as shown below. Cut-and-paste the program below in Matlab editor. Play with values for the size of the ring, and meshgrid values.  for some values of the step of smash. The vectors on the graph will completely disappear. Comment on why that may be.
+Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n} can be implemented in Matlab as shown below. Cut-and-paste the program below in Matlab editor. Play with values for the size of the ring and meshgrid values. For some values of the step, the vectors on the graph will completely disappear—comment on why that may be.
 
 \begin{verbatim}
 clear all
@@ -164,7 +169,8 @@ clear all
 rad=-2:1.9965:2;
 %Make X,Y,Z matrices
 [X Y Z]=meshgrid(rad);
-%Define constants epsilon, Q. They are obviously not physical. They are set
+%Define constants epsilon, Q. They are obviously not physical. 
+%They are set
 %to small constants so that we get smaller numbers.
 eps=1;
 Q=1;
@@ -174,8 +180,9 @@ const=Q/(2*pi*eps);
 Ex=0;
 Ey=0;
 Ez=0;
-%Here we find the fieldl at all X,Y,Z points defined previously from
-%each of the "unit" charges on the ring. th variable starts from 0.1
+%Here we find the fieldl at all X,Y,Z points defined previously
+% from each of the "unit" charges on the ring. 
+%th variable starts from 0.1
 %to avoid the infinite value of V at the point r=1,theta=0.
 for th=0.1:pi/20:2*pi
 t=const./ (sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)).^(3);
@@ -196,7 +203,7 @@ plot(x,y,'b');
 hold off
 \end{verbatim}
 
-\subsubsection{Derive  electric field  integral,  numerical solution for integral, then implement the code in matlab, to find the electric field from a 1\,m stick of charge, charged with uniform line charge density of $\rho_l=1nC/m$. The stick is positioned as in Figure \ref{stickf}.}
+\begin{example} Derive electric field integral,  numerical solution for integral, then implement the code in MATLAB, to find the electric field from a 1\,m stick of charge, charged with a uniform line charge density of $\rho_l=1nC/m$. The stick is positioned as in Figure \ref{stickf}.
 
 \begin{figure}[h!]
 \begin{center}
@@ -205,6 +212,8 @@ hold off
 \end{center}
 \end{figure}
 
+\end{example}
+
 \section{Potential}
 
 \subsection{Derive Analytical Solution for the Potential  Due to a Loop of Charge }
@@ -212,7 +221,7 @@ hold off
 Derive the potential due to a ring of charge, charged with a line charge density $\rho_l$. 
 
 
-Potential due to a point charge is given in Equation \ref{genpotloop}. We will first find the potential due to a loop of charge. Assume that the loop of charge is charged with the line charge density $\rho_l$. The loop of charge is in X-Y plane, as shown in Figure \ref{loopanyptf}.  First we will divide the loop into small pieces. We will assume that the small  arc obtained in this way can be considered a point charge. The potential due to a point charge at a point P is labeled  in Figure \ref{loopanyptf} as $dV$.  The position of the point charge is defined by a position vector $\vec{r_2}$. The position of point P is defined with the position vector  $\vec{r_1}$. The electric scalar potential $dV$ is defined in  Equation  \ref{genpotloop}.
+Potential due to a point charge is given in Equation \ref{genpotloop}. We will first find the potential due to a loop of charge. Assume that the loop of charge is charged with the line charge density $\rho_l$. The loop of charge is in the X-Y plane, as shown in Figure \ref{loopanyptf}.  First, we will divide the loop into small pieces. We will assume that the small arc obtained in this way can be considered a point charge. The potential due to a point charge at a point P is labeled in Figure \ref{loopanyptf} as $dV$.  The position of the point charge is defined by a position vector $\vec{r_2}$. The position of point P is defined with the position vector  $\vec{r_1}$. The electric scalar potential $dV$ is defined in  Equation  \ref{genpotloop}.
 
 
 \begin{eqnarray}
@@ -229,7 +238,7 @@ dV=\frac{dQ}{4 \pi \epsilon_{0} {r}}  \label{genpotloop}
 \label{loopanyptf}
 \end{figure}
 
-The total potential at a point P is then equal to the sum of all the potentials due to the point charges as shown in figure \ref{loopanypt1}. The equation for the total potential is given in \ref{eqtotfieldringpot}. 
+The total potential at a point P is then equal to the sum of all the potentials due to the point charges, as shown in Figure \ref{loopanypt1}. The equation for the total potential is given in \ref{eqtotfieldringpot}. 
 
 \begin{eqnarray}
 V=\int\limits_{all \,\, point \,\, charges} dV \label{eqtotfieldringpot}
@@ -248,7 +257,7 @@ Each section is modeled by a point charge $dQ$.}
 
 
 The problem now  is to represent all the variables in the Equation \ref{genpotloop}  ( $dQ$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given charge distribution.
-The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{loopanyptf}, $dl$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$ and the vector $\vec{r_1}$  is the position vector of the point be  of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its  vector is shown in Equation \ref{eq1loopp}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
+The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{loopanyptf}, $dl$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point be of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loopp}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
 
 
 
@@ -306,7 +315,7 @@ V= \int\limits_0^{2 \pi}\frac{\rho_l \, a \, d\theta }{4 \pi \epsilon_{0} {  \sq
 
 
 
-The integral in Equation \ref{totalfieldloopp2} can be integrated analytically in some special cases, however this equation can be solved numerically as shown in the next section.
+The integral in Equation \ref{totalfieldloopp2} can be integrated analytically in some special cases; however, this equation can be solved numerically, as shown in the next section.
 
 
 
@@ -317,7 +326,7 @@ The integral in Equation \ref{totalfieldloopp2} can be integrated analytically i
 
 
 
-The integrals in equations \ref{totalfieldloopp2} can be represented with infinite sum using  simple numerical integration (trapezoidal rule) as shown in Equations \ref{totalfieldloop6np}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
+The integrals in equations \ref{totalfieldloopp2} can be represented with infinite sum using simple numerical integration (trapezoidal rule), as shown in Equations \ref{totalfieldloop6np}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
 
 
 
@@ -326,10 +335,10 @@ The integrals in equations \ref{totalfieldloopp2} can be represented with infini
 V=  \sum_{i=0}^{n}\frac{\rho_l \, a   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }}  \label{totalfieldloop6np}
 \end{eqnarray}
 
-Where $\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to trapezoidal rule can be improved by using more advanced numerical integration techniques.
+Where $\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to the trapezoidal rule can be improved by using more advanced numerical integration techniques.
 
 
-\subsection{Matlab Code to Find the Electric Potenital due to a Loop of Charge }
+\subsection{Matlab Code to Find the Electric Potential due to a Loop of Charge }
  
 
  Plot the cross-section of the potential and the equipotential lines on the planes x=0, y=0, z=0. 
@@ -340,22 +349,26 @@ rad=-1.5:0.1:1.5
  
 %Make X,Y,Z matrices 
 [X Y Z]=meshgrid(rad,rad,rad)
-%Define constants epsilon, Q. They are obviously not physical. They are set 
+%Define constants epsilon, Q. They are obviously not physical. 
+%They are set 
 %to small constants so that we get smaller numbers.
 eps=1
 Q=1
 const=Q/(2*pi*eps)
 %Set the initial potential value to zero. Initialize V.
 V=0
-%Here we find the potential at all X,Y,Z points defined previously from
-%each of the "unit" charges on the ring. The th variable starts from 0.1
+%Here we find the potential at all X, Y, Z points defined
+% previously from
+%each of the "unit" charges on the ring. 
+%The th variable starts from 0.1
 %to avoid the infinite value of V at the point r=1,theta=0. 
  
  for th=0.1:pi/20:2*pi
      t=const./ sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)
-V= V+t;
+		V= V+t;
  end
- %Plot the volume distribution of potential at planes x=0, y=0, z=0
+%Plot the volume distribution of potential at planes
+% x=0, y=0, z=0
 slice(X,Y,Z,V,[0],[0],[0])
 %Keep the same figure
 hold on;
@@ -387,15 +400,18 @@ Q=1
 const=Q/(2*pi*eps)
 %Set the initial potential value to zero. Initialize V.
 V=0
-%Here we find the potential at all X,Y,Z points defined previously from
-%each of the "unit" charges on the ring. The th variable starts from 0.1
+%Here we find the potential at all X, Y, Z points defined 
+%previously from
+%each of the "unit" charges on the ring. The th variable
+% starts from 0.1
 %to avoid the infinite value of V at the point r=1,theta=0. 
  
  for th=0.1:pi/20:2*pi
      t=const./ sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)
 V= V+t;
  end
- %Plot the volume distribution of potential at planes x=0, y=0, z=0
+%Plot the volume distribution of potential at planes
+% x=0, y=0, z=0
 p = patch(isosurface(X,Y,Z,V,7));
 isonormals(X,Y,Z,V,p)
 set(p,'FaceColor','red','EdgeColor','none');
@@ -407,7 +423,7 @@ lighting gouraud
 
 
 
-Observe the equipotential surfaces. Explain why are the surfaces doughnut shaped? What is the electric field direction on the surface? Change the isosurface from 7 to 10 or some larger number. How does the isosurface look now? How does the potential of a ring of charge looks at the distances far away from the ring? What about field?
+Observe the equipotential surfaces. Explain why the surfaces doughnut are shaped? What is the electric field direction on the surface? Change the isosurface from 7 to 10 or some larger number. How does the isosurface look now? How does the potential of a ring of charge looks at the distances far away from the ring? What about the field?
 
 
 
@@ -417,19 +433,19 @@ Observe the equipotential surfaces. Explain why are the surfaces doughnut shaped
 
 \section{Visualizing Scalar Fields in Matlab}
 
-To visualize scalar fields in Matlab we can use the following functions: slice, contourslice, patch, isonormals, camlight and lightning. Please note that more detailed explanation about the these organization functions shown here can be found in Matlab help.
+To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lightning. Please note that a more detailed explanation about these functions shown here can be found in Matlab's help.
 
 \subsection{slice}
  
-Slice is a command that shows the magnitude of a scalar fields on a plane that slices the volume where the potential field is visualized. The format of this command is as shown below.
+Slice is a command that shows the magnitude of a scalar field on a plane that slices the volume where the potential field is visualized. The format of this command is as shown below.
 
 \begin{verbatim}
 slice(x,y,z,v,xslice,yslice,zslice)
 \end{verbatim}
 
-Where X, Y, and Z are coordinate of points where the scaler function is calculated, V is v the scalar function at those points, and the last three vectors xslice, yslice, and zslice  are showing where will the volume will be sliced.
+Where X, Y, and Z are coordinates of points where the scaler function is calculated, V is v the scalar function at those points, and the last three vectors xslice, yslice, and zslice  are showing where will the volume will be sliced.
 
-An example of slice command is given below. in the example below there is an additional command colormap, that's collars the volume with a specific pallette. To see more about different color maps, see Matlab help. xslice has three points at which the x-axis will be slice. They are -1.2, .8, 2. This means that the volume will be slice with a plane that is perpendicular to x-axis and it crosses the x-axis at points -1.2, .8 and 2. 
+An example of slice command is given below. In the example below, there is an additional command colormap that colors the volume with a specific palette. To see more about different color maps, see Matlab's help. xslice has three points at which the x-axis will be slice. They are -1.2, .8, 2. This means that the volume will be slice with a plane that is perpendicular to the x-axis, and it crosses the x-axis at points -1.2, .8, and 2. 
  
 \begin{verbatim}
 clc
@@ -443,7 +459,7 @@ colormap hsv
 
 \subsection{contourslice}
 
- Contourslice command will display equipotential  lines on a plane being the volume where the potential field is visualized. An example of contourslice function is shown below.
+ Contourslice command will display equipotential lines on a plane being the volume where the potential field is visualized. An example of a contourslice function is shown below.
 
 \begin{verbatim}
 [x,y,z] = meshgrid(-2:.2:2,-2:.25:2,-2:.16:2);
@@ -460,11 +476,13 @@ Patch command creates a patch of color.
 
 \subsection{isonormals}
 
-Command isonormals creates  equipotential surfaces. 
+Command isonormals create equipotential surfaces. 
 \subsection{camlight}
 
 \begin{verbatim}
-camlight('headlight') creates a light at the camera position.camlight('right') creates a light
+camlight('headlight') creates a light at the camera position.
+
+camlight('right') creates a light
 right and up from camera.
 
 camlight('left') creates a light
@@ -473,7 +491,9 @@ same as camlight('right').
 
 camlight(az,el) creates a light
 at the specified azimuth (az) and elevation (el)
-with respect to the camera position. The camera target is the center of rotation
+with respect to the camera position.
+
+The camera target is the center of rotation, 
 and az and el are in degrees.
 
 \end{verbatim}
@@ -484,11 +504,11 @@ and az and el are in degrees.
 
 
 \begin{verbatim}
-lighting flat selects flat lighting.
+Lighting flat selects flat lighting.
 
-lighting gouraud selects gouraud lighting.
+Lighting gouraud selects gouraud lighting.
 
-lighting phong selects phong lighting.
+Lighting phong selects phong lighting.
 
 lighting none turns off lighting.
 \end{verbatim}
@@ -501,3 +521,4 @@ lighting none turns off lighting.
 
 
 \end{document} 
+

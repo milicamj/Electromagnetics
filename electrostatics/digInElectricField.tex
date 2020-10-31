@@ -8,7 +8,7 @@
  
 \title{Electrostatic Field} 
 \author{Milica Markovic} 
-\outcome{Electrostatic fields.}
+\outcome{Explain definition of electric field. Derive and calculate electric field due to several point charges using vector algebra. }
 \begin{document}  
 \begin{abstract}  
 
@@ -19,11 +19,11 @@
 
 \begin{dialogue}
 \item[Petar] Why do we need the "Electric Field" concept? Wasn't the electric force concept difficult enough?
-\item[Sasha] There's also this term "Electromagnetic Field Theory". What is this electric field anyway? 
-\item[Petar] It says here that apparently it has to do with sources. They create fields. 
+\item[Sasha] There's also this term "Electromagnetic Field Theory." What is this electric field anyway? 
+\item[Petar] It says here that apparently, it has to do with sources. They create fields. 
 \item[Sasha] Oh, so if we only look at the field created by the source charge, we don't have to take into account charges that will be affected by this source.
-\item[Petar] That's right. It seems that the field is easier to find than the force because you are looking only at one charge at the time, not two.  
-\item[Sasha] And later if we know the field, we can find the force on the other charge without knowing what made the field that we know.
+\item[Petar] That's right. It seems that the field is easier to find than the force because you are looking only at one charge at a time, not two.  
+\item[Sasha] And later, if we know the field, we can find the force on the other charge without knowing what made the field that we know.
 \item[Petar] That's very cool. 
 \item[Sasha] Well, let's read more about this field thing then.
 
@@ -33,28 +33,28 @@
 
 \subsection{More about the Electrical force and field}
 
-We talked about the Electric Force in the previous section. To find the force on one charge, we had to know position of all charges, and what is their charge.  To introduce Electric Field, we'll call charge $q_1$ the source of the force and charge $q_2$ the charge that feels the force. Charge one produces the force and charge two feels the force. 
+We talked about the Electric Force in the previous section. To find the force on one charge, we had to know the position of all charges and what is their charge.  To introduce Electric Field, we'll call charge $q_1$ the source of the force and charge $q_2$ the charge that feels the force. Charge one produces the force, and charge two feels the force. 
 
-By introducing the concept of the field, we can separate the cause of the field and the effect that the field has on other charges. We can find a field due to a charge or charge distribution, and once we know this field, we don't have to keep track of the source, we can just find it's effect on other charges or charge distributions.
+By introducing the concept of the field, we can separate the cause of the field and the effect that the field has on other charges. We can find a field due to a charge or charge distribution, and once we know this field, we don't have to keep track of the source charge. We can just find the field's effect on other charges or charge distributions.
 
 
- In the Equation \ref{forceField} $q_1$ and $q_2$ are charges, r is the distance between the two charges, and $\hat{r}$ is the unit vector directed  from charge one to charge two. The electric field of a source charge $q_1$ is defined as the force that a charge $q_1$ would impress on a positive charge $q_2$, divided by the amount of charge $q_2$, as shown in Equation \ref{definitionOfField}. One thing to remember is that in definition of electric field, we always assume that the charge $q_2$ is positive! This way we remove the abiguity of the field direction. The direction of the electric field at a point P from charge $q_1$ is always in the direction of force that would act on a positive charge $q_2$ placed at that point, as shown in Figure \ref{UnitCh}.
+ In the Equation \ref{forceField1} $q_1$ and $q_2$ are charges, r is the distance between the two charges, and $\hat{r}$ is the unit vector directed  from charge one to charge two. The electric field of a source charge $q_1$ is defined as the force that a charge $q_1$ would impress on a positive charge $q_2$, divided by the amount of charge $q_2$, as shown in Equation \ref{definitionOfField}. One thing to remember is that in the definition of the electric field, we always assume that the charge $q_2$ is positive! This way, we remove the ambiguity of the field direction. The direction of the electric field at a point P from charge $q_1$ is always in the direction of the force that would act on a positive charge $q_2$ placed at that point, as shown in Figure \ref{UnitCh1}.
 
 
 \begin{eqnarray}
-\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon r^2 } \hat{r} \label{forceField}\\
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon r^2 } \hat{r} \label{forceField1}\\
 \vec{E} = \frac{\vec{F_2}}{q_2} \label{definitionOfField} \\
 \vec{E} =  \frac{q_1}{4 \pi \epsilon_0 r^2} \hat{r} \label{electricfield}
 \end{eqnarray} 
 
-If you carefully look at the Equation \ref{electricfield} you see that the electric field depends only on the source charge $q_1$. 
+If you carefully look at the Equation \ref{electricfield}, you see that the electric field depends only on the source charge $q_1$. 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/unitchargefield.jpg}
 \end{center}
 \caption{Electric field due to a unit charge q.}
-\label{UnitCh}
+\label{UnitCh1}
 \end{figure}
 
 If the electric charge is in a medium other than air, the electric field becomes
@@ -65,7 +65,7 @@ If the electric charge is in a medium other than air, the electric field becomes
 \epsilon = \epsilon_0 \epsilon_r
 \end{eqnarray}\label{Coulombslaw3}
 
-We added unitless quantity $\epsilon_r$, relative dielectric constant. $\epsilon_r$ values for different materials is shown in one of the tables in the book. Let's see it's values for different materials.
+We added a unitless quantity, $\epsilon_r$, called the relative dielectric constant, or relative permittivity, of a material. $\epsilon_r$ values for different materials can be found online. For example, you can see its values for different materials here  \url{https://en.wikipedia.org/wiki/Relative_permittivity.}
 
 
 
@@ -104,7 +104,7 @@ If we have two charges, the total field due to both charges is equal to the vect
 \includegraphics[scale=0.5]{../jpg/superposition.jpg}
 \end{center}
 \caption{Electric Field due to two charges.}
-\label{UnitCh}
+\label{superposition}
 \end{figure}
 
 The fields or charges $q_1$ and $q_2$ are:
@@ -129,7 +129,7 @@ Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and
 \subsection{Electric Field in Rectangular Coordinates}
 
 
-In general equation for the electric field is given as
+The general equation for the electric field is given as
 
 
 
@@ -137,7 +137,7 @@ In general equation for the electric field is given as
 \vec{E}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{genfield}
 \end{eqnarray}
 
-The electric field at a point $P(x,y,z)$ due to a charge $q_1$ positioned at a point $P_{q_1}(x_1, y_1, z_1 )$  in the rectangular coordinate system is shown in Figure \ref{singlecharge}. The position vector of the point $P_{q_1}$  is 
+The electric field at a point $P(x,y,z)$ due to a charge $q_1$ positioned at a point $P_{q_1}(x_1, y_1, z_1 )$  in the rectangular coordinate system is shown in Figure \ref{singlecharge1}. The position vector of the point $P_{q_1}$  is 
 
 
 \begin{figure}[htbp]
@@ -145,7 +145,7 @@ The electric field at a point $P(x,y,z)$ due to a charge $q_1$ positioned at a p
 \includegraphics[scale=0.5]{../jpg/singlechargecartcoord.jpg}
 \end{center}
 \caption{Electric Field due to a unit charge in Rectangular coordinate system.}
-\label{singlecharge}
+\label{singlecharge1}
 \end{figure}
 
 
@@ -225,7 +225,7 @@ For two charges, as shown in Figure \ref{twocharges} equation \ref{eqonecharge} 
 \includegraphics[scale=0.5]{../jpg/twochargescartcoord.jpg}
 \end{center}
 \caption{Electric field due to two charges in  Rectangular coordinate system.}
-\label{singlecharge}
+\label{twocharges}
 \end{figure}
 
 
@@ -240,3 +240,4 @@ Find the point P where total electric field is zero inside of an equilateral tri
 
 
 \end{document} 
+
