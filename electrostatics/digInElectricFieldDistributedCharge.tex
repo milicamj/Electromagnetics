@@ -54,14 +54,14 @@ The total electric field at a point P is then equal to the sum of all the fields
 %\end{figure}
 
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/Charge_Distributionanypoint.jpg}
 \caption{\label{fig:loopSinglePt}Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section (arc length) of the loop $dl$.}
 \end{center}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/ringefieldanywheremorecharges.jpg}
 \caption{\label{fig:loopAllPts} Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to several very small sections (arc lengths) of the loop $dl$.}
@@ -203,17 +203,33 @@ plot(x,y,'b');
 hold off
 \end{verbatim}
 
-\begin{example} Derive electric field integral,  numerical solution for integral, then implement the code in MATLAB, to find the electric field from a 1\,m stick of charge, charged with a uniform line charge density of $\rho_l=1nC/m$. The stick is positioned as in Figure \ref{stickf}.
 
-\begin{figure}[h!]
+\section{Short line of charge}
+
+
+\begin{problem} Derive electric field integral,  numerical solution for integral, then implement the code in MATLAB, to find the electric field from a 1\,m stick of charge, charged with a uniform line charge density of $\rho_l=1nC/m$. The stick is positioned as in Figure \ref{stickf}.
+
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.5]{../jpg/stickf.jpg}
-\caption{\label{stickf} Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section (arc length) of the loop $dl$.}
+\caption{\label{stickf} Stick of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to a very small section of the line $dl$.}
 \end{center}
 \end{figure}
 
-\end{example}
+In the simulation below, observe how changing the section of the selected piece of charge (a red square) changes the field at a point P.
 
+\begin{center}  
+\geogebra{fmwgw66c}{800}{600}  
+\end{center} 
+
+Then click on the play button in the lower left corner of the simulation below to watch how each piece of charge contributes to the total electric field.
+
+
+\begin{center}  
+\geogebra{akfavjkx}{800}{600}  
+\end{center} 
+
+\end{problem}
 \section{Potential}
 
 \subsection{Derive Analytical Solution for the Potential  Due to a Loop of Charge }
@@ -229,7 +245,7 @@ dV=\frac{dQ}{4 \pi \epsilon_{0} {r}}  \label{genpotloop}
 \end{eqnarray}
 
 
-\begin{figure}[htbp]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.3]{../jpg/Charge_Distributionanypointpot.jpg}
 %\strut\psfig{figure=chargedistribution.ps,width=3cm} \\
@@ -244,12 +260,12 @@ The total potential at a point P is then equal to the sum of all the potentials 
 V=\int\limits_{all \,\, point \,\, charges} dV \label{eqtotfieldringpot}
 \end{eqnarray}
 
-\begin{figure}[htbp]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=0.4]{../jpg/ringefieldanywheremorechargespot.jpg}
 %\strut\psfig{figure=chargedistribution.ps,width=3cm} \\
 \end{center}
-\caption{Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to several very small sections (arc length) of the loop $dl$.
+\caption{Loop of wire uniformly charged with line charge density $\rho_l$. Electric field is shown due to several very small sections (arc lengths) of the loop $dl$.
 Each section is modeled by a point charge $dQ$.}
 \label{loopanypt1}
 \end{figure}

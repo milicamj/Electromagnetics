@@ -38,7 +38,22 @@ Mathematically, the flux of any vector $\vec{A}$ through a surface $\vec{S}$ is 
 \Phi=\int_S \vec{A} \cdot \vec{dS}
 \end{equation}
 
-In the equation above, the surface is a vector so that we can define the direction of the flow of the vector. The surface vector $\vec{dS}$ is defined as a surface of the frame $dS$ multiplied with a vector perpendicular to the surface $dS \vec{n}$. The flux is the highest if the normal to the surface and the vector field point in the same direction. In other words, if the field perpendicularly pokes the surface S.
+In the equation above, the surface is a vector so that we can define the direction of the flow of the vector. The surface vector $\vec{dS}$ is defined as a surface of the frame $dS$ multiplied with a vector perpendicular to the surface $dS \vec{n}$. The flux is the highest if the normal to the surface and the vector field point in the same direction. 
+
+\begin{example}
+
+Observe the simulation below, change the angle between the frame and the field, then change the strenght of the field. How does the flux change?
+
+
+
+\begin{center}  
+\geogebra{CdSZEQcW}{800}{600}  
+\end{center} 
+
+
+\end{example}
+
+
 
 
 \section{Gauss's Law}
@@ -58,6 +73,30 @@ Gauss's Law is used to find the electric field when a charge distribution is giv
 
 
  The key to finding the Electric field from Gauss's Law is selecting the simplest surface to perform the integration in Equation \ref{eq:gaussLaw}. If the simplest surface is found, the above equation simplifies to $E \, S = \frac{Q_{inS}}{\epsilon}$, where $S$ is the surface (or sum of surfaces) where the flux exists, E is the electric field on that surface, and Q is the charge enclosed.
+ 
+\begin{example}
+
+Observe the 2D flux from electric charge through a square. Set all charges to zero, except for one. Move the charge inside and outside of the square. What can you conclude about the flux when the charge is inside the square, and what when it is outside?
+
+
+\begin{center}  
+\geogebra{r7Ue9Nac}{800}{600}  
+\end{center} 
+
+
+\end{example} 
+ 
+ 
+ \begin{question}  
+An positive Q and a negative charge -Q separated by a distance d (a dipole) are enclosed in a cube. What is the flux through the cube?
+\begin{multipleChoice}  
+\choice{$Q/\epsilon$}  
+\choice[correct]{zero}  
+\choice{$2 Q/\epsilon$} 
+ \choice{$ Q/2 \epsilon$} 
+\end{multipleChoice}  
+\end{question} 
+ 
 
 \subsection{Applying Gauss's Law to special, symmetric charge distributions} 
 
@@ -86,7 +125,7 @@ Our first example is to find the electric field of a point charge +Q.
 To start this problem, we have to know the direction of the field. The electric field lines from a point charge are pointed radially outward from the charge (Figure \ref{fig:eField}). Mathematically we can write that the field direction is $\vec{E}  = E \, \hat{r} $. We have to know the direction and distribution of the field if we want to apply Gauss's Law to find the electric field.
 
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{center}
 \includegraphics[scale=1]{../jpg/pointChargeField.jpg}
 \end{center}
