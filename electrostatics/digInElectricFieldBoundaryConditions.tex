@@ -8,13 +8,90 @@
  
 \title{Electrostatic Boundary Conditions} 
 \author{Milica Markovic} 
-\outcome{Boundary Conditions.}
+\outcome{Distinguish between the behavior of conductors and dielectrics in electric field. State boundary conditions. }
 \begin{document}  
 \begin{abstract}  
 
 \end{abstract}  
 \maketitle    
 
+\section{Conductors in the electrostatic field}
+
+Conductors conduct current well because the atoms of good conductors have many loosely bound electrons that can leave the atoms in the presence of an external electric field. In the absence of an external electric field, a piece of metal is shown in Figure \ref{fig:Conductor} on the left. When there is no electric field, the electrons are close to the nucleus. On the right, the same metal piece is placed in an electric field of the battery. Under the influence of the external field, $E_v$, electrons can freely move away from the atoms in the direction opposite to the direction of the external field. This type of current is called conduction current. The point form of Ohm's law states that $E=J/\sigma$, where J is the current density, E is the electric field, and $\sigma$ is the conductivity of the material. Conductors have very high conductivity, and so the electric field inside the conductors is zero.
+
+In electrostatics, we assume that the charges are not moving, so there is no conduction current. The electric field inside the conductors is zero. As we will see later in this section, the charges on the conductor in electrostatic fields can exist only on its surface, and the vector of the electric field must be perpendicular to the surface of the metal. The tangential electric field is zero. All points on a conductor in electrostatic fields have the same potential, and so the conductor is an equipotential surface.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/Conductor.jpg}
+\end{center}
+\caption{Conductor in  Electric Field.}
+\label{fig:Conductor}
+\end{figure}
+
+
+\section{Dielectrics in the electrostatic field}
+
+As shown in Figure \ref{fig:Dielectric1}, in dielectrics, in the absence of an electric field, the electrons are close to the nucleus. The difference here is that the electrons are tightly bound to the nucleus, and they cannot escape in the presence of an electric field. When a battery establishes electric field $E_v$ inside the dielectric, the atoms of the dielectric stretch because the nucleus is pulled in the direction of the field, and electrons in the opposite direction and the atom can be represented by a dipole. On the other hand, the free electrons in the wire connected to the dielectric start bunching up on top of the dielectric piece, and the dipole's positive charge is attracted to electrons. The negative dipole's bound charge pushes electrons away from the bottom conductor. Looking from the outside, the current flows, but the electrons are not flowing through the dielectric. This type of current is called a displacement current. If the battery is removed, the free negative and positive charges are trapped on the top and bottom of the dielectric piece. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/dielectricConductor.jpg}
+\end{center}
+\caption{Dielectric in Electric Field.}
+\label{fig:Dielectric1}
+\end{figure}
+
+The electrons in the metal on top of the dielectric establish an electric field across it, as shown in Figure \ref{fig:Dielectric2}. This field, in turn, produces electric dipoles in the dielectric, as explained above. The internal positive and negative charges cancel each other, and the positive bound charge from the dielectric on top and negative on the bottom produce their own field, which is in the opposite direction from the external field, as shown in Figure \ref{fig:Dielectric3}.
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/polarizationDielectric.jpg}
+\end{center}
+\caption{Polarization of a dielectric in external electric Field. Each oval represents one atom.}
+\label{fig:Dielectric2}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/polarizationDielectric1.jpg}
+\end{center}
+\caption{Two fields acting inside the dielectric. The external field $E_v$ from the free charges in the metal on top and bottom, and the polarized dielectric field $E_p$. The inner part of the dielectric is removed to show clearly the fields.}
+\label{fig:Dielectric3}
+\end{figure}
+
+The total field in the dielectric is the sum of the electric fields from free charges on top and bottom metal pieces $E_v$, and the electric field from the separated polarization charges of the dielectric $E_p$, as shown in Equation \ref{eq:sumfield}. The induced field $E_v$ is a fraction of the external field, and we can represent it in terms of the external field as $E_p=m E_v$, where $m$ is some constant. We can then express the total field as a fraction of the external field in Equation \ref{eq:sumfield1}.
+
+ 
+
+\begin{eqnarray}
+E_{total}=E_v-E_p \label{eq:sumfield} \\
+E_{total}=E_v-m E_v \\
+E_{total}=E_v (1-m) \label{eq:sumfield1}
+\end{eqnarray}
+
+Relative dielectric permittivity of the material $\epsilon$ is defined as $1-m=\frac{1}{\epsilon_r}$. Therefore the total field inside the dielectric is lower than if no dielectric is present.
+
+\begin{equation}
+E_{total}=\frac{E_v}{\epsilon_r}
+\end{equation}
+
+
+Dielectric permittivity of a material is defined as the relative permittivity multiplied by the permittivity of free space $\epsilon_0=8.85 \,\,10^{-12}\unit{F/m}$.
+
+
+
+\section{Relative dielectric constant}
+
+Relative dielectric constant is in general a complex number $\epsilon_r=\epsilon_r{'}+j \epsilon_r{''}$. 
+
+$\epsilon_r{'}$ in data sheets is called a dielectric constant, or design dielectric constant, and it varies from 1 in the air to 13 in GaAs. An outlier is a dielectric constant of distilled water, $\epsilon_r{'}=80$.
+
+We can sketch the complex relative dielectric constant on a complex plane. The angle between the magnitude of the dielectric constant and the x-axis is called $\tan \delta$, and it is used to describe the losses in the dielectric material. In datasheets for PC boards, you can see that $\tan \delta$ is from about 0.001 for microwave substrates, such as Rogers Duroid, to 0.02 for low-frequency FR4 substrates.
 
 \section{Boundary conditions at a dielectric-dielectric boundary}
 
@@ -101,7 +178,7 @@ When $\sigma \rightarrow \infty$, from the above equation, we see that the elect
 D_n = \rho_s
 \end{equation}
 
-Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the metallic sphere. Watch this demonstration of separation of charges on a metallic sphere in the electric field of VanDenGraaf generator.
+Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the metallic sphere. Watch this demonstration of separation of charges on a metallic sphere in the electric field of the VanDenGraaff generator.
 
 
 \begin{center}  
@@ -119,23 +196,61 @@ Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the m
 \end{figure}
 
 
+\section{Shielding with Faraday's Cage}
 
-Electric field is zero inside the closed metallic conductor, even if the conductor is hollow. Watch a demonstration of zero electric field inside a hollow conductor by Prof Emeritus of MIT Walter Lewin. 
+
+
+The electric field is zero inside the closed metallic conductor, even if the conductor is hollow, as shown in Figure \ref{fig:HollowConductor}, and no charge is induced inside a metallic shield. This is Faraday's cage.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/hollowConductor.jpg}
+\end{center}
+\caption{Electric field inside hollow metallic conductor (Faraday's Cage).}
+\label{fig:HollowConductor}
+\end{figure}
+
+
+ Watch a demonstration of zero electric fields, and no charge, inside a hollow conductor by Prof Emeritus of MIT Walter Lewin. 
 
 
 \begin{center}  
 \youtube{W_NelWgJ3LY}  
 \end{center} 
 
-Another demonstration of zero field inside a hollow conductor, a Faraday Cage.
+
+
+\section{Grounding}
+
+In Figure \ref{fig:HollowConductor1}, we introduce a charge inside a hollow conductor, and the electric field forms inside the conductor. The charge in the metallic shell will redistribute so that the field is zero inside the metal. The charge on the surface of the conductor will be uniformly distributed, regardless of the position of the charge inside the hollow part.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/hollowConductorOffset.jpg}
+\end{center}
+\caption{Hollow conductor with a charge inside.}
+\label{fig:HollowConductor1}
+\end{figure}
+
+Figure \ref{fig:HollowConductor2} shows a grounded hollow conductor with a charge inside it. In this case, the positive charge on the outside of the conductor will attract negative charges from the ground that neutralize the positive charge inside the shell, so there will be no field outside the shell.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/hollowConductorOffsetGrounded.jpg}
+\end{center}
+\caption{Grounded hollow conductor with a charge inside.}
+\label{fig:HollowConductor2}
+\end{figure}
+
+
+ Watch a demonstration of Faraday's Cage by Prof Emeritus of MIT Walter Lewin. He will enter the Faraday's Cage with a tinsel, a transmitter (his wireless microphone that likely works at a frequency of a few GHz), and a receiver (a radio that works at a couple of hundred Megahertz frequency). The Faraday's cage is likely not grounded. He cannot receive the radio signal as the outside radio waves cannot enter the Faraday's cage, but the waves his microphone transmitter generates inside the cage still reach the receiver that is placed somewhere in the classroom since the cage is not grounded. 
 
 
 \begin{center}  
 \youtube{t5uHzCfiXp4}  
 \end{center}
-
-
-
 
 \section{Proof of boundary conditions}
 
@@ -197,9 +312,27 @@ E_{1x}  = E_{2x}
 
 
 
+\section{Charge distribution around sharp edges}
+
+Theshape of the conductive material impacts the chargde distribution and charge density, as shown in Figure \ref{fig:sharpEdge}. We can see that the charge distribution and electric field on round objects are uniform. The highest charge density and strongest electric fields are produced on sharp edges of condutive bodies.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.8]{../jpg/sharpEdges.jpg}
+\end{center} 
+\caption{Electric field and charge distribution close to sharp edges.}\label{fig:sharpEdge}
+\end{figure}
+
+Demonstration of higher charge density near sharp edges by Prof. Emeritus at MIT, Walter Lewin.
+\begin{center}  
+\youtube{cYOBSzh2SLE}  
+\end{center}
+
 
 
 
 
 \end{document} 
+
 
