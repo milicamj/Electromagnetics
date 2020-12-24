@@ -1,0 +1,65 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+ 
+\title{Voltage droop} 
+\author{Milica Markovic} 
+\outcome{Explain voltage droop.}
+\begin{document}  
+\begin{abstract}  
+
+\end{abstract}  
+\maketitle    
+
+
+
+\section{Voltage droop in electronic circuits}
+
+
+We looked previously at two somewhat prosaic applications of Faraday's law. In electronic circuits, we often see capacitors on the PCB DC power-rails. These are the lines that travel on a PCB and feed ICs with the necessary DC voltage. An example of power rails is shown in Figure \ref{fig:VoltageDroop}. When the IC starts working, the power is drawn from the power rails. This current will be constant in a steady-state, but the current starts increasing before it reaches the constant value. Since the current is changing, there is a voltage drop inducted in the power rail. 
+
+\begin{equation}
+v=L \frac{di}{dt}
+\end{equation}
+
+The voltage at the IC pin will be lower than the DC voltage at the 5V battery. The voltage will drop until the steady-state is reached. The capacitors at the power rail supply reduce the voltage droop. The decoupling capacitance can be calculated from the power dissipation of the IC, the allowed percentage of droop p, and the time necessary to increase the voltage on the IC pin $\Delta t$, and the DC rail voltage V, as
+
+\begin{equation}
+C=\frac{P \Delta t}{p V^2} 
+\end{equation}
+
+The decoupling capacitance provides current for time $\Delta t$ until the regulator can provide the appropriate current.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/ICcircuitWithRailandGround.jpg}
+\end{center}
+\caption{IC circuit on a PCB, connected to DC rail.}
+\label{fig:VoltageDroop}
+\end{figure}
+
+
+
+
+%\section{Ground bounce in electronic circuits}
+
+
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[scale=0.5]{../jpg/GroundBounce.jpg}
+%\end{center}
+%\caption{Ground Bounce in PCBs.}
+%\label{fig:GroundBounce}
+%\end{figure}
+
+
+
+
+
+\end{document} 
+

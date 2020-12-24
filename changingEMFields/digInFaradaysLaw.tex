@@ -16,44 +16,82 @@
 \maketitle    
 
 
-\section{Electromagnetics}
+\section{Changing electromagnetic fields}
 
- Static electric fields are independent from static magnetic fields. In dynamic electromagnetic fields changing electric field induces changing electric field and so on. 
-
-
-
-\subsection{Induced EMF}
+ Static electric fields are independent of static magnetic fields. In dynamic electromagnetic fields changing electric field induces changing electric field and vice versa. 
 
 
 
+\subsection{Faraday's law}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/inducedvoltage.jpg}
-\end{center}
-\caption{Induced voltage due to a loop of wire with AC current. Voltage induced is due to inductance of the loop of wire.}
-\label{inducedemf}
-\end{figure}
+Faraday's law of electromagnetic induction states that the electromotive force (voltage) induced in a loop is equal to the change of magnetic flux through the loop in time. The flux can be changed by physically moving the loop or changing the current through the loop. The minus in the equation below has to do with the polarity of induced voltage (and the direction of induced current)  that we will discuss in the next section on Lenz's law.
 
+\begin{equation}
+e=-\frac{d\Phi}{dt}
+\end{equation}
 
+The electromotive force can be found by taking a line integral of the induced electric field (by the flux) around the closed loop.
 
-
-\subsection{Motional EMF}
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[scale=0.5]{../jpg/motionalemf.jpg}
-\end{center}
-\caption{Example of induced motional electromotive force.}
-\label{inducedemf}
-\end{figure}
+\begin{equation}
+e=\oint_C \vec{E}_{ind} \cdot \vec{dl}
+\end{equation}
 
 
+Equating the above two equations, we get Faraday's law of induction.
 
+
+\begin{equation}
+e=\oint_C \vec{E}_{ind} \cdot \vec{dl} =-\frac{d\Phi}{dt}
+\end{equation}
+
+\begin{example}
+\subsection{Faraday's experiment}
+Michael Faraday observed that the current in a loop is established only if the flux through the loop is changing. One way to change the flux is by using a permanent magnet and move it through coils of current. Observe how the lightbulb in the simulation below turns on and off as the magnet position is changed. You can select to move the magnet yourself or to have the magnet moved sinusoidally by a spring. Select the radio button to see the magnetic field from the magnet.
+
+\begin{center}  
+\geogebra{JPFxyhtA}{800}{600}  
+\end{center} 
+\end{example}
+
+
+\begin{example}
+Demonstration of eddy-current induced levitation of a coil over a metallic plate by MIT Prof. Emeritus Walter Lewin.
+\begin{center}  
+\youtube{XsinTqi66n8}  
+\end{center} 
+\end{example}
+
+
+
+
+
+\begin{example}
+
+
+Demonstration of "spark plug" by MIT Prof. Emeritus Walter Lewin.
+\begin{center}  
+\youtube{h0k79HhJr7Q}  
+\end{center} 
+
+
+\end{example}
+
+
+%\section{Ground bounce in electronic circuits}
+
+
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[scale=0.5]{../jpg/GroundBounce.jpg}
+%\end{center}
+%\caption{Ground Bounce in PCBs.}
+%\label{fig:GroundBounce}
+%\end{figure}
 
 
 
 
 
 \end{document} 
+

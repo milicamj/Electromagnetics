@@ -8,52 +8,86 @@
  
 \title{Lenz's Law} 
 \author{Milica Markovic} 
-\outcome{Magnetostatic fields.}
+\outcome{Apply Lenz's law to a variety of problems.}
 \begin{document}  
 \begin{abstract}  
 
 \end{abstract}  
 \maketitle    
 
+Transformer emf polarity and induced current direction are somewhat challenging to find directly from Faraday's law. However, Lenz's law gives us a simple way to find the emf polarity and induced current direction.
 
-\section{Electromagnetics}
-
- Static electric fields are independent from static magnetic fields. In dynamic electromagnetic fields changing electric field induces changing electric field and so on. 
-
+Lenz's law states that the induced current will be in such a direction that its induced magnetic field opposes the external magnetic field's change. We can say that nature dislikes the change of flux.
 
 
-\subsection{Induced EMF}
+\begin{example}
+\section{Example of application of Lenz's law}
+
+An infinite line carries a current I in the positive z-direction. The current increases linearly with time I=t\,A, where t is time. Determine the direction of the induced current through and the voltage on the resistor R in loop shown in Figure \ref{fig:LenzLaw}
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/Lenzlaw.jpg}
+\end{center}
+\caption{Example problem for Lenz's law.}
+\label{fig:LenzLaw}
+\end{figure}
+
+
+\begin{explanation}
+
+The magnetic field due to an infinite wire carrying current I is $\vec{H}=\frac{I}{2 \pi r}$ as shown in Figure \ref{fig:LenzLaw1}.  The flux through the loop from the infinite wire's magnetic field is then directed into the paper.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/Lenzlaw1.jpg}
+\end{center}
+\caption{Magnetic field direction of an infinite wire carrying current I.}
+\label{fig:LenzLaw1}
+\end{figure}
+
+ Since the current is increasing, I=t\,A, the magnetic field is increasing as well, $\vec{H}(t)=\frac{t}{2 \pi r}$. Increasing magnetic field will induce a current in the loop so that its direction opposes the increase in the wire's magnetic field flux. The direction of the countering flux from the loop will then be out of the page, and the current direction will be counter-clockwise (CCW). CCW direction of the current induces positive voltage on the top of the resistor and negative on the bottom, as shown in Figure \ref{fig:LenzLaw3}.
 
 
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/inducedvoltage.jpg}
+\includegraphics[scale=0.5]{../jpg/Lenzlaw3.jpg}
 \end{center}
-\caption{Induced voltage due to a loop of wire with AC current. Voltage induced is due to inductance of the loop of wire.}
-\label{inducedemf}
+\caption{Direction of current, induced magnetic field and voltage for increasing current in the infinite conductor.}
+\label{fig:LenzLaw3}
 \end{figure}
 
 
 
 
-\subsection{Motional EMF}
+
+\end{explanation}
+
+\end{example}
+
+\begin{example}
+
+In the previous problem, if the current in the infinite wire decreases with time, the direction of the induced current, induced magnetic flux density, and induced voltage are shown in Figure \ref{fig:LenzLaw2}.
+
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/motionalemf.jpg}
+\includegraphics[scale=0.5]{../jpg/Lenzlaw2.jpg}
 \end{center}
-\caption{Example of induced motional electromotive force.}
-\label{inducedemf}
+\caption{The direction of the induced magnetic field and current from the decreasing magnetic field from the infinite wire.}
+\label{fig:LenzLaw2}
 \end{figure}
 
 
-
-
-
+\end{example}
 
 
 
 \end{document} 
+
