@@ -8,7 +8,7 @@
  
 \title{Ampere's Law} 
 \author{Milica Markovic} 
-\outcome{Ampere's Law}
+\outcome{Apply Ampere's Law to derive a magnetic field from given currents.}
 \begin{document}  
 \begin{abstract}  
 
@@ -16,26 +16,30 @@
 \maketitle    
 
 
+
+
+
+
 \section{Static Magnetic Field}
 
-Source of static magnetic fields are DC currents and magnets. The direction of the magnetic field from a DC current is determined through right-hand rule. The direction of the magnetic field from the magnet is outward oriented from the north pole and inward into the south pole.
+The sources of static magnetic fields are direct currents (DC) and magnets. The direction of the magnetic field from a DC current is determined through the right-hand rule. The magnetic field's direction from the magnet is outward-oriented from the north pole and inward into the south pole.
 
-It is interesting to see that the magnetic field from a loop of current looks very much like a magnetic field of a magnet placed in the center of the loop, perpendicularly to it. 
+It is interesting to see that the magnetic field from a current loop looks very much like a magnetic field of a magnet placed in the center of the loop, perpendicularly to it. 
 
 Geographical earth's south pole is earth's magnetic north pole.
 
 
-\subsection{Ampere's Law}
+\section{Ampere's Law}
 
 
-Ampere's law for static magnetic fields states that the integral of the magnetic field $H$ around closed contour is equal to the current enclosed by the contour.
+Ampere's law for static magnetic fields states that the magnetic field's integral $H$ around closed contour is equal to the current enclosed by the contour.
 
 \begin{equation}
 \oint_c \vec{H} \cdot \vec{dl} = I
 \end{equation}
 
 
-If the contour encloses only part of the current, whose current density is J, then
+If the contour encloses only part of the current, whose current density is J, then to find the total current, we have to integrate through the cross-section of the conductor carrying current.
 
 
 \begin{equation}
@@ -43,7 +47,7 @@ If the contour encloses only part of the current, whose current density is J, th
 \end{equation}
 
 
-The vector $\vec{dS}$ is the surface area enclosed by the contour. The vector of the surface area is determined from the direction of the contour with the right-hand rule. If we orieng our fingers in the direction of the contour, the thumb will point in the direction of surface vector.
+The vector $\vec{dS}$ is the surface area enclosed by the contour. The vector of the surface area is determined from the direction of the contour with the right-hand rule. If we orient our fingers in the direction of the contour, the thumb will point in the direction of the surface vector.
 
 
 We can also re-write the above equations in terms of magnetic flux density $B=\mu H$.
@@ -53,53 +57,185 @@ We can also re-write the above equations in terms of magnetic flux density $B=\m
 \oint_c \vec{B} \cdot \vec{dl} = \mu I
 \end{equation}
 
-
+\section{Application of Ampere's law}
 
 \begin{example}
-\subsection{Magnetic field of an infinite wire with circular cross section}
+The magnetic field of an infinite wire with a circular cross-section
+
+Find the magnetic field inside and around an infinitely long wire carrying current I. The current is uniform through the wire, with a constant current density of J. The radius of the wire is a. The wire is made from a material with relative magnetic permeability $\mu_r=1$. 
+ 
+\begin{explanation}
 
 
+To find the magnetic field H(r) around the wire when $r>a$, we will start from Ampere's law.
 
 
+\begin{equation}
+\oint_c \vec{H} \cdot \vec{dl} = I
+\end{equation}
 
-\begin{figure}[htbp]
+To apply this equation to an infinite wire, we first have to know how the magnetic field looks. Using the right-hand rule, we determine that the magnetic field lines curl around the wire $\vec{H}=H \vec{\Theta}$. The magnetic field is constant on a circle centered at the wire. The magnetic field is constant because all points on this circle are the same distance away from the source (current). We then choose a contour c that is a circle of radius r because this will simplify the integral solution. 
+
+The current in the above equation is the current enclosed by the contour c, or in other words, the total current that pokes the surface of the contour. We see that in this case, this is the total current I flowing through the wire.
+
+We pick the direction of the countour in the direction of the magnetic field, as shown in Figure \ref{fig:AmpereOutside}. Since $\vec{dl}=dl \vec{\Theta}$, the dot product $ \vec{H} \cdot \vec{dl} = H dl \cos(\vec{H},\vec{dl})=H dl$, because the  angle between the magnetic field and the contour vector is zero.
+
+Ampere's law then becomes:
+
+
+\begin{equation}
+\oint_c H dl = I
+\end{equation}
+ 
+Since the magnetic field is presumed constant on this contour, it can be taken in front of the integral.
+
+
+\begin{equation}
+H \oint_c  dl = I
+\end{equation}
+
+The integral above is equal to the circumference of the contour $l=2 \pi r$.
+
+\begin{eqnarray}
+H l = I \\
+H=\frac{I}{l} \\
+H(r)=\frac{I}{2 \pi r} \label{eq:magfield}
+\end{eqnarray}
+
+Equation \ref{eq:magfield} describes the magnetic field's behavior anywhere around the wire, for $r > a$.
+
+
+\begin{figure}
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/Ampere's_Law1.jpg}
+\includegraphics[scale=0.4]{../jpg/AmperesLaw1.jpg}
 \end{center}
-\caption{Application of Ampere's law outside an infinite straight conductor}
-\label{MutualInduc}
+\caption{ Application of Ampere's law outside an infinite straight conductor}
+\label{fig:AmpereOutside}
 \end{figure}
 
 
+We can now apply Ampere's law to a contour inside the wire, as shown in Figure \ref{fig:AmpereInside}. 
+We then choose a contour c that is a circle of radius r, but this time, $r<a$. 
 
 
-\begin{figure}[htbp]
+
+
+\begin{equation}
+\oint_c \vec{H} \cdot \vec{dl} = I_{part}
+\end{equation}
+
+
+The current in the above equation is the current enclosed by the contour c. In this case, only the portion of the total current I  is flowing through the contour. 
+
+We can find the current flowing through the contour by using a proportion since the current density is constant through the wire cross-section.
+
+\begin{eqnarray}
+\frac{I_{part}}{r^2 \pi}=\frac{I}{a^2 \pi} \\
+I_{part}=I \frac{r^2}{a^2}
+\end{eqnarray}
+
+
+Using the same reasoning as in the previous part of the problem, we find that the left side of Ampere's law is $H 2 \pi r$:
+
+\begin{eqnarray}
+H 2 \pi r = I \frac{r^2}{a^2} \\
+H(r)=I \frac{r}{2 \pi a^2}
+\end{eqnarray}
+
+We see that when $r<a$, the magnetic field increases linearly from zero at the axis of the wire to the maximum value of $H(a)=I \frac{1}{2 \pi a}$
+
+
+\begin{figure}[!ht]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/Ampere's_Law2.jpg}
+\includegraphics[scale=0.5]{../jpg/AmperesLaw2.jpg}
 \end{center}
 \caption{Application of Ampere's law inside an infinite straight conductor}
-\label{MutualInduc}
+\label{fig:AmpereInside}
 \end{figure}
 
 
 
+\end{explanation}
 
 \end{example}
 
 \begin{example}
-\subsection{Magnetic field of a solenoid}
+The magnetic field of a solenoid
+
+Find the magnetic field of a solenoid with N turns of uniformly, densely wound wire around an air core, as shown in Figure\ref{fig:solenoid}. The length of the solenoid is L, and the current flowing through the wire is I.  
+
+\begin{explanation}
+
+To find the magnetic field inside the solenoid, we apply Ampere's law to a contour shown in Figure \ref{fig:solenoid}. Using a similar discussion as before, we find that the line integral of the magnetic field along the square loop l is 
+
+\begin{eqnarray}
+H l = N' I
+\end{eqnarray}
+
+Where N' represents the number of windings enclosed by the contour. Since the solenoid is uniformly wound, 
+$N'/l=N/L$, $N'=N l/L$. l is the length of the contour, L is the solenoid's length, and N is the total number of windings.
 
 
+\begin{eqnarray}
+H  l = \frac{N l I}{L} \\
+H = \frac{N I}{L} 
+\end{eqnarray}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/Solenoid.jpg}
+\end{center}
+\caption{Application of Ampere's law to a solenoid.}
+\label{fig:solenoid}
+\end{figure}
 
 
-
+\end{explanation}
 \end{example}
 
 
 \begin{example}
-\subsection{Magnetic field of a torroid}
+The magnetic field of a toroid
+
+Find the magnetic field inside and outside of a toroid with inner radius a and outer radius b. A toroid is a donut-shaped form, as shown in Figure \ref{fig:toroid}. The wire wound on the toroid carries a current I, and there are N dense, uniform windings on the air core.
+
+
+\begin{explanation}
+ 
+If we chose a contour outside of the toroid, we see that N windings of current penetrate the contour's surface twice. Once down into the surface, and the other time going up out of the surface. Therefore, the right side of Ampere's law has 2N currents that cancel each other, and the magnetic field is zero.
+
+If we choose a contour inside the toroid's hollow part, there is no current enclosed by the contour. Therefore, the current and the magnetic field are zero.
+
+If we choose a contour inside the toroid, we see that the current penetrates the surface N times. Therefore, Ampere's law states:
+
+
+
+\begin{equation}
+\oint_c \vec{H} \cdot \vec{dl} = N I
+\end{equation}
+
+We again evaluate the left side of the above equation along a circular contour in the magnetic field direction.
+
+\begin{eqnarray}
+H 2 \pi r = N I \\
+H(r) =\frac{N I}{ 2 \pi r}
+\end{eqnarray}
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/toroid.jpg}
+\end{center}
+\caption{Application of Ampere's law to a toroid.}
+\label{fig:toroid}
+\end{figure}
+
+
+\end{explanation}
 
 \end{example}
 
 
 \end{document} 
+

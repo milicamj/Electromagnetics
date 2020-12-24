@@ -8,7 +8,7 @@
  
 \title{Force on Conductors} 
 \author{Milica Markovic} 
-\outcome{Forces on Conductors in Magnetic Fields.}
+\outcome{Calculate forces on Conductors in Magnetic Fields.}
 \begin{document}  
 \begin{abstract}  
 
@@ -17,23 +17,34 @@
 
 
 
-\section{Force on a conductor due to external magentic field}
+\section{Force on a conductor due to external magnetic field}
 
 
-Force $\vec{F}$ on a conductor of length $\vec{l}$ due to an external magentic field $\vec{B}$ is
+Force $\vec{F}$ on a conductor of length $\vec{l}$ due to an external magnetic field $\vec{B}$ is
 
 \begin{equation}
 \vec{F}=I \vec{l} \cross \vec{B}
 \end{equation}
+Vector $\vec{l}$ is in the direction of the current. To find the force's direction, we apply the right-hand rule shown in Figure \ref{fig:forceCurrent}. We place the current vector in the palm of our right hand, then orient the palm so that the fingers can sweep towards the magnetic field vector.
 
-Vector $\vec{l}$ is in the direction of the current.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/forceCurrentWire.jpg}
+\end{center}
+\caption{Applying right-hand rule to a current-carrying wire in external magnetic field.}
+\label{fig:forceCurrent}
+\end{figure}
 
 
-\section{Direction of a manetic field of a conductor}
+
+
+
+\section{Direction of a magnetic field of a conductor}
 
 The direction of a magnetic field of a conductor can be determined using the right-hand rule. If you point the thumb of your right hand in the direction of the current in a straight conductor, your fingers will curl in the direction of the magnetic field.
 
- To see how the magnetic field changes around a straight conductor, change the strenght and the direction of current in the applet below. The distance between the magnetic field rings represents the strenght of the magnetic field. When the rings are closer, the magnetic field is stronger, and vice versa. You can also see the direction of current as the vertical arrow and a small horizontal arrow shows the direction of the magnetic field. 
+ Observe how the magnetic field changes around a straight conductor. Change the strength and the direction of the current in the applet below. The distance between the magnetic field rings represents the strength of the magnetic field. When the rings are closer, the magnetic field is stronger, and vice versa. The vertical arrow represents the direction of the current. The small horizontal arrow shows the direction of the magnetic field. 
 
 
 \begin{center}  
@@ -43,7 +54,7 @@ The direction of a magnetic field of a conductor can be determined using the rig
 
 \section{Force between two conductors}
 
-When a conductor of lenght $l_1$, carrying current $I_1$, is in a vicinity of another conductor $l_2$, carrying current $I_2$, the force acts between them 
+When a conductor of length $l_1$, carrying current $I_1$, is in the vicinity of another conductor $l_2$, carrying current $I_2$, the force acts between them. 
 
 
 \begin{eqnarray}
@@ -53,7 +64,7 @@ When a conductor of lenght $l_1$, carrying current $I_1$, is in a vicinity of an
 
 Where $F_1$ is the force on conductor $l_1$ $B_1$ is the magnetic field due to current $I_1$ in conductor $l_1$, and $B_2$ is the magnetic field due to current $I_2$.
 
-To find the direction of the force, you have to use the right hand rule. Here is a simulation that shows the force when the currents are in the same direction. What is the direction of the force?
+To find the direction of the force, you have to use the right-hand rule. Here is a simulation that shows the force when the currents are in the same direction. What is the direction of the force?
 
 \begin{center}  
 \youtube{fz385mDNj84}  
@@ -67,6 +78,55 @@ This video shows a simulation that shows the force when the currents are in the 
 \end{center} 
 
 
+\section{Magnetic field of a loop of current}
+
+The right-hand rule can be used to determine the magnetic field's direction from a loop of current. Point the thumb in the direction of the current, and fingers will curl in the direction of the magnetic field. See the video below that shows a simulation of magnetic field lines around straight and circular conductors.
+
+\begin{center}  
+\youtube{EUG23qVZUgc}  
+\end{center} 
+
+
+\section{Bar magnet and a loop of current}
+
+Permanent magnets have similar magnetic fields to loops of current. The source of the magnetic field of a permanent bar magnet is at the north pole, and the sink is at the south pole. The current loop magnetic field is similar to a bar magnet. The magnetic field lines circulate around the loop. The force between two current loops can be visualized by looking at two permanent magnets. The north pole of a magnet points in the direction of the loop's magnetic field, as shown in Figure \ref{fig:CoupledCoils}. We determine the force by looking at the repulsive or attractive force of two bar magnets. We can again see that the force between two loops with currents in the opposite directions is repulsive.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/ringsForce.jpg}
+\end{center}
+\caption{Repulsion between the permanent magnets and a loops of current. }
+\label{fig:CoupledCoils1}
+\end{figure}
+
+
+
+
+
+
+\begin{question}
+Two coils  carrying positive currents $I_1$ and $I_2$ are positioned as shown in Figure \ref{fig:CoupledCoils}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=1]{../jpg/coupledCoils.jpg}
+\end{center}
+\caption{Two coils carrying currents $I_1$ and $I_2$. }
+\label{fig:CoupledCoils}
+\end{figure}
+
+ Will the force between them be:
+ 
+ \begin{multipleChoice}  
+\choice[correct]{attractive}  
+\choice{repulsive}  
+\choice{not enough information}  
+\end{multipleChoice} 
+
+\end{question}
+
 
 
 \end{document} 
+
+

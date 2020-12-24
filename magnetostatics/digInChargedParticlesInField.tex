@@ -8,12 +8,18 @@
  
 \title{Charged particles in static electric and magnetic fields} 
 \author{Milica Markovic} 
-\outcome{Charged Particles in a static electric and magentic field.}
+\outcome{Apply cross product (right-hand rule).
+Calculate the magnetic force
+on a charged particle in an external magnetic and electric field.
+}
 \begin{document}  
 \begin{abstract}  
 
 \end{abstract}  
 \maketitle    
+
+
+
 
 \section{Cross product}
 
@@ -23,8 +29,11 @@ Cross product is defined as
 \vec{C}=\vec{A} \cross \vec{B}
 \end{equation}
 
-To find the direction of the vector $\vec{C}$, use the right-hand rule. Place the first vector in the cross product $\vec{A}$ in the palm of your right hand, and the second vector $\vec{B}$ sticking out perpendiculary to your palm. Then sweep the fingers from vector $\vec{A}$ to $\vec{B}$ and your thumb will be pointing to the direction of the vector $\vec{C}$.
-
+To find the direction of the vector $\vec{C}$, use the right-hand rule.
+\begin{enumerate}
+\item Place the first vector in the cross product $\vec{A}$ in the palm of your right hand, and the second vector $\vec{B}$ sticking out perpendicularly to your palm.
+\item Sweep the fingers from vector $\vec{A}$ to $\vec{B}$ and your thumb will be pointing to the direction of the vector $\vec{C}$.
+\end{enumerate}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -36,32 +45,63 @@ To find the direction of the vector $\vec{C}$, use the right-hand rule. Place th
 
 \section{Magnetic Force on a charged particle}
 
-Magnetic force on a charged particle $F=q \vec{v} \cross \vec{B}$ will change the direction of the particle's path, perpendicularly to the direction of the magnetic field and the velocity vector, but it will not change the speed of the particle. The magnetic field cannot accelerate the charged particle. Use the applet below to change the charge, mass, and velocity of the particle to see how the path of the particle changes.
+Magnetic force on a charged particle $F=q \vec{v} \cross \vec{B}$ will change the direction of the particle's path, perpendicularly to the direction of the magnetic field and the velocity vector. However, it will not change the speed of the particle. The magnetic field cannot accelerate a charged particle.
+
+
+
+\begin{example}
+
+ Use the applet below to change the charge, mass, and initial velocity of the particle to see how the path of the particle changes. Note that the initial velocity of the particle is in the horizontal direction.
 
 
 \geogebra{HXP8xUC3}{800}{600}
-%\geogebra{xpRMzPgc}{1300}{1000}
+\end{example}
+
+
+\begin{example}
+Now, use the applet below to see how the particle changes path if the initial velocity has a component in the direction of the magnetic field.
+
+\geogebra{xpRMzPgc}{800}{600}
+\end{example}
+
+
+\begin{question}
+
+An electron moves with a constant speed $\vec{v}$ in vacuum in a presence of a magnetic field with flux density $\vec{B}$. The magnetic field can change
+\begin{multipleChoice}  
+\choice{both the direction of $\vec{v}$, and $|\vec{v}|$ magnitude.}  
+\choice{neither the direction of $\vec{v}$, nor $|\vec{v}|$ magnitude.}  
+\choice[correct]{the direction of $\vec{v}$, but not $|\vec{v}|$ magnitude. }  
+\choice{not enough information}
+\end{multipleChoice} 
+
+\end{question}
+
 
 
 
 \section{Lorenz Force}
 
-The force on a charged particle in electric and magnetic field, a Lorentz force, is  
+The force on a charged particle in an electric and magnetic field, a Lorentz force, is  
 
 \begin{equation}
 \vec{F}=q\vec{E} + q \vec{v} \cross \vec{B}
 \end{equation}
 
-Where $q$ is the charge of the particle, $\vec{E}$ is external electric field, $v$ is the velocity of the particle and $\vec{B}$ is the magnetic field.
+$q$ is the charge of the particle, $\vec{E}$ is the external electric field, $v$ is the particle's velocity, and $\vec{B}$ is the magnetic field.
 
 
-Here is an interesting applet that let's you see the charged particle's path by setting the strength of electric and magnetic field, charge and mass of the particle, and the speed direction and magnitude.
-
-%The applet is too slow, need to change it to speed it up, eg remove stuff
-%\geogebra{J9nrrpQH}{1300}{1000}
+Here is an interesting applet that lets you see the charged particle's path by setting the electric and magnetic fields' strength, charge and mass of the particle, and the speed direction and magnitude.
 
 
 
 
+\begin{example}
+Now, use the applet below to explore the path of the particle changes in the presence of both electric and magnetic fields. Note that this applet is a little slow, and the browser will likely ask you what to do with the page. Select "wait" for the page to load.
+
+\geogebra{J9nrrpQH}{1000}{1000}
+\end{example}
 
 \end{document} 
+
+

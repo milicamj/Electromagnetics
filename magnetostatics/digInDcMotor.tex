@@ -8,7 +8,7 @@
  
 \title{Force on Conductors} 
 \author{Milica Markovic} 
-\outcome{Forces on Conductors in Magnetic Fields.}
+\outcome{Explain the operation of a simple DC-motor}
 \begin{document}  
 \begin{abstract}  
 
@@ -20,28 +20,84 @@
 \section{Force on a loop of current due to external magnetic field}
 
 
-Figure \ref{fig:currentLoop} shows a rectangular 
+Figure \ref{fig:currentLoop} shows a rectangular loop of wire carrying current I in the presence of an external magnetic field B. The loop is fixed along the horizontal pivot axis and can rotate only clockwise or counterclockwise. If we observe the loop from the left, we see the current flows toward us on top, indicated by a circle with a dot on the side view. The current flows away from us on the bottom, indicated by the circle with an x.
 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.5]{../jpg/loop.jpg}
+\includegraphics[scale=0.7]{../jpg/loop.jpg}
 \end{center}
 \caption{Current loop in external magnetic field. }
 \label{fig:currentLoop}
 \end{figure}
 
 
-Force $\vec{F}$ on a conductor of length $\vec{l}$ due to an external magentic field $\vec{B}$ is
+Force $\vec{F}$ on a conductor of length $\vec{l}$ due to an external magnetic field $\vec{B}$ is
 
 \begin{equation}
 \vec{F}=I \vec{l} \cross \vec{B}
 \end{equation}
 
-Vector $\vec{l}$ is in the direction of the current.
+Vector $\vec{l}$ is in the direction of the current. 
+
+Which way will the loop turn? We use the right-hand rule to determine the direction of rotation, as shown in Figure \ref{fig:currentLoopTorque}. Imagine that the current is in the palm of your right hand. Orient the palm so that you can sweep your fingers toward the magnetic field vector. The thumb shows the direction of the force. Which way will the loop rotate? Think of pushing the top of the loop into the page in the force's direction and pulling the bottom of the loop towards you. The loop will rotate clockwise in the direction of the orange arrow.
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.6]{../jpg/loopRHR.jpg}
+\end{center}
+\caption{Torque on a loop carrying current in a magentic field. }
+\label{fig:currentLoopTorque}
+\end{figure}
+
+When the loop moves from the original position, the magnetic force will continue to rotate the loop, as shown in Figure \ref{fig:currentLoopTorque1}.
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/conceptMagMom1.jpg}
+\end{center}
+\caption{Torque on a loop carrying current in a magentic field. }
+\label{fig:currentLoopTorque1}
+\end{figure}
+
+When the loop surface is perpendicular to the vector of the magnetic field, as shown in Figure \ref{fig:currentLoopTorque2},  the magnetic force becomes zero. We may think that the loop will stop moving because the force becomes zero. However, because the loop has mass, the loop will continue rotating because of the inertia. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/conceptMagMom2.jpg}
+\end{center}
+\caption{Torque on a loop carrying current in a magentic field. }
+\label{fig:currentLoopTorque2}
+\end{figure}
+
+The magnetic forces will start working to move the loop back to this stable point, as shown in Figure \ref{fig:currentLoopTorque3}. The loop will then move back and forth until it stops.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{../jpg/conceptMagMom3.jpg}
+\end{center}
+\caption{Torque on a loop carrying current in a magentic field. }
+\label{fig:currentLoopTorque3}
+\end{figure}
+
+
+
+If we want continuous rotation, we need to change the current direction at this stable point or the magnetic field. That brings us to DC motors.
+
 
 \section{DC Motor}
 
+
+DC motors convert electrical energy to mechanical energy. A battery supplies DC voltage to a current loop that produces a current in the loop. 
+DC motors have a special split-ring piece that connects the loop to a voltage source called a commutator. When the magnetic field rotates the loop to the stable position, as we discussed in the previous section, the commutator's gap stops the current in the same direction for a moment, then connects the opposite pole of the battery, making the current go in the opposite direction. The orientation of the current and the magnetic field produce force in such a direction to continue the loop rotation.
 
 
 \begin{figure}[htbp]
@@ -52,32 +108,13 @@ Vector $\vec{l}$ is in the direction of the current.
 \label{fig:dcMotor}
 \end{figure}
 
-\section{Force between two loops of current}
 
-When a conductor of lenght $l_1$, carrying current $I_1$, is in a vicinity of another conductor $l_2$, carrying current $I_2$, the force acts between them 
-
-
-\begin{eqnarray}
-\vec{F_1}=I_1 \vec{l_1} \cross \vec{B_2} \\
-\vec{F_2}=I_2 \vec{l_2} \cross \vec{B_1}
-\end{eqnarray}
-
-Where $F_1$ is the force on conductor $l_1$ $B_1$ is the magnetic field due to current $I_1$ in conductor $l_1$, and $B_2$ is the magnetic field due to current $I_2$.
-
-To find the direction of the force, you have to use the right hand rule. Here is a simulation that shows the force when the currents are in the same direction. What is the direction of the force?
-
+To see the simulation of a DC motor, take a look at the following simulation
 \begin{center}  
-\youtube{fz385mDNj84}  
-\end{center} 
-
-This video shows a simulation that shows the force when the currents are in the opposite direction. What is the direction of the force now?
-
-
-\begin{center}  
-\youtube{P49PHzqIS8s}  
-\end{center} 
-
+\geogebra{PN2YrxBb}{800}{600}  
+\end{center}
 
 
 
 \end{document} 
+

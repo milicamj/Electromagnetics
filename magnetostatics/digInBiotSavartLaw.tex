@@ -8,7 +8,7 @@
  
 \title{Biot-Savart's Law} 
 \author{Milica Markovic} 
-\outcome{Magnetic field due to a current distribution.}
+\outcome{Use Bio-Savart's Law to calculate magnetic field due to a current distribution.}
 \begin{document}  
 \begin{abstract}  
 
@@ -23,7 +23,7 @@
 
 
 
-We will first find the magnetic field due to a loop carrying current $I$,  positioned in X-Y plane, as shown in Figure \ref{fig:magfield}. To solve this problem, we will first divide the loop into small pieces, and label one of these pieces as $dl$. The magnetic field due to an infinitesimal current can be found using Biot-Savart's law. Magnetic field is labeled in Figure \ref{fig:magfield} as $dB$.  The position of the infinitesimal current  is defined by a position vector $\vec{r_2}$. The position of point P, where the field will be calculated,  is defined with the position vector  $\vec{r_1}$. The distance between the current and the observation point is labeled as $\vec{r}$. The vector  $\vec{dB}$ is defined in  Equation  \ref{bscur}.
+We will first find the magnetic field due to a loop carrying current $I$,  positioned in the X-Y plane, as shown in Figure \ref{fig:magfield}. To solve this problem, we will first divide the loop into small pieces and label one of these pieces as $dl$. The magnetic field due to an infinitesimal current, can be found using Biot-Savart's law. Magnetic field is labeled in Figure \ref{fig:magfield} as $dB$.  The infinitesimal current position is defined by a position vector $\vec{r_2}$. The position of point P, where the field will be calculated,  is defined with the position vector  $\vec{r_1}$. The distance between the current and the observation point is labeled as $\vec{r}$. The vector  $\vec{dB}$ is defined in  Equation  \ref{bscur}.
 
 
 \begin{eqnarray}
@@ -40,7 +40,7 @@ We will first find the magnetic field due to a loop carrying current $I$,  posit
 \label{fig:magfield}
 \end{figure}
 
-The total magnetic field at a point P is then equal to the sum of all the fields due to the elemental currents as shown in Figure \ref{bscur1}. The equation for the total field is given in \ref{eqtotfieldringm}. 
+The total magnetic field at a point P is then equal to the sum of all the fields due to the elemental currents, as shown in Figure \ref{bscur1}. The equation for the total field is given in \ref{eqtotfieldringm}. 
 
 \begin{eqnarray}
 \vec{B}=\int\limits_{all \,\, inf. \,\, currents} \vec{dB} \label{eqtotfieldringm}
@@ -59,7 +59,7 @@ Each section is modeled by a point charge $dQ$.}
 
 
 The problem now  is to represent all the variables in the Equation \ref{bscur}  ( $I$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given current distribution.
- As seen in Figure \ref{fig:magfield}, $\vec{dl}$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta a_{\theta}$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$ and the vector $\vec{r_1}$  is the position vector of the point be  of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its  vector is shown in Equation\ref{eq1loopm}.  The vector $\vec{r}$ is the distance vector between the elemental current (the source) and the point at which we are calculating the electric field. 
+ As seen in Figure \ref{fig:magfield}, $\vec{dl}$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta a_{\theta}$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point P where we want the find the magnetic field. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation\ref{eq1loopm}.  The vector $\vec{r}$ is the distance vector between the elemental current (the source) and the point at which we are calculating the electric field. 
 
 
 
@@ -142,7 +142,7 @@ Components of the magnetic field are given in Equations \ref{eq:totalfieldloop1m
 \end{eqnarray}
 
 
-Each component of the field can be  integrated separately, as shown in Equations \ref{totalfieldloop4m}-\ref{totalfieldloop6m}.
+Each field component can be integrated separately, as shown in Equations \ref{totalfieldloop4m}-\ref{totalfieldloop6m}.
 
 
 
@@ -167,19 +167,19 @@ The magnetic field above is shown in Figure \ref{mflmat}
 
 \section{Visualizing Scalar Fields in Matlab}
 
-To visualize scalar fields in Matlab we can use the following functions: slice, contourslice, patch, isonormals, camlight and lightning. Please note that more detailed explanation about the these organization functions shown here can be found in Matlab help.
+To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lightning. Please note that a more detailed explanation about these functions can be found in Matlab help.
 
 \subsection{slice}
  
-Slice is a command that shows the magnitude of a scalar fields on a plane that slices the volume where the potential field is visualized. The format of this command is as shown below.
+Slice is a command that shows the magnitude of a scalar field on a plane that slices the volume where the potential field is visualized. The format of this command is as shown below.
 
 \begin{verbatim}
 slice(x,y,z,v,xslice,yslice,zslice)
 \end{verbatim}
 
-Where X, Y, and Z are coordinate of points where the scaler function is calculated, V is v the scalar function at those points, and the last three vectors xslice, yslice, and zslice  are showing where will the volume will be sliced.
+Where X, Y, and Z are coordinates of points where the scalar function is calculated, V is v the scalar function at those points, and the last three vectors xslice, yslice, and zslice are showing where will the volume will be sliced.
 
-An example of slice command is given below. in the example below there is an additional command colormap, that's collars the volume with a specific pallette. To see more about different color maps, see Matlab help. xslice has three points at which the x-axis will be slice. They are -1.2, .8, 2. This means that the volume will be slice with a plane that is perpendicular to x-axis and it crosses the x-axis at points -1.2, .8 and 2. 
+An example of a slice command is given below. There is an additional command colormap that colors the volume with a specific palette in the example below. To see more about different color maps, see Matlab help. xslice has three points at which the x-axis will be slice. They are -1.2, .8, 2. The volume will be sliced with a plane perpendicular to the x-axis, and it crosses the x-axis at points -1.2, .8, and 2. 
  
 \begin{verbatim}
 clc
@@ -193,7 +193,7 @@ colormap hsv
 
 \subsection{contourslice}
 
- Contourslice command will display equipotential  lines on a plane being the volume where the potential field is visualized. An example of contourslice function is shown below.
+ Contourslice command will display equipotential lines on a plane being the volume where the potential field is visualized. An example of contourslice function is shown below.
 
 \begin{verbatim}
 [x,y,z] = meshgrid(-2:.2:2,-2:.25:2,-2:.16:2);
@@ -210,7 +210,7 @@ Patch command creates a patch of color.
 
 \subsection{isonormals}
 
-Command isonormals creates  equipotential surfaces. 
+Command isonormals creates equipotential surfaces. 
 \subsection{camlight}
 
 \begin{verbatim}
@@ -238,11 +238,11 @@ and az and el are in degrees.
 \begin{verbatim}
 lighting flat selects flat lighting.
 
-lighting gouraud selects gouraud lighting.
+Lighting gouraud selects gouraud lighting.
 
-lighting phong selects phong lighting.
+Lighting phong selects phong lighting.
 
-lighting none turns off lighting.
+Lighting none turns off lighting.
 \end{verbatim}
 
 
@@ -251,3 +251,4 @@ lighting none turns off lighting.
 
 
 \end{document} 
+
