@@ -97,7 +97,7 @@ Z_0=\sqrt{\frac{L}{C}}
 
 \section{Equations for voltage and current on a transmission-line}
 
-Using the definition of transmission-line impedance $Z_0$, we can now simplify the Equations \ref{eq:TLVolt}-\ref{eq:TLCurr} for voltage and current on the transmission line, by replacing the currents $\tilde{I}_0^+=Z_0/\tilde{V}_0^+ $, and $\tilde{I}_0^- = -Z_0/\tilde{V}_0^-$.
+Using the definition of transmission-line impedance $Z_0$, we can now simplify the Equations \ref{eq:TLVolt}-\ref{eq:TLCurr} for voltage and current on the transmission line, by replacing the currents $\tilde{I}_0^+=\frac{\tilde{V}_0^+}{Z_0} $, and $\tilde{I}_0^- = -\frac{\tilde{V}_0^-}{Z_0}$.
 \begin{eqnarray}
 \tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{eq:TLIvtl} \\ 
 I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z}\label{eq:TLIctl}
