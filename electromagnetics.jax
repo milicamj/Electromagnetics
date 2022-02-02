@@ -1,4 +1,0 @@
-\newenvironment {prompt}{}{}
-\newcommand {\ungraded }[0]{}
-\newcommand {\graded }[1]{}
-\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }
