@@ -1,9 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Types of functions}}{3}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Vector fields}}{3}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Properties of vector fields}}{4}\relax 
-\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Radial fields}}{4}\relax 
-\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Rotational fields}}{5}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-6}{Gradient fields}}{5}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-7}{The shape of things to come}}{6}\relax 
-\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-8}{The Clairaut gradient test}}{7}\relax 
