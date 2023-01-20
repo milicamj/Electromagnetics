@@ -1,0 +1,33 @@
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmtt font-family: monospace;
+File: electrostatics.html
+File: electrostatics.tmp
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+File: ../jpg/Two_Static_Charges.jpg
+File: ../jpg/earth.jpg
+File: ../jpg/unitchargefield.jpg
+File: ../jpg/superposition.jpg
+File: ../jpg/singlechargecartcoord.jpg
+File: ../jpg/twochargescartcoord.jpg
+File: ../jpg/chargedistribution.jpg
+File: ../jpg/surfacedistributiondisk.jpg
+File: ../jpg/constantelectricfieldinfiniteplane.jpg
+File: ../jpg/gausslawwire.jpg
+File: ../jpg/infiniteplaneofcharge.jpg
+File: ../jpg/infiniteparallelplates.jpg
+File: ../jpg/potential.jpg
+File: ../jpg/workindependentofpath.jpg
+File: ../jpg/boundaryconditions.jpg
+File: ../jpg/integrationpathtangfield.jpg
+File: ../jpg/metalsphereinefield.jpg
+--- characters ---
+Font("cmr","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmr","12","12","100")

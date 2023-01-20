@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="en"><head> <title>Electrostatic  Potential</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInElectricPotential.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Electrostatic potential."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="dafe8fee99b3c55ddaac9899175ad7a907e3bb85 electrostatics/digInElectricPotential.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Electrostatic Potential Energy</h3>
+<!--l. 26--><p class="noindent">When charges are pushed around in an electric field, the energy is not lost. Electrical
+forces are conservative.
+</p><!--l. 29--><p class="noindent">How much energy do we have to bring into the system to bring two far-away positive
+charges at a distance r?
+</p><!--l. 31--><p class="noindent">To answer that question, we can look at Figure <a class="reference" href="#Potential1">Potential1</a>. Bringing the first charge to a certain
+position in space would require no work since there are no other charged particles
+around, no electric field, and therefore no force. To bring the second charge at a
+distance r from the first charge, we need to overcome the repulsive force
+between the charges. How much work does this take? The work that we need to
+do to bring charges together is equal to the work that the first charge has
+to do to repel the second charge. The only difference is that we have to
+move the charges closer together, from infinity to some distance r, and the
+repulsive force does the work (pushes the charge <script type="math/tex">q_2</script> away) from the distance r to
+infinity.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 37--><p class="noindent">
+</p><!--l. 38--><p class="noindent"><img src="../jpg/Two_Static_Charges_Potential.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Moving the charge <script type="math/tex">q_2</script> with force <script type="math/tex">\vec {F}_{us}</script> against the electrostatic force <script type="math/tex">\vec {F}_e</script> due to
+charge <script type="math/tex">q_1</script> to find the electrostatic potential energy</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="Potential1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+W_{us}=W{e} \\
+W_{us}= \int_{\infty}^{r} \vec{F}_{us} \cdot \vec{dr} \\
+W_{e}=  \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr}
+\end{eqnarray}</script>
+</div>
+<!--l. 50--><p class="noindent">The electric force is <script type="math/tex">\vec {F}_e=\frac {q_1 q_2}{4 \pi \epsilon _o r^2} \vec {r}</script>, so we can calculate the total work necessary to bring the two
+charges at distance r.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+W_{us}= \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr} \\
+W_{us}= \int_{r}^{\infty} \frac{q_1 q_2}{4 \pi \epsilon_o r^2} \vec{r} \vec{dr}
+\end{eqnarray}</script>
+</div>
+<!--l. 57--><p class="noindent">Since the charge is moved in the direction of the force, we can drop vectors and
+calculate the work we have to do.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+W_{us}= \frac{q_1 q_2}{4 \pi \epsilon_o} \int_{r}^{\infty} \frac{dr}{r^2} \\
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o} (-\frac{1}{r}\Big|_{r}^{\infty})
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o r} \label{WorkPoinCharge}
+\end{eqnarray}</script>
+</div>
+<!--l. 65--><p class="noindent">This work is the same no matter what path we take to move charge <script type="math/tex">q_2</script> from infinity to
+a distance r from charge <script type="math/tex">q_1</script>, see Figure <a class="reference" href="#PotentialWork">PotentialWork</a>. It depends only on the initial and end position
+of the charge.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10022"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 72--><p class="noindent">
+</p><!--l. 73--><p class="noindent"><img src="../jpg/workindependentofpath.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Potential is not dependent on the specific path.</span></div><!--tex4ht:label?: x1-10022 -->
+<a class="ximera-label" id="PotentialWork"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-2000"></a>Definition of Potential and Voltage</h3>
+<!--l. 87--><p class="noindent">The work needed to move the two charges closer together depends on both charges <script type="math/tex">q_1</script>
+and <script type="math/tex">q2</script>, just like the electrostatic force depends on both charges. It would be easier to
+define another variable that will separate the cause, charge <script type="math/tex">q_1</script>, and the effect, the work
+that we have to do to move charge <script type="math/tex">q_2</script>. This variable is Electric Potential. Electric
+potential is defined as the work we need to do to move the charge divided by the
+amount of charge <script type="math/tex">q_2</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+V=\frac{W_{us}}{q_2} \\
+V=\frac{q_1}{4 \pi \epsilon_o r} \label{Potential2}
+\end{eqnarray}</script>
+</div>
+<!--l. 94--><p class="noindent">Observe that in Equation <a class="reference" href="#Potential2">Potential2</a> the potential is a function of the ”source” charge <script type="math/tex">q_1</script>. We
+again separated the source and the effect, but this time of the potential energy. The
+source is a charge <script type="math/tex">q_1</script> that produces potential V. If we now want to see what is the
+potential energy or work that we need to do to move another charge, we don’t
+have to know which charge produced it. We only need to know the potential
+in an area, from which we can find the potential energy change of charge
+<script type="math/tex">q_2</script>.
+</p><!--l. 96--><p class="noindent">We can find potential energy and potential of any number of charges using the above
+expression and the principle of superposition.
+</p>
+<div role="article" class="problem-environment question" id="problem1"><a id="x1-2001r1"></a> The difference in electric potential is most closely associated with <div class="multiple-choice" id="problem2"><span class="choice correct " id="choice1">Work per unit
+charge</span> <span class="choice  " id="choice2">Number of electrons in an atom</span> <span class="choice  " id="choice3">Mechanical force on a charge</span> </div>
+</div>
+<h3 class="sectionHead"><a id="x1-3000"></a>The general relationship between the electric field and potential</h3>
+<!--l. 110--><p class="noindent">In the first section, we defined the work necessary to bring two charges togeter at a
+distance r as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+W_{us}=  \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr}\label{eqn:definitionWork}
+\end{eqnarray}</script>
+</div>
+<!--l. 116--><p class="noindent">Electric force can be expressed in terms of electric field as
+</p>
+                                                                  
+
+                                                                  
+<script type="math/tex; mode=display"> \begin{equation} 
+\vec{F}=q \vec{E}
+\end{equation}</script>
+<!--l. 122--><p class="noindent">If we substitute the electric force from the above equation into Equation <a class="reference" href="#eqn:definitionWork">eqn:definitionWork</a>, we
+get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+W_{us}=  \int_{r}^{\infty} q \vec{E} \cdot \vec{dr}
+\end{eqnarray}</script>
+</div>
+<!--l. 128--><p class="noindent">The potential of a point R with respect to infinity is then defined as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+V_R=\frac{W_{e}}{q}=\int_{r}^{\infty}  \vec{E} \cdot \vec{dr}
+\end{eqnarray}</script>
+</div>
+<!--l. 135--><p class="noindent">The potential at a point due to a unit positive charge is found to be V. If the
+distance between the charge and the point is tripled, the potential becomes
+</p>
+<div role="article" class="problem-environment question" id="problem3"><a id="x1-3001r2"></a> The potential at a point due to a unit positive charge is V. If the distance between
+the charge and the point is doubled, the potential becomes <div class="multiple-choice" id="problem4"><span class="choice  " id="choice4"><script type="math/tex">V^2</script></span> <span class="choice  " id="choice5"><script type="math/tex">2V</script></span> <span class="choice correct " id="choice6"><script type="math/tex">V/2</script></span> <span class="choice  " id="choice7">need more
+information</span> </div>
+</div>
+<h3 class="sectionHead"><a id="x1-4000"></a>Voltage - the potential difference</h3>
+<!--l. 151--><p class="noindent">The potential difference between two points is defined as <script type="math/tex">V_{AB}=V_A-V_B</script>. We defined the potential
+at a point in the equation above as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+V_A=\int_{A}^{\infty}  \vec{E} \cdot \vec{dr} \\
+V_B=\int_{B}^{\infty}  \vec{E} \cdot \vec{dr}
+\end{eqnarray}</script>
+</div>
+<!--l. 159--><p class="noindent">The potential difference, or voltage is then defined as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Delta V = V_A - V_B =\int_{A}^{\infty}  \vec{E} \cdot \vec{dr} -\int_{B}^{\infty}  \vec{E} \cdot \vec{dr}  \\
+\Delta V = \int_{A}^{\infty}  \vec{E} \cdot \vec{dr} +\int_{\infty}^{B}  \vec{E} \cdot \vec{dr} \\
+\Delta V = \int_{A}^{B} \vec{E} \cdot \vec{dr}
+\end{eqnarray}</script>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 168--><p class="noindent">Demonstration of potential difference in radial electric field of a VanDenGraaf
+generator by Prof. Emeritus at MIT, Walter Lewin. </p>
+<div class="center">
+<!--l. 169--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="cYOBSzh2SLE">_</div></div>
+<!--l. 174--><p class="noindent">Now you can enjoy shocking John Travoltage in this PhET simulation.
+</p>
+<div class="center">
+<!--l. 178--><p class="noindent">
+</p><!--l. 179--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/zm6qzDwt/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<h3 class="sectionHead"><a id="x1-5000"></a>Electric field calculation from potential difference</h3>
+<!--l. 184--><p class="noindent">From the equation above, if we look at the potenital of two points that are very close
+on the x-axis, <script type="math/tex">V_A</script>, and <script type="math/tex">V_B=V_A+dV</script>, the voltage is equal to <script type="math/tex">V_A-V_B=V_A-(V_A+dV)=-dV=-E_x dx</script>. Therefore the electric field in the
+x-direction is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\vec{E_x}=-\frac{\partial V}{\partial x}
+\end{equation}</script>
+<!--l. 190--><p class="noindent">The above equations states that the field is proportional to the change of potential
+over distance. The larger the change of potential over distance, the stronger the
+field.
+</p><!--l. 192--><p class="noindent">To find the electric field in 3 dimensions, we use the gradient function, which
+represents a 3-dimensional derivative.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\vec{E}=-\grad V = -(\frac{\partial V}{\partial x}\vec{x}+\frac{\partial V}{\partial y}\vec{y}+\frac{\partial V}{\partial z}\vec{z})
+\end{equation}</script>
+<div class="theorem-like problem-environment example" id="problem5"><a id="x1-5001r3"></a>Figure <a class="reference" href="#fig:gradient">fig:gradient</a> shows an electric field, and equipotential lines in an x-y plane. Equipotential
+lines are the lines of the same potential. We can observe that the electric field is
+always normal to the equipotential lines. The difference in potential between two
+points is <script type="math/tex">dV=\vec {E} \vec {dr}</script>. The lines, or surfaces, normal to the electric field vector are always
+equipotential surfaces, as the angle between the electric field vector and a
+perpendicular vector is <script type="math/tex">90^0</script>, and the dot product between them is zero. In other words,
+the work that we have to do to move the charge in the direction perpendicular to the
+                                                                  
+
+                                                                  
+electric force is zero.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50023"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 203--><p class="noindent">
+</p><!--l. 204--><p class="noindent"><img src="../jpg/gradient.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Electric field and equipotential lines.</span></div><!--tex4ht:label?: x1-50023 -->
+<a class="ximera-label" id="fig:gradient"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 209--></div>
+
+<div class="theorem-like problem-environment example" id="problem6"><a id="x1-5003r4"></a>Two charges, a positive and a negative one are placed on x-y plane. The
+potential around the charges is shown as a red surface. Observe the simulation
+below.
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Where is the potential positive, and where is it negative?
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">What is the direction of the electric field?
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">If we place a positive point charge closer to the positive charge Q1, which
+     way will it go?
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">What if we have a negative charge?</dd></dl>
+<!--l. 223--><p class="noindent">Now click on the 2D view.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Where is the field the strongest?
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Can you tell the direction of the field from equipotential lines?</dd></dl>
+<div class="center">
+<!--l. 229--><p class="noindent">
+</p><!--l. 230--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/tmkauhfc/width/1000/height/800/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="1000px" height="800px" style="border:0px;"> </iframe></p></div>
+<!--l. 233--></div>
+
+<div role="article" class="problem-environment problem" id="problem7"><a id="x1-5010r5"></a> Rougly adjust the direction and length of the vectors shown in the graph below.
+When done, click on ”Grade Update ” to check your answer.
+<div class="center">
+<!--l. 239--><p class="noindent">
+</p><!--l. 240--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/dqvffmrh/width/1000/height/800/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="1000px" height="800px" style="border:0px;"> </iframe></p></div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

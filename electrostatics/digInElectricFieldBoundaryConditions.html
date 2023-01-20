@@ -1,0 +1,548 @@
+<!DOCTYPE html><html lang="en"><head> <title>Electrostatic Boundary Conditions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInElectricFieldBoundaryConditions.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Distinguish between the behavior of conductors and dielectrics in electric field. State boundary conditions. "/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="e478416b031c8e616b951bd5194e508e67061f8c electrostatics/digInElectricFieldBoundaryConditions.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Conductors in the electrostatic field</h3>
+<!--l. 20--><p class="noindent">Conductors conduct current well because the atoms of good conductors have many
+loosely bound electrons that can leave the atoms in the presence of an external
+electric field. In the absence of an external electric field, a piece of metal is
+shown in Figure <a class="reference" href="#fig:Conductor">fig:Conductor</a> on the left. When there is no electric field, the electrons
+are close to the nucleus. On the right, the same metal piece is placed in
+an electric field of the battery. Under the influence of the external field, <script type="math/tex">E_v</script>,
+electrons can freely move away from the atoms in the direction opposite to the
+direction of the external field. This type of current is called conduction current.
+The point form of Ohm’s law states that <script type="math/tex">E=J/\sigma </script>, where J is the current density, E
+is the electric field, and <script type="math/tex">\sigma </script> is the conductivity of the material. Conductors
+have very high conductivity, and so the electric field inside the conductors is
+zero.
+</p><!--l. 22--><p class="noindent">In electrostatics, we assume that the charges are not moving, so there is no
+conduction current. The electric field inside the conductors is zero. As we will see
+later in this section, the charges on the conductor in electrostatic fields can exist only
+on its surface, and the vector of the electric field must be perpendicular to the
+surface of the metal. The tangential electric field is zero. All points on a conductor in
+electrostatic fields have the same potential, and so the conductor is an equipotential
+surface.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 25--><p class="noindent">
+</p><!--l. 26--><p class="noindent"><img src="../jpg/Conductor.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Conductor in Electric Field.</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="fig:Conductor"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-2000"></a>Dielectrics in the electrostatic field</h3>
+<!--l. 35--><p class="noindent">As shown in Figure <a class="reference" href="#fig:Dielectric1">fig:Dielectric1</a>, in dielectrics, in the absence of an electric field, the electrons
+are close to the nucleus. The difference here is that the electrons are tightly bound to
+the nucleus, and they cannot escape in the presence of an electric field. When a
+battery establishes electric field <script type="math/tex">E_v</script> inside the dielectric, the atoms of the dielectric
+stretch because the nucleus is pulled in the direction of the field, and electrons in the
+opposite direction and the atom can be represented by a dipole. On the other hand,
+the free electrons in the wire connected to the dielectric start bunching up on
+top of the dielectric piece, and the dipole’s positive charge is attracted to
+electrons. The negative dipole’s bound charge pushes electrons away from
+the bottom conductor. Looking from the outside, the current flows, but
+the electrons are not flowing through the dielectric. This type of current is
+called a displacement current. If the battery is removed, the free negative
+and positive charges are trapped on the top and bottom of the dielectric
+piece.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20012"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 38--><p class="noindent">
+</p><!--l. 39--><p class="noindent"><img src="../jpg/dielectricConductor.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Dielectric in Electric Field.</span></div><!--tex4ht:label?: x1-20012 -->
+<a class="ximera-label" id="fig:Dielectric1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 45--><p class="noindent">The electrons in the metal on top of the dielectric establish an electric field across it,
+as shown in Figure <a class="reference" href="#fig:Dielectric2">fig:Dielectric2</a>. This field, in turn, produces electric dipoles in the dielectric, as
+explained above. The internal positive and negative charges cancel each other, and
+the positive bound charge from the dielectric on top and negative on the bottom
+produce their own field, which is in the opposite direction from the external field, as
+shown in Figure <a class="reference" href="#fig:Dielectric3">fig:Dielectric3</a>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20023"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 51--><p class="noindent">
+</p><!--l. 52--><p class="noindent"><img src="../jpg/polarizationDielectric.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3:  </span><span class="content">Polarization  of  a  dielectric  in  external  electric  Field.  Each  oval
+represents one atom.</span></div><!--tex4ht:label?: x1-20023 -->
+<a class="ximera-label" id="fig:Dielectric2"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20034"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 60--><p class="noindent">
+</p><!--l. 61--><p class="noindent"><img src="../jpg/polarizationDielectric1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 4: </span><span class="content">Two fields acting inside the dielectric. The external field <script type="math/tex">E_v</script> from the
+free charges in the metal on top and bottom, and the polarized dielectric field <script type="math/tex">E_p</script>.
+The inner part of the dielectric is removed to show clearly the fields.</span></div><!--tex4ht:label?: x1-20034 -->
+<a class="ximera-label" id="fig:Dielectric3"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 67--><p class="noindent">The total field in the dielectric is the sum of the electric fields from free charges on
+top and bottom metal pieces <script type="math/tex">E_v</script>, and the electric field from the separated polarization
+charges of the dielectric <script type="math/tex">E_p</script>, as shown in Equation <a class="reference" href="#eq:sumfield">eq:sumfield</a>. The induced field <script type="math/tex">E_v</script> is a fraction of
+the external field, and we can represent it in terms of the external field as <script type="math/tex">E_p=m E_v</script>, where <script type="math/tex">m</script> is
+some constant. We can then express the total field as a fraction of the external field
+in Equation <a class="reference" href="#eq:sumfield1">eq:sumfield1</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+E_{total}=E_v-E_p \label{eq:sumfield} \\
+E_{total}=E_v-m E_v \\
+E_{total}=E_v (1-m) \label{eq:sumfield1}
+\end{eqnarray}</script>
+</div>
+<!--l. 77--><p class="noindent">Relative dielectric permittivity of the material <script type="math/tex">\epsilon </script> is defined as <script type="math/tex">1-m=\frac {1}{\epsilon _r}</script>. Therefore the total
+field inside the dielectric is lower than if no dielectric is present.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+E_{total}=\frac{E_v}{\epsilon_r}
+\end{equation}</script>
+<!--l. 84--><p class="noindent">Dielectric permittivity of a material is defined as the relative permittivity multiplied
+by the permittivity of free space <script type="math/tex">\epsilon _0=8.85 \,\,10^{-12}\unit {F/m}</script>.
+</p>
+<h3 class="sectionHead"><a id="x1-3000"></a>Relative dielectric constant</h3>
+<!--l. 90--><p class="noindent">Relative dielectric constant is in general a complex number <script type="math/tex">\epsilon _r=\epsilon _r{'}+j \epsilon _r{''}</script>.
+</p><!--l. 92--><p class="noindent"><script type="math/tex">\epsilon _r{'}</script> in data sheets is called a dielectric constant, or design dielectric constant, and it
+varies from 1 in the air to 13 in GaAs. An outlier is a dielectric constant of distilled
+water, <script type="math/tex">\epsilon _r{'}=80</script>.
+</p><!--l. 94--><p class="noindent">We can sketch the complex relative dielectric constant on a complex plane. The angle
+between the magnitude of the dielectric constant and the x-axis is called <script type="math/tex">\tan \delta </script>, and it is
+used to describe the losses in the dielectric material. In datasheets for PC boards,
+you can see that <script type="math/tex">\tan \delta </script> is from about 0.001 for microwave substrates, such as Rogers
+Duroid, to 0.02 for low-frequency FR4 substrates.
+</p>
+<h3 class="sectionHead"><a id="x1-4000"></a>Boundary conditions at a dielectric-dielectric boundary</h3>
+<!--l. 100--><p class="noindent">In many electrical structures, more than one dielectric is used so that the electric
+field exists in different dielectrics. In such cases, we are interested in how will the
+                                                                  
+
+                                                                  
+electric field change from one dielectric to the other. Figure <a class="reference" href="#fig:BoundaryCondition">fig:BoundaryCondition</a> shows the boundary
+between the two dielectrics with permittivities <script type="math/tex">\epsilon _1</script> and <script type="math/tex">\epsilon _2</script>, and the electric fields <script type="math/tex">E_1</script> in
+material 1 and <script type="math/tex">E_2</script> in material 2. At the boundary between two materials, we may have
+surface charge density <script type="math/tex">\rho _s</script>.
+</p><!--l. 102--><p class="noindent">At the boundary between any two dielectrics, the tangential components of the
+electric field <script type="math/tex">E_{1t}, \, E_{2t}</script> are continuous, and the normal components <script type="math/tex">E_{1n}, \, E_{2n}</script> are discontinuous and
+equal to the surface charge density.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+E_{1t}=E_{2t} \\
+\epsilon_1 E_{1z}-\epsilon_2 E_{2z}=\rho_s
+\end{eqnarray}</script>
+</div>
+<!--l. 110--><p class="noindent">If the free surface charge density at the boundary is zero, then the normal
+components of the electric field at the boundary are
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+E_{1t}=E_{2t} \\
+\epsilon_1 E_{1z}=\epsilon_2 E_{2z}
+\end{eqnarray}</script>
+</div>
+<!--l. 119--><p class="noindent">We can also write electric flux density vectors at the boundary. Since <script type="math/tex">D_1=\epsilon _1 \,E_1</script> and <script type="math/tex">D_{2}=\epsilon _2 \,E_{2}</script>, the above
+equations can be re-written as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\epsilon_2 D_{1t}=\epsilon_1 D_{2t}  \\
+D_{1z}=D_{2z}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40015"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 129--><p class="noindent">
+</p><!--l. 130--><p class="noindent"><img src="../jpg/boundaryconditions.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 5: </span><span class="content">Boundary Conditions for Electric Field.</span></div><!--tex4ht:label?: x1-40015 -->
+<a class="ximera-label" id="fig:BoundaryCondition"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div role="article" class="problem-environment question" id="problem1"><a id="x1-4002r1"></a> The four equations below show the tangential and normal electric field at the
+boundary of two dielectrics. Dielectric 1 is a Teflon with a relative dielectric constant
+of 2.2, and dielectric 2 is Silicon with a relative dielectric constant of 11.2. Which set
+of equations represents a possible electric field? <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1"><script type="math/tex">2.2 \,E_{1t}= 11.2 \,E_{2t}</script> and <script type="math/tex">E_{1z}= E_{2z}</script></span> <span class="choice correct " id="choice2"><script type="math/tex">E_{1t}=E_{2t}</script> and <script type="math/tex">2.2 \,E_{1z}= 11.2 \,E_{2z}</script> </span> <span class="choice  " id="choice3"><script type="math/tex">2.2 \,E_{1t}= 11.2 \,E_{2t}</script> and <script type="math/tex"> E_{1z}= E_{2z}</script></span> <span class="choice  " id="choice4"><script type="math/tex">E_{1t}=E_{2t}</script> and <script type="math/tex">11.2 \, E_{1z}= 2.2 \, E_{2z}</script></span> </div>
+</div>
+<h3 class="sectionHead"><a id="x1-5000"></a>Boundary conditions at a conductor-dielectric boundary</h3>
+<!--l. 168--><p class="noindent">The electric field inside perfect conductors <script type="math/tex">\sigma \rightarrow \infty </script> is zero. Ohm’s law states that
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+E=\frac{J}{\sigma}
+\end{equation}</script>
+<!--l. 175--><p class="noindent">When <script type="math/tex">\sigma \rightarrow \infty </script>, from the above equation, we see that the electric field is zero. This means
+that at the boundary of the dielectric and metal, the tangential field in the dielectric
+must be zero as well, and the only field at the boundary of a metal is the normal
+electric field <script type="math/tex">D_n</script>, and it is equal to the induced charge at the surface of the
+conductor.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+D_n = \rho_s
+\end{equation}</script>
+<!--l. 181--><p class="noindent">Figure <a class="reference" href="#fig:BoundaryConditionMetal">fig:BoundaryConditionMetal</a> shows the field at the boundary of the metallic sphere. Watch this
+demonstration of separation of charges on a metallic sphere in the electric field of the
+VanDenGraaff generator.
+</p>
+<div class="center">
+<!--l. 184--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="hOD2T0fYuM8">_</div></div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50016"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 191--><p class="noindent">
+</p><!--l. 192--><p class="noindent"><img src="../jpg/metalsphereinefield.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 6: </span><span class="content">Metallic sphere in an external electric field.</span></div><!--tex4ht:label?: x1-50016 -->
+<a class="ximera-label" id="fig:BoundaryConditionMetal"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-6000"></a>Shielding with Faraday’s Cage</h3>
+<!--l. 203--><p class="noindent">The electric field is zero inside the closed metallic conductor, even if the conductor is
+hollow, as shown in Figure <a class="reference" href="#fig:HollowConductor">fig:HollowConductor</a>, and no charge is induced inside a metallic shield. This is
+Faraday’s cage.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-60017"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 207--><p class="noindent">
+</p><!--l. 208--><p class="noindent"><img src="../jpg/hollowConductor.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 7: </span><span class="content">Electric field inside hollow metallic conductor (Faraday’s Cage).</span></div><!--tex4ht:label?: x1-60017 -->
+<a class="ximera-label" id="fig:HollowConductor"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 215--><p class="noindent">Watch a demonstration of zero electric fields, and no charge, inside a hollow
+conductor by Prof Emeritus of MIT Walter Lewin.
+</p>
+<div class="center">
+<!--l. 218--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="W_NelWgJ3LY">_</div></div>
+<h3 class="sectionHead"><a id="x1-7000"></a>Grounding</h3>
+<!--l. 226--><p class="noindent">In Figure <a class="reference" href="#fig:HollowConductor1">fig:HollowConductor1</a>, we introduce a charge inside a hollow conductor, and the electric field
+forms inside the conductor. The charge in the metallic shell will redistribute so that
+the field is zero inside the metal. The charge on the surface of the conductor will be
+uniformly distributed, regardless of the position of the charge inside the hollow
+part.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-70018"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 230--><p class="noindent">
+</p><!--l. 231--><p class="noindent"><img src="../jpg/hollowConductorOffset.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 8: </span><span class="content">Hollow conductor with a charge inside.</span></div><!--tex4ht:label?: x1-70018 -->
+<a class="ximera-label" id="fig:HollowConductor1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 237--><p class="noindent">Figure <a class="reference" href="#fig:HollowConductor2">fig:HollowConductor2</a> shows a grounded hollow conductor with a charge inside it. In this case, the
+positive charge on the outside of the conductor will attract negative charges from the
+ground that neutralize the positive charge inside the shell, so there will be no field
+outside the shell.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-70029"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 240--><p class="noindent">
+</p><!--l. 241--><p class="noindent"><img src="../jpg/hollowConductorOffsetGrounded.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 9: </span><span class="content">Grounded hollow conductor with a charge inside.</span></div><!--tex4ht:label?: x1-70029 -->
+<a class="ximera-label" id="fig:HollowConductor2"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 248--><p class="noindent">Watch a demonstration of Faraday’s Cage by Prof Emeritus of MIT Walter Lewin.
+He will enter the Faraday’s Cage with a tinsel, a transmitter (his wireless microphone
+that likely works at a frequency of a few GHz), and a receiver (a radio that works at
+a couple of hundred Megahertz frequency). The Faraday’s cage is likely not grounded.
+He cannot receive the radio signal as the outside radio waves cannot enter the
+Faraday’s cage, but the waves his microphone transmitter generates inside the cage
+still reach the receiver that is placed somewhere in the classroom since the cage is not
+grounded.
+</p>
+<div class="center">
+<!--l. 251--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="t5uHzCfiXp4">_</div></div>
+<h3 class="sectionHead"><a id="x1-8000"></a>Proof of boundary conditions</h3>
+<!--l. 257--><p class="noindent">We will now use Maxwell’s equations to derive the electrostatic boundary
+conditions.
+</p><!--l. 259--><p class="noindent">First, we will use Gauss’s law to find the normal component of the fields at the
+boundary between two dielectrics, as shown in Figure <a class="reference" href="#fig:BoundaryConditionNormal">fig:BoundaryConditionNormal</a>. As we can see from the figure,
+the flux of the electric field exists through both bases and the side of the cylinder. We
+can find the components of the fields in both dielectrics, one parallel to
+the boundary x and one perpendicular to the boundary, in the direction of
+y.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E_1}= \vec{E_{1x}}+\vec{E_{1y}}= E_{1x} \vec{x}+E_{1y} \vec{y} \\
+\vec{E_2}= \vec{E_{2x}}+\vec{E_{2y}}= E_{2x} \vec{x}+E_{2y} \vec{y}
+\end{eqnarray}</script>
+</div>
+<!--l. 267--><p class="noindent">The tangential components of the fields produce flux through the sides, and normal
+components produce flux through the bases. Since we are interested in what happens
+at the boundary, we will let the height of the cylinder be infinitesimally small <script type="math/tex">h \rightarrow 0</script>.
+Because the height of the cylinder is zero, and therefore the surface area is
+zero, the flux through the side surface S3 is zero. The flux through the top
+and bottom surfaces will only exist due to the normal components of the
+field.
+</p>
+                                                                  
+
+                                                                  
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\oint_S \vec{D} \cdot \vec{dS} = Q_{inS} \\
+\int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS}+\int_{S3} \vec{D} \cdot \vec{dS}  =  Q_{inS} \\
+\int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS} +0 = Q_{inS} \\
+\int_{S1} (\epsilon_1 E_{1n}\vec{y}+\epsilon_1 E_{1t}\vec{x}) \cdot dS\vec{y}  +(\epsilon_2 E_{2n}\vec{y}+\epsilon_2 E_{2t}\vec{x}) \cdot dS\vec{y} = Q_{inS}\\
+-\epsilon_{1} E_{1n} S + \epsilon_2 E_{2n} S = Q_{inS}  \\
+\epsilon_2 E_{2n} -\epsilon_{1} E_{1n}= \frac{Q_{inS}}{S}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-800110"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 282--><p class="noindent">
+</p><!--l. 283--><p class="noindent"><img src="../jpg/BoundaryConditionsNormal.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 10: </span><span class="content">Derivation of equation for normal components of electric field on
+the boundary of two dielectrics.</span></div><!--tex4ht:label?: x1-800110 -->
+<a class="ximera-label" id="fig:BoundaryConditionNormal"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 290--><p class="noindent">The tangential components of the field can be obtained from the equation for
+Faraday’s law for static fields, as shown in Figure <a class="reference" href="#fig:BoundaryConditionTangential">fig:BoundaryConditionTangential</a>. We choose a rectangular contour,
+as shown in the figure with length l and width w. Since again we are interested in the
+boundary, we will let the width of the contour go to zero. The integral along the
+w-pieces will then be zero. The integral along the l-pieces of contour will depend on
+the orientation of contour, and we will pick a counter-clockwise path. Because of the
+counter-clockwise path, the x-component of the <script type="math/tex">E_1</script> field will be negative, and we
+have that the x-components of the fields in two dielectrics have to be the
+same.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\oint_C \vec{E} \cdot \vec{dl}=0 \\
+\int_{l1} (E_{1x} \vec{x}+E_{1y} \vec{y}) \cdot dy \vec{y} +\int_{l2} (E_{2x} \vec{x}+E_{2y} \vec{y}) \cdot dy \vec{y} =0 \\
+-E_{1x} l + E_{2x} l = 0 \\
+E_{1x}  = E_{2x}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-800211"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 301--><p class="noindent">
+</p><!--l. 302--><p class="noindent"><img src="../jpg/BoundaryConditionsTang.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 11: </span><span class="content">Derivation of equation for tangential components of electric field on
+the boundary of two dielectrics.</span></div><!--tex4ht:label?: x1-800211 -->
+<a class="ximera-label" id="fig:BoundaryConditionTangential"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-9000"></a>Charge distribution around sharp edges</h3>
+<!--l. 317--><p class="noindent">Theshape of the conductive material impacts the chargde distribution and charge
+density, as shown in Figure <a class="reference" href="#fig:sharpEdge">fig:sharpEdge</a>. We can see that the charge distribution and electric field
+on round objects are uniform. The highest charge density and strongest electric fields
+are produced on sharp edges of condutive bodies.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-900112"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 321--><p class="noindent">
+</p><!--l. 322--><p class="noindent"><img src="../jpg/sharpEdges.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 12: </span><span class="content">Electric field and charge distribution close to sharp edges.</span></div><!--tex4ht:label?: x1-900112 -->
+<a class="ximera-label" id="fig:sharpEdge"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 327--><p class="noindent">Demonstration of higher charge density near sharp edges by Prof. Emeritus at MIT,
+Walter Lewin. </p>
+<div class="center">
+<!--l. 328--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="cYOBSzh2SLE">_</div></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

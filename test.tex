@@ -1,0 +1,382 @@
+\documentclass{ximera}  
+
+
+\input{../preamble.tex}
+
+
+
+\subsection{Reading}
+Ulaby Chapter 3. 
+
+\subsection{Vectors and Scalars}
+Scalars are variables that are defined by only one number, their magnitude. Temperature in a semiconductor (or a room), voltage, impedance, work are scalar quantities. Scalars are defined only with magnitude if the quantity is a real number. Scalars are variables that are defined by only one number, their magnitude, such as temperature T=$25^o$ or voltage V=25/,V.
+
+Vectors have both magnitude and direction. For example NW wind of $10\frac{m}{h}$. Vector�s direction is described by  $\vec{NW}$ direction and wind strength is described by vector�s magnitude $10\frac{m}{h}$, see Figure \ref{wind}. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vector.ps,width=4cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+Vectors are variables that have magnitude and direction. For example NW wind of 25\,m/h, force of 1\,N in horizontal direction, etc. Some special vectors and properties of vectors are defined below.
+
+\newpage
+
+\begin{description}
+\item{Unit Vector} 
+
+Unit vector is a vector of magnitude equal to one, in a specified direction. To obtain a unit vector from vector $\vec{A}$, we divide the vector $\vec{A}$ with its magnitude $|A|$. In Figure 1, two unit vectors are shown. One is showing Nort (N), and the other North-West (NW) direction. 
+
+\begin{eqnarray}
+\vec{a}=\frac{\vec{A}}{|A|}
+\end{eqnarray}
+
+
+
+\item{Vector Addition}
+
+In Figure \ref{vectoradd}, vectors $\vec{A}$ and  $\vec{B}$ are added. The beginning of vector A is moved in parallel with itself to the end of vector B. The vector C starts at the beginning of vector B and ends and the end of vector A.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectoradd.ps,width=4cm} \\
+\end{center}
+\caption{Addition of vectors A and B.}
+\label{vectoradd}
+\end{figure}
+
+
+
+
+\item{Vector Subtraction}
+
+To subtract $\vec{A}$ and $\vec{B}$, first find $-\vec{B}$, then add $\vec{A}$ and $-\vec{B}$, as shown in Figure \ref{vectorsub}.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectorsubtr.ps,width=4cm} \\
+\end{center}
+\caption{Subtraction of vectors A and B.}
+\label{vectorsub}
+\end{figure}
+
+
+
+
+\item{Dot Product}
+
+Dot or Scalar product between vectors A and B is defined as $A \dot B = |\vec{A}| |\vec{B}| cos(\theta)$, where $\theta$ is the angle between $\vec{A}$ $\vec{B}$. The projection of $\vec{B}$ to $\vec{A}$ is $|\vec{B}| cos(\theta)$. This is important in case you want to find the projection of a $\vec{B}$ in a specified direction $\vec{x}$. The result of dot product is always a scalar.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectordotproduct.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+\item{Cross Product}
+
+Cross or vector product between  $\vec{A}$ and $\vec{B}$ is defined as $A x B = |\vec{A}| |\vec{B}| sin(\theta)$, where $\theta$ is the angle between $\vec{A}$ $\vec{B}$. The magnitude of the cross product is equal to the surface area of the parallelogram made by vectors A and B, and the direction of the cross product is perpendicular to both $\vec{A}$ and $\vec{B}$. The result of dot product is always a scalar.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=vectorcrossproduct.ps,width=3cm} \\
+\end{center}
+\caption{Vector representation of Nort-West wind of 10mph.}
+\label{wind}
+\end{figure}
+
+
+\end{description}
+
+\section{Coordinate Systems}
+
+\begin{description}
+\item{Cartesian Coordinate System}
+
+Cartesian or rectangular coordinate system is the one we are most familiar with. The variables in the rectangular coordinate system are $(x,y,z)$. An example of a position vector (a vector that originates in the coordinate center) in rectangular coordinate system is shown in Figure \ref{vectorinrec}. We see that $\vec{A}$ can be found if three unit vectors $\vec{x}$, $\vec{y}$ and $\vec{z}$ are added, with appropriate magnitudes. $\vec{A} = 2 \vec{x} +3 \vec{y}+ 3 \vec{z}  $. The magnitude of this vector is given as $|\vec{A} = \sqrt{2^2+3^2+3^2}$. 
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=coordinatesystemrectangular.ps,width=6cm} \\
+\end{center}
+\caption{Vector in a rectangular coordinate system.}
+\label{vectorirec}
+\end{figure}
+
+
+If the vector does not originate at the coordinate center, such is the case with $\vec{B}$ in Figure \ref{noc}, the vector is described by two vectors that designate the beginning and end of vector B, respectively vectors $\vec{R_0}$ and $\vec{R}$. In this case, the $\vec{B}$ is defined as a difference between the $\vec{R_0}$ and $\vec{R}$. $\vec{B}=\vec{R_0}-\vec{R}$. The magnitude of $\vec{B}$ is given as $|\vec{B} = \sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}$.
+
+From Figure \ref{reccs}, we see that the unit volume in rectangular coordinate system is a cube of volume $dx dy dz$. Differential surface areas are defined as $dx dy \vec{z}$, $dx dz \vec{y}$, $dy dz \vec{x}$. The unit length in Cartesian coordinates is given as $dx \vec{x} + dy \vec{y} + dz \vec{z}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=rectangularcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Unit volume in rectangular coordinate system.}
+\label{reccs}
+\end{figure}
+
+
+
+
+
+\item{Cylindrical Coordinate System}
+
+The variables in the cylindrical coordinate system shown in Figure \ref{cylsyst} are $(r,\phi,z)$. An example of a position vector in rectangular coordinate system is shown in Figure \ref{vectorincyl}. We see that $\vec{A}$ can be found if two unit vectors $\vec{r}$ and $\vec{z}$ are added, with appropriate magnitudes. Note that the position vector in cylindrical coordinate system is cylindrically symmetrical and implicitly defined through $\vec{r}$ dependence on $\phi$. In some cases, as we will see later, it is necessary to exactly specify where is vector r. It is useful to initially define the position vector in cylindrical coordinates, and then use cylindrical to Cartesian transformation. For example, vector. $\vec{A} = 2 \vec{x} +3 \vec{y}+ 3 \vec{z}  $. The magnitude of this vector is given as $|\vec{A} = \sqrt{2^2+3^2+3^2}$. 
+
+%OVDE SLIKA KAO U CARTESIAN COORDINATE SYSTEM SAMO CYLINDRICAL, WITH POSITION %VECTOR.
+
+
+
+Unit length in this coordinate system is given as $dr \vec{r} + r d\phi \vec{\phi} + dz \vec{z}$. Differential surface areas are given as $d\phi dz \vec{r}$, $dr dz \vec{\phi}$, $dr d\phi \vec{z}$. The unit volume is given as $r dr d\phi dz$.
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=coordinatesystemcylindrical.ps,width=3cm} \\
+\end{center}
+\caption{Unit Volume in Cylindrical Coordinate System.}
+\label{cylsyst}
+\end{figure}
+
+
+
+
+\item{Spherical Coordinate System}
+
+
+
+
+
+The variables in the spherical coordinate system shown in Figure \ref{sphersyst} are $(r,\phi,\theta)$. An example of a position vector in rectangular coordinate system is shown in Figure \ref{vectorincyl}. We see that $\vec{C}$ depends on only one unit vector $\vec{R}$ with appropriate magnitude. Note that the position vector in spherical coordinate system is spherically symmetrical and implicitly defined through $\vec{R}$ dependence on $\phi$ and $\theta$. In some cases, as we will see later, it is necessary to exactly specify where is vector R in space. It is useful to initially define the position vector in spherical coordinates, and then use spherical to Cartesian transformation. If the vector is not a position vector, e.g. does not originate at the coordinate beginning, the vector can be represented as a difference between two position vectors.
+
+%OVDE SLIKA KAO U CARTESIAN COORDINATE SYSTEM SAMO CYLINDRICAL, WITH POSITION %VECTOR.
+
+
+
+
+Unit length in this coordinate system is given as $dR \vec{R} + R d\theta \vec{\phi} + R sin{\theta}d\phi \vec{\phi}$. Differential surface areas are given as $R^2 sin{\theta} d\theta d\phi dz \vec{R}$, $R sin(\theta)dR d\phi \vec{\theta}$, $R dR d\theta \vec{phi}$. The unit volume is given as $R^2 dR d\theta  d\phi$.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+\end{center}
+\caption{Unit Volume in Spherical Coordinate System.}
+\label{sphersyst}
+\end{figure}
+
+
+
+
+The summary of all vector relations is given in Ulaby book, Table 3-1.
+
+
+
+\end{description}
+
+\section{Field Visualization}
+There are several ways people use to visualize fields. Two most commonly used are shown in Figure \ref{visual} and are described below.
+\begin{enumerate}
+\item The simplest way is to represent each vector�s magnitude with appropriate vector length at each point, as shown in Figure \ref{visual}. This method is the simplest one, but creates graphs that are sometimes difficult to see, especially if there is a sudden, large change in the field.  This is the method we will use to visualize electrostatic and magnetostatic fields in Matlab.
+\item A more difficult way to plot the field yields graphs that are easier to understand and visualize, and are shown in the bottom part of Figure \ref{visual}. Here, the strength of the field in an area is proportional to the number of lines per unit area. Strong fields are visualized with many lines close to each other, whereas weak fields are visualized with fewer number of lines. 
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=fieldvisualization.ps,width=3cm} \\
+\end{center}
+\caption{Different ways to visualize vector field strength.}
+\label{visual}
+\end{figure}
+
+
+Plot the fields below using the first method of visualization mentioned above.
+\begin{enumerate}
+\item $\vec{E} = x \vec{x} $
+\item $\vec{E} = x \vec{y} $
+\item $\vec{E} = xyz \vec{x} $
+\item $\vec{E} = xzy \vec{y} $
+\item $\vec{E} = zxy \vec{z} $
+\item $\vec{E} = xy \vec{x} $
+\item $\vec{E} = xz \vec{x} $
+\item $\vec{E} = yz \vec{y} $
+\item $\vec{E} = xy \vec{y} $
+\item $\vec{E} = xy \vec{z} $
+\end{enumerate}
+
+
+
+\section{Gradient, Divergence and Curl}
+
+
+\subsection{Gradient}
+
+Gradient operates on a scalar function and the result of the gradient operation is a vector. Result of gradient operation on  a scalar function, therefore has a magnitude and direction. Direction of result points in the direction of the maximum increase of a scalar function defined in 3D. Magnitude of the result is equal to the maximum rate of change of a function. 
+Gradient is mathematically defined as
+
+\begin{eqnarray}
+\Delta T = \frac{\partial T}{\partial x} \vec{x} +\frac{\partial T}{\partial y} \vec{y} +\frac{\partial T}{\partial z} \vec{z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+
+For example, temperature in a slab of silicon is a function of three dimensions. If this temperature was a function of one dimension, then we could find the rate of change of the temperature at a point by finding the derivative at the point. Gradient is a kind of 3D derivative of a function and shows us the direction and magnitude of the  maximum rate of change of a 3D function. Note that the derivative (in 1-D) does not specify the maximum rate of change, just the rate of change at a point.  The rate of change of a 3D function in  a specified direction $l$ can be found by taking the dot product of the gradient and a unit vector in a specified direction. This quantity is appropriately called directional derivative.
+
+
+\begin{eqnarray}
+\frac{ dT}{dx} = \Delta T \dot \vec{l} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+
+
+
+%\begin{figure}[htbp]
+%\begin{center}
+%%\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+%\end{center}
+%\caption{Vector representation of Nort-West wind of 10mph.}
+%\label{wind}
+%\end{figure}
+
+
+
+\subsection{Divergence}
+
+Divergence operates on a vector function and the result of the divergence operation is a scalar. Result of divergence operation on  a vector function, therefore has only the magnitude. Divergence is really a flux of a vector through the closed surface. To understand flux better,  if we visualize the field intensity as field line density per unit area, as shown in Figure \ref{flux} then we can simply �count� the number of field lines per unit area to find the magnitude  of flux. It matters which way the field lines go through the surface. If the  same number of lines go in and out of a closed surface, this means that there is no source or sink inside the closed surface, and the field is called divergenceless. If the net flux through a closed surface is positive (with respect to the normal on the surface oriented outwards), then there is a source of the field inside the closed surface. If the flux is negative, a sink is inside the closed surface.
+
+
+Divergence is mathematically defined as
+
+\begin{eqnarray}
+\Delta \dot \vec{A} = \frac{\partial \vec{A}}{\partial x}  +\frac{\partial \vec{A}}{\partial y} +\frac{\partial \vec{A}}{\partial z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\strut\psfig{figure=flux.ps,width=3cm} \\
+\end{center}
+\caption{Flux.}
+\label{flux}
+\end{figure}
+
+
+
+\subsection{Curl}
+
+
+
+
+Curl operates on a vector function and the result of the curl operation is a vector. Result of curl operation on  a vector function, therefore has a magnitude and direction. Curl describes the curling (rotation) of the field at a point. If the field is curling, then the direction of the curl will be perpendicular to the curling and the magnitude will describe the amount of rotation. Curl of a uniform field is zero and the field is called irrotational.
+
+
+Curl is mathematically defined as
+
+\begin{eqnarray}
+\Delta \vec{A} = \frac{\partial \vec{A}}{\partial x} \vec{x} +\frac{\partial \vec{A}}{\partial y} \vec{y} +\frac{\partial \vec{A}}{\partial z} \vec{z} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\strut\psfig{figure=sphericalcoordinatesystem.ps,width=3cm} \\
+%\end{center}
+%\caption{Vector representation of Nort-West wind of 10mph.}
+%\label{wind}
+%\end{figure}
+
+
+\subsection{Laplacian}
+
+A special name Laplacian is assigned to the divergence of gradient of a scalar quantity, mathematically
+
+
+\begin{eqnarray}
+\Lambda^2 T = \frac{\partial^2 T}{\partial x^2}  +\frac{\partial^2 T}{\partial y^2} +\frac{\partial^2 T}{\partial z^2} \\ \nonumber
+\end{eqnarray}
+
+
+
+
+\end{document}
+\bye
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                   
+
+
+
+                                       
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

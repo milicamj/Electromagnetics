@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section*.1}{Impedance Matching}{}% 1
+\BOOKMARK [1][-]{section*.2}{Power}{}% 2
+\BOOKMARK [2][-]{subsection*.3}{Maximizing power transfer on a transmission line}{section*.2}% 3
+\BOOKMARK [1][-]{section*.4}{Why do we do impedance matching?}{}% 4
+\BOOKMARK [1][-]{section*.5}{Simple impedance matching case}{}% 5
+\BOOKMARK [1][-]{section*.6}{Design of mixed impedance matching circuits}{}% 6
+\BOOKMARK [1][-]{section*.7}{Design of a transmission-line impedance matching circuits}{}% 7
+\BOOKMARK [2][-]{subsection*.8}{Replacing lumped-elements with equivalent transmission-line stubs}{section*.7}% 8
+\BOOKMARK [2][-]{subsection*.9}{Fully transmission-line matching circuits.}{section*.7}% 9
+\BOOKMARK [1][-]{section*.10}{Design of lumped-element impedance matching circuits}{}% 10

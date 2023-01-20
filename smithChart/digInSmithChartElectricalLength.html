@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"><head> <title>Electrical Length</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSmithChartElectricalLength.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content=""/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="a66e03ecbdf5cebb6a618236a15c8eb8d0e322ca smithChart/digInSmithChartElectricalLength.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Electrical Length of the line in meters</h3>
+<!--l. 24--><p class="noindent">We can express the physical length of the line in meters. However, in high-frequency
+electronics (microwave engineering), we usually convert this length to the fraction of
+a wavelength of a signal that is traveling on the line.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ l=N \lambda
+\end{eqnarray}</script>
+</div>
+<!--l. 32--><p class="noindent">Typically, but not always, <script type="math/tex">N</script> is a fraction, for example, <script type="math/tex">N=\frac {1}{2}=0.5</script>, <script type="math/tex">N=\frac {1}{4}=0.25</script> or <script type="math/tex">N=\frac {1}{8}=0.125</script>; although it can be any
+The lenght of the line is then written as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ l=\frac{\lambda}{2}  \\
+ l\frac{\lambda}{4}  \\
+  l=\frac{\lambda}{8}
+\end{eqnarray}</script>
+</div>
+<!--l. 43--><p class="noindent">If the physical length of the line is <script type="math/tex">l=\frac {\lambda }{4}</script>, we say: This line is quarter-wavelength long at
+1GHz, meaning one-quarter of the wavelength fits on the line. We could also say that
+the line is 7.5cm long, as wavelength is <script type="math/tex">\lambda =30 \unit {cm}</script> at <script type="math/tex">1</script>GHz.
+</p><!--l. 46--><p class="noindent">When we say quarter-wavelength long, we refer to the lines physical length at a
+specific frequency.
+</p>
+<h3 class="sectionHead"><a id="x1-2000"></a>Electrical length of the line in degrees</h3>
+<!--l. 50--><p class="noindent">The phase shift between input and output signal on a transmission line is <script type="math/tex">\Theta =\beta *l</script>. <script type="math/tex">beta</script> is called
+the phase constant. It represents the spatial frequency of the signal. <script type="math/tex">\Theta =\beta *L</script> is the phase in
+degrees or radians (related is a time delay in seconds). <script type="math/tex">\Theta </script> can be, for example <script type="math/tex">\Theta = 45^0</script>, <script type="math/tex">\Theta = 90^0</script>, <script type="math/tex">\Theta = 180^0</script>. <script type="math/tex">\Theta </script> is a
+function of frequency, because <script type="math/tex">\beta </script> is a function of frequency. If <script type="math/tex">\Theta = 90^0</script>, we say: The line is 90
+degrees long at 1GHz, meaning the output signal at 1GHz will be shifted for <script type="math/tex">90^0</script> with
+respect to the input signal. When we say <script type="math/tex">90^0</script>, we refer to the lines electrical length,
+representing the number of degrees that the line introduces between the input and
+the output signal.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-2001r1"></a>What is the electrical length of a 30 cm line in terms of the fraction of wavelength
+at 1 GHz? What is the electrical length of the line at 1GHz? <div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-2002r2"></a>Wavelength
+                                                                  
+
+                                                                  
+at 1 GHz, assuming the wave is propagating in air is <script type="math/tex">\lambda =\frac {c}{f}=30</script> cm. Since the line
+is also l=30 cm long, the length of the line in terms of wavelength is <script type="math/tex">\frac {l}{\lambda }=1</script>, or
+<script type="math/tex">l=\lambda </script>.
+<!--l. 64--><p class="noindent">The electrical length of the line is <script type="math/tex">\theta =\beta l = \frac {2 \pi }{\lambda } \lambda = 2 \pi = 360^0</script>.
+</p><!--l. 66--></div>
+<!--l. 68--></div>
+
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-2003r3"></a>What is the electrical length of a 15 cm line in terms of the fraction of wavelength at
+1 GHz? What is the electrical length of the line at 1GHz? <div class="theorem-like problem-environment explanation" id="problem4"><a id="x1-2004r4"></a>Wavelenght at 1 GHz,
+assuming the wave is propagating in air is <script type="math/tex">\lambda =\frac {c}{f}=30</script> cm. Since the line is 15 cm long, the length
+of the line in terms of wavelenth is <script type="math/tex">\frac {l}{\lambda }=\frac {1}{2}</script>, or <script type="math/tex">l=\frac {\lambda }{2}</script>.
+<!--l. 76--><p class="noindent">The electrical length of the line is <script type="math/tex">\theta =\beta l = \frac {2 \pi }{\lambda } \frac {\lambda }{2} = \pi = 180^0</script>.
+</p><!--l. 79--></div>
+<!--l. 81--></div>
+
+<div class="theorem-like problem-environment example" id="problem5"><a id="x1-2005r5"></a>What is the electrical length of a 7.5 cm line in terms of the fraction of wavelength at
+1 GHz? What is the electrical length of the line at 1GHz? <div class="theorem-like problem-environment explanation" id="problem6"><a id="x1-2006r6"></a>Wavelength at 1 GHz,
+assuming the wave is propagating in air is <script type="math/tex">\lambda =\frac {c}{f}=30</script> cm. Since the line is 7.5 cm long, the line’s
+length in terms of wavelenth is <script type="math/tex">l=\frac {\lambda }{4}</script>.
+<!--l. 89--><p class="noindent">The electrical length of the line is <script type="math/tex">\theta =\beta l = \frac {2 \pi }{\lambda } \frac {\lambda }{4} = \pi /2 = 90^0</script>.
+</p><!--l. 92--></div>
+<!--l. 94--></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

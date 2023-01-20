@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"><head> <title>Leading and Lagging Signals</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSinusoidalSignalsLagLead.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Recognize leading and lagging signals. Explain why is a signal leading or lagging."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="2b0f7215374663c7c6be17a7453512c0cdda4b68 sinusoidalSignals/digInSinusoidalSignalsLagLead.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+<!--l. 10--><p class="noindent">Review of Sinusoidal Signals
+</p></div>   <div class="maketitle"></div>
+<div class="theorem-like problem-environment definition" id="problem1"><a id="x1-67r1"></a>How do we recognize lagging and leading on a graph?
+<!--l. 18--><p class="noindent">In Figure <a class="reference" href="#timedelaysig">timedelaysig</a> we observe two step functions, V(t) and V(t-T). Function V(t) step occurs
+at t=0, and V(t-T) step occurs at t=T. The function V(t-T) is shifted to
+the right, the step occurs later, at t=T, and is, therefore, lagging function
+V(t).
+</p><!--l. 21--><p class="noindent">Similarly, if the step function is V(t+T), the function v(t) is shifted to the left. The
+step occurs earlier at t=-T, and therefore V(t+T) is leading V(t).
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-681"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 25--><p class="noindent">
+</p><!--l. 26--><p class="noindent"><img src="jpg/timedelayedsignal.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Voltage as a function of time at the generator side (top) and the
+load side (bottom) of a transmission line, if the switch closes at t=0 the voltage
+arrives at t=l/c=T at the load. These graphs can be obtained by observing the
+voltage on an oscilloscope at the load and at the generator side.</span></div><!--tex4ht:label?: x1-681 -->
+<a class="ximera-label" id="timedelaysig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+</div>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-69r2"></a>
+<!--l. 38--><p class="noindent">What if we have a sinusoidal signal? We will observe a specific point on the signal,
+such as the maximum value, and determine if it shifted left or right on the
+graph.
+</p><!--l. 40--><p class="noindent">When the phase of a signal is positive as in Figure <a class="reference" href="#sinPlus45Ph">sinPlus45Ph</a> <script type="math/tex"> \sin (\omega t + 45^o)</script>, we say that the signal is leading
+with respect to the signal <script type="math/tex">v(t)= \sin (\omega t)</script>, because it is shifted to the left for <script type="math/tex">45^o</script>(<script type="math/tex">pi/4</script>). The maximum of
+the function now occurs at t=-T, or <script type="math/tex">\omega t = -45^o</script>, and we can write the new function as the
+original sinusoidal function V(t) shifted left for a time T, V(t+T). The phase of the
+signal is <script type="math/tex">45^o</script>, and the time-delay is T.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-702"></a>
+                                                                  
+
+                                                                  
+<!--l. 44--><p class="noindent"><img src="jpg/cpef5.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 2: </span><span class="content">Sinusoidal signal as a function of angle <script type="math/tex">\omega t</script> with a phase shift of <script type="math/tex">+\pi /4</script></span></div><!--tex4ht:label?: x1-702 -->
+<a class="ximera-label" id="sinPlus45Ph"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 49--></div>
+
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-71r3"></a>
+When the phase of a signal is negative as in Figure <a class="reference" href="#sinMinus45Ph">sinMinus45Ph</a>, <a class="reference" href="#sinMinus45T">sinMinus45T</a>, <script type="math/tex"> \sin (\omega t - 45^o)</script>, we say that the signal is
+lagging with respect to the signal <script type="math/tex"> \sin (\omega t)</script>, because it is shifted to the right for <script type="math/tex">45^o</script> (<script type="math/tex">pi/4</script>), or <script type="math/tex">\tau =-\frac {pi/4}{\omega } </script>. The
+lagging function’s peak occurs later in time, and therefore it is lagging. The phase of
+the signal is <script type="math/tex">-45^o</script>.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-723"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 57--><p class="noindent">
+</p><!--l. 58--><p class="noindent"><img src="jpg/cpef2.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 3: </span><span class="content">Sinusoidal signal shifted for time delay <script type="math/tex">-\frac {\pi /4}{\omega }</script></span></div><!--tex4ht:label?: x1-723 -->
+<a class="ximera-label" id="sinMinus45T"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-734"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 66--><p class="noindent">
+</p><!--l. 67--><p class="noindent"><img src="jpg/cpef4.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 4: </span><span class="content">Sinusoidal signal with phase shift <script type="math/tex">-\pi /4</script></span></div><!--tex4ht:label?: x1-734 -->
+<a class="ximera-label" id="sinMinus45Ph"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 73--></div>
+
+<div role="article" class="problem-environment question" id="problem4"><a id="x1-74r4"></a> Sinusoidal signal <script type="math/tex">v_1=\cos (\omega t - 25^o)</script> is given. Compared to <script type="math/tex">v=\cos (\omega t)</script>, signal <script type="math/tex">v_1</script> <div class="multiple-choice" id="problem5"><span class="choice  " id="choice1">Leads signal <script type="math/tex">v</script></span> <span class="choice correct " id="choice2">Lags signal <script type="math/tex">v</script></span> </div>
+</div>
+<div role="article" class="problem-environment question" id="problem6"><a id="x1-75r5"></a>
+<!--l. 87--><p class="noindent">Observe three signals in Figure below
+</p>
+<div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./digInSinusoidalSignalsLagLead-figure0.svg" alt=""/>
+</div>
+<!--l. 124--><p class="noindent">Which of the following functions leads <script type="math/tex">\cos (\omega t)</script>? </p><div class="multiple-choice" id="problem7"><span class="choice correct " id="choice3">The green signal.</span> <span class="choice  " id="choice4">The red signal.</span> <span class="choice  " id="choice5">The
+blue signal.</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"><head> <title>Signal Delay on Transmission Lines</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSinusoidalSignalsApplicationWave.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Explain how is a signal different at the beginning and end of a transmission line."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="5a7388080d152a72cbd48e2d0c2f24de6b85b051 sinusoidalSignals/digInSinusoidalSignalsApplicationWave.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+<!--l. 10--><p class="noindent">Review of Sinusoidal Signals
+</p></div>   <div class="maketitle"></div>
+Lagging and leading is often used in circuits to describe signals.
+<!--l. 19--><p class="noindent">The circuit in Figure <a class="reference" href="#elcric">elcric</a> shows a generator and load connected with a cable, just as in
+the circuits lab. In the analysis and measurements in the circuit labs, the cable is
+usually ignored.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-671"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 24--><p class="noindent">
+</p><!--l. 25--><p class="noindent"><img src="jpg/generaltransmissionlinecircuit1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1:  </span><span class="content">Electronic  Circuit  with  an  emphasis  on  cables  that  connect  the
+generator and the load.</span></div><!--tex4ht:label?: x1-671 -->
+<a class="ximera-label" id="elcric"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 32--><p class="noindent">Let us assume that the switch closes, and the generator produces a step function at
+time t=0, as shown in Figure <a class="reference" href="#timedelaysig">timedelaysig</a>. Because the electrical signals propagate with light
+speed, the signal needs T sec to appear at the load after the switch closes. Figure <a class="reference" href="#delayedsig">delayedsig</a>
+shows the step signal as it travels on the transmission line at different times t=0,
+t=T/4, t=T/2, and t=T.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-682"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 36--><p class="noindent">
+</p><!--l. 37--><p class="noindent"><img src="jpg/timedelayedsignal.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Voltage as a function of time at the generator side (top) and the
+load side (bottom) of a transmission line, if the switch closes at t=0 the voltage
+arrives at t=l/c=T at the load. These graphs can be obtained by observing the
+voltage on an oscilloscope at the load and at the generator side.</span></div><!--tex4ht:label?: x1-682 -->
+<a class="ximera-label" id="timedelaysig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 48--><p class="noindent">How much time T does it take for this signal to go from AA’ end to BB’
+end? Since electromagnetic waves propagate with the constant speed, the
+speed of light, the time that the signal needs to go from the generator to the
+load depends on the transmission line’s length. If the transmission line is
+<script type="math/tex">l</script>, then the delay between the generator and the load will be <script type="math/tex">T=\frac {l}{c}</script>, where <script type="math/tex">c=3\times 10^8</script>. If
+the signal at the generator AA’ is <script type="math/tex">v_g(t)=</script>v(t), then the signal at the load end is
+<script type="math/tex">v_l(t)=</script>v(t-T).
+</p><!--l. 52--><p class="noindent">Figure <a class="reference" href="#delayedsig">delayedsig</a> shows the signal on the transmission line at different times. Note that the
+horizontal axis shows distance, not time. Each graph shows a snapshot of the signal
+on the transmission line at different times. The top figure shows the moment when
+we turn the switch on, at t=0, and the signal shows up at the beginning of the
+transmission line, at the generator’s end. A little later, at t=1=T/4, the front of the
+signal traveled a little farther along the line. At t=2=T/2, the signal traveled even
+further on the line. The bottom figure shows the signal that arrived at the
+load at some time t=4=T. Note that the load will not see the signal until
+t=4=T.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-693"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 57--><p class="noindent">
+</p><!--l. 58--><p class="noindent"><img src="jpg/timedelayedsignaltl.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Voltage along the transmission line in Figure <a class="reference" href="#elcric">elcric</a>, for four different time
+intervals t=0, switch closes, t=T/4, t=T/2 and t=T. It is assumed that the
+length of the transmission line is equal to l=T/c.Note that the horizontal axis
+is the distance z from the generator to the cable, not time. </span></div><!--tex4ht:label?: x1-693 -->
+<a class="ximera-label" id="delayedsig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 65--><p class="noindent">How much time will the signal need to arrive at the load? We know that the speed of
+light is <script type="math/tex">c=3\,10^8</script>m/s. Since this is a constant speed, the time is <script type="math/tex">t=\frac {l}{c}</script>, where l is the transmission
+line’s length.
+</p>
+<div role="article" class="problem-environment question" id="problem1"><a id="x1-70r1"></a> How much time-delay will a l=1000km transmission line produce? <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1">3.33 ns</span> <span class="choice  " id="choice2">3.33 <script type="math/tex">\mu </script>s</span> <span class="choice correct
+" id="choice3">3.33 ms </span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

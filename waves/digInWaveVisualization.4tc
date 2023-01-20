@@ -1,0 +1,2 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-691}{}{\ignorespaces  Forward (top) and reflected (bottom) waves on a transmission line.}}{figure}\relax 

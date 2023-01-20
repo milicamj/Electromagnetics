@@ -1,0 +1,24 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Field Visualization}}{3}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Flux}}{3}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Gauss's Law}}{4}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Applying Gauss's Law to special, symmetric charge distributions}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Electric Field of a Point Charge}}{6}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-50011}{}{\ignorespaces Electric field of a point charge}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-50052}{}{\ignorespaces Application of Gauss's Law to find Electric Field of a point charge.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-8}{Electric Field of a Spherical Charge Distribution}}{13}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-9}{Electric Field outside of the sphere}}{13}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-70013}{}{\ignorespaces Application of Gauss's Law to find Electric Field of a spherical volume charge density.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-11}{Electric field inside the sphere}}{17}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-80014}{}{\ignorespaces Application of Gauss's Law to find electric field of a spherical charge distribution.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-13}{Electric field due to an infinite line of charge}}{21}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-90015}{}{\ignorespaces 3-dimensional electric field of a wire.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-10000}{QQ2-1-15}{Electric field outside the line of charge (a wire)}}{24}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-100016}{}{\ignorespaces Application of Gauss's Law to find electric field of a line charge distribution oriented in the z-direction.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-11000}{QQ2-1-17}{Electric field inside the line of charge}}{28}\relax 
+\doTocEntry\toclof{7}{\csname a:TocLink\endcsname{1}{x1-110017}{}{\ignorespaces Applying Gauss's law to find the electric field inside the cylindrical charge distribution $\rho _V$ of infinite length, and radius a.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-12000}{QQ2-1-19}{Electric Field due to an infinite plane of Charge}}{32}\relax 
+\doTocEntry\toclof{8}{\csname a:TocLink\endcsname{1}{x1-120018}{}{\ignorespaces Electric field above an infinite plane charged with positive surface charge density $\rho _S$.}}{figure}\relax 
+\doTocEntry\toclof{9}{\csname a:TocLink\endcsname{1}{x1-120029}{}{\ignorespaces Applying Gauss's Law to an infinite plane charged with positive surface charge density $\rho _S$.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-13000}{QQ2-1-22}{Two Infinite Planes}}{39}\relax 
+\doTocEntry\toclof{10}{\csname a:TocLink\endcsname{1}{x1-1300110}{}{\ignorespaces Two infinite planes charged with positive surface charge density $\rho _S$ and $-\rho _S.$}}{figure}\relax 

@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="en"><head> <title>Sinusoidal Signals</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSinusoidalSignals.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Recognize the basic properties of sinusoidal functions and relate them to circuit analysis."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="a3e1feabc0dbbd170ed1b20e885c801f0e4571d5 sinusoidalSignals/digInSinusoidalSignals.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+<!--l. 10--><p class="noindent">Review of Sinusoidal Signals
+</p></div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Sinusoidal signal parameters</h3>
+<!--l. 16--><p class="noindent">Sinusoidal signals are important because in electrical engineering we use them to
+analyze and test circuit performance. All periodic signals can be represented
+with sinusoidal signals of different amplitudes and phases using the Fourier
+series.
+</p><!--l. 18--><p class="noindent">A typical sinusoidal signal is shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>. On the y-axis is the instantaneous
+value of the sinusoidal voltage and on the x-axis is time. Instantaneous values of
+voltage change from -1V to 1V with time. Sinusoidal signals can be characterized by
+the following parameters: peak amplitude, peak-to-peak, average, RMS, period,
+time-delay, and phase. Peak amplitude, peak-to-peak, average and RMS values, are
+read on the y-axis in Figure <a class="reference" href="#sinusoid">sinusoid</a>, whereas period, time delay and phase are read on the
+x-axis.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 21--><p class="noindent">
+</p><!--l. 22--><p class="noindent"><img src="jpg/sinusoid.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 1: </span><span class="content">Vocabulary used in describing sinusoidal signals.</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="sinusoid"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h4 class="subsectionHead"><a id="x1-2000"></a>Parameters that are read on y-axis.</h4>
+<div class="theorem-like problem-environment definition" id="problem1"><a id="x1-2001r1"></a>Peak amplitude is measured on the y-axis as the length from the average value of the
+signal (in this case zero) to the maximum value of the signal (in this case 1).
+For signal shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>, the peak amplitude has a constant value of
+<script type="math/tex">V_p=1</script>.
+</div>
+<div class="theorem-like problem-environment definition" id="problem2"><a id="x1-2002r2"></a>Instantaneous value of the sinusoidal signal varies from -1 to 1V, and depends on
+where on the x-axis are we observing the instantaneous value.
+<!--l. 39--><p class="noindent">Compared to the instantaneous value, the peak amplitude is allways constant and it
+does not vary with time.
+</p></div>
+
+<div class="theorem-like problem-environment definition" id="problem3"><a id="x1-2003r3"></a>Peak-to-peak is measured from the minimum value of the function (in this case -1) to
+the maximum value of the function (in this case 1). For signal shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>,
+peak-to-peak voltage has a constant value of <script type="math/tex">V_{pp}=2</script>.
+</div>
+<div class="theorem-like problem-environment definition" id="problem4"><a id="x1-2004r4"></a>RMS or root-mean-square is defined as <script type="math/tex">v_{rms}=\frac {1}{T} \sqrt {\int _0^T v(t)^2 dt}</script>. For signal shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>, and other
+sinusoidal signals of this form, <script type="math/tex">v_{rms}=\frac {V_p}{\sqrt {2}}=\frac {1}{\sqrt {2}}=0.707</script>. Root mean square value is important because it
+represents the equivalent amount of DC power.
+</div>
+<div class="theorem-like problem-environment definition" id="problem5"><a id="x1-2005r5"></a>Average value <script type="math/tex">v_{ave1}=\frac {1}{T} \int _0^T v(t) dt</script>. For the signal shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>, the average value is <script type="math/tex">V_{ave1}=0</script> because the
+function has the same area under the function in the positive and negative
+cycle.
+</div>
+<h4 class="subsectionHead"><a id="x1-3000"></a>Parameters that are read on the x-axis.</h4>
+<div class="theorem-like problem-environment definition" id="problem6"><a id="x1-3001r6"></a>Sinusoidal signals can be represented as a function of time, Figure <a class="reference" href="#sin">sin</a>, or a function of
+angle, Figure <a class="reference" href="#sinPh">sinPh</a>. Take a few minutes to see how the graphs are the same and how are
+they different.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30022"></a>
+                                                                  
+
+                                                                  
+<!--l. 63--><p class="noindent"><img src="jpg/cpef1.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 2: </span><span class="content"><script type="math/tex">sin ( \omega t)</script> as a function of time.</span></div><!--tex4ht:label?: x1-30022 -->
+<a class="ximera-label" id="sin"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30033"></a>
+                                                                  
+
+                                                                  
+<!--l. 71--><p class="noindent"><img src="jpg/cpef3.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 3: </span><span class="content">Sinusoidal signal as a function of angle <script type="math/tex">\omega t</script>.</span></div><!--tex4ht:label?: x1-30033 -->
+<a class="ximera-label" id="sinPh"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 76--></div>
+
+<div class="theorem-like problem-environment definition" id="problem7"><a id="x1-3004r7"></a>Period, T, is measured on the x-axis as the length of one full cycle of the sinusoidal
+signal. For signal shown in Figure <a class="reference" href="#sinusoid">sinusoid</a>, this value is <script type="math/tex">period=T</script>.
+</div>
+<div class="theorem-like problem-environment definition" id="problem8"><a id="x1-3005r8"></a>Frequency, f, is defined as a reciprocal value of the period T, <script type="math/tex">f=\frac {1}{T}</script>. It represents how fast
+is the signal changing in time. In Figure <a class="reference" href="#sinF1F2">sinF1F2</a>, sinusoidal signals of two different
+frequencies f are given.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30064"></a>
+                                                                  
+
+                                                                  
+<!--l. 87--><p class="noindent"><img src="jpg/cpef6.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 4: </span><span class="content">Sinusoidal signals of different frequencies <script type="math/tex">sin ( \omega t)</script></span></div><!--tex4ht:label?: x1-30064 -->
+<a class="ximera-label" id="sinF1F2"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 92--></div>
+
+<h5 class="subsubsectionHead"><a id="x1-4000"></a>Phase and time-delay</h5>
+<div class="theorem-like problem-environment definition" id="problem9"><a id="x1-4001r9"></a>How do we recognize lagging and leading on a graph?
+<!--l. 100--><p class="noindent">In Figure <a class="reference" href="#timedelaysig">timedelaysig</a> we observe two step functions, V(t) and V(t-T). Function V(t) step occurs
+at t=0, and V(t-T) step occurs at t=T. The function V(t-T) is shifted to the right,
+the step occurs later in time, at t=T, and is therefore lagging with respect to
+function V(t).
+</p><!--l. 103--><p class="noindent">Similarly, if the step function is given as V(t+T), then the function is shifted to
+the left, the step occurs earlier in time at t=-T, therefore V(t-T) is leading
+V(t).
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40025"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 107--><p class="noindent">
+</p><!--l. 108--><p class="noindent"><img src="jpg/timedelayedsignal.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 5: </span><span class="content">Voltage as a function of time at the generator side z=0 (top) and the
+load side z=l (bottom) of the transmission line in Figure <a class="reference" href="#elcric">elcric</a>, if the switch closes at
+t=0 the voltage arrives at t=l/c=T at the load. These graphs can be obtained
+by observing the voltage on an oscilloscope at the load and at the generator
+side.</span></div><!--tex4ht:label?: x1-40025 -->
+<a class="ximera-label" id="timedelaysig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 114--></div>
+
+<div class="theorem-like problem-environment example" id="problem10"><a id="x1-4003r10"></a>
+<!--l. 120--><p class="noindent">What if we have a sinusoidal signal? We will similarly look at a specific point on the
+signal, for example the maximum value, and determine if it shifted left or right on
+the graph.
+</p><!--l. 122--><p class="noindent">When the phase of a signal is positive as in Figure <a class="reference" href="#sinPlus45Ph">sinPlus45Ph</a> <script type="math/tex"> \sin (\omega t + 45^o)</script>, we say that the signal
+is leading with respect to the signal <script type="math/tex">v(t)= \sin (\omega t)</script>, because it is shifted to the left for
+<script type="math/tex">45^o</script>(<script type="math/tex">pi/4</script>). The maximum of the function now occurs at t=-T, or <script type="math/tex">\omega t = -45^o</script>, and the new
+function can be written as the original sinusoidal function V(t) shifted left
+for a time T, V(t+T). The phase of the signal is <script type="math/tex">45^o</script>, and the time-delay is
+T.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40046"></a>
+                                                                  
+
+                                                                  
+<!--l. 126--><p class="noindent"><img src="jpg/cpef5.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 6: </span><span class="content">Sinusoidal signal as a function of angle <script type="math/tex">\omega t</script> with a phase shift of <script type="math/tex">+\pi /4</script></span></div><!--tex4ht:label?: x1-40046 -->
+<a class="ximera-label" id="sinPlus45Ph"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 131--></div>
+
+<div role="article" class="problem-environment question" id="problem11"><a id="x1-4005r11"></a> Sinusoidal signal <script type="math/tex">v_1=\cos (\omega t - 25^o)</script> is given. Compared to <script type="math/tex">v=\cos (\omega t)</script>, signal <script type="math/tex">v_1</script> <div class="multiple-choice" id="problem12"><span class="choice  " id="choice1">Leads signal <script type="math/tex">v</script></span> <span class="choice correct " id="choice2">Lags signal <script type="math/tex">v</script></span> </div>
+</div>
+<div class="theorem-like problem-environment definition" id="problem13"><a id="x1-4006r12"></a>Time delay and phase represent the lag (or lead) of one function with respect to
+another in time domain and frequency domain. For example, in Figure <a class="reference" href="#sinusoid">sinusoid</a>, function <script type="math/tex"> \cos (\omega t - 90^o)</script> is
+time-delayed for <script type="math/tex">\tau = \frac {T}{4}</script> with respect to <script type="math/tex">\cos (\omega t)</script>. To find the time delay for a sinusoidal signal from
+its phase, we look at the way to represent the phase <script type="math/tex">90^o</script> in terms of the product of
+frequency and time. Since in the sinusoidal signal expression <script type="math/tex">\cos (\omega t + \Theta )</script> phase <script type="math/tex">\Theta </script> is added to <script type="math/tex">\omega t</script>
+term, the phase has the same units as <script type="math/tex">\omega t</script>, and can be represented as the product of <script type="math/tex">\omega \tau = \theta </script>, <script type="math/tex">\tau = \frac {\theta }{\omega }</script>,
+where <script type="math/tex">\tau </script> represents the time delay.
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40077"></a>
+                                                                  
+
+                                                                  
+<!--l. 157--><p class="noindent"><img src="jpg/cpef4.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 7: </span><span class="content">Sinusoidal signal as a function of angle <script type="math/tex">\omega t</script> with a phase shift of <script type="math/tex">-\pi /4</script></span></div><!--tex4ht:label?: x1-40077 -->
+<a class="ximera-label" id="sinMinus45Ph"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="theorem-like problem-environment example" id="problem14"><a id="x1-4008r13"></a>
+When the phase of a signal is negative as in Figure <a class="reference" href="#sinMinus45Ph">sinMinus45Ph</a>, <a class="reference" href="#sinMinus45T">sinMinus45T</a>, <script type="math/tex"> \sin (\omega t - 45^o)</script>, we say that the signal is
+lagging with respect to the signal <script type="math/tex"> \sin (\omega t)</script>, because it is shifted to the right for <script type="math/tex">45^o</script> (<script type="math/tex">pi/4</script>), or <script type="math/tex">\tau =-\frac {pi/4}{\omega } </script>. The
+lagging function’s peak occurs later in time, and therefore it is lagging. The phase of
+the signal is <script type="math/tex">-45^o</script>.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40098"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 167--><p class="noindent">
+</p><!--l. 168--><p class="noindent"><img src="jpg/cpef2.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 8: </span><span class="content">Sinusoidal signal shifted for time delay <script type="math/tex">-\frac {\pi /4}{\omega }</script></span></div><!--tex4ht:label?: x1-40098 -->
+<a class="ximera-label" id="sinMinus45T"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 176--></div>
+
+<div role="article" class="problem-environment question" id="problem15"><a id="x1-4010r14"></a> Calculate the time-delay in nanoseconds that you would observe on an oscilloscope if
+the frequency of the signal is f=0.159 GHz and the phase shift of the signal is <script type="math/tex">\theta =10^o</script>.
+<br class="newline"/><script type="math/tex"> \frac {\theta }{2*\pi *f} = \answer {10}</script> ns
+</div>
+<div role="article" class="problem-environment question" id="problem16"><a id="x1-4011r15"></a>
+<!--l. 189--><p class="noindent">Three signals are given in Figure below
+</p>
+<div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./digInSinusoidalSignals-figure0.svg" alt=""/>
+</div>
+<!--l. 226--><p class="noindent">Which of the following functions leads <script type="math/tex">\cos (\omega t)</script>? </p><div class="multiple-choice" id="problem17"><span class="choice correct " id="choice3">The green signal.</span> <span class="choice  " id="choice4">The red signal.</span> <span class="choice  " id="choice5">The
+blue signal.</span> </div>
+</div>
+<div class="theorem-like problem-environment example" id="problem18"><a id="x1-4012r16"></a>
+<!--l. 236--><p class="noindent">Lagging and leading is often used in circuits to describe signals.
+</p><!--l. 238--><p class="noindent">Let’s look at a circuit in Figure <a class="reference" href="#elcric">elcric</a> where the generator and the load are connected with
+a cable, just as in your circuits lab. The cable is overemphasised in this
+figure, compared to figures in your circuits lab, where the cable is usually
+ignored.
+</p><!--l. 241--><p class="noindent">Let’s assume that the switch closes, and the generator produces a step function at
+time t=0, as shown in Figure <a class="reference" href="#timedelaysig">timedelaysig</a>. Because the electrical signals propagate with the
+speed of light, the signal needs T sec to appear at the load, after the switch closes.
+Figure <a class="reference" href="#delayedsig">delayedsig</a> shows the step signal as it traveles on the transmission line at different times
+t=0, t=T/4, t=T/2 and t=T.
+</p><!--l. 245--><p class="noindent">How much time T does it take for this signal to go from AA’ end to BB’ end?
+Since electromagnetic waves propagate with the constant speed, the speed
+of light, time that the signal needs to go from the generator to the load
+depends on the length of the transmission line. If the transmission line is
+<script type="math/tex">l</script>, then the delay between the generator and the load will be <script type="math/tex">T=\frac {l}{c}</script>, where <script type="math/tex">c=3\times 10^8</script>. If
+the signal at the generator AA’ is <script type="math/tex">v_g(t)=</script>v(t), then the signal at the load end is
+<script type="math/tex">v_l(t)=</script>v(t-T).
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40139"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 251--><p class="noindent">
+</p><!--l. 252--><p class="noindent"><img src="jpg/generaltransmissionlinecircuit1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 9:  </span><span class="content">Electronic  Circuit  with  an  emphasis  on  cables  that  connect  the
+generator and the load.</span></div><!--tex4ht:label?: x1-40139 -->
+<a class="ximera-label" id="elcric"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-401410"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 263--><p class="noindent">
+</p><!--l. 264--><p class="noindent"><img src="jpg/timedelayedsignaltl.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 10: </span><span class="content">Voltage along the transmission line in Figure <a class="reference" href="#elcric">elcric</a>, for four different
+time intervals t=0, switch closes, t=T/4, t=T/2 and t=T. It is assumed that
+the length of the transmission line is equal to l=T/c.Note that the horizontal
+axis is the distance z from the generator to the cable, not time. </span></div><!--tex4ht:label?: x1-401410 -->
+<a class="ximera-label" id="delayedsig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 271--></div>
+
+<div class="theorem-like problem-environment example" id="problem19"><a id="x1-4015r17"></a>Application of sinusoidal signals to engineering design. When do we have to use
+transmission-line theory? The answer to this question depends on the delay (or phase
+shift) that the line introduces.
+<!--l. 278--><p class="noindent">If we have a sinusoidal generator at the beginning of the transmission line, instead
+of the step signal, what would the signal look like when it arrives at the
+load?
+</p><!--l. 280--><p class="noindent">The signal at the generator is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{AA^`}(t)=A cos(\omega t)
+\end{eqnarray}</script>
+</div>
+<!--l. 286--><p class="noindent">At the other end the transmission line the signal is delayed
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=v_{AA^`}(t-T) \\
+v_{BB^`}(t)=v_{AA^`}(t-\frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega (t - \frac{l}{c}))  \\
+v_{BB^`}(t)=A cos(\omega t - \omega \frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega t -  \frac{\omega }{c} l)
+\end{eqnarray}</script>
+</div>
+<!--l. 297--><p class="noindent">Since we know that angular frequency is <script type="math/tex">\omega = 2 \pi f</script>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A cos(\omega t -  \frac{ 2 \pi f }{c} l)
+\end{eqnarray}</script>
+</div>
+<!--l. 304--><p class="noindent">The quantity <script type="math/tex">\frac {c}{f}</script> is called the wavelength <script type="math/tex">\lambda </script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A \, cos(\omega t -  \frac{ 2 \pi }{\lambda} l) \label{tllength1}
+\end{eqnarray}</script>
+</div>
+<!--l. 310--><p class="noindent">The quantity <script type="math/tex"> \frac { 2 \pi }{\lambda } </script> is the propagation constant <script type="math/tex">\beta </script>
+</p><!--l. 313--><p class="noindent">Finally the expression for the voltage at BB end is
+</p>
+                                                                  
+
+                                                                  
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A \, cos(\omega t - \beta l) \\
+v_{BB^`}(t)=A \, cos(\omega t - \Psi)
+\end{eqnarray}</script>
+</div>
+<!--l. 321--><p class="noindent">We see that at BB’ the signal will experience a delay (a.k.a. phase shift). We will
+later show that the solution of the wave equation is the equation above. We will
+derive this equation again later from the Telegrapher’s equations. Now let’s see how
+the length of the line <script type="math/tex">l</script> affects the voltage at the end BB’. Look at Equation <a class="reference" href="#tllength1">tllength1</a>. The
+signal will experience a phase shift of <script type="math/tex">2\pi \frac {l}{\lambda }</script>. If this phase shift is small, there will not be
+much difference between the phase of the signal at the generator and at the load.
+This means that we don’t have to use transmission line theory to account for the
+effects of the line. If the phase shift is significant, then we do have to use
+the transmission line theory. Let’s look at some numbers in the following
+example.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">If <script type="math/tex">\frac {l}{\lambda } < 0.01</script> then the angle <script type="math/tex">2 \pi \frac {l}{\lambda }</script> is of the order of 0.0314 rad or about 2<script type="math/tex">^0</script>. In this case, the
+     phase is obviosly something that we don’t have to worry about. When the
+     length of the transmission line is much smaller than <script type="math/tex">\lambda </script>, <script type="math/tex">l<<\frac {\lambda }{100}</script> the wave propagation
+     on the line can be ingnored.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">If <script type="math/tex">\frac {l}{\lambda } > 0.01</script>, say <script type="math/tex">\frac {l}{\lambda } =0.1</script>, then the phase is 20<script type="math/tex">^0</script>, which is a significant phase shift. In this
+     case it may be necessary to account fro transmission line effects.</dd></dl>
+<!--l. 341--></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

@@ -1,0 +1,6 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Lossless transmission line}}{3}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Voltage and current on lossless transmission line}}{4}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{What does it mean when we say a medium is lossy or lossless?}}{4}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Low-Loss Transmission Line}}{4}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Transmission-line parameters R, G, C, and L}}{7}\relax 

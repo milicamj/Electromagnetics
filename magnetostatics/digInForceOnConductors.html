@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"><head> <title>Force  on  Conductors</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInForceOnConductors.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Calculate forces on Conductors in Magnetic Fields."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="474a48abea34fb923f303036e8d61ff40aa3b5f1 magnetostatics/digInForceOnConductors.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Force on a conductor due to external magnetic field</h3>
+<!--l. 23--><p class="noindent">Force <script type="math/tex">\vec {F}</script> on a conductor of length <script type="math/tex">\vec {l}</script> due to an external magnetic field <script type="math/tex">\vec {B}</script> is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\vec{F}=I \vec{l} \cross \vec{B}
+\end{equation}</script>
+Vector <script type="math/tex">\vec {l}</script> is in the direction of the current. To find the force’s direction, we apply the
+right-hand rule shown in Figure <a class="reference" href="#fig:forceCurrent">fig:forceCurrent</a>. We place the current vector in the palm of our right
+hand, then orient the palm so that the fingers can sweep towards the magnetic field
+vector.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 32--><p class="noindent">
+</p><!--l. 33--><p class="noindent"><img src="../jpg/forceCurrentWire.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1:  </span><span class="content">Applying  right-hand  rule  to  a  current-carrying  wire  in  external
+magnetic field.</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="fig:forceCurrent"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-2000"></a>Direction of a magnetic field of a conductor</h3>
+<!--l. 45--><p class="noindent">The direction of a magnetic field of a conductor can be determined using the
+right-hand rule. If you point the thumb of your right hand in the direction of the
+current in a straight conductor, your fingers will curl in the direction of the magnetic
+field.
+</p><!--l. 47--><p class="noindent">Observe how the magnetic field changes around a straight conductor. Change the
+strength and the direction of the current in the applet below. The distance between
+the magnetic field rings represents the strength of the magnetic field. When the rings
+are closer, the magnetic field is stronger, and vice versa. The vertical arrow
+represents the direction of the current. The small horizontal arrow shows the
+direction of the magnetic field.
+</p>
+<div class="center">
+<!--l. 50--><p class="noindent">
+</p><!--l. 51--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/Xr65rR3b/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<h3 class="sectionHead"><a id="x1-3000"></a>Force between two conductors</h3>
+<!--l. 57--><p class="noindent">When a conductor of length <script type="math/tex">l_1</script>, carrying current <script type="math/tex">I_1</script>, is in the vicinity of another
+conductor <script type="math/tex">l_2</script>, carrying current <script type="math/tex">I_2</script>, the force acts between them.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{F_1}=I_1 \vec{l_1} \cross \vec{B_2} \\
+\vec{F_2}=I_2 \vec{l_2} \cross \vec{B_1}
+\end{eqnarray}</script>
+</div>
+<!--l. 65--><p class="noindent">Where <script type="math/tex">F_1</script> is the force on conductor <script type="math/tex">l_1</script> <script type="math/tex">B_1</script> is the magnetic field due to current <script type="math/tex">I_1</script> in conductor <script type="math/tex">l_1</script>,
+and <script type="math/tex">B_2</script> is the magnetic field due to current <script type="math/tex">I_2</script>.
+</p><!--l. 67--><p class="noindent">To find the direction of the force, you have to use the right-hand rule. Here is a
+simulation that shows the force when the currents are in the same direction. What is
+the direction of the force?
+</p>
+<div class="center">
+<!--l. 69--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="fz385mDNj84">_</div></div>
+                                                                  
+
+                                                                  
+<!--l. 73--><p class="noindent">This video shows a simulation that shows the force when the currents are in the
+opposite direction. What is the direction of the force now?
+</p>
+<div class="center">
+<!--l. 76--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="P49PHzqIS8s">_</div></div>
+<h3 class="sectionHead"><a id="x1-4000"></a>Magnetic field of a loop of current</h3>
+<!--l. 83--><p class="noindent">The right-hand rule can be used to determine the magnetic field’s direction
+from a loop of current. Point the thumb in the direction of the current, and
+fingers will curl in the direction of the magnetic field. See the video below
+that shows a simulation of magnetic field lines around straight and circular
+conductors.
+</p>
+<div class="center">
+<!--l. 85--><p class="noindent">
+</p>
+<div class="video youtube-player" data-youtube="EUG23qVZUgc">_</div></div>
+<h3 class="sectionHead"><a id="x1-5000"></a>Bar magnet and a loop of current</h3>
+<!--l. 92--><p class="noindent">Permanent magnets have similar magnetic fields to loops of current. The source of
+the magnetic field of a permanent bar magnet is at the north pole, and the sink is at
+the south pole. The current loop magnetic field is similar to a bar magnet. The
+magnetic field lines circulate around the loop. The force between two current loops
+can be visualized by looking at two permanent magnets. The north pole of a magnet
+points in the direction of the loop’s magnetic field, as shown in Figure <a class="reference" href="#fig:CoupledCoils">fig:CoupledCoils</a>. We
+determine the force by looking at the repulsive or attractive force of two bar magnets.
+We can again see that the force between two loops with currents in the opposite
+directions is repulsive.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50012"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 95--><p class="noindent">
+</p><!--l. 96--><p class="noindent"><img src="../jpg/ringsForce.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Repulsion between the permanent magnets and a loops of current. </span></div><!--tex4ht:label?: x1-50012 -->
+<a class="ximera-label" id="fig:CoupledCoils1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div role="article" class="problem-environment question" id="problem1"><a id="x1-5002r1"></a> Two coils carrying positive currents <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script> are positioned as shown in Figure
+<a class="reference" href="#fig:CoupledCoils">fig:CoupledCoils</a>.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50033"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 111--><p class="noindent">
+</p><!--l. 112--><p class="noindent"><img src="../jpg/coupledCoils.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Two coils carrying currents <script type="math/tex">I_1</script> and <script type="math/tex">I_2</script>. </span></div><!--tex4ht:label?: x1-50033 -->
+<a class="ximera-label" id="fig:CoupledCoils"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 118--><p class="noindent">Will the force between them be:
+</p>
+<div class="multiple-choice" id="problem2"><span class="choice correct " id="choice1">attractive</span> <span class="choice  " id="choice2">repulsive</span> <span class="choice  " id="choice3">not enough information</span> </div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

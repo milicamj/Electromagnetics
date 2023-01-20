@@ -1,0 +1,813 @@
+<!DOCTYPE html><html lang="en"><head> <title>Calculation of electric field using Gauss’s Law</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInGaussLaw.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Marković"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Define conditions under which Gauss’s law can be used. Outline steps necessary to apply Gauss’s law. Derive the electric field due to line and sphere of charge"/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="e1529c933e29b9505e87993bc9318d3dabb01184 electrostatics/digInGaussLaw.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Field Visualization</h3>
+<!--l. 23--><p class="noindent">There are several ways of visualizing fields:
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">vectors of different lengths represent the strength and direction of the field
+     at different points.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">streamlines show the field flow. The field vector direction is tangential to
+     a flow line. Streamlines are lines that a particle would follow in a field.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Streamlines above can be drawn to show that the vector’s strength is
+     proportional to the density of field lines (number of field lines per unit
+     area). Vector lines are usually represented as a fixed number of streamlines,
+     not individual vectors. The lines bunch up where the field is stronger and
+     diverge from each other where the field is weak.</dd></dl>
+<h3 class="sectionHead"><a id="x1-2000"></a>Flux</h3>
+<!--l. 32--><p class="noindent">Let’s assume that in this example, we’ll visualize a field with a density of
+field lines per area, as we have shown in 3 above. Rivers are symbols of
+flux. For example, if we imagine a river flow and a small rectangular frame
+submerged in it, we can qualitatively explain the ”amount” of the field going
+through a surface. A simple way to understand flux is to count how many field
+lines poke a surface. If many field lines poke the surface, the flux is strong;
+otherwise, the flux is weak. The flux is the rate of flow of water through the
+frame.
+</p><!--l. 35--><p class="noindent">Mathematically, the flux of any vector <script type="math/tex">\vec {A}</script> through a surface <script type="math/tex">\vec {S}</script> is defined as
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\Phi=\int_S \vec{A} \cdot \vec{dS}
+\end{equation}</script>
+<!--l. 41--><p class="noindent">In the equation above, the surface is a vector so that we can define the direction of
+the flow of the vector. The surface vector <script type="math/tex">\vec {dS}</script> is defined as a surface of the
+frame <script type="math/tex">dS</script> multiplied with a vector perpendicular to the surface <script type="math/tex">dS \vec {n}</script>. The flux is the
+highest if the normal to the surface and the vector field point in the same
+direction.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-2001r1"></a>
+                                                                  
+
+                                                                  
+<!--l. 45--><p class="noindent">Observe the simulation below, change the angle between the frame and the field, then
+change the strenght of the field. How does the flux change?
+</p>
+<div class="center">
+<!--l. 49--><p class="noindent">
+</p><!--l. 50--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/CdSZEQcW/width/1200/height/800/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="1200px" height="800px" style="border:0px;"> </iframe></p></div>
+<!--l. 54--></div>
+
+<h3 class="sectionHead"><a id="x1-3000"></a>Gauss’s Law</h3>
+<!--l. 62--><p class="noindent">Gauss’s Law states that the flux of electric field through a closed surface is equal to
+the charge enclosed divided by a constant.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}\label{eq:gaussLaw}
+\end{equation}</script>
+<!--l. 69--><p class="noindent">It can be shown that no matter the shape of the closed surface, the flux will always
+be equal to the charge enclosed. This proof is beyond the scope of these
+lectures.
+</p><!--l. 72--><p class="noindent">Gauss’s Law is used to find the electric field when a charge distribution is given. We
+can apply Gauss’s Law using analytical expressions only to a specific set of
+symmetric charge distributions.
+</p><!--l. 75--><p class="noindent">The key to finding the Electric field from Gauss’s Law is selecting the simplest
+surface to perform the integration in Equation <a class="reference" href="#eq:gaussLaw">eq:gaussLaw</a>. If the simplest surface is found, the
+above equation simplifies to <script type="math/tex">E \, S = \frac {Q_{inS}}{\epsilon }</script>, where <script type="math/tex">S</script> is the surface (or sum of surfaces) where
+the flux exists, E is the electric field on that surface, and Q is the charge
+enclosed.
+</p>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-3001r2"></a>
+<!--l. 79--><p class="noindent">Observe the 2D flux from electric charge through a square. Set all charges to zero,
+except for one. Move the charge inside and outside of the square. What can you
+conclude about the flux when the charge is inside the square, and what when it is
+outside?
+</p>
+<div class="center">
+<!--l. 82--><p class="noindent">
+</p><!--l. 83--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/r7Ue9Nac/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+                                                                  
+
+                                                                  
+<!--l. 87--></div>
+
+<div role="article" class="problem-environment question" id="problem3"><a id="x1-3002r3"></a> An positive Q and a negative charge -Q separated by a distance d (a dipole) are
+enclosed in a cube. What is the flux through the cube? <div class="multiple-choice" id="problem4"><span class="choice  " id="choice1"><script type="math/tex">Q/\epsilon </script></span> <span class="choice correct " id="choice2">zero</span> <span class="choice  " id="choice3"><script type="math/tex">2 Q/\epsilon </script></span> <span class="choice  " id="choice4"><script type="math/tex"> Q/2 \epsilon </script></span> </div>
+</div>
+<h4 class="subsectionHead"><a id="x1-4000"></a>Applying Gauss’s Law to special, symmetric charge distributions</h4>
+<!--l. 103--><p class="noindent">The key to applying Gauss’s Law to find the field from a symmetric charge
+distribution is to find the surface <script type="math/tex">S</script> so that the normal to the surface is either
+perpendicular or parallel to the electric field. Practically speaking, this means that if
+the charge distribution has spherical symmetry, we’ll choose a sphere for the surface.
+If the charge density has cylindrical symmetry, we’ll choose a cylinder for
+the surface. If the charge density is an infinite plane, we’ll choose a box
+(or, as we’ll see later, a cylinder again). As you will see, before we apply
+Gauss’s Law to find the electric field, we have to know how the electric field
+looks from a particular charge distribution so that we can carry out the
+integration.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">The parts of the surface where the electric field <script type="math/tex">\vec {E}</script> is perpendicular to the
+     normal on the surface <script type="math/tex">dS\vec {n}</script> have zero flux through it, as the field does not
+     poke the surface. Mathematically this can be explained through the dot
+     product. Since the angle between the electric field and the normal to the
+     surface is <script type="math/tex">\angle (\vec {E},\vec {dS})=90^o </script>, the dot product becomes zero <script type="math/tex">\vec {E} \cdot \vec {dS}= E \, dS \, \cos (\angle (\vec {E},\vec {dS}))</script> and so the integral <script type="math/tex">\int _S \vec {E} \cdot \vec {dS}</script> through
+     that surface is zero.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">The parts of the surface where the electric field <script type="math/tex">\vec {E}</script> is parallel with the normal
+     on the surface <script type="math/tex">dS\vec {n}</script> the dot product between the two quantities <script type="math/tex">\vec {E} \cdot \vec {dS}</script> becomes <script type="math/tex">E dS \cos (\angle (\vec {E},\vec {dS}))= E dS</script>,
+     because <script type="math/tex">\angle (\vec {E},\vec {dS})=0</script>, and <script type="math/tex">\cos (\angle (\vec {E},\vec {dS}))=1</script>. If we select a surface in such a way that all points of this
+     surface are the same distance from the charge, the electric field is constant
+     on the surface, so it can be taken out of the integral, and Gauss’s law then
+     simplifies to:
+     <script type="math/tex; mode=display"> \begin{equation} 
+  {E} \oint_S dS = \frac{Q_{inS}}{\epsilon}
+     \end{equation}</script>
+     <!--l. 113--><p class="noindent">In the equation above, you can see that the integral <script type="math/tex">\int _S dS</script> is just the surface area of
+     the chosen surface, so the equation further simplifies to <script type="math/tex">E\,S=\frac {Q_{inS}}{\epsilon }</script>
+</p>
+     </dd></dl>
+                                                                  
+
+                                                                  
+<h4 class="subsectionHead"><a id="x1-5000"></a>Electric Field of a Point Charge</h4>
+<!--l. 123--><p class="noindent">Our first example is to find the electric field of a point charge +Q.
+</p><!--l. 125--><p class="noindent">To start this problem, we have to know the direction of the field. The electric field
+lines from a point charge are pointed radially outward from the charge (Figure <a class="reference" href="#fig:eField">fig:eField</a>).
+Mathematically we can write that the field direction is <script type="math/tex">\vec {E} = E \, \hat {r} </script>. We have to know the
+direction and distribution of the field if we want to apply Gauss’s Law to find the
+electric field.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 129--><p class="noindent">
+</p><!--l. 130--><p class="noindent"><img src="../jpg/pointChargeField.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Electric field of a point charge</span></div><!--tex4ht:label?: x1-50011 -->
+<a class="ximera-label" id="fig:eField"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 139--><p class="noindent">We want to find the magnitude of the electric field as a function of distance r
+from the charge. To do this, we will enclose the charge with an imaginary
+surface. We first have to decide on what kind of imaginary surface we are going
+to use in this case. Since the field has spherical symmetry, we will use a
+sphere, as shown in Figure <a class="reference" href="#fig:gaussPoint">fig:gaussPoint</a>. There are multiple reasons why we should use a
+sphere:
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Symmetry of the charge dictates using a sphere.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">The field on the sphere is in the same direction as the outward normal to
+     the sphere.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Electric field is constant everywhere on the sphere.</dd></dl>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-50052"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 157--><p class="noindent">
+</p><!--l. 158--><p class="noindent"><img src="../jpg/unitchargefield.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Application of Gauss’s Law to find Electric Field of a point charge.</span></div><!--tex4ht:label?: x1-50052 -->
+<a class="ximera-label" id="fig:gaussPoint"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 164--><p class="noindent">Because the electric field is in the same direction with the outward normal to the
+sphere as shown in Figure <a class="reference" href="#fig:gaussPoint">fig:gaussPoint</a>, the dot product becomes just the product of E and dS <script type="math/tex">\vec {E} \cdot \vec {dS}= E \,dS \cos (\angle (\vec {E},\vec {dS}))= E \,dS \cos (\angle (0^o)) =E dS</script>,
+and the Gauss’s law equation becomes
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S E \,dS  = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 172--><p class="noindent">Since the electric field is constant everywhere on the surface, we can take it out of the
+integral.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \oint_S dS = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 179--><p class="noindent">In the above equation, the <script type="math/tex">\oint _S dS </script> is just the surface area of the sphere, <script type="math/tex">4 \pi r^2</script>.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \, 4 \pi r^2 = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 186--><p class="noindent">The final expression for the magnitude of the field is:
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E  = \frac{Q_{inS}}{4 \pi  \epsilon \, r^2}
+\end{equation}</script>
+<!--l. 193--><p class="noindent">Note that we only found the magnitude of the field in the above equation. We started
+this problem with the knowledge of field radial direction. So the final expression for
+the field is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ \vec{E}  = \frac{Q_{inS}}{4 \pi  \epsilon \, r^2} \, \hat{r}
+\end{equation}</script>
+<!--l. 199--><p class="noindent">Note that this equation can also be obtained from Coulomb’s Law. One last step in
+finding the electric field is to find the total charge enclosed by the imaginary surface
+S. Depending on whether we’re looking for the field inside or outside of a
+charge distribution, and whether the charge distribution is a volume charge
+distribution <script type="math/tex">\rho </script>, surface charge distribution <script type="math/tex">\sigma </script> or line charge distribution <script type="math/tex">\rho _l</script>, the whole or
+fraction of volume V, surface S or line l of the charge distribution will be
+enclosed.
+</p>
+                                                                  
+
+                                                                  
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS} = \int_V \rho \, dV \\
+Q_{inS} =\int_S \sigma \, dS \\
+Q_{inS} = \int_l \rho_l \, dl
+\end{eqnarray}</script>
+</div>
+<h4 class="subsectionHead"><a id="x1-6000"></a>Electric Field of a Spherical Charge Distribution</h4>
+<!--l. 210--><p class="noindent">A spherical region of radius a is charged with uniform volume charge density <script type="math/tex">\rho </script>=const.
+Find the field inside the spherical region of charge at a distance r from the center of
+the charge density and the field outside of the spherical region of charge at (another)
+distance r away from the center of the charge.
+</p>
+<h5 class="subsubsectionHead"><a id="x1-7000"></a>Electric Field outside of the sphere</h5>
+<!--l. 214--><p class="noindent">We will first look at the field outside of the spherical charge distribution. This
+process is the same as in the previous problem, where we found the field from a
+point charge. Following the reasoning in the previous problem, we select a
+sphere for the integration surface. It is important to mention that we pick a
+point outside of the distributed charge at the distance r from the center,
+and that will be one point on the sphere’s surface. We picked a point at
+random distance r, not at r=a because we want to find out electric field
+anywhere outside of the charge distribution E(r), and r could be any point
+<script type="math/tex">r>a</script>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-70013"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 217--><p class="noindent">
+</p><!--l. 218--><p class="noindent"><img src="../jpg/gaussSphereOut.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Application of Gauss’s Law to find Electric Field of a spherical volume
+charge density.</span></div><!--tex4ht:label?: x1-70013 -->
+<a class="ximera-label" id="fig:GaussSphereOut"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 230--><p class="noindent">Because the electric field is in the same direction with the outward normal to the
+sphere as shown in Figure <a class="reference" href="#fig:GaussSphereOut">fig:GaussSphereOut</a>, the dot product becomes just the product of scalars E
+and dS <script type="math/tex">\vec {E} \cdot \vec {dS}= E \,dS \cos (\angle (\vec {E},\vec {dS}))= E \,dS \cos (\angle (0^o)) =E dS</script>, and the Gauss’s law equation becomes
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S E \,dS  = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 236--><p class="noindent">Since the electric field is constant everywhere on the surface, we can take it out of the
+integral.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \oint_S dS = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 243--><p class="noindent">In the above equation, the <script type="math/tex">\oint _S dS </script> is just the surface area of the sphere, <script type="math/tex">4 \pi r^2</script>.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \, 4 \pi r^2 = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 250--><p class="noindent">The final expression for the magnitude of the field is:
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E  = \frac{Q_{inS}}{4 \pi  \epsilon \, r^2}
+\end{equation}</script>
+<!--l. 257--><p class="noindent">Note that we only found the magnitude of the field in the above equation. We started
+this problem with the knowledge of field radial direction. So the final expression for
+the field is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ \vec{E}  = \frac{Q_{inS}}{4 \pi  \epsilon \, r^2} \, \hat{r}
+\end{equation}</script>
+<!--l. 263--><p class="noindent">Note that this equation can also be obtained from Coulomb’s Law. The charge <script type="math/tex">Q_{inS}</script> is
+the total charge in the spherical volume where the charge is located. If the
+total charge in the volume was known, then this is the solution. However,
+in this problem, the charge density is known, so we have to find the total
+                                                                  
+
+                                                                  
+charge.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\int_V \rho \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 269--><p class="noindent">Since the charge density <script type="math/tex">\rho </script> is constant, it can be taken outside of the integral.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\rho \, \int_V \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 276--><p class="noindent">The integral above is then just the entire volume of the charge distribution, which is <script type="math/tex">V=\frac {4 \pi a^3}{3}</script>.
+The final expression for the electric field is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \frac{\rho \, 4 \pi \, a^3}{12 \, \pi  \epsilon \, r^2} \, \hat{r} \\
+ \vec{E}  = \frac{\rho \,   a^3}{3  \, \epsilon \, r^2} \, \hat{r}
+\end{eqnarray}</script>
+</div>
+<!--l. 285--><p class="noindent">Note that now the electric field is inversely proportional to the square of the distance
+from the center of the sphere, <script type="math/tex">E \sim 1/r^2</script>. The electric field decreases as we move away from the
+sphere.
+</p>
+<h5 class="subsubsectionHead"><a id="x1-8000"></a>Electric field inside the sphere</h5>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-80014"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 293--><p class="noindent">
+</p><!--l. 294--><p class="noindent"><img src="../jpg/gaussSphereIn.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 4: </span><span class="content">Application of Gauss’s Law to find electric field of a spherical charge
+distribution.</span></div><!--tex4ht:label?: x1-80014 -->
+<a class="ximera-label" id="fig:gaussSphereIn"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 300--><p class="noindent">Inside the spherical charge distribution, we’ll again use a spherical imaginary
+surface S to enclose charge because of the spherical symmetry of the problem.
+The normal to the imaginary surface S is in the same direction with the
+electric field inside the spherical charge distribution as shown in Figure <a class="reference" href="#fig:gaussSphereIn">fig:gaussSphereIn</a>, and
+therefore the same analysis can be applied as above to get to the conclusion
+that:
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \, 4 \pi r^2 = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 311--><p class="noindent">The difference in the analysis here is if we look at the right side of Gauss’s law
+equation because we now have to determine the amount of charge enclosed by the
+imaginary surface we created. The charge enclosed in the imaginary surface is not the
+total charge Q. It is a fraction of the total charge. What fraction of the charge is
+enclosed? It is the fraction of the charge in the volume enclosed by the surface
+S.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\int_V \rho \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 319--><p class="noindent">Since the charge density <script type="math/tex">\rho </script> is constant, it can be taken outside of the integral.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\rho \, \int_V \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 326--><p class="noindent">The integral above is then just the fraction of the volume of the charge distribution
+enclosed by the surface S, which is <script type="math/tex">V=\frac {4 \pi r^3}{3}</script>. The final expression for the electric field
+is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \frac{\rho \, 4 \pi \, r^3}{12 \, \pi  \epsilon \, r^2} \, \hat{r} \\
+ \vec{E}  = \frac{\rho \, r}{3  \, \epsilon } \, \hat{r}
+\end{eqnarray}</script>
+</div>
+<!--l. 334--><p class="noindent">Note that now the electric field is proportional to the distance from the center of
+the sphere, <script type="math/tex">E\sim r</script>, the field increases from the center of the spere out until <script type="math/tex">r=a</script>. At
+<script type="math/tex">r=a</script>, the entire charge has been enclosed, and the field is maximum at that
+point.
+</p>
+                                                                  
+
+                                                                  
+<h4 class="subsectionHead"><a id="x1-9000"></a>Electric field due to an infinite line of charge</h4>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-90015"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 340--><p class="noindent">
+</p><!--l. 341--><p class="noindent"><img src="../jpg/infiniteLineChargeField3D.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 5: </span><span class="content">3-dimensional electric field of a wire.</span></div><!--tex4ht:label?: x1-90015 -->
+<a class="ximera-label" id="GausLine"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 348--><p class="noindent">A cylindrical region of radius a and infinite length is charged with uniform volume
+charge density <script type="math/tex">\rho </script>=const and centered on the z-axis. Find the field inside the cylindrical
+region of charge at a distance r from the axis of the charge density and the field
+outside of the spherical region of charge at (another) distance r away from the
+z-axis.
+</p><!--l. 350--><p class="noindent">We will use Gauss’s Law to solve this problem.
+</p>
+<h5 class="subsubsectionHead"><a id="x1-10000"></a>Electric field outside the line of charge (a wire)</h5>
+<!--l. 358--><p class="noindent">We first look at the field outside of the cylindrical charge distribution. The wire is
+shown as a blue line in the direction of the z-axis, as shown in Figure <a class="reference" href="#fig:gaussLineOut">fig:gaussLineOut</a>. Because of the
+symmetry of the problem, we select a cylinder for the closed surface S. It is
+important to mention that we pick a point outside of the distributed charge
+at the distance r from the z-axis. The point that we picked is one point
+on the sphere’s surface. We picked a point from the z-axis at a distance r,
+not at r=a, because we want to find out electric field anywhere outside of
+the charge distribution E(r), and r could be any point <script type="math/tex">r>a</script>. Gauss’s Law states
+that
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-100016"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 363--><p class="noindent">
+</p><!--l. 364--><p class="noindent"><img src="../jpg/gausslawcylinder.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 6: </span><span class="content">Application of Gauss’s Law to find electric field of a line charge
+distribution oriented in the z-direction.</span></div><!--tex4ht:label?: x1-100016 -->
+<a class="ximera-label" id="fig:gaussLineOut"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 378--><p class="noindent">We will now apply Gauss’s law to the three surfaces shown in Figure <a class="reference" href="#fig:gaussLineOut">fig:gaussLineOut</a>. The cylindrical
+surface consists of three surfaces: two bases S1 and S3 and the side surface
+S2. The normals to the bases are S1 and S3 are <script type="math/tex">\hat {n}_1=-\hat {z}</script>, <script type="math/tex">\hat {n}_3=\hat {z}</script> and the normal to the
+side surface is <script type="math/tex">\hat {n}_2=\hat {r}</script>. We can now split the flux of the electric field vector (the
+left-side of Gauss’s law) through this closed cylindrical surface intro three
+integrals:
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \int_{S1}  \vec{E} \cdot \vec{dS} +\int_{S2}  \vec{E} \cdot \vec{dS}+\int_{S3}  \vec{E} \cdot \vec{dS}
+\end{equation}</script>
+<!--l. 386--><p class="noindent">The electric field shown in Figure <a class="reference" href="#fig:gaussLineOut">fig:gaussLineOut</a> is in the radial direction. The electric field lines
+only poke the side surface S2 and not surfaces S1 and S3. We, therefore, see that the
+flux through surfaces S1 and S3 is zero. This can also be shown mathematically. For
+the bases of the cylinder, the dot product between the top surface vector and the
+electric field vector in Gauss’s law becomes <script type="math/tex">\vec {E} \cdot \vec {dS}= E \,dS \cos (\angle (\vec {E},\vec {dS}))= E \,dS \cos (\angle (90^o)) = 0</script>, and the Gauss’s law equation
+becomes
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\int_{S2} E \,dS  = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 392--><p class="noindent">Since the electric field is constant everywhere on the side surface, we can take it out
+of the integral.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \int_{S2} dS = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 399--><p class="noindent">In the above equation, the <script type="math/tex">\int _{S2} dS </script> is just the rectangular surface area of the side of the
+cylinder, <script type="math/tex">2 \pi r l</script>. Where r is the radius of the cylinder, and l is the length of the
+cylinder.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ E \, 2 \pi r l = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 407--><p class="noindent">From here we can find the magnitude of the field:
+</p>
+                                                                  
+
+                                                                  
+<script type="math/tex; mode=display"> \begin{equation} 
+ E  = \frac{Q_{inS}}{2 \pi  \epsilon \, l\, r}
+\end{equation}</script>
+<!--l. 414--><p class="noindent">Note that we only found the magnitude of the field in the above equation. We started
+this problem with the knowledge of the field’s radial direction.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ \vec{E}  = \frac{Q_{inS}}{2 \pi  \epsilon \, l\, r} \, \hat{r}
+\end{equation}</script>
+<!--l. 420--><p class="noindent">The charge <script type="math/tex">Q_{inS}</script> is the total charge in the spherical volume where the charge is located. If
+the total charge in the volume was known, then this is the solution. However,
+in this problem, the charge density is known, so we have to find the total
+charge.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\int_V \rho \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 426--><p class="noindent">Since the charge density <script type="math/tex">\rho </script> is constant, it can be taken outside of the integral.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\rho \, \int_V \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 433--><p class="noindent">The integral above is then just the entire volume of the charge distribution, which is <script type="math/tex">V= a^2 \pi l</script>.
+The final expression for the electric field is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \frac{\rho \, a^2 \pi l }{2 \, \pi  \epsilon \, l \,r} \, \hat{r} \\
+ \vec{E}  = \frac{\rho \,   a^2}{2 \, \epsilon \, r} \, \hat{r}
+\end{eqnarray}</script>
+</div>
+<!--l. 442--><p class="noindent">Note that now the electric field is inversely proportional to the distance from the
+z-axis, <script type="math/tex">E \sim 1/r</script>. The electric field decreases as we move away from the sphere, but slower
+than in the case of the sphere of charge.
+</p>
+<h5 class="subsubsectionHead"><a id="x1-11000"></a>Electric field inside the line of charge</h5>
+<!--l. 447--><p class="noindent">To find the electric field inside the cylindrical charge distribution, we zoom in on
+the wire in the previous figure and select a cylindrical imaginary surface S
+inside the wire, as shown in Figure <a class="reference" href="#fig:gaussLineIn">fig:gaussLineIn</a>. Since the electric field is in the same
+                                                                  
+
+                                                                  
+direction inside the wire, and the flux of the electric field is the same, we
+conclude that the left side of Gauss’s Law is the same as in the previous
+case.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+E \, S = \frac{Q_{inS}}{\epsilon} \\
+ E \, 2 \pi r l = \frac{Q_{inS}}{\epsilon}
+\end{eqnarray}</script>
+</div>
+<!--l. 455--><p class="noindent">The difference here is the amount of charge enclosed by the surface S.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\int_V \rho \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 463--><p class="noindent">Since the charge density <script type="math/tex">\rho </script> is constant, it can be taken outside of the integral.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Q_{inS}=\rho \, \int_V \, dV
+\end{eqnarray}</script>
+</div>
+<!--l. 470--><p class="noindent">The integral above is then just the fraction of the volume of the charge distribution
+enclosed by the surface S, which is <script type="math/tex">V=r^2 \pi \, l </script>. The final expression for the electric field
+is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \frac{\rho \, r^2 \, \pi  l }{2 \pi  l  \epsilon \, r} \, \hat{r} \\
+ \vec{E}  = \frac{\rho \, r}{2  \, \epsilon } \, \hat{r}
+\end{eqnarray}</script>
+</div>
+<!--l. 478--><p class="noindent">The electric field is proportional to the distance from the center of the sphere, <script type="math/tex">E\sim r</script>, the
+field increases from the center of the spere out until <script type="math/tex">r=a</script>. At <script type="math/tex">r=a</script>, the entire charge has been
+enclosed, and the field is maximum at that point.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-110017"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 484--><p class="noindent">
+</p><!--l. 485--><p class="noindent"><img src="../jpg/gausslawwireInside.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 7: </span><span class="content">Applying Gauss’s law to find the electric field inside the cylindrical
+charge distribution <script type="math/tex">\rho _V</script> of infinite length, and radius a.</span></div><!--tex4ht:label?: x1-110017 -->
+<a class="ximera-label" id="fig:gaussLineIn"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h4 class="subsectionHead"><a id="x1-12000"></a>Electric Field due to an infinite plane of Charge</h4>
+<!--l. 494--><p class="noindent">An infinite plane of charge has an electric field in the direction away from
+it, as shown in Figure <a class="reference" href="#fig:3DFieldInfinitePlane">fig:3DFieldInfinitePlane</a>. In this figure, the light blue plane represents the
+charged plane, and only electric field vectors are represented above the plane.
+Below the plane, the vectors will be in the opposite direction, away from the
+plane.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-120018"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 498--><p class="noindent">
+</p><!--l. 499--><p class="noindent"><img src="../jpg/3DFieldInfinitePlane.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 8: </span><span class="content">Electric field above an infinite plane charged with positive surface
+charge density <script type="math/tex">\rho _S</script>.</span></div><!--tex4ht:label?: x1-120018 -->
+<a class="ximera-label" id="fig:3DFieldInfinitePlane"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 506--><p class="noindent">The flux of the electric field vector is zero for any frame that is perpendicular to the
+plane of charge. For our imaginary surface, we can then use a box, where the flux will
+only exist through the top and bottom surfaces that are perpendicular to the field, or
+we can use a cylinder whose bases are parallel to the plane, as shown in Figure
+<a class="reference" href="#fig:gaussPlane">fig:gaussPlane</a>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-120029"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 511--><p class="noindent">
+</p><!--l. 512--><p class="noindent"><img src="../jpg/infiniteplaneofcharge.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 9: </span><span class="content">Applying Gauss’s Law to an infinite plane charged with positive
+surface charge density <script type="math/tex">\rho _S</script>.</span></div><!--tex4ht:label?: x1-120029 -->
+<a class="ximera-label" id="fig:gaussPlane"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 519--><p class="noindent">We can now separate the integral around the closed cylindrical surface to three
+surfaces, two that are parallel to the plane of charge, where the flux is not zero, and
+one side surface where the flux is zero.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\oint_S \vec{E} \cdot \vec{dS} = \int_{S1}  \vec{E} \cdot \vec{dS} +\int_{S2}  \vec{E} \cdot \vec{dS}+\int_{S3}  \vec{E} \cdot \vec{dS}
+\end{equation}</script>
+<!--l. 528--><p class="noindent">Mathematically the dot product between the electric field and the normal to the
+cylindrical top (S3) and bottom surface (S1) is just the product of the magnitudes of
+E and dS <script type="math/tex">\vec {E} \cdot \vec {dS}= E \,dS \cos (\angle (\vec {E},\vec {dS}))= E \,dS \cos (\angle (0^o)) =E dS</script>. The dot product on the side surface (S2) is zero, because the angle
+between the normal to the surface and the electric field is <script type="math/tex">90^o</script>, therefore the <script type="math/tex">\vec {E} \cdot \vec {dS}= E \,dS \cos (\angle (\vec {E},\vec {dS}))= E \,dS \cos (\angle (90^o)) =0</script>. We can
+subsequently take the electric field outside of the integral, and the integral around
+the closed surface then becomes
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+E \int_{S1} dS + E \int_{S2} dS = \frac{Q_{inS}}{\epsilon}
+\end{equation}</script>
+<!--l. 536--><p class="noindent">The integral of surface S1 and S1 is just the surface area of two surfaces.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+E \, S + E \, S = \frac{Q_{inS}}{\epsilon} \\
+ 2 E \,S = \frac{Q_{inS}}{\epsilon} \\
+ E=\frac{Q_{inS}}{2 \epsilon S}
+\end{eqnarray}</script>
+</div>
+<!--l. 544--><p class="noindent">In the above equation, the ration <script type="math/tex">\frac {Q_{inS}}{S}</script> is just the surface charge density <script type="math/tex">\sigma </script>. The final
+electric field expression for the infinite sheet of charge becomes
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \pm \frac{\sigma}{2 \epsilon } \, \hat{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 550--><p class="noindent">Note that in the above expression, we added <script type="math/tex">\pm </script> because we knew ahead of time the
+direction of the electric field. Below the z-axis, it is in the negative z-direction <script type="math/tex">-\hat {z}</script>, and
+above the z-axis, it is in the positive z-direction <script type="math/tex">\hat {z}</script>. Further, the electric field does not
+depend on the distance from the infinite plane. It is a constant that only depends on
+the surface charge density <script type="math/tex">\sigma </script> and the dielectric permittivity of surrounding space
+<script type="math/tex">\epsilon </script>.
+</p>
+                                                                  
+
+                                                                  
+<h4 class="subsectionHead"><a id="x1-13000"></a>Two Infinite Planes</h4>
+<!--l. 555--><p class="noindent">A parallel-plate capacitor can be modeled with two infinite parallel plates of opposite
+charge densities. To find the total field, we can use the principle of superposition, as
+shown in Figure <a class="reference" href="#Gaus2Plane">Gaus2Plane</a>. The Figure shows first just the negative sheet of charge (the first
+region to the left), then only the positive sheet of charge (the region between
+two red vertical lines), and finally both sheets of charge in the region to
+the right. We first find the field separately for the negative sheet of charge,
+then the positive sheet of charge, finally, we sum them up to get the total
+field.
+</p><!--l. 557--><p class="noindent">In the previous section, we found that the electric field from an infinite sheet of
+charge is constant. The electric field anywhere around the negative sheet of charge
+is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E_-}  = \mp \frac{\sigma}{2 \epsilon } \, \hat{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 563--><p class="noindent">The electric field, due to the positive sheet of charge, is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E_+}  = \pm \frac{\sigma}{2 \epsilon } \, \hat{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 570--><p class="noindent">If you look at the direction of the field, the fields from individual plates between the
+plates of the capacitor add up, and the fields above and below the capacitor subtract.
+The final field is only between the plates of the capacitor, and it is equal to double
+the value of the one sheet of charge.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \vec{E}  = \frac{\sigma}{ \epsilon } \, \hat{z}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-1300110"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 581--><p class="noindent">
+</p><!--l. 582--><p class="noindent"><img src="../jpg/Infinite_Parallel_Plates1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 10: </span><span class="content">Two infinite planes charged with positive surface charge density <script type="math/tex">\rho _S</script>
+and <script type="math/tex">-\rho _S.</script></span></div><!--tex4ht:label?: x1-1300110 -->
+<a class="ximera-label" id="Gaus2Plane"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

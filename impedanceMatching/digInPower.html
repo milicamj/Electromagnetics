@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head> <title>Power</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInPower.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Explain the complex power and its parts. Calculate real average power delivered from the generator."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="d7611983495362d4614e85d54f9dd19201a6aeff impedanceMatching/digInPower.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<!--l. 20--><p class="noindent">The current and voltage phasor transformation is defined as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\Re\{|V|e^{j\theta_v} e^{j \omega t}\} \\
+i(t)=\Re\{|I|e^{j\theta_i} e^{j \omega t}\}
+\end{eqnarray}</script>
+</div>
+<!--l. 27--><p class="noindent">Where <script type="math/tex">|V|e^{j\theta _v}</script> and <script type="math/tex">|I|e^{j\theta _i}</script> are phasors of voltage and current, and usually denoted with a tilde <script type="math/tex">\tilde {}</script>
+over capital letters <script type="math/tex">\tilde {V}</script>, <script type="math/tex">\tilde {I}</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\Re\{\tilde{V} e^{j \omega t}\} \\
+i(t)=\Re\{\tilde{I} e^{j \omega t}\}
+\end{eqnarray}</script>
+</div>
+<!--l. 36--><p class="noindent">The real part of a complex number can also be found as <script type="math/tex">\Re \{z\}=\frac {1}{2}(z +z^*)</script>, so the above two equations
+can be re-written as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\frac{1}{2} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) \label{eq:phasorV}\\
+i(t)=\frac{1}{2} ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) \label{eq:phasorI}
+\end{eqnarray}</script>
+</div>
+<!--l. 43--><p class="noindent">Power is defined as a product of voltage and current.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+p(t) = v(t) i(t) \label{eq:power}
+\end{equation}</script>
+<!--l. 49--><p class="noindent">If we replace voltage and current in Equation <a class="reference" href="#eq:power">eq:power</a> in the time domain with Equations <a class="reference" href="#eq:phasorV">eq:phasorV</a>
+and <a class="reference" href="#eq:phasorI">eq:phasorI</a> we get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+p(t) =\frac{1}{4} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} )
+\end{eqnarray}</script>
+</div>
+<!--l. 57--><p class="noindent">Multiplying the terms above, and rearanging, we get:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+p(t)=\frac{1}{4} (\tilde{V}\tilde{I}^*+ (\tilde{V}\tilde{I}^*)^*+ \tilde{V}\tilde{I}^* e^{2j \omega t}+ (\tilde{V}\tilde{I}^* e^{2j \omega t})^*)
+                                                                  
+
+                                                                  
+\end{eqnarray}</script>
+</div>
+<!--l. 64--><p class="noindent">We can again apply equation <script type="math/tex">\Re \{z\}=\frac {1}{2}(z +z^*)</script> to simplify the above equation to
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+p(t)=\frac{1}{2} (\Re\{\tilde{V}\tilde{I}^*\}+ \Re\{\tilde{V}\tilde{I} e^{2j \omega t }\})
+\end{eqnarray}</script>
+</div>
+<!--l. 70--><p class="noindent">This can also be re-written as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+p(t)=\frac{1}{2} \Re\{ |V| e^{j\theta_v} |I| e^{-j\theta_i} \}+ \frac{1}{2} \Re\{|V| e^{j\theta_v} |I| e^{j\theta_i} e^{2j \omega t }\} \\
+p(t)=\frac{1}{2} \Re\{ |V| |I| e^{j(\theta_v-\theta_i)} \}+ \frac{1}{2} \Re\{|V| |I|  e^{j(\theta_v+\theta_i)}  e^{2j \omega t }\}
+\end{eqnarray}</script>
+</div>
+<!--l. 78--><p class="noindent">p(t) above is instantaneous power, <script type="math/tex">S=\tilde {V}\tilde {I}^*=|V| |I| e^{j(\theta _v-\theta _i)}</script> is complex power. Complex power has real and
+reactive parts S=P+jQ. The first part of the equation represents the average real
+power P delivered to the load <script type="math/tex">P=\frac {1}{2}\Re \{\tilde {V}\tilde {I}^*\}</script>, and the second part represents the fluctuating
+power. We are usually interested in the average real power P delivered to the
+load.
+</p><!--l. 80--><p class="noindent">To find the real power delivered to the load, one would take the real part of the
+complex power. If we know that the impedance of the load is <script type="math/tex">Z=R+jX</script>, the voltage is <script type="math/tex"> \tilde {V} = Z \tilde {I}</script> and we
+remember that <script type="math/tex">\tilde {I} \tilde {I}^* = |I|^2</script> then the real power is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+P=\frac{1}{2}\Re\{ \tilde{V} \tilde{I}^*  \} \\
+P=\frac{1}{2}\Re\{ (R+jX) \tilde{I} \tilde{I}^*  \} \\
+P=\frac{1}{2}\Re\{ (R+jX) |I|^2  \} \\
+P=\frac{1}{2}|I|^2 \Re\{ (R+jX)   \} \\
+P=\frac{1}{2}R |I|^2
+\end{eqnarray}</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-67r1"></a>A transmitter operated at 20MHz, Vg=100V with <script type="math/tex">50 \Omega </script> internal impedance is connected
+to an antenna load through 6.33m of the line. The line is a lossless <script type="math/tex">50 \Omega </script>, <script type="math/tex">\beta =0.595rad/m</script>. The antenna
+impedance at 20MHz measures <script type="math/tex">Z_L=36+j20 \Omega </script>.
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">What is the electrical length of the line? (answer: length=0.6<script type="math/tex">\lambda </script>)
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">How much power is delivered to the line? Hint: Find the input impedance,
+     then find the input power as <script type="math/tex">P_{ave,in}=\frac {1}{2}R_{in} |I_{in}|^2</script>
+                                                                  
+
+                                                                  
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">What is the time-average power absorbed by <script type="math/tex">Z_L</script>. <script type="math/tex">P_{L}=\frac {1}{2} R_L |I_{L}|^2</script>
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">If now we match load impedance <script type="math/tex">Z_l</script> to 50 Ohm line, what is the input
+     impedance of the line, and how much average power is delivered to the
+     line and load?</dd></dl>
+<dl class="trivlist"><dt class="trivlist">
+Solution:   </dt><dd class="trivlist">
+     <dl class="description"><dt class="description">
+a </dt><dd class="description">Electrical length of the line is <script type="math/tex">0.6 \lambda </script>.
+     </dd><dt class="description">
+b </dt><dd class="description">The input impedance on the line is <script type="math/tex">Z_{in}=70.8+j27.1 \Omega </script>. The load reflection coefficient is <script type="math/tex">\Gamma _L=0.27 e^{j112^0}</script>. The
+     input reflection coefficient is <script type="math/tex">\Gamma _{in}= 0.27 e^{-j320} = 0.27 e^{j40^0}</script>. The input current is <script type="math/tex">I_{in}=0.813 e^{-j12.6^0}</script>. The input power is
+     23.4W.
+     </dd><dt class="description">
+c </dt><dd class="description">The current at the load is <script type="math/tex">I_L=1.14 e^{-j223^0}</script>. The average power at the load is 23.4W (the same
+     as at the input). This is because we are assuming a lossless line, so all
+     power delivered to the line will be delivered to the load.
+     </dd><dt class="description">
+d </dt><dd class="description">When the load impedance is <script type="math/tex">50 \Omega </script>, the average input power is 25W. When the
+     load is matched to the line and generator, we have the maximum power
+     available from the generator delivered to the load.</dd></dl>
+</dd></dl>
+<!--l. 115--><p class="noindent"><img src="digInPower0x.png" alt="PICT"/>
+</p><!--l. 118--></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

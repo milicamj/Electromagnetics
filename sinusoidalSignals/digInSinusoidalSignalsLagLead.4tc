@@ -1,0 +1,5 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-681}{}{\ignorespaces Voltage as a function of time at the generator side (top) and the load side (bottom) of a transmission line, if the switch closes at t=0 the voltage arrives at t=l/c=T at the load. These graphs can be obtained by observing the voltage on an oscilloscope at the load and at the generator side.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-702}{}{\ignorespaces Sinusoidal signal as a function of angle $\omega t$ with a phase shift of $+\pi /4$}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-723}{}{\ignorespaces  Sinusoidal signal shifted for time delay $-\frac  {\pi /4}{\omega }$}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-734}{}{\ignorespaces  Sinusoidal signal with phase shift $-\pi /4$}}{figure}\relax 

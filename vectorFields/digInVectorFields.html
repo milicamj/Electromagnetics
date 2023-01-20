@@ -17,7 +17,7 @@ fields</title>
 <meta name="learning-outcome" content="Identify radial vector fields."/> 
 <meta name="learning-outcome" content="Identify gradient vector fields."/> 
 <meta name="learning-outcome" content="Find potential functions for gradient fields."/> 
-<meta name="dependency" content="edd9a8cd8ad74f59656a60d659f99aca5aa2bbac preamble.tex"/><meta name="dependency" content="5774bed3ef1bb90eb1e845fd74a07e97742e7572 vectorFields/digInVectorFields.tex"/></head><body> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="5774bed3ef1bb90eb1e845fd74a07e97742e7572 vectorFields/digInVectorFields.tex"/></head><body> 
 <div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
 \newcommand {\ungraded }[0]{}
 \newcommand {\todo }[0]{}
@@ -98,7 +98,7 @@ We’ve also studied vector-valued functions <script type="math/tex">\vec {f}:\R
 parametric curves in space: <div class="image-environment" role="img" aria-labelledby="image-alt-2">  <img src="./digInVectorFields-figure1.svg" alt=""/>
 </div>
 We’ve also studied functions of several variables <script type="math/tex">F:\R ^n \to \R </script>. We can interpret these functions as
-surfaces in <script type="math/tex">\R ^{n+1}</script>. For example if <script type="math/tex">n=2</script>, then <script type="math/tex">F:\R ^2\to \R </script> plots a surface in <script type="math/tex">\R ^3</script>: <div class="image-environment" role="img" aria-labelledby="image-alt-3"><object data="digInVectorFields-2.svg" width="174.28546 " height="142.20062 " type="image/svg+xml"><p>SVG-Viewer needed.</p></object>
+surfaces in <script type="math/tex">\R ^{n+1}</script>. For example if <script type="math/tex">n=2</script>, then <script type="math/tex">F:\R ^2\to \R </script> plots a surface in <script type="math/tex">\R ^3</script>: <div class="image-environment" role="img" aria-labelledby="image-alt-3"><object data="digInVectorFields-2.svg" width="145.44078 " height="103.92545 " type="image/svg+xml"><p>SVG-Viewer needed.</p></object>
 </div>
 <!--l. 109--><p class="noindent">Now we are ready for a new type of function.
 </p>
@@ -117,11 +117,11 @@ What is <script type="math/tex">\vec {F}(1,7)</script>?  <script type="math/tex;
 <div role="article" class="problem-environment question" id="problem3"><a id="x1-2003r3"></a> What is <script type="math/tex">\vec {F}(3,5)</script>?  <script type="math/tex; mode=display"> \vec {F}(3,5) = \vector {\answer {0},\answer {2}} </script>
 <div role="article" class="problem-environment question" id="problem4"><a id="x1-2004r4"></a> What is <script type="math/tex">\vec {F}(2,6)</script>?  <script type="math/tex; mode=display"> \vec {F}(2,6) = \vector {\answer {0},\answer {0}} </script>
 </div>
+</div>
+</div>
                                                                   
 
                                                                   
-</div>
-</div>
 <div role="article" class="problem-environment question" id="problem5"><a id="x1-2005r5"></a> Consider the following picture: <div class="image-environment" role="img" aria-labelledby="image-alt-6"><img src="constField.png" alt="PIC"/> </div>
 Which vector field is illustrated by this picture? <div class="multiple-choice" id="problem6"><span class="choice  " id="choice1"><script type="math/tex">\vec {F}(x,y)=\vector {x,y/2}</script></span> <span class="choice  " id="choice2"><script type="math/tex">\vec {F}(x,y)=1/2</script></span> <span class="choice  " id="choice3"><script type="math/tex">\vec {F}(x,y)=x+y/2</script></span> <span class="choice correct " id="choice4"><script type="math/tex">\vec {F}(x,y)=\vector {1,1/2}</script></span> </div>
 <div class="feedback" data-feedback="correct" id="feedback7"> Note that with the first choice, the lengths of the vectors is changing, and that does
@@ -157,11 +157,11 @@ definition.
 </div>
 <!--l. 302--><p class="noindent">Fun fact: Newton’s law of gravitation defines a radial vector field.
 </p>
+<div role="article" class="problem-environment question" id="problem12"><a id="x1-4005r10"></a> Is <script type="math/tex">\vec {F}(x,y,z) = \vector {x,y,z}</script> a radial vector field?  <div class="multiple-choice" id="problem13"><span class="choice correct " id="choice5">yes</span> <span class="choice  " id="choice6">no</span> </div>
+<div class="feedback" data-feedback="correct" id="feedback14"> Absolutely! This vector field can be rewritten as: <script type="math/tex; mode=display"> \vector {\frac {x}{(\sqrt {x^2+y^2+z^2})^p},\frac {y}{(\sqrt {x^2+y^2+z^2})^p},\frac {z}{(\sqrt {x^2+y^2+z^2})^p}} </script> where <script type="math/tex">p=\answer {0}</script>. </div>
                                                                   
 
                                                                   
-<div role="article" class="problem-environment question" id="problem12"><a id="x1-4005r10"></a> Is <script type="math/tex">\vec {F}(x,y,z) = \vector {x,y,z}</script> a radial vector field?  <div class="multiple-choice" id="problem13"><span class="choice correct " id="choice5">yes</span> <span class="choice  " id="choice6">no</span> </div>
-<div class="feedback" data-feedback="correct" id="feedback14"> Absolutely! This vector field can be rewritten as: <script type="math/tex; mode=display"> \vector {\frac {x}{(\sqrt {x^2+y^2+z^2})^p},\frac {y}{(\sqrt {x^2+y^2+z^2})^p},\frac {z}{(\sqrt {x^2+y^2+z^2})^p}} </script> where <script type="math/tex">p=\answer {0}</script>. </div>
 </div>
 <!--l. 322--><p class="noindent">Some fields look like they are expanding and are. Other fields look like the are
 expanding but they aren’t. In the sections to come, we’re going to use calculus to
@@ -198,11 +198,11 @@ points in <script type="math/tex">\R ^n</script>.
 <div class="theorem-like problem-environment example" id="problem18"><a id="x1-6002r14"></a>Consider <script type="math/tex">F(x,y) = \frac {\sin (3x)+\sin (2y)}{1+x^2+y^2}</script>. A plot of this function looks like this: <div class="image-environment" role="img" aria-labelledby="image-alt-13"><img src="surf1.png" alt="PIC"/> </div>
 The gradient field of <script type="math/tex">F</script> looks like this: <div class="image-environment" role="img" aria-labelledby="image-alt-14"><img src="gradField1.png" alt="PIC"/> </div>
 Note we can see the vector pointing in the initial direction of greatest increase. Let’s
+see a plot of both together: <div class="image-environment" role="img" aria-labelledby="image-alt-15"><img src="gradSurf1.png" alt="PIC"/> </div>
+</div>
                                                                   
 
                                                                   
-see a plot of both together: <div class="image-environment" role="img" aria-labelledby="image-alt-15"><img src="gradSurf1.png" alt="PIC"/> </div>
-</div>
 <div role="article" class="problem-environment question" id="problem19"><a id="x1-6003r15"></a> Remind me, what direction do gradient vectors point?  <div class="multiple-choice" id="problem20"><span class="choice  " id="choice7">Gradient vectors point to
 the maximum.</span> <span class="choice  " id="choice8">Gradient vectors point up.</span> <span class="choice correct " id="choice9">Gradient vectors point in the initial
 direction of greatest increase.</span> </div>
@@ -235,11 +235,11 @@ Think of <script type="math/tex">A</script> and <script type="math/tex">B</scrip
      </p><div class="quote">
      <!--l. 467--><p class="noindent"><strong>The gradient turns functions of several variables into vector
      fields.</strong></p></div>
+<!--l. 469--><p class="noindent">We can write this with our new notation as: <script type="math/tex; mode=display"> C^\infty (\R ^n,\R )\overset {\grad }{\to }C^\infty (\R ^n,\R ^n) </script>
+</p>
                                                                   
 
                                                                   
-<!--l. 469--><p class="noindent">We can write this with our new notation as: <script type="math/tex; mode=display"> C^\infty (\R ^n,\R )\overset {\grad }{\to }C^\infty (\R ^n,\R ^n) </script>
-</p>
 <h4 class="subsectionHead"><a id="x1-8000"></a>The Clairaut gradient test</h4>
 <!--l. 478--><p class="noindent">Now we give a method to determine if a field is a gradient field.
 </p>
@@ -276,11 +276,11 @@ do this, we’ll antidifferentiate—in essence we want to “undo” the gradie
       &= \answer[given]{2y + 3xy+ y^2} + k(x)
     \end{align*}</script>
 <!--l. 550--><p class="noindent">We need <script type="math/tex; mode=display"> x^2+3xy + c(y) = 2y + 3xy+ y^2 + k(x) </script> to make this happen, we set <script type="math/tex">c(y) = 2y+y^2</script> and <script type="math/tex">k(x) = x^2</script>. From this we find our potential function
+is <script type="math/tex">F(x,y) = x^2+3xy+ y^2 + 2y</script>.
+</p></div>
                                                                   
 
                                                                   
-is <script type="math/tex">F(x,y) = x^2+3xy+ y^2 + 2y</script>.
-</p></div>
 </div>
 <!--l. 559--><p class="noindent">Now try your hand at these questions:
 </p>

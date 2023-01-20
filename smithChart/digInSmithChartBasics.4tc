@@ -1,0 +1,6 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-681}{}{\ignorespaces Smith Chart}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-692}{}{\ignorespaces Examples of location of reflection coefficient on the Smith Chart.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-703}{}{\ignorespaces Points of constant magnitude of the reflection coefficient. $ | \Gamma | $=0.5, $ | \Gamma |$=1}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-714}{}{\ignorespaces Points of constant phase of the reflection coefficient. $ < \Gamma =45^\circ $, $ < \Gamma = 120^\circ $}}{figure}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-725}{}{\ignorespaces HP8510 Network Analyzer in Microwave Laboratory measures impedances up to 26.5GHz. This piece of equipment is on permanent loan curtesy of Defense Micro Electronic Activity (DMEA), Sacramento}}{figure}\relax 

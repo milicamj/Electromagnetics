@@ -1,0 +1,15 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Static Magnetic Field}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{What is the source of the magnetic field?}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Constitutive parameters of a material}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Charged Particle in a Static Magnetic Field}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Force on a conductor carrying current}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-6}{Wire frame carrying current in a static magnetic field}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-7}{Biot-Savart's Law}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-8}{Amperes Law}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-9}{Inductance}}{5}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-10000}{QQ2-1-10}{Mutual Inductance}}{6}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-100011}{}{\ignorespaces Mutual Inductance: Increasing the magnetic field and therefore current in one wire due to another wire in vicinity. }}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-11000}{QQ2-1-12}{Inductance in circuit theory}}{9}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-110012}{}{\ignorespaces Simple electronic circuit with an inductance and resistance. }}{figure}\relax 
+\par 

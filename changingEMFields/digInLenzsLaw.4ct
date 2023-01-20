@@ -1,0 +1,7 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Example of application of Lenz's law}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Example problem for Lenz's law.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10032}{}{\ignorespaces Magnetic field direction of an infinite wire carrying current I.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-10043}{}{\ignorespaces Direction of current, induced magnetic field and voltage for increasing current in the infinite conductor.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-10064}{}{\ignorespaces The direction of the induced magnetic field and current from the decreasing magnetic field from the infinite wire.}}{figure}\relax 
+\par 

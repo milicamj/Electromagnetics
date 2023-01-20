@@ -1,0 +1,22 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Conductors in the electrostatic field}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Conductor in Electric Field.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-3}{Dielectrics in the electrostatic field}}{6}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-20012}{}{\ignorespaces Dielectric in Electric Field.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-20023}{}{\ignorespaces Polarization of a dielectric in external electric Field. Each oval represents one atom.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-20034}{}{\ignorespaces Two fields acting inside the dielectric. The external field $E_v$ from the free charges in the metal on top and bottom, and the polarized dielectric field $E_p$. The inner part of the dielectric is removed to show clearly the fields.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-7}{Relative dielectric constant}}{15}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-8}{Boundary conditions at a dielectric-dielectric boundary}}{15}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-40015}{}{\ignorespaces Boundary Conditions for Electric Field.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-10}{Boundary conditions at a conductor-dielectric boundary}}{19}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-50016}{}{\ignorespaces Metallic sphere in an external electric field.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-12}{Shielding with Faraday's Cage}}{22}\relax 
+\doTocEntry\toclof{7}{\csname a:TocLink\endcsname{1}{x1-60017}{}{\ignorespaces Electric field inside hollow metallic conductor (Faraday's Cage).}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-14}{Grounding}}{25}\relax 
+\doTocEntry\toclof{8}{\csname a:TocLink\endcsname{1}{x1-70018}{}{\ignorespaces Hollow conductor with a charge inside.}}{figure}\relax 
+\doTocEntry\toclof{9}{\csname a:TocLink\endcsname{1}{x1-70029}{}{\ignorespaces Grounded hollow conductor with a charge inside.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-17}{Proof of boundary conditions}}{31}\relax 
+\doTocEntry\toclof{10}{\csname a:TocLink\endcsname{1}{x1-800110}{}{\ignorespaces Derivation of equation for normal components of electric field on the boundary of two dielectrics.}}{figure}\relax 
+\doTocEntry\toclof{11}{\csname a:TocLink\endcsname{1}{x1-800211}{}{\ignorespaces Derivation of equation for tangential components of electric field on the boundary of two dielectrics.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-20}{Charge distribution around sharp edges}}{38}\relax 
+\doTocEntry\toclof{12}{\csname a:TocLink\endcsname{1}{x1-900112}{}{\ignorespaces Electric field and charge distribution close to sharp edges.}}{figure}\relax 

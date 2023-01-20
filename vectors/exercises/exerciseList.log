@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.1.4)  4 JAN 2020 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.1.4)  11 JAN 2020 15:31
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -10,10 +10,10 @@ documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
  tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
 \HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode ximera,charset=utf-8,-css.a
 .b.c.\input  exerciseList.tex
-(./exerciseList.tex (/home/milica/texmf/tex/ximeraLatex/xourse.cls
+(./exerciseList.tex (/home/milica/texmf/tex/latex/ximeraLatex/xourse.cls
 Document Class: xourse 2018/10/28 v1.00 Combining Ximera activities into Xourse
 s
-(/home/milica/texmf/tex/latex/ximera/ximera.cls
+(/home/milica/texmf/tex/latex/ximeraLatex/ximera.cls
 Document Class: ximera 2018/10/28 v1.00 Simultaneously write print and online i
 nteractive materials
 
@@ -1182,7 +1182,7 @@ corations.softclip.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-protractor.tex)
 \digitwidth=\dimen267
 )
-(/home/milica/texmf/tex/ximeraLatex/ximera.cfg
+(/home/milica/texmf/tex/latex/ximeraLatex/ximera.cfg
 (/usr/share/texlive/texmf-dist/tex/generic/tex4ht/tex4ht.4ht
 version 2017-05-09-09:21
 --------------------------------------
@@ -1415,10 +1415,10 @@ version 2018-02-21-09:31
 (/usr/share/texlive/texmf-dist/tex/generic/tex4ht/html4-math.4ht
 version 2017-03-30-16:04
 ))
-(/home/milica/texmf/tex/ximeraLatex/xourse.4ht
+(/home/milica/texmf/tex/latex/ximeraLatex/xourse.4ht
 \c@ximera@part=\count292
 
-/home/milica/texmf/tex/ximeraLatex/xourse.4ht:65: Too many }'s.
+/home/milica/texmf/tex/latex/ximeraLatex/xourse.4ht:65: Too many }'s.
 l.65 }
       
 You've closed more groups than you opened.
@@ -1430,7 +1430,7 @@ version 2018-02-21-09:31
 (/usr/share/texlive/texmf-dist/tex/generic/tex4ht/html4-math.4ht
 version 2017-03-30-16:04
 ))
-(/home/milica/texmf/tex/ximeraLatex/ximera.4ht
+(/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks60
@@ -1453,8 +1453,8 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
 
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:51: LaTeX Error: Environment html
- undefined in `ximera.cfg'.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:51: LaTeX Error: Environmen
+t html undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1468,8 +1468,8 @@ If that doesn't work, type  X <return>  to quit.
 
 \c@identification=\count295
 
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:69: LaTeX Error: Environment xarm
-aBoost undefined in `ximera.cfg'.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:69: LaTeX Error: Environmen
+t xarmaBoost undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1481,8 +1481,8 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:71: LaTeX Error: Environment shuf
-fle undefined in `ximera.cfg'.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:71: LaTeX Error: Environmen
+t shuffle undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1495,8 +1495,8 @@ If that doesn't work, type  X <return>  to quit.
 
 \c@imagealt=\count296
 \c@choiceId=\count297
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:234: Illegal parameter number in 
-definition of \desmos.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:234: Illegal parameter numb
+er in definition of \desmos.
 <to be read again> 
                    c
 l.234 ...not support embedded elements.</iframe>}}
@@ -1506,8 +1506,8 @@ Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:266: LaTeX Error: Environment sag
-esilent undefined in `ximera.cfg'.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:266: LaTeX Error: Environme
+nt sagesilent undefined in `ximera.cfg'.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1518,7 +1518,7 @@ l.266 \renewenvironment{sagesilent}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/milica/texmf/tex/ximeraLatex/ximera.4ht:272: Too many }'s.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.4ht:272: Too many }'s.
 l.272 }
        
 You've closed more groups than you opened.
@@ -1801,11 +1801,8 @@ LaTeX Font Info:    ... okay on input line 158.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 158.
 LaTeX Font Info:    ... okay on input line 158.
 
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
-your preamble.
- on input line 158.
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.15}).
 
 \c@lstlisting=\count298
 \AtBeginShipoutBox=\box68
@@ -1825,7 +1822,8 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-/home/milica/texmf/tex/ximeraLatex/ximera.cfg:159: Undefined control sequence.
+/home/milica/texmf/tex/latex/ximeraLatex/ximera.cfg:159: Undefined control sequ
+ence.
 \a:@HEAD ...ame="og:image" content="}\xourse@logo 
                                                   \HCode {" />\Hnewline }\HC...
 l.159 \EndPreamble
@@ -1855,12 +1853,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 45.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 41692 strings out of 492983
- 942446 string characters out of 6134923
- 1332667 words of memory out of 5000000
+ 41691 strings out of 492983
+ 942474 string characters out of 6134923
+ 1335824 words of memory out of 5000000
  44260 multiletter control sequences out of 15000+600000
  3834 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,100p,1226b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,6n,122p,1226b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on exerciseList.dvi (4 pages, 10888 bytes).

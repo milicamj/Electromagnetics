@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en"><head> <title>Wave Equation</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInWaveEquation.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Recognize and explain transmission line equivalent circuit model. Derive the equations for voltage and current waves on a transmission line from the equivalent circuit model."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="54b07c3806c85db7637ab04c6b0626a7dfb29c54 waves/digInWaveEquation.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a> Wave equation on a transmission line</h3>
+<!--l. 21--><p class="noindent"><a class="ximera-label" id="telegrapher"></a>
+</p><!--l. 23--><p class="noindent">In this section, we will derive the expression for voltage and current on a
+transmission line. This expression will have two variables, time <script type="math/tex">t</script>, and space <script type="math/tex">z</script>. So far,
+we have only seen voltages and currents as a function of time, because all
+circuit elements seen so far are lumped elements. In distributed systems, we
+want to derive the equations for voltage and current for the case when the
+transmission line is longer than the fraction of a wavelength. To make sure that we
+do not encounter any transmission line effects to start with, we can look
+at the piece of a transmission line that is much smaller than the fraction
+of a wavelength. In other words, we cut the transmission line into small
+pieces to make sure there are no transmission line effects, as the pieces are
+shorter than the fraction of a wavelength. We then represent each piece
+with an equivalent circuit, as shown in Figure <a class="reference" href="#lineeqc">lineeqc</a> (a). To derive expressions for
+current and voltage on the transmission line, we will use the following five-step
+plan
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Look at an infinitesimal length of a transmission line <script type="math/tex">\Delta z</script>.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Represent that piece with an equivalent circuit.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Write KCL, KVL for the piece in the time domain (we get differential
+     equations)
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Apply phasors (equations become linear)
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem">Solve the linear system of equations to get the expression for the voltage
+     and current on the transmission line as a function of <script type="math/tex">z</script>.
+     </dd></dl>
+<!--l. 52--><p class="noindent">Look at a small piece of a transmission line and represented it with an equivalent
+circuit. What is modeled by the circuit elements?
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10061"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 58--><p class="noindent">
+</p><!--l. 59--><p class="noindent"><img src="../jpg/Coaxtl.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 1: </span><span class="content">Coaxial cable is cut in short pieces.</span></div><!--tex4ht:label?: x1-10061 -->
+<a class="ximera-label" id="lineeqcPieces"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10072"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 66--><p class="noindent">
+</p><!--l. 67--><p class="noindent"><img src="../jpg/Equivalent_Circuit_of_Transmission_Line.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 2: </span><span class="content">Equivalent circuit of a section of transmission line.</span></div><!--tex4ht:label?: x1-10072 -->
+<a class="ximera-label" id="lineeqcOnePiece"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10083"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 74--><p class="noindent">
+</p><!--l. 75--><p class="noindent"><img src="../jpg/tlmadeupofcircuits.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Equivalent circuit of transmission line.</span></div><!--tex4ht:label?: x1-10083 -->
+<a class="ximera-label" id="lineeqc"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 83--><p class="noindent">Write KVL and KCL equations for the circuit above.
+</p><!--l. 85--><p class="noindent">KVL </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-v(z,t) + R \, \Delta z \, i(z,t) + L \,\Delta z \,\frac{\partial
+ i(z,t)}{\partial t} + v(z+ \Delta z,t) = 0 \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 91--><p class="noindent">KCL
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+i(z,t)=i(z+\Delta z)+ i_{CG}(z+\Delta z,t) \nonumber   \\
+i(z,t)=i(z+\Delta z)+ G \, \Delta z\, v(z+\Delta z,t)+C\, \Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 100--><p class="noindent">Rearrange the KCL and KVL Equations <a class="reference" href="#te1kvl1">te1kvl1</a>, <a class="reference" href="#te1kc11">te1kc11</a> and divide them with <script type="math/tex">\Delta z</script>. Equations <a class="reference" href="#te2kvl1">te2kvl1</a>, <a class="reference" href="#te1kc21">te1kc21</a>. let <script type="math/tex">\Delta z \to 0</script>
+and recognize the definition of the derivative Equations, <a class="reference" href="#te2kvl111">te2kvl111</a>, <a class="reference" href="#te1kc211">te1kc211</a>.
+</p><!--l. 105--><p class="noindent">KVL </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-( v(z+ \Delta z ,t)- v(z,t))=R \, \Delta z  \, i(z,t)+L  \,  \Delta z
+ \frac{\partial i(z,t)}{\partial t} \label{te1kvl1}  \\
+ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}=R  \, i(z,t)+L  \,
+ \frac{\partial i(z,t)}{\partial t}  \label{te2kvl1} \\
+\lim_{\Delta z \to 0} \{ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}\}=  \lim_{\Delta z \to 0} \{   R  \,  i(z,t)+L  \,
+ \frac{\partial i(z,t)}{\partial t} \} \label{te2kvl111} \\
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L
+ \frac{\partial i(z,t)}{\partial t} \label{te3kvl1}
+\end{eqnarray}</script>
+</div>
+<!--l. 117--><p class="noindent">KCL
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-( i(z+ \Delta z ,t)- i(z,t))= G  \, \Delta z  \, v(z+\Delta z,t)+ C \, \Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc11} \\
+-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z}= G  \, v(z+\Delta z,t)+C \,
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc21} \\
+\lim_{\Delta z \to 0} \{-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z} \}= \lim_{\Delta z \to 0} \{ G  \, v(z+\Delta z,t)+C \,
+\frac{\partial v(z+\Delta z,t)}{\partial t} \} \label{te1kc211} \\
+-\frac{i(z,t) }{\partial z}= G  \, v(z+\Delta z,t)+C \,
+                                                                  
+
+                                                                  
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc31}
+\end{eqnarray}</script>
+</div>
+<!--l. 132--><p class="noindent">We just derived Telegrapher’s equations in time-domain:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{v(z,t) }{\partial z}=R  \, i(z,t)+L  \,
+ \frac{\partial i(z,t)}{\partial t} \nonumber  \\ \nonumber
+-\frac{i(z,t) }{\partial z}= G \,  v(z+\Delta z,t)+C \,
+\frac{\partial v(z+\Delta z,t)}{\partial t}
+\end{eqnarray}</script>
+</div>
+<!--l. 144--><p class="noindent">Telegrapher’s equations are two differential equations with two unknowns, <script type="math/tex">i(z, t)</script>, <script type="math/tex">v(z, t)</script>. It is not
+impossible to solve them; however, we would prefer to have linear algebraic equations.
+We then express time-domain variables as phasors.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
+i(z,t)=Re\{ \tilde{I}(z) e^{j \omega t} \} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 152--><p class="noindent"><script type="math/tex">\tilde {V}(z),\tilde {I}(z) </script> are the voltage, and current anywhere on the line, and they depend on the position
+on the line <script type="math/tex">z</script>. The Telegrapher’s equations in phasor form are
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) \tilde{I}(z) \label{te11}\\
+-\frac{\partial \tilde{I}(z)}{\partial z} = (G+j\omega C) \tilde{V}(z) \label{te121}
+\end{eqnarray}</script>
+</div>
+<!--l. 162--><p class="noindent">Two equations, two unknowns. To solve these equations, we first take a derivative of
+both equations with respect to z.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
+ \tilde{I}(z)}{\partial z}  \label{teleg3} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
+ \tilde{V}(z)}{\partial z} \label{teleg4}
+\end{eqnarray}</script>
+</div>
+<!--l. 172--><p class="noindent">Rearange the previous equations:
+                                                                  
+
+                                                                  
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= \frac{\partial^2
+  \tilde{V}(z)}{\partial z^2} \label{te51} \\
+-\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= \frac{\partial^2
+  \tilde{I}(z)}{\partial z^2} \label{te61}
+\end{eqnarray}</script>
+</div>
+<!--l. 183--><p class="noindent">Substitute Eq.<a class="reference" href="#te51">te51</a> into Eq.<a class="reference" href="#te121">te121</a> and Eq.<a class="reference" href="#te61">te61</a> into Eq.<a class="reference" href="#te11">te11</a> and we get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
+\tilde{I}(z)
+\end{eqnarray}</script>
+</div>
+<!--l. 192--><p class="noindent">Or if we rearrange
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
+ \tilde{V}(z)=0  \label{we11} \\
+\frac{\partial^2 I(z)}{\partial z^2}- (G+j\omega C)  (R+j\omega L)
+I(z)=0 \label{we21}
+\end{eqnarray}</script>
+</div>
+<!--l. 202--><p class="noindent">The above Equations <a class="reference" href="#we11">we11</a>-<a class="reference" href="#we21">we21</a> are called wave equations, and they represent current and
+voltage wave on a transmission line. <script type="math/tex">\gamma ^2=(G+j\omega C)(R+j\omega L)</script> is the complex propagation constant. This
+constant has a real and an imaginary part.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\gamma= \alpha + j \beta \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 212--><p class="noindent">where <script type="math/tex">\alpha </script> is the attenuation constant and <script type="math/tex">\beta </script> is the phase constant.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\alpha=Re\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \} \nonumber \\ \nonumber
+\beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
+\end{eqnarray}</script>
+</div>
+<!--l. 220--><p class="noindent">We can now write wave equations as:
+                                                                  
+
+                                                                  
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -\gamma^2
+ \tilde{V}(z)=0  \label{eq:TLwe11} \\
+\frac{\partial^2 I(z)}{\partial z^2}- \gamma^2
+I(z)=0 \label{eq:TLwe21}
+\end{eqnarray}</script>
+</div>
+<!--l. 231--><p class="noindent">The general solution of the second order differential equations with constant
+coefficients Equations <a class="reference" href="#eq:TLwe11">eq:TLwe11</a> - <a class="reference" href="#eq:TLwe21">eq:TLwe21</a> is:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z} \nonumber \\ \nonumber
+\tilde{I}(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}
+\end{eqnarray}</script>
+</div>
+<!--l. 239--><p class="noindent">Where <script type="math/tex">\tilde {V}(z)^+=\tilde {V}_0^+ e^{-\gamma z}</script> represents the forward-going voltage wave, <script type="math/tex">\tilde {V}(z)^-=\tilde {V}_0^- e^{\gamma z}</script> represents the reflected voltage
+wave, <script type="math/tex">\tilde {I}(z)^+=\tilde {I}_0^+ e^{-\gamma z}</script> represents the forward going current wave, and <script type="math/tex">\tilde {I}(z)^-=\tilde {I}_0^- e^{\gamma z}</script> represents the reflected
+current wave. We will see later that <script type="math/tex">\tilde {V}_0^+</script> is the forward-going voltage wave at the load, <script type="math/tex">\tilde {V}_0^-</script> is
+the reflected voltage wave at the load, <script type="math/tex">\tilde {I}_0^+</script> is the forward going current at the load, and <script type="math/tex">\tilde {I}_0^-</script>
+reflected current at the load.
+</p><!--l. 243--><p class="noindent">In the next several sections, we will look at how to find the constants <script type="math/tex">\beta </script>, <script type="math/tex">\tilde {V}_0^+ </script>, <script type="math/tex"> \tilde {V}_0^-</script>, <script type="math/tex">\tilde {I}_0^+ </script>, <script type="math/tex">\tilde {I}_0^-</script>. In order
+to find the constants, we will introduce the concepts of transmission line impedance <script type="math/tex">Z_0</script>,
+reflection coefficient <script type="math/tex">\Gamma (z)</script>, input impedance <script type="math/tex">Z_{in}</script>.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

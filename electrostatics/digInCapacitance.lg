@@ -1,0 +1,23 @@
+htfcss: cmti  font-style: italic;
+htfcss: cmtt font-family: monospace;
+File: digInCapacitance.html
+File: digInCapacitance.tmp
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+File: ../jpg/capacitors.jpg
+File: ../jpg/ppw.jpg
+File: ../jpg/Fringing_Fields_For_Finite_Capacitor.jpg
+File: ../jpg/Parallel_Plate_Capacitor.jpg
+File: ../jpg/Parallel_Plate_Capacitor2.jpg
+File: ../jpg/coaxialCable.jpg
+File: ../jpg/coax2.jpg
+File: ../jpg/coax1.jpg
+File: ../jpg/sphereandcylcc.jpg
+--- characters ---
+Font("cmr","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmti","10","10","100")

@@ -1,0 +1,12 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Design of a transmission-line impedance matching circuits}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Replacing lumped-elements with equivalent transmission-line stubs}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-20031}{}{\ignorespaces Input impedance $Z_{in}=-j$ of a $\frac  {\lambda }{8}$ open transmission line.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-20062}{}{\ignorespaces Input impedance $Z_{in}=j$ of a $\frac  {3 \lambda }{8}$ open transmission line.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-5}{Simulation of the input impedance of shorted stub}}{10}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-30033}{}{\ignorespaces Input impedance $Z_{in}=j$ of a $\frac  {\lambda }{8}$ shorted transmission line.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-7}{Fully transmission-line matching circuits.}}{14}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-40014}{}{\ignorespaces Position of normalized impedance $Z_L=0.5+j1$ on Smith Chart.}}{figure}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-40025}{}{\ignorespaces The result of impedance matching.}}{figure}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-40036}{}{\ignorespaces Transmission-line impedance matching circuit.}}{figure}\relax 
+\par 

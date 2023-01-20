@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="en"><head> <title>Traveling and Standing Waves</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInWaveStanding.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Describe forward and reflected wave on a transmission line."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="a9e52f49c3ea482b669ec936c90dc9e9de36d87b waves/digInWaveStanding.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Standing Waves</h3>
+<!--l. 25--><p class="noindent">In the previous section, we introduced the voltage reflection coefficient that relates
+the forward to reflected voltage phasor.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  ) \label{eq:vtlfin} \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:itlfin}
+\end{eqnarray}</script>
+</div>
+<!--l. 33--><p class="noindent">Let us look at the physical meaning of these variables.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem"><script type="math/tex">\Gamma _L</script> is the voltage reflection coefficient at the load (z=0),
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem"><script type="math/tex">z</script> is the axis in the direction of wave propagation,
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem"><script type="math/tex">\beta </script> is the phase constant,
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem"><script type="math/tex">Z_0</script> is the impedance of the transmission line.
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {V}_0^+</script> is the phasor of the forward-going wave at the load,
+     </dd><dt class="enumerate-enumitem">
+  (f) </dt><dd class="enumerate-enumitem"><script type="math/tex">\Gamma _L \tilde {V}_0^+</script> is the phasor of the reflected going wave at the load,
+     </dd><dt class="enumerate-enumitem">
+ (g) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {V}_0^+ e^{-j \beta z} </script> is a forward voltage anywhere on the line,
+     </dd><dt class="enumerate-enumitem">
+ (h) </dt><dd class="enumerate-enumitem"><script type="math/tex"> \Gamma _L \tilde {V}_0^+ e^{j \beta z} </script> is a reflected voltage anywhere on the line,
+     </dd><dt class="enumerate-enumitem">
+  (i) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {V}(z)</script> is the total voltage phasor on the line, the sum of forward and reflected
+     voltage.
+     </dd><dt class="enumerate-enumitem">
+  (j) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {I}_0^+</script> is the phasor of the forward-going current at the load,
+     </dd><dt class="enumerate-enumitem">
+ (k) </dt><dd class="enumerate-enumitem"><script type="math/tex">-\Gamma _L \frac {\tilde {V}_0^+}{Z_0}</script> is the phasor of the reflected current at the load,
+                                                                  
+
+                                                                  
+     </dd><dt class="enumerate-enumitem">
+  (l) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {I}_0^+ e^{-j \beta z} </script> is the phasor of a forward current anywhere on the line,
+     </dd><dt class="enumerate-enumitem">
+ (m) </dt><dd class="enumerate-enumitem"><script type="math/tex">-\Gamma _L \frac {\tilde {V}_0^+}{Z_0} e^{j \beta z} </script> is the phasor of a reflected current anywhere on the line,
+     </dd><dt class="enumerate-enumitem">
+ (n) </dt><dd class="enumerate-enumitem"><script type="math/tex">\tilde {I}(z)</script> is the phasor of the total current on the line, the sum of forward and
+     reflected voltage.</dd></dl>
+<!--l. 56--><p class="noindent">The magnitude of a complex number can be found as <script type="math/tex">|z|=\sqrt {z z^*}</script>.Therefore the magnitude of the
+voltage anywhere on the line is <script type="math/tex">|\tilde {V}(z)|=\sqrt {\tilde {V}(z) \tilde {V}(z)^*}</script>. We can simplify this equation as shown in Figure
+<a class="reference" href="#eq:SWsw1">eq:SWsw1</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)|=\sqrt{\tilde{V}(z) \tilde{V}(z)^*} \nonumber  \\
+|\tilde{V}(z)|=\sqrt{   (\tilde{V}_0^+)^2 (e^{-j \beta z} - |\Gamma_L|  e^{j \beta z +
+ \Theta_r}  )
+   \tilde{V}_0^+ (e^{j \beta z} - |\Gamma_L|  e^{-(j \beta z + \angle \Gamma_L)}     )} \nonumber
+\\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{(e^{-j \beta z} - |\Gamma_L|  e^{j \beta z +
+|\angle \Gamma_L}  )
+  (e^{j \beta z} - |\Gamma_L|  e^{-(j \beta z + \angle \Gamma_L)}     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+  |\Gamma_L|  e^{-(2j \beta z +
+|\angle \Gamma_L)}    + |\Gamma_L|  e^{j 2 \beta z + \angle \Gamma_L} +|\Gamma_L|^2     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+ |\Gamma_L|^2 + |\Gamma_L| ( e^{-(2j \beta z +
+ \angle \Gamma_L)} \angle \Gamma_L  +  e^{(j 2 \beta z + \angle \Gamma_L)}     )}
+ \nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+  \sqrt{1+ |\Gamma_L|^2 + 2 |\Gamma_L| \cos(2 \beta z +\angle \Gamma_L)} \label{eq:SWsw1}
+\end{eqnarray}</script>
+</div>
+<!--l. 79--><p class="noindent">The Equation <a class="reference" href="#eq:SWsw1">eq:SWsw1</a> is written in terms of <script type="math/tex">z</script>. We set up the load at <script type="math/tex">z=0</script>, and the generator at <script type="math/tex">z=-l</script>.
+The positions of the maximums and minimum total voltage on the line will be at
+some position at the negative part of z-axis <script type="math/tex">z_{max}=-l_{max}</script>, and the minimums will be at
+<script type="math/tex">z_{max}=-l_{min}</script>.
+</p><!--l. 81--><p class="noindent">The magnitude of the total voltage on the transmission line is given by Eq.<a class="reference" href="#eq:SWsw1">eq:SWsw1</a>. We will
+now visualize how the magnitude of the voltage looks on the transmission
+line.
+                                                                  
+
+                                                                  
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-1015r1"></a>
+<!--l. 87--><p class="noindent">Find the magnitude of the total voltage anywhere on the transmission line if
+<script type="math/tex">\Gamma _L=0</script>.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-1016r2"></a>Let us start from a simple case when the voltage reflection coefficient on the
+transmission line is <script type="math/tex">\Gamma _L=0</script> and draw the magnitude of the total voltage as a function of z.
+Equation <a class="reference" href="#eq:SWsw1">eq:SWsw1</a> shows the magnitude of the total voltage anywhere on the line is equal to
+the magnitude of the voltage at the load <script type="math/tex">|\tilde {V}(z)|= |\tilde {V}_0^+|</script>. The magnitude of the voltage is constant
+everywhere on the transmission line, and so the line is called ”flat,” and it
+represents a single, forward traveling wave from the generator to the load. The
+magnitude is the green line in Figure <a class="reference" href="#fig:SWflatline">fig:SWflatline</a>. To see the movie of this transmission line,
+go to the class web page under Instructional Videos. Forward voltage is
+shown in red, reflected voltage in pink, and the magnitude of the voltage is
+green.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10171"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 101--><p class="noindent">
+</p><!--l. 102--><p class="noindent"><img src="../jpg/flatline.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Flat line.</span></div><!--tex4ht:label?: x1-10171 -->
+<a class="ximera-label" id="fig:SWflatline"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 108--></div>
+<!--l. 110--></div>
+
+<div class="theorem-like problem-environment example" id="problem3"><a id="x1-1018r3"></a>
+<!--l. 117--><p class="noindent">Find the magnitude of the total voltage anywhere on the transmission line if
+<script type="math/tex">\Gamma _L=0.5 e^{j0}</script>.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem4"><a id="x1-1019r4"></a>
+Let’s look at another case, <script type="math/tex">\Gamma _L=0.5</script> and <script type="math/tex">\angle \Gamma _L=0</script>. Equation <a class="reference" href="#eq:SWswc1">eq:SWswc1</a> represents the magnitude of the voltage
+on the transmission line, and Figure <a class="reference" href="#fig:SWreflcoeffvid">fig:SWreflcoeffvid</a> shows in green how this function looks on a
+transmission line. This case is shown in Figure <a class="reference" href="#fig:SWreflcoeffvid">fig:SWreflcoeffvid</a>.
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)|=\tilde{V}_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{eq:SWswc1}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10202"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 127--><p class="noindent">
+</p><!--l. 128--><p class="noindent"><img src="specialcase.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Voltage on a transmission line with reflection coefficient magnitude
+0.5, and zero phase.</span></div><!--tex4ht:label?: x1-10202 -->
+<a class="ximera-label" id="fig:SWreflcoeffvid"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 137--><p class="noindent">The function in Equation <a class="reference" href="#eq:SWswc1">eq:SWswc1</a> is at its maximum when <script type="math/tex">cos(2 \beta z+\angle \Gamma _L)=1</script> or <script type="math/tex">z=\frac {k}{2} \lambda </script>, and the function value is <script type="math/tex">\tilde {V}(z)=1.5\tilde {V}_0^+ </script>. It
+is at its minimum when <script type="math/tex">cos(2 \beta z+ \angle \Gamma _L)=-1</script> or <script type="math/tex">z=\frac {2 k +1}{4} \lambda </script> and the function value is <script type="math/tex">\tilde {V}(z)=0.5 \tilde {V}_0^+</script>
+</p><!--l. 143--><p class="noindent">The function that we see looks like a cosine with an average value of <script type="math/tex"> \tilde {V}_0^+ </script>, but
+it is not a cosine. The minimums of the function are sharper than the
+maximums.
+</p><!--l. 149--></div>
+</div>
+
+<div role="article" class="problem-environment question" id="problem5"><a id="x1-1021r5"></a>
+<!--l. 156--><p class="noindent">Observe waves in the app below.
+</p>
+<div class="center">
+<!--l. 159--><p class="noindent">
+</p><!--l. 160--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/bmr8euzu/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<!--l. 164--><p class="noindent">Is the black wave moving left or right?
+</p>
+<div class="multiple-choice" id="problem6"><span class="choice  " id="choice1">left</span> <span class="choice correct " id="choice2">right</span> </div>
+<!--l. 172--><p class="noindent">Is the black wave a forward, reflected or the sum of the two? </p><div class="multiple-choice" id="problem7"><span class="choice  " id="choice3">Forward</span> <span class="choice  " id="choice4">Reflected</span> <span class="choice correct " id="choice5">The sum of the two</span> </div>
+</div>
+<div class="theorem-like problem-environment example" id="problem8"><a id="x1-1022r6"></a>
+<!--l. 184--><p class="noindent">Find the magnitude of the total voltage anywhere on the transmission line if
+<script type="math/tex">\Gamma _L=1</script>.
+</p>
+<div class="theorem-like problem-environment explanation" id="problem9"><a id="x1-1023r7"></a>Another case we will look at is when the reflection coefficient is at its maximum of <script type="math/tex">\Gamma _L =1</script>.
+The function is shown if Figure <a class="reference" href="#fig:SWStanding">fig:SWStanding</a>. In this case, we have a pure standing wave on a
+transmission line.
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10243"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 193--><p class="noindent">
+</p><!--l. 194--><p class="noindent"><img src="../jpg/shortedline.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Shorted Transmission Line.</span></div><!--tex4ht:label?: x1-10243 -->
+<a class="ximera-label" id="fig:SWStanding"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 201--></div>
+</div>
+
+<div role="article" class="problem-environment question" id="problem10"><a id="x1-1025r8"></a>
+<!--l. 206--><p class="noindent">Observe waves in the app below.
+</p>
+<div class="center">
+<!--l. 209--><p class="noindent">
+</p><!--l. 210--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/fwebfheh/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<!--l. 214--><p class="noindent">Is the black wave moving left or right? The wave is not moving left or right, it is
+standing in place, so it is called a standing wave. Is the black wave a forward,
+reflected or the sum of the two? </p><div class="multiple-choice" id="problem11"><span class="choice  " id="choice6">Forward</span> <span class="choice  " id="choice7">Reflected</span> <span class="choice correct " id="choice8">The sum of the two</span> </div>
+</div>
+<div class="theorem-like problem-environment example" id="problem12"><a id="x1-1026r9"></a>
+<!--l. 226--><p class="noindent">Find the magnitude of the total voltage anywhere on the transmission line for any <script type="math/tex">\Gamma _L</script>,
+and the position of voltage maximums on the line. </p><div class="theorem-like problem-environment explanation" id="problem13"><a id="x1-1027r10"></a>
+<!--l. 230--><p class="noindent">The magnitude of the total voltage on the line is given in Equation<a class="reference" href="#eq:SWsw1">eq:SWsw1</a>. In general the
+voltage maximums will occur when the cosine function is at its maximum <script type="math/tex">cos(2 \beta z+\angle \Gamma _L)=1</script>. In this
+case, the maximum value of the magnitude of total voltage on the line is shown in
+Equation <a class="reference" href="#eq:SWMaxValue">eq:SWMaxValue</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)_{max}|=|\tilde{V}_0^+|\sqrt{1+|\Gamma_L|^2+2 |\Gamma_L|} \nonumber  \\
+|\tilde{V}(z)_{max}| =|\tilde{V}_0^+|\sqrt{(1+|\Gamma_L|)^2}  \nonumber \\
+|\tilde{V}(z)_{max}| =|\tilde{V}_0^+|(1+|\Gamma_L|) \label{eq:SWMaxValue}
+\end{eqnarray}</script>
+</div>
+<!--l. 240--><p class="noindent">The Equation <a class="reference" href="#eq:SWmaximums">eq:SWmaximums</a> shows position of voltage maximums <script type="math/tex">z_{max}</script> on the line.
+</p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+cos(-2 \beta l_{max}+ \angle \Gamma_L)=1 \nonumber \\
+cos(2 \beta l_{max}- \angle \Gamma_L)=1 \nonumber \\
+2 \beta z_{max} - \angle \Gamma_L = 2 n \pi \nonumber \\
+z_{max} =\frac{ 2 n \pi +\angle \Gamma_L }{ 2 \beta} \nonumber \\
+z_{max}= \lambda \frac{ 2 n \pi +\angle \Gamma_L  }{ 4 \pi} \label{eq:SWmaximums}
+                                                                  
+
+                                                                  
+\end{eqnarray}</script>
+</div>
+<!--l. 249--><p class="noindent">In general the voltage minimums will occur when <script type="math/tex">cos(2 \beta z)=-1</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)_{min}|=|\tilde{V}_0^+|\sqrt{1+|\Gamma_L|^2-2 |\Gamma_L|} \nonumber  \\
+|\tilde{V}(z)_{min}| =|\tilde{V}_0^+|\sqrt{(1-|\Gamma_L|)^2}  \nonumber \\
+|\tilde{V}(z)_{min}| =|\tilde{V}_0^+| (1-|\Gamma_L|)
+\end{eqnarray}</script>
+</div>
+<!--l. 259--><p class="noindent">The Equation <a class="reference" href="#eq:SWminimums">eq:SWminimums</a> shows the position of voltage minimums on the line.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+cos(2 \beta z_{max}-\angle \Gamma_L)=-1 \nonumber \\
+2 \beta z_{max} + \angle \Gamma_L = (2 n+1) \pi \nonumber \\
+z_{max} =\frac{ (2 n+1) \pi +\angle \Gamma_L }{ 2 \beta} \nonumber \\
+z_{max}=\lambda \frac{ (2 n+1) \pi +\angle \Gamma_L  }{ 4 \pi} \label{eq:SWminimums}
+\end{eqnarray}</script>
+</div>
+<!--l. 272--></div>
+</div>
+
+<h3 class="sectionHead"><a id="x1-2000"></a>Voltage Standing Wave Ratio (VSWR) - pron: ”vee-s-uh-are”</h3>
+<!--l. 283--><p class="noindent">The ratio of voltage minimum on the line over the voltage maximum is called
+the Voltage Standing Wave Ratio (VSWR) or just Standing Wave Ratio
+(SWR).
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+SWR=\frac{\tilde{V}(z)_{max}}{ \tilde{V}(z)_{min}} \nonumber \\
+SWR=\frac{1+|\Gamma_L|}{1-|\Gamma_L|}
+\end{eqnarray}</script>
+</div>
+<!--l. 294--><p class="noindent">Note that the SWR is always equal or greater than 1.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head> <title>Inductance</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInInductance.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Define and calculate inductance for specific conductor configurations."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="9b1ddfcbdc69cd0330a65ddfab4bc2518c5ec93e magnetostatics/digInInductance.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Magnetic flux, review of electric flux</h3>
+<!--l. 21--><p class="noindent">A conceptual definition of magnetic flux is the number of magnetic field lines
+penetrating a surface.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Phi_B= N_B
+\end{eqnarray}</script>
+</div>
+<!--l. 27--><p class="noindent">Mathematically, magnetic flux is defined through magnetic flux density vector B
+as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Phi_B= \int_S \vec{B} \cdot \vec{dS}
+\end{eqnarray}</script>
+</div>
+<!--l. 33--><p class="noindent">If the angle between the surface dS and B vector is the same, and the B vector is
+constant on the surface, we have that <script type="math/tex">\Phi _B=B S</script>, or <script type="math/tex">B=\frac {\Phi _B}{S}</script>. Vector <script type="math/tex">\vec {B}</script> is called magnetic flux
+density, just like in electrostatics, vector <script type="math/tex">D=\frac {\Phi _E}{S}</script> was called electric flux density
+vector.
+</p><!--l. 35--><p class="noindent">Magnetic flux density vector <script type="math/tex">\vec {B}</script> and magnetic field vector <script type="math/tex">\vec {H}</script> are related through the
+magnetic permeability of the material <script type="math/tex">\mu </script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{B} = \mu \vec{H}
+\end{eqnarray}</script>
+</div>
+<!--l. 41--><p class="noindent">Similarly, in electrostatics, the electric flux density vector <script type="math/tex">\vec {D}</script>, and electric field vector <script type="math/tex">\vec {E}</script>
+are related through the electric permittivity of the material <script type="math/tex">\epsilon </script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{D} = \epsilon \vec{E}
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-2000"></a>Definition of inductance</h3>
+<!--l. 49--><p class="noindent">A simplified, conceptual definition of inductance is the number of magnetic field lines
+around a conductor, divided by the current in a wire.
+</p>
+                                                                  
+
+                                                                  
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ L=\frac{N_B}{I}
+ \end{eqnarray}</script>
+</div>
+<!--l. 55--><p class="noindent">For example, if we have five magnetic field lines around the wire that carries the
+current 1A, then the inductance is L=5/1=5 H. If we have another wire that makes
+ten magnetic field lines around it for the same current flowing through it of
+1A, then the inductance of this wire is L=10 H. This type of inductance is
+called self-inductance. We will talk about mutual inductance in the section
+below.
+</p><!--l. 57--><p class="noindent">The scientific definition of inductance is the ratio of magnetic flux to the current that
+produced it.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+L=\frac{\Phi}{I} \\
+L=\frac{\int_S \vec{B} \cdot \vec{dS}}{I}
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-3000"></a>Magnetostatic energy</h3>
+<!--l. 66--><p class="noindent">Inductors store magnetic energy. Capacitors store electric energy. The magnetic
+energy stored in an inductor is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+W_m=\frac{1}{2} L I^2
+\end{equation}</script>
+<!--l. 72--><p class="noindent">The total magnetic energy stored in a volume is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+W_m=\frac{1}{2}\int_v \vec{B} \cdot \vec{H} \, dv
+\end{equation}</script>
+<!--l. 78--><p class="noindent">B is the magnetic flux density, H is the magnetic field, and v is the volume in which
+the energy is stored.
+</p><!--l. 80--><p class="noindent">By equating the above two equations, we can find the inductance of an inductor
+as
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+L=\frac{1}{I^2} \int_v \vec{B} \cdot \vec{H} \,dv
+\end{equation}</script>
+<!--l. 86--><p class="noindent">In linear, homegenous materials <script type="math/tex">\vec {B} = \mu \vec {H}</script>, the equation simplifies to
+                                                                  
+
+                                                                  
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+L=\frac{\mu}{I^2} \int_v H^2 dv
+\end{equation}</script>
+<!--l. 92--><p class="noindent">In the electrostatics section, we found that the capacitance is found as
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+C=\frac{\epsilon}{V^2} \int_v E^2 dv
+\end{equation}</script>
+<!--l. 99--><p class="noindent">V is the potential difference, v is the volume where electric energy is stored, and E is
+the electric field.
+</p>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-3001r1"></a>
+<h3 class="sectionHead"><a id="x1-40001"></a>Deriving inductance for a coaxial cable</h3>
+<!--l. 104--><p class="noindent">Derive the inductance of a length h of a coaxial cable carrying current I. The inner
+radius of the coaxial cable is a, and the outer radius is b.
+</p><dl class="trivlist"><dt class="trivlist">
+Solution:   </dt><dd class="trivlist">In the previous section, we derived the magnetic field around an
+infinite straight line carrying current <script type="math/tex">H(r)=\frac {I}{2 \pi r}</script>. The magnetic field between a coaxial
+cable’s  inner  and  outer  conductor  is  the  same  as  an  infinite  straight  line’s
+magnetic field.
+<!--l. 109--><p class="noindent">Using the equation for the magnetic field and integrating throughout a section
+of the volume between the inner and outer conductor of the coaxial cable, we
+get
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+L=\frac{\mu}{I^2} \int_v \frac{I}{2 \pi r}^2 dv
+\end{equation}</script>
+<!--l. 116--><p class="noindent">since the only variable is the distance r, and the unit volume in cylindrical
+coordinates is <script type="math/tex">dv=r dr d\theta dz</script>, the integral simplifies to
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+L=\frac{\mu}{I^2} \int_0^h dz \int_0^{2 \pi} d\theta \int_a^b (\frac{I}{2 \pi r})^2 r dr
+\end{equation}</script>
+<!--l. 124--><p class="noindent">The final expression for the inductance of a coaxial cable is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+L=\frac{\mu h}{2 \pi} ln\frac{b}{a}
+                                                                  
+
+                                                                  
+\end{equation}</script>
+</dd></dl>
+<!--l. 130--><p class="noindent"><img src="digInInductance0x.png" alt="PICT"/>
+</p></div>
+
+<h3 class="sectionHead"><a id="x1-5000"></a>Types of inductance</h3>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Internal self-inductance. The definition is the number of magnetic field
+     lines inside a wire, divided by the current that flows through the same
+     wire.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">External self-inductance. The definition is the number of magnetic field
+     lines outside of a wire, divided by the current that flows through the same
+     wire.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Mutual inductance. The definition of this inductance is the number of
+     magnetic  field  lines  around  one  wire  produced  by  the  current  flowing
+     through another wire.
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Partial inductance. This inductance is defined for a portion of a current
+     or a wire because we do not know (or we are not interested in) how the
+     current returns back to the source.</dd></dl>
+<h4 class="subsectionHead"><a id="x1-6000"></a>Self Inductance</h4>
+<!--l. 154--><p class="noindent">A simple conceptual definition of self-inductance is the number of magnetic field lines
+around the wire, divided by the current in the same wire (that produced the
+magnetic field around the wire).
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ L_s=\frac{N_s}{I_s}
+ \end{eqnarray}</script>
+</div>
+<!--l. 160--><p class="noindent">For example, if we have five magnetic field lines around the wire that carries the
+current 1A, then the inductance is L=5/1=5 H. If we have another wire that makes
+ten magnetic field lines around it for the same current flowing through it of 1A, then
+the inductance of this wire is L=10 H. This type of inductance is called (external)
+                                                                  
+
+                                                                  
+self-inductance.
+</p>
+<h4 class="subsectionHead"><a id="x1-7000"></a>Mutual Inductance</h4>
+<!--l. 164--><p class="noindent">Mutual inductance is defined for two or more wires. It is defined as the number of
+magnetic field lines around one conductor, divided by the current produced through
+another conductor.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ L_m=\frac{N}{I_2}
+ \end{eqnarray}</script>
+</div>
+<!--l. 170--><p class="noindent">For example, in Figure <a class="reference" href="#MutualInduc2">MutualInduc2</a>, we have two currents, <script type="math/tex">I_1=1\,A</script> and <script type="math/tex">I_2=1\,A</script> flowing in the same direction.
+Their magnetic fields, therefore, rotate in the same direction. Current <script type="math/tex">I_1</script> produces four
+magnetic field lines, and current <script type="math/tex">I_2</script> produces three magnetic field lines. Two of the
+magnetic field lines from conductor 1 encircle wire 2 as well. The total number of
+magnetic field lines around the second conductor is therefore 5. Two magnetic field
+lines from conductor 1, and three from conductor 2 itself is 2+3=5. Therefore mutual
+inductance is <script type="math/tex">L_m=5/1=5\,H.</script> When the magnetic field from two wires is in the same direction, the
+fluxes add.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-70011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 174--><p class="noindent">
+</p><!--l. 175--><p class="noindent"><img src="../jpg/inductanceCurrentSameDir1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1:  </span><span class="content">Mutual  Inductance:  Increasing  the  magnetic  field  and  therefore
+current in one wire due to another wire in vicinity. </span></div><!--tex4ht:label?: x1-70011 -->
+<a class="ximera-label" id="MutualInduc2"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 182--><p class="noindent">In another example, in Figure <a class="reference" href="#MutualInduc1">MutualInduc1</a>, we have two currents, <script type="math/tex">I_1=1\,A</script> and <script type="math/tex">I_2=1\,A</script> flowing in the opposite
+directions. Current <script type="math/tex">I_1</script> again produces four magnetic field lines, and current <script type="math/tex">I_2</script>
+produces three magnetic field lines. Two of the magnetic field lines from
+conductor 1 encircle wire 2 as well. However, this time, the magnetic field
+lines flow in opposite directions. Therefore, the total number of magnetic
+field lines around conductor 2 is 3-2=1. Therefore mutual inductance is <script type="math/tex">L_m=1/1=1\,H.</script>
+When the magnetic field from two wires is in the opposite direction, fluxes
+subtract.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-70022"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 186--><p class="noindent">
+</p><!--l. 187--><p class="noindent"><img src="../jpg/inductanceCurrentOppoDir1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2:  </span><span class="content">Mutual  Inductance:  Increasing  the  magnetic  field  and  therefore
+current in one wire due to another wire in vicinity. </span></div><!--tex4ht:label?: x1-70022 -->
+<a class="ximera-label" id="MutualInduc1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

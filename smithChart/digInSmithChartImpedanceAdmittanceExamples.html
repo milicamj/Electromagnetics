@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="en"><head> <title>Impedance and Admittance on Smith Chart</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSmithChartImpedanceAdmittanceExamples.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Read normalized impedance and reflection coefficient on the Smith Chart given a random point on the Smith Chart. Given impedance, find the normalized position of the impedance on the Smith Chart. Describe the reason for introducing admittance. Write the impedance and admittance of an inductor and capacitor. Explain why is the susceptance of an inductor negative and reactance is positive. Explain why is the admittance Smith Chart rotated 180 degrees. Distinguish between load impedance and normalized load impedance. Describe impedances on the Smith Chart as normalized impedances.Given impedance, read admittance on combo Y/Z chart. Given a random point on Y/Z chart, find admittance, impedance and the reflection coefficient."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="42e614b20e2f3481dc885291c725608357b8663e smithChart/digInSmithChartImpedanceAdmittanceExamples.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Brief review of impedance and admittance</h3>
+<!--l. 23--><p class="noindent">Impedance’s <script type="math/tex">Z =R+jX</script>real part is called resistance <script type="math/tex">R</script>, and the imaginary part is called
+reactance <script type="math/tex">X</script>. It is easier to add impedances when elements are in series; see
+Figure <a class="reference" href="#fig:SCDerimpadmtrans">fig:SCDerimpadmtrans</a>. To find the total impedance, we add resistances and reactances
+separately.
+</p><!--l. 25--><p class="noindent">The real part of an admittance <script type="math/tex">Y=G+jB</script> is called conductance G, and the imaginary part is
+called susceptance B. It is easier to add admittances when elements are in parallel;
+see Figure <a class="reference" href="#fig:SCDerimpadmtrans">fig:SCDerimpadmtrans</a>. When adding two admittances, we add conductances and susceptances
+separately.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 28--><p class="noindent">
+</p><!--l. 29--><p class="noindent"><img src="../jpg/Impedance_Admittance.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">It is easier to use admittance when the circuit elements are in parallel
+and impedance when the circuit elements are in series.</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="fig:SCDerimpadmtrans"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 36--><p class="noindent">Smith Chart in Figure <a class="reference" href="#fig:SCDerscadmimp">fig:SCDerscadmimp</a> has impedance circles, and impedance coordinates on it. We
+can use this Smith Chart to read off the values for the impedance, and reflection
+coefficient. In the next section, we will learn to use impedance/admittance (Z/Y)
+Smith Chart, where both impedance and admittance circles are shown. We will use
+the Z/Y Smith Chart when we add impedances or admittances in parallel or series,
+which is useful in impedance matching that we will talk about in the next
+chapter.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10022"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 40--><p class="noindent">
+</p><!--l. 41--><p class="noindent"><img src="../jpg/SmithChartImped-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">On Smith Chart impedances are shown in red, and admittances in
+green.</span></div><!--tex4ht:label?: x1-10022 -->
+<a class="ximera-label" id="fig:SCDerscadmimp"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-2000"></a>Impedance on the Smith Chart</h3>
+<!--l. 51--><p class="noindent">Figure <a class="reference" href="#fig:SCDerscimpedance">fig:SCDerscimpedance</a>, shows how to find the location of normalized impedance <script type="math/tex">z_L=1+j 1</script> on the Smith
+Chart. <script type="math/tex">z_L=1+j 1</script> is at a point where the circle of constant resistance <script type="math/tex">r_L=1</script> crosses the circle of
+constant reactance <script type="math/tex">x_L=1</script>. Figure <a class="reference" href="#fig:SCDerscgammafromZ">fig:SCDerscgammafromZ</a> shows how to find the reflection coefficient if normalized
+load impedance <script type="math/tex">z_L=1+j 1</script> is given. Measure the distance between the origin and the
+point using the scale ”Reflection Coefficient E or I” on the Smith Chart’s
+bottom to find the reflection coefficient’s magnitude. To find the reflection
+coefficient’s angle, we read the scale ”Angle of Reflection Coefficient” on
+the Smith Chart’s perimeter, shown in green. The reflection coefficient is
+therefore <script type="math/tex">0.5 e^{j 62^o}</script>, which is close to the actual value <script type="math/tex">0.5 e^{j 64^o}</script>. If we use a ruler and compass,
+and a nicely sharpened pencil, we will get exactly the right answer. Try it
+out!
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20013"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 55--><p class="noindent">
+</p><!--l. 56--><p class="noindent"><img src="../jpg/FindingImpedanceonSC.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Red circle that represents all points on Smith Chart with normalized
+resistance  <script type="math/tex">r=1</script>  and  blue  circle  that  represents  all  points  on  Smith  Chart  with
+normalized reactance <script type="math/tex">x=1</script> cross at point where <script type="math/tex">Z_L=1+j 1</script>.</span></div><!--tex4ht:label?: x1-20013 -->
+<a class="ximera-label" id="fig:SCDerscimpedance"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20024"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 63--><p class="noindent">
+</p><!--l. 64--><p class="noindent"><img src="../jpg/FindingGammaFromImpedanceonSC.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 4: </span><span class="content">To find the magnitude of the reflection coefficient from impedance
+<script type="math/tex">Z_L=1+j 1</script>, we measure the distance between the origin and the point using the scale
+”Reflection Coefficient E or I” on the bottom of the Smith Chart. To find the
+reflection coefficient’s angle, we read the scale ”Angle of Reflection Coefficient”
+on the perimeter of the Smith Chart.</span></div><!--tex4ht:label?: x1-20024 -->
+<a class="ximera-label" id="fig:SCDerscgammafromZ"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 71--><p class="noindent">
+                                                                  
+
+                                                                  
+</p>
+<h3 class="sectionHead"><a id="x1-3000"></a>Admittance on the impedance Smith Chart</h3>
+<!--l. 75--><p class="noindent">The reflection coefficient can be found from impedance or admittance. To
+find the reflection coefficient from impedance, we use the formula that we
+previously derived, where <script type="math/tex">Z_L</script> is the load impedance, and <script type="math/tex">z_L=\frac {Z_L}{Z_0}</script> is the normalized load
+impedance.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_L=\frac{z_L-1}{z_L+1} \label{eq:GammaImp}
+\end{eqnarray}</script>
+</div>
+<!--l. 82--><p class="noindent">Admittance is defined as <script type="math/tex">Y_L=\frac {1}{Z_L}</script>, and the transmission-line admittance is defined as <script type="math/tex">Y_0=\frac {1}{Z_0}</script>. If we
+now replace the impedances in the equation above with admittances, we
+get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_L = \frac{\frac{1}{Y_L}-\frac{1}{Y_0}}{\frac{1}{Y_L}+\frac{1}{Y_0}} \\
+\Gamma_L = \frac{Y_0-Y_L}{Y_0+Y_L} \\
+\Gamma_L = -  \frac{Y_L-Y_0}{Y_L+Y_0} \\
+\Gamma_L = -  \frac{y_L-1}{y_L+1} \\
+\Gamma_L = -\Gamma_Y \label{eq:GammaAdm}
+\end{eqnarray}</script>
+</div>
+<!--l. 94--><p class="noindent">Where <script type="math/tex">Y_L</script> is the load admittance and <script type="math/tex">y_L=\frac {Y_L}{Y_0} </script>, is the normalized load admittance. Note that the
+Smith Chart shown in Figure <a class="reference" href="#fig:SCDerscimpedance">fig:SCDerscimpedance</a> shows circles for the impedance of the load. Therefore,
+the true reflection coefficient of the load is at the position of the load. We have
+defined <script type="math/tex">\Gamma _Y </script> above to see the position of admittance on the impedance Smith
+Chart.
+</p><!--l. 97--><p class="noindent">From the above Equation <a class="reference" href="#eq:GammaAdm">eq:GammaAdm</a>, we can see that the reflection coefficient for the
+admittance (and the admittance) on the impedance Smith chart has the same
+magnitude as the load reflection coefficient. The <script type="math/tex">\Gamma _Y</script> is on the same SWR circle as
+the <script type="math/tex">\Gamma _L</script>, but it is <script type="math/tex">180^0</script> shifted with respect to the load reflection coefficient. <script type="math/tex">180^0</script> phase
+shift in reflection coefficient with the same magnitude can be found in two
+ways:
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">by rotating the reflection coefficient <script type="math/tex">\Gamma _L</script> for <script type="math/tex">180^0</script> on the SWR circle to read the
+     admittance of the load. Effectively, this means that you can draw a line
+     through the load impedance and the center of the Smith Chart, and find
+     the position of this line that crosses the SWR circle, <script type="math/tex">180^0</script> away. This method’s
+     disadvantage is that the point representing admittance changes place on
+     the Smith Chart, depending on whether we are reading admittance or
+                                                                  
+
+                                                                  
+     impedance. This method is used in some books, see, for example, Ulaby,
+     Applied Electromagnetics.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Another  way  to  read  the  admittances  on  the  Smith  chart  is  to  use
+     combination of impedance/admittance (Z/I) chart, Figure <a class="reference" href="#fig:SCDerscadmimp1">fig:SCDerscadmimp1</a>. To make the
+     Z/Y chart, we rotate the impedance Smith Chart for <script type="math/tex">180^0</script> to get the admittance
+     point at the same position as the impedance point. Then, the impedance,
+     admittance, and reflection coefficient are all at the same point, but we
+     have to read the two scales, the impedance and admittance scale. The
+     disadvantage of this method is that the Z/Y Smith Chart has more circles
+     to read. However, this method is conceptually more straightforward, as
+     the point on the Smith Chart does not change position, depending on
+     whether we are reading admittance or impedance. The point is fixed, and
+     we just read the different circles. We will use this method in our class. The
+     example below discusses this method further.
+     <hr class="figure"/><div class="figure"><a id="x1-30035"></a>
+<div class="center">
+<!--l. 106--><p class="noindent">
+</p><!--l. 107--><p class="noindent"><img src="../jpg/SCadmimp.jpg" alt="PIC"/></p></div>
+     <br/>  <div class="caption"><span class="id">Figure 5:  </span><span class="content">On  Z/Y  Smith  Chart  impedances  are  shown  in  red,  and
+     admittances in green.</span></div><!--tex4ht:label?: x1-30035 -->
+     <a class="ximera-label" id="fig:SCDerscadmimp1"></a>
+     </div><hr class="endfigure"/>
+     </dd></dl>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-3004r1"></a>The normalized impedance of the load is given <script type="math/tex">z_L=1+j1</script>. First, find the admittance of this
+impedance using your calculator. Then use two Smith Charts. On one, find the
+impedance position, and on the other, find the position of the admittance. Then
+rotate the admittance chart for <script type="math/tex">180^0</script> so that both points overlap. Observe the impedance
+and admittance circles on this combo Z/Y chart, and compare them to the Z/Y
+chart.
+<dl class="trivlist"><dt class="trivlist">
+Solution:   </dt><dd class="trivlist">The normalized admittance to impedance <script type="math/tex">z_L=1+j1</script> is <script type="math/tex">y_L=0.5-j0.5</script>.
+</dd></dl>
+<!--l. 125--><p class="noindent"><img src="digInSmithChartImpedanceAdmittanceExamples0x.png" alt="PICT"/>
+</p><!--l. 127--><p class="noindent">The impedance <script type="math/tex">z_L=1+j1</script> is shown on the Smith Chart in Figure <a class="reference" href="#fig:SC1-imp">fig:SC1-imp</a>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30056"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 130--><p class="noindent">
+</p><!--l. 131--><p class="noindent"><img src="../jpg/Zchart-01-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 6: </span><span class="content">Impedance <script type="math/tex">z_L=1+j1</script> on Smith Chart</span></div><!--tex4ht:label?: x1-30056 -->
+<a class="ximera-label" id="fig:SC1-imp"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 136--><p class="noindent">The admittance <script type="math/tex">y_L=0.5-j0.5</script> is shown on Smith Chart in Figure <a class="reference" href="#fig:SC1-adm">fig:SC1-adm</a>. If we now use this Smith Chart
+and rotate it for <script type="math/tex">180^0</script> (upside down), and place it over the chart above, we will see that
+the impedance and admittance point are in the same position on the Smith Chart.
+We call this Smith Chart a z/y Smith Chart.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30067"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 139--><p class="noindent">
+</p><!--l. 140--><p class="noindent"><img src="../jpg/Ychart-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 7: </span><span class="content">Admittance <script type="math/tex">y_L=0.5-j0.5</script> on Smith Chart</span></div><!--tex4ht:label?: x1-30067 -->
+<a class="ximera-label" id="fig:SC1-adm"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 146--><p class="noindent">Both impedance <script type="math/tex">z_L=1+j1</script> and admittance <script type="math/tex">y_L=0.5-j0.5</script> are at the same position on the z/y Smith Chart
+in Figure <a class="reference" href="#fig:SC1-both">fig:SC1-both</a>. We see two sets of circles on this chart, the red ones represent impedance
+circles, and the green ones represent admittance circles. To read the impedance of the
+point shown on the Smith Chart, we read the impedance circle scale, and to read the
+admittance, we read the admittance circle scales.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30078"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 150--><p class="noindent">
+</p><!--l. 151--><p class="noindent"><img src="../jpg/Zchart-01a-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 8: </span><span class="content">Both impedance <script type="math/tex">z_L=1+j1</script> and admittance <script type="math/tex">y_L=0.5-j0.5</script> are at the same position on the
+z/y Smith Chart</span></div><!--tex4ht:label?: x1-30078 -->
+<a class="ximera-label" id="fig:SC1-both"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 156--></div>
+
+<h3 class="sectionHead"><a id="x1-4000"></a>Converting Reflection Coefficient to Impedance and Admittance</h3>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-4001r2"></a>
+<!--l. 163--><p class="noindent">Look at a Z/Y Smith Chart of your choice. Z/Y chart has both impedance and
+admittance circles. Pick a point on the Smith Chart, first estimate the reflection
+coefficient, and then read it from the Smith Chart. Then read the impedance and
+admittance. Use the app below to check your work.
+</p>
+<div class="center">
+<!--l. 166--><p class="noindent">
+</p><!--l. 167--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/aswbwwx3/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<!--l. 169--></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

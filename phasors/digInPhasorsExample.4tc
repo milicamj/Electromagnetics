@@ -1,0 +1,7 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-901}{}{\ignorespaces  RC circuit in ADS.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-912}{}{\ignorespaces  Sinusoidal signal as a function of angle $\omega t$}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-923}{}{\ignorespaces  Points represent polar plot of complex voltages in RC circuit.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-934}{}{\ignorespaces  Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V with vector addition.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-10003}{QQ2-1-5}{Series RC Circuit}}{19}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-20003}{QQ2-1-6}{Series RL Circuit}}{19}\relax 

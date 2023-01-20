@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head> <title>Input Reflection Coefficient and Impedance on Smith Chart</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInSmithChartInputImpedance.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Calculate the input impedance and input reflection coefficient on Smith Chart if the load impedance or load reflection coefficient are known, and vice-versa. Describe input reflection coefficient in terms of load reflection coefficient. Use Smith Chart to find input reflection coefficient in a typical transmission-line problem."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="3ce698fb429bc06852d8577a34673c337e2f4b20 smithChart/digInSmithChartInputImpedance.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Input reflection coefficient and load reflection coefficient.</h3>
+<!--l. 26--><p class="noindent">If the load reflection coefficient is <script type="math/tex">\Gamma _L=\frac {V_0^-}{V_0^+}=|\Gamma _L| e^{j \Theta _{L}}</script>, the input reflection coefficient <script type="math/tex">\Gamma _{in}</script> is:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_{in}=\frac{V^-}{V^+} \\
+\Gamma_{in}= \frac{V_0^- e^{-j\beta l}}{V_0^+ e^{j\beta l}} \\
+\Gamma_{in}= \frac{V_0^-}{V_0^+} e^{-2j \beta l} \\
+\Gamma_{in}= \Gamma_L e^{-j2 \beta l}
+\end{eqnarray}</script>
+</div>
+<!--l. 36--><p class="noindent">Where <script type="math/tex">V^+</script> is the reflected wave anywhere on the line, <script type="math/tex">V^-</script> is the forward wave anywhere on
+the line, <script type="math/tex">V_0^+</script> is the forward wave at the load, <script type="math/tex">V_0^-</script> is the reflected wave at the load, <script type="math/tex">\beta l</script> is the
+electrical length of the line.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j \Theta_{L}} e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) }
+\end{eqnarray}</script>
+</div>
+<!--l. 44--><p class="noindent">From the above equations, we see that on a lossless transmission line, the magnitude
+of the reflection coefficient is the same anywhere on the line, but the phase differs for
+twice the electrical length of the line <script type="math/tex">-2 \beta l</script>.
+</p><!--l. 46--><p class="noindent">When we calculate input reflection coefficient, we can find input impedance:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Z_{in}=Z_0 \frac{1+\Gamma_{in}}{1-\Gamma_{in}}
+\end{eqnarray}</script>
+</div>
+<!--l. 52--><p class="noindent">From the previous equation, we see that we can find the input impedance if we know
+the input reflection coefficient. If we know the input impedance, we can find the
+input reflection coefficient as:
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\Gamma_{in} = \frac{Z_{in}-Z_0}{Z_{in}+Z_0}
+\end{equation}</script>
+                                                                  
+
+                                                                  
+<h4 class="subsectionHead"><a id="x1-2000"></a>Magnitude of the input reflection coefficient</h4>
+<!--l. 59--><p class="noindent">We see that the input reflection coefficient and the load reflection coefficient have the
+same magnitude. All points on the Smith Chart that have the same magnitude of the
+reflection coefficient are on a circle centered at the center of the Smith Chart, with
+the radius determined by the load impedance or input impedance position. This
+circle is called the SWR circle, and it is shown in blue in Figure <a class="reference" href="#fig:SCImpRefCoeff">fig:SCImpRefCoeff</a>. The input
+impedance and load impedance are on the same SWR circle. If we know the load
+impedance, we know that the input impedance will be on the same SWR
+circle.
+</p><!--l. 61--><p class="noindent">For example, if the load impedance is <script type="math/tex">Z_L=100\Omega </script>, the transmission-line impedance is <script type="math/tex">Z_0=50\Omega </script>, the
+magnitude of the reflection coefficient is 0.33. Both the input reflection coefficient
+and the load reflection coefficient magnitudes will be the same, 0.33; however, their
+phases will differ depending on the line’s length.
+</p>
+<h4 class="subsectionHead"><a id="x1-3000"></a>Phase of the input reflection coefficient</h4>
+<!--l. 64--><p class="noindent">The input reflection coefficient angle will be decreased by twice the electrical length
+of the line <script type="math/tex">\Theta _{L} -2 \beta l</script>. On Smith Chart, decreasing the phase of the reflection coefficient means
+going clockwise on the SWR circle. For example, if the load impedance is <script type="math/tex">Z_L=100\Omega </script>, the
+transmission-line impedance is <script type="math/tex">Z_0=50\Omega </script>, and the length of the line is <script type="math/tex">\frac {\lambda }{4}</script>, or <script type="math/tex">\Theta =\beta l= 90^0</script>, the angle between
+the load impedance and the transmission-line impedance will be <script type="math/tex">2 \beta l = 180^0</script>. We will find the
+input reflection coefficient <script type="math/tex">180^0</script> away from the load reflection coefficient on the Smith
+Chart.
+</p>
+<h3 class="sectionHead"><a id="x1-4000"></a>Reading the input reflection coefficient on the Smith Chart</h3>
+<!--l. 70--><p class="noindent">We do not have to do calculations every time we want to find the input impedance or
+input reflection coefficient. To graphically find the input reflection coefficient or
+input impedance, we first identify the scale ”WAVELENGTHS TOWARD
+GENERATOR” (WTG) on the Smith Chart’s outer perimeter; see green oval in
+Figure <a class="reference" href="#fig:SCImpRefCoeff">fig:SCImpRefCoeff</a>. The WTG scale is labeled in terms of the transmission-line length in
+wavelengths (not electrical degrees). We see that <script type="math/tex">180^0</script> on the chart corresponds to <script type="math/tex">\lambda /4=0.25\lambda </script>, which
+is <script type="math/tex">2 \beta l =180</script> electrical degrees.
+</p><!--l. 72--><p class="noindent">If the WTG scale on the Smith Chart, shown in Figure <a class="reference" href="#fig:SCImpRefCoeff">fig:SCImpRefCoeff</a>, were a movable mechanical
+scale, we could move the reference position WTG=0 to the position of our load, and
+then read the input reflection coefficient from the known length of the line. Since we
+cannot move the position WTG=0 on the Smith Chart, we have to find a reference
+position of the load on the WTG scale, as shown in the black rectangle in Figure
+<a class="reference" href="#fig:SCImpRefCoeff">fig:SCImpRefCoeff</a>.
+</p><!--l. 74--><p class="noindent">For example, if a normalized load impedance <script type="math/tex">z_L=0.5+j</script> is given, using the Smith Chart find
+the input impedance and input reflection coefficient if the line is <script type="math/tex">0.145 \lambda </script> long.
+                                                                  
+
+                                                                  
+</p><!--l. 76--><p class="noindent">To find the input impedance, we will start from the load impedance and read the
+reference position on the WTG scale for the load <script type="math/tex">ref=0.135\lambda </script>, as shown in Figure <a class="reference" href="#fig:SCImpRefCoeff">fig:SCImpRefCoeff</a>. Then, we add
+the line length of <script type="math/tex">l=0.145\lambda </script> to the load impedance to find the input reflection coefficient phase.
+The point where this dashed line crosses the SWR circle is the point of input
+reflection coefficient and input impedance. Note that we must decrease the phase and
+go in the clockwise direction.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-40011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 81--><p class="noindent">
+</p><!--l. 82--><p class="noindent"><img src="../jpg/InputImpedance2-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Finding input reflection coefficient from load reflection coefficient.</span></div><!--tex4ht:label?: x1-40011 -->
+<a class="ximera-label" id="fig:SCImpRefCoeff"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 88--><p class="noindent">
+                                                                  
+
+                                                                  
+</p>
+<h3 class="sectionHead"><a id="x1-5000"></a>Finding load reflection coefficient on the Smith Chart if the input reflection
+coefficient is known</h3>
+<!--l. 91--><p class="noindent">If the input reflection coefficient is given, then to find the load reflection coefficient,
+we can re-write the previous equations as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{L} = \Gamma_{in}  e^{j2 \beta l} \\
+\Gamma_{L} = |\Gamma_{in}| e^{j(\Theta_{in} +2 \beta l) }
+\end{eqnarray}</script>
+</div>
+<!--l. 100--><p class="noindent">The above equation shows that when we are looking for a load reflection coefficient,
+we have to add <script type="math/tex">2 \beta l</script> to the input reflection coefficient’s phase. We, therefore, have to go
+in a counter-clockwise direction on the Smith Chart. Identify the WAVELENGTHS
+TOWARD THE LOAD scale on the Smith Chart, and verify that the arrow points in
+the counter-clockwise direction.
+</p>
+<h3 class="sectionHead"><a id="x1-6000"></a>Examples</h3>
+<div class="theorem-like problem-environment example" id="problem1"><a id="x1-6001r1"></a>
+<!--l. 109--><p class="noindent">The line is terminated with an impedance of <script type="math/tex">Z_L= 100-j50 \Omega </script>. Transmission line impedance is <script type="math/tex">Z_0=50 \Omega </script>, and
+line length is <script type="math/tex">l=\lambda /4</script> at 1 GHz. Calculate the impedance at the input of a transmission line,
+and the reflection coefficient at the input of a transmission line. Then, repeat this
+exercise using the Smith Chart.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-60022"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 115--><p class="noindent">
+</p><!--l. 116--><p class="noindent"><img src="../jpg/trline.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Finding input reflection coefficient from load reflection coefficient.</span></div><!--tex4ht:label?: x1-60022 -->
+<a class="ximera-label" id="fig:SCImpRefExample1SchDia"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="theorem-like problem-environment explanation" id="problem2"><a id="x1-6003r2"></a>
+<!--l. 124--><p class="noindent">The input reflection coefficient <script type="math/tex">\Gamma _{in}</script> is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j \Theta_{L}} e^{-j2 \beta l} \\
+\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) }
+\end{eqnarray}</script>
+</div>
+<!--l. 132--><p class="noindent">The load reflection coefficient is <script type="math/tex">\Gamma _{L}=\frac {Z_L-Z_0}{Z_L+Z_0} =0.45 e^{-j 26^0 }</script>.
+</p><!--l. 134--><p class="noindent">The electrical length of the line is <script type="math/tex">\beta l =90^0</script>.
+</p><!--l. 136--><p class="noindent">The input reflection coefficient is <script type="math/tex">\Gamma _{in} = |\Gamma _L| e^{j(\Theta _{L} -2 \beta l) } =0.45 e^{j(-26^0 -180^0 }=0.45 e^{-j206^0} </script>.
+</p><!--l. 138--><p class="noindent">Normalized input impedance is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+z_{in}=\frac{1+\Gamma_{in}}{1-\Gamma_{in}} = 0.4+ j 0.2
+\end{equation}</script>
+<!--l. 144--><p class="noindent">The input impedance is <script type="math/tex">Z_L=50 \, (0.4 + j 0.2)= (20 + j 10) \, \Omega </script>
+</p><!--l. 147--><p class="noindent">To find the input reflection coefficient and impedance on the Smith Chart, we first
+normalize the given load impedance <script type="math/tex">Z_L=2-j</script>, then find its position on the Smith Chart and
+draw the SWR circle. We know that the input reflection coefficient will be on this
+circle because the magnitude of the input reflection coefficient and the load reflection
+coefficient has to be the same.
+</p><!--l. 150--><p class="noindent">The reference position of the load on the WAVELENGTHS TOWARD GENERATOR
+scale is <script type="math/tex">0.285 \lambda </script>. Next, we add the length of the line to the reference position <script type="math/tex">0.285 \lambda + 0.25 \lambda = 0.535 \lambda </script>. If we look
+at the scale, we see that it resets at <script type="math/tex">0.5 \lambda </script>. To find <script type="math/tex">0.535 \lambda </script>, we have to continue in the
+direction of the arrow for another <script type="math/tex">0.035 \lambda </script>. We now found the phase of the input
+reflection coefficient. To find the input reflection coefficient, we find the line that
+starts at the center of the Smith Chart and ends on the <script type="math/tex">0.035 \lambda </script>, and then find
+the point where this line crosses the SWR circle. Figure <a class="reference" href="#fig:SCImpRefExample1">fig:SCImpRefExample1</a> shows these steps
+graphically.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-60043"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 153--><p class="noindent">
+</p><!--l. 154--><p class="noindent"><img src="../jpg/InputImpedanceEx1-01.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Example finding input impedance.</span></div><!--tex4ht:label?: x1-60043 -->
+<a class="ximera-label" id="fig:SCImpRefExample1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 160--></div>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

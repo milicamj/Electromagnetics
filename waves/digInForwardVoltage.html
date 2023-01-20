@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head> <title>Forward voltage on a transmission line</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInForwardVoltage.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Calculate phasors of forward going voltage at the load."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="6385b1e5a1e42cc1d0d95a1e823100e784e2b936 waves/digInForwardVoltage.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<!--l. 20--><p class="noindent">Again, we will look at a transmission line circuit in Figure <a class="reference" href="#fig:FVTRLine">fig:FVTRLine</a> to find the input
+impedance on a transmission line.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-671"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 27--><p class="noindent">
+</p><!--l. 28--><p class="noindent"><img src="../jpg/trline.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Transmission Line connects generator and the load.</span></div><!--tex4ht:label?: x1-671 -->
+<a class="ximera-label" id="fig:FVTRLine"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 39--><p class="noindent">The equations for the voltage and current anywhere (any z) on a transmission line
+are
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma_L  e^{j \beta z }  ) \label{eq:FVvtlfin} \\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:FVitlfin}
+\end{eqnarray}</script>
+</div>
+<!--l. 48--><p class="noindent">Using the equations from the previous section, we can replace the transmission line
+with its input impedance, Figure <a class="reference" href="#fig:FVTRLineEqCirc">fig:FVTRLineEqCirc</a>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-682"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 53--><p class="noindent">
+</p><!--l. 54--><p class="noindent"><img src="../jpg/trlineEqCirc.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Transmission Line connects generator and the load.</span></div><!--tex4ht:label?: x1-682 -->
+<a class="ximera-label" id="fig:FVTRLineEqCirc"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-1000"></a>Forward voltage phasor as a function of load impedance</h3>
+<!--l. 66--><p class="noindent">From Figure <a class="reference" href="#fig:FVTRLineEqCirc">fig:FVTRLineEqCirc</a>, we can find the input voltage on a transmission line using the voltage
+divider.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_{in}= \frac{Z_{in}}{Z_{in}+Z_g} \tilde{V}_g
+\end{equation}</script>
+<!--l. 72--><p class="noindent">Using Equation <a class="reference" href="#eq:FVitlfin">eq:FVitlfin</a>, we can also find the input voltage. The input voltage equation at
+the generator <script type="math/tex">z=-l</script> is:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } )
+\end{eqnarray}</script>
+</div>
+<!--l. 79--><p class="noindent">Since these two equations represent the same input voltage we can make them equal.
+</p><script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l }) = \frac{Z_{in}}{Z_{in}+Z_g} \tilde{V}_g
+\end{equation}</script>
+<!--l. 84--><p class="noindent">Rearranging the equation, we find <script type="math/tex">\tilde {V}_0^+</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}_0^+= \frac{\tilde{V}_g Z_{in}}{Z_g + Z_{in}} \frac{1}{e^{j \beta l} + \Gamma_L e^{-j \beta l}} \\
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-2000"></a>Forward voltage phasor as a function of input reflection coefficient</h3>
+<!--l. 96--><p class="noindent">There is another way to find the input impedance as a function of the input reflection
+coefficient.
+</p><!--l. 99--><p class="noindent">We write KVL for the circuit in Figure <a class="reference" href="#fig:FVTRLineEqCirc">fig:FVTRLineEqCirc</a>.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_g=Z_g \tilde{I}_{in} + \tilde{V}_{in} \label{eq:FVKVL}
+\end{equation}</script>
+<!--l. 106--><p class="noindent">Using Equations <a class="reference" href="#eq:FVitlfin">eq:FVitlfin</a>-<a class="reference" href="#eq:FVitlfin">eq:FVitlfin</a>, we can also find the input voltage and current. Input voltage and
+current equation at the generator <script type="math/tex">z=-l</script> are:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } ) \\
+                                                                  
+
+                                                                  
+\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma  e^{-j \beta l}  )
+\end{eqnarray}</script>
+</div>
+<!--l. 116--><p class="noindent">Substituting these two equations in Equation <a class="reference" href="#eq:FVKVL">eq:FVKVL</a> we get
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_g=Z_g \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma_L  e^{-j \beta l}  ) + \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } )
+\end{equation}</script>
+<!--l. 124--><p class="noindent">We can re-write this equation as follows.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_g=Z_g e^{j \beta l} \frac{\tilde{V}_0^+}{Z_0}  (1 - \Gamma_L  e^{-2j \beta l}  ) + \tilde{V}_0^+ e^{j \beta l} (1 + \Gamma_L  e^{-2j \beta l } )
+\end{equation}</script>
+<!--l. 132--><p class="noindent">Using that <script type="math/tex">\Gamma _{in} = \Gamma _L e^{-2 j \beta l} </script> is the input reflection coefficient, and multiplying through with
+<script type="math/tex">Z_0</script>.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_g Z_0=Z_g e^{j \beta l} \frac{\tilde{V}_0^+}{1}  (1 - \Gamma_{in} ) + \tilde{V}_0^+ Z_0 e^{j \beta l} (1 + \Gamma_{in})
+\end{equation}</script>
+<!--l. 141--><p class="noindent">Rearranging the equation, we get <script type="math/tex">\tilde {V}_0^+</script>
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}_0^+=\tilde{V}_g e^{-j \beta l} \frac{Z_0}{Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in})}
+\end{equation}</script>
+<!--l. 147--><p class="noindent"><script type="math/tex">\Gamma _{in} = \Gamma _L e^{-2 j \beta l} </script> is the input reflection coefficient.
+</p>
+<h3 class="sectionHead"><a id="x1-3000"></a>Special case - forward voltage when the generator and transmission-line impedance
+are equal</h3>
+<!--l. 153--><p class="noindent">Because the generator’s impedance is equal to the transmission line impedance, we
+will use the second equation. When <script type="math/tex">Z_g=Z_0</script> we see that the denominator simplifies into <script type="math/tex">Z_0 (1+\Gamma _{in}) +Z_g (1-\Gamma _{in}) = Z_0 (1+\Gamma _{in}+1-\Gamma _{in})=2</script>, and
+we can further simplify the fraction to get the final value of <script type="math/tex">\tilde {V}_0^+=\frac {V_g}{2} e^{-j \beta l}</script>.
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</p></body></html>

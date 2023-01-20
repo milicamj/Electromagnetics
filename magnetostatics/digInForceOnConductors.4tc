@@ -1,0 +1,9 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Force on a conductor due to external magnetic field}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Applying right-hand rule to a current-carrying wire in external magnetic field.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-3}{Direction of a magnetic field of a conductor}}{6}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-4}{Force between two conductors}}{6}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-5}{Magnetic field of a loop of current}}{7}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-6}{Bar magnet and a loop of current}}{7}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-50012}{}{\ignorespaces Repulsion between the permanent magnets and a loops of current. }}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-50033}{}{\ignorespaces Two coils carrying currents $I_1$ and $I_2$. }}{figure}\relax 

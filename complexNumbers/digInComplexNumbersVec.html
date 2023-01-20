@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"><head> <title>Review of Complex Numbers</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInComplexNumbersVec.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="7eef55f1d115cb73850f9f931888933f4d53f10d complexNumbers/digInComplexNumbersVec.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+<!--l. 12--><p class="noindent">Invest time in studying complex numbers, because phasors are represented with
+complex numbers!
+</p></div>   <div class="maketitle"></div>
+<div class="theorem-like problem-environment definition" id="problem1"><a id="x1-67r1"></a>A complex number <script type="math/tex">z</script> can be represented in the Cartesian coordinate system, as
+shown in Equation <a class="reference" href="#cartesian">cartesian</a>, and Polar coordinate system, as shown in Equation
+<a class="reference" href="#polar">polar</a>.
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+z= x + j y \label{cartesian} \\
+z=|z| e^{j \Theta} \label{polar}
+\end{eqnarray}</script>
+</div>
+</div>
+<!--l. 29--><p class="noindent">In Equation <a class="reference" href="#cartesian">cartesian</a>, a complex number z is represented in rectangular coordinate system,
+where <script type="math/tex">x</script> is the real part, <script type="math/tex">y</script> is the imaginary part, and <script type="math/tex">j=\sqrt {-1}</script>.
+</p><!--l. 31--><p class="noindent">In Equation <a class="reference" href="#polar">polar</a>, a complex number z is represented in the polar coordinate
+system, where <script type="math/tex">|z|</script> is the magnitude, and <script type="math/tex">\Theta </script> is the angle (aka phase) of the complex
+number.
+</p><!--l. 33--><p class="noindent">Geometric interpretation of these two equations is given in Figure <a class="reference" href="#wind">wind</a>. The magnitude is
+the length of the hypothenuse of the triangle shown, and the angle is the angle that
+the hypothenuse makes with x-axis. </p><hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-681"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 35--><p class="noindent">
+</p><!--l. 36--><p class="noindent"><img src="../jpg/Complex_Numbersz12.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Visual representation of a complex number z in rectangular <script type="math/tex">z=x+jy</script> and
+polar coordinates <script type="math/tex">z=|z|e^{j \theta }</script>.</span></div><!--tex4ht:label?: x1-681 -->
+<a class="ximera-label" id="wind"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 46--><p class="noindent">You may be wondering why we represent the phase of a complex number in the polar
+coordinate system as <script type="math/tex">e^{j \Theta }</script> because in the circuits class, you used <script type="math/tex"> \angle \theta </script>. Great question. That
+brings us to Euler’s formula.
+</p>
+<h4 class="subsectionHead"><a id="x1-1000"></a>Euler’s formula</h4>
+<!--l. 53--><p class="noindent">Euler’s formula relates to the Cartesian and Polar coordinates for complex
+numbers.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+e^{j \Theta} = cos \Theta + j sin \Theta
+\end{eqnarray}</script>
+</div>
+<!--l. 59--><p class="noindent">Geometric interpretation of the Euler’s formula is shown below. <script type="math/tex">z=r ( \cos {\theta } + j \sin {\theta })</script>, where <script type="math/tex">r \cos {\theta }=x</script> and <script type="math/tex">r \sin {\theta }=y</script>. Euler’s
+formula shows that number z given in Cartesian coordinates as <script type="math/tex">x+jy</script> can be represented in
+Polar Coordinates as <script type="math/tex">e^{j \Theta }</script>. You have likely seen this proof in your Calculus class. TIP:
+Your calculator may not know what <script type="math/tex">e^{j\theta }</script> is. Check how to convert
+between polar and cartesian coordinates on your calculatorbefore the
+test.
+</p>
+<div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./digInComplexNumbersVec-figure0.svg" alt=""/>
+</div>
+<!--l. 100--><p class="noindent">To find magnitude and angle when you know real and imaginary part of a complex
+number,
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|z|=\sqrt{x^2+y^2} \\
+\Theta = arctg \frac{y}{x}
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-2000"></a>Operations with complex numbers</h3>
+<!--l. 109--><p class="noindent">Complex Conjugate is often seen when finding the conditions for maximum power
+transfer.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+z^* = (x+ j y)^* = x- j y = |z| e^{-j \Theta}
+\end{eqnarray}</script>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 116--><p class="noindent">Complex number addition and subtraction are often seen when complex
+impedances are placed in series, and the equivalent complex impedance has to be
+found. The easiest way to add two complex numbers is to find the Cartesian
+representation of both and then add the real parts separately and the imaginary part
+separately.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+z_1=x_1 + j y_1 \\
+z_2=x_2 + j y_2 \\
+z_1+z_2 = x_1 + x_2 + j ( y_1 + y_2)
+\end{eqnarray}</script>
+</div>
+<!--l. 124--><p class="noindent">Multiplication and Division are often seen in the calculation of the transfer function
+of a circuit. The easiest way to divide two complex numbers is to find the polar
+representation of both and then divide the amplitudes and subtract the
+phases.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+z_1=|z_1| e^{j \Theta_1} \\
+z_2=|z_2| e^{j \Theta_2} \\
+\frac{z_1}{ z_2} = \frac{|z_1|}{|z_2|} e^{j \Theta_1 -\Theta_2}
+\end{eqnarray}</script>
+</div>
+<div class="theorem-like problem-environment example" id="problem2"><a id="x1-2001r2"></a>Find the magnitude and phase of complex numbers <script type="math/tex">z_1=j</script> and <script type="math/tex">z_2=1</script>.
+<div class="theorem-like problem-environment explanation" id="problem3"><a id="x1-2002r3"></a>
+<!--l. 142--><p class="noindent">Complex number <script type="math/tex">z_1=j</script> is on the y-axis where y=1. By inspection, the magnitude of <script type="math/tex">z_1</script> is <script type="math/tex">|z|=1</script>,
+and the angle is <script type="math/tex">\theta =90^o</script>.
+</p>
+<div class="image-environment" role="img" aria-labelledby="image-alt-2">  <img src="./digInComplexNumbersVec-figure1.svg" alt=""/>
+</div>
+<!--l. 183--><p class="noindent">The complex plane is sketched below. Complex number <script type="math/tex">z_1=1</script> is on the x-axis where x=1.
+By inspection, the magnitude of <script type="math/tex">z_1</script> is <script type="math/tex">|z|=1</script>, and the angle is <script type="math/tex">\theta =0^o</script>.
+</p>
+<div class="image-environment" role="img" aria-labelledby="image-alt-3">  <img src="./digInComplexNumbersVec-figure2.svg" alt=""/>
+</div>
+<!--l. 224--></div>
+</div>
+
+                                                                  
+
+                                                                  
+<div role="article" class="problem-environment question" id="problem4"><a id="x1-2003r4"></a> Calculate magnitude and phase of complex number <script type="math/tex">z=-j</script> <div class="multiple-choice" id="problem5"><span class="choice  " id="choice1"><script type="math/tex">|z|= 1, \theta ={180}</script></span> <span class="choice correct " id="choice2"><script type="math/tex">|z|= 1, \theta ={-90}</script></span> <span class="choice  " id="choice3"><script type="math/tex">|z|= -1, \theta ={180}</script></span> <span class="choice  " id="choice4"><script type="math/tex">|z|= -1, \theta ={-90}</script></span> </div>
+</div>
+<!--l. 261--><p class="noindent">Write magnitude and phase of complex number <script type="math/tex">z=-1</script> </p><div role="article" class="problem-environment question" id="problem6"><a id="x1-2004r5"></a> <script type="math/tex"> -1 = \answer {e^{j180}}</script>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

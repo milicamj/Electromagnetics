@@ -1,1 +1,34 @@
 \expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Types of transmission lines}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10091}{}{\ignorespaces  Coaxial Cable}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10102}{}{\ignorespaces  Microstrip}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-10113}{}{\ignorespaces  Stripline.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-10124}{}{\ignorespaces  Coplanar Waveguide.}}{figure}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-10135}{}{\ignorespaces  Two-wire line.}}{figure}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-10146}{}{\ignorespaces  Parallel-Plate Waveguide.}}{figure}\relax 
+\doTocEntry\toclof{7}{\csname a:TocLink\endcsname{1}{x1-10157}{}{\ignorespaces  Rectangular Waveguide.}}{figure}\relax 
+\doTocEntry\toclof{8}{\csname a:TocLink\endcsname{1}{x1-10168}{}{\ignorespaces  Optical Fiber.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-10}{What are Transmission Line Effects?}}{27}\relax 
+\doTocEntry\toclof{9}{\csname a:TocLink\endcsname{1}{x1-20019}{}{\ignorespaces Voltage as a function of time at the generator side z=0 (top) and the load side z=l (bottom) of the transmission line in Figure \o:ref {elcric}, if the switch closes at t=0 the voltage arrives at t=l/c=T at the load. These graphs can be obtained by observing the voltage on an oscilloscope at the load and at the generator side.}}{figure}\relax 
+\doTocEntry\toclof{10}{\csname a:TocLink\endcsname{1}{x1-200210}{}{\ignorespaces Voltage along the transmission line in Figure \o:ref {elcric}, for four different time intervals t=0, switch closes, t=T/4, t=T/2 and t=T. It is assumed that the length of the transmission line is equal to l=T/c.}}{figure}\relax 
+\doTocEntry\toclof{11}{\csname a:TocLink\endcsname{1}{x1-200311}{}{\ignorespaces Electronic Circuit with an emphasis on cables that connect the generator and the load.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-14}{Propagation modes on a transmission line}}{37}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-15}{ Wave equation on a transmission line}}{37}\relax 
+\doTocEntry\toclof{12}{\csname a:TocLink\endcsname{1}{x1-400612}{}{\ignorespaces Coaxial cable is cut in short pieces.}}{figure}\relax 
+\doTocEntry\toclof{13}{\csname a:TocLink\endcsname{1}{x1-400713}{}{\ignorespaces Equivalent circuit of a section of transmission line.}}{figure}\relax 
+\doTocEntry\toclof{14}{\csname a:TocLink\endcsname{1}{x1-400814}{}{\ignorespaces Equivalent circuit of transmission line.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-19}{Visualization of Lossless Forward and Reflected Voltage Waves}}{50}\relax 
+\doTocEntry\toclof{15}{\csname a:TocLink\endcsname{1}{x1-500115}{}{\ignorespaces  Forward (top) and reflected (bottom) waves on a transmission line.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-21}{Relating forward and backward current and voltage waves on the transmission line}}{54}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-22}{Lossless transmission line}}{57}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-23}{What does it mean when we say a medium is lossy or lossless?}}{60}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-24}{Low-Loss Transmission Line}}{60}\relax 
+\doTocEntry\toclof{16}{\csname a:TocLink\endcsname{1}{x1-913316}{}{\ignorespaces Omega-Beta diagrams, Phase constant $\beta $ is a {\bf  nonlinear} function of frequency.}}{figure}\relax 
+\doTocEntry\toclof{17}{\csname a:TocLink\endcsname{1}{x1-913417}{}{\ignorespaces Omega-Beta diagrams, Phase constant $\beta $ is a {\bf  linear} function of frequency.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-10000}{QQ2-1-27}{Voltage Reflection Coefficient, Lossless Case}}{64}\relax 
+\doTocEntry\toclof{18}{\csname a:TocLink\endcsname{1}{x1-1000118}{}{\ignorespaces Transmission Line connects generator and the load.}}{figure}\relax 
+\doTocEntry\tocsubsubsection{}{\csname a:TocLink\endcsname{1}{x1-11000}{QQ2-1-29}{Examples}}{67}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-12000}{QQ2-1-30}{Standing Waves}}{68}\relax 
+\doTocEntry\toclof{19}{\csname a:TocLink\endcsname{1}{x1-1213319}{}{\ignorespaces Flat line.}}{figure}\relax 
+\doTocEntry\toclof{20}{\csname a:TocLink\endcsname{1}{x1-1213420}{}{\ignorespaces Voltage on a transmission line with reflection coefficient magnitude 0.5, and zero phase.}}{figure}\relax 
+\doTocEntry\toclof{21}{\csname a:TocLink\endcsname{1}{x1-1213521}{}{\ignorespaces Shorted Transmission Line.}}{figure}\relax 

@@ -1,0 +1,48 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.4)  29 JAN 2020 11:21
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\PassOptionsToClass{tikzexport}{ximera}\PassOptionsToClass{xake}{ximera}\Pass
+OptionsToClass{xake}{xourse}\nonstopmode\input{Lab1.tex}
+(./Lab1.tex (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\hh=\count88
+\mm=\count89
+
+./Lab1.tex:70: I can't find file `psfig.sty'.
+l.70 \input psfig.sty
+                     
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name
+./Lab1.tex:70: Emergency stop.
+l.70 \input psfig.sty
+                     
+*** (job aborted, file error in nonstop mode)
+
+ 
+Here is how much of TeX's memory you used:
+ 220 strings out of 492982
+ 2308 string characters out of 6134897
+ 53902 words of memory out of 5000000
+ 3876 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 24i,0n,17p,237b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
+./Lab1.tex:70:  ==> Fatal error occurred, no output PDF file produced!

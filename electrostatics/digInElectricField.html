@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="en"><head> <title>Electrostatic Field</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInElectricField.tex"/> 
+<meta name="author" content="Milica Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Explain definition of electric field. Derive and calculate electric field due to several point charges using vector algebra. "/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="38ab651861e7e580bd7f9690933d5d956722d0b5 electrostatics/digInElectricField.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h4 class="subsectionHead"><a id="x1-1000"></a>More about the Electrical force and field</h4>
+<!--l. 23--><p class="noindent">We talked about the Electric Force in the previous section. To find the force on one
+charge, we had to know the position of all charges and what is their charge. To
+introduce Electric Field, we’ll call charge <script type="math/tex">q_1</script> the source of the force and charge <script type="math/tex">q_2</script> the
+charge that feels the force. Charge one produces the force, and charge two feels the
+force.
+</p><!--l. 25--><p class="noindent">By introducing the concept of the field, we can separate the cause of the field and the
+effect that the field has on other charges. We can find a field due to a charge or
+charge distribution, and once we know this field, we don’t have to keep track of the
+source charge. We can just find the field’s effect on other charges or charge
+distributions.
+</p><!--l. 28--><p class="noindent">In the Equation <a class="reference" href="#forceField1">forceField1</a> <script type="math/tex">q_1</script> and <script type="math/tex">q_2</script> are charges, r is the distance between the two charges, and <script type="math/tex">\hat {r}</script> is
+the unit vector directed from charge one to charge two. The electric field of a source
+charge <script type="math/tex">q_1</script> is defined as the force that a charge <script type="math/tex">q_1</script> would impress on a positive charge <script type="math/tex">q_2</script>,
+divided by the amount of charge <script type="math/tex">q_2</script>, as shown in Equation <a class="reference" href="#definitionOfField">definitionOfField</a>. One thing to remember is
+that in the definition of the electric field, we always assume that the charge <script type="math/tex">q_2</script> is
+positive! This way, we remove the ambiguity of the field direction. The direction of
+the electric field at a point P from charge <script type="math/tex">q_1</script> is always in the direction of the force that
+would act on a positive charge <script type="math/tex">q_2</script> placed at that point, as shown in Figure
+<a class="reference" href="#UnitCh1">UnitCh1</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon r^2 } \hat{r} \label{forceField1}\\
+\vec{E} = \frac{\vec{F_2}}{q_2} \label{definitionOfField} \\
+\vec{E} =  \frac{q_1}{4 \pi \epsilon_0 r^2} \hat{r} \label{electricfield}
+\end{eqnarray}</script>
+</div>
+<!--l. 37--><p class="noindent">If you carefully look at the Equation <a class="reference" href="#electricfield">electricfield</a>, you see that the electric field depends only on
+the source charge <script type="math/tex">q_1</script>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 40--><p class="noindent">
+</p><!--l. 41--><p class="noindent"><img src="../jpg/unitchargefield.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Electric field due to a unit charge q.</span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="UnitCh1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 47--><p class="noindent">If the electric charge is in a medium other than air, the electric field becomes
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E}=\frac{q_1 }{4 \pi \epsilon_0 \epsilon_r r^2} \hat{R_{12}} \\
+\epsilon = \epsilon_0 \epsilon_r
+\end{eqnarray}</script>
+</div><a class="ximera-label" id="Coulombslaw3"></a>
+<!--l. 55--><p class="noindent">We added a unitless quantity, <script type="math/tex">\epsilon _r</script>, called the relative dielectric constant, or
+relative permittivity, of a material. <script type="math/tex">\epsilon _r</script> values for different materials can be
+found online. For example, you can see its values for different materials here
+<a href="https://en.wikipedia.org/wiki/Relative_permittivity." class="url">https://en.wikipedia.org/wiki/Relative_permittivity.</a>
+</p>
+<div role="article" class="problem-environment problem" id="problem1"><a id="x1-1002r1"></a> Find the electric field at a center of the Cartesian Coordinate system if positive
+charges <script type="math/tex">q</script> are placed at points (0,1) and (-1,0).  <div class="multiple-choice" id="problem2"><span class="choice  " id="choice1">impossible to say</span> <span class="choice correct " id="choice2">zero</span> <span class="choice  " id="choice3">one</span> <span class="choice  " id="choice4">infinity</span> </div>
+</div>
+<!--l. 73--><p class="noindent">positive charge that is in an electric field experiences a force that is
+</p>
+<div role="article" class="problem-environment problem" id="problem3"><a id="x1-1003r2"></a> A positive charge that is in an electric field E experiences a force that is  <div class="multiple-choice" id="problem4"><span class="choice  " id="choice5">Impossible to say</span> <span class="choice correct " id="choice6">In the same direction as E</span> <span class="choice  " id="choice7">Perpendicular to E</span> <span class="choice  " id="choice8">In the
+opposite direction from E</span> </div>
+</div>
+<h3 class="sectionHead"><a id="x1-2000"></a>Principle of Superposition</h3>
+<!--l. 95--><p class="noindent">What is the electric field if we have more than one charge?
+</p><!--l. 97--><p class="noindent">The total electric field at a point in space from the two charges is equal to the sum of
+the electric fields from the individual charges at that point.
+</p><!--l. 99--><p class="noindent">If we have two charges, the total field due to both charges is equal to the
+vector sum of the fields due to individual charges, see Figure <a class="reference" href="#superposition">superposition</a>. The field
+at
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20012"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 104--><p class="noindent">
+</p><!--l. 105--><p class="noindent"><img src="../jpg/superposition.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Electric Field due to two charges.</span></div><!--tex4ht:label?: x1-20012 -->
+<a class="ximera-label" id="superposition"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 111--><p class="noindent">The fields or charges <script type="math/tex">q_1</script> and <script type="math/tex">q_2</script> are:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
+\vec{E_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
+\end{eqnarray}</script>
+</div>
+<!--l. 118--><p class="noindent">Where <script type="math/tex">\hat {r_a}</script> and <script type="math/tex">\hat {r_b}</script> are unit vectors in the direction of <script type="math/tex">r_a</script> and <script type="math/tex">r_b</script>. The total field due to both
+charges is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E}=\vec{E_1} + \vec{E_2}
+\end{eqnarray}</script>
+</div>
+<h4 class="subsectionHead"><a id="x1-3000"></a>Electric Field in Rectangular Coordinates</h4>
+<!--l. 133--><p class="noindent">The general equation for the electric field is given as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{genfield}
+\end{eqnarray}</script>
+</div>
+<!--l. 141--><p class="noindent">The electric field at a point <script type="math/tex">P(x,y,z)</script> due to a charge <script type="math/tex">q_1</script> positioned at a point <script type="math/tex">P_{q_1}(x_1, y_1, z_1 )</script> in the rectangular
+coordinate system is shown in Figure <a class="reference" href="#singlecharge1">singlecharge1</a>. The position vector of the point <script type="math/tex">P_{q_1}</script>
+is
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30013"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 145--><p class="noindent">
+</p><!--l. 146--><p class="noindent"><img src="../jpg/singlechargecartcoord.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Electric Field due to a unit charge in Rectangular coordinate system.</span></div><!--tex4ht:label?: x1-30013 -->
+<a class="ximera-label" id="singlecharge1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{r_1}=x_1 \vec{x} + y_1 \vec{y} +z_1 \vec{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 160--><p class="noindent">The position vector of point <script type="math/tex">P</script> is equal to
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{r_p}=x\vec{x} + y \vec{y} +z \vec{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 166--><p class="noindent">The two vectors mark the beginning and the end of the distance vector <script type="math/tex">\vec {r_a}</script> between
+points <script type="math/tex">P_{q_1}</script> and <script type="math/tex">P</script>. The vector <script type="math/tex">\vec {r_a}</script> is the sum of vectors <script type="math/tex">-\vec {r_p}</script> and <script type="math/tex">\vec {r_1}</script>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{r_a}=\vec{r_p} + (-\vec{r_1})
+\end{eqnarray}</script>
+</div>
+<!--l. 174--><p class="noindent">When we substitute position vectors <script type="math/tex">r_1</script> and <script type="math/tex">r_p</script>:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{r_a}= (x - x_1) \vec{x} +(y - y_1) \vec{y} +(z - z_1) \vec{z}
+\end{eqnarray}</script>
+</div>
+<!--l. 180--><p class="noindent">Vector <script type="math/tex">\vec {r_a}</script> has the magnitude of:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\vec{r_a}|= \sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
+\end{eqnarray}</script>
+</div>
+<!--l. 187--><p class="noindent">Unit vector in the direction of vector <script type="math/tex">\vec {r_a}</script> is:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\hat{r_a}= \frac{\vec{r_a}}{|\vec{r_a}|} \\
+\hat{r_a}=\frac{\vec{r_a}}{\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}}
+\end{eqnarray}</script>
+</div>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a}
+\end{eqnarray}</script>
+</div>
+<!--l. 201--><p class="noindent">Where <script type="math/tex">r_a</script> is the distance between the charge <script type="math/tex">q_1</script> and the point <script type="math/tex">P</script>. Substituting expressions
+for <script type="math/tex">\hat {r_a}</script>, and <script type="math/tex">|\vec {r_a}|</script> in equation <a class="reference" href="#genfield">genfield</a> we get
+</p>
+                                                                  
+
+                                                                  
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
+}^3} \vec{r_a} \label{eqonecharge}
+\end{eqnarray}</script>
+</div>
+<!--l. 212--><p class="noindent">Substituting
+</p><!--l. 215--><p class="noindent">For two charges, as shown in Figure <a class="reference" href="#twocharges">twocharges</a> equation <a class="reference" href="#eqonecharge">eqonecharge</a> becomes
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\vec{E}= \frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
+}^3} \vec{r_a} + \nonumber \\ \frac{q_2}{4 \pi \epsilon_{0} {\sqrt{(x - x_2)^2 +(y - y_2)^2 +(z - z_2)^2}
+}^3} \vec{r_b}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-30024"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 225--><p class="noindent">
+</p><!--l. 226--><p class="noindent"><img src="../jpg/twochargescartcoord.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 4: </span><span class="content">Electric field due to two charges in Rectangular coordinate system.</span></div><!--tex4ht:label?: x1-30024 -->
+<a class="ximera-label" id="twocharges"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="theorem-like problem-environment example" id="problem5"><a id="x1-3003r3"></a>Find the point P where total electric field is zero inside of an equilateral triangle,
+if the three charges of magnitude 3 nC, 3 nC, and 3 nC are placed in the
+corners of equilateral triangle of side 2 m. Use the app below to confirm your
+result.
+<div class="center">
+<!--l. 239--><p class="noindent">
+</p><!--l. 240--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/kupge9gc/width/1200/height/800/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="1200px" height="800px" style="border:0px;"> </iframe></p></div>
+<!--l. 242--></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

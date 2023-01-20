@@ -1,0 +1,4 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-671}{}{\ignorespaces A variety of lumped-element impedance matching circuits for impedance $Z_L=25+j50 \Omega $.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-682}{}{\ignorespaces Adding an element in parallel to load impedance to get the equivalent real part of the impedance equal to one.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-693}{}{\ignorespaces Finalized lumped-element impedance-matching circuit.}}{figure}\relax 

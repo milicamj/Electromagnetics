@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en"><head> <title>Force  on  Conductors</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInDcMotor.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Explain the operation of a simple DC-motor"/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="81daf590f921f38cff961bfdc8caa6b7755b454e magnetostatics/digInDcMotor.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+</div>   <div class="maketitle"></div>
+<h3 class="sectionHead"><a id="x1-1000"></a>Force on a loop of current due to external magnetic field</h3>
+<!--l. 23--><p class="noindent">Figure <a class="reference" href="#fig:currentLoop">fig:currentLoop</a> shows a rectangular loop of wire carrying current I in the presence of an
+external magnetic field B. The loop is fixed along the horizontal pivot axis and can
+rotate only clockwise or counterclockwise. If we observe the loop from the left, we see
+the current flows toward us on top, indicated by a circle with a dot on the side view.
+The current flows away from us on the bottom, indicated by the circle with an
+x.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10011"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 27--><p class="noindent">
+</p><!--l. 28--><p class="noindent"><img src="../jpg/loop.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Current loop in external magnetic field. </span></div><!--tex4ht:label?: x1-10011 -->
+<a class="ximera-label" id="fig:currentLoop"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 35--><p class="noindent">Force <script type="math/tex">\vec {F}</script> on a conductor of length <script type="math/tex">\vec {l}</script> due to an external magnetic field <script type="math/tex">\vec {B}</script> is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\vec{F}=I \vec{l} \cross \vec{B}
+\end{equation}</script>
+<!--l. 41--><p class="noindent">Vector <script type="math/tex">\vec {l}</script> is in the direction of the current.
+</p><!--l. 43--><p class="noindent">Which way will the loop turn? We use the right-hand rule to determine the
+direction of rotation, as shown in Figure <a class="reference" href="#fig:currentLoopTorque">fig:currentLoopTorque</a>. Imagine that the current is in the
+palm of your right hand. Orient the palm so that you can sweep your fingers
+toward the magnetic field vector. The thumb shows the direction of the
+force. Which way will the loop rotate? Think of pushing the top of the loop
+into the page in the force’s direction and pulling the bottom of the loop
+towards you. The loop will rotate clockwise in the direction of the orange
+arrow.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10022"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 49--><p class="noindent">
+</p><!--l. 50--><p class="noindent"><img src="../jpg/loopRHR.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 2: </span><span class="content">Torque on a loop carrying current in a magentic field. </span></div><!--tex4ht:label?: x1-10022 -->
+<a class="ximera-label" id="fig:currentLoopTorque"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 56--><p class="noindent">When the loop moves from the original position, the magnetic force will continue to
+rotate the loop, as shown in Figure <a class="reference" href="#fig:currentLoopTorque1">fig:currentLoopTorque1</a>.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10033"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 62--><p class="noindent">
+</p><!--l. 63--><p class="noindent"><img src="../jpg/conceptMagMom1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 3: </span><span class="content">Torque on a loop carrying current in a magentic field. </span></div><!--tex4ht:label?: x1-10033 -->
+<a class="ximera-label" id="fig:currentLoopTorque1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 69--><p class="noindent">When the loop surface is perpendicular to the vector of the magnetic field, as shown
+in Figure <a class="reference" href="#fig:currentLoopTorque2">fig:currentLoopTorque2</a>, the magnetic force becomes zero. We may think that the loop will stop
+moving because the force becomes zero. However, because the loop has mass, the
+loop will continue rotating because of the inertia.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10044"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 74--><p class="noindent">
+</p><!--l. 75--><p class="noindent"><img src="../jpg/conceptMagMom2.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 4: </span><span class="content">Torque on a loop carrying current in a magentic field. </span></div><!--tex4ht:label?: x1-10044 -->
+<a class="ximera-label" id="fig:currentLoopTorque2"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 81--><p class="noindent">The magnetic forces will start working to move the loop back to this stable
+point, as shown in Figure <a class="reference" href="#fig:currentLoopTorque3">fig:currentLoopTorque3</a>. The loop will then move back and forth until it
+stops.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10055"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 84--><p class="noindent">
+</p><!--l. 85--><p class="noindent"><img src="../jpg/conceptMagMom3.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 5: </span><span class="content">Torque on a loop carrying current in a magentic field. </span></div><!--tex4ht:label?: x1-10055 -->
+<a class="ximera-label" id="fig:currentLoopTorque3"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 93--><p class="noindent">If we want continuous rotation, we need to change the current direction at this stable
+point or the magnetic field. That brings us to DC motors.
+</p>
+<h3 class="sectionHead"><a id="x1-2000"></a>DC Motor</h3>
+<!--l. 99--><p class="noindent">DC motors convert electrical energy to mechanical energy. A battery supplies DC
+voltage to a current loop that produces a current in the loop. DC motors have a
+special split-ring piece that connects the loop to a voltage source called a
+commutator. When the magnetic field rotates the loop to the stable position, as we
+discussed in the previous section, the commutator’s gap stops the current in the same
+direction for a moment, then connects the opposite pole of the battery, making
+the current go in the opposite direction. The orientation of the current and
+the magnetic field produce force in such a direction to continue the loop
+rotation.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20016"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 104--><p class="noindent">
+</p><!--l. 105--><p class="noindent"><img src="../jpg/dcMotor.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 6: </span><span class="content">Simplified schematic of a DC motor. </span></div><!--tex4ht:label?: x1-20016 -->
+<a class="ximera-label" id="fig:dcMotor"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 112--><p class="noindent">To see the simulation of a DC motor, take a look at the following simulation
+</p>
+<div class="center">
+<!--l. 113--><p class="noindent">
+</p><!--l. 114--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/PN2YrxBb/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

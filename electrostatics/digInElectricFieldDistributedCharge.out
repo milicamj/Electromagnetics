@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section*.1}{Electrostatic fields from distributed charges}{}% 1
+\BOOKMARK [1][-]{section*.2}{Electric Field due to a Charge Distribution}{}% 2
+\BOOKMARK [2][-]{subsection*.3}{Derive Analytical Solution for the Electric field Due to a Loop of Charge }{section*.2}% 3
+\BOOKMARK [2][-]{subsection*.4}{Derive Numerical solution to the Electric Field due to a Loop of Charge}{section*.2}% 4
+\BOOKMARK [2][-]{subsection*.5}{Matlab Code to Find the Electric Field due to a Loop of Charge }{section*.2}% 5
+\BOOKMARK [1][-]{section*.6}{Short line of charge}{}% 6
+\BOOKMARK [1][-]{section*.7}{Potential}{}% 7
+\BOOKMARK [2][-]{subsection*.8}{Derive Analytical Solution for the Potential Due to a Loop of Charge }{section*.7}% 8
+\BOOKMARK [2][-]{subsection*.9}{Derive Numerical solution to the Electric Field due to a Loop of Charge}{section*.7}% 9
+\BOOKMARK [2][-]{subsection*.10}{Matlab Code to Find the Electric Potential due to a Loop of Charge }{section*.7}% 10
+\BOOKMARK [3][-]{subsubsection*.11}{ Plot several equipotential surfaces. }{subsection*.10}% 11
+\BOOKMARK [1][-]{section*.12}{Visualizing Scalar Fields in Matlab}{}% 12
+\BOOKMARK [2][-]{subsection*.13}{slice}{section*.12}% 13
+\BOOKMARK [2][-]{subsection*.14}{contourslice}{section*.12}% 14
+\BOOKMARK [2][-]{subsection*.15}{patch}{section*.12}% 15
+\BOOKMARK [2][-]{subsection*.16}{isonormals}{section*.12}% 16
+\BOOKMARK [2][-]{subsection*.17}{camlight}{section*.12}% 17
+\BOOKMARK [2][-]{subsection*.18}{lighting}{section*.12}% 18

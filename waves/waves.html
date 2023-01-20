@@ -1,23 +1,1132 @@
-<!DOCTYPE html><html lang="en"><head> <title>The Fourth Activity</title> 
+<!DOCTYPE html><html lang="en"><head> <title>Waves on Transmission Lines</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 <meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
 <meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
 <!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
 <meta name="src" content="waves.tex"/> 
-<meta name="author" content=""/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
 <meta name="ximera" content="version 0.0.1"/> 
 <link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
 <script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
-<meta name="dependency" content="ef5ab8648b0a0c303d540461db6865f756a8432e waves/waves.tex"/></head><body> 
+<meta name="learning-outcome" content="Apply phasor transformation to a time-domain equation to obtain frequency-domain equation."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="5707f9076e02f28788b189674033e34eb25d2b39 waves/waves.tex"/></head><body> 
 <div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
 \newcommand {\ungraded }[0]{}
-\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }</script><script type="text/javascript"> 
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
 </script> 
 </div>
+
+                                                                  
 <div class="abstract">
-<!--l. 5--><p class="noindent">A simple derivation problem.
-</p></div>   <div class="maketitle"></div>Display image. <div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./waves-figure0.svg" alt=""/>
+</div>   <div class="maketitle"></div>
+<!--l. 23--><p class="noindent">Any wire, cable or line that guides energy from one point to another is a transmission
+line. Whenever you make a circuit on a breadboard, every wire you attach makes a
+transmission line with the ground wire. Whether we see the propagation
+(transmission line) effects on the line depends on the line length. At lower frequencies
+or very short line lengths we do not see any difference between the signal’s
+phase at the generator and at the load, whereas at higher frequencies we
+do.
+</p>
+<h3 class="sectionHead"><a id="x1-1000"></a>Types of transmission lines</h3>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Coaxial Cable, Figure <a class="reference" href="#fig:qm/Coax">fig:qm/Coax</a>
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Microstrip, Figure <a class="reference" href="#fig:qm/MStrip">fig:qm/MStrip</a>
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Stripline, Figure <a class="reference" href="#fig:qm/Strp">fig:qm/Strp</a>
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Coplanar Waveguide, Figure <a class="reference" href="#fig:qm/CPW">fig:qm/CPW</a>
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem">Two-wire line, Figure <a class="reference" href="#fig:qm/TwoWL">fig:qm/TwoWL</a>
+     </dd><dt class="enumerate-enumitem">
+  (f) </dt><dd class="enumerate-enumitem">Parallel Plate Waveguide, Figure <a class="reference" href="#fig:qm/PPW">fig:qm/PPW</a>
+     </dd><dt class="enumerate-enumitem">
+ (g) </dt><dd class="enumerate-enumitem">Rectangular Waveguide, Figure <a class="reference" href="#fig:qm/RecWG">fig:qm/RecWG</a>
+     </dd><dt class="enumerate-enumitem">
+ (h) </dt><dd class="enumerate-enumitem">Optical fiber, Figure <a class="reference" href="#fig:qm/OF">fig:qm/OF</a></dd></dl>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10091"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 55--><p class="noindent">
+</p><!--l. 56--><p class="noindent"><img src="../jpg/coax.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 1: </span><span class="content"><a class="ximera-label" id="fig:qm/Coax"></a> Coaxial Cable</span></div><!--tex4ht:label?: x1-10091 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10102"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 63--><p class="noindent">
+</p><!--l. 64--><p class="noindent"><img src="../jpg/microstrip.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 2: </span><span class="content"><a class="ximera-label" id="fig:qm/MStrip"></a> Microstrip</span></div><!--tex4ht:label?: x1-10102 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10113"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 70--><p class="noindent">
+</p><!--l. 71--><p class="noindent"><img src="../jpg/stripline.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 3: </span><span class="content"><a class="ximera-label" id="fig:qm/Strp"></a> Stripline.</span></div><!--tex4ht:label?: x1-10113 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10124"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 77--><p class="noindent">
+</p><!--l. 78--><p class="noindent"><img src="../jpg/cpw.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 4: </span><span class="content"><a class="ximera-label" id="fig:qm/CPW"></a> Coplanar Waveguide.</span></div><!--tex4ht:label?: x1-10124 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10135"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 84--><p class="noindent">
+</p><!--l. 85--><p class="noindent"><img src="../jpg/twowireline.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 5: </span><span class="content"><a class="ximera-label" id="fig:qm/TwoWL"></a> Two-wire line.</span></div><!--tex4ht:label?: x1-10135 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10146"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 91--><p class="noindent">
+</p><!--l. 92--><p class="noindent"><img src="../jpg/ppw.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 6: </span><span class="content"><a class="ximera-label" id="fig:qm/PPW"></a> Parallel-Plate Waveguide.</span></div><!--tex4ht:label?: x1-10146 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10157"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 98--><p class="noindent">
+</p><!--l. 99--><p class="noindent"><img src="../jpg/rectwg.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 7: </span><span class="content"><a class="ximera-label" id="fig:qm/RecWG"></a> Rectangular Waveguide.</span></div><!--tex4ht:label?: x1-10157 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-10168"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 105--><p class="noindent">
+</p><!--l. 106--><p class="noindent"><img src="../jpg/fiber.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 8: </span><span class="content"><a class="ximera-label" id="fig:qm/OF"></a> Optical Fiber.</span></div><!--tex4ht:label?: x1-10168 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<h3 class="sectionHead"><a id="x1-2000"></a>What are Transmission Line Effects?</h3>
+<!--l. 114--><p class="noindent">Figure <a class="reference" href="#timedelaysig">timedelaysig</a> shows a step voltage at the generator and the load of a circuit in Figure <a class="reference" href="#elcric">elcric</a>. The
+voltage needs T sec to appear at the load, once the switch closes. Figure <a class="reference" href="#delayedsig">delayedsig</a> shows the
+step signal as it traveles on the transmission line at different time steps t=0, t=T/4,
+t=T/2 and t=T. How much time it takes for this signal to go from AA’ end to BB’
+end? Since electromagnetic waves propagate with the constant speed, the speed of
+light, time that the signal needs to go from the generator to the load depends on the
+length of the transmission line <script type="math/tex"> l</script>. <script type="math/tex">T=\frac {l}{c}</script>, where <script type="math/tex">c=3\, 10^8</script>. If the signal at the generator AA’
+is
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-20019"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 120--><p class="noindent">
+</p><!--l. 121--><p class="noindent"><img src="../jpg/timedelayedsignal.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 9: </span><span class="content">Voltage as a function of time at the generator side z=0 (top) and the
+load side z=l (bottom) of the transmission line in Figure <a class="reference" href="#elcric">elcric</a>, if the switch closes at
+t=0 the voltage arrives at t=l/c=T at the load. These graphs can be obtained
+by observing the voltage on an oscilloscope at the load and at the generator
+side.</span></div><!--tex4ht:label?: x1-20019 -->
+<a class="ximera-label" id="timedelaysig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-200210"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 130--><p class="noindent">
+</p><!--l. 131--><p class="noindent"><img src="../jpg/timedelayedsignaltl.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 10: </span><span class="content">Voltage along the transmission line in Figure <a class="reference" href="#elcric">elcric</a>, for four different
+time intervals t=0, switch closes, t=T/4, t=T/2 and t=T. It is assumed that
+the length of the transmission line is equal to l=T/c.</span></div><!--tex4ht:label?: x1-200210 -->
+<a class="ximera-label" id="delayedsig"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-200311"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 142--><p class="noindent">
+</p><!--l. 143--><p class="noindent"><img src="../jpg/generaltransmissionlinecircuit1.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 11: </span><span class="content">Electronic Circuit with an emphasis on cables that connect the
+generator and the load.</span></div><!--tex4ht:label?: x1-200311 -->
+<a class="ximera-label" id="elcric"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{AA^`}(t)=A cos(\omega t)
+\end{eqnarray}</script>
+</div>
+<!--l. 156--><p class="noindent">Then at the other end the transmission line the signal is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=v_{AA^`}(t-T) \\
+v_{BB^`}(t)=v_{AA^`}(t-\frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega (t - \frac{l}{c}))  \\
+v_{BB^`}(t)=A cos(\omega t - \omega \frac{l}{c}) \\
+v_{BB^`}(t)=A cos(\omega t -  \frac{\omega }{c} l)
+\end{eqnarray}</script>
+</div>
+<!--l. 167--><p class="noindent">Since we know that angular frequency is <script type="math/tex">\omega = 2 \pi f</script>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A cos(\omega t -  \frac{ 2 \pi f }{c} l)
+\end{eqnarray}</script>
+</div>
+<!--l. 174--><p class="noindent">The quantity <script type="math/tex">\frac {c}{f}</script> is called the wavelength <script type="math/tex">\lambda </script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A \, cos(\omega t -  \frac{ 2 \pi }{\lambda} l) \label{tllength1}
+\end{eqnarray}</script>
+</div>
+<!--l. 180--><p class="noindent">The quantity <script type="math/tex"> \frac { 2 \pi }{\lambda } </script> is the propagation constant <script type="math/tex">\beta </script>
+</p><!--l. 183--><p class="noindent">Finally the expression for the voltage at BB end is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_{BB^`}(t)=A \, cos(\omega t - \beta l) \\
+v_{BB^`}(t)=A \, cos(\omega t - \Psi)
+\end{eqnarray}</script>
+</div>
+<!--l. 191--><p class="noindent">We see that at BB’ the signal will experience a phase shift. We will derive this
+equation again later from the Telegrapher’s equations. Now let’s see how the length
+of the line <script type="math/tex">l</script> affects the voltage at the end BB’. Look at Equation <a class="reference" href="#tllength1">tllength1</a>. The signal will
+experience a phase shift of <script type="math/tex">2\pi \frac {l}{\lambda }</script>. If this phase shift is small, there will not be much
+difference between the phase of the signal at the generator and at the load. This
+means that we don’t have to use transmission line theory to account for the
+effects of the line. If the phase shift is significant, then we do have to use
+                                                                  
+
+                                                                  
+the transmission line theory. Let’s look at some numbers in the following
+example.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">If <script type="math/tex">\frac {l}{\lambda } < 0.01</script> then the angle <script type="math/tex">2 \pi \frac {l}{\lambda }</script> is of the order of 0.0314 rad or about 2<script type="math/tex">^0</script>. In this case, the
+     phase is obviosly something that we don’t have to worry about. When the
+     length of the transmission line is much smaller than <script type="math/tex">\lambda </script>, <script type="math/tex">l<<\frac {\lambda }{100}</script> the wave propagation
+     on the line can be ingnored.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">If <script type="math/tex">\frac {l}{\lambda } > 0.01</script>, say <script type="math/tex">\frac {l}{\lambda } =0.1</script>, then the phase is 20<script type="math/tex">^0</script>, which is a significant phase shift. In this
+     case it may be necessary to account fro transmission line effects.</dd></dl>
+<h3 class="sectionHead"><a id="x1-3000"></a>Propagation modes on a transmission line</h3>
+<!--l. 215--><p class="noindent">Coax, two wire line, microstrip etc can be approximated as TEM up to the
+30-40 GHz (unshielded), up to 140 GHz shielded.
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Transversal Electro-Magnetic Field (TEM). Electric (E), and Magnetic
+     (M) fields are entirely transversal to the direction of propagation
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Transversal Electric field (TE), Transversal Magnetic Field (TM), M or E
+     field is in the direction of propagation</dd></dl>
+<!--l. 227--><p class="noindent">Transmission lines that we are discussing here cary TEM fields.
+</p>
+<h3 class="sectionHead"><a id="x1-4000"></a> Wave equation on a transmission line</h3>
+<!--l. 230--><p class="noindent"><a class="ximera-label" id="telegrapher"></a>
+</p><!--l. 232--><p class="noindent">In this section we will derive the expression for voltage and current along a
+transmission line. This expression will have two variables, time <script type="math/tex">t</script> and space <script type="math/tex">z</script>. So far we
+have only seen voltages and currents as a function of time. This is because all
+circuit elements seen so far were lumped elements. In distributed systems
+we want to derive the equations for voltage and current for the case when
+the transmission line is longer then the fraction of a wavelength. To make
+sure that we don’t encounter any transmission line effects to start with, we
+can look at the piece of a transmission line that is much smaller then the
+fraction of a wavelength. In other words we cut the transmission line into small
+pieces to make sure there are no transmission line effects, as the pieces are
+shorter then the fraction of a wavelength. We then represent each piece
+with an equivalent circuit as shown in Figure <a class="reference" href="#lineeqc">lineeqc</a> (a). To derive expressions for
+current and voltage on transmission line we will use the following five-step
+plan
+                                                                  
+
+                                                                  
+     </p><dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">Look at an infinitesimal length of a transmission line <script type="math/tex">\Delta z</script>.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">Represent that piece with an equivalent circuit.
+     </dd><dt class="enumerate-enumitem">
+ (c) </dt><dd class="enumerate-enumitem">Write KCL, KVL for the piece in the time domain (we get differential
+     equations)
+     </dd><dt class="enumerate-enumitem">
+ (d) </dt><dd class="enumerate-enumitem">Apply phasors (equations become linear)
+     </dd><dt class="enumerate-enumitem">
+ (e) </dt><dd class="enumerate-enumitem">Solve the linear system of equations to get the expression for the voltage
+     and current on the transmission line as a function of <script type="math/tex">z</script>.
+     </dd></dl>
+<!--l. 261--><p class="noindent">Let’s follow the plan now. Look at a small piece of a transmission line and
+represented it with an equivalent circuit. What is modeled by the circuit
+elements?
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-400612"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 267--><p class="noindent">
+</p><!--l. 268--><p class="noindent"><img src="../jpg/Coaxtl.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 12: </span><span class="content">Coaxial cable is cut in short pieces.</span></div><!--tex4ht:label?: x1-400612 -->
+<a class="ximera-label" id="lineeqcPieces"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-400713"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 275--><p class="noindent">
+</p><!--l. 276--><p class="noindent"><img src="../jpg/Equivalent_Circuit_of_Transmission_Line.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 13: </span><span class="content">Equivalent circuit of a section of transmission line.</span></div><!--tex4ht:label?: x1-400713 -->
+<a class="ximera-label" id="lineeqcOnePiece"></a></div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-400814"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 283--><p class="noindent">
+</p><!--l. 284--><p class="noindent"><img src="../jpg/tlmadeupofcircuits.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 14: </span><span class="content">Equivalent circuit of transmission line.</span></div><!--tex4ht:label?: x1-400814 -->
+<a class="ximera-label" id="lineeqc"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 292--><p class="noindent">Write KVL and KCL equations for the circuit above.
+</p><!--l. 294--><p class="noindent">KVL </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-v(z,t) + R \Delta z  i(z,t) + L \Delta z \frac{\partial
+ i(z,t)}{\partial t} + v(z+ \Delta z,t) = 0 \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 300--><p class="noindent">KCL
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+i(z,t)=i(z+\Delta z)+ i_{CG}(z+\Delta z,t) \nonumber   \\
+i(z,t)=i(z+\Delta z)+ G \Delta z v(z+\Delta z,t)+C\Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 309--><p class="noindent">Rearrange the KCL and KVL Equations <a class="reference" href="#te1kvl1">te1kvl1</a>, <a class="reference" href="#te1kc11">te1kc11</a> and divide them with <script type="math/tex">\Delta z</script>. Equations <a class="reference" href="#te2kvl1">te2kvl1</a>, <a class="reference" href="#te1kc21">te1kc21</a>. let <script type="math/tex">\Delta z \to 0</script>
+and recognize the definition of the derivative Equations, <a class="reference" href="#te2kvl111">te2kvl111</a>, <a class="reference" href="#te1kc211">te1kc211</a>.
+</p><!--l. 314--><p class="noindent">KVL </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-( v(z+ \Delta z ,t)- v(z,t))=R \Delta z i(z,t)+L \Delta z
+ \frac{\partial i(z,t)}{\partial t} \label{te1kvl1}  \\
+ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}=R i(z,t)+L
+ \frac{\partial i(z,t)}{\partial t}  \label{te2kvl1} \\
+\lim_{\Delta z \to 0} \{ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}\}=  \lim_{\Delta z \to 0} \{   R i(z,t)+L
+ \frac{\partial i(z,t)}{\partial t} \} \label{te2kvl111} \\
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L
+ \frac{\partial i(z,t)}{\partial t} \label{te3kvl1}
+\end{eqnarray}</script>
+</div>
+<!--l. 326--><p class="noindent">KCL
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-( i(z+ \Delta z ,t)- i(z,t))= G \Delta z v(z+\Delta z,t)+C\Delta z
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc11} \\
+-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z}= G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc21} \\
+\lim_{\Delta z \to 0} \{-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z} \}= \lim_{\Delta z \to 0} \{ G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t} \} \label{te1kc211} \\
+-\frac{i(z,t) }{\partial z}= G v(z+\Delta z,t)+C
+                                                                  
+
+                                                                  
+\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc31}
+\end{eqnarray}</script>
+</div>
+<!--l. 341--><p class="noindent">We just derived Telegrapher’s equations in time-domain:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{v(z,t) }{\partial z}=R i(z,t)+L
+ \frac{\partial i(z,t)}{\partial t} \nonumber  \\ \nonumber
+-\frac{i(z,t) }{\partial z}= G v(z+\Delta z,t)+C
+\frac{\partial v(z+\Delta z,t)}{\partial t}
+\end{eqnarray}</script>
+</div>
+<!--l. 353--><p class="noindent">Telegrapher’s equations are two differential equations with two unknowns, <script type="math/tex">i(z, t)</script>, <script type="math/tex">v(z, t)</script>. It is not
+impossible to solve them, however we would prefer to have linear equations. We then
+express time-domain variables as phasors.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
+i(z,t)=Re\{ \tilde{I}(z) e^{j \omega t} \} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 362--><p class="noindent">Where <script type="math/tex">\tilde {V}(z),\tilde {I}(z) </script> are the voltage and current anywhere on the line, and depend on
+the position on the line <script type="math/tex">z</script>. And we get the Telegrapher’s equations in phasor
+form
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) \tilde{I}(z) \label{te11}\\
+-\frac{\partial \tilde{I}(z)}{\partial z} = (G+j\omega C) \tilde{V}(z) \label{te121}
+\end{eqnarray}</script>
+</div>
+<!--l. 372--><p class="noindent">Two equations, two unknowns. To solve these equations, we first take a derivative of
+both equations with respect to z.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=  (R+j\omega L) \frac{\partial
+ \tilde{I}(z)}{\partial z}  \label{teleg3} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}=  (G+j\omega C) \frac{\partial
+ \tilde{V}(z)}{\partial z} \label{teleg4}
+\end{eqnarray}</script>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 382--><p class="noindent">Rearange the previous equations:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= \frac{\partial^2
+  \tilde{V}(z)}{\partial z^2} \label{te51} \\
+-\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= \frac{\partial^2
+  \tilde{I}(z)}{\partial z^2} \label{te61}
+\end{eqnarray}</script>
+</div>
+<!--l. 393--><p class="noindent">Substitute Eq.<a class="reference" href="#te51">te51</a> into Eq.<a class="reference" href="#te121">te121</a> and Eq.<a class="reference" href="#te61">te61</a> into Eq.<a class="reference" href="#te11">te11</a> and we get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
+-\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
+\tilde{I}(z)
+\end{eqnarray}</script>
+</div>
+<!--l. 402--><p class="noindent">Or if we rearrange
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2} -(G+j\omega C)(R+j\omega L)
+ \tilde{V}(z)=0  \label{we11} \\
+\frac{\partial^2 I(z)}{\partial z^2}- (G+j\omega C)  (R+j\omega L)
+I(z)=0 \label{we21}
+\end{eqnarray}</script>
+</div>
+<!--l. 412--><p class="noindent">The above Eq.<a class="reference" href="#we11">we11</a> and Eq.<a class="reference" href="#we21">we21</a> are called the wave equation, and they represent current and
+voltage wave on a transmission line. <script type="math/tex">\gamma =(G+j\omega C)(R+j\omega L)</script> is the complex propagation constant. This
+constant has a real and an imaginary part.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\gamma= \alpha + j \beta \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 421--><p class="noindent">where <script type="math/tex">\alpha </script> is the attenuation constant and <script type="math/tex">\beta </script> is the phase constant.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\alpha=Re\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \} \nonumber \\ \nonumber
+\beta = Im\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \}
+\end{eqnarray}</script>
+</div>
+                                                                  
+
+                                                                  
+<!--l. 429--><p class="noindent">The general solution of the second order differential equations with constant
+coefficients Equations <a class="reference" href="#we11">we11</a> - <a class="reference" href="#we21">we21</a> is:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{\tilde{V}(z)}=\tilde{V_0}^+ e^{-\gamma z} + \tilde{V_0}^- e^{\gamma z} \nonumber \\ \nonumber
+\tilde{I(z)}=\tilde{I_0}^+ e^{-\gamma z} + \tilde{I_0}^- e^{\gamma z}
+\end{eqnarray}</script>
+</div>
+<!--l. 437--><p class="noindent">In this equation <script type="math/tex">\tilde {V_0}^+</script> and <script type="math/tex">\tilde {V_0}^-</script> are the phasors of forward and reflected voltage waves at the
+load (where z=0), and <script type="math/tex">\tilde {I_0}^+</script> and <script type="math/tex">\tilde {I_0}^-</script> are the phasors of forward and reflected current wave at
+the load (where z=0).These voltages and currents are also phasors and have a
+constant magnitude and phase in a specific circuit, for example <script type="math/tex">\tilde {V_0}^+=|\tilde {V_0}^+| e^\Phi =4e^{25^0}</script>, and <script type="math/tex">\tilde {I_0}^+=|\tilde {I_0}^+| e^\Phi =5e^{-40^0}</script>. The time
+domain expression for the current and voltage on the transmission line we can get by
+multiplying the phasor of the voltage and current with <script type="math/tex">e^{j \omega t}</script> and taking the real part of
+it.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=Re\{ (\tilde{V}_0^+  e^{(-\alpha - j \beta) z} + \tilde{V}_0^- e^{(\alpha + j
+ \beta) z})e^{j \omega t} \}  \nonumber \\
+v(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+)+
+|\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{tdeq}
+\end{eqnarray}</script>
+</div>
+<!--l. 451--><p class="noindent">We’ll look at the Matlab program the next class to see that if the signs of the <script type="math/tex">\omega t</script> and <script type="math/tex">\beta z</script>
+are the same the wave moves in the forward <script type="math/tex">+z</script> direction. If the signs of <script type="math/tex">\omega t</script> and <script type="math/tex">\beta z</script> are
+opposite, the wave moves in the <script type="math/tex">-z</script> direction.
+</p>
+<h3 class="sectionHead"><a id="x1-5000"></a>Visualization of Lossless Forward and Reflected Voltage Waves</h3>
+<!--l. 460--><p class="noindent">We will show next that if the signs of the <script type="math/tex">\omega t</script> and <script type="math/tex">\beta z</script> are the same, as in Equation <a class="reference" href="#bck1">bck1</a>, the
+wave moves in the forward <script type="math/tex">+z</script> direction. If the signs of <script type="math/tex">\omega t</script> and <script type="math/tex">\beta z</script> are opposite, as in
+Equation <a class="reference" href="#fwd1">fwd1</a>, the wave moves in the <script type="math/tex">-z</script> direction. In order to see this, we will visualize
+Equations <a class="reference" href="#fwd1">fwd1</a> and <a class="reference" href="#bck1">bck1</a> using Matlab code below.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_f(t)=|\tilde{V}_0^+| e^{ - \alpha z} \cos(\omega t - \beta z + \angle \tilde{V}_0^+) \label{fwd1} \\
+v_r(t)= |\tilde{V}_0^-|e^{\alpha z} \cos(\omega t + \beta z + \angle \tilde{V}_0^-) \label{bck1}
+\end{eqnarray}</script>
+</div>
+<!--l. 471--><p class="noindent">Figure <a class="reference" href="#fwrdref">fwrdref</a> shows forward and reflected waves on a transmission line. On x-axis is the
+spatial coordinate <script type="math/tex">z</script> from the generator to the load, where the transmission line is
+                                                                  
+
+                                                                  
+connected, and on y-axis is the magnitude of the voltage on the line. The red line on
+both graphs is the voltage signal at a time .1 ns. We would obtain Figure <a class="reference" href="#fwrdref">fwrdref</a> if
+we had a camera that can take picture of voltages, and we took the first
+picture at <script type="math/tex">t_1=</script> .1 ns on the entire transmission line. The blue dotted line on
+both graphs is the same signal .1 ns later, at time <script type="math/tex">t_2=</script>.2 ns. We see that the
+signal has moved to the right in the time of 1 ns, or from the generator to
+the load. On the bottom graph we see that at a time .1 ns, the red line
+represents the reflected signal. Dashed blue line shows the signal at a time .2
+ns. We see that the signal has moved to the left, or from the load to the
+generator.
+</p>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-500115"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 475--><p class="noindent">
+</p><!--l. 476--><p class="noindent"><img src="../jpg/frwrdwave_01.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 15: </span><span class="content"><a class="ximera-label" id="fwrdref"></a> Forward (top) and reflected (bottom) waves on a transmission line.</span></div><!--tex4ht:label?: x1-500115 -->
+</div>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 482--><pre>clear all
+ <br/>clc
+ <br/>f = 10^9;
+ <br/>w = 2*pi*f
+ <br/>c=3*10^8;
+ <br/>beta=2*pi*f/c;
+ <br/>lambda=c/f;
+ <br/>t1=0.1*10^(-9)
+ <br/>t2=0.2*10^(-9)
+ <br/>x=0:lambda/20:2*lambda;
+ <br/>
+ <br/>y1=sin(w*t1 - beta.*x);
+ <br/>y2=sin(w*t2 - beta.*x);
+ <br/>y3=sin(w*t1 + beta.*x);
+ <br/>y4=sin(w*t2 + beta.*x);
+ <br/>
+ <br/>subplot (2,1,1),
+ <br/>
+ <br/>    plot(x,y1,’r’),...
+ <br/>            hold on
+ <br/>    plot(x,y2,’--b’),...
+ <br/>    hold off
+ <br/>subplot (2,1,2),
+ <br/>
+ <br/>    plot(x,y3,’r’)
+ <br/>        hold on
+ <br/>    plot(x,y4,’--b’)
+ <br/>    hold off
+<!--l. 511--></pre>
+<!--l. 513--><p class="noindent">Using matlab code above, repeat the visualization of signals in the previous section
+for a lossy transmission line. Assume that <script type="math/tex">\alpha =0.1</script> Np, and all other variables are the same as
+in the previous section. How do the voltages compare in the lossy and lossless
+cases?
+</p>
+<h3 class="sectionHead"><a id="x1-6000"></a>Relating forward and backward current and voltage waves on the transmission
+                                                                  
+
+                                                                  
+line</h3>
+<!--l. 519--><p class="noindent">In equations <a class="reference" href="#eq4">eq4</a>-<a class="reference" href="#eq5">eq5</a> <script type="math/tex">\tilde {V}_0^+</script> and <script type="math/tex">\tilde {V}_0^-</script> are the phasors of forward and reflected going voltage waves, and
+<script type="math/tex">\tilde {I}_0^+</script> and <script type="math/tex">\tilde {I}_0^-</script> are the phasors of forward and reflected current waves. In this section, we will
+see how the phasors of forward and reflected voltage and current waves are related to
+transmission line impedance.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)=\tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^- e^{\gamma z}\label{eq4} \\
+I(z)=\tilde{I}_0^+ e^{-\gamma z} + \tilde{I}_0^- e^{\gamma z}\label{eq5}
+\end{eqnarray}</script>
+</div>
+<!--l. 533--><p class="noindent">When substitute the voltage wave equation into Telegrapher’s Equations <a class="reference" href="#te11">te11</a>. The
+equation is repeated here Eq.<a class="reference" href="#te12new">te12new</a>-<a class="reference" href="#te12new1">te12new1</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+-\frac{\partial \tilde{V}(z)}{\partial z} = (R+j\omega L) I(z) \label{te12new} \\
+\gamma \tilde{V}_0^+ e^{-\gamma z} - \gamma \tilde{V}_0^- e^{\gamma z} = (R+ j \omega
+L) I(z) \label{te12new1}
+\end{eqnarray}</script>
+</div>
+<!--l. 545--><p class="noindent">We now rearrange Eq.<a class="reference" href="#te12new1">te12new1</a>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ exp^{-\gamma z} + \tilde{V}_0^-
+ exp^{\gamma z})  \nonumber  \\
+I(z)=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} e^{\gamma z} \label{eq3}
+\end{eqnarray}</script>
+</div>
+<!--l. 553--><p class="noindent">Now we compare Eq.<a class="reference" href="#eq3">eq3</a> with the Eq.<a class="reference" href="#eq5">eq5</a>. In order for two transcendental equations to be
+equal, the coefficients next to exponential terms have to be the same.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{I}_0^+=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} \nonumber  \\
+\tilde{I}_0^-= - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 560--><p class="noindent">We can define the characteristic impedance of a transmission line as the ratio of the
+voltage to current amplitude of the forward going wave.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+} \nonumber   \\ \nonumber
+                                                                  
+
+                                                                  
+Z_0=\frac{R+j\omega L}{\gamma} \nonumber   \\ \nonumber
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}}
+\end{eqnarray}</script>
+                                                                  
+
+                                                                  
+</div>
+<h3 class="sectionHead"><a id="x1-7000"></a>Lossless transmission line</h3>
+<!--l. 575--><p class="noindent">In many practical applications <script type="math/tex">R\to 0</script> <span class="footnote-mark"><a href="waves2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a id="x1-7001f1"></a> and
+
+                                                                  
+<script type="math/tex">G \to 0</script><span class="footnote-mark"><a href="waves3.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a id="x1-7067f2"></a>.
+
+                                                                  
+This is a lossless transmission line.
+<!--l. 579--></p><p class="noindent">In this case the transmission line parameters are </p>
+     <ul class="itemize1">
+     <li class="itemize">Propagation constant
+    <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\gamma =\sqrt{(R+j\omega L)(G+ j\omega C)} \nonumber   \\ \nonumber
+    \gamma= \sqrt{j \omega L j \omega C} \\ \nonumber
+    \gamma = j \omega \sqrt{L C} = j \beta
+     \end{eqnarray}</script>
+     </div>
+     </li>
+     <li class="itemize">Transmission line impedance
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Z_0=\sqrt{\frac{R+j\omega L}{G+ j\omega C}} \nonumber  \\ \nonumber
+     Z_0=\sqrt{\frac{j\omega L}{ j\omega C}} \\ \nonumber
+     Z_0=\sqrt{\frac{L}{C}}
+     \end{eqnarray}</script>
+     </div>
+     </li>
+     <li class="itemize">Wave velocity
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v=\frac{\omega}{\beta}  \nonumber \\ \nonumber
+     v=\frac{\omega}{\omega \sqrt{LC}} \\ \nonumber
+     v=\frac{1}{\sqrt{LC}}
+     \end{eqnarray}</script>
+     </div>
+     </li>
+     <li class="itemize">Wavelength
+    <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\lambda = \frac{2 \pi}{\beta}  \nonumber \\ \nonumber
+    \lambda = \frac{2 \pi}{ \omega \sqrt{LC}} \\ \nonumber
+    \lambda =\frac{2 \pi}{\sqrt{\epsilon_0 \mu_0 \epsilon_r} } \\ \nonumber
+    \lambda = \frac{c}{f \sqrt{\epsilon_r}} \\ \nonumber
+    \lambda = \frac{\lambda_0}{\sqrt{\epsilon_r}} \nonumber
+     \end{eqnarray}</script>
+     </div></li></ul>
+                                                                  
+
+                                                                  
+<h3 class="sectionHead"><a id="x1-8000"></a>What does it mean when we say a medium is lossy or lossless?</h3>
+<!--l. 625--><p class="noindent">In a lossless medium electromagnetic wave power is not turning into heat, there is no
+loss of amplitude. In lossy medium electromagnetic wave is heating up the medium,
+therefore its power is decreasing as <script type="math/tex">e^{-\alpha x}</script>.
+</p>
+<div class="center">
+<!--l. 630--><p class="noindent">
+</p>
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/></colgroup><tbody><tr class="hline"><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-1" class="td11">  medium   </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11"> attenuation constant <script type="math/tex">\alpha </script> [dB/km]  </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-1" class="td11">    coax      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-2" class="td11">             60                    </td></tr><tr class="hline"><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-1" class="td11"> waveguide </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-2" class="td11"> 2</td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-1" class="td11"> fiber-optic  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-2" class="td11">             0.5                    </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-5-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-5-1" class="td11">           </td>
+</tr></tbody></table></div></div>
+<!--l. 640--><p class="noindent">In guided wave systems such as transmission lines and waveguides the attenuation of
+power with distance follows approximately <script type="math/tex">e^{-2\alpha x}</script>. The power radiated by an antenna falls
+off as <script type="math/tex">1/r^{2}</script>.
+</p>
+<h3 class="sectionHead"><a id="x1-9000"></a>Low-Loss Transmission Line</h3>
+<!--l. 647--><p class="noindent">In some practical applications, losses are small, but not negligible. <script type="math/tex">R<< \omega L</script>
+                                                                  
+
+                                                                  
+<span class="footnote-mark"><a href="waves4.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a id="x1-9001f3"></a>and
+
+                                                                  
+<script type="math/tex">G << \omega C</script><span class="footnote-mark"><a href="waves5.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a id="x1-9067f4"></a>.
+
+                                                                  
+<!--l. 650--></p><p class="noindent">In this case the transmission line parameters are </p>
+     <ul class="itemize1">
+     <li class="itemize">Propagation constant
+     <!--l. 654--><p class="noindent">We  can  re-write  the  propagation  constant  as  shown  below.  In  somel
+     applications, losses are small, but not negligible. <script type="math/tex">R<< \omega L</script> and <script type="math/tex">G << \omega C</script>, then in Equation
+     <a class="reference" href="#lossytl2">lossytl2</a>, <script type="math/tex"> RG<< \omega ^2 LC</script>.
+</p>
+    <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\gamma =\sqrt{(R+j\omega L)(G+ j\omega C)}   \\
+    \gamma= j\omega \sqrt{ L\, C}\sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)-\frac{R G}{\omega^2  L  C}} \label{lossytl2} \\
+    \gamma\approx j\omega \sqrt{ L\, C}\sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)}\label{lowtleq1}
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 664--><p class="noindent">Taylor’s series for function <script type="math/tex">\sqrt {1+x}= \sqrt {1\,-\,j\,\left ( \frac {R}{\omega L}+\frac {G}{\omega C} \right )}</script> in Equation <a class="reference" href="#lowtleq1">lowtleq1</a> is shown in Equations <a class="reference" href="#taylorser1">taylorser1</a>-<a class="reference" href="#taylorser2">taylorser2</a>.
+</p>
+    <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\sqrt{1+x}=1+\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{16}-...  \,for\, |x|<1 \label{taylorser1} \\
+    \gamma \approx  j\omega \sqrt{ L\, C} \sqrt{1\,-\,j\,\left( \frac{R}{\omega L}+\frac{G}{\omega C} \right)}= j\omega \sqrt{ L\, C}\left(1-\frac{j}{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)\right) \label{taylorser2}
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 672--><p class="noindent">The real and imaginary part of the propagation constant <script type="math/tex">\gamma </script> are:
+</p>
+    <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\alpha=  \frac{   \omega \sqrt{ L\, C}  }{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)  \\
+    \beta=     \omega \sqrt{ L\, C}
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 680--><p class="noindent">We see that the phase constant <script type="math/tex">\beta </script> is the same as in the lossless case, and the
+     attenuation constant <script type="math/tex">\alpha </script> is frequency independent. This means that all frequencies
+     of a modulated signal are attenuated the same amount, and there is no
+     dispersion on the line. When the phase constant is a linear function of
+     frequency, <script type="math/tex">\beta =const \, \omega </script>, then the phase velocity is a constant <script type="math/tex">v_p=\frac {\omega }{\beta }=\frac {1}{const}</script>, and the group velocity is also
+     a constant, and equal to the phase velocity. In this case, all frequencies of the
+     modulated signal are propagated with the same speed, and there is no
+     distortion of the signal. This is the case only when the losses in the
+     transmission line are small.
+     </p><!--l. 682--><p class="noindent">We usually represent phase and group velocity on <script type="math/tex">\omega -\beta </script> diagrams, shown in Figure <a class="reference" href="#omegabeta1">omegabeta1</a>.
+     At a frequency <script type="math/tex">\omega _1</script>, the ratio of <script type="math/tex">\frac {\omega }{\beta }</script> gives the phase velocity (graphically, this is the
+     slope of the red line on the graph), whereas the slope of the <script type="math/tex">\omega -\beta </script> curve
+     (blue line on the graph) gives the group velocity at this frequency.
+     These diagrams are useful, as they show how phase constant <script type="math/tex">\beta </script> varies
+     with frequency, and it also shows how phase and group velocities vary
+     with frequency. We can see that in this case, both group and phase
+                                                                  
+
+                                                                  
+     velocity for this line are positive quantities, which is a representation of
+     what is called a forward wave. In a forward wave, both signal and
+     the energy propagate in the forward direction. Backward waves are
+     waves where the signal propagates forward, however energy propagates
+     backwards. In backward waves, phase and group velocities have opposite
+     signs.
+     </p><!--l. 684--><p class="noindent">When the phase constant is a linear function of frequency, then, phase velocity
+     and group velocity are equal, and do not depend on frequency. Both velocities
+     are equal to the slope of the line in Figure <a class="reference" href="#omegabeta2">omegabeta2</a>.
+</p>
+     <hr class="figure"/><div class="figure"><a id="x1-913316"></a>
+<div class="center">
+<!--l. 687--><p class="noindent">
+</p><!--l. 688--><p class="noindent"><img src="../jpg/omegabeta1.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 16: </span><span class="content">Omega-Beta diagrams, Phase constant <script type="math/tex">\beta </script> is a nonlinear function of
+frequency.</span></div><!--tex4ht:label?: x1-913316 -->
+<a class="ximera-label" id="omegabeta1"></a></div>
+     </div><hr class="endfigure"/>
+     <hr class="figure"/><div class="figure"><a id="x1-913417"></a>
+<div class="center">
+<!--l. 695--><p class="noindent">
+</p><!--l. 696--><p class="noindent"><img src="../jpg/omegabeta2.jpg" alt="PIC"/>
+<br/> </p><div class="caption"><span class="id">Figure 17:  </span><span class="content">Omega-Beta  diagrams,  Phase  constant  <script type="math/tex">\beta </script>  is  a  linear function  of
+frequency.</span></div><!--tex4ht:label?: x1-913417 -->
+<a class="ximera-label" id="omegabeta2"></a></div>
+     </div><hr class="endfigure"/>
+     </li></ul>
+<h3 class="sectionHead"><a id="x1-10000"></a>Voltage Reflection Coefficient, Lossless Case</h3>
+<!--l. 709--><p class="noindent">The equations for the voltage and current on the transmission line we derived so far
+are
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)=\tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl} \\ \label{ctl}
+I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{- j \beta z} - \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z}
+\end{eqnarray}</script>
+</div>
+<hr class="figure"/><div class="figure">
+                                                                  
+
+                                                                  
+<a id="x1-1000118"></a>
+                                                                  
+
+                                                                  
+<div class="center">
+<!--l. 720--><p class="noindent">
+</p><!--l. 721--><p class="noindent"><img src="../jpg/trline.jpg" alt="PIC"/></p></div>
+<br/> <div class="caption"><span class="id">Figure 18: </span><span class="content">Transmission Line connects generator and the load.</span></div><!--tex4ht:label?: x1-1000118 -->
+<a class="ximera-label" id="wind1"></a>
+                                                                  
+
+                                                                  
+</div><hr class="endfigure"/>
+<!--l. 732--><p class="noindent">At <script type="math/tex">z=0</script> the impedance of the load has to be
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Z_L=\frac{V(0)}{I{0}} \nonumber
+\end{eqnarray}</script>
+</div>
+<!--l. 738--><p class="noindent">Substitute the boundary condition in Eq.<a class="reference" href="#vtl">vtl</a>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+Z_L=Z_0 \frac{\tilde{V}_0^+ + \tilde{V}_0^-}{\tilde{V}_0^+ - \tilde{V}_0^-}
+\end{eqnarray}</script>
+</div>
+<!--l. 745--><p class="noindent">We can now solve the above equation for <script type="math/tex">\tilde {V}_0^-</script>
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\frac{Z_L}{Z_0} (\tilde{V}_0^+ - \tilde{V}_0^-) = \tilde{V}_0^+ + \tilde{V}_0^- \nonumber \\
+(\frac{Z_L}{Z_0}-1)\tilde{V}_0^+ =(\frac{Z_L}{Z_0}+1) \tilde{V}_0^- \nonumber \\
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{\frac{Z_L}{Z_0}-1  }{ \frac{Z_L}{Z_0}+1 }
+\nonumber \\
+\frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0}
+\end{eqnarray}</script>
+</div>
+<!--l. 755--><p class="noindent">The quantity <script type="math/tex">\frac {\tilde {V}_0^-}{\tilde {V}_0^+}</script> is called voltage reflection coefficient <script type="math/tex">\Gamma </script>. It relates the reflected to
+incident voltage phasor. Voltage reflection coefficient is in general a complex number,
+it has a magnitude and a phase.
+</p>
+<h5 class="subsubsectionHead"><a id="x1-11000"></a>Examples</h5>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+ (a) </dt><dd class="enumerate-enumitem">100 <script type="math/tex">\Omega </script> transmission line is terminated in a series connection of a 50 <script type="math/tex">\Omega </script> resistor
+     and 10 pF capacitor. The frequency of operation is 100 MHz. Find the
+     voltage reflection coefficient.
+     </dd><dt class="enumerate-enumitem">
+ (b) </dt><dd class="enumerate-enumitem">For purely reactive load <script type="math/tex">Z_L=j X_L</script> find the reflection coefficient.</dd></dl>
+<!--l. 773--><p class="noindent">The end of this lecture is spent in the lab making a Matlab program to make a movie
+of a wave moving left and right.
+</p>
+                                                                  
+
+                                                                  
+<h3 class="sectionHead"><a id="x1-12000"></a>Standing Waves</h3>
+<!--l. 780--><p class="noindent">In the previous section we introduced the voltage reflection coefficient that relates
+the forward to reflected voltage phasor.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\Gamma = \frac{\tilde{V}_0^-}{\tilde{V}_0^+} = \frac{Z_L -Z_0}{Z_L +Z_0} \label{reflcoe}
+\end{eqnarray}</script>
+</div>
+<!--l. 789--><p class="noindent">If we substitute Equation <a class="reference" href="#reflcoe">reflcoe</a> to Eq.<a class="reference" href="#vtl11">vtl11</a> we get for the voltage wave
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} +\tilde{V}_0^- e^{j \beta z} \label{vtl11}\\
+\tilde{V}(z) = \tilde{V}_0^+ e^{-j \beta z} + \Gamma  \tilde{V}_0^+ e^{j \beta z} \nonumber
+\\
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{vtl01}
+\end{eqnarray}</script>
+</div>
+<!--l. 798--><p class="noindent">since <script type="math/tex">\Gamma = |\Gamma | e^{j \Theta _r}</script> Eq.<a class="reference" href="#vtl01">vtl01</a> becomes
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{vtl011}
+\end{eqnarray}</script>
+</div>
+<!--l. 807--><p class="noindent">and for the current wave
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+I(z) = \frac{\tilde{V}_0^+}{Z_0} e^{-j \beta z} -  \frac{\tilde{V}_0^-}{Z_0} e^{j \beta z} \label{ctl1}\\
+I(z) =  \frac{\tilde{V}_0^+}{Z_0}  e^{-j \beta z} + \Gamma \frac{\tilde{V}_0^+}{Z_0}  e^{j \beta z} \nonumber
+\\
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{ctl01}
+\end{eqnarray}</script>
+</div>
+<!--l. 818--><p class="noindent">The voltage and the current waveform on a transmission line are therefore given by
+Eqns.<a class="reference" href="#vtl01">vtl01</a>, <a class="reference" href="#ctl01">ctl01</a>. Now we have two equations and one unknown <script type="math/tex">\tilde {V}_0^+</script>! We will solve these
+two equations in Lecture 7. Now let’s look at the physical meaning of these
+equations.
+</p><!--l. 825--><p class="noindent">In Eq.<a class="reference" href="#vtl01">vtl01</a>, <script type="math/tex">\Gamma </script> is the voltage reflection coefficient, <script type="math/tex">\tilde {V}_0^+</script> is the phasor of the forward
+going wave, <script type="math/tex">z</script> is the axis in the direction of wave propagation, <script type="math/tex">\beta </script> is the phase
+                                                                  
+
+                                                                  
+constant<span class="footnote-mark"><a href="waves6.html#fn5x0"><sup class="textsuperscript">5</sup></a></span><a id="x1-12001f5"></a> , <script type="math/tex">Z_0</script> is the impedance
+
+                                                                  
+of the transmission line<span class="footnote-mark"><a href="waves7.html#fn6x0"><sup class="textsuperscript">6</sup></a></span><a id="x1-12067f6"></a> .
+
+                                                                  
+<script type="math/tex">\tilde {V}(z)</script> is a complex number, phasor. We will find the magnitude and phase of the voltage
+on the transmission line.
+<!--l. 837--></p><p class="noindent">The magnitude of a complex number can be found as <script type="math/tex">|z|=\sqrt {z z^*}</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)|=\sqrt{\tilde{V}(z) \tilde{V}(z)^*} \nonumber  \\
+|\tilde{V}(z)|=\sqrt{   \tilde{V}_0^+ (e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+ \Theta_r}  )
+   \tilde{V}_0^+ (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )} \nonumber
+\\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{(e^{-j \beta z} - |\Gamma|  e^{j \beta z +
+|\Theta_r}  )
+  (e^{j \beta z} - |\Gamma|  e^{-(j \beta z + \Theta_r)}     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+  |\Gamma|  e^{-(2j \beta z +
+|\Theta_r)}    + |\Gamma|  e^{j 2 \beta z + \Theta_r} +|\Gamma|^2     )}
+\nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+ |\Gamma|^2 + |\Gamma| ( e^{-(2j \beta z +
+ \Theta_r)}   +  e^{(j 2 \beta z + \Theta_r)}     )}
+ \nonumber \\
+|\tilde{V}(z)|= \tilde{V}_0^+  \sqrt{1+ |\Gamma|^2 + 2 |\Gamma| \cos(2 \beta z +\Theta_r)} \label{sw1}
+\end{eqnarray}</script>
+</div>
+<!--l. 859--><p class="noindent">The magnitude of the total voltage on the transmission line is given by Eq.<a class="reference" href="#sw1">sw1</a>. It seems
+like a complicated function.
+</p>
+     <ul class="itemize1">
+     <li class="itemize">Let’s start from a simple case when the voltage reflection coefficient on
+     the tranmission line is <script type="math/tex">\Gamma =0</script> and draw the magnitude of the total voltage. The
+     magnitude is the green line in Figure <a class="reference" href="#flatline">flatline</a>. To see the movie of this transmission
+     line go to the class web page under Instructional Videos. Forward voltage is
+     shown in red, reflected voltage in pink, and the magnitude of the voltage is
+     green. Magnitude of the voltage is constant everywhere on the transmission
+     line, and so the line is called flat.
+     <hr class="figure"/><div class="figure"><a id="x1-1213319"></a>
+<div class="center">
+<!--l. 875--><p class="noindent">
+                                                                  
+
+                                                                  
+</p><!--l. 876--><p class="noindent"><img src="../jpg/flatline.jpg" alt="PIC"/></p></div>
+     <br/> <div class="caption"><span class="id">Figure 19: </span><span class="content">Flat line.</span></div><!--tex4ht:label?: x1-1213319 -->
+     <a class="ximera-label" id="flatline"></a>
+     </div><hr class="endfigure"/>
+     </li>
+     <li class="itemize">Let’s look at another case, <script type="math/tex">\Gamma =0.5</script> and <script type="math/tex">\Theta _r=0</script>. Equation <a class="reference" href="#swc1">swc1</a> represents the magnitude of the
+     voltage on the transmission line, and Figure <a class="reference" href="#reflcoeffvid">reflcoeffvid</a> shows in green how this
+     function looks on a transmission line. This case is shown in Figure
+     <a class="reference" href="#reflcoeffvid">reflcoeffvid</a>.
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)|=\tilde{V}_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{swc1}
+     \end{eqnarray}</script>
+     </div>
+     <hr class="figure"/><div class="figure"><a id="x1-1213420"></a>
+<div class="center">
+<!--l. 892--><p class="noindent">
+</p><!--l. 893--><p class="noindent"><img src="specialcase.jpg" alt="PIC"/></p></div>
+     <br/>  <div class="caption"><span class="id">Figure 20:  </span><span class="content">Voltage  on  a  transmission  line  with  reflection  coefficient
+     magnitude 0.5, and zero phase.</span></div><!--tex4ht:label?: x1-1213420 -->
+     <a class="ximera-label" id="reflcoeffvid"></a>
+     </div><hr class="endfigure"/>
+     <!--l. 902--><p class="noindent">The function <a class="reference" href="#swc1">swc1</a> is at it’s maximum when <script type="math/tex">cos(2 \beta z)=1</script> or <script type="math/tex">z=\frac {k}{2} \lambda </script>, and the function value is <script type="math/tex">\tilde {V}(z)=1.5\tilde {V}_0^+ </script>. It is at
+     it’s minimum when <script type="math/tex">cos(2 \beta z)=-1</script> or <script type="math/tex">z=\frac {2 k +1}{4} \lambda </script> and the function value is <script type="math/tex">\tilde {V}(z)=0.5 \tilde {V}_0^+</script>
+     </p><!--l. 908--><p class="noindent">It is important to mention here that the function that we see looks like a cosine
+     with an average value of <script type="math/tex"> \tilde {V}_0^+ </script>, but it is not. The minimums of the function are
+     sharper then the maximums, so when the reflection coefficient is at it’s
+     maximum of <script type="math/tex">\Gamma =1</script> the function looks like this:
+</p>
+     <hr class="figure"/><div class="figure"><a id="x1-1213521"></a>
+<div class="center">
+<!--l. 916--><p class="noindent">
+</p><!--l. 917--><p class="noindent"><img src="../jpg/shortedline.jpg" alt="PIC"/></p></div>
+     <br/> <div class="caption"><span class="id">Figure 21: </span><span class="content">Shorted Transmission Line.</span></div><!--tex4ht:label?: x1-1213521 -->
+     <a class="ximera-label" id="wind"></a>
+     </div><hr class="endfigure"/>
+     </li>
+     <li class="itemize">General Case.
+                                                                  
+
+                                                                  
+     <!--l. 928--><p class="noindent">In general the voltage maximums will occur when <script type="math/tex">cos(2 \beta z)=1</script>
+</p>
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)_{max}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2+2 |\Gamma|} \nonumber  \\
+     |\tilde{V}(z)_{max}| =\tilde{V}_0^+\sqrt{(1+|\Gamma|)^2}  \nonumber \\
+     |\tilde{V}(z)_{max}| =\tilde{V}_0^+(1+|\Gamma|)
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 939--><p class="noindent">In general the voltage minimums will occur when <script type="math/tex">cos(2 \beta z)=-1</script>,
+</p>
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|\tilde{V}(z)_{min}|=\tilde{V}_0^+\sqrt{1+|\Gamma|^2-2 |\Gamma|} \nonumber  \\
+     |\tilde{V}(z)_{min}| =\tilde{V}_0^+\sqrt{(1-|\Gamma|)^2}  \nonumber \\
+     |\tilde{V}(z)_{min}| =\tilde{V}_0^+ (1-|\Gamma|)
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 950--><p class="noindent">The ratio of voltage minimum on the line over the voltage maximum is called
+     the Voltage Standing Wave Ratio (VSWR) or just Standing Wave Ratio
+     (SWR).
+</p>
+     <div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+SWR=\frac{\tilde{V}(z)_{max}}{ \tilde{V}(z)_{min}} \nonumber \\
+     SWR=\frac{1+|\Gamma|}{1-|\Gamma|}
+     \end{eqnarray}</script>
+     </div>
+     <!--l. 959--><p class="noindent">The voltage maximum position on the line is where </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+cos(2 \beta z)=1 \nonumber \\
+     2 \beta z + \Theta_r = 2 n \pi \nonumber \\
+     z =\frac{ 2 n \pi -\Theta_r }{ 2 \beta} \nonumber \\
+     z=\frac{ 2 n \pi -\Theta_r }{ 4 \pi}
+     \end{eqnarray}</script>
+     </div>
+     </li></ul>
+<!--l. 1006--><p class="noindent">Display image. </p><div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./waves-figure0.svg" alt=""/>
 </div>
  
  

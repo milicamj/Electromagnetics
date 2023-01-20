@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en"><head> <title>Review  of  Phasors</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"/> 
+<!-- charset=utf-8,-css,html,htex4ht,xhtml --> 
+<meta name="src" content="digInPhasorsDefinition.tex"/> 
+<meta name="author" content="Milica
+                                                                  
+
+                                                                  
+Markovic"/> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"/> 
+<meta name="ximera" content="version 0.0.1"/> 
+<link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
+<script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
+<meta name="learning-outcome" content="Apply phasor transformation to a time-domain equation to obtain frequency-domain equation."/> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="0fa63b555de9706fe659e9ebfe1a9bb5fa433c14 phasors/digInPhasorsDefinition.tex"/></head><body> 
+<div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
+\newcommand {\ungraded }[0]{}
+\newcommand {\todo }[0]{}
+\newcommand {\oiint }[0]{{\large \bigcirc }\kern -1.56em\iint }
+\newcommand {\mooculus }[0]{\textsf {\textbf {MOOC}\textnormal {\textsf {ULUS}}}}
+\newcommand {\npnoround }[0]{\nprounddigits {-1}}
+\newcommand {\npnoroundexp }[0]{\nproundexpdigits {-1}}
+\newcommand {\npunitcommand }[1]{\ensuremath {\mathrm {#1}}}
+\newcommand {\RR }[0]{\mathbb R}
+\newcommand {\R }[0]{\mathbb R}
+\newcommand {\N }[0]{\mathbb N}
+\newcommand {\Z }[0]{\mathbb Z}
+\newcommand {\sagemath }[0]{\textsf {SageMath}}
+\newcommand {\d }[0]{\mathop {}\!d}
+\newcommand {\l }[0]{\ell }
+\newcommand {\ddx }[0]{\frac {d}{\d x}}
+\newcommand {\zeroOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {0}{0}}}}
+\newcommand {\inftyOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {\infty }{\infty }}}}
+\newcommand {\zeroOverInfty }[0]{\ensuremath {\boldsymbol {\tfrac {0}{\infty }}}}
+\newcommand {\zeroTimesInfty }[0]{\ensuremath {\small \boldsymbol {0\cdot \infty }}}
+\newcommand {\inftyMinusInfty }[0]{\ensuremath {\small \boldsymbol {\infty -\infty }}}
+\newcommand {\oneToInfty }[0]{\ensuremath {\boldsymbol {1^\infty }}}
+\newcommand {\zeroToZero }[0]{\ensuremath {\boldsymbol {0^0}}}
+\newcommand {\inftyToZero }[0]{\ensuremath {\boldsymbol {\infty ^0}}}
+\newcommand {\numOverZero }[0]{\ensuremath {\boldsymbol {\tfrac {\#}{0}}}}
+\newcommand {\dfn }[0]{\textbf }
+\newcommand {\unit }[0]{\mathop {}\!\mathrm }
+\newcommand {\eval }[1]{\bigg [ #1 \bigg ]}
+\newcommand {\seq }[1]{\left ( #1 \right )}
+\newcommand {\epsilon }[0]{\varepsilon }
+\newcommand {\phi }[0]{\varphi }
+\newcommand {\iff }[0]{\Leftrightarrow }
+\DeclareMathOperator {\arccot }{arccot}
+\DeclareMathOperator {\arcsec }{arcsec}
+\DeclareMathOperator {\arccsc }{arccsc}
+\DeclareMathOperator {\si }{Si}
+\DeclareMathOperator {\scal }{scal}
+\DeclareMathOperator {\sign }{sign}
+\newcommand {\arrowvec }[1]{{\overset {\rightharpoonup }{#1}}}
+\newcommand {\vec }[1]{{\overset {\boldsymbol {\rightharpoonup }}{\mathbf {#1}}}\hspace {0in}}
+\newcommand {\point }[1]{\left (#1\right )}
+\newcommand {\pt }[1]{\mathbf {#1}}
+\newcommand {\Lim }[2]{\lim _{\point {#1} \to \point {#2}}}
+\DeclareMathOperator {\proj }{\mathbf {proj}}
+\newcommand {\veci }[0]{{\boldsymbol {\hat {\imath }}}}
+\newcommand {\vecj }[0]{{\boldsymbol {\hat {\jmath }}}}
+\newcommand {\veck }[0]{{\boldsymbol {\hat {k}}}}
+\newcommand {\vecl }[0]{\vec {\boldsymbol {\l }}}
+\newcommand {\uvec }[1]{\mathbf {\hat {#1}}}
+\newcommand {\utan }[0]{\mathbf {\hat {t}}}
+\newcommand {\unormal }[0]{\mathbf {\hat {n}}}
+\newcommand {\ubinormal }[0]{\mathbf {\hat {b}}}
+\newcommand {\dotp }[0]{\bullet }
+\newcommand {\cross }[0]{\boldsymbol \times }
+\newcommand {\grad }[0]{\boldsymbol \nabla }
+\newcommand {\divergence }[0]{\grad \dotp }
+\newcommand {\curl }[0]{\grad \cross }
+\newcommand {\lto }[0]{\mathop {\longrightarrow \,}\limits }
+\newcommand {\bar }[0]{\overline }
+\newcommand {\surfaceColor }[0]{violet}
+\newcommand {\surfaceColorTwo }[0]{redyellow}
+\newcommand {\sliceColor }[0]{greenyellow}
+\newcommand {\vector }[1]{\left \langle #1\right \rangle }
+\newcommand {\sectionOutcomes }[0]{}
+\newcommand {\HyperFirstAtBeginDocument }[0]{\AtBeginDocument }                               </script><script type="text/javascript"> 
+</script> 
+</div>
+
+                                                                  
+<div class="abstract">
+<!--l. 14--><p class="noindent">Phasors are essential tool in circuit analysis, used in many applications. Phasors are a
+special case of superposition, that simplifies circuit analysis.
+</p></div>   <div class="maketitle"></div>
+<div class="theorem-like problem-environment definition" id="problem1"><a id="x1-67r1"></a>Phasor transformation is defined as follows:
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\Re\{|V|e^{j\theta_v} e^{j \omega t}\}
+\end{eqnarray}</script>
+</div>
+<!--l. 26--><p class="noindent">where <script type="math/tex">|\widetilde {V}|e^{j\theta _v}</script> is the phasor of voltage <script type="math/tex">v(t)</script>. Phasor is a complex number in polar coordinate
+system and it is usually denoted with a capital letter with a tilde above it <script type="math/tex">\widetilde {V} = |\widetilde {V}|e^{j\theta _v}</script>. <script type="math/tex"> |\widetilde {V}|</script> is the
+magnitude and <script type="math/tex">\theta _v</script> is the phase of the complex number. Symbol <script type="math/tex">\Re </script> represents the real part
+of the expression in the curly brackets.
+</p></div>
+<!--l. 32--><p class="noindent">In order to use phasors, the circuit has to be linear. Circuits that have only
+capacitors, inductors and resistors are linear circuits. In a linear circuit, all currents
+and voltages are at the frequency of the generator. That means that we do not have
+to keep track of the frequency of voltages and currents when we are solving the
+circuit. We know the frequency of all currents and voltages once we know the
+frequency of the generator. The quantities that will differ for different currents and
+voltages are the amplitudes and phases. Phasors allow us to drop the information
+about the signal’s frequency and only keep track of the magnitude and phase of
+the signal. So <script type="math/tex">cos (\omega t)</script> is an integral part of the circuit performance; however, it is
+not critical to analyze the circuit if all voltages and currents are at that
+frequency.
+</p><!--l. 36--><p class="noindent">We have to use complex numbers to remove <script type="math/tex"> \cos (\omega t)</script> term from the generator and other
+circuit analysis equations. To transform the cosine function to a complex number, we
+add a sinusoidal imaginary term.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ V \cos (\omega t + \Theta ) + j V sin (\omega t + \Theta)
+\end{eqnarray}</script>
+</div>
+<!--l. 42--><p class="noindent">To simplify the math, we have added another generator to our circuit <script type="math/tex">j A sin (\omega t + \Theta )</script>, and all
+currents and voltages in the circuit will be a response to both cosine and sine
+generator. At the end of the analysis, we have to make sure that we only take the real
+part of the final expression after the complex number calculations. Using Euler’s
+identity, the expression becomes
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_s(t)=  V \cos (\omega t + \Theta_V)=\Re\{ V cos (\omega t + \Theta ) + j V sin (\omega t + \Theta)\}= \nonumber \\
+= \Re\{V e^{j(\omega t + \Theta)}\}=\Re\{V e^{j \Theta} e^{j \omega t}\} \label{eq2}
+\end{eqnarray}</script>
+                                                                  
+
+                                                                  
+</div>
+<!--l. 51--><p class="noindent">In Equation <a class="reference" href="#eq2">eq2</a>, we extracted the phase and amplitude information and separated it
+from the frequency. The amplitude and phase information is called phasor
+<script type="math/tex">V_S (j \omega )=A e^{j \Theta }</script>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)= \Re\{ V cos (\omega t + \Theta_V ) + j V \sin (\omega t + \Theta_V)\}= \nonumber \\ =\Re\{V e^{j(\omega t + \Theta_V)}\}=\Re\{V e^{j \Theta_V} e^{j \omega t}\} \label{eq41}
+\end{eqnarray}</script>
+</div>
+<!--l. 58--><p class="noindent">If we look at the first and last expression in Equation <a class="reference" href="#eq41">eq41</a>, we see that the time domain
+signal is the real part of the product of phasor and the <script type="math/tex">e^{j \omega t}</script> term.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\Re\{V e^{j \Theta_V} e^{j \omega t}\} \label{eq41a}
+\end{eqnarray}</script>
+</div>
+<!--l. 66--><p class="noindent">You still may be wondering why would this specific equation be used. This equation
+is an applied principle of superposition. In circuits classes, we use superposition to
+find voltages and currents from two sources. In this case, we add another imaginary
+source to simplify the math, and when we calculate our currents and voltages, we
+only take the current and voltage from the real part of the source, the cosine
+function.
+</p><!--l. 68--><p class="noindent">We add a voltage source to our circuit and denote it as imaginary by multiplying it
+with <script type="math/tex">j=\sqrt {-1}</script>. Then we use Euler’s formula to write a sinusoidal signal in terms of complex
+exponentials. When we use complex exponentials, the time-domain differential
+equations transform into simple algebraic equations. The principle of superposition
+and complex numbers allow us to separate the voltages and currents in the circuit.
+The circuit’s response to the real part of the generator will be real, and the response
+of the imaginary part of the generator will be imaginary. Since we added a source
+that was not there previously, we now need to take the response only from the real
+generator.
+</p><!--l. 71--><p class="noindent">In this section, we apply the phasor transformation to various circuit components,
+and why we can drop the exponential <script type="math/tex">e^{j\omega t}</script> when analyzing circuits.
+</p>
+<h3 class="sectionHead"><a id="x1-1000"></a>Phasor Transformation of Voltage</h3>
+<!--l. 77--><p class="noindent">Sinusoidal voltage sources, or any other sinusoidal voltages are described as shown in
+Equation <a class="reference" href="#eq:voltSource">eq:voltSource</a>. </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)= V cos (\omega t + \Theta_{V} ) \label{eq:voltSource}
+\end{eqnarray}</script>
+</div>
+<!--l. 82--><p class="noindent">To convert the voltage source to a phasor, we add the imaginary sinusoidal voltage
+                                                                  
+
+                                                                  
+with the same amplitude and phase and write <script type="math/tex">\Re \{\}</script> to select only the real part of this
+expression.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)= \Re \{V \cos (\omega t + \Theta_{V} )+ j \sin (\omega t + \Theta_{V} ) \} \label{eq:voltSourcePhasor}
+\end{eqnarray}</script>
+</div>
+<!--l. 89--><p class="noindent">Using Euler’s formula, we can then re-write the Equation <a class="reference" href="#eq:voltSourcePhasor">eq:voltSourcePhasor</a> for voltage in time domain
+as:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v(t)=\Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}\label{eq:VoltageDef}
+\end{eqnarray}</script>
+</div>
+<!--l. 96--><p class="noindent">The phasor of the voltage source is therefore
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+\tilde{V}=|V|e^{j\theta_{V}}
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-2000"></a>Phasor Transformation of Current</h3>
+<!--l. 106--><p class="noindent">Current source in the time domain </p><div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+i(t)= I cos (\omega t + \Theta_{I} )
+\end{eqnarray}</script>
+</div>
+<!--l. 112--><p class="noindent">Using similar consideration as in the section above, we can write the equation for
+current in the time domain as:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+i(t)=\Re\{|I|e^{j\theta_{I}} e^{j \omega t}\}\label{eq:PhCurrentDef}
+\end{eqnarray}</script>
+</div>
+<!--l. 119--><p class="noindent">The phasor of the current is therefore </p><script type="math/tex; mode=display"> \begin{equation} 
+\tilde{I}=|I|e^{j\theta_{I}}
+\end{equation}</script>
+<h3 class="sectionHead"><a id="x1-3000"></a>Ohm’s Law for Resistor</h3>
+<!--l. 128--><p class="noindent">For a resistor with resistance <script type="math/tex">R</script>, the relationship that describes voltage <script type="math/tex">v(t)</script> on the resistor
+and current <script type="math/tex">i(t)</script> through the resistor in the time domain is
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+v(t)=R \, i(t)
+\end{equation}</script>
+                                                                  
+
+                                                                  
+<!--l. 134--><p class="noindent">We can substitue the definition of phasors for voltage (Equation<a class="reference" href="#eq:VoltageDef">eq:VoltageDef</a>) and current
+(Equation <a class="reference" href="#eq:PhCurrentDef">eq:PhCurrentDef</a>) above to get
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}   = R \, \Re\{|I|e^{j\theta_{I}} e^{j \omega t}\}
+\end{equation}</script>
+<!--l. 140--><p class="noindent">Since resistance R is a real number, we can place it inside the real part of the
+expression on the right.
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\}   =   \Re\{ R |I|e^{j\theta_{I}} e^{j \omega t}\}
+\end{equation}</script>
+<!--l. 146--><p class="noindent">Now, on both the right and left side of the equation, we have the <script type="math/tex">\Re \{\}</script>, and if we want to
+be precise, we would have to keep this notation throughout our calculations. However,
+it is easier to drop the <script type="math/tex">\Re \{\}</script>, and remember that we have to only take the real
+part of the resulting voltage in the end. Also, both the left and right sides
+of the equation have the term <script type="math/tex">e^{j \omega t}</script>. We can cancel this term now, but again,
+when we complete the calculations, and before we take the real part of the
+voltage we have to multiply it with <script type="math/tex">e^{j \omega t}</script>, to get the correct voltage in the time
+domain.
+</p><!--l. 148--><p class="noindent">The final equation for current and voltage in the phasor domain is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+|V|e^{j\theta_{V}}    =  R |I|e^{j\theta_{I}}  \\
+\tilde{V} = R \tilde{I}
+\end{eqnarray}</script>
+</div>
+<h3 class="sectionHead"><a id="x1-4000"></a>Ohm’s Law for Capacitor</h3>
+<!--l. 162--><p class="noindent">For a capacitor with capacitance <script type="math/tex">C</script>, the relationship that describes voltage <script type="math/tex">v(t)</script>
+on the capacitor and current <script type="math/tex">i(t)</script> through the capacitor in the time domain
+is
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_s(t) =  \frac{1}{C} \int i(t) dt \label{eq:capTD}
+\end{eqnarray}</script>
+</div>
+<!--l. 171--><p class="noindent">In order to solve this circuit in the time-domain, we have to solve this integral. The
+use of phasors simplifies the equations significantly. Differential or integral equations
+become a set of linear equations. We can substitute the definition of phasors for
+                                                                  
+
+                                                                  
+voltage and current.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\} =  \frac{1}{C} \int \Re\{I e^{j \Theta_I} e^{j \omega t}\}  dt \label{eq:CapCurrent}
+\end{eqnarray}</script>
+</div>
+<!--l. 184--><p class="noindent">The voltage on the capacitor is a bit more complicated. What is the integral of <script type="math/tex">i(t)</script>? We
+will look only at the right side of the Equation<a class="reference" href="#eq:CapCurrent">eq:CapCurrent</a>. If we take all constants and integral
+inside the <script type="math/tex">\Re </script>, and take time-independent quantities in front of the integral, we
+get
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \frac{1}{C} \int i(t) dt  =  \Re\{   \frac{1}{C} \int I e^{j \Theta_I} e^{j \omega t}\}  dt  = \Re\{   \frac{1}{C}  I e^{j \Theta_I} \int e^{j \omega t}dt \}    \\
+ \Re\{   \frac{1}{C}  I e^{j \Theta_I} \frac{1}{j \omega} e^{j \omega t}  \}   = \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
+\end{eqnarray}</script>
+</div>
+<!--l. 196--><p class="noindent">We can now look at both sides of the equation:
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ \Re\{|V|e^{j\theta_{V}} e^{j \omega t}\} =  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}  \label{eq:CapCurrent1}
+\end{eqnarray}</script>
+</div>
+<!--l. 204--><p class="noindent">As in the case of resistors, we drop the common term in the previous equation <script type="math/tex"> e^{j\omega t}</script>, and
+we can now drop <script type="math/tex">Re</script>, as long as we later remember to take only the real part of the
+expression for the phasor of voltage and current to get the time domain expression.
+We can now write the equation as
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+ V  e^{j \Theta_{V}}  =   \frac{1}{j \omega C}  I e^{j \Theta_I}  \\
+ \tilde{V}  =  \frac{1}{j \omega C}  \tilde{I}
+\end{eqnarray}</script>
+</div>
+<!--l. 215--><p class="noindent">We now define expression <script type="math/tex">Z=\frac {1}{j \omega C} </script> as the impedance of the capacitor. <script type="math/tex">X_C=\frac {1}{ \omega C}</script> is called the reactance
+of the capacitor.
+</p>
+<h3 class="sectionHead"><a id="x1-5000"></a>Ohm’s Law for Inductor</h3>
+<!--l. 221--><p class="noindent">In case we have an inductor in the circuit, the voltage on an inductor can be derived,
+as shown in Equation <a class="reference" href="#eq77">eq77</a>.
+</p>
+<div class="eqnarray"><script type="math/tex; mode=display"> \begin{eqnarray} 
+v_L(t) = L \frac{\partial{ i(t)}}{\partial t}  =L  \frac{ Re\{    I e^{j \Theta_I} e^{j \omega t}\}}{\partial t}  dt  = \Re\{  LI e^{j \Theta_I} \frac{ \partial e^{j \omega t}}{\partial t} \} =  \nonumber \\ = \Re\{  LI e^{j  \Theta_I}  j  \omega e^{j \omega t} \} =  \Re \{  j  \omega       LI e^{j  \Theta_I}    e^{j \omega t}   \}      \label{eq77}
+\end{eqnarray}</script>
+                                                                  
+
+                                                                  
+</div>
+<!--l. 229--><p class="noindent">The voltage on the inductor in the phasor domain is then
+</p>
+<script type="math/tex; mode=display"> \begin{equation} 
+\tilde{V}=j \omega L \tilde{I}
+\end{equation}</script>
+<!--l. 235--><p class="noindent">Where <script type="math/tex">Z= j \omega L </script> is the impedance of inductor, and <script type="math/tex">X_c= \omega L </script> is reactance of inductor.
+</p>
+<h3 class="sectionHead"><a id="x1-6000"></a>Analysis of inductor and capacitor impedance</h3>
+<!--l. 239--><p class="noindent">The following table analyzes the impedance of a capacitor and inductor as a function
+of frequency by replacing the angular frequency <script type="math/tex">\omega = 2 \pi f</script> with very small or large numbers.
+We see a capacitor acting as an open circuit at low frequencies and short circuit at
+high frequencies. An inductor acts as a short circuit at low frequencies and
+an open circuit at high frequencies. We often use this reasoning in filter
+analysis.
+</p>
+<div class="table">
+                                                                  
+
+                                                                  
+<!--l. 241--><p class="noindent"><a id="x1-60011"></a></p><hr class="float"/><div class="float">
+                                                                  
+
+                                                                  
+<div class="tabular"> <table id="TBL-1" class="tabular" cellspacing="0" cellpadding="0"><colgroup id="TBL-1-1g"><col id="TBL-1-1"/></colgroup><colgroup id="TBL-1-2g"><col id="TBL-1-2"/></colgroup><colgroup id="TBL-1-3g"><col id="TBL-1-3"/></colgroup><colgroup id="TBL-1-4g"><col id="TBL-1-4"/></colgroup><colgroup id="TBL-1-5g"><col id="TBL-1-5"/></colgroup><tbody><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-1-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-1" class="td11"> circuit element  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-2" class="td11"> impedance  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-3" class="td11"> low freq <script type="math/tex">f \to 0</script>  </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-1-4" class="td11"> high freq <script type="math/tex">f \to \inf </script>  </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-2-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-1" class="td11">    capacitor      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-2" class="td11">      <script type="math/tex">\frac {1}{j \omega C}</script>      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-3" class="td11">     <script type="math/tex">\infty </script>     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-2-4" class="td11">     <script type="math/tex">0</script>     </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-3-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-1" class="td11">    inductor       </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-2" class="td11">      <script type="math/tex">j \omega L</script>      </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-3" class="td11">     <script type="math/tex">0</script>     </td><td style="white-space:nowrap; text-align:center;" id="TBL-1-3-4" class="td11">     <script type="math/tex">\infty </script>     </td>
+</tr><tr class="hline"><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td><td><hr/></td></tr><tr style="vertical-align:baseline;" id="TBL-1-4-"><td style="white-space:nowrap; text-align:center;" id="TBL-1-4-1" class="td11">               </td></tr></tbody></table></div>
+<br/> <div class="caption"><span class="id">Table 1:  </span><span class="content">Impedance  of  the  capacitor  and  inductor  and  their  equivalent
+impedances at high and low frequencies.</span></div><!--tex4ht:label?: x1-60011 -->
+                                                                  
+
+                                                                  
+</div><hr class="endfloat"/>
+</div>
+ 
+ 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+
+</body></html>

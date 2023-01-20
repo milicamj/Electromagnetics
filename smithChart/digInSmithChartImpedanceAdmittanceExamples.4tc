@@ -1,0 +1,13 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Brief review of impedance and admittance}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces It is easier to use admittance when the circuit elements are in parallel and impedance when the circuit elements are in series.}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10022}{}{\ignorespaces On Smith Chart impedances are shown in red, and admittances in green.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-4}{Impedance on the Smith Chart}}{9}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-20013}{}{\ignorespaces Red circle that represents all points on Smith Chart with normalized resistance $r=1$ and blue circle that represents all points on Smith Chart with normalized reactance $x=1$ cross at point where $Z_L=1+j 1$.}}{figure}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-20024}{}{\ignorespaces To find the magnitude of the reflection coefficient from impedance $Z_L=1+j 1$, we measure the distance between the origin and the point using the scale "Reflection Coefficient E or I" on the bottom of the Smith Chart. To find the reflection coefficient's angle, we read the scale "Angle of Reflection Coefficient" on the perimeter of the Smith Chart.}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-7}{Admittance on the impedance Smith Chart}}{16}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-30035}{}{\ignorespaces On Z/Y Smith Chart impedances are shown in red, and admittances in green.}}{figure}\relax 
+\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-30056}{}{\ignorespaces Impedance $z_L=1+j1$ on Smith Chart}}{figure}\relax 
+\doTocEntry\toclof{7}{\csname a:TocLink\endcsname{1}{x1-30067}{}{\ignorespaces Admittance $y_L=0.5-j0.5$ on Smith Chart}}{figure}\relax 
+\doTocEntry\toclof{8}{\csname a:TocLink\endcsname{1}{x1-30078}{}{\ignorespaces Both impedance $z_L=1+j1$ and admittance $y_L=0.5-j0.5$ are at the same position on the z/y Smith Chart}}{figure}\relax 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-12}{Converting Reflection Coefficient to Impedance and Admittance}}{26}\relax 

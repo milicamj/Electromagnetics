@@ -1,0 +1,10 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-671}{}{\ignorespaces Load impedance $Z_L=0.5+j1$ on Smith Chart.}}{figure}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{1}{Q1-1-2}{}{SWR circle}}{6}\relax 
+\doTocEntry\toclikesubsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-3}{SWR circle}}{6}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-4}{Length of the line that will transform the real part of load impedance}}{6}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-20012}{}{\ignorespaces SWR circle for impedance $Z_L=0.5+j1$. }}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-6}{Adding a lumped-element to remove the susceptance}}{9}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-30013}{}{\ignorespaces The result of impedance matching.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-8}{Other possible solutions}}{13}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-40014}{}{\ignorespaces A variety of possible impedance matching circuits for impedance $Z_L=25+j50 \Omega $.}}{figure}\relax 

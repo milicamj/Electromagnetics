@@ -1,13 +1,47 @@
 htfcss: cmtt font-family: monospace;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmtt font-family: monospace;
 File: waves.html
 File: waves.tmp
+File: waves2.html
+File: waves3.html
+File: waves4.html
+File: waves5.html
+File: waves6.html
+File: waves7.html
 Font_Css("4"): .small-caps{font-variant: small-caps; }
 Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
 Font_Css("12"): .htf-calligraphy {font-family:cursive}
 Font_Css("14"): .htf-italic {font-style: italic;}
 Font_Css("16"): .htf-bold {font-weight: bold;}
 Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+File: ../jpg/coax.jpg
+File: ../jpg/microstrip.jpg
+File: ../jpg/stripline.jpg
+File: ../jpg/cpw.jpg
+File: ../jpg/twowireline.jpg
+File: ../jpg/ppw.jpg
+File: ../jpg/rectwg.jpg
+File: ../jpg/fiber.jpg
+File: ../jpg/timedelayedsignal.jpg
+File: ../jpg/timedelayedsignaltl.jpg
+File: ../jpg/generaltransmissionlinecircuit1.jpg
+File: ../jpg/Coaxtl.jpg
+File: ../jpg/Equivalent_Circuit_of_Transmission_Line.jpg
+File: ../jpg/tlmadeupofcircuits.jpg
+File: ../jpg/frwrdwave_01.jpg
+File: ../jpg/omegabeta1.jpg
+File: ../jpg/omegabeta2.jpg
+File: ../jpg/trline.jpg
+File: ../jpg/flatline.jpg
+File: specialcase.jpg
+File: ../jpg/shortedline.jpg
 File: @base.svg
 --- characters ---
 Font("cmr","10","10","100")
 Font("cmtt","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmr","9","9","100")
+Font("cmr","8","8","100")
+Font("cmtt","8","8","100")

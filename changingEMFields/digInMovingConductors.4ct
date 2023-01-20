@@ -1,0 +1,7 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Electromagnetics}}{3}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Induced EMF}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-20011}{}{\ignorespaces Induced voltage due to a loop of wire with AC current. Voltage induced is due to inductance of the loop of wire.}}{figure}\relax 
+\doTocEntry\tocsubsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-4}{Motional EMF}}{6}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-30012}{}{\ignorespaces Example of induced motional electromotive force.}}{figure}\relax 
+\par 
