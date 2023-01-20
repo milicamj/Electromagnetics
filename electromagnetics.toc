@@ -1,1 +1,223 @@
+\contentsline {section}{\textbf {1\hspace {1em}Sinusoidal signals}}{10}{section*.1}
+\contentsline {subsection}{1.1\hspace {1em}Basic Parameters of Sinusoidal Signals}{11}{section*.2}
+\contentsline {section}{Sinusoidal signal parameters}{11}{section*.3}
+\contentsline {subsection}{Parameters that are read on the y-axis.}{11}{subsection*.4}
+\contentsline {subsection}{Parameters that are read on the x-axis.}{12}{subsection*.5}
+\contentsline {subsection}{1.2\hspace {1em}Leading and Lagging Signals}{16}{section*.6}
+\contentsline {subsection}{1.3\hspace {1em}eLi the iCe Man is CIVIL}{19}{section*.7}
+\contentsline {subsection}{1.4\hspace {1em}Signal Delay on Transmission Lines}{20}{section*.8}
+\contentsline {subsection}{1.5\hspace {1em}Engineering Design}{23}{section*.9}
+\contentsline {section}{\textbf {2\hspace {1em}Complex numbers}}{26}{section*.10}
+\contentsline {subsection}{2.1\hspace {1em}Review of Complex Numbers}{27}{section*.11}
+\contentsline {section}{Conversion between Cartesian and Polar coordinate systems}{27}{section*.12}
+\contentsline {subsection}{2.2\hspace {1em}Operations with Complex Numbers}{31}{section*.13}
+\contentsline {section}{Complex Conjugate}{31}{section*.14}
+\contentsline {section}{Addition}{31}{section*.15}
+\contentsline {section}{Subtraction}{32}{section*.16}
+\contentsline {section}{Multiplication and Division}{32}{section*.17}
+\contentsline {subsection}{2.3\hspace {1em}Euler's Formula}{34}{section*.18}
+\contentsline {section}{\textbf {3\hspace {1em}Phasors}}{36}{section*.19}
+\contentsline {subsection}{3.1\hspace {1em}Review of Phasors}{37}{section*.20}
+\contentsline {section}{Phasor Transformation of Voltage}{38}{section*.21}
+\contentsline {section}{Phasor Transformation of Current}{39}{section*.22}
+\contentsline {section}{Ohm's Law for Resistor}{39}{section*.23}
+\contentsline {section}{Ohm's Law for Capacitor}{40}{section*.24}
+\contentsline {section}{Ohm's Law for Inductor}{41}{section*.25}
+\contentsline {section}{Analysis of inductor and capacitor impedance}{42}{section*.26}
+\contentsline {subsection}{3.2\hspace {1em}Kirchoff's Laws}{43}{section*.27}
+\contentsline {section}{Converting the phasor back to the time domain}{44}{section*.28}
+\contentsline {subsection}{3.3\hspace {1em}Example of circuit analysis with phasors}{46}{section*.29}
+\contentsline {subsection}{Series RC Circuit}{50}{subsection*.30}
+\contentsline {subsection}{Series RL Circuit}{50}{subsection*.31}
+\contentsline {section}{\textbf {4\hspace {1em}Waves on Transmission Lines}}{51}{section*.32}
+\contentsline {subsection}{4.1\hspace {1em}Types of Transmission Lines}{53}{section*.33}
+\contentsline {section}{Types of transmission lines}{53}{section*.34}
+\contentsline {section}{Propagation modes on a transmission line}{54}{section*.35}
+\contentsline {subsection}{4.2\hspace {1em}Wave Equation}{56}{section*.36}
+\contentsline {section}{ Wave equation on a transmission line}{56}{section*.37}
+\contentsline {subsection}{4.3\hspace {1em}Visualization of waves on lossless transmission lines}{61}{section*.38}
+\contentsline {subsection}{4.4\hspace {1em}Propagation constant and loss}{64}{section*.39}
+\contentsline {section}{Lossless transmission line}{64}{section*.40}
+\contentsline {section}{Voltage and current on lossless transmission line}{65}{section*.41}
+\contentsline {section}{What does it mean when we say a medium is lossy or lossless?}{65}{section*.42}
+\contentsline {section}{Low-Loss Transmission Line}{66}{section*.43}
+\contentsline {section}{Transmission-line parameters R, G, C, and L}{67}{section*.44}
+\contentsline {subsection}{4.5\hspace {1em}Transmission Line Impedance}{68}{section*.45}
+\contentsline {section}{Equations for voltage and current on a transmission-line}{69}{section*.46}
+\contentsline {subsection}{4.6\hspace {1em}Reflection Coefficient}{70}{section*.47}
+\contentsline {section}{Reflection coefficient at the load}{70}{section*.48}
+\contentsline {subsection}{Example}{71}{subsection*.49}
+\contentsline {section}{Voltage and Current on a transmission line}{71}{section*.50}
+\contentsline {section}{Reflection coefficient anywhere on the line}{72}{section*.51}
+\contentsline {section}{Reflection coefficient at the input of the transmission line}{73}{section*.52}
+\contentsline {subsection}{4.7\hspace {1em}Input impedance of a transmission line}{74}{section*.53}
+\contentsline {section}{Input impedance as a function of reflection coefficient}{74}{section*.54}
+\contentsline {subsection}{Input impedance as a function of load impedance}{75}{subsection*.55}
+\contentsline {subsection}{4.8\hspace {1em}Forward voltage on a transmission line}{77}{section*.56}
+\contentsline {section}{Forward voltage phasor as a function of load impedance}{77}{section*.57}
+\contentsline {section}{Forward voltage phasor as a function of input reflection coefficient}{78}{section*.58}
+\contentsline {section}{Special case - forward voltage when the generator and transmission-line impedance are equal}{79}{section*.59}
+\contentsline {subsection}{4.9\hspace {1em}Traveling and Standing Waves}{80}{section*.60}
+\contentsline {section}{Standing Waves}{80}{section*.61}
+\contentsline {section}{Voltage Standing Wave Ratio (VSWR) - pron: "vee-s-uh-are"}{85}{section*.62}
+\contentsline {subsection}{4.10\hspace {1em}Example Transmission Line Problem}{86}{section*.63}
+\contentsline {section}{\textbf {5\hspace {1em}Smith Chart}}{88}{section*.64}
+\contentsline {subsection}{5.1\hspace {1em}Smith Chart}{89}{section*.65}
+\contentsline {subsection}{5.2\hspace {1em}Impedance and admittance circles on the Smith Chart}{93}{section*.66}
+\contentsline {section}{Reflection Coefficient and Impedance}{93}{section*.67}
+\contentsline {section}{Derivation of Impedance and Admittance Circles on the Smith Chart}{93}{section*.68}
+\contentsline {subsection}{5.3\hspace {1em}Impedance and Admittance on Smith Chart}{96}{section*.69}
+\contentsline {section}{Brief review of impedance and admittance}{96}{section*.70}
+\contentsline {section}{Impedance on the Smith Chart}{98}{section*.71}
+\contentsline {section}{Admittance on the impedance Smith Chart}{99}{section*.72}
+\contentsline {section}{Converting Reflection Coefficient to Impedance and Admittance}{105}{section*.73}
+\contentsline {subsection}{5.4\hspace {1em}Electrical Length}{106}{section*.74}
+\contentsline {section}{Electrical Length of the line in meters}{106}{section*.75}
+\contentsline {section}{Electrical length of the line in degrees}{106}{section*.76}
+\contentsline {subsection}{5.5\hspace {1em}Input Reflection Coefficient and Impedance on Smith Chart}{108}{section*.77}
+\contentsline {section}{Input reflection coefficient and load reflection coefficient.}{108}{section*.78}
+\contentsline {subsection}{Magnitude of the input reflection coefficient}{109}{subsection*.79}
+\contentsline {subsection}{Phase of the input reflection coefficient}{109}{subsection*.80}
+\contentsline {section}{Reading the input reflection coefficient on the Smith Chart}{109}{section*.81}
+\contentsline {section}{Finding load reflection coefficient on the Smith Chart if the input reflection coefficient is known}{111}{section*.82}
+\contentsline {section}{Examples}{111}{section*.83}
+\contentsline {section}{\textbf {6\hspace {1em}Impedance Matching}}{114}{section*.84}
+\contentsline {subsection}{6.1\hspace {1em}Power}{115}{section*.85}
+\contentsline {subsection}{6.2\hspace {1em}Power Transfer on a transmission line}{118}{section*.86}
+\contentsline {subsection}{Maximizing power transfer on a transmission line}{119}{subsection*.87}
+\contentsline {section}{Why we do impedance matching?}{120}{section*.88}
+\contentsline {subsection}{6.3\hspace {1em}Simple impedance matching case}{122}{section*.89}
+\contentsline {section}{Simple impedance matching case}{122}{section*.90}
+\contentsline {subsection}{6.4\hspace {1em}Mixed Impedance Matching}{124}{section*.91}
+\contentsline {subsection}{Length of the line that will transform the real part of load impedance}{125}{subsection*.92}
+\contentsline {subsection}{Adding a lumped-element to remove the susceptance}{125}{subsection*.93}
+\contentsline {subsection}{Other possible solutions}{128}{subsection*.94}
+\contentsline {subsection}{6.5\hspace {1em}Transmission-line impedance matching}{129}{section*.95}
+\contentsline {section}{Design of a transmission-line impedance matching circuits}{129}{section*.96}
+\contentsline {subsection}{Replacing lumped-elements with equivalent transmission-line stubs}{129}{subsection*.97}
+\contentsline {subsubsection}{Simulation of the input impedance of shorted stub}{131}{subsubsection*.98}
+\contentsline {subsection}{Fully transmission-line matching circuits.}{133}{subsection*.99}
+\contentsline {subsection}{6.6\hspace {1em}Lumped element impedance matching}{137}{section*.100}
+\contentsline {section}{\textbf {7\hspace {1em}Electrostatics}}{140}{section*.101}
+\contentsline {subsection}{7.1\hspace {1em}Electrostatic Force}{141}{section*.102}
+\contentsline {section}{Electic Charges}{141}{section*.103}
+\contentsline {section}{Electrostatic Force}{141}{section*.104}
+\contentsline {section}{Coulomb's Law}{141}{section*.105}
+\contentsline {section}{What if the charge is in an insulator (aka dielectric) other than air?}{145}{section*.106}
+\contentsline {section}{Principle of Superposition}{145}{section*.107}
+\contentsline {subsection}{7.2\hspace {1em}Electrostatic Field}{149}{section*.108}
+\contentsline {subsection}{More about the Electrical force and field}{149}{subsection*.109}
+\contentsline {section}{Principle of Superposition}{150}{section*.110}
+\contentsline {subsection}{Electric Field in Rectangular Coordinates}{151}{subsection*.111}
+\contentsline {subsection}{7.3\hspace {1em}Electrostatic Potential}{155}{section*.112}
+\contentsline {section}{Electrostatic Potential Energy}{155}{section*.113}
+\contentsline {section}{Definition of Potential and Voltage}{156}{section*.114}
+\contentsline {section}{The general relationship between the electric field and potential}{158}{section*.115}
+\contentsline {section}{Voltage - the potential difference}{159}{section*.116}
+\contentsline {section}{Electric field calculation from potential difference}{160}{section*.117}
+\contentsline {subsection}{7.4\hspace {1em}Electrostatic fields from distributed charges}{162}{section*.118}
+\contentsline {section}{Electric Field due to a Charge Distribution}{162}{section*.119}
+\contentsline {subsection}{Derive Analytical Solution for the Electric field Due to a Loop of Charge }{162}{subsection*.120}
+\contentsline {subsection}{Derive Numerical solution to the Electric Field due to a Loop of Charge}{165}{subsection*.121}
+\contentsline {subsection}{Matlab Code to Find the Electric Field due to a Loop of Charge }{166}{subsection*.122}
+\contentsline {section}{Short line of charge}{167}{section*.123}
+\contentsline {section}{Potential}{167}{section*.124}
+\contentsline {subsection}{Derive Analytical Solution for the Potential Due to a Loop of Charge }{167}{subsection*.125}
+\contentsline {subsection}{Derive Numerical solution to the Electric Field due to a Loop of Charge}{171}{subsection*.126}
+\contentsline {subsection}{Matlab Code to Find the Electric Potential due to a Loop of Charge }{171}{subsection*.127}
+\contentsline {subsubsection}{ Plot several equipotential surfaces. }{172}{subsubsection*.128}
+\contentsline {section}{Visualizing Scalar Fields in Matlab}{173}{section*.129}
+\contentsline {subsection}{slice}{173}{subsection*.130}
+\contentsline {subsection}{contourslice}{174}{subsection*.131}
+\contentsline {subsection}{patch}{174}{subsection*.132}
+\contentsline {subsection}{isonormals}{174}{subsection*.133}
+\contentsline {subsection}{camlight}{174}{subsection*.134}
+\contentsline {subsection}{lighting}{175}{subsection*.135}
+\contentsline {subsection}{7.5\hspace {1em}Calculation of electric field using Gauss's Law}{176}{section*.136}
+\contentsline {section}{Field Visualization}{176}{section*.137}
+\contentsline {section}{Flux}{176}{section*.138}
+\contentsline {section}{Gauss's Law}{177}{section*.139}
+\contentsline {subsection}{Applying Gauss's Law to special, symmetric charge distributions}{178}{subsection*.140}
+\contentsline {subsection}{Electric Field of a Point Charge}{178}{subsection*.141}
+\contentsline {subsection}{Electric Field of a Spherical Charge Distribution}{181}{subsection*.142}
+\contentsline {subsubsection}{Electric Field outside of the sphere}{181}{subsubsection*.143}
+\contentsline {subsubsection}{Electric field inside the sphere}{183}{subsubsection*.144}
+\contentsline {subsection}{Electric field due to an infinite line of charge}{184}{subsection*.145}
+\contentsline {subsubsection}{Electric field outside the line of charge (a wire)}{185}{subsubsection*.146}
+\contentsline {subsubsection}{Electric field inside the line of charge}{188}{subsubsection*.147}
+\contentsline {subsection}{Electric Field due to an infinite plane of Charge}{189}{subsection*.148}
+\contentsline {subsection}{Two Infinite Planes}{192}{subsection*.149}
+\contentsline {subsection}{7.6\hspace {1em}Electrostatic Boundary Conditions}{194}{section*.150}
+\contentsline {section}{Conductors in the electrostatic field}{194}{section*.151}
+\contentsline {section}{Dielectrics in the electrostatic field}{194}{section*.152}
+\contentsline {section}{Relative dielectric constant}{196}{section*.153}
+\contentsline {section}{Boundary conditions at a dielectric-dielectric boundary}{197}{section*.154}
+\contentsline {section}{Boundary conditions at a conductor-dielectric boundary}{198}{section*.155}
+\contentsline {section}{Shielding with Faraday's Cage}{199}{section*.156}
+\contentsline {section}{Grounding}{200}{section*.157}
+\contentsline {section}{Proof of boundary conditions}{202}{section*.158}
+\contentsline {section}{Charge distribution around sharp edges}{204}{section*.159}
+\contentsline {subsection}{7.7\hspace {1em}Capacitance}{206}{section*.160}
+\contentsline {section}{What is Capacitance?}{206}{section*.161}
+\contentsline {section}{Computing Capacitance}{206}{section*.162}
+\contentsline {section}{Capacitors}{207}{section*.163}
+\contentsline {section}{Analysis of a Parallel-Plate Capacitor with a homogeneous dielectric}{208}{section*.164}
+\contentsline {section}{Coaxial-Cable Capacitance}{212}{section*.165}
+\contentsline {section}{Spherical Capacitance}{214}{section*.166}
+\contentsline {section}{Electrostatic energy of a charged capacitor}{215}{section*.167}
+\contentsline {subsection}{7.8\hspace {1em}Method of images}{218}{section*.168}
+\contentsline {section}{\textbf {8\hspace {1em}Magnetostatics}}{219}{section*.169}
+\contentsline {subsection}{8.1\hspace {1em}Charged particles in static electric and magnetic fields}{220}{section*.170}
+\contentsline {section}{Cross product}{220}{section*.171}
+\contentsline {section}{Magnetic Force on a charged particle}{221}{section*.172}
+\contentsline {section}{Lorenz Force}{221}{section*.173}
+\contentsline {subsection}{8.2\hspace {1em}Force on Conductors}{223}{section*.174}
+\contentsline {section}{Force on a conductor due to external magnetic field}{223}{section*.175}
+\contentsline {section}{Direction of a magnetic field of a conductor}{223}{section*.176}
+\contentsline {section}{Force between two conductors}{224}{section*.177}
+\contentsline {section}{Magnetic field of a loop of current}{224}{section*.178}
+\contentsline {section}{Bar magnet and a loop of current}{225}{section*.179}
+\contentsline {subsection}{8.3\hspace {1em}Force on Conductors}{227}{section*.180}
+\contentsline {section}{Force on a loop of current due to external magnetic field}{227}{section*.181}
+\contentsline {section}{DC Motor}{230}{section*.182}
+\contentsline {subsection}{8.4\hspace {1em}Biot-Savart's Law}{231}{section*.183}
+\contentsline {section}{Magnetic Field due to a Charge Distribution}{231}{section*.184}
+\contentsline {section}{Visualizing Scalar Fields in Matlab}{234}{section*.185}
+\contentsline {subsection}{slice}{235}{subsection*.186}
+\contentsline {subsection}{contourslice}{236}{subsection*.187}
+\contentsline {subsection}{patch}{236}{subsection*.188}
+\contentsline {subsection}{isonormals}{236}{subsection*.189}
+\contentsline {subsection}{camlight}{236}{subsection*.190}
+\contentsline {subsection}{lighting}{236}{subsection*.191}
+\contentsline {subsection}{8.5\hspace {1em}Ampere's Law}{238}{section*.192}
+\contentsline {section}{Static Magnetic Field}{238}{section*.193}
+\contentsline {section}{Ampere's Law}{238}{section*.194}
+\contentsline {section}{Application of Ampere's law}{239}{section*.195}
+\contentsline {subsection}{8.6\hspace {1em}Inductance}{244}{section*.196}
+\contentsline {section}{Magnetic flux, review of electric flux}{244}{section*.197}
+\contentsline {section}{Definition of inductance}{244}{section*.198}
+\contentsline {section}{Magnetostatic energy}{245}{section*.199}
+\contentsline {section}{Deriving inductance for a coaxial cable}{246}{section*.200}
+\contentsline {section}{Types of inductance}{246}{section*.201}
+\contentsline {subsection}{Self Inductance}{246}{subsection*.202}
+\contentsline {subsection}{Mutual Inductance}{247}{subsection*.203}
+\contentsline {section}{\textbf {9\hspace {1em}Changing electromagnetic fields}}{249}{section*.204}
+\contentsline {subsection}{9.1\hspace {1em}Faraday's Law}{250}{section*.205}
+\contentsline {section}{Changing electromagnetic fields}{250}{section*.206}
+\contentsline {subsection}{Faraday's law}{250}{subsection*.207}
+\contentsline {subsection}{Faraday's experiment}{250}{subsection*.208}
+\contentsline {subsection}{9.2\hspace {1em}Lenz's Law}{252}{section*.209}
+\contentsline {section}{Example of application of Lenz's law}{252}{section*.210}
+\contentsline {subsection}{9.3\hspace {1em}Transformers}{255}{section*.211}
+\contentsline {section}{Ideal Transformer}{255}{section*.212}
+\contentsline {subsection}{9.4\hspace {1em}Magnetic Coupling}{257}{section*.213}
+\contentsline {section}{Applications of Faraday's law to AC circuits}{257}{section*.214}
+\contentsline {subsection}{Coils with no coupling}{257}{subsection*.215}
+\contentsline {subsection}{Coils with coupling}{259}{subsection*.216}
+\contentsline {subsection}{9.5\hspace {1em}Flying ring}{262}{section*.217}
+\contentsline {section}{Flying Ring}{262}{section*.218}
+\contentsline {subsection}{9.6\hspace {1em}Falling Magnet}{264}{section*.219}
+\contentsline {section}{Falling magnet}{264}{section*.220}
+\contentsline {subsection}{9.7\hspace {1em}Voltage droop}{266}{section*.221}
+\contentsline {section}{Voltage droop in electronic circuits}{266}{section*.222}
 \contentsfinish 
