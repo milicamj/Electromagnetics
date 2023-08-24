@@ -14,7 +14,7 @@ Markovic"/>
 <link href="https://ximera.osu.edu/public/stylesheets/standalone.css" rel="stylesheet" media="screen"/> 
 <script type="text/javascript" async="" src="https://ximera.osu.edu/public/javascripts/standalone.min.js"></script> 
 <meta name="learning-outcome" content="Sketch a complex number in rectangular and polar coordinates, and label magnitude, phase, real and imaginary parts. Derive the magnitude and phase from the real and imaginary parts of a complex number. Derive the real and imaginary parts of a complex number from the magnitude and phase."/> 
-<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="23f61e246c6bb6abdaf47afda8108e3bbf920e77 complexNumbers/digInComplexNumbersCartPol.tex"/></head><body> 
+<meta name="dependency" content="bbdc0ae3d2cf15daa427e9ba329f084b163e982f preamble.tex"/><meta name="dependency" content="beafe28f6cc0d04a205156ddbbcc2e77fa7438ea complexNumbers/digInComplexNumbersCartPol.tex"/></head><body> 
 <div class="preamble"><script type="math/tex">\newenvironment {prompt}{}{}
 \newcommand {\ungraded }[0]{}
 \newcommand {\todo }[0]{}
@@ -85,7 +85,7 @@ Markovic"/>
 
                                                                   
 <div class="abstract">
-<!--l. 12--><p class="noindent">This section aims to introduce two different ways we represent complex numbers:
+<!--l. 13--><p class="noindent">This section aims to introduce two different ways we represent complex numbers:
 Cartesian coordinates, and Polar coordinates. We often use complex numbers in
 Cartesian coordinates when we discuss impedance or admittance. We often use
 complex numbers in polar coordinates to discuss magnitude and phase of voltages,
@@ -102,14 +102,14 @@ z=|z| e^{j \Theta} \label{polar}
 \end{eqnarray}</script>
 </div>
 </div>
-<!--l. 29--><p class="noindent">In Equation <a class="reference" href="#cartesian">cartesian</a>, a complex number z is represented in rectangular coordinate system,
+<!--l. 30--><p class="noindent">In Equation <a class="reference" href="#cartesian">cartesian</a>, a complex number z is represented in rectangular coordinate system,
 where <script type="math/tex">x</script> is the real part, <script type="math/tex">y</script> is the imaginary part, and <script type="math/tex">j=\sqrt {-1}</script>.
-</p><!--l. 31--><p class="noindent">In Equation <a class="reference" href="#polar">polar</a>, we see a complex number z in the polar coordinate system, where <script type="math/tex">|z|</script> is
-the magnitude, and <script type="math/tex">\Theta </script> is the angle (aka phase) of the complex number.
-</p><!--l. 33--><p class="noindent">The geometric interpretation of these two equations is shown in Figure <a class="reference" href="#cartpol">cartpol</a>. The
+</p><!--l. 32--><p class="noindent">Equation <a class="reference" href="#polar">polar</a>, shows a complex number z in the polar coordinate system, where <script type="math/tex">|z|</script> is the
+magnitude, and <script type="math/tex">\Theta </script> is the angle (aka phase) of the complex number.
+</p><!--l. 34--><p class="noindent">The geometric interpretation of these two equations is shown in Figure <a class="reference" href="#cartpol">cartpol</a>. The
 magnitude is the length of the triangle’s hypothenuse, and the angle is the angle that
 the hypothenuse makes with the x-axis.
-</p><!--l. 35--><p class="noindent">In Figure <a class="reference" href="#cartpol">cartpol</a>, we represent a complex number with a ”position vector.” Position vectors
+</p><!--l. 36--><p class="noindent">In Figure <a class="reference" href="#cartpol">cartpol</a>, we represent a complex number with a ”position vector.” Position vectors
 are vectors that start at the center of the coordinate system and end at any point in
 the coordinate system. We see that phasor is a vector that represents a complex
 number in a polar coordinate system.
@@ -123,8 +123,8 @@ number in a polar coordinate system.
 
                                                                   
 <div class="center">
-<!--l. 40--><p class="noindent">
-</p><!--l. 41--><p class="noindent"><img src="../jpg/Complex_Numbersz12.jpg" alt="PIC"/></p></div>
+<!--l. 41--><p class="noindent">
+</p><!--l. 42--><p class="noindent"><img src="../jpg/Complex_Numbersz12.jpg" alt="PIC"/></p></div>
 <br/> <div class="caption"><span class="id">Figure 1: </span><span class="content">Visual representation of a complex number z in rectangular <script type="math/tex">z=x+jy</script> and
 polar coordinates <script type="math/tex">z=|z|e^{j \theta }</script>.</span></div><!--tex4ht:label?: x1-681 -->
 <a class="ximera-label" id="cartpol"></a>
@@ -132,13 +132,13 @@ polar coordinates <script type="math/tex">z=|z|e^{j \theta }</script>.</span></d
 
                                                                   
 </div><hr class="endfigure"/>
-<!--l. 51--><p class="noindent">You may be wondering why we represent the phase of a complex number in the polar
+<!--l. 52--><p class="noindent">You may be wondering why we represent the phase of a complex number in the polar
 coordinate system as <script type="math/tex">e^{j \Theta }</script> because in the circuits class, you used <script type="math/tex"> \angle \theta </script>. Great question.
 That brings us to Euler’s formula that we will discuss in section Euler’s
 Formula.
 </p>
 <h3 class="sectionHead"><a id="x1-1000"></a>Conversion between Cartesian and Polar coordinate systems</h3>
-<!--l. 55--><p class="noindent">To find magnitude and angle when we know real and imaginary parts of a complex
+<!--l. 56--><p class="noindent">To find magnitude and angle when we know real and imaginary parts of a complex
 number, we use the Pythagorean Theorem to find the magnitude of the complex
 number as in Equation <a class="reference" href="#eq:polar_mag">eq:polar_mag</a>, and use the definition of the tangent to find the angle as in
 Equation <a class="reference" href="#eq:polar_angle">eq:polar_angle</a>.
@@ -148,7 +148,7 @@ Equation <a class="reference" href="#eq:polar_angle">eq:polar_angle</a>.
 \Theta = arctg \frac{y}{x} \label{eq:polar_angle}
 \end{eqnarray}</script>
 </div>
-<!--l. 63--><p class="noindent">To find the real and imaginary part of a complex number when we know magnitude
+<!--l. 64--><p class="noindent">To find the real and imaginary part of a complex number when we know magnitude
 and phase, we use trigonometry. To find the real part of the complex number as in
 Equation <a class="reference" href="#eq:cart_real">eq:cart_real</a>, use the definition of cosine and sine to find the imaginary part of the
 complex number as in Equation <a class="reference" href="#eq:cart_imag">eq:cart_imag</a>.
@@ -161,12 +161,12 @@ complex number as in Equation <a class="reference" href="#eq:cart_imag">eq:cart_
 <div role="article" class="problem-environment question" id="problem2"><a id="x1-1001r2"></a> Explore the conversion of complex numbers between cartesian and polar
 coordinates.
 <div class="center">
-<!--l. 74--><p class="noindent">
-</p><!--l. 75--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/b8hu8ztx/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
+<!--l. 75--><p class="noindent">
+</p><!--l. 76--><p class="noindent"><iframe scrolling="no" src="https://tube.geogebra.org/material/iframe/id/b8hu8ztx/width/800/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto" width="800px" height="600px" style="border:0px;"> </iframe></p></div>
 </div>
 <div class="theorem-like problem-environment example" id="problem3"><a id="x1-1002r3"></a>Find the magnitude and phase of complex numbers <script type="math/tex">z_1=j</script> and <script type="math/tex">z_2=1</script>.
 <div class="theorem-like problem-environment explanation" id="problem4"><a id="x1-1003r4"></a>
-<!--l. 88--><p class="noindent">Complex number <script type="math/tex">z_1=j</script> is on the y-axis where y=1. By inspection, the magnitude of <script type="math/tex">z_1</script> is <script type="math/tex">|z|=1</script>,
+<!--l. 89--><p class="noindent">Complex number <script type="math/tex">z_1=j</script> is on the y-axis where y=1. By inspection, the magnitude of <script type="math/tex">z_1</script> is <script type="math/tex">|z|=1</script>,
 and the angle is <script type="math/tex">\theta =90^o</script>.
                                                                   
 
@@ -174,17 +174,17 @@ and the angle is <script type="math/tex">\theta =90^o</script>.
 </p>
 <div class="image-environment" role="img" aria-labelledby="image-alt-1">  <img src="./digInComplexNumbersCartPol-figure0.svg" alt=""/>
 </div>
-<!--l. 129--><p class="noindent">The complex plane is sketched below. Complex number <script type="math/tex">z_1=1</script> is on the x-axis where x=1.
+<!--l. 130--><p class="noindent">The complex plane is sketched below. Complex number <script type="math/tex">z_1=1</script> is on the x-axis where x=1.
 By inspection, the magnitude of <script type="math/tex">z_1</script> is <script type="math/tex">|z|=1</script>, and the angle is <script type="math/tex">\theta =0^o</script>.
 </p>
 <div class="image-environment" role="img" aria-labelledby="image-alt-2">  <img src="./digInComplexNumbersCartPol-figure1.svg" alt=""/>
 </div>
-<!--l. 170--></div>
-<!--l. 173--></div>
+<!--l. 171--></div>
+<!--l. 174--></div>
 
 <div role="article" class="problem-environment question" id="problem5"><a id="x1-1004r5"></a> Calculate magnitude and phase of complex number <script type="math/tex">z=-j</script> <div class="multiple-choice" id="problem6"><span class="choice  " id="choice1"><script type="math/tex">|z|= 1, \theta ={180}</script></span> <span class="choice correct " id="choice2"><script type="math/tex">|z|= 1, \theta ={-90}</script></span> <span class="choice  " id="choice3"><script type="math/tex">|z|= -1, \theta ={180}</script></span> <span class="choice  " id="choice4"><script type="math/tex">|z|= -1, \theta ={-90}</script></span> </div>
 </div>
-<!--l. 209--><p class="noindent">Write magnitude and phase of complex number <script type="math/tex">z=-1</script> </p><div role="article" class="problem-environment question" id="problem7"><a id="x1-1005r6"></a> <script type="math/tex"> -1 = \answer {e^{j180}}</script>
+<!--l. 210--><p class="noindent">Write magnitude and phase of complex number <script type="math/tex">z=-1</script> </p><div role="article" class="problem-environment question" id="problem7"><a id="x1-1005r6"></a> <script type="math/tex"> -1 = \answer {e^{j180}}</script>
 </div>
  
  
