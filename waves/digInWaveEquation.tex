@@ -141,8 +141,7 @@ We just derived Telegrapher's equations in time-domain:
 \end{eqnarray}
 
 
-Telegrapher's equations are two differential equations with two unknowns, $i(z, t)$, $v(z, t)$. It is not
-impossible to solve them; however, we would prefer to have linear algebraic equations. We then express time-domain variables as phasors.
+Telegrapher's equations are two differential equations with two unknowns, $i(z, t)$, $v(z, t)$. It is possible to solve them in time domain; however, we would prefer to have linear algebraic equations. We then express time-domain variables as phasors.
 
 \begin{eqnarray}
 v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
@@ -169,23 +168,24 @@ take a derivative of both equations with respect to z.
  \tilde{V}(z)}{\partial z} \label{teleg4}
 \end{eqnarray}
 
-Rearange the previous equations:
+%Rearange the previous equations:
 
 
+
+%\begin{eqnarray}
+%- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= %\frac{\partial^2
+%  \tilde{V}(z)}{\partial z^2} \label{te51} \\
+%-\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= %
+%\frac{\partial^2
+ % \tilde{I}(z)}{\partial z^2} \label{te61}
+%\end{eqnarray}
+
+Substitute  Eq.\ref{te11} into  Eq.\ref{teleg4}
+and Eq.\ref{te121} into Eq.\ref{teleg4} and we get
 
 \begin{eqnarray}
-- \frac{1}{ (R+j\omega L)} \frac{\partial \tilde{I}(z)}{\partial z}= \frac{\partial^2
-  \tilde{V}(z)}{\partial z^2} \label{te51} \\
--\frac{1}{ (G+j\omega C)} \frac{\partial \tilde{V}(z)}{\partial z}= \frac{\partial^2
-  \tilde{I}(z)}{\partial z^2} \label{te61}
-\end{eqnarray}
-
-Substitute  Eq.\ref{te51} into  Eq.\ref{te121}
-and Eq.\ref{te61} into Eq.\ref{te11} and we get
-
-\begin{eqnarray}
--\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
--\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
+\frac{\partial^2 \tilde{V}(z)}{\partial z^2}=(G+j\omega C)(R+j\omega L) \tilde{V}(z) \label{teleg1} \\
+\frac{\partial^2 \tilde{I}(z)}{\partial z^2}= (G+j\omega C)  (R+j\omega L) \label{teleg2}
 \tilde{I}(z) 
 \end{eqnarray}
 
