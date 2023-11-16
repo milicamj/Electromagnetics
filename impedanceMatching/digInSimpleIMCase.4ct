@@ -1,4 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Simple impedance matching case}}{3}\relax 
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Impedance matching circuit for impedance $Z_L=R_L+j \omega L =50+j80 \Omega $ .}}{figure}\relax 
-\par 

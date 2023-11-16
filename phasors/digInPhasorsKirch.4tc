@@ -1,3 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-671}{}{\ignorespaces Using superposition to find phasors of voltages and currents in an RC circuit.}}{figure}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Converting the phasor back to the time domain}}{6}\relax 

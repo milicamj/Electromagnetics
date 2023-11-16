@@ -1,6 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Standing Waves}}{3}\relax 
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10171}{}{\ignorespaces Flat line.}}{figure}\relax 
-\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10202}{}{\ignorespaces Voltage on a transmission line with reflection coefficient magnitude 0.5, and zero phase.}}{figure}\relax 
-\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-10243}{}{\ignorespaces Shorted Transmission Line.}}{figure}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-5}{Voltage Standing Wave Ratio (VSWR) - pron: "vee-s-uh-are"}}{15}\relax 

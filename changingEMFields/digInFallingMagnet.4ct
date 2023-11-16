@@ -1,4 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Falling magnet}}{3}\relax 
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10011}{}{\ignorespaces Falling magnet experiment.}}{figure}\relax 
-\par 

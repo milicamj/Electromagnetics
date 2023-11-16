@@ -1,6 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Reflection Coefficient and Impedance}}{3}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Derivation of Impedance and Admittance Circles on the Smith Chart}}{3}\relax 
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-20011}{}{\ignorespaces All points on the circle have the constant real part of the impedance (resistance). Normalized resistance circles.}}{figure}\relax 
-\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-20022}{}{\ignorespaces All points on the circle have the constant imaginary part of the impedance (reactance). Normalized reactance circles.}}{figure}\relax 
-\par 

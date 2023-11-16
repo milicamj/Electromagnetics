@@ -1,6 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{ Wave equation on a transmission line}}{3}\relax 
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-10061}{}{\ignorespaces Coaxial cable is cut in short pieces.}}{figure}\relax 
-\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-10072}{}{\ignorespaces Equivalent circuit of a section of transmission line.}}{figure}\relax 
-\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-10083}{}{\ignorespaces Equivalent circuit of transmission line.}}{figure}\relax 
-\par 

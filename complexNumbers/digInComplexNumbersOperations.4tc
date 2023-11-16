@@ -1,5 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{Complex Conjugate}}{3}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Addition}}{3}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Subtraction}}{4}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Multiplication and Division}}{4}\relax 

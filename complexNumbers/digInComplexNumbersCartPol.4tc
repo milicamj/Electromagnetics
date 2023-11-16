@@ -1,3 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-681}{}{\ignorespaces Visual representation of a complex number z in rectangular $z=x+jy$ and polar coordinates $z=|z|e^{j \theta }$.}}{figure}\relax 
-\doTocEntry\tocsection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-2}{Conversion between Cartesian and Polar coordinate systems}}{6}\relax 

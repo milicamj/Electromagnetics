@@ -1,8 +1,0 @@
-\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
-\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-691}{}{\ignorespaces Using superposition to find phasors of voltages and currents in an RC circuit.}}{figure}\relax 
-\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-1362}{}{\ignorespaces Complex number z in rectangular and polar coordinates.}}{figure}\relax 
-\doTocEntry\toclot{1}{\csname a:TocLink\endcsname{1}{x1-1431}{}{\ignorespaces Impedance of the capacitor and inductors and their equivalent impedances at high and low frequencies.}}{table}\relax 
-\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-1503}{}{\ignorespaces  RC circuit in ADS.}}{figure}\relax 
-\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-1514}{}{\ignorespaces  Sinusoidal signal as a function of angle $\omega t$}}{figure}\relax 
-\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-1525}{}{\ignorespaces  Points represent polar plot of complex voltages in RC circuit.}}{figure}\relax 
-\doTocEntry\toclof{6}{\csname a:TocLink\endcsname{1}{x1-1536}{}{\ignorespaces  Vectors are drawn in the polar plot of complex voltages in RC circuit. Note how they add up to 1V.}}{figure}\relax 
