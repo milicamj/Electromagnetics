@@ -1,0 +1,123 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "type": "shell",
+    "command": "xmlatex",
+    "windows": {
+        "command": ".\\xmScripts\\xmlatex.bat"
+    },    
+    "problemMatcher": [],
+    "tasks": [
+        {
+            "label": "PDF",
+            "args": [
+                "-v",
+                "compilePdf",
+                "${relativeFile}"
+            ],
+        },
+        {
+            "label": "HTML",
+            "args": [
+                "-v",
+                "compile",
+                "${relativeFile}"
+            ],
+        },
+        {
+            "label": "SERVE",
+            "args": [
+                "-v", 
+                "all"
+            ],
+        },
+        {
+            "label": "Bake",
+            "args": [
+                "-v",
+                "bake"
+            ],
+        },
+        {
+            "label": "Serve",
+            "args": [
+                "-v",
+                "serve"
+            ],
+        },
+        {
+            "label": "Frost",
+            "args": [
+                "-v",
+                "frost"
+            ],
+        },
+        {
+            "label": "Start Ximera Server",
+            "args": [
+                "ximeraserver"
+            ],
+        },
+        {
+                "label": "Preview in Simple Browser",
+                "command": "${input:openSimpleBrowser}",
+        },
+        {
+            "label": "Bake PDF",
+            "args": [
+                "bake",
+                "--compile pdf",
+            ],
+        },
+        {
+            "label": "Bake PDF (force rebuild)",
+            "args": [
+                "bake",
+                "-f",
+                "--compile pdf",
+            ],
+        },
+        {
+            "label": "Bake handout",
+            "args": [
+                "bake",
+                "--compile handout.pdf",
+            ],
+        },
+        {
+            "label": "Bake handout (force rebuild)",
+            "args": [
+                "bake",
+                "-f",
+                "--compile handout.pdf",
+            ],
+        },
+        {
+            "label": "Delete all",
+            "args": [
+                "veryclean"
+            ],
+        },
+        {
+            "label": "Update DevEnv",
+            "args": [
+                "updateDevEnv"
+            ],
+        },
+    ],
+    "inputs": [
+        {
+          "id": "openSimpleBrowser",
+          "type": "command",
+          "command": "simpleBrowser.show",
+          "args": [ "http://localhost:2000/repositories" ],
+
+        }
+    ],
+    "options": {
+        "env": {
+          "PATH": "${env:PATH}:./xmScripts"  
+        }
+      },    
+}
