@@ -22,8 +22,7 @@
         {
             "label": "HTML",
             "args": [
-                "bake",
-                "-s",
+                "ghaction",
                 "--force",
                 "--compile html",
                 "${relativeFile}"
@@ -32,9 +31,7 @@
         {
             "label": "SERVE",
             "args": [
-                "all",
-                "-s",
-                "${relativeFile}"
+                "ghaction",
             ],
         },
         {
