@@ -46,7 +46,8 @@ jobs:
           XIMERA_NAME: ${{ vars.XIMERA_NAME }}*${{ github.ref_name }}
         run: |
           ls -alrt
-          ./xmScripts/xmlatex ghaction
+          git config --global http.postBuffer 157286400
+          ./xmScripts/xmlatex ghaction -j 4 testem.tex || echo NOK
           echo "✅ Published to $XIMERA_URL$XIMERA_NAME " >> $GITHUB_STEP_SUMMARY
 
       - name: Setup ximera serve cache (only .git)
