@@ -100,7 +100,12 @@ Frequency, f,  is defined as a reciprocal value of the period T, $f=\frac{1}{T}$
 \end{definition}
 
 \begin{definition}
-Time delay and phase represent the lag (or lead) of one function with respect to another in the time domain and frequency domain. For example, in Figure \ref{sinusoid}, function $ \cos(\omega t - 90^o)$ is time-delayed for $\tau = \frac{T}{4}$ with respect to $\cos (\omega t)$. To find the time delay from the phase, we look at how to represent the phase $90^o$ in terms of the product of frequency and time. Since in the sinusoidal signal expression $\cos (\omega t + \Theta)$  phase $\Theta$ is added to $\omega t$ term, the phase has the same units as $\omega t$, and can be represented as the product of $\omega \tau = \theta$, $\tau = \frac{\theta}{\omega}$, where $\tau$ represents the time delay.
+Time delay and phase represent the lag (or lead) of one function with respect to another in the time domain and frequency domain. For example, in Figure \ref{sinusoid}, function $ \cos(\omega t - 90^o)$ is time-delayed for $\tau = \frac{T}{4}$ with respect to $\cos (\omega t)$. To relate phase to time delay, write the delayed signal as
+$\cos(\omega(t-\tau))=\cos(\omega t-\omega\tau)$.
+Comparing this with $\cos(\omega t+\Theta)$ gives
+$\tau=-\Theta/\omega$, where $\Theta$ is expressed in radians.
+A positive $\tau$ represents a delay, while a negative $\tau$
+represents an advance.
 \end{definition}
 
 
