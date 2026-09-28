@@ -29,7 +29,7 @@ The circuit in Figure \ref{elcric} shows a generator and load connected with a c
 \label{elcric}
 \end{figure}
 
-Let us assume that the switch closes, and the generator produces a step function at time t=0, as shown in Figure  \ref{timedelaysig}. Because the electrical signals propagate with light speed, the signal needs T sec to appear at the load after the switch closes. Figure \ref{delayedsig} shows the step signal as it travels on the transmission line at different times t=0, t=T/4, t=T/2, and t=T.
+Let us assume that the switch closes, and the generator produces a step function at time t=0, as shown in Figure  \ref{timedelaysig}. Under the ideal transmission-line assumptions stated below, the signal needs T sec to appear at the load after the switch closes. Figure \ref{delayedsig} shows the step signal as it travels on the transmission line at different times t=0, t=T/4, t=T/2, and t=T.
 
 
 \begin{figure}[htbp]
@@ -45,8 +45,14 @@ Let us assume that the switch closes, and the generator produces a step function
 
 
 
- How much time T does it take for this signal to go from AA' end to BB' end? 
-Since electromagnetic waves propagate with the constant speed, the speed of light,  the time that the signal needs to go from the generator to the load depends on the transmission line's length. If the transmission line is $l$, then the delay between the generator and the load will be  $T=\frac{l}{c}$, where $c=3\times 10^8$. If the signal at the generator AA' is $v_g(t)=$v(t), then the signal at the load end is $v_l(t)=$v(t-T). 
+How long does the signal take to travel from AA' to BB'?
+For a lossless, nondispersive transmission line of length $l$
+with propagation speed $v_p$, the propagation delay is $T=l/v_p$.
+Assume that the load is matched to the line, so there are no
+reflections. If the voltage at the line input is $v_g(t)=v(t)$,
+then the load voltage is $v_l(t)=v(t-T)$.
+For this example, assume $v_p=c\approx3\times10^8\,\mathrm{m/s}$,
+so $T=l/c$. Real cables generally have a lower propagation speed.
 
 
 Figure \ref{delayedsig} shows the signal on the transmission line at different times. Note that the horizontal axis shows distance, not time. Each graph shows a snapshot of the signal on the transmission line at different times. The top figure shows the moment when we turn the switch on, at t=0, and the signal shows up at the beginning of the transmission line, at the generator's end. A little later, at t=1=T/4, the front of the signal traveled a little farther along the line. At t=2=T/2, the signal traveled even further on the line. The bottom figure shows the signal that arrived at the load at some time t=4=T. Note that the load will not see the signal until t=4=T. 
