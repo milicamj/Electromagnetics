@@ -74,14 +74,15 @@ the signal's phase between the generator and the load. In this case, we don't ha
 If the phase shift is significant, then we do have to use the transmission line theory. Let's look at some numerical examples.
 
 \begin{enumerate}
-\item If $\frac{l}{\lambda} < 0.01$ then the angle $2 \pi
-\frac{l}{\lambda}$ is of the order of 0.0314 rad or about 2$^0$. In this case, the
-phase is obviosly something that we don't have to worry about. When
-the length of the transmission line is much smaller than $\lambda$, $l<<\frac{\lambda}{100}$
-the wave propagation on the line can be ingnored.
-\item If  $\frac{l}{\lambda} > 0.01$, say  $\frac{l}{\lambda} =0.1$,
-then the phase is 20$^0$, which is a significant phase shift. In this
-case it may be necessary to account fro transmission line effects.
+\item If $\frac{l}{\lambda}<0.01$, then the phase shift
+$2\pi\frac{l}{\lambda}$ is less than approximately
+$0.06283$ radians, or $3.6^\circ$.
+Whether this phase shift can be neglected depends on
+the accuracy required.
+\item If $\frac{l}{\lambda}=0.1$, then the phase shift
+is $0.2\pi$ radians, or $36^\circ$.
+In this case, it may be necessary to account for
+transmission-line effects.
 \end{enumerate}
 
 
