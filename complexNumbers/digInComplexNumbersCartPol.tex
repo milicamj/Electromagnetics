@@ -53,12 +53,21 @@ You may be wondering why we represent the phase of a complex number in the polar
 
 \section{Conversion between Cartesian and Polar coordinate systems}
   
-  To find magnitude and angle when we know real and imaginary parts of a complex number, we use the Pythagorean Theorem to find the magnitude of the complex number as in Equation \ref{eq:polar_mag}, and use the definition of the tangent to find the angle as in Equation \ref{eq:polar_angle}.
+To find the magnitude and phase from the real and imaginary
+parts of a complex number, use the Pythagorean theorem for
+the magnitude and the two-argument inverse tangent for the phase.
 
 \begin{eqnarray}
 |z|=\sqrt{x^2+y^2} \label{eq:polar_mag}\\
-\Theta = arctg \frac{y}{x} \label{eq:polar_angle}
+\Theta = \operatorname{atan2}(y,x) \label{eq:polar_angle}
 \end{eqnarray}
+
+For $z\ne0$, the two-argument inverse tangent
+$\operatorname{atan2}(y,x)$ uses the signs of both $x$ and $y$
+to select the correct quadrant, including points on the axes.
+Here we choose the principal phase in $(-\pi,\pi]$ radians.
+Other equivalent phases differ by integer multiples of $2\pi$.
+The phase of $z=0$ is undefined.
  
  
  To find the real and imaginary part of a complex number when we know magnitude and phase, we use trigonometry. To find the real part of the complex number as in Equation \ref{eq:cart_real}, use the definition of cosine and sine to find the imaginary part of the complex number as in Equation \ref{eq:cart_imag}.
