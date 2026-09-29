@@ -75,7 +75,7 @@ We can now solve the above equation for $\tilde{V}_0^-$
 
 
  Lowercase $z_L$ is called the 
-"normalized load impedance". It is the actual impedance divided by the transmission line impedance $z_L=\frac{Z_L}{Z_0}$. For example, if the load impedance is $Z_L=100 \Omega$, and the transmission-line impedance is $Z)=50 \Omega$, then the normalized impedance is $z_L=\frac{100 \Omega}{50 \Omega}=2$. Normalized impedance is a unitless quantity.
+"normalized load impedance". It is the actual impedance divided by the transmission line impedance $z_L=\frac{Z_L}{Z_0}$. For example, if the load impedance is $Z_L=100 \Omega$, and the transmission-line impedance is $Z_0=50 \Omega$, then the normalized impedance is $z_L=\frac{100 \Omega}{50 \Omega}=2$. Normalized impedance is a unitless quantity.
 
 
 
@@ -104,7 +104,7 @@ Now that we related forward and reflected voltage on a transmission line with th
 
 \begin{eqnarray}
 \tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  ) \label{eq:vtlfin} \\
-I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{eq:itlfin}
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:itlfin}
 \end{eqnarray}
 
 We see that if we know the length of the line, line type, the load impedance, and the transmission line impedance, we can calculate all variables above, except for  $\tilde{V}_0^+ $. In the following chapters, we will derive the equation for the forward going voltage at the load, but first, we will look at little more at the various reflection coefficients on a transmission line. 
@@ -164,7 +164,9 @@ The reflection coefficient at the load is $\Gamma_L=0.5 e^{j60^0}$. Find the inp
 \begin{explanation}
 The reflection coefficient at the input of the line is $\Gamma(z=-l)=\Gamma_{in}=|\Gamma_L| e^{j ( \angle \Gamma_L - 2 \beta l) }$. 
 
-We substitute the expression for $\Gamma_L=0.5 e^{j60^0}$ and $\beta l= 90^0$, we get the reflection coefficient at the input of the line $\Gamma_{in}=0.5 e^{-j30 }$.
+Substituting $\Gamma_L=0.5e^{j60^\circ}$ and $\beta l=45^\circ$
+gives $2\beta l=90^\circ$, so the input reflection coefficient is
+$\Gamma_{in}=0.5e^{j(60^\circ-90^\circ)}=0.5e^{-j30^\circ}$.
 
 \end{explanation}
 

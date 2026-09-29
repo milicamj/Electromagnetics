@@ -48,7 +48,7 @@ constant,
 \item $-\Gamma _L \frac{\tilde{V}_0^+}{Z_0}$ is the phasor of the reflected current at the load,
 \item $\tilde{I}_0^+ e^{-j \beta z} $ is the phasor of a forward current  anywhere on the line, 
  \item $-\Gamma _L \frac{\tilde{V}_0^+}{Z_0} e^{j \beta z} $ is the phasor of a reflected current anywhere on the line, 
-\item $\tilde{I}(z)$ is the phasor of the total current on the line, the sum of forward and reflected voltage.
+\item $\tilde{I}(z)$ is the phasor of the total current on the line, the sum of forward and reflected currents.
 \end{enumerate}
  
 
@@ -58,25 +58,27 @@ z^*}$.Therefore  the magnitude of the voltage anywhere on the line is $|\tilde{V
 \tilde{V}(z)^*}$. We can simplify this equation as shown in Figure \ref{eq:SWsw1}.
 
 \begin{eqnarray}
-|\tilde{V}(z)|=\sqrt{\tilde{V}(z) \tilde{V}(z)^*} \nonumber  \\
-|\tilde{V}(z)|=\sqrt{   (\tilde{V}_0^+)^2 (e^{-j \beta z} - |\Gamma_L|  e^{j \beta z +
- \Theta_r}  )  
-   \tilde{V}_0^+ (e^{j \beta z} - |\Gamma_L|  e^{-(j \beta z + \angle \Gamma_L)}     )} \nonumber
-\\
-|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{(e^{-j \beta z} - |\Gamma_L|  e^{j \beta z +
-|\angle \Gamma_L}  )  
-  (e^{j \beta z} - |\Gamma_L|  e^{-(j \beta z + \angle \Gamma_L)}     )}
-\nonumber \\
-|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+  |\Gamma_L|  e^{-(2j \beta z +
-|\angle \Gamma_L)}    + |\Gamma_L|  e^{j 2 \beta z + \angle \Gamma_L} +|\Gamma_L|^2     )}
-\nonumber \\
-|\tilde{V}(z)|= \tilde{V}_0^+ \sqrt{1+ |\Gamma_L|^2 + |\Gamma_L| ( e^{-(2j \beta z +
- \angle \Gamma_L)} \angle \Gamma_L  +  e^{(j 2 \beta z + \angle \Gamma_L)}     )}
- \nonumber \\
-|\tilde{V}(z)|= \tilde{V}_0^+  \sqrt{1+ |\Gamma_L|^2 + 2 |\Gamma_L| \cos(2 \beta z +\angle \Gamma_L)} \label{eq:SWsw1} 
+|\tilde{V}(z)|^2
+&=& \tilde{V}(z)\tilde{V}(z)^* \nonumber \\
+&=& |\tilde{V}_0^+|^2
+(e^{-j\beta z}+\Gamma_L e^{j\beta z})
+(e^{j\beta z}+\Gamma_L^*e^{-j\beta z}) \nonumber \\
+&=& |\tilde{V}_0^+|^2
+\left[1+|\Gamma_L|^2+\Gamma_L e^{2j\beta z}
++\Gamma_L^*e^{-2j\beta z}\right] \nonumber \\
+&=& |\tilde{V}_0^+|^2
+\left[1+|\Gamma_L|^2+2|\Gamma_L|
+\cos(2\beta z+\angle\Gamma_L)\right] \nonumber \\
+|\tilde{V}(z)|
+&=& |\tilde{V}_0^+|\sqrt{1+|\Gamma_L|^2
++2|\Gamma_L|\cos(2\beta z+\angle\Gamma_L)} \label{eq:SWsw1}
 \end{eqnarray}
 
-The Equation \ref{eq:SWsw1} is written in terms of $z$. We set up the load at $z=0$, and the generator at $z=-l$. The positions of the maximums and minimum total voltage on the line will be at some position at the negative part of z-axis $z_{max}=-l_{max}$, and the minimums will be at $z_{max}=-l_{min}$.
+Equation \ref{eq:SWsw1} is written in terms of $z$, with the load
+at $z=0$ and the generator at $z=-l$. Extrema on this line lie in
+$-l\le z\le0$. If $l_{max}$ and $l_{min}$ denote positive distances
+from the load toward the generator, then $z_{max}=-l_{max}$ and
+$z_{min}=-l_{min}$.
 
 The magnitude of the total voltage on the transmission line is given
 by Eq.\ref{eq:SWsw1}. We will now visualize how the magnitude of the voltage looks on the transmission line.
@@ -120,7 +122,7 @@ Find the magnitude of the total voltage anywhere on the transmission line if $\G
 Let's look at another case,  $\Gamma_L=0.5$ and $\angle \Gamma_L=0$. Equation \ref{eq:SWswc1}  represents the magnitude of the voltage on the transmission line, and Figure \ref{fig:SWreflcoeffvid} shows in green how this function looks on a transmission line. This case is shown in Figure \ref{fig:SWreflcoeffvid}. 
 
 \begin{eqnarray}
-|\tilde{V}(z)|=\tilde{V}_0^+ \sqrt{\frac{5}{4}+ cos{2 \beta z} }\label{eq:SWswc1}
+|\tilde{V}(z)|=|\tilde{V}_0^+|\sqrt{\frac{5}{4}+\cos(2\beta z)}\label{eq:SWswc1}
 \end{eqnarray}
 
 \begin{figure}[htbp]
@@ -136,12 +138,13 @@ Let's look at another case,  $\Gamma_L=0.5$ and $\angle \Gamma_L=0$. Equation \r
 
 The function in Equation \ref{eq:SWswc1} is at its maximum 
 when $cos(2 \beta z+\angle \Gamma_L)=1$ or $z=\frac{k}{2} \lambda$, and the function
-value is $\tilde{V}(z)=1.5\tilde{V}_0^+  $. It is at its
+value is $|\tilde{V}(z)|=1.5|\tilde{V}_0^+|$. It is at its
 minimum when  $cos(2 \beta z+ \angle \Gamma_L)=-1$ or $z=\frac{2 k +1}{4} \lambda$
-and the function value is $\tilde{V}(z)=0.5 \tilde{V}_0^+$
+and the function value is $|\tilde{V}(z)|=0.5|\tilde{V}_0^+|$.
 
-The function that we see looks
-like a cosine with an average value of $ \tilde{V}_0^+ $, but {\bf it is not a cosine}.
+The envelope is not a cosine. The midpoint between its maximum
+and minimum is $|\tilde{V}_0^+|$, whereas its spatial mean over
+one envelope period is approximately $1.06354|\tilde{V}_0^+|$.
 The minimums of the function are sharper than the maximums. 
 
 
@@ -239,32 +242,36 @@ $cos(2 \beta z+\angle \Gamma_L)=1$. In this case, the maximum value of the magni
 
 The Equation \ref{eq:SWmaximums}  shows position of voltage maximums $z_{max}$ on the line. 
 \begin{eqnarray}
-cos(-2 \beta l_{max}+ \angle \Gamma_L)=1 \nonumber \\
-cos(2 \beta l_{max}- \angle \Gamma_L)=1 \nonumber \\
-2 \beta z_{max} - \angle \Gamma_L = 2 n \pi \nonumber \\
-z_{max} =\frac{ 2 n \pi +\angle \Gamma_L }{ 2 \beta} \nonumber \\
-z_{max}= \lambda \frac{ 2 n \pi +\angle \Gamma_L  }{ 4 \pi} \label{eq:SWmaximums}
+\cos(2\beta z_{max}+\angle\Gamma_L)=1 \nonumber \\
+2\beta z_{max}+\angle\Gamma_L=2n\pi \nonumber \\
+z_{max}=\frac{2n\pi-\angle\Gamma_L}{2\beta} \nonumber \\
+z_{max}=\lambda\frac{2n\pi-\angle\Gamma_L}{4\pi} \label{eq:SWmaximums}
 \end{eqnarray}
 
 In general the voltage minimums will occur when
-$cos(2 \beta z)=-1$.
+$\cos(2\beta z+\angle\Gamma_L)=-1$.
  
 
 \begin{eqnarray}
 |\tilde{V}(z)_{min}|=|\tilde{V}_0^+|\sqrt{1+|\Gamma_L|^2-2 |\Gamma_L|} \nonumber  \\
 |\tilde{V}(z)_{min}| =|\tilde{V}_0^+|\sqrt{(1-|\Gamma_L|)^2}  \nonumber \\
-|\tilde{V}(z)_{min}| =|\tilde{V}_0^+| (1-|\Gamma_L|) 
+|\tilde{V}(z)_{min}| =|\tilde{V}_0^+|\left|1-|\Gamma_L|\right|
 \end{eqnarray}
 
 The Equation \ref{eq:SWminimums}  shows the position of voltage minimums on the line. 
 
 
 \begin{eqnarray}
-cos(2 \beta z_{max}-\angle \Gamma_L)=-1 \nonumber \\
-2 \beta z_{max} + \angle \Gamma_L = (2 n+1) \pi \nonumber \\
-z_{max} =\frac{ (2 n+1) \pi +\angle \Gamma_L }{ 2 \beta} \nonumber \\
-z_{max}=\lambda \frac{ (2 n+1) \pi +\angle \Gamma_L  }{ 4 \pi} \label{eq:SWminimums}
+\cos(2\beta z_{min}+\angle\Gamma_L)=-1 \nonumber \\
+2\beta z_{min}+\angle\Gamma_L=(2n+1)\pi \nonumber \\
+z_{min}=\frac{(2n+1)\pi-\angle\Gamma_L}{2\beta} \nonumber \\
+z_{min}=\lambda\frac{(2n+1)\pi-\angle\Gamma_L}{4\pi} \label{eq:SWminimums}
 \end{eqnarray}
+
+Here $n$ is any integer; retain only positions in $[-l,0]$.
+These locations apply when $|\Gamma_L|>0$. For a matched line,
+$\Gamma_L=0$, the magnitude is constant and there are no distinct
+standing-wave maxima or minima.
 
 
 
@@ -280,18 +287,22 @@ z_{max}=\lambda \frac{ (2 n+1) \pi +\angle \Gamma_L  }{ 4 \pi} \label{eq:SWminim
 
 
 
-The ratio of voltage minimum on the line over the voltage maximum is
-called the Voltage Standing Wave Ratio (VSWR) or just Standing Wave
-Ratio (SWR).
+The ratio of maximum voltage magnitude to minimum voltage magnitude
+is called the Voltage Standing Wave Ratio (VSWR), or Standing Wave
+Ratio (SWR). For a passive load on a lossless line with real positive
+$Z_0$, $0\le|\Gamma_L|\le1$. For $|\Gamma_L|<1$,
 
 \begin{eqnarray}
-SWR=\frac{\tilde{V}(z)_{max}}{ \tilde{V}(z)_{min}} \nonumber \\
+SWR=\frac{|\tilde{V}(z)|_{max}}{|\tilde{V}(z)|_{min}} \nonumber \\
 SWR=\frac{1+|\Gamma_L|}{1-|\Gamma_L|}
 \end{eqnarray}
 
 
 
-Note that the SWR is always equal or greater than 1. 
+Under these assumptions, SWR is at least 1. A matched load has
+SWR equal to 1; when $|\Gamma_L|=1$, the minimum is zero and
+SWR is infinite. Maxima and minima refer to the standing-wave
+envelope; a short physical line need not contain both extrema.
 
 
 

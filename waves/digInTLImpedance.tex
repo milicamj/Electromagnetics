@@ -55,7 +55,7 @@ L) I(z) \label{eq:te12new1}
 We now rearrange Equation \ref{eq:te12new1} to find the current I(z) and multiply through to get Equation \ref{eq:TLImpedanceTE}.
 
 \begin{eqnarray}
-I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ e^{-\gamma z} + \tilde{V}_0^-
+I(z)=\frac{\gamma}{R+j\omega L} ( \tilde{V}_0^+ e^{-\gamma z} - \tilde{V}_0^-
  e^{\gamma z})  \nonumber  \\
 I(z)=\frac{\gamma \tilde{V}_0^+}{R+ j \omega L} e^{-\gamma z} - \frac{\gamma \tilde{V}_0^-}{R+ j \omega L} e^{\gamma z} \label{eq:TLImpedanceTE}
 \end{eqnarray}
@@ -71,8 +71,10 @@ We can now compare Equation \ref{eq:TLCurr} for current, a solution of the wave 
 \begin{definition}
 We define the characteristic impedance of a transmission line  as
 the ratio of the voltage to the current amplitude of the forward
-wave as shown in Equation \ref{eq:i+v+}, or the ratio of the voltage to the current amplitude of the reflected 
-wave as shown in Equation \ref{eq:i-v-}.
+wave as shown in Equation \ref{eq:i+v+}, or minus the ratio of the
+reflected voltage phasor to the reflected current phasor, as shown
+in Equation \ref{eq:i-v-}. Both current phasors use the same
+reference direction along the line.
 
 \begin{eqnarray}
 Z_0=\frac{\tilde{V}_0^+}{ \tilde{I}_0^+}=\frac{R+j\omega L}{\gamma} \label{eq:TLimp1}\\

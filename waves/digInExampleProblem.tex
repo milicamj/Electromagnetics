@@ -51,7 +51,7 @@ The equations for the voltage and current anywhere (any z) on a transmission lin
 
 
 \begin{eqnarray}
-\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + |\Gamma|  e^{j \beta z + \Theta_r}  ) \label{eq:vtlfin} \\
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + |\Gamma| e^{j(\beta z+\Theta_r)} ) \label{eq:vtlfin} \\
 I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{eq:itlfin}
 \end{eqnarray}
 
@@ -60,14 +60,18 @@ We are given phase constant $\beta$, and we have to find the other unknowns: pha
 Since we know the load impedance $Z_L$, and the transmission-line impedance $Z_0$, we can find the reflection coefficient $\Gamma$ using Equation \ref{eq:reflcoe1}.
 
 \begin{eqnarray}
-\Gamma =  \frac{Z_L -Z_0}{Z_L +Z_0}=0.279 \, e^{j112^o}=0.279 \, e^{j1.95 \unit{rad}} \label{eq:reflcoe1}
+\Gamma=\frac{Z_L-Z_0}{Z_L+Z_0}
+\approx-0.103130+j0.256542
+\approx0.276495e^{j111.9001^\circ}
+\approx0.276495e^{j1.953026} \label{eq:reflcoe1}
 \end{eqnarray}
 
 To find the input impedance of the line, we use the equation 
 
 
 \begin{eqnarray}
-Z_{in}= Z_0 \frac{Z_L+ j Z_0 \tan \beta l}{Z_0+ j Z_L \tan \beta l} = 70.8+ j 27.1 \Omega
+Z_{in}= Z_0 \frac{Z_L+ j Z_0 \tan \beta l}{Z_0+ j Z_L \tan \beta l}
+\approx(70.5267+j27.3178)\,\Omega
 \end{eqnarray}
 
 We can use one of the following two equations to find the forward going voltage at the load:
@@ -77,18 +81,30 @@ We can use one of the following two equations to find the forward going voltage 
 \tilde{V}_0^+=V_g e^{-j \beta l} \frac{Z_0}{Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in})}
 \end{eqnarray}
 
-Because the generator's impedance is equal to the transmission line impedance, we will use the second equation. When $Z_g=Z_0$ we see that the denominator simplifies into $Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in}) = Z_0 (1+\Gamma_{in}+1-\Gamma_{in})$ and we can further simplify the fraction to get the final value of $\tilde{V}_0^+=\frac{V_g}{2} e^{-j \beta l}$. Since $\beta l = \frac{2 \pi}{\lambda} \, 0.6 \lambda$, the forward going voltage at the load is $\tilde{V}_0^+=50 \, e^{-j1.2 \pi} = 50 \, e^{-j3.768} =50 \, e^{-j216^o} $.
+Because $Z_g=Z_0$, the denominator of the second expression is
+$Z_0(1+\Gamma_{in})+Z_0(1-\Gamma_{in})=2Z_0$.
+Thus $\tilde{V}_0^+=(V_g/2)e^{-j\beta l}$.
+The specified values give $\beta l=0.595(6.33)=3.76635$ radians,
+so $l/\lambda=\beta l/(2\pi)\approx0.599433$.
+The forward voltage at the load is
+$\tilde{V}_0^+=50e^{-j3.76635}\,\mathrm{V}$.
 
 
 
 The equations of the voltage and current anywhere on the line are therefore
 
 \begin{eqnarray}
-\tilde{V}(z)= 50  e^{-j3.768} (e^{-j 0.595 z} + 0.279  e^{j 0.595 z + 1.95}  ) \\
-I(z)=   e^{-j3.768}   (e^{-j 0.595 z} - 0.279  e^{j 0.595 z+ 1.95}  ) 
+\tilde{V}(z)\approx50e^{-j3.76635}
+\left(e^{-j0.595z}+0.276495e^{j(0.595z+1.953026)}\right)\,\mathrm{V} \\
+I(z)\approx e^{-j3.76635}
+\left(e^{-j0.595z}-0.276495e^{j(0.595z+1.953026)}\right)\,\mathrm{A}
 \end{eqnarray}
 
-Suppose we replace the antenna with another load of impedance $50\Omega$. In that case, the reflection coefficient from the load will be zero, and the reflected voltages will disappear, so the voltage and current will be equal to the forward-going voltage on the transmission line. 
+Suppose we replace the antenna with another load of impedance
+$50\Omega$. The load reflection coefficient is then zero, and
+both reflected waves vanish. The total voltage equals the
+forward voltage, and the total current equals the forward
+current, which is the forward voltage divided by $Z_0$.
 
 
 \begin{eqnarray}

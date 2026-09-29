@@ -38,7 +38,7 @@ The equations for the voltage and current anywhere (any z) on a transmission lin
 
 \begin{eqnarray}
 \tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  ) \label{eq:vtlfin} \\
-I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma  e^{j \beta z}  ) \label{eq:itlfin}
+I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:itlfin}
 \end{eqnarray}
 
 
@@ -46,36 +46,40 @@ The voltage and current equations at the generator $z=-l$ are:
 
 \begin{eqnarray}
 \tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l }  )  \\
-\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma  e^{-j \beta l}  ) 
+\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma_L  e^{-j \beta l}  )
 \end{eqnarray}
 
 
 \section{Input impedance as a function of reflection coefficient}
 
-The input impedance is defined as $Z_{in}=\frac{V_{in}}{I_{in}}$. Since the line length is $l$, the input impedance is
+The input impedance is $Z_{in}=\tilde{V}_{in}/\tilde{I}_{in}$.
+First define the impedance at an arbitrary position as
+$Z(z)=\tilde{V}(z)/\tilde{I}(z)$. We will then evaluate it at
+the input, $z=-l$.
 
 
 
 
 
 \begin{eqnarray}
-Z_{in}=\frac{\tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{\frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )}
+Z(z)=\frac{\tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{\frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )}
 \end{eqnarray}
 
 If we cancel common terms, we get
 
 \begin{eqnarray}
-Z_{in}=Z_0 \frac{(e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )} \label{eq:theSecondway}
+Z(z)=Z_0 \frac{(e^{-j \beta z} + \Gamma_L  e^{j \beta z }  )}{  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  )} \label{eq:theSecondway}
 \end{eqnarray}
 
 Now we can take $e^{-j \beta z}$ in front of parenthesis from both numerator and denominator and then cancel it.
 
 
 \begin{eqnarray}
-Z_{in}=Z_0 \frac{1 + \Gamma_L  e^{ 2j \beta z }  }{  1 - \Gamma_L  e^{2j \beta z}  }
+Z(z)=Z_0 \frac{1 + \Gamma_L  e^{ 2j \beta z }  }{  1 - \Gamma_L  e^{2j \beta z}  }
 \end{eqnarray}
 
-We have previously defined the reflection coefficient at the transmission line's input as $\Gamma_{in}=\Gamma_L  e^{ 2 j \beta z }$. The final equation for the input impedance is therefore
+At the input, $z=-l$, so $\Gamma_{in}=\Gamma_L e^{-2j\beta l}$.
+Evaluating $Z(z)$ there gives $Z_{in}=Z(-l)$, or
 
 
 
@@ -86,14 +90,18 @@ Z_{in}=Z_0 \frac{1 + \Gamma_{in}  }{  1 - \Gamma_{in}  }
 
 \subsection{Input impedance as a function of load impedance}
 
-If we now look back at the Equation \ref{eq:theSecondway}, here we can also  use Euler's formula $e^{j \beta z} = \cos  (\beta z) + j\sin  (\beta z)  $, and the equation for the reflection coefficient at the load $\Gamma_L = \frac{Z_L-Z_0}{Z_L+Z_0}$ we find the input impedance of the line as shown below.
+In Equation \ref{eq:theSecondway}, substitute $z=-l$, use Euler's
+formula, and substitute $\Gamma_L=(Z_L-Z_0)/(Z_L+Z_0)$.
+The input impedance is then
 
 
 \begin{eqnarray}
 Z_{in}= Z_0 \frac{Z_L+ j Z_0 \tan \beta l}{Z_0+ j Z_L \tan \beta l} 
 \end{eqnarray}
 
-This equation will be soon become obsolete when we learn how to use the Smith Chart.
+We will soon learn to use the Smith chart as a graphical alternative
+for finding input impedance. This equation remains useful for
+analytical and numerical calculations.
 
 \begin{example}
 

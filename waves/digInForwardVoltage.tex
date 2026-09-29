@@ -17,7 +17,7 @@
 
 
 
-Again, we will look at a transmission line circuit in Figure \ref{fig:FVTRLine} to find the input impedance on a transmission line.
+Again, we will look at a transmission line circuit in Figure \ref{fig:FVTRLine} to find the forward voltage phasor at the load.
 
 
 
@@ -40,7 +40,7 @@ The equations for the voltage and current anywhere (any z) on a transmission lin
 
 
 \begin{eqnarray}
-\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} - \Gamma_L  e^{j \beta z }  ) \label{eq:FVvtlfin} \\
+\tilde{V}(z)= \tilde{V}_0^+ (e^{-j \beta z} + \Gamma_L  e^{j \beta z }  ) \label{eq:FVvtlfin} \\
 I(z)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{-j \beta z} - \Gamma_L  e^{j \beta z}  ) \label{eq:FVitlfin}
 \end{eqnarray}
 
@@ -93,7 +93,8 @@ Rearranging the equation, we find $\tilde{V}_0^+$.
 \section{Forward voltage phasor as a function of input reflection coefficient}
 
 
-There is another way to find the input impedance as a function of the input reflection coefficient.
+There is another way to find the forward voltage phasor at the load
+as a function of the input reflection coefficient.
 
 
 We write KVL for the circuit in Figure \ref{fig:FVTRLineEqCirc}.
@@ -109,7 +110,7 @@ Input voltage and current equation at the generator $z=-l$ are:
 
 \begin{eqnarray}
 \tilde{V}_{in}=\tilde{V}(z=-l)= \tilde{V}_0^+ (e^{j \beta l} + \Gamma_L  e^{-j \beta l } ) \\
-\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma  e^{-j \beta l}  ) 
+\tilde{I}_{in}=I(z=-l)=   \frac{\tilde{V}_0^+}{Z_0}  (e^{j \beta l} - \Gamma_L  e^{-j \beta l}  )
 \end{eqnarray}
 
 
@@ -150,7 +151,10 @@ Rearranging the equation, we get $\tilde{V}_0^+$
 
 \section{Special case - forward voltage when the generator and transmission-line impedance are equal}
 
-Because the generator's impedance is equal to the transmission line impedance, we will use the second equation. When $Z_g=Z_0$ we see that the denominator simplifies into $Z_0 (1+\Gamma_{in}) +Z_g (1-\Gamma_{in}) = Z_0 (1+\Gamma_{in}+1-\Gamma_{in})=2$, and we can further simplify the fraction to get the final value of $\tilde{V}_0^+=\frac{V_g}{2} e^{-j \beta l}$. 
+When $Z_g=Z_0$, the denominator becomes
+$Z_0(1+\Gamma_{in})+Z_g(1-\Gamma_{in})=2Z_0$.
+The numerator factor $Z_0$ cancels, giving
+$\tilde{V}_0^+=\frac{\tilde{V}_g}{2}e^{-j\beta l}$.
 
 
 
