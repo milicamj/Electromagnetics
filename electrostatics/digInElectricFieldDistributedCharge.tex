@@ -69,7 +69,7 @@ The total electric field at a point P is then equal to the sum of all the fields
 \end{figure}
 
 The problem now  is to represent all the variables in the Equation \ref{genfieldloop}  ( $dQ$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given charge distribution.
-The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{fig:loopAllPts}, $dl$ is an arc length in the direction of theta, $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point be of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loop}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
+The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{fig:loopAllPts}, $dl$ is an arc length in the direction of theta, $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point of field evaluation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loop}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field.
 
 
 
@@ -118,7 +118,7 @@ Unit vector in the direction of vector $\vec{r}$ is:
 Replacing other variables in the Equations \ref{eq1loop}-\ref{vecrloop2} to the Equation \ref{genfieldloop}, we get the    Equation \ref{totalfieldloop} for the electric field $\vec{dE}$ at a point P.
 
 \begin{eqnarray}
-\vec{dE}= \frac{\rho_l \, a \, d\theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta})^2 +(y - a \,sin{\theta})^2 +z ^2}  }^3} \cdots  \nonumber \\ \cdots (x -  a \,cos{\theta}) \vec{a_x} +(y - a \,sin{\theta}) \vec{a_y} +z \vec{a_z} \label{totalfieldloop}
+\vec{dE}= \frac{\rho_l \, a \, d\theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta})^2 +(y - a \,sin{\theta})^2 +z ^2}  }^3} \cdots  \nonumber \\ \cdots \left[(x-a\cos\theta)\vec{a_x}+(y-a\sin\theta)\vec{a_y}+z\vec{a_z}\right] \label{totalfieldloop}
 \end{eqnarray}
 
 Components of the electric field are given in Equations \ref{totalfieldloop1}-\ref{totalfieldloop3}.
@@ -140,23 +140,23 @@ Each component of the field can be integrated separately, as shown in Equations 
 \vec{E_z}=  \int_0^{2\pi}\frac{\rho_l \, a \,  z   d\theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta})^2 +(y - a \,sin{\theta})^2 +z ^2}  }^3}  \vec{a_z} \label{totalfieldloop6}
 \end{eqnarray}
 
-The integrals in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}  can be integrated analytically in some special cases only. In general, this is in an elliptical integral and cannot be solved analytically. However, this integral can be sold numerically.
+The integrals in Equations \ref{totalfieldloop4}-\ref{totalfieldloop6}  have elementary closed forms in some special cases. In general, off-axis results involve elliptic integrals rather than elementary functions. They can be expressed analytically using those special functions or evaluated numerically.
 
 
 \subsection{Derive Numerical solution to the Electric Field due to a Loop of Charge}
 
-The integrals in equations \ref{totalfieldloop4}-\ref{totalfieldloop6} can be represented as infinite sums using  simple numerical integration as shown in Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
+The integrals in equations \ref{totalfieldloop4}-\ref{totalfieldloop6} can be approximated by finite sums using the periodic trapezoidal rule as shown in Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
 
 
 
 
 \begin{eqnarray}
-\vec{E_x}= \sum_{i=0}^{n}\frac{\rho_l \,a \,        (x -  a \,cos{\theta_i})         \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}    \vec{a_x}  \label{totalfieldloop4n} \\
-\vec{E_y}=  \sum_{i=0}^{n}\frac{\rho_l \, a \,   (y - a \,sin{\theta_i})  \Delta  \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}  \vec{a_y}  \label{totalfieldloop5n} \\
-\vec{E_z}=  \sum_{i=0}^{n}\frac{\rho_l \, a \,  z   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}  \vec{a_z} \label{totalfieldloop6n}
+\vec{E_x}\approx \sum_{i=0}^{n-1}\frac{\rho_l \,a \,        (x -  a \,cos{\theta_i})         \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}    \vec{a_x}  \label{totalfieldloop4n} \\
+\vec{E_y}\approx \sum_{i=0}^{n-1}\frac{\rho_l \, a \,   (y - a \,sin{\theta_i})  \Delta  \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}  \vec{a_y}  \label{totalfieldloop5n} \\
+\vec{E_z}\approx \sum_{i=0}^{n-1}\frac{\rho_l \, a \,  z   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }^3}  \vec{a_z} \label{totalfieldloop6n}
 \end{eqnarray}
 
-$\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to the trapezoidal rule can be improved by using more advanced numerical integration techniques.
+Use $n$ distinct equally spaced angles $\theta_i=2\pi i/n$, $i=0,\ldots,n-1$, and angular step $\Delta\theta=2\pi/n$. The endpoint $2\pi$ is not counted again because it coincides with zero. Increasing $n$ checks convergence of this periodic quadrature away from the charged ring.
 
 \subsection{Matlab Code to Find the Electric Field due to a Loop of Charge }
  
@@ -165,41 +165,30 @@ Equations \ref{totalfieldloop4n}-\ref{totalfieldloop6n} can be implemented in Ma
 
 \begin{verbatim}
 clear all
-%Specify the extents of x,y,z axes
-rad=-2:1.9965:2;
-%Make X,Y,Z matrices
-[X Y Z]=meshgrid(rad);
-%Define constants epsilon, Q. They are obviously not physical. 
-%They are set
-%to small constants so that we get smaller numbers.
-eps=1;
-Q=1;
+% SI units: total ring charge Q, radius a, vacuum permittivity.
+epsmed=8.854e-12;
+Q=1e-9;
 a=1;
-const=Q/(2*pi*eps);
-%Set the initial electric field components to zero. 
-Ex=0;
-Ey=0;
-Ez=0;
-%Here we find the fieldl at all X,Y,Z points defined previously
-% from each of the "unit" charges on the ring. 
-%th variable starts from 0.1
-%to avoid the infinite value of V at the point r=1,theta=0.
-for th=0.1:pi/20:2*pi
-t=const./ (sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)).^(3);
-Ex = Ex+t.*(X-cos(th));
-Ey = Ey+t.*(Y-sin(th));
-Ez = Ez+t.*Z;
+n=400;
+dtheta=2*pi/n;
+theta=(0:n-1)*dtheta;
+dq=Q/n; % Equivalent to rho_l*a*dtheta, rho_l=Q/(2*pi*a).
+rad=-1.5:0.1:1.5;
+[X,Y,Z]=meshgrid(rad);
+% The ideal line-charge field is singular on the ring.
+onRing=(abs(sqrt(X.^2+Y.^2)-a)<1e-10) & (abs(Z)<1e-10);
+Ex=zeros(size(X)); Ey=Ex; Ez=Ex;
+for th=theta
+    Rx=X-a*cos(th); Ry=Y-a*sin(th); Rz=Z;
+    R=sqrt(Rx.^2+Ry.^2+Rz.^2);
+    R(onRing)=NaN;
+    t=dq./(4*pi*epsmed*R.^3);
+    Ex=Ex+t.*Rx; Ey=Ey+t.*Ry; Ez=Ez+t.*Rz;
 end
-%Plot the field components Ex,Ey, Ez at points X,Y,Z. 
-%Scale the vectors by factor 3.
 quiver3(X,Y,Z,Ex,Ey,Ez,3)
-hold on;
-%Plot the ring of charge where it is positioned in x-y plane.
-t = linspace(0,2*pi,1000);
-r=1;
-x = r*cos(t);
-y = r*sin(t);
-plot(x,y,'b');
+hold on
+thplot=linspace(0,2*pi,1000);
+plot3(a*cos(thplot),a*sin(thplot),zeros(size(thplot)),'b');
 hold off
 \end{verbatim}
 
@@ -273,7 +262,7 @@ Each section is modeled by a point charge $dQ$.}
 
 
 The problem now  is to represent all the variables in the Equation \ref{genpotloop}  ( $dQ$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given charge distribution.
-The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{loopanyptf}, $dl$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point be of the electric field calculation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loopp}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the electric field. 
+The  total charge on the segment $dl$ is equal to $dQ=\rho_l dl$. As seen in Figure \ref{loopanyptf}, $dl$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point of potential evaluation. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation \ref{eq1loopp}.  The vector $\vec{r}$ is the distance vector between the point charge (the source) and the point at which we are calculating the potential.
 
 
 
@@ -338,20 +327,20 @@ The integral in Equation \ref{totalfieldloopp2} can be integrated analytically i
 
 
 
-\subsection{Derive Numerical solution to the Electric Field due to a Loop of Charge}
+\subsection{Derive Numerical solution to the Potential due to a Loop of Charge}
 
 
 
-The integrals in equations \ref{totalfieldloopp2} can be represented with infinite sum using simple numerical integration (trapezoidal rule), as shown in Equations \ref{totalfieldloop6np}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
+The integrals in equations \ref{totalfieldloopp2} can be approximated by a finite sum using the periodic trapezoidal rule, as shown in Equations \ref{totalfieldloop6np}.  Here we see that the continuous function of $\theta$ was replaced with the discrete values of  $\theta$.
 
 
 
 
 \begin{eqnarray}
-V=  \sum_{i=0}^{n}\frac{\rho_l \, a   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }}  \label{totalfieldloop6np}
+V\approx \sum_{i=0}^{n-1}\frac{\rho_l \, a   \Delta \theta }{4 \pi \epsilon_{0} {  \sqrt{(x - a \,cos{\theta_i})^2 +(y - a \,sin{\theta_i})^2 +z ^2}  }}  \label{totalfieldloop6np}
 \end{eqnarray}
 
-Where $\Delta\theta$ represents the length of the interval that the line is divided into, $\theta_i$ represents the value of angle at a certain point, and $i$ designates different points on the loop. It should be noted here that the error due to the trapezoidal rule can be improved by using more advanced numerical integration techniques.
+Use $n$ distinct equally spaced angles $\theta_i=2\pi i/n$, $i=0,\ldots,n-1$, and angular step $\Delta\theta=2\pi/n$. The endpoint $2\pi$ is not counted again because it coincides with zero. Increasing $n$ checks convergence of this periodic quadrature away from the charged ring.
 
 
 \subsection{Matlab Code to Find the Electric Potential due to a Loop of Charge }
@@ -360,37 +349,27 @@ Where $\Delta\theta$ represents the length of the interval that the line is divi
  Plot the cross-section of the potential and the equipotential lines on the planes x=0, y=0, z=0. 
   \begin{verbatim}
 clear all
-%Specify the extents of x,y,z axes
-rad=-1.5:0.1:1.5
- 
-%Make X,Y,Z matrices 
-[X Y Z]=meshgrid(rad,rad,rad)
-%Define constants epsilon, Q. They are obviously not physical. 
-%They are set 
-%to small constants so that we get smaller numbers.
-eps=1
-Q=1
-const=Q/(2*pi*eps)
-%Set the initial potential value to zero. Initialize V.
-V=0
-%Here we find the potential at all X, Y, Z points defined
-% previously from
-%each of the "unit" charges on the ring. 
-%The th variable starts from 0.1
-%to avoid the infinite value of V at the point r=1,theta=0. 
- 
- for th=0.1:pi/20:2*pi
-     t=const./ sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)
-		V= V+t;
- end
-%Plot the volume distribution of potential at planes
-% x=0, y=0, z=0
-slice(X,Y,Z,V,[0],[0],[0])
-%Keep the same figure
-hold on;
-%Plot contours of potential at planes x=0, y=0, z=0. See 
-%more on contours in appendix.
-h=contourslice(X,Y,Z,V,[0],[0],[0])
+% SI units: total ring charge Q, radius a, vacuum permittivity.
+epsmed=8.854e-12;
+Q=1e-9;
+a=1;
+n=400;
+dtheta=2*pi/n;
+theta=(0:n-1)*dtheta;
+dq=Q/n; % Equivalent to rho_l*a*dtheta, rho_l=Q/(2*pi*a).
+rad=-1.5:0.1:1.5;
+[X,Y,Z]=meshgrid(rad);
+% The ideal line-charge field is singular on the ring.
+onRing=(abs(sqrt(X.^2+Y.^2)-a)<1e-10) & (abs(Z)<1e-10);
+V=zeros(size(X));
+for th=theta
+    R=sqrt((X-a*cos(th)).^2+(Y-a*sin(th)).^2+Z.^2);
+    R(onRing)=NaN;
+    V=V+dq./(4*pi*epsmed*R);
+end
+slice(X,Y,Z,V,0,0,0)
+hold on
+h=contourslice(X,Y,Z,V,0,0,0);
 set(h,'EdgeColor','k','LineWidth',1.5)
 \end{verbatim}
 
@@ -401,45 +380,38 @@ set(h,'EdgeColor','k','LineWidth',1.5)
 
 
 \begin{verbatim}
-
 clear all
-%Specify the extents of x,y,z axes
-rad=-1.5:0.1:1.5
- 
-%Make X,Y,Z matrices 
-[X Y Z]=meshgrid(rad,rad,rad)
-%Define constants epsilon, Q. They are obviously not physical. 
-%They are set 
-%to small constants so that we get smaller numbers.
-eps=1
-Q=1
-const=Q/(2*pi*eps)
-%Set the initial potential value to zero. Initialize V.
-V=0
-%Here we find the potential at all X, Y, Z points defined 
-%previously from
-%each of the "unit" charges on the ring. The th variable
-% starts from 0.1
-%to avoid the infinite value of V at the point r=1,theta=0. 
- 
- for th=0.1:pi/20:2*pi
-     t=const./ sqrt((X-cos(th)).^2 + (Y-sin(th)).^2 + (Z).^2)
-V= V+t;
- end
-%Plot the volume distribution of potential at planes
-% x=0, y=0, z=0
-p = patch(isosurface(X,Y,Z,V,7));
+% SI units: total ring charge Q, radius a, vacuum permittivity.
+epsmed=8.854e-12;
+Q=1e-9;
+a=1;
+n=400;
+dtheta=2*pi/n;
+theta=(0:n-1)*dtheta;
+dq=Q/n; % Equivalent to rho_l*a*dtheta, rho_l=Q/(2*pi*a).
+rad=-1.5:0.1:1.5;
+[X,Y,Z]=meshgrid(rad);
+% The ideal line-charge field is singular on the ring.
+onRing=(abs(sqrt(X.^2+Y.^2)-a)<1e-10) & (abs(Z)<1e-10);
+V=zeros(size(X));
+for th=theta
+    R=sqrt((X-a*cos(th)).^2+(Y-a*sin(th)).^2+Z.^2);
+    R(onRing)=NaN;
+    V=V+dq./(4*pi*epsmed*R);
+end
+Vref=Q/(4*pi*epsmed*a); % Potential at the center of the ring.
+p=patch(isosurface(X,Y,Z,V,1.2*Vref));
 isonormals(X,Y,Z,V,p)
 set(p,'FaceColor','red','EdgeColor','none');
 daspect([1 1 1])
 view(3); axis tight
-camlight 
+camlight
 lighting gouraud
 \end{verbatim}
 
 
 
-Observe the equipotential surfaces. Explain why the surfaces doughnut are shaped? What is the electric field direction on the surface? Change the isosurface from 7 to 10 or some larger number. How does the isosurface look now? How does the potential of a ring of charge looks at the distances far away from the ring? What about the field?
+Observe the equipotential surfaces. Explain why the surfaces are doughnut-shaped? What is the electric field direction on the surface? Increase the isosurface level from $1.2V_{ref}$ to $1.5V_{ref}$, where $V_{ref}=Q/(4\pi\epsilon_0 a)$. How does the isosurface look now? How does the potential of a ring of charge looks at the distances far away from the ring? What about the field?
 
 
 
@@ -449,7 +421,7 @@ Observe the equipotential surfaces. Explain why the surfaces doughnut are shaped
 
 \section{Visualizing Scalar Fields in Matlab}
 
-To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lightning. Please note that a more detailed explanation about these functions shown here can be found in Matlab's help.
+To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lighting. Please note that a more detailed explanation about these functions shown here can be found in Matlab's help.
 
 \subsection{slice}
  
@@ -459,9 +431,9 @@ Slice is a command that shows the magnitude of a scalar field on a plane that sl
 slice(x,y,z,v,xslice,yslice,zslice)
 \end{verbatim}
 
-Where X, Y, and Z are coordinates of points where the scaler function is calculated, V is v the scalar function at those points, and the last three vectors xslice, yslice, and zslice  are showing where will the volume will be sliced.
+Where X, Y, and Z are coordinates of points where the scalar function is calculated, V is the scalar function at those points, and the last three vectors xslice, yslice, and zslice  specify where the volume is sliced.
 
-An example of slice command is given below. In the example below, there is an additional command colormap that colors the volume with a specific palette. To see more about different color maps, see Matlab's help. xslice has three points at which the x-axis will be slice. They are -1.2, .8, 2. This means that the volume will be slice with a plane that is perpendicular to the x-axis, and it crosses the x-axis at points -1.2, .8, and 2. 
+An example of slice command is given below. In the example below, there is an additional command colormap that colors the volume with a specific palette. To see more about different color maps, see Matlab's help. xslice has three points at which the x-axis will be sliced. They are -1.2, .8, 2. This means that the volume will be sliced with a plane that is perpendicular to the x-axis, and it crosses the x-axis at points -1.2, .8, and 2.
  
 \begin{verbatim}
 clc
@@ -492,7 +464,7 @@ Patch command creates a patch of color.
 
 \subsection{isonormals}
 
-Command isonormals create equipotential surfaces. 
+The \texttt{isosurface} function constructs a surface of constant scalar value; for potential data, it is an equipotential surface. The \texttt{isonormals} function computes vertex normals from the data gradient for surface lighting. See the \href{https://www.mathworks.com/help/matlab/ref/isonormals.html}{MATLAB documentation}.
 \subsection{camlight}
 
 \begin{verbatim}

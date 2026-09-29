@@ -32,26 +32,26 @@ We will now look at an example of two coils carrying alternating current, as sho
 \subsection{Coils with no coupling}
 
 We will first look at the case when the coils are not coupled. We will see that these are two simple RL circuits.
-If the coils are not coupled, the mutual flux is zero, and the fluxes through the coils are
+For linear, nonhysteretic coils, let $\lambda_k=\sum_n\Phi_{kn}$ be the total flux linkage of coil $k$, summed over its turns. With no coupling, the mutual linkage is zero and the self linkages are
 
 \begin{eqnarray}
-\Phi_{1s}= L_1 I_1 \\
-\Phi_{2s}= L_2 I_2
+\lambda_{1s}= L_1 I_1 \\
+\lambda_{2s}= L_2 I_2
 \end{eqnarray}
 
-The above equation states that the currents in the coils are in phase with flux $\Phi$. This equation is similar to two other equations that define resistance and capacitance. V=R I  means that the current is in phase with the voltage on a resistor. Q=C V, the charge is in phase with the voltage on a capacitor. 
+The above equation states that the currents in the coils are in phase with their self flux linkages $\lambda$. This equation is similar to two other equations that define resistance and capacitance. V=R I  means that the current is in phase with the voltage on a resistor. Q=C V, the charge is in phase with the voltage on a capacitor.
 
 Since mutual flux is zero, according to Faraday's law, the induced voltage in each coil is
 
 \begin{eqnarray}
-e_1=-\frac{d\Phi_{1s}}{dt} = - L_1 \frac{dI_1}{dt}\\
-e_2=-\frac{d\Phi_{2s}}{dt} = - L_2 \frac{dI_2}{dt}
+e_1=-\frac{d\lambda_{1s}}{dt} = - L_1 \frac{dI_1}{dt}\\
+e_2=-\frac{d\lambda_{2s}}{dt} = - L_2 \frac{dI_2}{dt}
 \end{eqnarray}
 
-The induced voltage and the voltage in the rest of the circuit are related through Faraday's law:
+For the closed path through the winding, the linked flux is $\lambda$. Faraday's law relates the induced emf to the electric-field circulation:
 
 \begin{equation}
-\oint_c \vec{E} \cdot \vec{dl} =  - \frac{d\Phi}{dt}
+\oint_c \vec{E} \cdot \vec{dl} =  - \frac{d\lambda}{dt}
 \end{equation}
 
 Induced current flows as a current would inside the generator, from negative to positive voltage terminal, as shown in Figure \ref{fig:InducedEMF}.
@@ -85,16 +85,16 @@ The above equation states that the voltage at the coils' output leads the curren
  
 
 \begin{equation}
-\oint_c \vec{E} \cdot \vec{dl} =  - \frac{d\Phi}{dt}
+\oint_c \vec{E} \cdot \vec{dl} =  - \frac{d\lambda}{dt}
 \end{equation}
 
 If we integrate the electric field along the closed loop and assume that the resistance of the coil and other losses are included in R
 
 \begin{eqnarray}
--e + R I = - L \frac{d I}{dt}
+-e_g + R I = - L \frac{d I}{dt}
 \end{eqnarray}
 
-We see that this is a time-domain equation for an RL circuit. If we use the definition of phasors, we get 
+Here $e_g$ is the applied generator emf, distinct from the coil's induced emf $e=-d\lambda/dt$. This is the time-domain equation for an RL circuit. If we use the definition of phasors, we get
 
 \begin{eqnarray}
 \tilde{E} = (R + j \omega L) \tilde{I}
@@ -104,13 +104,13 @@ Therefore the voltage will be leading current by an angle $\arctan(\frac{\omega 
 
 \subsection{Coils with coupling}
 
-When two coils are close together, their magnetic fields couple and some of the flux from coil 1 will pass through the second coil. This additional flux produces induced voltage in the second coil, as we discussed before. The amount of interaction between the coils is called mutual flux. Associated with mutual flux is mutual inductance $M=L_{12}=\frac{\Phi_{1}}{I_2}=L_{21}=\frac{\Phi_{2}}{I_1}	$. Mutual inductance can be positive or negative, as we have seen before because the fluxes can add or subtract. The mutual flux through coil 1 can be in phase or out of phase with the current that produced it.
+When coils are coupled, current in one produces flux linkage in the other. Define the signed mutual coefficients by $M_{12}=\lambda_{12}/I_2$ and $M_{21}=\lambda_{21}/I_1$, where the first index denotes the receiving coil and only flux produced by the other coil is included. For a linear reciprocal system, $M_{12}=M_{21}$. In the equations below, $L_{12}=L_{21}=|M_{12}|$ denotes the nonnegative magnitude, and the common $\pm$ sign accounts for the chosen dot and current references.
 
-If the coils are coupled, the mutual flux is not zero, and the fluxes through the coils are
+If the coils are coupled, the total flux linkages are
 
 \begin{eqnarray}
-\Phi_1=\Phi_{1s} + \Phi_{21} = L_{1s} I_1 \pm L_{12} I_2 \\
-\Phi_2= \Phi_{2s} + \Phi_{12} = L_{2s} I_2 \pm L_{21} I_1 
+\lambda_1=\lambda_{1s} + \lambda_{12} = L_1 I_1 \pm L_{12} I_2 \\
+\lambda_2=\lambda_{2s} + \lambda_{21} = L_2 I_2 \pm L_{21} I_1
 \end{eqnarray}
 
 The induced voltages in each coil are
@@ -192,13 +192,13 @@ The above equations show that the self and mutual inductance subtract.
 
 
 
-In phasor notation and a circuit like the one in Figure \ref{fig:InducedEMF}, the only difference is the addition of the mutual inductance. So the equations will be
+In phasor notation and a circuit like the one in Figure \ref{fig:InducedEMF}, the only difference is the addition of the mutual inductance. Here $\tilde{E}_1$ and $\tilde{E}_2$ are the applied generator-voltage phasors, and $\tilde{I}_1,\tilde{I}_2$ are current phasors. The induced coil emfs are the separate quantities $e_1,e_2$ defined above. The equations are
 
 
 
 \begin{eqnarray}
-\tilde{E_1} = (R + j \omega L_1) \tilde{I_1} \pm j \omega L_{12} I_2 \\
-\tilde{E_1} = (R + j \omega L_2) \tilde{I_2} \pm j \omega L_{21} I_1 
+\tilde{E_1} = (R + j \omega L_1) \tilde{I_1} \pm j \omega L_{12} \tilde{I_2} \\
+\tilde{E_2} = (R + j \omega L_2) \tilde{I_2} \pm j \omega L_{21} \tilde{I_1}
 \end{eqnarray}
 
 

@@ -23,7 +23,7 @@
 There are several ways of visualizing fields:
 \begin{enumerate}
 \item vectors of different lengths represent the strength and direction of the field at different points. 
-\item streamlines show the field flow. The field vector direction is tangential to a flow line. Streamlines are lines that a particle would follow in a field.
+\item streamlines show the field flow. The field vector direction is tangential to a flow line. Electric field lines are tangent to $\vec{E}$. A particle's acceleration follows $m\vec{a}=q\vec{E}$ when only the electric force acts, so its trajectory need not follow a field line.
 \item Streamlines above can be drawn to show that the vector's strength is proportional to the density of field lines (number of field lines per unit area). Vector lines are usually represented as a fixed number of streamlines, not individual vectors. The lines bunch up where the field is stronger and diverge from each other where the field is weak.
 \end{enumerate}
 
@@ -42,7 +42,7 @@ In the equation above, the surface is a vector so that we can define the directi
 
 \begin{example}
 
-Observe the simulation below, change the angle between the frame and the field, then change the strenght of the field. How does the flux change?
+Observe the simulation below, change the angle between the frame and the field, then change the strength of the field. How does the flux change?
 
 
 
@@ -59,14 +59,14 @@ Observe the simulation below, change the angle between the frame and the field, 
 \section{Gauss's Law}
 
 
-Gauss's Law states that the flux of electric field through a {\bf closed} surface is equal to the charge enclosed divided by a constant.
+Gauss's law states generally that $\oint_S\vec{D}\cdot d\vec{S}=Q_{\mathrm{free}}$. In vacuum, $\oint_S\vec{E}\cdot d\vec{S}=Q_{\mathrm{total}}/\epsilon_0$. In the examples below, assume an unbounded homogeneous linear isotropic medium with constant permittivity $\epsilon$, so $\vec{D}=\epsilon\vec{E}$ and $Q_{inS}$ denotes enclosed free charge:
 
 \begin{equation}
 \oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}\label{eq:gaussLaw}
 \end{equation}
 
 
-It can be shown that no matter the shape of the closed surface, the flux will always be equal to the charge enclosed. This proof is beyond the scope of these lectures.
+It can be shown that no matter the shape of the closed surface, the flux of $\vec{E}$ is the enclosed free charge divided by $\epsilon$ under these assumptions. This proof is beyond the scope of these lectures.
 
 
 Gauss's Law is used to find the electric field when a charge distribution is given. We can apply Gauss's Law using analytical expressions only to a specific set of symmetric charge distributions.
@@ -88,7 +88,7 @@ Observe the 2D flux from electric charge through a square. Set all charges to ze
  
  
  \begin{question}  
-An positive Q and a negative charge -Q separated by a distance d (a dipole) are enclosed in a cube. What is the flux through the cube?
+A positive Q and a negative charge -Q separated by a distance d (a dipole) are enclosed in a cube. What is the flux through the cube?
 \begin{multipleChoice}  
 \choice{$Q/\epsilon$}  
 \choice[correct]{zero}  
@@ -331,7 +331,7 @@ The integral above is then just the fraction of the volume of the charge distrib
  \vec{E}  = \frac{\rho \, r}{3  \, \epsilon } \, \hat{r}
 \end{eqnarray}
 
-Note that now the electric field is proportional to the distance from the center of the sphere, $E\sim r$, the field increases from the center of the spere out until $r=a$. At $r=a$, the entire charge has been enclosed, and the field is maximum at that point.
+Note that now the electric field is proportional to the distance from the center of the sphere, $E\sim r$, the field increases from the center of the sphere out until $r=a$. At $r=a$, the entire charge has been enclosed, and the field is maximum at that point.
 
 \subsection{Electric field due to an infinite line of charge}
 
@@ -345,7 +345,7 @@ Note that now the electric field is proportional to the distance from the center
 \end{figure}
 
 
-A cylindrical region of radius a and infinite length is charged with uniform volume charge density $\rho$=const and centered on the z-axis. Find the field inside the cylindrical region of charge at a distance r from the axis of the charge density and the field outside of the spherical region of charge at (another) distance r away from the z-axis.
+A cylindrical region of radius a and infinite length is charged with uniform volume charge density $\rho$=const and centered on the z-axis. Find the field inside the cylindrical region of charge at a distance r from the axis of the charge density and the field outside of the cylindrical region of charge at (another) distance r away from the z-axis.
 
 We will use Gauss's Law to solve this problem.
 
@@ -355,7 +355,7 @@ We will use Gauss's Law to solve this problem.
 
 
 
- We first look at the field outside of the cylindrical charge distribution. The wire is shown as a blue line in the direction of the z-axis, as shown in Figure \ref{fig:gaussLineOut}.  Because of the symmetry of the problem, we select a cylinder for the closed surface S. It is important to mention that we pick a point outside of the distributed charge at the distance r from the z-axis. The point that we picked is one point on the sphere's surface. We picked a point from the z-axis at a distance r, not at r=a, because we want to find out electric field anywhere outside of the charge distribution E(r), and r could be any point $r>a$. Gauss's Law states that 
+ We first look at the field outside of the cylindrical charge distribution. The wire is shown as a blue line in the direction of the z-axis, as shown in Figure \ref{fig:gaussLineOut}.  Because of the symmetry of the problem, we select a cylinder for the closed surface S. It is important to mention that we pick a point outside of the distributed charge at the distance r from the z-axis. The point that we picked is one point on the cylinder's surface. We picked a point from the z-axis at a distance r, not at r=a, because we want to find out electric field anywhere outside of the charge distribution E(r), and r could be any point $r>a$. Gauss's Law states that
 
 
 
@@ -375,7 +375,7 @@ We will use Gauss's Law to solve this problem.
 \end{equation}
 
 
-We will now apply Gauss's law to the three surfaces shown in Figure  \ref{fig:gaussLineOut}. The cylindrical surface consists of three surfaces: two bases S1 and S3 and the side surface S2. The normals to the bases are S1 and S3 are $\hat{n}_1=-\hat{z}$, $\hat{n}_3=\hat{z}$ and the normal to the side surface is  $\hat{n}_2=\hat{r}$. We can now split the flux of the electric field vector (the left-side of Gauss's law) through this closed cylindrical surface  intro three integrals:
+We will now apply Gauss's law to the three surfaces shown in Figure  \ref{fig:gaussLineOut}. The cylindrical surface consists of three surfaces: two bases S1 and S3 and the side surface S2. The normals to the bases are S1 and S3 are $\hat{n}_1=-\hat{z}$, $\hat{n}_3=\hat{z}$ and the normal to the side surface is  $\hat{n}_2=\hat{r}$. We can now split the flux of the electric field vector (the left-side of Gauss's law) through this closed cylindrical surface into three integrals:
 
 
  
@@ -417,7 +417,7 @@ Note that we only found the magnitude of the field in the above equation. We sta
  \vec{E}  = \frac{Q_{inS}}{2 \pi  \epsilon \, l\, r} \, \hat{r}
 \end{equation}
 
- The charge $Q_{inS}$ is the total charge in the spherical volume where the charge is located. If the total charge in the volume was known, then this is the solution. However, in this problem, the charge density is known, so we have to find the total charge.
+ The charge $Q_{inS}$ is the total charge in the cylindrical volume where the charge is located. If the total charge in the volume was known, then this is the solution. However, in this problem, the charge density is known, so we have to find the total charge.
 
 \begin{eqnarray}
 Q_{inS}=\int_V \rho \, dV
@@ -439,7 +439,7 @@ The integral above is then just the entire volume of the charge distribution, wh
 \end{eqnarray}
 
 
-Note that now the electric field is inversely proportional to the distance from the z-axis, $E \sim 1/r$. The electric field decreases as we move away from the sphere, but slower than in the case of the sphere of charge.
+Note that now the electric field is inversely proportional to the distance from the z-axis, $E \sim 1/r$. The electric field decreases as we move away from the cylinder, but slower than in the case of the sphere of charge.
 
 
 \subsubsection{Electric field inside the line of charge}
@@ -475,7 +475,7 @@ The integral above is then just the fraction of the volume of the charge distrib
  \vec{E}  = \frac{\rho \, r}{2  \, \epsilon } \, \hat{r}
 \end{eqnarray}
 
-The electric field is proportional to the distance from the center of the sphere, $E\sim r$, the field increases from the center of the spere out until $r=a$. At $r=a$, the entire charge has been enclosed, and the field is maximum at that point.
+The electric field is proportional to the distance from the axis of the cylinder, $E\sim r$, the field increases from the axis of the cylinder out until $r=a$. At $r=a$, the entire charge has been enclosed, and the field is maximum at that point.
 
 
 
@@ -541,13 +541,13 @@ E \, S + E \, S = \frac{Q_{inS}}{\epsilon} \\
  E=\frac{Q_{inS}}{2 \epsilon S}
 \end{eqnarray}
 
-In the above equation, the ration $\frac{Q_{inS}}{S}$ is just the surface charge density $\sigma$. The final electric field expression for the infinite sheet of charge becomes
+In the above equation, the ratio $\frac{Q_{inS}}{S}$ is just the surface charge density $\sigma$. The final electric field expression for the infinite sheet of charge becomes
 
 \begin{eqnarray}
  \vec{E}  = \pm \frac{\sigma}{2 \epsilon } \, \hat{z}
 \end{eqnarray}
 
-Note that in the above expression, we added $\pm$ because we knew ahead of time the direction of the electric field. Below the z-axis, it is in the negative z-direction $-\hat{z}$, and above the z-axis, it is in the positive z-direction $\hat{z}$. Further, the electric field does not depend on the distance from the infinite plane. It is a constant that only depends on the surface charge density $\sigma$ and the dielectric permittivity of surrounding space $\epsilon$.
+Note that in the above expression, we added $\pm$ because we knew ahead of time the direction of the electric field. Below the charged plane ($z=0$), it is in the negative z-direction $-\hat{z}$, and above the charged plane, it is in the positive z-direction $\hat{z}$. Further, the electric field does not depend on the distance from the infinite plane. It is a constant that only depends on the surface charge density $\sigma$ and the dielectric permittivity of surrounding space $\epsilon$.
 
 \subsection{Two Infinite Planes}
 

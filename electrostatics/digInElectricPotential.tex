@@ -42,24 +42,24 @@ The work that we need to do to bring charges together is equal to the work that 
 
 
 \begin{eqnarray}
-W_{us}=W{e} \\
+W_{us}=W_e \\
 W_{us}= \int_{\infty}^{r} \vec{F}_{us} \cdot \vec{dr} \\
 W_{e}=  \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr} 
 \end{eqnarray}
 
-The electric force is $\vec{F}_e=\frac{q_1 q_2}{4 \pi \epsilon_o r^2} \vec{r}$, so we can calculate the total work necessary to bring the two charges at distance r.
+The electric force is $\vec{F}_e=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2} \hat{r}$, so we can calculate the total work necessary to bring the two charges at distance r.
 
 \begin{eqnarray}
 W_{us}= \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr} \\
-W_{us}= \int_{r}^{\infty} \frac{q_1 q_2}{4 \pi \epsilon_o r^2} \vec{r} \vec{dr}
+W_{us}= \int_{r}^{\infty} \frac{q_1 q_2}{4 \pi \epsilon_0 r^2} \hat{r} \cdot \vec{dr}
 \end{eqnarray}
 
 Since the charge is moved in the direction of the force, we can drop vectors and calculate the work we have to do.
 
 \begin{eqnarray}
-W_{us}= \frac{q_1 q_2}{4 \pi \epsilon_o} \int_{r}^{\infty} \frac{dr}{r^2} \\
-W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o} (-\frac{1}{r}\Big|_{r}^{\infty})
-W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_o r} \label{WorkPoinCharge}
+W_{us}= \frac{q_1 q_2}{4 \pi \epsilon_0} \int_{r}^{\infty} \frac{dr}{r^2} \\
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_0} (-\frac{1}{r}\Big|_{r}^{\infty}) \\
+W_{us}=  \frac{q_1 q_2}{4 \pi \epsilon_0 r} \label{WorkPoinCharge}
 \end{eqnarray}
 
 This work is the same no matter what path we take to move charge $q_2$ from infinity to a distance r from charge $q_1$, see Figure \ref{PotentialWork}. It depends only on the initial and end position of the charge.
@@ -88,7 +88,7 @@ The work needed to move the two charges closer together depends on both charges 
 
 \begin{eqnarray}
 V=\frac{W_{us}}{q_2} \\
-V=\frac{q_1}{4 \pi \epsilon_o r} \label{Potential2}
+V=\frac{q_1}{4 \pi \epsilon_0 r} \label{Potential2}
 \end{eqnarray}
 
 Observe that in Equation \ref{Potential2} the potential is a function of the "source" charge $q_1$. We again separated the source and the effect, but this time of the potential energy. The source is a charge $q_1$ that produces potential V. If we now want to see what is the potential energy or work that we need to do to move another charge, we don't have to know which charge produced it. We only need to know the potential in an area, from which we can find the potential energy change of charge $q_2$. 
@@ -107,7 +107,7 @@ The difference in electric potential is most closely associated with
 
 \section{The general relationship between the electric field and potential}
 
-In the first section, we defined the work necessary to bring two charges togeter at a distance r as 
+In the first section, we defined the work necessary to bring two charges together at a distance r as
 
 \begin{eqnarray}
 W_{us}=  \int_{r}^{\infty} \vec{F}_{e} \cdot \vec{dr}\label{eqn:definitionWork} 
@@ -132,7 +132,6 @@ V_R=\frac{W_{e}}{q}=\int_{r}^{\infty}  \vec{E} \cdot \vec{dr}
 \end{eqnarray}
 
 
-The potential at a point due to a unit positive charge is found to be V.  If the distance between the charge and the point is tripled, the potential becomes 
 
 \begin{question}  
 The potential at a point due to a unit positive charge is  V.  If the distance between the charge and the point is doubled, the potential becomes 
@@ -181,13 +180,13 @@ Now you can enjoy shocking John Travoltage in this PhET simulation.
 
 \section{Electric field calculation from potential difference}
 
-From the equation above, if we look at the potenital of two points that are very close on the x-axis, $V_A$, and $V_B=V_A+dV$, the voltage is equal to $V_A-V_B=V_A-(V_A+dV)=-dV=-E_x dx$. Therefore the electric field in the x-direction is 
+From the equation above, if we look at the potential of two points that are very close on the x-axis, $V_A$, and $V_B=V_A+dV$, the voltage is equal to $V_A-V_B=V_A-(V_A+dV)=-dV=E_x dx$. Therefore the electric field in the x-direction is
 
 \begin{equation}
 \vec{E_x}=-\frac{\partial V}{\partial x} 
 \end{equation}
 
-The above equations states that the field is proportional to the change of potential over distance. The larger the change of potential over distance, the stronger the field.
+The above equation states that the field is proportional to the change of potential over distance. The larger the change of potential over distance, the stronger the field.
 
 To find the electric field in 3 dimensions, we use the gradient function, which represents a 3-dimensional derivative.
 
@@ -197,7 +196,7 @@ To find the electric field in 3 dimensions, we use the gradient function, which 
 
 
 \begin{example}
-Figure \ref{fig:gradient} shows an electric field, and equipotential lines in an x-y plane. Equipotential lines are the lines of the same potential. We can observe that the electric field is always normal to the equipotential lines. The difference in potential between two points is $dV=\vec{E} \vec{dr}$. The lines, or surfaces, normal to the electric field vector are always equipotential surfaces, as the angle between the electric field vector and a perpendicular vector is $90^0$, and the dot product between them is zero. In other words, the work that we have to do to move the charge in the direction perpendicular to the electric force is zero.
+Figure \ref{fig:gradient} shows an electric field, and equipotential lines in an x-y plane. Equipotential lines are the lines of the same potential. We can observe that the electric field is always normal to the equipotential lines. The difference in potential between two points is $dV=-\vec{E}\cdot\vec{dr}$. The lines, or surfaces, normal to the electric field vector are always equipotential surfaces, as the angle between the electric field vector and a perpendicular vector is $90^0$, and the dot product between them is zero. In other words, the work that we have to do to move the charge in the direction perpendicular to the electric force is zero.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -234,7 +233,7 @@ Now click on the 2D view.
 
 
 \begin{problem}
-Rougly adjust the direction and length of the vectors shown in the graph below. When done, click on "Grade Update " to check your answer.
+Roughly adjust the direction and length of the vectors shown in the graph below. When done, click on "Grade Update " to check your answer.
 
 \begin{center}  
 \geogebra{dqvffmrh}{1000}{800}  

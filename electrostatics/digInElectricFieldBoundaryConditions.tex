@@ -17,7 +17,7 @@
 
 \section{Conductors in the electrostatic field}
 
-Conductors conduct current well because the atoms of good conductors have many loosely bound electrons that can leave the atoms in the presence of an external electric field. In the absence of an external electric field, a piece of metal is shown in Figure \ref{fig:Conductor} on the left. When there is no electric field, the electrons are close to the nucleus. On the right, the same metal piece is placed in an electric field of the battery. Under the influence of the external field, $E_v$, electrons can freely move away from the atoms in the direction opposite to the direction of the external field. This type of current is called conduction current. The point form of Ohm's law states that $E=J/\sigma$, where J is the current density, E is the electric field, and $\sigma$ is the conductivity of the material. Conductors have very high conductivity, and so the electric field inside the conductors is zero.
+Metals contain mobile conduction electrons even without an applied field. Their random motion produces no net current at equilibrium. Figure \ref{fig:Conductor} illustrates the conductor with and without an applied electric field. An applied field produces a drift of electrons opposite to the field and hence a conduction current. For a finite-conductivity material, Ohm's law gives $\vec{E}=\vec{J}/\sigma$. The field vanishes inside the metal in electrostatic equilibrium, when charge redistribution has made $\vec{J}=0$; high but finite conductivity alone does not imply zero field in a current-carrying wire.
 
 In electrostatics, we assume that the charges are not moving, so there is no conduction current. The electric field inside the conductors is zero. As we will see later in this section, the charges on the conductor in electrostatic fields can exist only on its surface, and the vector of the electric field must be perpendicular to the surface of the metal. The tangential electric field is zero. All points on a conductor in electrostatic fields have the same potential, and so the conductor is an equipotential surface.
 
@@ -32,7 +32,7 @@ In electrostatics, we assume that the charges are not moving, so there is no con
 
 \section{Dielectrics in the electrostatic field}
 
-As shown in Figure \ref{fig:Dielectric1}, in dielectrics, in the absence of an electric field, the electrons are close to the nucleus. The difference here is that the electrons are tightly bound to the nucleus, and they cannot escape in the presence of an electric field. When a battery establishes electric field $E_v$ inside the dielectric, the atoms of the dielectric stretch because the nucleus is pulled in the direction of the field, and electrons in the opposite direction and the atom can be represented by a dipole. On the other hand, the free electrons in the wire connected to the dielectric start bunching up on top of the dielectric piece, and the dipole's positive charge is attracted to electrons. The negative dipole's bound charge pushes electrons away from the bottom conductor. Looking from the outside, the current flows, but the electrons are not flowing through the dielectric. This type of current is called a displacement current. If the battery is removed, the free negative and positive charges are trapped on the top and bottom of the dielectric piece. 
+As shown in Figure \ref{fig:Dielectric1}, in dielectrics, in the absence of an electric field, the electrons are close to the nucleus. The difference here is that the electrons are tightly bound to the nucleus, and they cannot escape in the presence of an electric field. When a battery establishes electric field $E_v$ inside the dielectric, the atoms of the dielectric stretch because the nucleus is pulled in the direction of the field, and electrons in the opposite direction and the atom can be represented by a dipole. On the other hand, the free electrons in the wire connected to the dielectric start bunching up on top of the dielectric piece, and the dipole's positive charge is attracted to electrons. The negative dipole's bound charge pushes electrons away from the bottom conductor. Looking from the outside, the current flows, but the electrons are not flowing through the dielectric. The changing electric displacement during charging gives a displacement-current density $\partial\vec{D}/\partial t$ in the dielectric. This current vanishes after DC equilibrium is reached; it does not require free charges to traverse the dielectric. If the capacitor is disconnected and leakage is neglected, free charge remains on its metal electrodes.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -64,7 +64,7 @@ The electrons in the metal on top of the dielectric establish an electric field 
 \label{fig:Dielectric3}
 \end{figure}
 
-The total field in the dielectric is the sum of the electric fields from free charges on top and bottom metal pieces $E_v$, and the electric field from the separated polarization charges of the dielectric $E_p$, as shown in Equation \ref{eq:sumfield}. The induced field $E_v$ is a fraction of the external field, and we can represent it in terms of the external field as $E_p=m E_v$, where $m$ is some constant. We can then express the total field as a fraction of the external field in Equation \ref{eq:sumfield1}.
+The total field in the dielectric is the sum of the electric fields from free charges on top and bottom metal pieces $E_v$, and the electric field from the separated polarization charges of the dielectric $E_p$, as shown in Equation \ref{eq:sumfield}. The induced field $E_p$ is a fraction of the external field, and we can represent it in terms of the external field as $E_p=m E_v$, where $m$ is some constant. We can then express the total field as a fraction of the external field in Equation \ref{eq:sumfield1}.
 
  
 
@@ -74,11 +74,13 @@ E_{total}=E_v-m E_v \\
 E_{total}=E_v (1-m) \label{eq:sumfield1}
 \end{eqnarray}
 
-Relative dielectric permittivity of the material $\epsilon$ is defined as $1-m=\frac{1}{\epsilon_r}$. Therefore the total field inside the dielectric is lower than if no dielectric is present.
+For a homogeneous linear dielectric filling a parallel-plate capacitor, with fixed free charge on the plates and negligible fringing, the relative permittivity $\epsilon_r$ gives $1-m=1/\epsilon_r$. Here $E_v$ denotes the vacuum field produced by the same free charge, and $E_p$ is the magnitude of the opposing polarization field. Under these assumptions,
 
 \begin{equation}
 E_{total}=\frac{E_v}{\epsilon_r}
 \end{equation}
+
+If a battery instead maintains a fixed voltage $V$, the field remains approximately $V/d$ and the free charge on the plates increases when the dielectric is inserted.
 
 
 Dielectric permittivity of a material is defined as the relative permittivity multiplied by the permittivity of free space $\epsilon_0=8.85 \,\,10^{-12}\unit{F/m}$.
@@ -87,11 +89,11 @@ Dielectric permittivity of a material is defined as the relative permittivity mu
 
 \section{Relative dielectric constant}
 
-Relative dielectric constant is in general a complex number $\epsilon_r=\epsilon_r{'}+j \epsilon_r{''}$. 
+For sinusoidal fields with the book's $e^{j\omega t}$ convention, a passive lossy dielectric is described by the frequency-dependent relative permittivity $\epsilon_r(\omega)=\epsilon_r'(\omega)-j\epsilon_r''(\omega)$, with $\epsilon_r''\geq0$. The electrostatic discussion corresponds to an appropriate static limit.
 
 $\epsilon_r{'}$ in data sheets is called a dielectric constant, or design dielectric constant, and it varies from 1 in the air to 13 in GaAs. An outlier is a dielectric constant of distilled water, $\epsilon_r{'}=80$.
 
-We can sketch the complex relative dielectric constant on a complex plane. The angle between the magnitude of the dielectric constant and the x-axis is called $\tan \delta$, and it is used to describe the losses in the dielectric material. In datasheets for PC boards, you can see that $\tan \delta$ is from about 0.001 for microwave substrates, such as Rogers Duroid, to 0.02 for low-frequency FR4 substrates.
+The loss angle $\delta$ is the magnitude of the angle below the positive real axis for $\epsilon_r'>0$. The loss tangent is $\tan\delta=\epsilon_r''/\epsilon_r'$, rather than the angle itself. Material values and loss tangent must be specified at the operating frequency.
 
 \section{Boundary conditions at a dielectric-dielectric boundary}
 
@@ -99,12 +101,12 @@ We can sketch the complex relative dielectric constant on a complex plane. The a
 
 In many electrical structures, more than one dielectric is used so that the electric field exists in different dielectrics. In such cases, we are interested in how will the electric field change from one dielectric to the other. Figure \ref{fig:BoundaryCondition} shows the boundary between the two dielectrics with permittivities $\epsilon_1$ and $\epsilon_2$, and the electric fields $E_1$ in material 1 and $E_2$ in material 2. At the boundary between two materials, we may have surface charge density $\rho_s$.
 
-At the boundary between any two dielectrics, the tangential components of the electric field $E_{1t}, \, E_{2t}$ are continuous, and the normal components $E_{1n}, \, E_{2n}$ are discontinuous and equal to the surface charge density.  
+At an electrostatic dielectric boundary, the tangential electric field is continuous. Choose the unit normal $\hat{n}$ from medium 1 into medium 2. The jump in the normal component of $\vec{D}$ equals the free surface charge density: $D_{2n}-D_{1n}=\rho_s$. For linear isotropic media,
 
 
 \begin{eqnarray}
 E_{1t}=E_{2t} \\
-\epsilon_1 E_{1z}-\epsilon_2 E_{2z}=\rho_s 
+\epsilon_2 E_{2n}-\epsilon_1 E_{1n}=\rho_s
 \end{eqnarray} 
 
 If the free surface charge density at the boundary is zero, then the normal components of the electric field at the boundary are
@@ -112,7 +114,7 @@ If the free surface charge density at the boundary is zero, then the normal comp
 
 \begin{eqnarray}
 E_{1t}=E_{2t} \\
-\epsilon_1 E_{1z}=\epsilon_2 E_{2z}
+\epsilon_1 E_{1n}=\epsilon_2 E_{2n}
 \end{eqnarray} 
 
 
@@ -122,7 +124,7 @@ We can also write electric flux density vectors at the boundary. Since
 
 \begin{eqnarray}
 \epsilon_2 D_{1t}=\epsilon_1 D_{2t}  \\
-D_{1z}=D_{2z}
+D_{1n}=D_{2n}
 \end{eqnarray} 
 
 \begin{figure}[htbp]
@@ -153,11 +155,11 @@ D_{1z}=D_{2z}
 
 
    \begin{question}
- The four equations below show the tangential and normal electric field at the boundary of two dielectrics. Dielectric 1 is a Teflon with a relative dielectric constant of 2.2, and dielectric 2 is Silicon with a relative dielectric constant of 11.2. Which set of equations represents a possible electric field? 
+ The four equations below show the tangential and normal electric field at the boundary of two dielectrics. Dielectric 1 is a Teflon with a relative dielectric constant of 2.2, and dielectric 2 is Silicon with a relative dielectric constant of 11.2. Assume zero free surface charge, $\rho_s=0$, and take $z$ as the common normal coordinate. Which pair of relations must hold?
    \begin{multipleChoice}
      \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $E_{1z}=  E_{2z}$}
      \choice[correct]{$E_{1t}=E_{2t}$ and $2.2 \,E_{1z}= 11.2 \,E_{2z}$ }
-     \choice{$2.2 \,E_{1t}= 11.2 \,E_{2t}$ and $ E_{1z}= E_{2z}$}
+     \choice{$E_{1t}=-E_{2t}$ and $2.2\,E_{1z}=11.2\,E_{2z}$}
      \choice{$E_{1t}=E_{2t}$ and $11.2 \, E_{1z}= 2.2 \, E_{2z}$}
    \end{multipleChoice}
    \end{question}
@@ -172,7 +174,7 @@ E=\frac{J}{\sigma}
 \end{equation}
 
 
-When $\sigma \rightarrow \infty$, from the above equation, we see that the electric field is zero. This means that at the boundary of the dielectric and metal, the tangential field in the dielectric must be zero as well, and the only field at the boundary of a metal is the normal electric field $D_n$, and it is equal to the induced charge at the surface of the conductor.
+When $\sigma \rightarrow \infty$, from the above equation, we see that the electric field is zero. This means that at the boundary of the dielectric and metal, the tangential field in the dielectric must be zero as well, and the electric field just outside the metal is normal to its surface. The outward normal electric displacement $D_n$ equals the free surface charge density.
 
 \begin{equation}
 D_n = \rho_s
@@ -200,7 +202,7 @@ Figure \ref{fig:BoundaryConditionMetal} shows the field at the boundary of the m
 
 
 
-The electric field is zero inside the closed metallic conductor, even if the conductor is hollow, as shown in Figure \ref{fig:HollowConductor}, and no charge is induced inside a metallic shield. This is Faraday's cage.
+In electrostatic equilibrium, the field inside the metal is zero. A completely enclosed cavity containing no charge also has zero field and no induced inner-surface charge, as illustrated in Figure \ref{fig:HollowConductor}. A charge inside the cavity instead induces charge on its inner surface and generally produces a nonzero cavity field.
 
 
 \begin{figure}[htbp]
@@ -223,7 +225,7 @@ The electric field is zero inside the closed metallic conductor, even if the con
 
 \section{Grounding}
 
-In Figure \ref{fig:HollowConductor1}, we introduce a charge inside a hollow conductor, and the electric field forms inside the conductor. The charge in the metallic shell will redistribute so that the field is zero inside the metal. The charge on the surface of the conductor will be uniformly distributed, regardless of the position of the charge inside the hollow part.
+In Figure \ref{fig:HollowConductor1}, a charge in the cavity produces a field there, while charges on the metallic shell redistribute to keep the field zero in the metal. The inner-surface charge is generally nonuniform and depends on the charge position. The outer-surface charge is uniform only for a spherical outer surface with no external fields; an arbitrary conductor shape does not have uniform surface charge.
 
 
 \begin{figure}[htbp]
@@ -234,7 +236,7 @@ In Figure \ref{fig:HollowConductor1}, we introduce a charge inside a hollow cond
 \label{fig:HollowConductor1}
 \end{figure}
 
-Figure \ref{fig:HollowConductor2} shows a grounded hollow conductor with a charge inside it. In this case, the positive charge on the outside of the conductor will attract negative charges from the ground that neutralize the positive charge inside the shell, so there will be no field outside the shell.
+Figure \ref{fig:HollowConductor2} shows a grounded hollow conductor containing a charge. Grounding allows charge to flow between the conductor and earth. With no external sources, it removes the exterior field while the inner surface still carries the charge needed to shield the metal. It does not neutralize the isolated charge in the cavity.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -245,7 +247,7 @@ Figure \ref{fig:HollowConductor2} shows a grounded hollow conductor with a charg
 \end{figure}
 
 
- Watch a demonstration of Faraday's Cage by Prof Emeritus of MIT Walter Lewin. He will enter the Faraday's Cage with a tinsel, a transmitter (his wireless microphone that likely works at a frequency of a few GHz), and a receiver (a radio that works at a couple of hundred Megahertz frequency). The Faraday's cage is likely not grounded. He cannot receive the radio signal as the outside radio waves cannot enter the Faraday's cage, but the waves his microphone transmitter generates inside the cage still reach the receiver that is placed somewhere in the classroom since the cage is not grounded. 
+Watch the Faraday-cage demonstration by MIT Professor Emeritus Walter Lewin. Differences between reception of a radio and transmission from a wireless microphone cannot be attributed to grounding alone. RF shielding depends on frequency, apertures, electrical continuity, and coupling paths. A passive ordinary conducting cage is not a one-way shield; the operating frequencies and experimental conditions must be established before explaining the different observations.
 
 
 \begin{center}  
@@ -256,7 +258,7 @@ Figure \ref{fig:HollowConductor2} shows a grounded hollow conductor with a charg
 
 We will now use Maxwell's equations to derive the electrostatic boundary conditions. 
 
-First, we will use Gauss's law to find the normal component of the fields at the boundary between two dielectrics, as shown in Figure \ref{fig:BoundaryConditionNormal}. As we can see from the figure, the flux of the electric field exists through both bases and the side of the cylinder. We can find the components of the fields in both dielectrics, one parallel to the boundary x and one perpendicular to the boundary, in the direction of y.
+First, we will use Gauss's law to find the normal component of the fields at the boundary between two dielectrics, as shown in Figure \ref{fig:BoundaryConditionNormal}. As we can see from the figure, the flux of the electric field exists through both bases and the side of the cylinder. We can find the components of the fields in both dielectrics, one parallel to the boundary x and one perpendicular to the boundary, in the direction of y. Choose $+\hat{y}$ from medium 1 into medium 2, so the outward normals of the two pillbox faces are $-\hat{y}$ and $+\hat{y}$, respectively.
 
 \begin{eqnarray}
 \vec{E_1}= \vec{E_{1x}}+\vec{E_{1y}}= E_{1x} \vec{x}+E_{1y} \vec{y} \\
@@ -270,7 +272,7 @@ The tangential components of the fields produce flux through the sides, and norm
 \oint_S \vec{D} \cdot \vec{dS} = Q_{inS} \\
 \int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS}+\int_{S3} \vec{D} \cdot \vec{dS}  =  Q_{inS} \\
 \int_{S1} \vec{D} \cdot \vec{dS}  +\int_{S2} \vec{D} \cdot \vec{dS} +0 = Q_{inS} \\
-\int_{S1} (\epsilon_1 E_{1n}\vec{y}+\epsilon_1 E_{1t}\vec{x}) \cdot dS\vec{y}  +(\epsilon_2 E_{2n}\vec{y}+\epsilon_2 E_{2t}\vec{x}) \cdot dS\vec{y} = Q_{inS}\\
+\int_{S1} (\epsilon_1 E_{1n}\hat{y}+\epsilon_1 E_{1t}\hat{x}) \cdot (-\hat{y})\,dS + \int_{S2}(\epsilon_2 E_{2n}\hat{y}+\epsilon_2 E_{2t}\hat{x})\cdot\hat{y}\,dS = Q_{inS}\\
 -\epsilon_{1} E_{1n} S + \epsilon_2 E_{2n} S = Q_{inS}  \\
 \epsilon_2 E_{2n} -\epsilon_{1} E_{1n}= \frac{Q_{inS}}{S} 
 \end{eqnarray}
@@ -291,7 +293,7 @@ The tangential components of the field can be obtained from the equation for Far
 
 \begin{eqnarray}
 \oint_C \vec{E} \cdot \vec{dl}=0 \\
-\int_{l1} (E_{1x} \vec{x}+E_{1y} \vec{y}) \cdot dy \vec{y} +\int_{l2} (E_{2x} \vec{x}+E_{2y} \vec{y}) \cdot dy \vec{y} =0 \\
+\int_0^l (E_{1x}\hat{x}+E_{1y}\hat{y})\cdot(-\hat{x})\,dx+\int_0^l(E_{2x}\hat{x}+E_{2y}\hat{y})\cdot\hat{x}\,dx =0 \\
 -E_{1x} l + E_{2x} l = 0 \\
 E_{1x}  = E_{2x}
 \end{eqnarray}
@@ -314,7 +316,7 @@ E_{1x}  = E_{2x}
 
 \section{Charge distribution around sharp edges}
 
-Theshape of the conductive material impacts the chargde distribution and charge density, as shown in Figure \ref{fig:sharpEdge}. We can see that the charge distribution and electric field on round objects are uniform. The highest charge density and strongest electric fields are produced on sharp edges of condutive bodies.
+The shape of the conductive material impacts the charge distribution and charge density, as shown in Figure \ref{fig:sharpEdge}. Uniform surface charge and field magnitude require spherical symmetry and no external fields; merely being rounded is not sufficient. The highest charge density and strongest electric fields are produced on sharp edges of conductive bodies.
 
 
 \begin{figure}[htbp]

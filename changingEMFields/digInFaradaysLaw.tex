@@ -8,7 +8,7 @@
  
 \title{Faraday's Law} 
 \author{Milica Markovic} 
-\outcome{Magnetostatic fields.}
+\outcome{Explain electromagnetic induction and apply Faraday's law.}
 \begin{document}  
 \begin{abstract}  
 
@@ -18,7 +18,7 @@
 
 \section{Changing electromagnetic fields}
 
- Static electric fields are independent of static magnetic fields. In dynamic electromagnetic fields changing electric field induces changing electric field and vice versa. 
+ Time-varying electric and magnetic fields are coupled by Maxwell's equations. Maxwell--Faraday's law relates the curl of $\vec{E}$ to $-\partial\vec{B}/\partial t$, while Ampere--Maxwell's law includes $\partial\vec{D}/\partial t$ as well as conduction current. These laws do not require both fields to be time-varying in every situation.
 
 
 
@@ -30,19 +30,21 @@ Faraday's law of electromagnetic induction states that the electromotive force (
 e=-\frac{d\Phi}{dt}
 \end{equation}
 
-The electromotive force can be found by taking a line integral of the induced electric field (by the flux) around the closed loop.
+For a stationary loop, the electromotive force is the closed line integral of the electric field. The contour direction and surface normal are related by the right-hand rule.
 
 \begin{equation}
 e=\oint_C \vec{E}_{ind} \cdot \vec{dl}
 \end{equation}
 
 
-Equating the above two equations, we get Faraday's law of induction.
+Equating the above two equations for a stationary loop, we get Faraday's law of induction.
 
 
 \begin{equation}
 e=\oint_C \vec{E}_{ind} \cdot \vec{dl} =-\frac{d\Phi}{dt}
 \end{equation}
+
+For a moving material loop whose local velocity is $\vec{u}$, the total emf includes the magnetic force per unit charge: $e=\oint_{C(t)}(\vec{E}+\vec{u}\times\vec{B})\cdot d\vec{l}=-d\Phi/dt$, where $\Phi=\int_{S(t)}\vec{B}\cdot d\vec{S}$ is the flux through the moving loop. For a multi-turn coil, use flux linkage in place of single-turn flux.
 
 \begin{example}
 \subsection{Faraday's experiment}

@@ -18,10 +18,10 @@
 
 \section{Magnetic flux, review of electric flux}
 
-A conceptual definition of magnetic flux is the number of magnetic field lines penetrating a surface. 
+Drawn field lines provide a qualitative picture of magnetic flux, but their arbitrary number is not a physical flux measurement. Magnetic flux is measured in webers:
 
 \begin{eqnarray}
-\Phi_B= N_B 
+[\Phi_B]=\mathrm{Wb}
 \end{eqnarray}
 
 Mathematically, magnetic flux is defined through magnetic flux density vector B as
@@ -30,7 +30,7 @@ Mathematically, magnetic flux is defined through magnetic flux density vector B 
 \Phi_B= \int_S \vec{B} \cdot \vec{dS}
 \end{eqnarray}
 
-If the angle between the surface dS and B vector is the same, and the B vector is constant on the surface, we have that $\Phi_B=B S$, or $B=\frac{\Phi_B}{S}$. Vector $\vec{B}$ is called magnetic flux density, just like in electrostatics, vector $D=\frac{\Phi_E}{S}$ was called electric flux density vector.
+For a uniform field over a planar surface, $\Phi_B=BS\cos\theta$, where $\theta$ is the angle between $\vec{B}$ and the chosen surface normal. Only when they are aligned does $\Phi_B=BS$. Thus magnetic flux density is flux per normal area in this special case.
 
 Magnetic flux density vector $\vec{B}$ and magnetic field vector $\vec{H}$ are related through the magnetic permeability of the material $\mu$.
 
@@ -46,30 +46,30 @@ Similarly, in electrostatics, the electric flux density vector $\vec{D}$, and el
 
 \section{Definition of inductance}
  
- A simplified, conceptual definition of inductance is the number of magnetic field lines around a conductor, divided by the current in a wire.
+For a linear magnetic system, self-inductance is the magnetic flux linkage $\lambda$ produced by a circuit's own current, divided by that current.
  
  \begin{eqnarray}
- L=\frac{N_B}{I}
+ L=\frac{\lambda}{I}
  \end{eqnarray}
  
- For example, if we have five magnetic field lines around the wire that carries the current 1A, then the inductance is L=5/1=5\,H. If we have another wire that makes ten magnetic field lines around it for the same current flowing through it of 1A, then the inductance of this wire is L=10\,H. This type of inductance is called self-inductance. We will talk about mutual inductance in the section below.
+Inductance is measured in henries ($1\,\mathrm{H}=1\,\mathrm{Wb}/\mathrm{A}$). Counting a chosen number of lines in a drawing cannot determine its value.
 
-The scientific definition of inductance is the ratio of magnetic flux to the current that produced it.
+Flux linkage sums the signed flux through all turns: $\lambda=\sum_{k=1}^{N}\Phi_k$. If each turn links the same flux, $\lambda=N\Phi$. A single-turn circuit has $\lambda=\Phi$. Thus
 
 \begin{eqnarray}
-L=\frac{\Phi}{I} \\
-L=\frac{\int_S \vec{B} \cdot \vec{dS}}{I}
+L=\frac{\lambda}{I}=\frac{\sum_{k=1}^{N}\Phi_k}{I} \\
+L=\frac{\int_S\vec{B}\cdot d\vec{S}}{I}\quad\hbox{(single turn)}
 \end{eqnarray}
 
 \section{Magnetostatic energy}
 
-Inductors store magnetic energy. Capacitors store electric energy. The magnetic energy stored in an inductor is
+Inductors store magnetic energy. Capacitors store electric energy. For constant inductance in a linear, nonhysteretic magnetic system, the stored magnetic energy is
 
 \begin{equation}
 W_m=\frac{1}{2} L I^2
 \end{equation}
 
-The total magnetic energy stored in a volume is
+For a linear, nonhysteretic medium, the total magnetic energy stored in a volume is
 
 \begin{equation}
 W_m=\frac{1}{2}\int_v \vec{B} \cdot \vec{H} \, dv 
@@ -83,7 +83,7 @@ By equating the above two equations, we can find the inductance of an inductor a
 L=\frac{1}{I^2} \int_v \vec{B} \cdot \vec{H} \,dv 
 \end{equation}
 
-In linear, homegenous materials $\vec{B} = \mu \vec{H}$, the equation simplifies to
+In linear, homogeneous materials $\vec{B} = \mu \vec{H}$, the equation simplifies to
 
 \begin{equation}
 L=\frac{\mu}{I^2} \int_v H^2 dv 
@@ -101,7 +101,7 @@ V is the potential difference, v is the volume where electric energy is stored, 
 \begin{example}
 \section{Deriving inductance for a coaxial cable}
 
-Derive the inductance of a length h of a coaxial cable carrying current I. The inner radius of the coaxial cable is a, and the outer radius is b. 
+Derive the external inductance of a length h of a coaxial cable carrying current I. The inner radius of the coaxial cable is a, and the outer radius is b.
 
 \begin{solution}
 In the previous section, we derived the magnetic field around an infinite straight line carrying current $H(r)=\frac{I}{2 \pi r}$. The magnetic field between a coaxial cable's inner and outer conductor is the same as an infinite straight line's magnetic field.
@@ -121,10 +121,10 @@ L=\frac{\mu}{I^2} \int_0^h dz \int_0^{2 \pi} d\theta \int_a^b (\frac{I}{2 \pi r}
 \end{equation}
 
 
-The final expression for the inductance of a coaxial cable is 
+The result is the external inductance, from energy between the conductors. It approximates total inductance when internal conductor fields are negligible (ideal conductors or the high-frequency limit). At DC, conductor internal inductance may also contribute:
 
 \begin{equation}
-L=\frac{\mu h}{2 \pi} ln\frac{b}{a}
+L_{\mathrm{ext}}=\frac{\mu h}{2 \pi} \ln\frac{b}{a}
 \end{equation}
 
 \end{solution}
@@ -137,9 +137,9 @@ L=\frac{\mu h}{2 \pi} ln\frac{b}{a}
 \section{Types of inductance}
 
 \begin{enumerate}
-\item Internal self-inductance. The definition is the number of magnetic field lines inside a wire, divided by the current that flows through the same wire.
-\item External self-inductance. The definition is the number of magnetic field lines outside of a wire, divided by the current that flows through the same wire.
-\item Mutual inductance. The definition of this inductance is the number of magnetic field lines around one wire produced by the current flowing through another wire.
+\item Internal self-inductance. This is the self-inductance contribution associated with magnetic energy inside the conductors.
+\item External self-inductance. This is the self-inductance contribution associated with magnetic energy outside the conductors.
+\item Mutual inductance. This relates flux linkage in one circuit due solely to current in another circuit.
 \item Partial inductance. This inductance is defined for a portion of a current or a wire because we do not know (or we are not interested in) how the current returns back to the source.
 \end{enumerate}
 
@@ -151,21 +151,23 @@ L=\frac{\mu h}{2 \pi} ln\frac{b}{a}
 \subsection{Self Inductance}
 
 
-A simple conceptual definition of self-inductance is the number of magnetic field lines around the wire, divided by the current in the same wire (that produced the magnetic field around the wire).
+Self-inductance relates a circuit's self-produced flux linkage $\lambda_s$ to its own current $I_s$.
  
  \begin{eqnarray}
- L_s=\frac{N_s}{I_s}
+ L_s=\frac{\lambda_s}{I_s}
  \end{eqnarray}
  
- For example, if we have five magnetic field lines around the wire that carries the current 1A, then the inductance is L=5/1=5\,H. If we have another wire that makes ten magnetic field lines around it for the same current flowing through it of 1A, then the inductance of this wire is L=10\,H. This type of inductance is called (external) self-inductance. 
+Inductance is measured in henries ($1\,\mathrm{H}=1\,\mathrm{Wb}/\mathrm{A}$). Counting a chosen number of lines in a drawing cannot determine its value.
 
 \subsection{Mutual Inductance}
 
-Mutual inductance is defined for two or more wires. It is defined as the number of magnetic field lines around one conductor, divided by the current produced through another conductor.
+Mutual inductance relates flux linkage in one circuit to current in another. Let $\lambda_{21}$ be the linkage in circuit 2 due only to current $I_1$ in circuit 1. For fixed reference directions in a linear system,
  
  \begin{eqnarray}
- L_m=\frac{N}{I_2}
+ M_{21}=\frac{\lambda_{21}}{I_1}
  \end{eqnarray}
+
+The total linkage in circuit 2 is $\lambda_2=L_2 I_2+M_{21}I_1$; its self term is excluded when defining mutual inductance. Reversing a current changes its flux contribution, not the geometry-dependent magnitude of $M_{21}$. The sign of mutual inductance depends on the chosen winding and terminal reference directions.
  
  For example, in Figure \ref{MutualInduc2}, we have two currents, $I_1=1\,A$ and $I_2=1\,A$ flowing in the same direction. Their magnetic fields, therefore, rotate in the same direction. Current $I_1$ produces four magnetic field lines, and current $I_2$ produces three magnetic field lines. Two of the magnetic field lines from conductor 1 encircle wire 2 as well. The total number of magnetic field lines around the second conductor is therefore 5. Two magnetic field lines from conductor 1, and three from conductor 2 itself is 2+3=5. Therefore mutual inductance is $L_m=5/1=5\,H.$ When the magnetic field from two wires is in the same direction, the fluxes add.
 

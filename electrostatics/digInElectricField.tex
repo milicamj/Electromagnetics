@@ -25,11 +25,11 @@ We talked about the Electric Force in the previous section. To find the force on
 By introducing the concept of the field, we can separate the cause of the field and the effect that the field has on other charges. We can find a field due to a charge or charge distribution, and once we know this field, we don't have to keep track of the source charge. We can just find the field's effect on other charges or charge distributions.
 
 
- In the Equation \ref{forceField1} $q_1$ and $q_2$ are charges, r is the distance between the two charges, and $\hat{r}$ is the unit vector directed  from charge one to charge two. The electric field of a source charge $q_1$ is defined as the force that a charge $q_1$ would impress on a positive charge $q_2$, divided by the amount of charge $q_2$, as shown in Equation \ref{definitionOfField}. One thing to remember is that in the definition of the electric field, we always assume that the charge $q_2$ is positive! This way, we remove the ambiguity of the field direction. The direction of the electric field at a point P from charge $q_1$ is always in the direction of the force that would act on a positive charge $q_2$ placed at that point, as shown in Figure \ref{UnitCh1}.
+ We first assume vacuum, or air approximated by vacuum. In the Equation \ref{forceField1} $q_1$ and $q_2$ are charges, r is the distance between the two charges, and $\hat{r}$ is the unit vector directed  from charge one to charge two. The electric field of a source charge $q_1$ is defined as the force that a charge $q_1$ would impress on a positive charge $q_2$, divided by the amount of charge $q_2$, as shown in Equation \ref{definitionOfField}. One thing to remember is that in the definition of the electric field, we always assume that the charge $q_2$ is positive! This way, we remove the ambiguity of the field direction. The direction of the electric field at a point P from charge $q_1$ is always in the direction of the force that would act on a positive charge $q_2$ placed at that point, as shown in Figure \ref{UnitCh1}.
 
 
 \begin{eqnarray}
-\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon r^2 } \hat{r} \label{forceField1}\\
+\vec{F_2}=\frac{q_1 q_2}{4 \pi \epsilon_0 r^2 } \hat{r} \label{forceField1}\\
 \vec{E} = \frac{\vec{F_2}}{q_2} \label{definitionOfField} \\
 \vec{E} =  \frac{q_1}{4 \pi \epsilon_0 r^2} \hat{r} \label{electricfield}
 \end{eqnarray} 
@@ -44,11 +44,11 @@ If you carefully look at the Equation \ref{electricfield}, you see that the elec
 \label{UnitCh1}
 \end{figure}
 
-If the electric charge is in a medium other than air, the electric field becomes
+For an unbounded homogeneous, linear, isotropic dielectric, the electric field becomes
 
 
 \begin{eqnarray}
-\vec{E}=\frac{q_1 }{4 \pi \epsilon_0 \epsilon_r r^2} \hat{R_{12}} \\
+\vec{E}=\frac{q_1 }{4 \pi \epsilon_0 \epsilon_r r^2} \hat{r} \\
 \epsilon = \epsilon_0 \epsilon_r
 \end{eqnarray}\label{Coulombslaw3}
 
@@ -58,19 +58,17 @@ We added a unitless quantity, $\epsilon_r$, called the relative dielectric const
 
 
 \begin{problem}
-   Find the electric field at a center of the Cartesian Coordinate system if positive charges $q$ are placed at points (0,1) and (-1,0).
+   Find the electric field at a center of the Cartesian Coordinate system if positive charges $q$ are placed at points (0,1) and (-1,0), with coordinates in meters and vacuum between the charges.
    \begin{prompt}
    \begin{multipleChoice}
      \choice{impossible to say}
-     \choice[correct]{zero}
+     \choice[correct]{$\displaystyle \frac{q}{4\pi\epsilon_0(1\,\mathrm{m})^2}(\hat{x}-\hat{y})$}
      \choice{one}
      \choice{infinity}
    \end{multipleChoice}
    \end{prompt}
    \end{problem}
 
-
- positive charge that is in an electric field  experiences a force that is
 
 
 
@@ -96,7 +94,7 @@ What is the electric field if we have more than one charge?
 
 The total electric field at a point in space from the two charges is equal to the sum of the electric fields from the individual charges at that point.
 
-If we have two charges, the total field due to both charges is equal to the vector sum of the fields due to individual charges, see Figure \ref{superposition}.  The field at
+If we have two charges, the total field due to both charges is equal to the vector sum of the fields due to individual charges, see Figure \ref{superposition}.
 
 
 
@@ -108,11 +106,11 @@ If we have two charges, the total field due to both charges is equal to the vect
 \label{superposition}
 \end{figure}
 
-The fields or charges $q_1$ and $q_2$ are:
+The fields of charges $q_1$ and $q_2$ are:
 
 \begin{eqnarray}
 \vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {r_a}^2} \hat{r_a} \label{field}\\
-\vec{E_2}=\frac{q_1}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
+\vec{E_2}=\frac{q_2}{4 \pi \epsilon_{0} {r_b}^2} \hat{r_b}
 \end{eqnarray}
 
 Where $\hat{r_a}$ and $\hat{r_b}$ are unit vectors in the direction of $r_a$ and $r_b$. The total field due to both charges is
@@ -163,7 +161,7 @@ The position vector of point $P$ is equal to
 \vec{r_p}=x\vec{x} + y \vec{y} +z \vec{z}
 \end{eqnarray}
 
-The two vectors mark the beginning and the end of the distance vector $\vec{r_a}$  between points $P_{q_1}$ and $P$. The vector  $\vec{r_a}$ is the sum of vectors $-\vec{r_p}$ and $\vec{r_1}$
+The two vectors mark the beginning and the end of the distance vector $\vec{r_a}$  between points $P_{q_1}$ and $P$. The vector  $\vec{r_a}$ is the difference $\vec{r_p}-\vec{r_1}$
 
 
 
@@ -208,8 +206,6 @@ Where $r_a$ is the distance between the charge $q_1$ and the point $P$. Substitu
 \vec{E_1}=\frac{q_1}{4 \pi \epsilon_{0} {\sqrt{(x - x_1)^2 +(y - y_1)^2 +(z - z_1)^2}
 }^3} \vec{r_a} \label{eqonecharge}
 \end{eqnarray}
-
-Substituting 
 
 
 For two charges, as shown in Figure \ref{twocharges} equation \ref{eqonecharge} becomes

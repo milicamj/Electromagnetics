@@ -8,7 +8,7 @@
  
 \title{Biot-Savart's Law} 
 \author{Milica Markovic} 
-\outcome{Use Bio-Savart's Law to calculate magnetic field due to a current distribution.}
+\outcome{Use Biot-Savart's Law to calculate magnetic field due to a current distribution.}
 \begin{document}  
 \begin{abstract}  
 
@@ -16,7 +16,7 @@
 \maketitle    
 
 
-\section{Magnetic Field due to a Charge Distribution}
+\section{Magnetic Field due to a Current Distribution}
 
 
 
@@ -27,7 +27,7 @@ We will first find the magnetic field due to a loop carrying current $I$,  posit
 
 
 \begin{eqnarray}
-\vec{dB_l}=\frac{\mu \,I }{4 \pi r^3} (\hat{dl} \times \hat{r})\label{bscur}
+\vec{dB_l}=\frac{\mu I}{4\pi r^2}(d\vec{l}\times\hat{r})\label{bscur}
 \end{eqnarray}
 
 
@@ -59,7 +59,7 @@ Each section is modeled by a point charge $dQ$.}
 
 
 The problem now  is to represent all the variables in the Equation \ref{bscur}  ( $I$, $dl$, $\hat{r}$ and $r$) using  appropriate coordinate system and given current distribution.
- As seen in Figure \ref{fig:magfield}, $\vec{dl}$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta a_{\theta}$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point P where we want the find the magnetic field. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation\ref{eq1loopm}.  The vector $\vec{r}$ is the distance vector between the elemental current (the source) and the point at which we are calculating the electric field. 
+ As seen in Figure \ref{fig:magfield}, $\vec{dl}$ is an arc length in the direction of theta (blue arrow next to $dl$) $dl=a\, d\theta a_{\theta}$, where $ a$ is the radius of the loop. The vector $\vec{r_2}$ is the position vector of the arc length $dl$, and the vector $\vec{r_1}$  is the position vector of the point P where we want the find the magnetic field. Point P is an arbitrary point in the Cartesian coordinate system, P(x,y,z), therefore its vector is shown in Equation\ref{eq1loopm}.  The vector $\vec{r}$ is the distance vector between the elemental current (the source) and the point at which we are calculating the magnetic field.
 
 
 
@@ -167,7 +167,9 @@ The magnetic field above is shown in Figure \ref{mflmat}
 
 \section{Visualizing Scalar Fields in Matlab}
 
-To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lightning. Please note that a more detailed explanation about these functions can be found in Matlab help.
+The magnetic field $\vec{B}$ is a vector field. The following examples illustrate scalar data, such as one component of $\vec{B}$ or its magnitude; their level surfaces are not generally magnetic equipotential surfaces. Use vector plots to show field direction.
+
+To visualize scalar fields in Matlab, we can use the following functions: slice, contourslice, patch, isonormals, camlight, and lighting. Please note that a more detailed explanation about these functions can be found in Matlab help.
 
 \subsection{slice}
  
@@ -210,7 +212,7 @@ Patch command creates a patch of color.
 
 \subsection{isonormals}
 
-Command isonormals creates equipotential surfaces. 
+The \texttt{isosurface} function extracts a constant-value surface from scalar data. The \texttt{isonormals} function computes vertex normals for lighting that surface; it does not create the surface. See the \href{https://www.mathworks.com/help/matlab/ref/isonormals.html}{MATLAB documentation}.
 \subsection{camlight}
 
 \begin{verbatim}

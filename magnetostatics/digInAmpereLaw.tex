@@ -26,7 +26,7 @@ The sources of static magnetic fields are direct currents (DC) and magnets. The 
 
 It is interesting to see that the magnetic field from a current loop looks very much like a magnetic field of a magnet placed in the center of the loop, perpendicularly to it. 
 
-Geographical earth's south pole is earth's magnetic north pole.
+In a dipole approximation, Earth's geographic south is near a magnetic north pole and geographic north is near a magnetic south pole. The magnetic and geographic poles do not coincide.
 
 
 \section{Ampere's Law}
@@ -78,7 +78,7 @@ To apply this equation to an infinite wire, we first have to know how the magnet
 
 The current in the above equation is the current enclosed by the contour c, or in other words, the total current that pokes the surface of the contour. We see that in this case, this is the total current I flowing through the wire.
 
-We pick the direction of the countour in the direction of the magnetic field, as shown in Figure \ref{fig:AmpereOutside}. Since $\vec{dl}=dl \vec{\Theta}$, the dot product $ \vec{H} \cdot \vec{dl} = H dl \cos(\vec{H},\vec{dl})=H dl$, because the  angle between the magnetic field and the contour vector is zero.
+We pick the direction of the contour in the direction of the magnetic field, as shown in Figure \ref{fig:AmpereOutside}. Since $\vec{dl}=dl \vec{\Theta}$, the dot product $ \vec{H} \cdot \vec{dl} = H dl \cos(\vec{H},\vec{dl})=H dl$, because the  angle between the magnetic field and the contour vector is zero.
 
 Ampere's law then becomes:
 
@@ -162,18 +162,18 @@ We see that when $r<a$, the magnetic field increases linearly from zero at the a
 \begin{example}
 The magnetic field of a solenoid
 
-Find the magnetic field of a solenoid with N turns of uniformly, densely wound wire around an air core, as shown in Figure\ref{fig:solenoid}. The length of the solenoid is L, and the current flowing through the wire is I.  
+Assume a long solenoid, with end effects and the exterior field neglected. Find the interior magnetic field of this ideal solenoid with N turns of uniformly, densely wound wire around an air core, as shown in Figure\ref{fig:solenoid}. The length of the solenoid is L, and the current flowing through the wire is I.
 
 \begin{explanation}
 
-To find the magnetic field inside the solenoid, we apply Ampere's law to a contour shown in Figure \ref{fig:solenoid}. Using a similar discussion as before, we find that the line integral of the magnetic field along the square loop l is 
+To find the magnetic field inside the solenoid, we apply Ampere's law to a contour shown in Figure \ref{fig:solenoid}. Using a similar discussion as before, we find that the line integral of the magnetic field along the rectangular contour reduces to the interior axial segment of length $l$:
 
 \begin{eqnarray}
 H l = N' I
 \end{eqnarray}
 
 Where N' represents the number of windings enclosed by the contour. Since the solenoid is uniformly wound, 
-$N'/l=N/L$, $N'=N l/L$. l is the length of the contour, L is the solenoid's length, and N is the total number of windings.
+$N'/l=N/L$, $N'=N l/L$. l is the length of the interior axial segment of the contour, L is the solenoid's length, and N is the total number of windings.
 
 
 \begin{eqnarray}
@@ -202,9 +202,9 @@ Find the magnetic field inside and outside of a toroid with inner radius a and o
 
 \begin{explanation}
  
-If we chose a contour outside of the toroid, we see that N windings of current penetrate the contour's surface twice. Once down into the surface, and the other time going up out of the surface. Therefore, the right side of Ampere's law has 2N currents that cancel each other, and the magnetic field is zero.
+For an ideal toroid with continuous, uniform winding and no external sources, toroidal symmetry confines the field to the core region. A circular contour outside the toroid encloses equal and opposite winding currents, so its net enclosed current is zero. Combined with this symmetry, Ampere's law gives zero exterior field. Zero circulation alone would not prove that the field vanishes; real toroids can have leakage fields.
 
-If we choose a contour inside the toroid's hollow part, there is no current enclosed by the contour. Therefore, the current and the magnetic field are zero.
+In the central hole, a circular contour encloses no current. Under the same ideal toroidal symmetry assumptions, the magnetic field there is zero.
 
 If we choose a contour inside the toroid, we see that the current penetrates the surface N times. Therefore, Ampere's law states:
 

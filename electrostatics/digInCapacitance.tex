@@ -8,7 +8,7 @@
  
 \title{Capacitance} 
 \author{Milica Markovic} 
-\outcome{Define capacitance. Derive capacitance of simple symetrical structures.}
+\outcome{Define capacitance. Derive capacitance of simple symmetrical structures.}
 \begin{document}  
 \begin{abstract}  
 
@@ -23,7 +23,7 @@ Capacitance is a constant that relates the amount of charge on a conductor with 
 C=\frac{Q}{V}
 \end{equation}
 
-From Gauss's law, we found that the electric field is proportional to the charge enclosed $Q \sim E$. The capacitance therefore represents the strenght of the electric field around a conductor for a fixed voltage between the conductors. If we for example have two sets of conductors, for the same voltage between them the electric field will be stronger around the conductor set with higher capacitance, and this conductor set will have higher ability to store charge. It will store more charge for the same voltage difference than the other conductor set.
+A higher capacitance means that more charge is stored for a given potential difference: $Q=CV$. It does not in general mean a stronger electric field. For parallel plates at fixed voltage and spacing, $E\approx V/d$ remains unchanged when the plate area or dielectric permittivity increases, even though $C\approx\epsilon S/d$ increases.
 
 Capacitance relates the current with the change in voltage. The current is defined as the change of charge in time  $i=\frac{dq}{dt}$. Since charge is from the above equation equal to the product of capacitance and voltage, Q=CV, then the current is proportional to the change in voltage. If the voltage changes twice as fast, the current doubles. The voltage V is the potential  difference between the positive and negative plate of the capacitor. 
 
@@ -44,7 +44,7 @@ Capacitance can be computed:
 
 \section{Capacitors}
 
-Capacitors are components that provide capacitance in electronic circuits. They are used in filters, PCB power-distribution networks, matching circuits, delay lines etc. Typical capacitors are shown in Figure \ref{fig:capacitors}. Earth is a conductor, so any conductor either on it's own or in pair with another conductor can be modeled as a capacitor. For a single conductor, for example a metallic conductor in air, the other "conductor" is earth, or another nearby metallic object. Transmission lines have two conductors, a "signal" and "ground" conductor, so they have capacitance per unit lenght, and we can model them with a distributed capacitors. In this section, using Maxwell's equations, we will derive equations for capacitance for typical capacitors and transmission lines.
+Capacitors are components that provide capacitance in electronic circuits. They are used in filters, PCB power-distribution networks, matching circuits, delay lines etc. Typical capacitors are shown in Figure \ref{fig:capacitors}. Earth is a conductor, so any conductor either on its own or in pair with another conductor can be modeled as a capacitor. For a single conductor, for example a metallic conductor in air, the other "conductor" is earth, or another nearby metallic object. Transmission lines have two conductors, a "signal" and "ground" conductor, so they have capacitance per unit length, and we can model them with a distributed capacitors. In this section, using Maxwell's equations, we will derive equations for capacitance for typical capacitors and transmission lines.
 
 
 \begin{figure}[htbp]
@@ -58,7 +58,7 @@ Capacitors are components that provide capacitance in electronic circuits. They 
 \section{Analysis of a Parallel-Plate Capacitor with a homogeneous dielectric}
 
 
-A parallel plate capacitor consists of two conductive plates, as shown in Figure \ref{fig:ParallePlateCapacitorPlain}. The surface area of the plates is S and the charge on each plate is Q. The plates are separated by a distance d ($d<<S$). Homogeneous dielectric with dielectric constant of $\epsilon_r$ fills the space between electrodes.
+A parallel plate capacitor consists of two conductive plates, as shown in Figure \ref{fig:ParallePlateCapacitorPlain}. The surface area of the plates is S and the charges on the plates are $+Q$ and $-Q$. The plates are separated by a distance d (with $d$ much smaller than either lateral plate dimension; for roughly square plates, $d\ll\sqrt{S}$). Homogeneous dielectric with dielectric constant of $\epsilon_r$ fills the space between electrodes.
 
 
 
@@ -80,7 +80,7 @@ The electric field in an actual parallel-plate capacitor is shown in Figure
 \label{fig:FiringinFields}
 \end{figure}
 
-The condition that d<<S allows us to ignore fringing fields at the edge of the capacitor, and to assume that the field is equal to the field of two infinite parallel plates of charge. This means that the field is constant in between the plates, oriented from positive to negative plate and zero outside of the plates, as shown in Figure \ref{fig:ParallePlateCapacitorCircuit}.  
+The condition that $d$ is much smaller than either lateral plate dimension allows us to ignore fringing fields at the edge of the capacitor, and to assume that the field is equal to the field of two infinite parallel plates of charge. This means that the field is constant in between the plates, oriented from positive to negative plate and zero outside of the plates, as shown in Figure \ref{fig:ParallePlateCapacitorCircuit}.
 
 
 \begin{figure}[htbp]
@@ -92,7 +92,7 @@ The condition that d<<S allows us to ignore fringing fields at the edge of the c
 \end{figure}
 
 
-To find the electric field inside the capacitor, we apply Gauss's law to a cylinder whose bottom half is in the dielectric, with the bottom base at the point where we want to find the field, and the top half is in the air above one of the charged plates as shown in Figure \ref{fig:ParallePlateCapacitorGauss}. We see that the flux through the capacitor exists only through the bottom base. The flux through the top base is zero because the field outside the capacitor is zero, and the flux through the side of the cylinder is zero because the electric field does not not go through that surface (in other words the angle between the field and the normal to the surface is $90^o$, and therefore the dot product is zero.) Mathematically, we start from the Gauss's law, assuming that the dielectric permeability is $\epsilon=\epsilon_o \epsilon_r$, where $\epsilon_r$ is the dielectric constant of the material between capacitor's plates.
+To find the electric field inside the capacitor, we apply Gauss's law to a cylinder whose bottom half is in the dielectric, with the bottom base at the point where we want to find the field, and the top half is in the air above one of the charged plates as shown in Figure \ref{fig:ParallePlateCapacitorGauss}. We see that the flux through the capacitor exists only through the bottom base. The flux through the top base is zero because the field outside the capacitor is zero, and the flux through the side of the cylinder is zero because the electric field does not go through that surface (in other words the angle between the field and the normal to the surface is $90^o$, and therefore the dot product is zero.) Mathematically, we start from the Gauss's law, assuming that the dielectric permittivity is $\epsilon=\epsilon_o \epsilon_r$, where $\epsilon_r$ is the dielectric constant of the material between capacitor's plates.
 
 \begin{equation}
 \oint_S \vec{E} \cdot \vec{dS} = \frac{Q_{inS}}{\epsilon}
@@ -121,7 +121,7 @@ E \, S = \frac{Q_{inS}}{\epsilon} \\
  E=\frac{Q_{inS}}{ \epsilon S}
 \end{eqnarray}
 
-In the above equation, the ration $\frac{Q_{inS}}{S}$ is just the surface charge density $\sigma$. The final electric field expression for the infinite sheet of charge should include the unit vector of the direction of the field. We will assume that the z-axis is in the up direction from the bottom to the top plate. The field is then
+In the above equation, the ratio $\frac{Q_{inS}}{S}$ is just the surface charge density $\sigma$. The final electric field expression for the infinite sheet of charge should include the unit vector of the direction of the field. We will assume that the z-axis is in the up direction from the bottom to the top plate. The field is then
 
 \begin{eqnarray}
  \vec{E}  = \frac{\sigma}{ \epsilon } (-\vec{z})
@@ -139,7 +139,7 @@ In the above equation, the ration $\frac{Q_{inS}}{S}$ is just the surface charge
 \end{figure}
 
 
-Now that we found the electric field of the paralle plate capacitor, we need to find the potential difference between the two plates, from positive to negative plate. The positive plate in this case is the top plate, so we integrate from d to 0. The potential is defined as 
+Now that we found the electric field of the parallel plate capacitor, we need to find the potential difference between the two plates, from positive to negative plate. The positive plate in this case is the top plate, so we integrate from d to 0. The potential is defined as
 
 \begin{equation}
 V_{ab}= \int_d^0 \vec{E} \cdot \vec{dl}
@@ -190,7 +190,6 @@ The area of the plates of a parallel-plate capacitor is doubled, the capacitance
 \choice[correct]{doubled} 
 \end{multipleChoice}  
 \end{question} 
-If the area of the plates of a parallel-plate capacitor is doubled, the capacitance is 
 
 
 \section{Coaxial-Cable Capacitance}
@@ -276,7 +275,7 @@ The potential difference between the inner and outer shell is
 
 
 \begin{eqnarray}
-V=\int_a^b  \vec{E} \cdot  \hat{dr} \\
+V=\int_a^b  \vec{E} \cdot  d\vec{r} \\
 V=\int_a^b \frac{Q}{4 \pi \epsilon r^2} \hat{r} \,\, dr \hat{r} \\
 V=-\frac{Q}{4 \pi \epsilon} \frac{1}{r}|_a^b \\
 V=\frac{Q}{4 \pi \epsilon} \frac{b-a}{ab}
