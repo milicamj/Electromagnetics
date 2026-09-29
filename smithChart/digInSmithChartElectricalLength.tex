@@ -29,31 +29,27 @@ We can express the physical length of the line in meters. However, in high-frequ
 \end{eqnarray}
  
 
-Typically, but not always, $N$ is a fraction, for example,  $N=\frac{1}{2}=0.5$, $N=\frac{1}{4}=0.25$ or $N=\frac{1}{8}=0.125$; although it can be any  The lenght of the line is then written as
+Typically, but not always, $N$ is a fraction, for example,  $N=\frac{1}{2}=0.5$, $N=\frac{1}{4}=0.25$ or $N=\frac{1}{8}=0.125$; although it can be any nonnegative real number. The length of the line is then written as
 
 
 \begin{eqnarray}
  l=\frac{\lambda}{2}  \\
- l\frac{\lambda}{4}  \\
+ l=\frac{\lambda}{4}  \\
   l=\frac{\lambda}{8}  
 \end{eqnarray}
  
 
 
-If the physical length of the line is $l=\frac{\lambda}{4}$, we say: “This line is quarter-wavelength long at 1GHz”, meaning one-quarter of the wavelength fits on the line. We could also say that the line is 7.5cm long, as wavelength is $\lambda=30 \unit{cm}$ at $1$GHz.
+If the physical length of the line is $l=\frac{\lambda}{4}$ at $1\,\mathrm{GHz}$, we say that the line is a quarter-wavelength long at that frequency. For a line with phase velocity $v_p\approx c$, as in an ideal air-filled TEM line, $\lambda=v_p/f\approx 30\,\mathrm{cm}$ at $1\,\mathrm{GHz}$, so the line is approximately $7.5\,\mathrm{cm}$ long. For a different phase velocity, the same electrical length corresponds to a different physical length.
 
 
 When we say quarter-wavelength long, we refer to the line’s physical length at a specific frequency. 
 
 \section{Electrical length of the line in degrees}
 
-The phase shift between input and output signal on a transmission line is  
-$\Theta=\beta*l$.
-$beta$ is called the phase constant. It represents the spatial frequency of the signal.
-$\Theta=\beta*L$ is the phase in degrees or radians (related is a time delay in seconds).
-$\Theta$  can be, for example $\Theta = 45^0$, $\Theta = 90^0$, $\Theta = 180^0$. $\Theta$ is a function of frequency, because $\beta$ is a function of frequency.
- If $\Theta = 90^0$, we say: “The line is 90 degrees long at 1GHz”, meaning the output signal at 1GHz will be shifted for $90^0$ with respect to the input signal. 
-When we say $90^0$, we refer to the line’s electrical length, representing the number of degrees that the line introduces between the input and the output signal.
+The electrical length is $\Theta=\beta l$, where $\beta$ is the phase constant (the spatial angular frequency) in radians per meter and $l$ is the physical line length. Thus $\Theta$ is in radians; multiply by $180^\circ/\pi$ to express it in degrees. For a forward traveling wave with the $e^{j\omega t}$ convention, propagation from the input to the load introduces the phase shift $-\beta l$. Reflections can change the phase difference between the total terminal voltages, so that difference is not generally equal to $-\beta l$.
+
+For example, $\Theta$ may be $45^\circ$, $90^\circ$, or $180^\circ$. It depends on frequency through $\beta$. A line that is $90^\circ$ long at $1\,\mathrm{GHz}$ introduces a $90^\circ$ phase lag in its forward traveling wave at that frequency.
 
 
 \begin{example}
@@ -71,7 +67,7 @@ The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \la
 \begin{example}
 What is the electrical length of a 15\,cm line in terms of the fraction of wavelength at 1\,GHz? What is the electrical length of the line at 1GHz?
 \begin{explanation}
-Wavelenght at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 15\,cm long, the length of the line in terms of wavelenth is $\frac{l}{\lambda}=\frac{1}{2}$, or $l=\frac{\lambda}{2}$.
+Wavelength at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 15\,cm long, the length of the line in terms of wavelength is $\frac{l}{\lambda}=\frac{1}{2}$, or $l=\frac{\lambda}{2}$.
 
 The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \frac{\lambda}{2} =  \pi = 180^0$.
 
@@ -84,7 +80,7 @@ The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \fr
 \begin{example}
 What is the electrical length of a 7.5\,cm line in terms of the fraction of wavelength at 1\,GHz? What is the electrical length of the line at 1GHz?
 \begin{explanation}
-Wavelength at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 7.5\,cm long, the line's length in terms of wavelenth is $l=\frac{\lambda}{4}$.
+Wavelength at 1\,GHz, assuming the wave is propagating in air is $\lambda=\frac{c}{f}=30$\,cm. Since the line is 7.5\,cm long, the line's length in terms of wavelength is $l=\frac{\lambda}{4}$.
 
 The electrical length of the line is $\theta=\beta l = \frac{2 \pi}{\lambda} \frac{\lambda}{4} =  \pi/2 = 90^0$.
 

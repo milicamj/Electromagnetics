@@ -27,13 +27,13 @@ If the load reflection coefficient is $\Gamma_L=\frac{V_0^-}{V_0^+}=|\Gamma_L| e
 the input reflection coefficient $\Gamma_{in}$ is: 
 
 \begin{eqnarray}
-\Gamma_{in}=\frac{V^-}{V^+} \\
+\Gamma_{in}=\frac{V^-(-l)}{V^+(-l)} \\
 \Gamma_{in}= \frac{V_0^- e^{-j\beta l}}{V_0^+ e^{j\beta l}} \\
 \Gamma_{in}= \frac{V_0^-}{V_0^+} e^{-2j \beta l} \\
 \Gamma_{in}= \Gamma_L e^{-j2 \beta l}
 \end{eqnarray}
 
-Where $V^+$ is the reflected wave anywhere on the line, $V^-$ is the forward wave anywhere on the line, $V_0^+$ is the forward wave at the load, $V_0^-$ is the reflected wave at the load, $\beta l$ is the electrical length of the line.
+Here $V^+(z)$ is the forward voltage wave and $V^-(z)$ is the reflected voltage wave. The input is at $z=-l$, so the input reflection coefficient is their ratio evaluated there. The quantities $V_0^+$ and $V_0^-$ are the forward and reflected voltage amplitudes at the load ($z=0$), and $\beta l$ is the electrical length of the lossless line.
 
 \begin{eqnarray}
 \Gamma_{in}=\Gamma_L e^{-j2 \beta l} \\
@@ -133,7 +133,7 @@ The load reflection coefficient  is  $\Gamma_{L}=\frac{Z_L-Z_0}{Z_L+Z_0} =0.45 e
 
 The electrical length of the line is $\beta l =90^0$. 
 
-The input reflection coefficient is $\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) } =0.45 e^{j(-26^0 -180^0 }=0.45 e^{-j206^0} $.
+The input reflection coefficient is $\Gamma_{in} = |\Gamma_L| e^{j(\Theta_{L} -2 \beta l) } =0.45 e^{j(-26^0 -180^0) }=0.45 e^{-j206^0} $.
 
 Normalized input impedance is 
 
@@ -141,11 +141,11 @@ Normalized input impedance is
 z_{in}=\frac{1+\Gamma_{in}}{1-\Gamma_{in}} = 0.4+ j 0.2
 \end{equation}
 
-The input impedance is $Z_L=50 \, (0.4 + j 0.2)= (20 + j 10) \, \Omega$
+The input impedance is $Z_{in}=50 \, (0.4 + j 0.2)= (20 + j 10) \, \Omega$
 
 
 To find the input reflection coefficient and impedance on the Smith Chart, we first normalize the given load impedance 
-$Z_L=2-j$,  then find its position on the Smith Chart and draw the SWR circle. We know that the input reflection coefficient will be on this circle because the magnitude of the input reflection coefficient and the load reflection coefficient has to be the same.
+$z_L=2-j$,  then find its position on the Smith Chart and draw the SWR circle. We know that the input reflection coefficient will be on this circle because the magnitude of the input reflection coefficient and the load reflection coefficient has to be the same.
 
 The reference position of the load on the WAVELENGTHS TOWARD GENERATOR scale is $0.285 \lambda$. Next, we add the length of the line to the reference position $0.285 \lambda + 0.25 \lambda = 0.535 \lambda$. If we look at the scale, we see that it resets at $0.5 \lambda$. To find $0.535 \lambda$, we have to continue in the direction of the arrow for another $0.035 \lambda$. We now found the phase of the input reflection coefficient. To find the input reflection coefficient, we find the line that starts at the center of the Smith Chart and ends on the $0.035 \lambda$, and then find the point where this line crosses the SWR circle. Figure \ref{fig:SCImpRefExample1} shows these steps graphically.
 
