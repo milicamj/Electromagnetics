@@ -40,10 +40,12 @@ To derive expressions for current and voltage on the transmission line, we will 
 \item Write KCL, KVL for the piece in the time domain (we get
 differential equations)
 
-\item Apply phasors (equations become linear)
+\item Apply the phasor transformation for sinusoidal steady
+state, replacing time derivatives with multiplication by
+$j\omega$.
 
-\item Solve the linear system of equations to get the expression for
-the voltage and current on the transmission line as a function of $z$.
+\item Solve the resulting linear ordinary differential
+equations for voltage and current as functions of $z$.
 
 \end{enumerate}
 
@@ -141,7 +143,12 @@ We just derived Telegrapher's equations in time-domain:
 \end{eqnarray}
 
 
-Telegrapher's equations are two differential equations with two unknowns, $i(z, t)$, $v(z, t)$. It is possible to solve them in time domain; however, we would prefer to have linear algebraic equations. We then express time-domain variables as phasors.
+The time-domain telegrapher's equations are two coupled
+linear partial differential equations for $i(z,t)$ and $v(z,t)$.
+For sinusoidal steady-state analysis, we express the voltage
+and current using phasors. This replaces time derivatives
+with multiplication by $j\omega$, leaving ordinary differential
+equations in the position coordinate $z$.
 
 \begin{eqnarray}
 v(z,t)=Re\{ \tilde{V}(z) e^{j \omega t} \} \nonumber \\
