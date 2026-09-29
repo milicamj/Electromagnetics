@@ -158,12 +158,26 @@ Taylor's series for function $\sqrt{1+x}= \sqrt{1\,-\,j\,\left( \frac{R}{\omega 
 The real and imaginary part of the propagation constant  $\gamma$ are:
 
 \begin{eqnarray}
-\alpha=  \frac{   \omega \sqrt{ L\, C}  }{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)  \\
-\beta=     \omega \sqrt{ L\, C}
+\alpha\approx  \frac{   \omega \sqrt{ L\, C}  }{2} \left(  \frac{R}{\omega L}+\frac{G}{\omega C} \right)  \\
+\beta\approx     \omega \sqrt{ L\, C}
 \end{eqnarray}
 
 
-We see that the phase constant $\beta$ is the same as in the lossless case, and the attenuation constant $\alpha$ is frequency independent. All frequencies of a modulated signal are attenuated the same amount, and there is no dispersion on the line. When the phase constant is a linear function of frequency, $\beta=const \, \omega$, then the phase velocity is a constant $v_p=\frac{\omega}{\beta}=\frac{1}{const}$, and the group velocity is also a constant, and equal to the phase velocity. In this case, all frequencies of the modulated signal propagate at the same speed, and there is no distortion of the signal. 
+To first order in the low-loss approximation,
+$\beta\approx\omega\sqrt{LC}$ and
+$\alpha\approx\frac{R}{2}\sqrt{C/L}
++\frac{G}{2}\sqrt{L/C}$.
+If $R$, $L$, $G$, and $C$ are approximately independent of
+frequency over the signal bandwidth, these expressions
+predict approximately constant attenuation and a phase
+constant proportional to frequency.
+
+Under these assumptions, the phase and group velocities
+are approximately equal to $1/\sqrt{LC}$, and a traveling
+signal undergoes approximately uniform attenuation and delay.
+In practical lines, skin effect and dielectric losses can
+make the parameters frequency dependent. Low loss alone
+therefore does not guarantee distortion-free propagation.
 
 
 \end{itemize}
