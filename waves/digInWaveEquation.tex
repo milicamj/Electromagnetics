@@ -208,9 +208,11 @@ I(z)=0 \label{we21}
 
 The above Equations \ref{we11}-\ref{we21} are called wave equations, and they represent
 current and voltage wave on a transmission line. 
- $\gamma^2=(G+j\omega
-C)(R+j\omega L)$ is the complex propagation constant. This constant
-has a real and an imaginary part.
+The complex propagation constant is
+$\gamma=\sqrt{(R+j\omega L)(G+j\omega C)}$,
+so $\gamma^2=(R+j\omega L)(G+j\omega C)$.
+Its real and imaginary parts are the attenuation constant
+and phase constant, respectively.
 
 \begin{eqnarray}
 \gamma= \alpha + j \beta \nonumber
@@ -218,6 +220,13 @@ has a real and an imaginary part.
 
 where $\alpha$ is the attenuation constant and $\beta$ is the phase
 constant.
+
+Here $R$, $L$, $G$, and $C$ are the resistance, inductance,
+conductance, and capacitance per unit length, with units
+$\Omega/\mathrm{m}$, $\mathrm{H}/\mathrm{m}$,
+$\mathrm{S}/\mathrm{m}$, and $\mathrm{F}/\mathrm{m}$,
+respectively. The units of $\alpha$ and $\beta$ are
+$\mathrm{Np}/\mathrm{m}$ and $\mathrm{rad}/\mathrm{m}$.
 
 \begin{eqnarray}
 \alpha=Re\{ \sqrt{(G+j\omega C)  (R+j\omega L)  }  \} \nonumber \\ \nonumber
