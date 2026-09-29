@@ -111,18 +111,26 @@ whereas we do at higher frequencies.
 
 \section{Propagation modes on a transmission line}
 
-Coax, two-wire line, transmission line support TEM waves. Waves on microstrip lines can be approximated as TEM up to the 30-40\, GHz (unshielded), up to 140\,GHz shielded.
+Ideal coaxial and two-wire lines in a homogeneous dielectric
+support TEM propagation. Microstrip generally supports
+quasi-TEM propagation: its longitudinal field components
+are small enough to neglect within an appropriate frequency
+range. The accuracy of this approximation depends on the
+line geometry, materials, and frequency; there is no universal
+upper frequency limit. The approximate limits quoted here
+are 30--40\,GHz for unshielded microstrip and 140\,GHz for
+shielded microstrip; these require a supporting reference
+and the corresponding design assumptions.
 
-
-
-
+For propagation along the $z$ direction:
 \begin{enumerate}
-\item Transversal Electro-Magnetic Field (TEM). Electric (E), and Magnetic (M) fields are entirely transversal to the direction of
-propagation
-\item Transversal Electric field (TE), Transversal Magnetic Field (TM),  M or E field is in the direction of propagation
+\item Transverse electromagnetic (TEM): $E_z=H_z=0$.
+\item Transverse electric (TE): $E_z=0$, with $H_z\ne0$.
+\item Transverse magnetic (TM): $H_z=0$, with $E_z\ne0$.
 \end{enumerate}
 
-Transmission lines we will discuss in this course carry TEM fields.
+The transmission-line model developed here applies to TEM
+propagation and approximately to quasi-TEM propagation.
 
 %\begin{center}  
 %\youtube{0aQpLSu2fMs}  
