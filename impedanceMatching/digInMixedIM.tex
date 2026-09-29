@@ -23,10 +23,10 @@ For example, load impedance $Z_L=25+j 50 \Omega$ represents a series connection 
 
 
 \begin{equation}
-\bar{Z}_L=\frac{Z_L}{Z_0}=0.5+j1
+z_L=\frac{Z_L}{Z_0}=0.5+j1
 \end{equation}
 
-This impedance is shown in Figure \ref{fig:PointSC}. 
+Here $z=Z/Z_0$ and $y=Y/Y_0$, with $Y_0=1/Z_0$, denote normalized impedance and admittance. This impedance is shown in Figure \ref{fig:PointSC}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -38,7 +38,7 @@ This impedance is shown in Figure \ref{fig:PointSC}.
 
 
 \subsection*{SWR circle}
-Then, we identify an SWR circle that this impedance is on, as shown in Figure \ref{fig:SWRfor25Ohm}. The point where the SWR circle intersects the green circle is of interest because the real part of the input admittance is equal to one $Y_1=1$. This second point, where $Y=1+j1.6$, will give us the length of the line that we have to add to the load impedance. 
+Then, we identify an SWR circle that this impedance is on, as shown in Figure \ref{fig:SWRfor25Ohm}. The point where the SWR circle intersects the green circle is of interest because the real part of the input admittance is equal to one $\Re\{y_{in}\}=1$. This second point, where $y_{in}\approx 1+j1.6$, will give us the length of the line that we have to add to the load impedance.
 
 
 \begin{example}
@@ -54,7 +54,7 @@ To see how SWR circle changes depending on where the load impedance is use the f
 
 \subsection{Length of the line that will transform the real part of load impedance}
 
-To find the length of the line that will transform the real part of $z_L$ to $y_{1}=1$, we identify the position of the load impedance $Z_L=0.5+j1$, and the input impedance $Z_1=0.3-j0.45$ at the {\it Wavelengths Towards Generator} (WTG) scale. The reason we picked impedance $Z_1=0.3-j0.45$ is because the real part of the admittance $y_1=1/z_1$ is equal to one $\Re(y_{1})=1$. Load impedance  $Z_L$ is at $0.135 \lambda$, and the input impedance $Z_1$ is at $0.425 \lambda$. The difference between these two positions gives us the length of the line $0.29 \lambda$. In electrical degrees, this length is approximately $105^0$. The input admittance to the line is now $Y_L=1+1.6$.
+To find the length of the line that will transform the load to an input admittance satisfying $\Re\{y_{in}\}=1$, we identify the position of the load impedance $z_L=0.5+j1$, and the input impedance $z_1\approx 0.3-j0.45$ at the {\it Wavelengths Towards Generator} (WTG) scale. The reason we picked impedance $z_1\approx 0.3-j0.45$ is because the real part of the admittance $y_{in}=1/z_1$ is equal to one $\Re(y_{in})=1$. Load impedance  $z_L$ is at $0.135 \lambda$, and the input impedance $z_1$ is at $0.425 \lambda$. The difference between these two positions gives us the length of the line $0.29 \lambda$. In electrical degrees, this length is approximately $105^0$. The input admittance to the line is now $y_{in}\approx 1+j1.6$.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -67,7 +67,7 @@ To find the length of the line that will transform the real part of $z_L$ to $y_
 \subsection{Adding a lumped-element to remove the susceptance}
 
 
-The final step is to add a susceptance that will remove the imaginary part of the input admittance $Y_1=1+j 1.6$. We see that to get the final admittance of $Y_M=1$, numerically, we have to add an admittance of $Y_{add}=-j1.6$. This represents an inductance. Since we are adding the two admittances $Y_1+Y_{add}$, they have to be in parallel (as we know that when elements are in parallel, we add their admittances).
+The final step is to add a susceptance that will remove the imaginary part of the input admittance $y_{in}\approx 1+j1.6$. We see that to get the final admittance of $y_M=1$, numerically, we have to add an admittance of $y_{add}\approx -j1.6$. This represents an inductance. Since we are adding the two admittances $y_{in}+y_{add}$, they have to be in parallel (as we know that when elements are in parallel, we add their admittances).
 
 
 \begin{figure}[htbp]
@@ -81,7 +81,7 @@ The final step is to add a susceptance that will remove the imaginary part of th
 
 \subsection{Other possible solutions}
 
-Graphically, there are several different mixed or transmission-line impedance matching circuits that we can make for a specific impedance. For example, for impedance $Z_L=25+j50 \Omega$, $z_L=0.5+j1$, there are four different circuits that we can make, as shown in Figure \ref{fig:MixedVariety}. In this paragraph, we used the green path on the Smith Chart, with intermediate admittance $Y_2$. 
+Graphically, there are several different mixed or transmission-line impedance matching circuits that we can make for a specific impedance. For example, for impedance $Z_L=25+j50 \Omega$, $z_L=0.5+j1$, there are four different circuits that we can make, as shown in Figure \ref{fig:MixedVariety}. In this paragraph, we used the green path on the Smith Chart, with intermediate admittance $y_2$.
 
 
 \begin{figure}[htbp]

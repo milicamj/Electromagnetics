@@ -52,7 +52,7 @@ If we replace voltage and current in Equation \ref{eq:power} in the time domain 
 p(t) =\frac{1}{4} ( \tilde{V}e^{j \omega t} + \tilde{V}^*e^{-j \omega t} ) ( \tilde{I}e^{j \omega t} + \tilde{I}^*e^{-j \omega t} ) 
 \end{eqnarray}
 
-Multiplying the terms above, and rearanging, we get:
+Multiplying the terms above, and rearranging, we get:
 
 
 \begin{eqnarray}
@@ -73,7 +73,7 @@ p(t)=\frac{1}{2} \Re\{ |V| |I| e^{j(\theta_v-\theta_i)} \}+ \frac{1}{2} \Re\{|V|
 \end{eqnarray}
 
 
-p(t) above is instantaneous power, $S=\tilde{V}\tilde{I}^*=|V| |I| e^{j(\theta_v-\theta_i)}$ is complex power. Complex power has real and reactive parts S=P+jQ. The first part of the equation represents the average real power P delivered to the load $P=\frac{1}{2}\Re\{\tilde{V}\tilde{I}^*\}$, and the second part represents the fluctuating power. We are usually interested in the average real power P delivered to the load.
+p(t) above is instantaneous power, $S=\frac{1}{2}\tilde{V}\tilde{I}^*=\frac{1}{2}|V| |I| e^{j(\theta_v-\theta_i)}$ is complex power for the peak-amplitude phasors used here. With current directed into the load's positive-voltage terminal, $S=P+jQ$, where $P$ is average real power and $Q$ is reactive power. The first part of the equation represents the average real power P delivered to the load $P=\frac{1}{2}\Re\{\tilde{V}\tilde{I}^*\}$, and the second part represents the fluctuating power. We are usually interested in the average real power P delivered to the load.
 
 To find the real power delivered to the load, one would take the real part of the complex power. If we know that the impedance of the load is $Z=R+jX$, the voltage is $ \tilde{V} = Z \tilde{I}$ and we remember that $\tilde{I} \tilde{I}^* = |I|^2$ then the real power is
 
@@ -89,23 +89,22 @@ P=\frac{1}{2}R |I|^2
 
 
 \begin{example}
-A transmitter operated at 20MHz, Vg=100V with $50 \Omega$ internal impedance is connected to an antenna load through 6.33m of the line. The line is a lossless $50 \Omega$, $\beta=0.595rad/m$. The antenna impedance at 20MHz measures $Z_L=36+j20 \Omega$. 
+A transmitter operated at 20MHz, $V_g=100\,\mathrm{V}$ (peak) with $50 \Omega$ internal impedance is connected to an antenna load through 6.33m of the line. The line is a lossless $50 \Omega$, $\beta=0.595rad/m$. The antenna impedance at 20MHz measures $Z_L=36+j20 \Omega$.
 \begin{enumerate}
-\item What is the electrical length of the line? (answer: length=0.6$\lambda$)
+\item What is the electrical length of the line? (answer: $l/\lambda\approx 0.599433$)
 \item How much power is delivered to the line? Hint: Find the input impedance, then find the input power as $P_{ave,in}=\frac{1}{2}R_{in} |I_{in}|^2$
 \item What is the time-average power absorbed by $Z_L$. $P_{L}=\frac{1}{2} R_L |I_{L}|^2$
 \item If now we match load impedance $Z_l$ to 50 Ohm line, what is the input impedance of the line, and how much average power is delivered to the line and load?
 \end{enumerate}
 \begin{solution}
 \begin{description}
-\item[a] Electrical length of the line is $0.6 \lambda$.
-\item[b]  The input impedance on the line is $Z_{in}=70.8+j27.1 \Omega$.
-The load reflection coefficient is $\Gamma_L=0.27 e^{j112^0}$. The 
-input reflection coefficient is $\Gamma_{in}= 0.27 e^{-j320} = 0.27 e^{j40^0}$.
-The input current is $I_{in}=0.813 e^{-j12.6^0}$. 
-The input power is 23.4W.
-\item[c] The current at the load is $I_L=1.14 e^{-j223^0}$. The average power at the load is 23.4W (the same as at the input). This is because we are assuming a lossless line, so all power delivered to the line will be delivered to the load.
-\item[d] When the load impedance is $50 \Omega$, the average input power is 25W. When the load is matched to the line and generator, we have the maximum power available from the generator delivered to the load.
+\item[a] The electrical length is $\beta l=3.76635\,\mathrm{rad}$, or approximately $215.796^\circ$, and $l/\lambda\approx 0.599433$.
+\item[b] The input impedance is $Z_{in}\approx (70.52666+j27.31784)\,\Omega$.
+The load reflection coefficient is $\Gamma_L\approx -0.10312981+j0.25654182$, and the input reflection coefficient is $\Gamma_{in}=\Gamma_L e^{-2j\beta l}\approx 0.21084832+j0.17886432$.
+The input current is $I_{in}=V_g/(50\,\Omega+Z_{in})\approx (0.78915168-j0.17886432)\,\mathrm{A}$.
+The average input power is $P_{ave,in}=\frac{1}{2}\Re\{Z_{in}\}|I_{in}|^2\approx 23.08876\,\mathrm{W}$.
+\item[c] The current at the load is $I_L=e^{-j\beta l}(1-\Gamma_L)\,\mathrm{A}\approx (-0.74470275+j0.85330352)\,\mathrm{A}$. The average load power is $P_L=\frac{1}{2}(36\,\Omega)|I_L|^2\approx 23.08876\,\mathrm{W}$. Because the line is lossless, all average power delivered to it reaches the load.
+\item[d] When the load impedance is $50\,\Omega$, the input impedance is also $50\,\Omega$, and the average input and load powers are both $25\,\mathrm{W}$. This is the maximum available power from the stated generator.
 \end{description}
 
 

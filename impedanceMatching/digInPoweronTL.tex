@@ -42,7 +42,7 @@ If we define a phasor of reflection coefficient at the load as $\Gamma =\frac{\t
 I(z)=\frac{\tilde{V}_0^+}{Z_0} e^{-j\beta z} - \Gamma \frac{\tilde{V}_0^+}{Z_0} e^{j\beta z}\label{eq5b}
 \end{eqnarray}
 
-By multiplying phasors above, we get the phasor of the average real incident (forward) $P_i$ and reflected power $P_r$ anywhere on the line.
+Average real power is a real scalar, calculated from peak-amplitude voltage and current phasors as $P=\frac{1}{2}\Re\{\tilde{V}\tilde{I}^*\}$. For a lossless line with real $Z_0>0$, the incident (forward) power $P_i$ and the magnitude of the backward-directed reflected power $P_r$ are
 
 \begin{eqnarray}
 P_i=\frac{|\tilde{V}_0^+|^2}{2 Z_0} \\
@@ -59,16 +59,11 @@ P_L=\frac{|\tilde{V}_0^+|^2}{2 Z_0} (1-|\Gamma|^2 ) \label{eq:power}
 
 \subsection{Maximizing power transfer on a transmission line}
 
-Looking at Equation \ref{eq:power}, to maximize power delivered to the load $P_L$  , we have to maximize $|\tilde{V}_0^+|$, or minimize $Z_0$ and $|\Gamma|$. 
+Equation \ref{eq:power} gives the net average power accepted by the load. The incident voltage, reflection coefficient, and characteristic impedance are interdependent; they cannot be varied independently to maximize delivered power.
 
+For a fixed Thevenin source with peak voltage $V_g$ and impedance $Z_g=R_g+jX_g$, where $R_g>0$, maximum average power is delivered when $Z_{in}=Z_g^*=R_g-jX_g$. The available source power is $P_{\mathrm{av}}=|V_g|^2/(8R_g)$. A lossless matching network can allow the load to receive this power, but cannot increase it.
 
-\begin{enumerate}
-\item $Z_0$, the transmission-line impedance, is fixed if we are using a specific type of a coaxial cable as we have seen previously, typical impedances of coaxial cables are $50\Omega$, $75\Omega$, $300\Omega$. However, if we are using microstrip lines,  transmission line impedance can be part of the circuit design, and we can make $Z_0$ lower.
-\item To minimize $|\Gamma|=\frac{\tilde{V}_0^-}{\tilde{V}_0^+} =\frac{Z_L-Z_0}{Z_L+Z_0}=0$ we have to make the reflected voltage (and power) zero by making the load impedance equal to the transmission line impedance $Z_L-Z_0=0$, or $Z_L=Z_0$. 
-\item To maximize $|\tilde{V}_0^+|$, according to the maximum power transfer theorem, the input impedance to the transmission line has to be equal to the conjugate of the generator's impedance $Z_{in}=Z_{g}^*$. If the impedance of the generator is complex $Z_g=R_g+jX_g$, then the input impedance has to be $Z_{in}=R_g-jX_g$.
-\end{enumerate}
-
-There are two requirements, $Z_L=Z_0$ that minimizes reflected power,  and $Z_{in}=Z_g^*$ that maximizes forward power. The incident power on a  transmission line is given as
+Making $Z_L=Z_0$ eliminates load reflections. Conjugate matching at the generator maximizes net accepted power; it does not necessarily maximize the forward-wave power. These conditions coincide for a lossless line when $Z_g=Z_L=Z_0$ is real. Large forward and reflected powers can coexist without a correspondingly large net delivered power. The incident power is
 
 \begin{equation}
 P_i=\frac{|\tilde{V}_0^+|^2}{2 Z_0}
@@ -81,9 +76,9 @@ The forward going voltage on a transmission line depends on the input reflection
 \tilde{V}_0^+=\frac{Z_0}{Z_0(1+\Gamma_{in})+Z_g(1-\Gamma_{in})}V_g e^{-j\beta l}\label{eq:inputrefl}
 \end{equation}
 
-$\Gamma_{in}=\frac{Zg-Z_0}{Zg+Z_0}$ is the reflection coefficient looking into the generator. It is interesting to see that when the generator impedance and transmission line impedance are the same (the reflection coefficient looking into the generator $\Gamma_{g}$ is zero), the forward-going voltage does not depend on the load impedance $Z_L$. Forward-going voltage is equal to $\tilde{V}_0^+=\frac{1}{2} V_g e^{j \beta z}$! 
+Here $\Gamma_{in}=\Gamma_L e^{-2j\beta l}$ is the input reflection coefficient of the lossless line. The generator reflection coefficient is $\Gamma_g=\frac{Z_g-Z_0}{Z_g+Z_0}$. It is interesting to see that when the generator impedance and transmission line impedance are the same (the reflection coefficient looking into the generator $\Gamma_{g}$ is zero), the forward-going voltage does not depend on the load impedance $Z_L$. Forward-going voltage is equal to $\tilde{V}_0^+=\frac{1}{2} V_g e^{-j \beta l}$!
 
-When we turn on the generator, the generator sees a voltage divider: the generator's impedance $Z_g$ and only the transmission-line impedance $Z_0$ at the input of the line, not $Z_{in}$, because in the transient, the reflected voltage is not there to make the total impedance $Z_{in}$. The signal initially starts traveling toward the load, reflects off the load, and the reflected part of the voltage travels back to the generator. When the reflected part of the voltage arrives at the generator if $\Gamma_{g}\neq 0$, then the voltage wave reflects again from the generator, and the forward going voltage $\tilde{V}_0^+$ will change for the amount of that new reflection. However, if $\Gamma_{g}= 0$, the reflected wave will be absorbed by the generator, and no wave will be reflected. When input reflection coefficient is zero, $\Gamma_{g}=\frac{Zg-Z_0}{Zg+Z_0} = 0$. The generator impedance and the transmission-line impedance are the same.
+When we turn on the generator, the generator sees a voltage divider: the generator's impedance $Z_g$ and only the transmission-line impedance $Z_0$ at the input of the line, not $Z_{in}$, because in the transient, the reflected voltage is not there to make the total impedance $Z_{in}$. The signal initially starts traveling toward the load, reflects off the load, and the reflected part of the voltage travels back to the generator. When the reflected part of the voltage arrives at the generator if $\Gamma_{g}\neq 0$, then the voltage wave reflects again from the generator, and the forward going voltage $\tilde{V}_0^+$ will change for the amount of that new reflection. However, if $\Gamma_{g}= 0$, the reflected wave will be absorbed by the generator, and no wave will be reflected. When the generator reflection coefficient is zero, $\Gamma_{g}=\frac{Z_g-Z_0}{Z_g+Z_0} = 0$. The generator impedance and the transmission-line impedance are the same.
 
 Suppose we also select the reflected power to be zero by setting the load impedance to the transmission line impedance $Z_L=Z_0$. In that case, we have the best of both worlds, maximum power transfer and minimum reflection!
 
@@ -92,12 +87,12 @@ Suppose we also select the reflected power to be zero by setting the load impeda
 
 
 
-We perform impedance matching to remove the reflected wave on the transmission line and maximize the power available from the generator.
+We perform impedance matching to improve power transfer and, when required, eliminate reflections at a specified interface. Matching does not increase the power available from a fixed generator.
 
 Impedance matching is a technique that 
 \begin{enumerate}
-\item ensures maximum power transfer between the generator $V_g$ and the load $Z_L$, and 
-\item minimizes the reflected power from the load. 
+\item can maximize average power transfer by presenting $Z_g^*$ to the generator through a lossless network, and
+\item can eliminate load-side reflections by presenting $Z_0$ to the transmission line.
 \end{enumerate}
 
 To ensure that the voltage does not reflect from the generator, the generator's impedance should be the same as the transmission-line impedance. 
