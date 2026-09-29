@@ -237,7 +237,14 @@ In case we have an inductor in the circuit, the voltage on an inductor can be de
 
 
 \begin{eqnarray}
-v_L(t) = L \frac{\partial{ i(t)}}{\partial t}  =L  \frac{ Re\{    I e^{j \Theta_I} e^{j \omega t}\}}{\partial t}  dt  = \Re\{  LI e^{j \Theta_I} \frac{ \partial e^{j \omega t}}{\partial t} \} =  \nonumber \\ = \Re\{  LI e^{j  \Theta_I}  j  \omega e^{j \omega t} \} =  \Re \{  j  \omega       LI e^{j  \Theta_I}    e^{j \omega t}   \}      \label{eq77} 
+v_L(t)
+&=& L\frac{d i(t)}{dt} \nonumber \\
+&=& L\frac{d}{dt}\Re\{I e^{j\Theta_I}e^{j\omega t}\}
+\nonumber \\
+&=& \Re\{LI e^{j\Theta_I}j\omega e^{j\omega t}\}
+\nonumber \\
+&=& \Re\{j\omega L I e^{j\Theta_I}e^{j\omega t}\}
+\label{eq77}
 \end{eqnarray}
 
 The voltage on the inductor in the phasor domain is then
