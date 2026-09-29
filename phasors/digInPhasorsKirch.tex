@@ -56,8 +56,11 @@ v_s(t)=v_R(t) + v_C(t)  \\
 Re\{V_s e^{j \Theta_V} e^{j \omega t}\}=    \Re\{R \, I e^{j \Theta_I} e^{j \omega t}\}   +  \Re\{   \frac{1}{j \omega C}  I e^{j \Theta_I}  e^{j \omega t}  \}
 \end{eqnarray}
 
-A common term in the previous equation is $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expression for the voltage and current phasors to get the time domain expression. We can now
-write the equation as
+We express the equation in terms of phasors by suppressing
+the common time factor $e^{j\omega t}$.
+To recover the time-domain voltage or current, multiply
+its phasor by $e^{j\omega t}$ and then take the real part.
+The phasor equation is:
 
 
 

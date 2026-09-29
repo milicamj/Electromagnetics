@@ -215,8 +215,13 @@ We can now look at both sides of the equation:
 \end{eqnarray} 
 
 
-As in the case of resistors, we drop the common term in the previous equation $ e^{j\omega t}$, and we can now drop $Re$, as long as we later remember to take only the real part of the expression for the phasor of voltage and current to get the time domain expression. We can now
-write the equation as
+As in the resistor case, we express the equation in terms of
+phasors by suppressing the common time factor $e^{j\omega t}$.
+To recover the time-domain signals, multiply each phasor by
+$e^{j\omega t}$ and then take the real part:
+$v(t)=\Re\{\tilde{V}e^{j\omega t}\}$ and
+$i(t)=\Re\{\tilde{I}e^{j\omega t}\}$.
+The phasor equation is:
 
 
 
