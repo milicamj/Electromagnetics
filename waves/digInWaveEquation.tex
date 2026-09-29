@@ -110,7 +110,7 @@ KVL
  \frac{\partial i(z,t)}{\partial t}  \label{te2kvl1} \\
 \lim_{\Delta z \to 0} \{ -\frac{ v(z+ \Delta z ,t)- v(z,t)}{\Delta z}\}=  \lim_{\Delta z \to 0} \{   R  \,  i(z,t)+L  \, 
  \frac{\partial i(z,t)}{\partial t} \} \label{te2kvl111} \\
--\frac{v(z,t) }{\partial z}=R i(z,t)+L 
+-\frac{\partial v(z,t)}{\partial z}=R i(z,t)+L
  \frac{\partial i(z,t)}{\partial t} \label{te3kvl1}
 \end{eqnarray}
 
@@ -123,8 +123,8 @@ KCL
 \frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc21} \\
 \lim_{\Delta z \to 0} \{-\frac{ i(z+ \Delta z ,t)- i(z,t)}{\Delta z} \}= \lim_{\Delta z \to 0} \{ G  \, v(z+\Delta z,t)+C \, 
 \frac{\partial v(z+\Delta z,t)}{\partial t} \} \label{te1kc211} \\
--\frac{i(z,t) }{\partial z}= G  \, v(z+\Delta z,t)+C \, 
-\frac{\partial v(z+\Delta z,t)}{\partial t} \label{te1kc31}
+-\frac{\partial i(z,t)}{\partial z}= G \, v(z,t)+C \,
+\frac{\partial v(z,t)}{\partial t} \label{te1kc31}
 \end{eqnarray}
 
 
@@ -134,10 +134,10 @@ We just derived Telegrapher's equations in time-domain:
 
 
 \begin{eqnarray}
--\frac{v(z,t) }{\partial z}=R  \, i(z,t)+L  \, 
+-\frac{\partial v(z,t)}{\partial z}=R \, i(z,t)+L \,
  \frac{\partial i(z,t)}{\partial t} \nonumber  \\ \nonumber
--\frac{i(z,t) }{\partial z}= G \,  v(z+\Delta z,t)+C \, 
-\frac{\partial v(z+\Delta z,t)}{\partial t} 
+-\frac{\partial i(z,t)}{\partial z}= G \, v(z,t)+C \,
+\frac{\partial v(z,t)}{\partial t}
 \end{eqnarray}
 
 
