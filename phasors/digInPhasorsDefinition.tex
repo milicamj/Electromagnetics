@@ -23,14 +23,28 @@ Phasor transformation is defined as follows:
 v(t)=\Re\{|V|e^{j\theta_v} e^{j \omega t}\}
 \end{eqnarray}
 
-where $|\widetilde{V}|e^{j\theta_v}$ is the phasor of voltage $v(t)$. Phasor is a complex number in polar coordinate system and it is usually denoted with a capital letter with a tilde above it $\widetilde{V} = |\widetilde{V}|e^{j\theta_v}$. $ |\widetilde{V}|$ is the magnitude and $\theta_v$ is the phase of the complex number. Symbol $\Re$ represents the real part of the expression in the curly brackets. 
+where $|\widetilde{V}|e^{j\theta_v}$ is the phasor of voltage $v(t)$. A phasor is a complex number that can be expressed in
+Cartesian or polar form. We denote the voltage phasor by
+$\widetilde{V}=|\widetilde{V}|e^{j\theta_v}$.
+$ |\widetilde{V}|$ is the magnitude and $\theta_v$ is the phase of the complex number. Symbol $\Re$ represents the real part of the expression in the curly brackets.
 
 \end{definition}
 
 
 
-In order to use phasors, the circuit has to be linear. Circuits that have  only capacitors, inductors and resistors are 
-linear circuits.  In a  linear circuit, all currents and voltages are at the frequency of the generator. That means that we do not have to keep track of the frequency of voltages and currents when we are solving the circuit. We know the frequency of all currents and voltages once we know the frequency of the generator. The quantities that will differ for different currents and voltages are the amplitudes and phases. Phasors allow us to drop the information about the signal's frequency and only keep track of the magnitude and phase of the signal. So $cos (\omega t)$ is an integral part of the circuit performance; however, it is not critical to analyze the circuit if all voltages and currents are at that frequency.
+We use phasors to analyze the sinusoidal steady-state response
+of a linear, time-invariant circuit. Ideal resistors, capacitors,
+and inductors with constant component values satisfy these
+conditions. When the sources operate at one angular frequency
+$\omega$, the steady-state voltages and currents have that
+same frequency; their amplitudes and phases can differ.
+Transient responses are treated separately.
+
+Phasors retain the amplitude and phase while suppressing the
+common time factor $e^{j\omega t}$. The frequency remains
+a parameter in the circuit impedances. For sources at different
+frequencies, analyze each frequency separately and combine
+the resulting time-domain responses by superposition.
 
 
  We have to use complex numbers to remove $ \cos (\omega t)$  term from the generator and other circuit analysis equations.  To transform the cosine function to a complex number, we add a sinusoidal imaginary term.
