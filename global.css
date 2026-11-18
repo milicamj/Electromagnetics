@@ -621,16 +621,17 @@ table.tabular td {
 	width: max(30vw, 20rem)
 }
 
-/* 2023-09: gebruik data-toc-label  (via tellen in TeX) ipv data-nav-counter  (via tellen in JS) */
+/* 2023-09: use data-toc-label    (via counting in TeX) ipv data-nav-counter  (via counting in JS) */
+/* 2026-11: use data-nav-counter  (via counting in JS, with min-width) */
 .toc li::before {
-    content: attr(data-toc-label) "  ";
+    content: attr(data-nav-counter) "  ";
 	min-width: 2.5rem;
     padding-right: 0.5rem;
 }
 
 .toc li.section::before {
-    content: attr(data-toc-label) "  ";
-    padding-left: 2.7rem;
+    content: attr(data-nav-counter) "  ";
+    min-width: 2.9rem;
     padding-right: 0.5rem;
 }
 
